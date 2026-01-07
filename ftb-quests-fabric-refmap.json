@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "dev/ftb/mods/ftbquests/fabric/mixin/TextureAtlasMixin": {
+      "upload": "Lnet/minecraft/class_1059;method_45848(Lnet/minecraft/class_7766$class_7767;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "dev/ftb/mods/ftbquests/fabric/mixin/TextureAtlasMixin": {
+        "upload": "Lnet/minecraft/class_1059;method_45848(Lnet/minecraft/class_7766$class_7767;)V"
+      }
+    }
+  }
+}

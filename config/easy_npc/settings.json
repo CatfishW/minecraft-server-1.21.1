@@ -1,0 +1,19 @@
+{
+  "llm": {
+    "enabled": true,
+    "apiEndpoint": "https://game.agaii.org/llm/v1",
+    "model": "auto",
+    "maxConversationHistory": 10,
+    "requestTimeoutMs": 30000,
+    "defaultSystemPrompt": "You are an NPC in Minecraft. Respond in character, be helpful and friendly. Keep responses concise."
+  },
+  "spawner": {
+    "maxSpawnDistance": 64,
+    "maxNpcsPerChunk": 4,
+    "debugEnabled": false
+  },
+  "debug": {
+    "logTemplateLoading": false,
+    "logConfigChanges": true
+  }
+}

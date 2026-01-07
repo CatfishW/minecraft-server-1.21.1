@@ -1,0 +1,7 @@
+fastapi==0.109.0
+uvicorn==0.27.0
+pydantic==2.5.3
+wechatpayv3==1.2.9
+python-multipart
+requests
+qrcode

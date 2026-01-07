@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "ftbquests",
+  "version": "2101.1.19",
+  "name": "FTB Quests",
+  "description": "Lets you easily create and play with quests",
+  "authors": [
+    "FTB Team"
+  ],
+  "contact": {
+    "sources": "https://github.com/FTBTeam/FTB-Quests",
+    "issues": "https://github.com/FTBTeam/FTB-Mods-Issues/issues"
+  },
+  "license": "All Rights Reserved",
+  "entrypoints": {
+    "main": [
+      "dev.ftb.mods.ftbquests.fabric.FTBQuestsFabric"
+    ],
+    "rei_client": []
+  },
+  "mixins": [
+    "ftbquests-common.mixins.json",
+    "ftbquests-fabric.mixins.json"
+  ],
+  "depends": {
+    "fabric": "\u003e\u003d0.102.1+1.21.1",
+    "minecraft": "~1.21.1",
+    "architectury": "\u003e\u003d13.0.8",
+    "ftblibrary": "\u003e\u003d2101.1.28",
+    "ftbteams": "\u003e\u003d2101.1.5"
+  },
+  "breaks": {},
+  "jars": [
+    {
+      "file": "META-INF/jars/energy-4.1.0.jar"
+    }
+  ]
+}

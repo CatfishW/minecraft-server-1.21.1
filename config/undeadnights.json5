@@ -1,0 +1,90 @@
+{
+	// If true, Nights of the Undead (horde nights) are enabled | default: true
+	"undeadNightsEnabled": true,
+	/* Grace period in days before the first horde night | default: 0)
+	   After the grace period the first horde night will happen and)
+	   after the first horde night only the config values daysBetweenHordeNights")
+	   and chanceForHordeNight will be taken into consideration.")
+	   Note: if the grace period is set to 0 the first horde night will occur after")
+	   the number of days set with daysBetweenHordeNights below.")
+	*/
+	"gracePeriodBeforeFirstHordeNight": 0,
+	// Days between horde nights (1 = every night is a horde night) | default: 5
+	"daysBetweenHordeNights": 5,
+	// Chance in % for a horde night | default: 100
+	"chanceForHordeNight": 100,
+	// Maximum number of hordes that can spawn per horde night (0 = unlimited) | default: 0
+	"maxHordesPerHordeNight": 0,
+	// If true, each night a message will be sent to the player with how many nights are left before the next Horde Night | default: false
+	"sendHordeNightsCountdownMessage": false,
+	// If true, the horde has spawned message and the horde sound are enabled | default: true
+	"hordeSpawnedMessageAndSound": true,
+	// Minimum distance a horde will spawn away from the player | default: 70
+	"distanceMin": 70,
+	// Maximum distance a horde will spawn away from the player | default: 75
+	"distanceMax": 75,
+	// Maximum amount of horde mobs that can be loaded in the world at the same time | default: 80
+	"hordeMobsSpawnCap": 80,
+	// If true, additional waves can spawn in a horde night | default: true
+	"spawnAdditionalWaves": true,
+	// Time in seconds between check for next possible wave in a horde night | default: 45
+	"cooldownBetweenWaves": 45,
+	// Chance in % for another horde wave | default: 7
+	"chanceForAdditionalWaves": 7,
+	// If true, horde waves can spawn in water | default: false
+	"hordeWavesCanSpawnInWater": false,
+	// If true, horde waves can spawn on trees | default: false
+	"hordeWavesCanSpawnOnTrees": false,
+	// If true, the light level of the block position can prevent horde mobs from spawning | default: false
+	"blockLightLevelsInfluenceMonsterSpawns": false,
+	// Maximum block light level so a monster can spawn | default: 0
+	"maxBlockLightLevelForMonsterSpawns": 0,
+	// If true, Players can't sleep through horde nights | default: true
+	"hordeNightsDisableSleeping": true,
+	// If true, the horde mobs will be persistent and not despawn | default: false
+	"persistentMobs": false,
+	// If true, the horde zombies will burn in daylight (only those added by this mod) | default: false
+	"hordeZombiesBurnInDaylight": false,
+	// If true, the vanilla zombies will burn in daylight | default: true
+	"vanillaZombiesBurnInDaylight": true,
+	// If true, (Horde, Elite and vanilla) zombies can push each other up (WWZ style) | default: true
+	"hordeZombiesCanPushEachOtherUp": true,
+	// If true, (Horde, Elite and vanilla) zombies can break blocks | default: false
+	"hordeZombiesCanBreakBlocks": false,
+	// Horde Zombie block break tier (0-4) | default: 1
+	"zombiesBlockBreakTier": 1,
+	// If true, Horde Zombies (incl. vanilla) have increased water movement speed | default: false
+	"hordeZombiesHaveIncreasedWaterMovementSpeed": false,
+	// If true, a random horde can spawn on none-horde nights | default: false
+	"enableRandomHordes": false,
+	// Chance in % for a random horde (checked once per night, on none-horde nights) | default: 15
+	"chanceForRandomHordes": 15,
+	// If true, killing a horde mob can give the player the lure horde effect (this will attract horde mobs in the area) | default: true
+	"enableLureHordeEffect": true,
+	// If true, killing zombies that were not spawned in a horde can also give the player the lure horde effect | default: true
+	"nonHordeZombiesCanCauseLureHordeEffect": true,
+	// Chance to get the lure horde effect, when the player kills a horde mob (1.0 = 100%) | default: 0.07
+	"chanceForLureHordeEffect": 0.07,
+	// Duration in seconds for the lure horde effect | default: 60
+	"durationForLureHordeEffect": 60,
+	// If true, getting the lure horde effect can spawn a horde | default: true
+	"lureHordeEffectSpawnsHorde": true,
+	// Chance for the lure horde effect to spawn a horde (1.0 = 100%) | default: 0.2
+	"chanceForLureEffectToSpawnHorde": 0.2,
+	// If true, Horde Zombies will spawn naturally | default: true
+	"hordeZombiesSpawnNaturally": true,
+	// If true, Elite Zombies will spawn naturally | default: true
+	"eliteZombiesSpawnNaturally": true,
+	// If true, Demolition Zombies will spawn naturally | default: true
+	"demolitionZombiesSpawnNaturally": true,
+	// If true, Horde, Elite and Demolition zombies will not spawn naturally before the first horde night | default: true
+	"noNaturalSpawningBeforeFirstHordeNight": true,
+	// Horde zombie max health | default: 40.0
+	"maxHealthHordeZombies": 40.0,
+	// Elite zombie max health | default: 40.0
+	"maxHealthEliteZombies": 40.0,
+	// Demolition zombie max health | default: 40.0
+	"maxHealthDemolitionZombies": 40.0,
+	// If true, debug messages will be logged out | default: false
+	"printDebugMessages": false
+}

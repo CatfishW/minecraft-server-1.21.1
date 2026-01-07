@@ -1,0 +1,75 @@
+package com.tacz.guns.entity.sync.core;
+
+import cn.sh1rocu.tacz.util.forge.LazyOptional;
+import com.tacz.guns.GunMod;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
+import org.ladysnake.cca.api.v3.component.Component;
+import org.ladysnake.cca.api.v3.component.ComponentKey;
+import org.ladysnake.cca.api.v3.component.ComponentRegistry;
+
+import java.util.Optional;
+
+public class DataHolderCapabilityProvider implements Component {
+    public static final ComponentKey<DataHolderCapabilityProvider> CAPABILITY = ComponentRegistry.getOrCreate(ResourceLocation.fromNamespaceAndPath(GunMod.MOD_ID, "synced_entity_data"), DataHolderCapabilityProvider.class);
+    private final DataHolder holder = new DataHolder();
+    private final LazyOptional<DataHolder> optional = LazyOptional.of(() -> this.holder);
+
+    public void invalidate() {
+        this.optional.invalidate();
+    }
+
+    public Optional<DataHolder> getDataHolder() {
+        return optional.resolve();
+    }
+
+    private ListTag serializeNBT(HolderLookup.@NotNull Provider provider) {
+        ListTag list = new ListTag();
+        this.holder.dataMap.forEach((key, entry) -> {
+            if (key.save()) {
+                CompoundTag keyTag = new CompoundTag();
+                keyTag.putString("ClassKey", key.classKey().id().toString());
+                keyTag.putString("DataKey", key.id().toString());
+                keyTag.put("Value", entry.writeValue(provider));
+                list.add(keyTag);
+            }
+        });
+        return list;
+    }
+
+    private void deserializeNBT(HolderLookup.@NotNull Provider provider, ListTag listTag) {
+        this.holder.dataMap.clear();
+        listTag.forEach(entryTag -> {
+            CompoundTag keyTag = (CompoundTag) entryTag;
+            ResourceLocation classKey = ResourceLocation.tryParse(keyTag.getString("ClassKey"));
+            ResourceLocation dataKey = ResourceLocation.tryParse(keyTag.getString("DataKey"));
+            Tag value = keyTag.get("Value");
+            SyncedClassKey<?> syncedClassKey = SyncedEntityData.instance().getClassKey(classKey);
+            if (syncedClassKey == null) {
+                return;
+            }
+            SyncedDataKey<?, ?> syncedDataKey = SyncedEntityData.instance().getKey(syncedClassKey, dataKey);
+            if (syncedDataKey == null || !syncedDataKey.save()) {
+                return;
+            }
+            DataEntry<?, ?> entry = new DataEntry<>(syncedDataKey);
+            entry.readValue(provider, value);
+            this.holder.dataMap.put(syncedDataKey, entry);
+        });
+    }
+
+    @Override
+    public void readFromNbt(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider provider) {
+        deserializeNBT(provider, tag.getList("DataHolder", Tag.TAG_COMPOUND));
+    }
+
+    @Override
+    public void writeToNbt(@NotNull CompoundTag tag, HolderLookup.@NotNull Provider provider) {
+        ListTag listTag = serializeNBT(provider);
+        tag.put("DataHolder", listTag);
+    }
+}

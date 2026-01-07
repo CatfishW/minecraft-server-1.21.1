@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "dev/ftb/mods/ftbquests/mixin/ServerGamePacketListenerImplMixin": {
+      "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/server/level/ServerLevel;)V": "Lnet/minecraft/class_2600;method_11073(Lnet/minecraft/class_2596;Lnet/minecraft/class_2547;Lnet/minecraft/class_3218;)V",
+      "handleClientInformation": "Lnet/minecraft/class_3244;method_12069(Lnet/minecraft/class_2803;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "dev/ftb/mods/ftbquests/mixin/ServerGamePacketListenerImplMixin": {
+        "Lnet/minecraft/network/protocol/PacketUtils;ensureRunningOnSameThread(Lnet/minecraft/network/protocol/Packet;Lnet/minecraft/network/PacketListener;Lnet/minecraft/server/level/ServerLevel;)V": "Lnet/minecraft/class_2600;method_11073(Lnet/minecraft/class_2596;Lnet/minecraft/class_2547;Lnet/minecraft/class_3218;)V",
+        "handleClientInformation": "Lnet/minecraft/class_3244;method_12069(Lnet/minecraft/class_2803;)V"
+      }
+    }
+  }
+}

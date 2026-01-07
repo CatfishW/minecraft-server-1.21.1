@@ -1,0 +1,1535 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "0A339E631AC882D0"
+	group: "4E5AA64291FA4369"
+	icon: {
+		id: "kaleidoscope_cookery:sickle"
+	}
+	id: "0A339E631AC882D0"
+	images: [{
+		height: 2.0d
+		image: "server_resource:textures/farmer_delight_logo.png"
+		rotation: 0.0d
+		width: 7.0d
+		x: 30.0d
+		y: 45.5d
+	}]
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			icon: {
+				id: "minecraft:iron_hoe"
+			}
+			id: "13EC93A4A00940BF"
+			shape: "square"
+			size: 5.0d
+			tasks: [{
+				id: "45FCFE325C3D0AF2"
+				type: "checkmark"
+			}]
+			x: 37.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["13EC93A4A00940BF"]
+			hide_dependency_lines: false
+			icon: {
+				components: {
+					"ftbquests:icon": "farmersdelight:textures/mob_effect/comfort.png"
+				}
+				id: "ftbquests:custom_icon"
+			}
+			id: "41334BDA175365B0"
+			rewards: [{
+				count: 2
+				id: "5E2446E41F295826"
+				item: {
+					count: 1
+					id: "minecraft:iron_ingot"
+				}
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 3.0d
+			tasks: [{
+				id: "2D2608F60BBD4414"
+				type: "checkmark"
+			}]
+			x: 24.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["41334BDA175365B0"]
+			id: "20F005E2AC86E2CE"
+			invisible: true
+			rewards: [
+				{
+					id: "06CECEBF028C288B"
+					item: {
+						count: 1
+						id: "farmersdelight:wild_carrots"
+					}
+					type: "item"
+				}
+				{
+					id: "1FFB2495EEF45965"
+					item: {
+						count: 1
+						id: "farmersdelight:wild_potatoes"
+					}
+					type: "item"
+				}
+				{
+					id: "077427BF8DE4D1D2"
+					item: {
+						count: 1
+						id: "farmersdelight:wild_cabbages"
+					}
+					type: "item"
+				}
+				{
+					id: "7E31725CD76F3245"
+					item: {
+						count: 1
+						id: "farmersdelight:wild_onions"
+					}
+					type: "item"
+				}
+				{
+					id: "4ABB6C663A2F6AD7"
+					item: {
+						count: 1
+						id: "farmersdelight:wild_rice"
+					}
+					type: "item"
+				}
+				{
+					id: "548B979F7E165317"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "1D125A906315B5AC"
+					item: {
+						count: 1
+						id: "minecraft:stick"
+					}
+					type: "item"
+				}
+				{
+					count: 4
+					id: "38FCE9DB5FB25F3B"
+					item: {
+						count: 1
+						id: "minecraft:oak_planks"
+					}
+					type: "item"
+				}
+			]
+			shape: "circle"
+			size: 2.0d
+			tasks: [{
+				id: "2D1B4CB77DA100F6"
+				item: { count: 1, id: "minecraft:shears" }
+				type: "item"
+			}]
+			x: 21.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["20F005E2AC86E2CE"]
+			id: "379DA7D7EBD2FF0A"
+			invisible: true
+			rewards: [
+				{
+					count: 32
+					id: "7B3698513B0A4861"
+					item: {
+						count: 1
+						id: "farmersdelight:cabbage"
+					}
+					type: "item"
+				}
+				{
+					count: 16
+					id: "2F4049349463614C"
+					item: {
+						count: 1
+						id: "minecraft:pumpkin"
+					}
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2771CD35A852C8D0"
+					item: {
+						count: 1
+						id: "minecraft:porkchop"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [
+				{
+					id: "56C33CD7FE028D59"
+					item: { count: 1, id: "farmersdelight:iron_knife" }
+					type: "item"
+				}
+				{
+					id: "00DCA7E7949DCA5C"
+					item: { count: 1, id: "farmersdelight:cutting_board" }
+					type: "item"
+				}
+			]
+			x: 18.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["379DA7D7EBD2FF0A"]
+			dependency_requirement: "all_started"
+			id: "6CACEE8BB2FE3EDA"
+			invisible: true
+			rewards: [
+				{
+					count: 12
+					id: "57C004110B6EDDFE"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3B7AEF2C9D9F1072"
+					item: {
+						count: 1
+						id: "minecraft:bricks"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4576C7DCD3FF9AD9"
+					item: {
+						count: 1
+						id: "minecraft:campfire"
+					}
+					type: "item"
+				}
+				{
+					id: "5CDFEB7DF0958EA1"
+					item: {
+						count: 1
+						id: "minecraft:wooden_shovel"
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "5C7CC5C6DD69F796"
+					item: {
+						count: 1
+						id: "minecraft:brick"
+					}
+					type: "item"
+				}
+				{
+					id: "361393F59917C774"
+					item: {
+						count: 1
+						id: "minecraft:water_bucket"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "68B3286D82EB89AA"
+					item: { count: 1, id: "farmersdelight:cabbage_leaf" }
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "1E71AC30DF79CDF0"
+					item: { count: 1, id: "farmersdelight:pumpkin_slice" }
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "0D404158D8195C3F"
+					item: { count: 1, id: "farmersdelight:bacon" }
+					type: "item"
+				}
+			]
+			x: 15.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["6CACEE8BB2FE3EDA"]
+			id: "4BA7F82CB28B88C2"
+			invisible: true
+			rewards: [
+				{
+					count: 2
+					id: "6CD3206B9BD7EEA1"
+					item: {
+						count: 1
+						id: "farmersdelight:milk_bottle"
+					}
+					type: "item"
+				}
+				{
+					count: 16
+					id: "7889BC7922620D70"
+					item: {
+						count: 1
+						id: "minecraft:bowl"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [
+				{
+					id: "32955FBBB7BCC9AC"
+					item: { count: 1, id: "farmersdelight:stove" }
+					type: "item"
+				}
+				{
+					id: "749E382DDEF9851E"
+					item: { count: 1, id: "farmersdelight:cooking_pot" }
+					type: "item"
+				}
+				{
+					id: "59232A0BEFEEEAD1"
+					item: { count: 1, id: "farmersdelight:skillet" }
+					type: "item"
+				}
+			]
+			x: 13.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["4BA7F82CB28B88C2"]
+			id: "600A77F8B1482BC0"
+			invisible: true
+			rewards: [
+				{
+					id: "0C61874AFCEA4391"
+					item: {
+						count: 1
+						id: "farmersdelight:onion"
+					}
+					type: "item"
+				}
+				{
+					id: "0F5AD5A7A7CB38B4"
+					item: {
+						count: 1
+						id: "minecraft:bread"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "399EE14E6D089203"
+					item: {
+						count: 1
+						id: "minecraft:carrot"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2839903A1D98036D"
+					item: {
+						count: 1
+						id: "minecraft:potato"
+					}
+					type: "item"
+				}
+				{
+					id: "782081BDB581BF8C"
+					item: {
+						count: 1
+						id: "minecraft:egg"
+					}
+					type: "item"
+				}
+				{
+					id: "438CBD1720CB1C5E"
+					item: {
+						count: 1
+						id: "farmersdelight:rich_soil"
+					}
+					type: "item"
+				}
+				{
+					count: 15
+					id: "2CBD8944F438EDF6"
+					item: {
+						count: 1
+						id: "farmersdelight:organic_compost"
+					}
+					type: "item"
+				}
+				{
+					count: 8
+					id: "70B364CD8BEDEF33"
+					item: {
+						count: 1
+						id: "farmersdelight:straw"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [{
+				id: "698F6D40F1894BCD"
+				item: { count: 1, id: "farmersdelight:pumpkin_soup" }
+				type: "item"
+			}]
+			x: 10.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["600A77F8B1482BC0"]
+			id: "3B63F8C1A08D1858"
+			invisible: true
+			tasks: [{
+				id: "3F66292A45868B1B"
+				item: { count: 1, id: "farmersdelight:roast_chicken" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 45.0d
+		}
+		{
+			dependencies: ["3B63F8C1A08D1858"]
+			id: "421EEAC57A479305"
+			invisible: true
+			tasks: [{
+				id: "047CB7D8C83B2328"
+				type: "checkmark"
+			}]
+			x: 5.0d
+			y: 45.0d
+		}
+		{
+			dependencies: ["600A77F8B1482BC0"]
+			id: "11C12DDBF71379FA"
+			invisible: true
+			rewards: [
+				{
+					id: "2D04CABA780CBA92"
+					item: {
+						count: 1
+						id: "farmersdelight:rice"
+					}
+					type: "item"
+				}
+				{
+					id: "1F60A74CCBB7D6CD"
+					item: {
+						count: 1
+						id: "farmersdelight:cabbage_seeds"
+					}
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6F64E08F42C895D8"
+				item: { count: 1, id: "farmersdelight:rich_soil" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 49.5d
+		}
+		{
+			dependencies: [
+				"11C12DDBF71379FA"
+				"421EEAC57A479305"
+				"2CE215F5B670469A"
+			]
+			id: "781F487E098F5945"
+			invisible: true
+			rewards: [{
+				id: "499208CFFF5F7278"
+				item: {
+					count: 1
+					id: "farmersdelight:diamond_knife"
+				}
+				type: "item"
+			}]
+			size: 3.0d
+			tasks: [{
+				id: "72E6FABC9C5BE68C"
+				type: "checkmark"
+			}]
+			x: 1.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["600A77F8B1482BC0"]
+			id: "143B707C3D651141"
+			invisible: true
+			rewards: [{
+				id: "0CB1535F134F6FB9"
+				item: {
+					count: 1
+					id: "farmersdelight:tomato_seeds"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				count: 4L
+				id: "5B6E362CF54D0542"
+				item: { count: 1, id: "farmersdelight:rope" }
+				type: "item"
+			}]
+			x: 8.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["600A77F8B1482BC0"]
+			id: "2CE215F5B670469A"
+			invisible: true
+			rewards: [{
+				count: 5
+				id: "11C15F7634D3D213"
+				item: {
+					count: 1
+					id: "farmersdelight:safety_net"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "24F5A879E2F0F398"
+				item: { count: 1, id: "farmersdelight:safety_net" }
+				type: "item"
+			}]
+			x: 5.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["13EC93A4A00940BF"]
+			icon: {
+				id: "kaleidoscope_cookery:straw_hat"
+			}
+			id: "4BC6023434217439"
+			rewards: [{
+				id: "275374C482B8F2E0"
+				item: {
+					count: 1
+					id: "kaleidoscope_cookery:straw_hat"
+				}
+				type: "item"
+			}]
+			shape: "rsquare"
+			size: 3.0d
+			tasks: [{
+				id: "76613D96E9C5667B"
+				type: "checkmark"
+			}]
+			x: 48.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["4BC6023434217439"]
+			hide_until_deps_complete: true
+			id: "731C552260B82BDD"
+			rewards: [
+				{
+					count: 6
+					id: "57FA0ABDB9102998"
+					item: {
+						count: 1
+						id: "kaleidoscope_cookery:chili_seed"
+					}
+					type: "item"
+				}
+				{
+					id: "26CF4822CD592551"
+					item: {
+						count: 1
+						id: "kaleidoscope_cookery:tomato_seed"
+					}
+					type: "item"
+				}
+				{
+					id: "4A0F69588FB30DA6"
+					item: {
+						count: 1
+						id: "kaleidoscope_cookery:wild_rice"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [{
+				id: "0032131213F0BA78"
+				item: { count: 1, id: "kaleidoscope_cookery:lettuce_seed" }
+				type: "item"
+			}]
+			x: 54.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["731C552260B82BDD"]
+			id: "2A870DF6A9EF0B5D"
+			tasks: [{
+				id: "11D220D23F93A0A9"
+				type: "checkmark"
+			}]
+			x: 54.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["2A870DF6A9EF0B5D"]
+			id: "7696DC0D5B9DA2B8"
+			rewards: [
+				{
+					count: 32
+					id: "0936C614B52619F3"
+					item: {
+						count: 1
+						id: "minecraft:egg"
+					}
+					type: "item"
+				}
+				{
+					command: "/eco addmoney @p 100"
+					icon: {
+						id: "minecraft:gold_nugget"
+					}
+					id: "076E0D59FBA1E022"
+					type: "command"
+				}
+			]
+			tasks: [
+				{
+					id: "67D5B039B8AA267B"
+					item: { count: 1, id: "kaleidoscope_cookery:lettuce" }
+					type: "item"
+				}
+				{
+					id: "314928DC4390E405"
+					item: { count: 1, id: "kaleidoscope_cookery:caterpillar" }
+					type: "item"
+				}
+			]
+			x: 51.0d
+			y: 43.0d
+		}
+		{
+			dependencies: ["2A870DF6A9EF0B5D"]
+			id: "0BB359F89F308855"
+			tasks: [{
+				count: 6L
+				id: "308619FC1CB0B046"
+				item: { count: 1, id: "kaleidoscope_cookery:red_chili" }
+				type: "item"
+			}]
+			x: 53.5d
+			y: 43.0d
+		}
+		{
+			dependencies: ["2A870DF6A9EF0B5D"]
+			id: "760B782686B7EED2"
+			rewards: [{
+				id: "5C9D7E6F7E441740"
+				item: {
+					count: 1
+					id: "minecraft:water_bucket"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "03A9CF9D9A880F6C"
+				item: { count: 1, id: "kaleidoscope_cookery:rice" }
+				type: "item"
+			}]
+			x: 55.5d
+			y: 43.0d
+		}
+		{
+			dependencies: ["760B782686B7EED2"]
+			id: "2517F9FEB3E2BCAE"
+			tasks: [
+				{
+					id: "35DE8262441090ED"
+					item: { count: 1, id: "minecraft:salmon_bucket" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "5E011CF123CBEAC5"
+					item: { count: 1, id: "minecraft:cod_bucket" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "16BDFFDAA246555D"
+					item: { count: 1, id: "minecraft:tropical_fish_bucket" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 55.5d
+			y: 41.0d
+		}
+		{
+			dependencies: ["731C552260B82BDD"]
+			id: "0AC058C8706877B3"
+			rewards: [
+				{
+					id: "5C72FAAC610F20E6"
+					item: {
+						count: 1
+						id: "minecraft:stick"
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "77E18EEB02A2DBD1"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [
+				{
+					id: "7FDA3E635A1D5696"
+					item: { count: 1, id: "kaleidoscope_cookery:farmer_chest_plate" }
+					type: "item"
+				}
+				{
+					id: "21CB5A43BB63142D"
+					item: { count: 1, id: "kaleidoscope_cookery:farmer_leggings" }
+					type: "item"
+				}
+				{
+					id: "43FFDCE38AC6FCDF"
+					item: { count: 1, id: "kaleidoscope_cookery:farmer_boots" }
+					type: "item"
+				}
+			]
+			x: 57.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["0AC058C8706877B3"]
+			id: "39065CA0F595AA3E"
+			rewards: [{
+				command: "/give @p minecraft:diamond_hoe[minecraft:enchantments={levels:{\"minecraft:unbreaking\":5}}] 1"
+				icon: {
+					id: "minecraft:diamond_hoe"
+				}
+				id: "106950D66EBBE409"
+				type: "command"
+			}]
+			tasks: [{
+				id: "0762908D2F03EEC3"
+				item: { count: 1, id: "kaleidoscope_cookery:scarecrow" }
+				type: "item"
+			}]
+			x: 57.5d
+			y: 49.5d
+		}
+		{
+			dependencies: ["0AC058C8706877B3"]
+			id: "1F1254086A2B7B87"
+			rewards: [
+				{
+					count: 3
+					id: "2D3CD7F2F67D9267"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "4BC5F832CFA131B7"
+					item: {
+						count: 1
+						id: "minecraft:stick"
+					}
+					type: "item"
+				}
+				{
+					count: 6
+					id: "088AC9BD8EDBA593"
+					item: {
+						count: 1
+						id: "minecraft:oak_pressure_plate"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [{
+				id: "4B7678442173CF9B"
+				item: { count: 1, id: "kaleidoscope_cookery:oil" }
+				type: "item"
+			}]
+			x: 60.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["0ABEC856091D922B"]
+			id: "0F261F762D616F15"
+			rewards: [{
+				count: 4
+				id: "69FC745FADE65FD2"
+				item: {
+					count: 1
+					id: "minecraft:paper"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [
+				{
+					id: "59777E2D7796CB09"
+					item: { count: 1, id: "kaleidoscope_cookery:kitchen_shovel" }
+					type: "item"
+				}
+				{
+					id: "0EBD059F569A11AE"
+					item: { count: 1, id: "kaleidoscope_cookery:pot" }
+					type: "item"
+				}
+			]
+			x: 66.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["2A870DF6A9EF0B5D"]
+			id: "3FF51C0534451303"
+			tasks: [{
+				id: "1509E41DEA5A6549"
+				item: { count: 1, id: "kaleidoscope_cookery:tomato" }
+				type: "item"
+			}]
+			x: 58.0d
+			y: 43.0d
+		}
+		{
+			dependencies: ["1F1254086A2B7B87"]
+			id: "2A829D59919460F9"
+			rewards: [{
+				id: "19B27CBCD169EC1C"
+				item: {
+					count: 1
+					id: "minecraft:flint_and_steel"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "25016D6B51056EBC"
+				item: { count: 1, id: "kaleidoscope_cookery:oil_block" }
+				type: "item"
+			}]
+			x: 59.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["1F1254086A2B7B87"]
+			id: "4DDC6D30026EF6B3"
+			rewards: [{
+				id: "5C0611EEC2AE82AE"
+				item: {
+					count: 1
+					id: "minecraft:stick"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "3C4E5655D48A0EC7"
+				item: { count: 1, id: "kaleidoscope_cookery:enamel_basin" }
+				type: "item"
+			}]
+			x: 61.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["4DDC6D30026EF6B3"]
+			id: "7694459F8E905FE5"
+			tasks: [{
+				id: "229152F9742B7795"
+				type: "checkmark"
+			}]
+			x: 61.5d
+			y: 43.0d
+		}
+		{
+			dependencies: ["1F1254086A2B7B87"]
+			id: "0ABEC856091D922B"
+			rewards: [
+				{
+					count: 8
+					id: "21511A6081BE76E0"
+					item: {
+						count: 1
+						id: "minecraft:iron_ingot"
+					}
+					type: "item"
+				}
+				{
+					id: "5A27D87A9041E520"
+					item: {
+						count: 1
+						id: "minecraft:stick"
+					}
+					type: "item"
+				}
+				{
+					id: "21439A3C97E97C34"
+					item: {
+						count: 1
+						id: "minecraft:iron_nugget"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [
+				{
+					id: "086EAE2BBC3935FC"
+					item: { count: 1, id: "kaleidoscope_cookery:chopping_board" }
+					type: "item"
+				}
+				{
+					id: "4FB96C9BADF20C24"
+					item: { count: 1, id: "kaleidoscope_cookery:iron_kitchen_knife" }
+					type: "item"
+				}
+			]
+			x: 63.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["3DC8B225A1B1B86A"]
+			id: "0C7CBD1583F688E7"
+			tasks: [{
+				id: "277E64B41E4898A5"
+				item: { count: 1, id: "kaleidoscope_cookery:kitchenware_racks" }
+				type: "item"
+			}]
+			x: 61.0d
+			y: 51.5d
+		}
+		{
+			dependencies: ["0ABEC856091D922B"]
+			id: "3DC8B225A1B1B86A"
+			tasks: [{
+				id: "49493B96A556FD8C"
+				type: "checkmark"
+			}]
+			x: 63.0d
+			y: 49.5d
+		}
+		{
+			dependencies: ["3DC8B225A1B1B86A"]
+			id: "3C5C93DAA9679B89"
+			tasks: [{
+				id: "0A4BD8FF4B981297"
+				item: { count: 1, id: "kaleidoscope_cookery:fruit_basket" }
+				type: "item"
+			}]
+			x: 64.5d
+			y: 51.5d
+		}
+		{
+			dependencies: ["0F261F762D616F15"]
+			id: "1D375D3731040A9D"
+			rewards: [{
+				count: 6
+				id: "3338B7DCFCED575A"
+				item: {
+					count: 1
+					id: "minecraft:oak_planks"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "331CACC9DEBCB8EE"
+				item: { count: 1, id: "minecraft:bowl" }
+				type: "item"
+			}]
+			x: 63.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["0F261F762D616F15"]
+			id: "2C313909C66E8D79"
+			tasks: [{
+				id: "3D052EACB96FDC50"
+				item: { count: 1, id: "kaleidoscope_cookery:shawarma_spit" }
+				type: "item"
+			}]
+			x: 67.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["0F261F762D616F15"]
+			id: "19222B59A173595D"
+			tasks: [
+				{
+					id: "4CB37DB3B4434BDA"
+					item: { count: 1, id: "kaleidoscope_cookery:stockpot_lid" }
+					type: "item"
+				}
+				{
+					id: "1CE64E44982495EA"
+					item: { count: 1, id: "kaleidoscope_cookery:stockpot" }
+					type: "item"
+				}
+			]
+			x: 65.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["0F261F762D616F15"]
+			id: "54A47867DC638F71"
+			tasks: [{
+				id: "32DBA4AF24569EB7"
+				type: "checkmark"
+			}]
+			x: 69.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["19222B59A173595D"]
+			id: "33DEA06438AE1857"
+			tasks: [{
+				id: "5DF5882568FBCC0B"
+				item: { count: 1, id: "kaleidoscope_cookery:cooked_rice" }
+				type: "item"
+			}]
+			x: 65.5d
+			y: 43.0d
+		}
+		{
+			dependencies: [
+				"33DEA06438AE1857"
+				"38EE4F55A13628D3"
+			]
+			id: "60D3DD281BB9FB7F"
+			tasks: [{
+				id: "112539B32461A8F1"
+				type: "checkmark"
+			}]
+			x: 64.5d
+			y: 41.0d
+		}
+		{
+			dependencies: ["0F261F762D616F15"]
+			id: "387132BF77945837"
+			size: 2.0d
+			tasks: [{
+				id: "403B88F14FF6AB82"
+				type: "checkmark"
+			}]
+			x: 71.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["387132BF77945837"]
+			id: "05FD3ACED90B6FDA"
+			tasks: [{
+				id: "53794FE4A79216BD"
+				type: "checkmark"
+			}]
+			x: 71.5d
+			y: 49.5d
+		}
+		{
+			dependencies: ["0F261F762D616F15"]
+			id: "02AB73611D09327E"
+			tasks: [{
+				id: "2A7CD1C284FF9537"
+				item: { count: 1, id: "kaleidoscope_cookery:stove" }
+				type: "item"
+			}]
+			x: 66.5d
+			y: 49.5d
+		}
+		{
+			dependencies: ["1D375D3731040A9D"]
+			id: "38EE4F55A13628D3"
+			tasks: [{
+				id: "307562D28A879057"
+				item: { count: 1, id: "kaleidoscope_cookery:cook_stool_oak" }
+				type: "item"
+			}]
+			x: 63.5d
+			y: 43.0d
+		}
+		{
+			dependencies: ["387132BF77945837"]
+			id: "09C89C27729611D8"
+			rewards: [
+				{
+					id: "62B30243EDFC66AD"
+					item: {
+						count: 1
+						id: "minecraft:grindstone"
+					}
+					type: "item"
+				}
+				{
+					id: "41887B7FC0E547CE"
+					item: {
+						count: 1
+						id: "minecraft:oak_fence"
+					}
+					type: "item"
+				}
+				{
+					count: 3
+					id: "4C92DC3E95C5A203"
+					item: {
+						count: 1
+						id: "minecraft:smooth_stone"
+					}
+					type: "item"
+				}
+				{
+					id: "6C17A2581727613C"
+					item: {
+						count: 1
+						id: "minecraft:stick"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [{
+				id: "09ED661E55111499"
+				item: { count: 1, id: "kaleidoscope_cookery:recipe_item" }
+				type: "item"
+			}]
+			x: 75.5d
+			y: 47.0d
+		}
+		{
+			dependencies: ["09C89C27729611D8"]
+			id: "23CCAC29A26B7BAB"
+			size: 2.0d
+			tasks: [{
+				id: "63B6CE83342491D5"
+				item: { count: 1, id: "kaleidoscope_cookery:millstone" }
+				type: "item"
+			}]
+			x: 79.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["23CCAC29A26B7BAB"]
+			id: "0BD9C2CB200D2916"
+			tasks: [
+				{
+					id: "4B4071D3299A997F"
+					item: { count: 1, id: "kaleidoscope_cookery:oil_pot" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "4B121F17C7E3A90D"
+					item: { components: { "kaleidoscope_cookery:oil_pot_oil_count": 256 }, count: 1, id: "kaleidoscope_cookery:oil_pot" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 77.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["23CCAC29A26B7BAB"]
+			id: "41E967BFCD9AAD02"
+			tasks: [{
+				id: "44362374B4FBFBCE"
+				item: { count: 1, id: "kaleidoscope_cookery:raw_dough" }
+				type: "item"
+			}]
+			x: 80.0d
+			y: 45.0d
+		}
+		{
+			dependencies: ["41E967BFCD9AAD02"]
+			id: "26D9F12542B50770"
+			tasks: [
+				{
+					id: "191048464655A485"
+					item: { count: 1, id: "minecraft:cauldron" }
+					type: "item"
+				}
+				{
+					id: "63CC7F2F67C2ECE9"
+					item: { count: 1, id: "minecraft:water_bucket" }
+					type: "item"
+				}
+			]
+			x: 82.0d
+			y: 45.0d
+		}
+		{
+			dependencies: ["41E967BFCD9AAD02"]
+			id: "76D285E7B1291DF4"
+			rewards: [{
+				count: 3
+				id: "6316CEA9D98331A2"
+				item: {
+					count: 1
+					id: "kaleidoscope_cookery:lettuce"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "54EAD42F5736DB37"
+				item: { count: 1, id: "kaleidoscope_cookery:raw_noodles" }
+				type: "item"
+			}]
+			x: 78.5d
+			y: 43.0d
+		}
+		{
+			dependencies: ["76D285E7B1291DF4"]
+			id: "12FCBCC4EF420A3E"
+			tasks: [{
+				id: "2383292F6E227705"
+				item: { count: 1, id: "kaleidoscope_cookery:udon_noodle" }
+				type: "item"
+			}]
+			x: 78.5d
+			y: 41.0d
+		}
+		{
+			dependencies: ["41E967BFCD9AAD02"]
+			id: "76B9E1CD2A99FF14"
+			tasks: [{
+				id: "2E873CD631847F9F"
+				item: { count: 1, id: "kaleidoscope_cookery:stuffed_dough_food" }
+				type: "item"
+			}]
+			x: 81.5d
+			y: 43.0d
+		}
+		{
+			dependencies: ["498DD8381D0E9329"]
+			id: "5C2FC86C4CA630DE"
+			tasks: [{
+				id: "0499C067E4375096"
+				item: { count: 1, id: "kaleidoscope_cookery:baozi" }
+				type: "item"
+			}]
+			x: 81.5d
+			y: 39.0d
+		}
+		{
+			dependencies: ["76B9E1CD2A99FF14"]
+			id: "498DD8381D0E9329"
+			tasks: [{
+				id: "03208699E7E5FA99"
+				item: { count: 1, id: "kaleidoscope_cookery:steamer" }
+				type: "item"
+			}]
+			x: 81.5d
+			y: 41.0d
+		}
+		{
+			dependencies: ["387132BF77945837"]
+			id: "3972FE3BF5119C7B"
+			tasks: [{
+				id: "3BB9B85DB3159A24"
+				item: { count: 1, id: "kaleidoscope_cookery:transmutation_lunch_bag" }
+				type: "item"
+			}]
+			x: 71.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["0AC058C8706877B3"]
+			id: "09F31B9C7062EFE1"
+			tasks: [{
+				id: "436AF00BC0615A60"
+				item: { count: 1, id: "kaleidoscope_cookery:sickle" }
+				type: "item"
+			}]
+			x: 57.5d
+			y: 45.0d
+		}
+		{
+			dependencies: ["23CCAC29A26B7BAB"]
+			id: "37227BBA30022E21"
+			size: 3.0d
+			tasks: [{
+				id: "0E4988CCD2404877"
+				type: "checkmark"
+			}]
+			x: 85.0d
+			y: 47.0d
+		}
+		{
+			dependencies: ["2643F76259B9FAB5"]
+			hide_until_deps_complete: true
+			id: "39934CA1E5B6F0C8"
+			size: 2.0d
+			tasks: [
+				{
+					id: "0DF21B6B074043D6"
+					item: { count: 1, id: "vinery:red_grape" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "19BC4DB592CC440A"
+					item: { count: 1, id: "vinery:white_grape" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "43832D3899C32D0E"
+					item: { count: 1, id: "vinery:savanna_grapes_red" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "01906B7FE43932AB"
+					item: { count: 1, id: "vinery:savanna_grapes_white" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "34F8D3F0DB450C67"
+					item: { count: 1, id: "vinery:taiga_grapes_red" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "01B595CDD1F73677"
+					item: { count: 1, id: "vinery:jungle_grapes_red" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2A7506C716F10542"
+					item: { count: 1, id: "vinery:jungle_grapes_white" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 27.5d
+			y: 62.5d
+		}
+		{
+			dependencies: ["13EC93A4A00940BF"]
+			icon: {
+				id: "vinery:vinery_standard"
+			}
+			id: "2643F76259B9FAB5"
+			shape: "rsquare"
+			size: 3.0d
+			tasks: [{
+				id: "3FDA9E3E0865F5D4"
+				type: "checkmark"
+			}]
+			x: 27.5d
+			y: 57.5d
+		}
+		{
+			dependencies: ["39934CA1E5B6F0C8"]
+			id: "1A06F05953C3949F"
+			size: 2.0d
+			tasks: [{
+				count: 32L
+				id: "7D3B27CB2CE1805D"
+				item: { count: 1, id: "vinery:red_grape" }
+				type: "item"
+			}]
+			x: 27.5d
+			y: 67.5d
+		}
+		{
+			dependencies: ["1A06F05953C3949F"]
+			icon: {
+				id: "vinery:wine_bottle"
+			}
+			id: "34A7A4F5EAF7D5B2"
+			size: 2.0d
+			tasks: [
+				{
+					id: "6A3BA83A3C21C60D"
+					item: { count: 1, id: "vinery:grapevine_pot" }
+					type: "item"
+				}
+				{
+					id: "79A658124C559F56"
+					item: { count: 1, id: "vinery:wine_bottle" }
+					type: "item"
+				}
+			]
+			x: 27.5d
+			y: 72.5d
+		}
+		{
+			dependencies: ["34A7A4F5EAF7D5B2"]
+			icon: {
+				id: "vinery:fermentation_barrel"
+			}
+			id: "0DF541F92F7A3B8C"
+			rewards: [
+				{
+					id: "4E4DAF0A3D4480CF"
+					item: {
+						count: 1
+						id: "vinery:white_grape_bag"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5E4B765D1F6F9528"
+					item: {
+						count: 1
+						id: "vinery:wine_bottle"
+					}
+					type: "item"
+				}
+			]
+			size: 2.0d
+			tasks: [
+				{
+					id: "5BCA4DCE0BA9B2B4"
+					item: { count: 1, id: "vinery:fermentation_barrel" }
+					type: "item"
+				}
+				{
+					id: "506E5154D8F5DA19"
+					item: { count: 1, id: "vinery:red_wine" }
+					type: "item"
+				}
+			]
+			x: 27.5d
+			y: 77.5d
+		}
+		{
+			dependencies: ["0DF541F92F7A3B8C"]
+			icon: {
+				id: "vinery:wine_bottle"
+			}
+			id: "5E62A8D21CA4B17F"
+			size: 2.0d
+			tasks: [
+				{
+					id: "2D663C2717EBA64B"
+					item: { count: 1, id: "vinery:wine_box" }
+					type: "item"
+				}
+				{
+					id: "5397AAFA4E00ADB5"
+					item: { count: 1, id: "vinery:oak_wine_rack_mid" }
+					type: "item"
+				}
+			]
+			x: 27.5d
+			y: 82.5d
+		}
+		{
+			dependencies: ["1A06F05953C3949F"]
+			id: "7B293F918ABD4978"
+			tasks: [
+				{
+					id: "366CC27FA5F0D37F"
+					item: { count: 1, id: "vinery:spruce_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "2930A9568705C2AD"
+					item: { count: 1, id: "vinery:cherry_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "560E27A02E840F3C"
+					item: { count: 1, id: "vinery:birch_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "59B79B084E695832"
+					item: { count: 1, id: "vinery:dark_oak_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "385CD62AC76E4B6F"
+					item: { count: 1, id: "vinery:acacia_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "70ECADB87AB8FD16"
+					item: { count: 1, id: "vinery:bamboo_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "098814EDF8C7E592"
+					item: { count: 1, id: "vinery:jungle_lattice" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "62FFDF7DB3E4D862"
+					item: { count: 1, id: "vinery:mangrove_lattice" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 22.0d
+			y: 67.5d
+		}
+		{
+			dependencies: ["34A7A4F5EAF7D5B2"]
+			id: "1D54A89069593DFD"
+			tasks: [{
+				id: "7B5643436898F05F"
+				item: { count: 1, id: "vinery:apple_press" }
+				type: "item"
+			}]
+			x: 32.0d
+			y: 72.5d
+		}
+		{
+			dependencies: ["5E62A8D21CA4B17F"]
+			id: "705007081291C7F2"
+			size: 3.0d
+			tasks: [{
+				id: "2743DAF6268CDEE1"
+				type: "checkmark"
+			}]
+			x: 27.5d
+			y: 88.0d
+		}
+	]
+}

@@ -1,0 +1,630 @@
+{
+  "modpackName": "",
+  "automodpackVersion": "4.0.2",
+  "loader": "fabric",
+  "loaderVersion": "0.18.4",
+  "mcVersion": "1.21.1",
+  "list": [
+    {
+      "file": "/mods/UndeadNights-1.3.2-Fabric-mc1.21.jar",
+      "size": "1721351",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d4c04983dbe7ca39f165731ced90011661679336",
+      "murmur": "4117712342"
+    },
+    {
+      "file": "/mods/servercore-fabric-1.5.10+1.21.1.jar",
+      "size": "905717",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b18ce5438e3d1fe7bfcf2ad546a78ee9d57a24cf",
+      "murmur": "3445793006"
+    },
+    {
+      "file": "/mods/CreativeCore_FABRIC_v2.13.14_mc1.21.1.jar",
+      "size": "1239340",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4be77c0f88b7bcb2a099a9540b2008296b648183",
+      "murmur": "251553544"
+    },
+    {
+      "file": "/mods/novus_auth-1.0.0.jar",
+      "size": "137879",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "1d05448c0aad95a9aa8e7b21ffab60bc61f8dc9b",
+      "murmur": "3603875023"
+    },
+    {
+      "file": "/mods/krypton-0.2.8.jar",
+      "size": "161045",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "73e792eb5f120787becda4b87b6ff18b26caea50",
+      "murmur": "1419355547"
+    },
+    {
+      "file": "/mods/ftb-quests-fabric-2101.1.19.jar",
+      "size": "1433860",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "82cf13053b4b51e6f1123c008246b83ee6839193",
+      "murmur": "3456305973"
+    },
+    {
+      "file": "/mods/worldedit-mod-7.3.8.jar",
+      "size": "6222854",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250",
+      "murmur": "683807693"
+    },
+    {
+      "file": "/mods/cloth-config-15.0.140-fabric.jar",
+      "size": "1157166",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "5d82342a2df53fd6df712bfdd583a811572918a4",
+      "murmur": "1877101333"
+    },
+    {
+      "file": "/mods/mcw-bridges-3.1.0-mc1.21.1fabric.jar",
+      "size": "656977",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "236a31a8ccdefdde5f66a7385cb5282c782f433f",
+      "murmur": "980801265"
+    },
+    {
+      "file": "/mods/FarmersDelight-1.21.1-3.2.2+refabricated.jar",
+      "size": "3129714",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "59846405e46af1e46ad9570a6f004c89652374db",
+      "murmur": "2996824463"
+    },
+    {
+      "file": "/mods/modmenu-11.0.3.jar",
+      "size": "973066",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6213120772192040a0aeb5c7cfe330c068605b1f",
+      "murmur": "2497936418"
+    },
+    {
+      "file": "/mods/lithium-fabric-0.15.1+mc1.21.1.jar",
+      "size": "772848",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6038cf136da413753345bf9d48e5798241439894",
+      "murmur": "2862911914"
+    },
+    {
+      "file": "/mods/vmp-fabric-mc1.21.1-0.2.0+beta.7.172-all.jar",
+      "size": "433667",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "267975777ba52a23d4423a60e9288f9ce288344e",
+      "murmur": "2846364621"
+    },
+    {
+      "file": "/mods/voicechat-fabric-1.21.1-2.6.11.jar",
+      "size": "5341236",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "7a11b339144c9de7ad33addc3b01915b1db2168a",
+      "murmur": "1047034063"
+    },
+    {
+      "file": "/mods/mcw-doors-1.1.2-mc1.21.1fabric.jar",
+      "size": "1223064",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "78ba11ac0d3c60af84956d12a0557fddbff39cd5",
+      "murmur": "3721413290"
+    },
+    {
+      "file": "/mods/novus-pay-1.0.0.jar",
+      "size": "11857",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "63e3fc74ac561a12a04918578f9e27db720e456d",
+      "murmur": "829563538"
+    },
+    {
+      "file": "/mods/NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
+      "size": "309410",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "789cabd9b1fed079af87f675d1d6c1c95b603e19",
+      "murmur": "1541505596"
+    },
+    {
+      "file": "/mods/spark-1.10.109-fabric.jar",
+      "size": "3609981",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "eff42cbeee6fe9a7f3c57031c23200256366dcd1",
+      "murmur": "1396803699"
+    },
+    {
+      "file": "/mods/malilib-fabric-1.21-0.21.10.jar",
+      "size": "1411200",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e2699ef71618c54fc03c6c8b28e336603596dcef",
+      "murmur": "849549853"
+    },
+    {
+      "file": "/mods/MyNethersDelight-1.21.1-2.0.3+1.7.8.refabricated.jar",
+      "size": "706365",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "ab0cea2a1b945ae357c3f5c97e4e1448d0e28862",
+      "murmur": "262036147"
+    },
+    {
+      "file": "/mods/resourcefullib-fabric-1.21-3.0.12.jar",
+      "size": "485586",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "cb67e1302b5116953f45556cc61dbcf40d986ecd",
+      "murmur": "3889720147"
+    },
+    {
+      "file": "/mods/mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
+      "size": "651571",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "f9be270761e17ad131f186b2537c2ce2f305815a",
+      "murmur": "1706073822"
+    },
+    {
+      "file": "/mods/novus-items-1.0.0.jar",
+      "size": "272930",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "afd1985a8d1bd385868c78aa5fc338921948d6c8",
+      "murmur": "2865457751"
+    },
+    {
+      "file": "/mods/tabtps-fabric-mc1.21.1-1.3.25.jar",
+      "size": "2452454",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "48672964a74b5742e044ceb6e7dfccaa89a1d517",
+      "murmur": "1236367448"
+    },
+    {
+      "file": "/mods/easy_npc-fabric-1.21.1-6.6.0.jar",
+      "size": "1730709",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6aee1ae8b9a350b922b119d402b4cc55e4a9e653",
+      "murmur": "1775245535"
+    },
+    {
+      "file": "/mods/chipped-fabric-1.21.1-4.0.2.jar",
+      "size": "15016830",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "add18f65d7b131e05313cd98069cb71adac3483c",
+      "murmur": "435641275"
+    },
+    {
+      "file": "/mods/flan-1.21.1-1.12.5-fabric.jar",
+      "size": "925382",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "16c7bf82b6ddff97bc1a7023155997b537f98c0b",
+      "murmur": "670713166"
+    },
+    {
+      "file": "/mods/framework-fabric-1.21.1-0.13.9.jar",
+      "size": "1647872",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "9ff919d5fee807ba36492f302e97fd6519e221e6",
+      "murmur": "528309357"
+    },
+    {
+      "file": "/mods/easy_npc_config_ui-fabric-1.21.1-6.6.0.jar",
+      "size": "726742",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "c210f1e9eafcd3abab3627a652d14de16fe2270c",
+      "murmur": "3912934345"
+    },
+    {
+      "file": "/mods/fabric-api-0.116.7+1.21.1.jar",
+      "size": "2424884",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "79e9f3e82499fbae5bd667b96a79927ae68f90eb",
+      "murmur": "1538479477"
+    },
+    {
+      "file": "/mods/alternate-current-mc1.21-1.9.0.jar",
+      "size": "51836",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b3dbc4fc4acfd98f3f6b62bbb4e641ed4df915e8",
+      "murmur": "3015653537"
+    },
+    {
+      "file": "/mods/fabric-language-kotlin-1.13.8+kotlin.2.3.0.jar",
+      "size": "7618852",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "05fe02fe61232c4ddea4059e8103281424d5a2bd",
+      "murmur": "1908825025"
+    },
+    {
+      "file": "/mods/handcrafted-fabric-1.21.1-4.0.3.jar",
+      "size": "7127377",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "a9579fecd7ed429c282be21d5c921d220197acc6",
+      "murmur": "3248713794"
+    },
+    {
+      "file": "/mods/numismatic-overhaul-0.3.5+1.21.jar",
+      "size": "509477",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "58b63790cf9c256128b8ebceec5b01f454e64450",
+      "murmur": "4184956559"
+    },
+    {
+      "file": "/mods/polymer-bundled-0.9.18+1.21.1.jar",
+      "size": "1704626",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e41949296d4c51e5cbfae1c9a395eb4b97270f8b",
+      "murmur": "517317258"
+    },
+    {
+      "file": "/mods/packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
+      "size": "46623",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "a8bb6e25807682e72c23bf4065f3cd5f6373ece3",
+      "murmur": "3606950632"
+    },
+    {
+      "file": "/mods/essential_commands-0.35.2-mc1.21.jar",
+      "size": "1442941",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "1dda78e1ecace03b1a622611ef8783bb1259dc91",
+      "murmur": "3502250719"
+    },
+    {
+      "file": "/mods/ftb-teams-fabric-2101.1.9.jar",
+      "size": "287518",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "a96e1169958eb92939ae67a1beb0aada373cbbbe",
+      "murmur": "777513639"
+    },
+    {
+      "file": "/mods/waterframes-FABRIC-mc1.21.1-v2.1.22.jar",
+      "size": "266292",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d891be7912177a847a3547a76d8afc07fe64aef6",
+      "murmur": "1170673236"
+    },
+    {
+      "file": "/mods/cutscene-api-mc1.21.1-fabric-1.6.6.jar",
+      "size": "280910",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "df8c60b5184b910b33dc1e4236ba14de06551a37",
+      "murmur": "2447686579"
+    },
+    {
+      "file": "/mods/entity_texture_features_1.21-fabric-7.0.8.jar",
+      "size": "730042",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6a8ead6c257b184ed1d59d535b7c51a05bb0ba69",
+      "murmur": "3270967502"
+    },
+    {
+      "file": "/mods/display-delight-1.5.0-mc1.21.1.jar",
+      "size": "719295",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "3297615588ea196a8a1712a750b605a6b0cb9354",
+      "murmur": "2097087054"
+    },
+    {
+      "file": "/mods/TACZ-Refabricated-1.21.1-0.4.0-forge1.1.7-hotfix.jar",
+      "size": "52647484",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "408c9f2409c21861b6aaca6a864e2a5ac7745793",
+      "murmur": "1896353627"
+    },
+    {
+      "file": "/mods/[REI物品管理器] RoughlyEnoughItems-16.0.799-fabric.jar",
+      "size": "2451799",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "ea0efe8b13a52e9d8d5a18d062810117a7efec0f",
+      "murmur": "1057235278"
+    },
+    {
+      "file": "/mods/beautify-1.3.0+1.21.1.jar",
+      "size": "836013",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8fb1df342725d8546da7034a3111d15704b41986",
+      "murmur": "2565943545"
+    },
+    {
+      "file": "/mods/architectury-13.0.8-fabric.jar",
+      "size": "600915",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e71346a43c563e5784580dd096338acfb45f49d4",
+      "murmur": "584683133"
+    },
+    {
+      "file": "/mods/entity_model_features_1.21-fabric-3.0.10.jar",
+      "size": "488262",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8369a9db73a1538090feb6f51762a733bcbd3f09",
+      "murmur": "1157512228"
+    },
+    {
+      "file": "/mods/notenoughanimations-fabric-1.11.1-mc1.21.1.jar",
+      "size": "1923320",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8cc4cbd822c24cc06042b4f6c394677da2d0b8d0",
+      "murmur": "4289689446"
+    },
+    {
+      "file": "/mods/owo-lib-0.12.15.4+1.21.jar",
+      "size": "1183559",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "45725e6d33b624e565a7a6e5d3627af40814288d",
+      "murmur": "3800197123"
+    },
+    {
+      "file": "/mods/mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
+      "size": "1278810",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "0d47db265d99f75f29c93b37489b5602f37ec4af",
+      "murmur": "2397254641"
+    },
+    {
+      "file": "/mods/litematica-fabric-1.21-0.19.60.jar",
+      "size": "1578454",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "dfd63a022413444682108946d23fe53883f5ce6a",
+      "murmur": "912540377"
+    },
+    {
+      "file": "/mods/corndelight-1.21-1.0.0.jar",
+      "size": "134477",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d4e7f93023e0d567945db7e826df46b6a40e7cc4",
+      "murmur": "2075524555"
+    },
+    {
+      "file": "/mods/ftb-library-fabric-2101.1.29.jar",
+      "size": "1405280",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "fca140a67a3aaa356e43f91b475d1689eaab86e5",
+      "murmur": "2151022582"
+    },
+    {
+      "file": "/mods/letsdo-vinery-fabric-1.5.2.jar",
+      "size": "2983515",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8847a71d9dee7396d5c4d2f502fcf1368c64ccb8",
+      "murmur": "164018916"
+    },
+    {
+      "file": "/mods/Necronomicon-Fabric-1.6.0+1.21.jar",
+      "size": "37055",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b6ac70d9ecac570f56e75db81d8281976fea1357",
+      "murmur": "2319169093"
+    },
+    {
+      "file": "/mods/Item_Obliterator-Fabric_Quilt-MC_1.21-3.1.1.jar",
+      "size": "29943",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "42202c67ef7166ffb5255ada7370b36c9d50110c",
+      "murmur": "3781555978"
+    },
+    {
+      "file": "/mods/textile_backup-3.1.3-1.21.jar",
+      "size": "1308283",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "f390d2acd7e963d2087580fa94b6e4eafe7ac652",
+      "murmur": "1076578361"
+    },
+    {
+      "file": "/mods/watermedia-2.1.36.jar",
+      "size": "37858040",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "aaad859737065f7be2824973aa38a5fdb7456f9d",
+      "murmur": "1118881583"
+    },
+    {
+      "file": "/mods/athena-fabric-1.21-4.0.2.jar",
+      "size": "82788",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d79183521f9bcb043ebdc6438f1987e46c12a067",
+      "murmur": "1560953245"
+    },
+    {
+      "file": "/mods/mighty_mail-fabric-1.21.1-1.1.4.jar",
+      "size": "220497",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "7efe3b7e170a0207fb8ea5e47385967ca33d6b8c",
+      "murmur": "607791485"
+    },
+    {
+      "file": "/mods/Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "size": "20723",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "14628ba309d876cfefc4cef864a66ef12812066c",
+      "murmur": "1960002860"
+    },
+    {
+      "file": "/mods/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+      "size": "633065",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "18bf1f21cd2db6dcd4e42db85eae54e2a49a48ee",
+      "murmur": "4152126359"
+    },
+    {
+      "file": "/mods/Chunky-Fabric-1.4.23.jar",
+      "size": "342979",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6c8098fc0f124c7b6492de60db0108747f7f9821",
+      "murmur": "3775061967"
+    },
+    {
+      "file": "/mods/ferritecore-7.0.2-hotfix-fabric.jar",
+      "size": "120709",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "48ee764932d0c8ec81a2223dbe333886938e512c",
+      "murmur": "4222391363"
+    },
+    {
+      "file": "/mods/Adorn-6.1.2+1.21.1-fabric.jar",
+      "size": "5125068",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "30b2e89f343179d97032426687c7a6ac88505e98",
+      "murmur": "3568277638"
+    },
+    {
+      "file": "/mods/modernfix-fabric-5.25.1+mc1.21.1.jar",
+      "size": "471258",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4ab39e9c736e7204146792c545ec5b29fc0a3872",
+      "murmur": "4091424383"
+    },
+    {
+      "file": "/mods/mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+      "size": "2087232",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4c914a4d3bb84103b34346e60c6aa981be8dfa23",
+      "murmur": "778289155"
+    },
+    {
+      "file": "/mods/economycraft-fabric-1.3.0_1.21.1.jar",
+      "size": "86780",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "742779274f191ed4cb94d4f83492e1c67f2f0b27",
+      "murmur": "3979449778"
+    },
+    {
+      "file": "/mods/kaleidoscopecookery-1.1.2a-fabric+mc1.21.1.jar",
+      "size": "2231501",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "f49cb1dc19f780314439922b07d20551bde0e362",
+      "murmur": "81071969"
+    }
+  ]
+}

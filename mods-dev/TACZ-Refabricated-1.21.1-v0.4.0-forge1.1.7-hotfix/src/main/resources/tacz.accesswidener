@@ -1,0 +1,19 @@
+accessWidener v2 named
+
+accessible method net/minecraft/client/multiplayer/MultiPlayerGameMode ensureHasSentCarriedItem ()V # ensureHasSentCarriedItem
+
+accessible field net/minecraft/client/renderer/texture/TextureManager byPath Ljava/util/Map; # byPath
+
+accessible field net/minecraft/client/resources/language/I18n language Lnet/minecraft/locale/Language; # language
+
+accessible method net/minecraft/client/Minecraft startUseItem ()V # startUseItem
+
+accessible field net/minecraft/world/entity/LivingEntity jumping Z # jumping
+
+extendable method net/minecraft/world/entity/vehicle/VehicleEntity getDropItem ()Lnet/minecraft/world/item/Item;
+
+accessible method net/minecraft/client/renderer/block/model/ItemTransforms$Deserializer <init> ()V
+accessible method net/minecraft/client/renderer/block/model/ItemTransform$Deserializer <init> ()V
+
+# Access for key conflict bypass
+accessible field net/minecraft/client/KeyMapping key Lcom/mojang/blaze3d/platform/InputConstants$Key;

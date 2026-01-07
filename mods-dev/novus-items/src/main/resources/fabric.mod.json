@@ -1,0 +1,30 @@
+{
+    "schemaVersion": 1,
+    "id": "novus_items",
+    "version": "${version}",
+    "name": "Novus Items",
+    "description": "Custom items for the Novus server, including Aether Scrolls for flight.",
+    "authors": [
+        "Server Admin"
+    ],
+    "contact": {
+        "homepage": "https://example.com/"
+    },
+    "license": "MIT",
+    "icon": "assets/novus_items/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.novus.items.NovusItemsMod"
+        ]
+    },
+    "mixins": [
+        "novus_items.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.15.11",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*"
+    }
+}

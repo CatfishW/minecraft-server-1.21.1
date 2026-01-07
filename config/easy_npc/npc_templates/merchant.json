@@ -1,0 +1,88 @@
+{
+  "name": "Village Merchant",
+  "entityType": "easy_npc:villager",
+  "description": "A friendly merchant selling various goods",
+  "skin": {
+    "type": "PLAYER_SKIN",
+    "playerName": "Steve"
+  },
+  "dialog": {
+    "greeting": "Welcome to my shop, traveler! What can I help you with?",
+    "buttons": [
+      {
+        "label": "Trade",
+        "action": "OPEN_TRADING"
+      },
+      {
+        "label": "Tell me about yourself",
+        "action": "SHOW_DIALOG:about"
+      },
+      {
+        "label": "Goodbye",
+        "action": "CLOSE_DIALOG"
+      }
+    ],
+    "additionalDialogs": [
+      {
+        "id": "about",
+        "text": "I've been a merchant in this village for many years. My family has traded here for generations!"
+      }
+    ],
+    "useLLM": false
+  },
+  "trading": {
+    "type": "BASIC",
+    "maxUses": 64,
+    "rewardedXP": 5,
+    "resetsEveryMin": 1440,
+    "offers": [
+      {
+        "buy": {
+          "item": "minecraft:emerald",
+          "count": 1
+        },
+        "sell": {
+          "item": "minecraft:diamond",
+          "count": 1
+        },
+        "maxUses": 64,
+        "xpReward": 1
+      },
+      {
+        "buy": {
+          "item": "minecraft:emerald",
+          "count": 5
+        },
+        "sell": {
+          "item": "minecraft:iron_ingot",
+          "count": 16
+        },
+        "maxUses": 64,
+        "xpReward": 1
+      },
+      {
+        "buy": {
+          "item": "minecraft:wheat",
+          "count": 20
+        },
+        "sell": {
+          "item": "minecraft:emerald",
+          "count": 1
+        },
+        "maxUses": 64,
+        "xpReward": 1
+      }
+    ]
+  },
+  "attributes": {
+    "maxHealth": 20,
+    "movementSpeed": 0.25,
+    "attackDamage": 2.0,
+    "armor": 0.0,
+    "invulnerable": true,
+    "canBePushed": false,
+    "canFloat": true,
+    "canOpenDoors": true,
+    "canClimb": true
+  }
+}

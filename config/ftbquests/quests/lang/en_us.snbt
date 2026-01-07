@@ -1,0 +1,463 @@
+{
+	chapter.5A8D3F2E1B4C6901.title: "Modern Weapons"
+	quest.010BBA6A8F47B641.desc: "Machine pistol capable of 3-round bursts."
+	quest.010BBA6A8F47B641.quest_desc: [
+		"The 93R is a pistol that thinks it's a submachine gun. It features a fold-down foregrip to manage its legendary 3-round burst fire mode."
+		"Dominates in close quarters when you need to dump lead fast."
+	]
+	quest.010BBA6A8F47B641.quest_subtitle: "Burst Fire Pistol"
+	quest.010BBA6A8F47B641.subtitle: "Burst Fire Fury"
+	quest.010BBA6A8F47B641.title: "Beretta 93R"
+	quest.08F6FB31F5BF3AC1.desc: "Ammunition for .308 Winchester."
+	quest.08F6FB31F5BF3AC1.quest_desc: ["....3...0..8"]
+	quest.08F6FB31F5BF3AC1.quest_subtitle: "308"
+	quest.08F6FB31F5BF3AC1.subtitle: "Stockpile"
+	quest.08F6FB31F5BF3AC1.title: ".308 Ammo"
+	quest.0A3786E76BF1C994.quest_desc: ["Practice makes &5perfect!"]
+	quest.0A3786E76BF1C994.quest_subtitle: "Practice makes perfect"
+	quest.0A3786E76BF1C994.title: "Target"
+	quest.0AF145B708E0A103.desc: "High-explosive anti-tank rocket."
+	quest.0AF145B708E0A103.quest_desc: ["A large-caliber rocket capable of significant explosive damage. Handle with extreme care."]
+	quest.0AF145B708E0A103.quest_subtitle: "Handle with Care"
+	quest.0AF145B708E0A103.subtitle: "Problem Solver"
+	quest.0AF145B708E0A103.title: "RPG Rocket"
+	quest.10DED764ED7FEC7A.desc: "Modern striker-fired pistol with high modularity."
+	quest.10DED764ED7FEC7A.quest_desc: [
+		"The P320 (M17/M18) is the current sidearm of the US military. It's modern, reliable, and smooth."
+		"Great for players who want a sleek, high-performing 9mm pistol."
+	]
+	quest.10DED764ED7FEC7A.quest_subtitle: "Modular and Modern"
+	quest.10DED764ED7FEC7A.subtitle: "Modular Excellence"
+	quest.10DED764ED7FEC7A.title: "P320"
+	quest.12B780F3C43957D3.desc: "Belt-fed squad automatic weapon."
+	quest.12B780F3C43957D3.quest_desc: [
+		"The M249 SAW is the gold standard for squad automatic weapons. Belt-fed and ready for high-volume fire, it dominates the field."
+		"Keep the trigger down and watch your enemies dive for cover."
+	]
+	quest.12B780F3C43957D3.quest_subtitle: "The SAW"
+	quest.12B780F3C43957D3.subtitle: "The SAW"
+	quest.12B780F3C43957D3.title: "M249"
+	quest.19D89E16615CDC41.desc: "Ammunition for 5.7x28mm."
+	quest.19D89E16615CDC41.quest_desc: ["{quest.19D89E16615CDC41.desc}"]
+	quest.19D89E16615CDC41.quest_subtitle: "{quest.19D89E16615CDC41.subtitle}"
+	quest.19D89E16615CDC41.subtitle: "Stockpile"
+	quest.19D89E16615CDC41.title: "5.7x28mm Ammo"
+	quest.1C3D02FCA3F575A4.desc: "Proven carbine updated with modern furniture."
+	quest.1C3D02FCA3F575A4.quest_desc: [
+		"The SKS gets a facelift with the Tactical variant. Moving from wooden stocks to modern polymer furniture and rails, it's ready for the 21st century."
+		"Fires the common 7.62x39mm round with better optics support than the original."
+	]
+	quest.1C3D02FCA3F575A4.quest_subtitle: "Modernized Classic"
+	quest.1C3D02FCA3F575A4.subtitle: "Modernized Classic"
+	quest.1C3D02FCA3F575A4.title: "SKS Tactical"
+	quest.1CA58A9ACD74BB96.desc: "Iconic open-bolt submachine gun."
+	quest.1CA58A9ACD74BB96.quest_desc: [
+		"The Uzi is one of the most recognizable SMGs in history. Its compact size and open-bolt design make it a favorite for close protection and rapid response."
+		"Ideal for room clearing where space is at a premium."
+	]
+	quest.1CA58A9ACD74BB96.quest_subtitle: "Spray and Pray"
+	quest.1CA58A9ACD74BB96.subtitle: "Compact Power"
+	quest.1CA58A9ACD74BB96.title: "Uzi"
+	quest.1D87063A704AAA71.desc: "The high-caliber arctic warfare sniper rifle."
+	quest.1D87063A704AAA71.quest_desc: [
+		"Quiet, deadly, and precise. The AWP is one of the most powerful sniper rifles available."
+		"It can take down almost anything with a well-placed shot, but its slow bolt action means you need to make every bullet count."
+	]
+	quest.1D87063A704AAA71.quest_subtitle: "One Shot, One Kill"
+	quest.1D87063A704AAA71.subtitle: "One Shot, One Kill"
+	quest.1D87063A704AAA71.title: "AWP"
+	quest.209527EB6F371208.desc: "Craft your own ammunition here."
+	quest.209527EB6F371208.quest_desc: [
+		"A gun without bullets is just a heavy club. Use the Ammo Workbench to mass-produce various calibers."
+		"Each ammo type requires different resources: brass, lead, and gunpowder are staples. Make sure to stockpile before heading into combat."
+	]
+	quest.209527EB6F371208.quest_subtitle: "Craft upgrades for your bullets"
+	quest.209527EB6F371208.subtitle: "Sustaining the Fight"
+	quest.209527EB6F371208.title: "Ammo Workbench"
+	quest.23B9E6819C10D862.desc: "A dedicated container for all your munitions."
+	quest.23B9E6819C10D862.quest_desc: [
+		"Tired of loose ammo taking up your inventory? The Ammo Box provides a compact solution for storing thousands of rounds."
+		"Keep it in your inventory or place it in your base to keep your gear organized."
+	]
+	quest.23B9E6819C10D862.quest_subtitle: "Store your munitions"
+	quest.23B9E6819C10D862.subtitle: "Compact Logistics"
+	quest.23B9E6819C10D862.title: "Ammo Box"
+	quest.256885CB7255FA09.desc: "Fully automatic shotgun with minimal recoil."
+	quest.256885CB7255FA09.quest_desc: [
+		"The AA-12 is a beast of a shotgun. Capable of fully automatic fire with almost no felt recoil, it can clear whole groups in seconds."
+		"A must-have for the most intense close-quarters situations."
+	]
+	quest.256885CB7255FA09.quest_subtitle: "Automatic Shotgun"
+	quest.256885CB7255FA09.subtitle: "Lead Spreader"
+	quest.256885CB7255FA09.title: "AA-12"
+	quest.2881B20DFF54D3DF.desc: "Start your journey with Timeless and Classics Zero."
+	quest.2881B20DFF54D3DF.quest_desc: [
+		"Welcome to TACZ! This mod adds highly detailed modern firearms with realistic animations, attachments, and mechanics."
+		"In this chapter, you will learn how to craft your first gun, manage your ammunition, and customize your weapons for any situation."
+		"Check your controls: default keys include 'R' to reload, 'N' for night vision (if equipped), and 'Z' to switch fire modes."
+		"Good luck out there!"
+	]
+	quest.2881B20DFF54D3DF.quest_subtitle: "Get ready to lock and load"
+	quest.2881B20DFF54D3DF.subtitle: "Lock and Load"
+	quest.2881B20DFF54D3DF.title: "Welcome to TACZ"
+	quest.2F1190F30C9F1886.desc: ".45 Automatic Colt Pistol ammunition."
+	quest.2F1190F30C9F1886.quest_desc: ["A heavy, slow-moving round known for its incredible stopping power."]
+	quest.2F1190F30C9F1886.quest_subtitle: "{quest.2F1190F30C9F1886.subtitle}"
+	quest.2F1190F30C9F1886.subtitle: "Slow and Heavy"
+	quest.2F1190F30C9F1886.title: ".45 ACP Ammo"
+	quest.34E11DEF3C6C3BE4.desc: "Ammunition for .50 BMG."
+	quest.34E11DEF3C6C3BE4.quest_desc: ["{quest.34E11DEF3C6C3BE4.desc}"]
+	quest.34E11DEF3C6C3BE4.quest_subtitle: "{quest.34E11DEF3C6C3BE4.subtitle}"
+	quest.34E11DEF3C6C3BE4.subtitle: "Stockpile"
+	quest.34E11DEF3C6C3BE4.title: ".50 BMG Ammo"
+	quest.3566A734C4B26AE3.desc: "Magazine-fed light machine gun."
+	quest.3566A734C4B26AE3.quest_desc: [
+		"The RPK is the LMG variant of the AK system. With a longer barrel and larger magazine, it provides sustained suppression for your squad."
+		"Strong and reliable, it shares parts and ammo with the AK series."
+	]
+	quest.3566A734C4B26AE3.quest_subtitle: "Sustained Fire"
+	quest.3566A734C4B26AE3.subtitle: "Sustained Suppression"
+	quest.3566A734C4B26AE3.title: "RPK"
+	quest.3774DAC96EFF2B71.desc: "7.62x39mm intermediate rifle ammunition."
+	quest.3774DAC96EFF2B71.quest_desc: ["The round that powers the AK-47. Known for its punch and reliability through barriers."]
+	quest.3774DAC96EFF2B71.quest_subtitle: "{quest.BC8DA9B43BE8E6D6.subtitle}"
+	quest.3774DAC96EFF2B71.subtitle: "Eastern Might"
+	quest.3774DAC96EFF2B71.title: "7.62x39mm Ammo"
+	quest.37FCA417955BF382.desc: "5.56x45mm NATO rifle ammunition."
+	quest.37FCA417955BF382.quest_desc: ["Standard NATO round. High velocity and flat trajectory make it ideal for varied engagements."]
+	quest.37FCA417955BF382.quest_subtitle: "{quest.37FCA417955BF382.subtitle}"
+	quest.37FCA417955BF382.subtitle: "Western Precision"
+	quest.37FCA417955BF382.title: "5.56x45mm Ammo"
+	quest.38B007A0EA3872AE.desc: "The favorite of special forces worldwide."
+	quest.38B007A0EA3872AE.quest_desc: [
+		"Smooth, controlled, and effective. The MP5 is the benchmark by which all other submachine guns are measured."
+		"With low recoil and a high cyclic rate, it dominates in close-quarters combat."
+	]
+	quest.38B007A0EA3872AE.quest_subtitle: "The Standard SMG"
+	quest.38B007A0EA3872AE.subtitle: "Precision SMG"
+	quest.38B007A0EA3872AE.title: "MP5"
+	quest.3B205E3D1BC0094C.desc: "Modern modular rifle chambered in 5.56mm."
+	quest.3B205E3D1BC0094C.quest_desc: [
+		"The SCAR-L is built for Special Operations. Its unique aesthetics are matched by its stable performance and ease of handling."
+		"Excellent at medium ranges with a variety of optic options."
+	]
+	quest.3B205E3D1BC0094C.quest_subtitle: "Special Forces Standard"
+	quest.3B205E3D1BC0094C.subtitle: "SOF Combat Assault Rifle"
+	quest.3B205E3D1BC0094C.title: "SCAR-L"
+	quest.3B3FF5F435687929.desc: "German carbine with integrated optics."
+	quest.3B3FF5F435687929.quest_desc: ["German Classic"]
+	quest.3B3FF5F435687929.quest_subtitle: "Another German Classic"
+	quest.3B3FF5F435687929.subtitle: "Assault Rifle"
+	quest.3B3FF5F435687929.title: "G36K"
+	quest.3BA7D7A3E8793285.desc: "Ammunition for .338 Lapua."
+	quest.3BA7D7A3E8793285.quest_desc: ["{quest.3BA7D7A3E8793285.desc}"]
+	quest.3BA7D7A3E8793285.quest_subtitle: "{quest.3BA7D7A3E8793285.subtitle}"
+	quest.3BA7D7A3E8793285.subtitle: "Stockpile"
+	quest.3BA7D7A3E8793285.title: ".338 Lapua Ammo"
+	quest.3C9E27419A2D03E0.desc: "7.62x51mm NATO full-power rifle ammunition."
+	quest.3C9E27419A2D03E0.quest_desc: ["A full-power rifle round used in battle rifles and sniper systems for long-distance efficacy."]
+	quest.3C9E27419A2D03E0.subtitle: "Precision Power"
+	quest.421DE3C01BC24B34.desc: "Fine-tune your weapons with scopes and grips."
+	quest.421DE3C01BC24B34.quest_desc: [
+		"Modern combat requires adaptability. The Attachment Workbench allows you to mount scopes, lasers, grips, and muzzle devices onto your weapons."
+		"Customizing your gun can significantly reduce recoil, improve hip-fire accuracy, or provide better zoom for distant targets."
+	]
+	quest.421DE3C01BC24B34.quest_subtitle: "Modify your weapons"
+	quest.421DE3C01BC24B34.subtitle: "Tactical Customization"
+	quest.421DE3C01BC24B34.title: "Attachment Workbench"
+	quest.4590A994D98958FD.desc: "Devastating .50 caliber semi-auto power."
+	quest.4590A994D98958FD.quest_desc: [
+		"The M107 isn't just a sniper rifle; it's an anti-materiel powerhouse. Firing .50 BMG rounds, it can punch through almost anything."
+		"Use it to eliminate the toughest targets from safe distances."
+	]
+	quest.4590A994D98958FD.quest_subtitle: "Anti-Materiel Rifle"
+	quest.4590A994D98958FD.subtitle: "Anti-Materiel"
+	quest.4590A994D98958FD.title: "M107"
+	quest.48859012C0C192E2.desc: "A classic .45 ACP sidearm with a century of service."
+	quest.48859012C0C192E2.quest_desc: [
+		"Two World Wars and still going strong. The M1911 is a legend in the world of handguns."
+		"It fires the hard-hitting .45 ACP round, offering great stopping power in a slim, single-stack frame."
+	]
+	quest.48859012C0C192E2.quest_subtitle: "A Classic .45"
+	quest.48859012C0C192E2.subtitle: "The Century King"
+	quest.48859012C0C192E2.title: "M1911"
+	quest.488B4B3D7E19DCC9.desc: "High-end assault rifle with a piston gas system."
+	quest.488B4B3D7E19DCC9.quest_desc: [
+		"Reliability meets precision. The HK416 is favored by top-tier special forces for its ability to function in extreme conditions."
+		"It offers lower recoil and higher accuracy compared to many other rifles in its class."
+	]
+	quest.488B4B3D7E19DCC9.quest_subtitle: "German Precision"
+	quest.488B4B3D7E19DCC9.subtitle: "German Precision"
+	quest.488B4B3D7E19DCC9.title: "HK416"
+	quest.4B266B3F49117DB5.desc: "The quintessential assault rifle."
+	quest.4B266B3F49117DB5.quest_desc: [
+		"Rugged, powerful, and iconic. The AK-47 delivers heavy 7.62mm rounds with unmatched reliability."
+		"While it has more kick than its western counterparts, its stopping power makes it a favorite for many operators."
+	]
+	quest.4B266B3F49117DB5.quest_subtitle: "Reliable and Robust"
+	quest.4B266B3F49117DB5.subtitle: "Steel and Wood"
+	quest.4B266B3F49117DB5.title: "AK-47"
+	quest.4BC82406469C37CE.desc: "Powerful designated marksman rifle."
+	quest.4BC82406469C37CE.quest_desc: [
+		"The Mk14 EBR is a modernized version of the classic M14. It bridge the gap between assault rifles and sniper rifles."
+		"With a high-power scope, it can dominate any medium-to-long range engagement."
+	]
+	quest.4BC82406469C37CE.quest_subtitle: "Designated Marksman Rifle"
+	quest.4BC82406469C37CE.subtitle: "Enhanced Battle Rifle"
+	quest.4BC82406469C37CE.title: "MK14"
+	quest.4E4D0E770FEB6046.quest_desc: ["{quest.998D46D9013B7A10.desc}"]
+	quest.4E4D0E770FEB6046.quest_subtitle: "{quest.998D46D9013B7A10.subtitle}"
+	quest.4E4D0E770FEB6046.title: "7.62x54mm Ammo"
+	quest.4E541219CD8146DC.desc: "Reliable bolt-action rifle for long-range hunting."
+	quest.4E541219CD8146DC.quest_desc: [
+		"The Remington 700 is the platform upon which countless sniper rifles are built. It's simple, accurate, and incredibly reliable."
+		"A perfect entry-level sniper rifle for those learning the art of the long shot."
+	]
+	quest.4E541219CD8146DC.quest_subtitle: "Precision Instrument"
+	quest.4E541219CD8146DC.subtitle: "Precision Target"
+	quest.4E541219CD8146DC.title: "M700"
+	quest.4F254CFA4C483109.quest_desc: ["&4Kill &fOne Enemy Soldier"]
+	quest.4F254CFA4C483109.quest_subtitle: "First Kill"
+	quest.4F254CFA4C483109.title: "First Blood"
+	quest.5209B7D526B63AF5.desc: "The standard-issue carbine of the West."
+	quest.5209B7D526B63AF5.quest_desc: [
+		"Fast-firing and highly customizable. The M4A1 is a versatile carbine that excels in almost any engagement."
+		"Its modular nature means it can be adapted for close-quarters battle or medium-range precision with the right attachments."
+	]
+	quest.5209B7D526B63AF5.quest_subtitle: "Versatile Carbine"
+	quest.5209B7D526B63AF5.subtitle: "Platform Versatility"
+	quest.5209B7D526B63AF5.title: "M4A1"
+	quest.530737F279ED5AA1.desc: "Iconic anti-tank rocket launcher."
+	quest.530737F279ED5AA1.quest_desc: [
+		"When small arms aren't enough, reach for the RPG-7. Capable of dealing massive area damage, it's the ultimate problem solver."
+		"Watch for the backblast!"
+	]
+	quest.530737F279ED5AA1.quest_subtitle: "Explosive Solution"
+	quest.530737F279ED5AA1.subtitle: "Against All Odds"
+	quest.530737F279ED5AA1.title: "RPG-7"
+	quest.546BD6A6D8DD0338.desc: "Classic pump-action shotgun."
+	quest.546BD6A6D8DD0338.quest_desc: [
+		"Simple, robust, and devastatingly effective at close range. The M870 is the quintessential pump-action shotgun."
+		"A single blast is often enough to end a fight."
+	]
+	quest.546BD6A6D8DD0338.quest_subtitle: "Pump Action"
+	quest.546BD6A6D8DD0338.subtitle: "The Door Breaker"
+	quest.546BD6A6D8DD0338.title: "M870"
+	quest.5696BC8BA37D39B4.quest_desc: ["{quest.D52A5DA92C1D642A.desc}"]
+	quest.5696BC8BA37D39B4.quest_subtitle: "{quest.D52A5DA92C1D642A.subtitle}"
+	quest.5696BC8BA37D39B4.title: "5.8x42mm Ammo"
+	quest.587A2D57970953FE.desc: "Standard-issue Chinese bullpup assault rifle."
+	quest.587A2D57970953FE.quest_desc: [
+		"The QBZ-95 is the backbone of the PLA. Its bullpup design makes it incredibly compact while firing the unique 5.8mm round."
+		"Reliable and easy to shoulder, it's a versatile choice for any encounter."
+	]
+	quest.587A2D57970953FE.quest_subtitle: "Modern Service Rifle"
+	quest.587A2D57970953FE.subtitle: "Crouching Tiger"
+	quest.587A2D57970953FE.title: "QBZ-95"
+	quest.587EA611ED9E83D8.quest_desc: ["{quest.958463B0D68D1E6A.desc}"]
+	quest.587EA611ED9E83D8.quest_subtitle: "{quest.958463B0D68D1E6A.subtitle}"
+	quest.587EA611ED9E83D8.title: ".50 AE Ammo"
+	quest.6049BEE3E33E65A3.desc: "A massive pistol firing the powerful .50 AE round."
+	quest.6049BEE3E33E65A3.quest_desc: [
+		"The Desert Eagle is less of a pistol and more of a statement. It kicks hard, but it hits even harder."
+		"A headshot from this monster is game over for almost any target."
+	]
+	quest.6049BEE3E33E65A3.quest_subtitle: "Hand Cannon"
+	quest.6049BEE3E33E65A3.subtitle: "Hand Cannon"
+	quest.6049BEE3E33E65A3.title: "Desert Eagle"
+	quest.649AE536C33F1C34.desc: "Heavy hitting 7.62mm variant of the SCAR system."
+	quest.649AE536C33F1C34.quest_desc: [
+		"When 5.56mm isn't enough, bring the SCAR-H. It delivers heavy 7.62x51mm rounds that drop targets fast."
+		"Higher recoil requires a steady hand, but the damage output is worth it."
+	]
+	quest.649AE536C33F1C34.quest_subtitle: "Heavy Hitter"
+	quest.649AE536C33F1C34.subtitle: "The Battle Rifle"
+	quest.649AE536C33F1C34.title: "SCAR-H"
+	quest.6510AC1A864D5250.desc: "9x19mm Parabellum ammunition."
+	quest.6510AC1A864D5250.quest_desc: ["The most common handgun and SMG caliber in the world. Accurate and reliable with low recoil."]
+	quest.6510AC1A864D5250.quest_subtitle: "Stock up on 9mm"
+	quest.6510AC1A864D5250.subtitle: "The Universal Standard"
+	quest.6510AC1A864D5250.title: "9mm Ammo"
+	quest.652077FF4B9632B6.desc: "Bullpup PDW with a 50-round high-capacity magazine."
+	quest.652077FF4B9632B6.quest_desc: [
+		"Designed for rear-echelon troops but adopted by special forces globally, the P90 features a unique 50-round magazine and armor-piercing 5.7mm rounds."
+		"High capacity and low recoil make it perfect for mobile combat."
+	]
+	quest.652077FF4B9632B6.quest_subtitle: "Rush B!"
+	quest.652077FF4B9632B6.subtitle: "The PDW King"
+	quest.652077FF4B9632B6.title: "P90"
+	quest.6609899C2DFBEA2A.desc: "Modernized classic Chinese rifle."
+	quest.6609899C2DFBEA2A.quest_desc: [
+		"The Type 81 is a legendary rifle known for its exceptional reliability and accuracy. It bridges the gap between the AK and SKS platforms."
+		"A true workhorse for any operator who values accuracy over raw fire rate."
+	]
+	quest.6609899C2DFBEA2A.quest_subtitle: "The Veteran"
+	quest.6609899C2DFBEA2A.subtitle: "The Veteran's Choice"
+	quest.6609899C2DFBEA2A.title: "Type 81"
+	quest.66F239436E212311.desc: "Unique bullpup rifle with integrated optics capability."
+	quest.66F239436E212311.quest_desc: [
+		"The AUG's bullpup design puts the action behind the trigger, keeping the weapon compact while maintaining a full-length barrel."
+		"It handles beautifully and offers a unique firing sound."
+	]
+	quest.66F239436E212311.quest_subtitle: "Bullpup Design"
+	quest.66F239436E212311.subtitle: "Austrian Innovation"
+	quest.66F239436E212311.title: "AUG"
+	quest.67A88244048C7346.desc: "Balanced and ergonomic semi-auto pistol."
+	quest.67A88244048C7346.quest_desc: [
+		"The CZ-75 is famous for its ergonomics and high capacity. It's a favorite among competitive shooters and police forces alike."
+		"In TACZ, it offers a very stable shooting platform for a handgun."
+	]
+	quest.67A88244048C7346.quest_subtitle: "Czech Engineering"
+	quest.67A88244048C7346.subtitle: "Czech Masterpiece"
+	quest.67A88244048C7346.title: "CZ-75"
+	quest.68E13544F5C1A090.desc: "Rapid-firing semi-automatic combat shotgun."
+	quest.68E13544F5C1A090.quest_desc: [
+		"The M1014 (Benelli M4) brings semi-automatic fire to the shotgun platform. It allows for rapid follow-up shots that can clear a room in seconds."
+		"Reliable and powerful, it's a top-tier choice for shotgun enthusiasts."
+	]
+	quest.68E13544F5C1A090.quest_subtitle: "Semi-Auto Power"
+	quest.68E13544F5C1A090.subtitle: "Semi-Auto Fury"
+	quest.68E13544F5C1A090.title: "M1014"
+	quest.6E2BD9EADB85FD64.desc: "Show off your collection."
+	quest.6E2BD9EADB85FD64.quest_desc: ["{quest.6E2BD9EADB85FD64.desc}"]
+	quest.6E2BD9EADB85FD64.quest_subtitle: "Show off your collection"
+	quest.6E2BD9EADB85FD64.subtitle: "Showcase"
+	quest.6E2BD9EADB85FD64.title: "Statue"
+	quest.6F150DE414303F5C.desc: "The core workbench for all your firearm needs."
+	quest.6F150DE414303F5C.quest_desc: [
+		"The Gun Smith Table is where everything begins. Most modern firearms and their essential components are crafted here."
+		"Right-click to open its interface and see the list of available weapons. You'll need specific materials like steel and high-end components to build your arsenal."
+	]
+	quest.6F150DE414303F5C.quest_subtitle: "The foundation of your arsenal"
+	quest.6F150DE414303F5C.subtitle: "Foundation of Firepower"
+	quest.6F150DE414303F5C.title: "Gun Smith Table"
+	quest.720B4FE715234A9E.desc: "A reliable polymer-framed 9mm semi-auto."
+	quest.720B4FE715234A9E.quest_desc: [
+		"The Glock 17 is iconic for its reliability and simplicity. In TACZ, it serves as a fantastic starter pistol with low recoil and a generous magazine capacity."
+		"Perfect for self-defense or as a reliable backup when your primary fails."
+	]
+	quest.720B4FE715234A9E.quest_subtitle: "Standard Issue Pistol"
+	quest.720B4FE715234A9E.subtitle: "The Duty Pistol"
+	quest.720B4FE715234A9E.title: "Glock 17"
+	quest.7327D9070BF647D2.desc: "Classic burst-fire service rifle."
+	quest.7327D9070BF647D2.quest_desc: ["Burst Shot!"]
+	quest.7327D9070BF647D2.quest_subtitle: "Burst Fire Rifle"
+	quest.7327D9070BF647D2.subtitle: "Assault Rifle"
+	quest.7327D9070BF647D2.title: "M16A4"
+	quest.759C84F7B83A0812.desc: "Multi-barrel heavy machine gun with insane fire rate."
+	quest.759C84F7B83A0812.quest_desc: [
+		"The Minigun doesn't just shoot; it deletes things. With a cyclic rate in the thousands, it creates a vertical wall of lead."
+		"Required heavy ammo and a moment to spin up, but once it starts, nothing stands in your way."
+	]
+	quest.759C84F7B83A0812.quest_subtitle: "Heavy Weapons Guy"
+	quest.759C84F7B83A0812.subtitle: "Rain of Lead"
+	quest.759C84F7B83A0812.title: "Minigun"
+	quest.76411AB110514716.desc: "Iconic combat shotgun with a folding stock."
+	quest.76411AB110514716.quest_desc: [
+		"The SPAS-12 is famous for its semi-auto and pump-action capabilities. In TACZ, it's a hard-hitting choice with a terrifying presence."
+		"Clear buildings with confidence using this legendary tool."
+	]
+	quest.76411AB110514716.quest_subtitle: "Iconic Shotgun"
+	quest.76411AB110514716.subtitle: "Dual Mode Power"
+	quest.76411AB110514716.title: "SPAS-12"
+	quest.7977683C74AF4951.desc: "12 Gauge shotgun shells."
+	quest.7977683C74AF4951.quest_desc: ["Massive close-range damage. Each shell contains multiple lead pellets for maximum coverage."]
+	quest.7977683C74AF4951.quest_subtitle: "shot~gun~ammo"
+	quest.7977683C74AF4951.subtitle: "Buckshot Party"
+	quest.7977683C74AF4951.title: "12 Gauge Ammo"
+	quest.7B5471AEA101FA53.quest_desc: ["{quest.CE9B88C0A29F2043.desc}"]
+	quest.7B5471AEA101FA53.quest_subtitle: "Universal Machine Pistol"
+	quest.7B5471AEA101FA53.title: "UMP45"
+	quest.7B9AE5CCE4CA2599.desc: "Custom high-caliber handgun."
+	quest.7B9AE5CCE4CA2599.quest_desc: [
+		"A masterpiece of custom gunsmithing, combining elegance with raw .50 caliber power."
+		"Slow rate of fire, but every single shot is a potential killing blow."
+	]
+	quest.7B9AE5CCE4CA2599.quest_subtitle: "The Ultimate Handgun"
+	quest.7B9AE5CCE4CA2599.subtitle: "The Ultimate Sidearm"
+	quest.7B9AE5CCE4CA2599.title: "Timeless 50"
+	quest.7B9E513A78438F7A.desc: "Submachine gun with a unique recoil mitigation system."
+	quest.7B9E513A78438F7A.quest_desc: [
+		"The Vector is a marvel of engineering. Its Super V system directs recoil downward, allowing for incredible control even at high fire rates."
+		"In close quarters, this 1200 RPM monster shreds anything in its path."
+	]
+	quest.7B9E513A78438F7A.quest_subtitle: "High Rate of Fire"
+	quest.7B9E513A78438F7A.subtitle: "Hypervelocity"
+	quest.7B9E513A78438F7A.title: "Vector .45"
+	quest.80A7BCED3419451E.desc: "Legendary American service pistol."
+	quest.80A7BCED3419451E.subtitle: "Sidearm"
+	quest.80A7BCED3419451E.title: "M1911"
+	quest.8B916EF21E4B0B36.desc: "Store your ammo."
+	quest.8B916EF21E4B0B36.subtitle: "Stockpile"
+	quest.8B916EF21E4B0B36.title: "Ammo Box"
+	quest.8FDCD1707E494B57.desc: "Powerful hand cannon."
+	quest.8FDCD1707E494B57.subtitle: "Sidearm"
+	quest.8FDCD1707E494B57.title: "Desert Eagle"
+	quest.918CC36C2DC1B3D1.desc: "High-precision sniper rifle."
+	quest.918CC36C2DC1B3D1.subtitle: "Sniper Rifle"
+	quest.918CC36C2DC1B3D1.title: "AI AWP"
+	quest.954ABF353EBC4312.desc: "High capacity bullpup PDW."
+	quest.954ABF353EBC4312.subtitle: "Submachine Gun"
+	quest.954ABF353EBC4312.title: "P90"
+	quest.958463B0D68D1E6A.desc: "Ammunition for .50 AE."
+	quest.958463B0D68D1E6A.subtitle: "Stockpile"
+	quest.958463B0D68D1E6A.title: ".50 AE Ammo"
+	quest.998D46D9013B7A10.desc: "Ammunition for 7.62x54mmR."
+	quest.998D46D9013B7A10.subtitle: "Stockpile"
+	quest.998D46D9013B7A10.title: "7.62x54mmR Ammo"
+	quest.ADCA184E3F777099.desc: "Semi-automatic combat shotgun."
+	quest.ADCA184E3F777099.subtitle: "Shotgun"
+	quest.ADCA184E3F777099.title: "Benelli M1014"
+	quest.AF51EB08EABBD4D4.desc: "TACZ adds high-quality modern guns, attachments, and tactical mechanics. This chapter will guide you through crafting and using them."
+	quest.AF51EB08EABBD4D4.subtitle: "Open your Arsenal"
+	quest.AF51EB08EABBD4D4.title: "Welcome to TACZ"
+	quest.B0641D13D50017B1.desc: "Classic Austrian polymer-framed pistol."
+	quest.B0641D13D50017B1.subtitle: "Sidearm"
+	quest.B0641D13D50017B1.title: "Glock 17"
+	quest.B32EC01E9B2087DF.desc: "Austrian bullpup assault rifle."
+	quest.B32EC01E9B2087DF.subtitle: "Assault Rifle"
+	quest.B32EC01E9B2087DF.title: "AUG"
+	quest.B6B11E7C0F0A3192.desc: "Enhanced Battle Rifle."
+	quest.B6B11E7C0F0A3192.subtitle: "Sniper Rifle"
+	quest.B6B11E7C0F0A3192.title: "Mk14 EBR"
+	quest.B75DD4B37D4D7660.desc: "Popular bolt-action rifle."
+	quest.B75DD4B37D4D7660.subtitle: "Sniper Rifle"
+	quest.B75DD4B37D4D7660.title: "Remington 700"
+	quest.BB3BAA1BE9775893.desc: "The standard for submachine guns."
+	quest.BB3BAA1BE9775893.subtitle: "Submachine Gun"
+	quest.BB3BAA1BE9775893.title: "MP5A5"
+	quest.BC8DA9B43BE8E6D6.desc: "Ammunition for 7.62x39mm."
+	quest.BC8DA9B43BE8E6D6.subtitle: "Stockpile"
+	quest.BC8DA9B43BE8E6D6.title: "7.62x39mm Ammo"
+	quest.C6A27E0C50256E5F.desc: "Iconic compact submachine gun."
+	quest.C6A27E0C50256E5F.subtitle: "Submachine Gun"
+	quest.C6A27E0C50256E5F.title: "UZI"
+	quest.C7D69FFB56540442.desc: "Fully automatic shotgun."
+	quest.C7D69FFB56540442.subtitle: "Shotgun"
+	quest.C7D69FFB56540442.title: "AA-12"
+	quest.CE9B88C0A29F2043.desc: "Slow but hard-hitting SMG."
+	quest.CE9B88C0A29F2043.subtitle: "Submachine Gun"
+	quest.CE9B88C0A29F2043.title: "UMP-45"
+	quest.D52A5DA92C1D642A.desc: "Ammunition for 5.8x42mm."
+	quest.D52A5DA92C1D642A.subtitle: "Stockpile"
+	quest.D52A5DA92C1D642A.title: "5.8x42mm Ammo"
+	quest.D7E827B0322B4904.desc: "Modernized classic carbine."
+	quest.D7E827B0322B4904.subtitle: "Sniper Rifle"
+	quest.D7E827B0322B4904.title: "SKS Tactical"
+	quest.D8193DA3521636E3.desc: "Versatile American carbine."
+	quest.D8193DA3521636E3.subtitle: "Assault Rifle"
+	quest.D8193DA3521636E3.title: "M4A1"
+	quest.E0834BFCB2C766FC.desc: "Practice your aim."
+	quest.E0834BFCB2C766FC.subtitle: "Practice Makes Perfect"
+	quest.E0834BFCB2C766FC.title: "Target"
+	quest.E222DFD65E06794E.desc: "Modular service pistol."
+	quest.E222DFD65E06794E.subtitle: "Sidearm"
+	quest.E222DFD65E06794E.title: "P320"
+	quest.E8E803DCC48E76AC.desc: "Core crafting station for guns."
+	quest.E8E803DCC48E76AC.subtitle: "The Beginning"
+	quest.E8E803DCC48E76AC.title: "Gunsmith Table"
+	quest.F697D4D7DA52A8ED.desc: "Reliable and powerful assault rifle."
+	quest.F697D4D7DA52A8ED.subtitle: "Assault Rifle"
+	quest.F697D4D7DA52A8ED.title: "AK-47"
+	task.3E3919F0008D8C0E.title: "Welcome to TACZ"
+}

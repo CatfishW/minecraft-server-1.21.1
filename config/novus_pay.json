@@ -1,0 +1,5 @@
+{
+  "internalApiUrl": "http://localhost:8000",
+  "apiKey": "novus-secure-setup-key-123",
+  "exchangeRate": 10.0
+}

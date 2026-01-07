@@ -1,0 +1,55 @@
+{
+  "name": "Village Guard",
+  "entityType": "easy_npc:iron_golem",
+  "description": "A guard that protects the village from hostile mobs",
+  "skin": {
+    "type": "DEFAULT"
+  },
+  "dialog": {
+    "greeting": "Halt! State your business in our village.",
+    "buttons": [
+      {
+        "label": "I'm just passing through",
+        "action": "SHOW_DIALOG:pass"
+      },
+      {
+        "label": "I need protection",
+        "action": "SHOW_DIALOG:protect"
+      },
+      {
+        "label": "Goodbye",
+        "action": "CLOSE_DIALOG"
+      }
+    ],
+    "additionalDialogs": [
+      {
+        "id": "pass",
+        "text": "Very well, move along. Stay out of trouble."
+      },
+      {
+        "id": "protect",
+        "text": "I guard this village day and night. You're safe here."
+      }
+    ],
+    "useLLM": false
+  },
+  "attributes": {
+    "maxHealth": 100,
+    "movementSpeed": 0.2,
+    "attackDamage": 10.0,
+    "armor": 0.0,
+    "invulnerable": false,
+    "canBePushed": true,
+    "canFloat": true,
+    "canOpenDoors": true,
+    "canClimb": true
+  },
+  "objectives": {
+    "attackHostileMobs": true,
+    "attackPlayers": false,
+    "followOwner": false,
+    "returnToSpawn": true,
+    "followRange": 32,
+    "wanderRange": 0
+  }
+}

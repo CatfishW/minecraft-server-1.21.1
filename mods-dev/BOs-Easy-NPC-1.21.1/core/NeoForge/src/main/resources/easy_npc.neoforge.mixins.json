@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.markusbordihn.easynpc.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "easy_npc.refmap.json",
+  "client": [
+    "model.EasyNPCCatModelMixin",
+    "model.EasyNPCHumanoidModelMixin",
+    "model.EasyNPCPlayerModelMixin",
+    "model.EasyNPCSpiderModelMixin",
+    "model.EasyNPCVillagerModelMixin",
+    "model.EasyNPCWolfModelMixin",
+    "renderer.CatCollarLayerMixin",
+    "renderer.DrownedOuterLayerMixin",
+    "renderer.EasyNPCEntityRendererMixin",
+    "renderer.EasyNPCLivingEntityRendererMixin",
+    "renderer.HumanoidArmorLayerMixin",
+    "renderer.SkeletonClothingLayerMixin",
+    "renderer.VillagerProfessionLayerMixin"
+  ],
+  "mixins": [
+    "entity.CreeperMixin", "entity.EndermanMixin", "entity.FoxMixin", "entity.RaiderMixin",
+    "entity.VillagerMixin", "entity.WitchMixin", "menu.MerchantMenuMixin",
+    "target.LivingEntityTargetingMixin", "target.MobTargetingMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

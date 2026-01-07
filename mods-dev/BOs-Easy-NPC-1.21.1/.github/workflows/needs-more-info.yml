@@ -1,0 +1,43 @@
+name: Add comment to "needs more info" issues
+
+on:
+  issues:
+    types:
+      - labeled
+
+jobs:
+  add-comment:
+    if: github.event.label.name == 'needs more info'
+    runs-on: ubuntu-latest
+
+    permissions:
+      issues: write
+
+    steps:
+      - name: Add comment
+        run: gh issue comment "$NUMBER" --body "$BODY"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          BODY: >
+            **Thank you for reporting this issue!** 🎉<br>
+            <br>
+            To help me better understand and resolve the problem, I need some additional information from you.<br>
+            <br>
+            🛠️ **To speed up the diagnosis**, please provide the following files if possible:<br>
+              - `logs/debug.log`<br>
+              - `logs/latest.log`<br>
+              - `crash-reports/crash-...txt`<br>
+            <br>
+            These logs contain essential details that will help me identify the problem and offer more accurate assistance.<br>
+            You can upload the logs to https://gist.github.com/ or https://mclo.gs/ and share the link here.<br>
+            <br>
+            🔍 **If possible, please enable debug mode** by running `/easy_npc debug log true` and share the detailed information found in the logs.<br>
+            For more guidance, check out the [debugging guide](https://github.com/MarkusBordihn/BOs-Easy-NPC/wiki/Debugging).<br>
+            <br>
+            Additionally, please fill out the issue template as thoroughly as possible to help me reproduce and fix the error more efficiently.<br>
+            <br>
+            ⚠️ **Note:** Issues lacking sufficient information may be deprioritized, and stale issues could be closed.<br>
+            <br>
+            Thank you for your cooperation! 🙏<br>

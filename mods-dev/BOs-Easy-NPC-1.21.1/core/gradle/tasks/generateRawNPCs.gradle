@@ -1,0 +1,308 @@
+task generateRawNPCs {
+  group = "build"
+  def rawNPCFolder = file("$projectDir/../Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw")
+  def templateFile = file("$rawNPCFolder/NPCRawTemplate.java")
+  def npcClasses = [
+      [
+          id       : "allay_raw",
+          class    : "net.minecraft.world.entity.animal.allay.Allay",
+          className: "AllayRaw",
+          baseClass: "Allay",
+          modelType: "ALLAY",
+          variant  : "AllaySkinVariant.ALLAY"
+      ],
+      [
+          id       : "bogged_raw",
+          class    : "net.minecraft.world.entity.monster.Bogged",
+          className: "BoggedRaw",
+          baseClass: "Bogged",
+          modelType: "ZOMBIE",
+          variant  : "SkeletonSkinVariant.BOGGED"
+      ],
+      [
+          id       : "cat_raw",
+          class    : "net.minecraft.world.entity.animal.Cat",
+          className: "CatRaw",
+          baseClass: "Cat",
+          modelType: "FELINE",
+          variant  : "CatSkinVariant.BLACK"
+      ],
+      [
+          id       : "creeper_raw",
+          class    : "net.minecraft.world.entity.monster.Creeper",
+          className: "CreeperRaw",
+          baseClass: "Creeper",
+          modelType: "CREEPER",
+          variant  : "CreeperSkinVariant.CREEPER"
+      ],
+      [
+          id       : "chicken_raw",
+          class    : "net.minecraft.world.entity.animal.Chicken",
+          className: "ChickenRaw",
+          baseClass: "Chicken",
+          modelType: "AVIAN",
+          variant  : "ChickenSkinVariant.WHITE"
+      ],
+      [
+          id       : "drowned_raw",
+          class    : "net.minecraft.world.entity.monster.Drowned",
+          className: "DrownedRaw",
+          baseClass: "Drowned",
+          modelType: "ZOMBIE",
+          variant  : "ZombieSkinVariant.DROWNED"
+      ],
+      [
+          id       : "enderman_raw",
+          class    : "net.minecraft.world.entity.monster.EnderMan",
+          className: "EnderManRaw",
+          baseClass: "EnderMan",
+          modelType: "HUMANOID",
+          variant  : "EnderManSkinVariant.ENDERMAN"
+      ],
+      [
+          id       : "evoker_raw",
+          class    : "net.minecraft.world.entity.monster.Evoker",
+          className: "EvokerRaw",
+          baseClass: "Evoker",
+          modelType: "ILLAGER",
+          variant  : "IllagerSkinVariant.EVOKER"
+      ],
+      [
+          id       : "fox_raw",
+          class    : "net.minecraft.world.entity.animal.Fox",
+          className: "FoxRaw",
+          baseClass: "Fox",
+          modelType: "CANINE",
+          variant  : "FoxSkinVariant.RED"
+      ],
+      [
+          id       : "horse_raw",
+          class    : "net.minecraft.world.entity.animal.horse.Horse",
+          className: "HorseRaw",
+          baseClass: "Horse",
+          modelType: "EQUINE",
+          variant  : "HorseSkinVariant.WHITE"
+      ],
+      [
+          id       : "iron_golem_raw",
+          class    : "net.minecraft.world.entity.animal.IronGolem",
+          className: "IronGolemRaw",
+          baseClass: "IronGolem",
+          modelType: "GOLEM",
+          variant  : "IronGolemSkinVariant.IRON_GOLEM"
+      ],
+      [
+          id       : "illusioner_raw",
+          class    : "net.minecraft.world.entity.monster.Illusioner",
+          className: "IllusionerRaw",
+          baseClass: "Illusioner",
+          modelType: "ILLAGER",
+          variant  : "IllagerSkinVariant.ILLUSIONER"
+      ],
+      [
+          id       : "pathfinder_mob_raw",
+          class    : "net.minecraft.world.entity.PathfinderMob",
+          className: "PathfinderMobRaw",
+          baseClass: "PathfinderMob",
+          skinModel: "HUMANOID",
+          modelType: "HUMANOID",
+          variant  : "HumanoidSkinVariant.STEVE"
+      ],
+      [
+          id       : "humanoid_raw",
+          class    : "net.minecraft.world.entity.PathfinderMob",
+          className: "HumanoidRaw",
+          baseClass: "PathfinderMob",
+          skinModel: "HUMANOID",
+          modelType: "HUMANOID",
+          variant  : "HumanoidSkinVariant.STEVE"
+      ],
+      [
+          id       : "humanoid_slim_raw",
+          class    : "net.minecraft.world.entity.PathfinderMob",
+          className: "HumanoidSlimRaw",
+          baseClass: "PathfinderMob",
+          skinModel: "HUMANOID_SLIM",
+          modelType: "HUMANOID",
+          variant  : "HumanoidSlimSkinVariant.ALEX"
+      ],
+      [
+          id       : "pillager_raw",
+          class    : "net.minecraft.world.entity.monster.Pillager",
+          className: "PillagerRaw",
+          baseClass: "Pillager",
+          modelType: "ILLAGER",
+          variant  : "IllagerSkinVariant.PILLAGER"
+      ],
+      [
+          id       : "pig_raw",
+          class    : "net.minecraft.world.entity.animal.Pig",
+          className: "PigRaw",
+          baseClass: "Pig",
+          modelType: "QUADRUPED",
+          variant  : "PigSkinVariant.PIG"
+      ],
+      [
+          id       : "piglin_raw",
+          class    : "net.minecraft.world.entity.monster.piglin.Piglin",
+          className: "PiglinRaw",
+          baseClass: "Piglin",
+          modelType: "HUMANOID",
+          variant  : "PiglinSkinVariant.PIGLIN"
+      ],
+      [
+          id       : "piglin_brute_raw",
+          class    : "net.minecraft.world.entity.monster.piglin.PiglinBrute",
+          className: "PiglinBruteRaw",
+          baseClass: "PiglinBrute",
+          modelType: "HUMANOID",
+          variant  : "PiglinSkinVariant.PIGLIN_BRUTE"
+      ],
+      [
+          id       : "zombified_piglin_raw",
+          class    : "net.minecraft.world.entity.monster.ZombifiedPiglin",
+          className: "ZombifiedPiglinRaw",
+          baseClass: "ZombifiedPiglin",
+          modelType: "HUMANOID",
+          variant  : "PiglinSkinVariant.ZOMBIFIED_PIGLIN"
+      ],
+      [
+          id       : "skeleton_raw",
+          class    : "net.minecraft.world.entity.monster.Skeleton",
+          className: "SkeletonRaw",
+          baseClass: "Skeleton",
+          modelType: "HUMANOID",
+          variant  : "SkeletonSkinVariant.SKELETON"
+      ],
+      [
+          id       : "stray_raw",
+          class    : "net.minecraft.world.entity.monster.Stray",
+          className: "StrayRaw",
+          baseClass: "Stray",
+          skinModel: "STRAY",
+          modelType: "ZOMBIE",
+          variant  : "SkeletonSkinVariant.STRAY"
+      ],
+      [
+          id       : "wither_skeleton_raw",
+          class    : "net.minecraft.world.entity.monster.WitherSkeleton",
+          className: "WitherSkeletonRaw",
+          baseClass: "WitherSkeleton",
+          skinModel: "WITHER_SKELETON",
+          modelType: "ZOMBIE",
+          variant  : "SkeletonSkinVariant.WITHER_SKELETON"
+      ],
+      [
+          id       : "spider_raw",
+          class    : "net.minecraft.world.entity.monster.Spider",
+          className: "SpiderRaw",
+          baseClass: "Spider",
+          skinModel: "SPIDER",
+          modelType: "SPIDER",
+          variant  : "SpiderSkinVariant.SPIDER"
+      ],
+      [
+          id       : "vex_raw",
+          class    : "net.minecraft.world.entity.monster.Vex",
+          className: "VexRaw",
+          baseClass: "Vex",
+          modelType: "PIXIE",
+          variant  : "VexSkinVariant.VEX"
+      ],
+      [
+          id       : "villager_raw",
+          class    : "net.minecraft.world.entity.npc.Villager",
+          className: "VillagerRaw",
+          baseClass: "Villager",
+          modelType: "VILLAGER",
+          variant  : "VillagerSkinVariant.DEFAULT"
+      ],
+      [
+          id       : "vindicator_raw",
+          class    : "net.minecraft.world.entity.monster.Vindicator",
+          className: "VindicatorRaw",
+          baseClass: "Vindicator",
+          modelType: "ILLAGER",
+          variant  : "IllagerSkinVariant.VINDICATOR"
+      ],
+      [
+          id       : "wolf_raw",
+          class    : "net.minecraft.world.entity.animal.Wolf",
+          className: "WolfRaw",
+          baseClass: "Wolf",
+          modelType: "QUADRUPED",
+          variant  : "WolfSkinVariant.WOLF"
+      ],
+      [
+          id       : "witch_raw",
+          class    : "net.minecraft.world.entity.monster.Witch",
+          className: "WitchRaw",
+          baseClass: "Witch",
+          modelType: "VILLAGER",
+          variant  : "WitchSkinVariant.WITCH"
+      ],
+      [
+          id       : "zombie_raw",
+          class    : "net.minecraft.world.entity.monster.Zombie",
+          className: "ZombieRaw",
+          baseClass: "Zombie",
+          modelType: "ZOMBIE",
+          variant  : "ZombieSkinVariant.ZOMBIE"
+      ],
+      [
+          id       : "husk_raw",
+          class    : "net.minecraft.world.entity.monster.Husk",
+          className: "HuskRaw",
+          baseClass: "Husk",
+          modelType: "ZOMBIE",
+          variant  : "ZombieSkinVariant.HUSK"
+      ],
+      [
+          id       : "zombie_villager_raw",
+          class    : "net.minecraft.world.entity.monster.ZombieVillager",
+          className: "ZombieVillagerRaw",
+          baseClass: "ZombieVillager",
+          modelType: "ZOMBIE",
+          variant  : "ZombieVillagerSkinVariant.DEFAULT"
+      ],
+  ]
+
+  def loadMethods = { String className ->
+    def file = new File(rawNPCFolder, "${className}.methods")
+    return file.exists() ? file.text : ""
+  }
+
+  def loadImports = { String className ->
+    def file = new File(rawNPCFolder, "${className}.imports")
+    return file.exists() ? file.text : ""
+  }
+
+  def toUpperSnakeCase = { String input ->
+    return input.replaceAll(/([a-z])([A-Z])/, '$1_$2').toUpperCase(Locale.ROOT)
+  }
+
+  doLast {
+    def outputDir = rawNPCFolder
+
+    println "✨ Processing ${npcClasses.size()} NPC classes from ${templateFile} to ${outputDir} ..."
+    npcClasses.each { npcClass ->
+      def outputFile = new File(outputDir, npcClass.className + ".java")
+      def content = templateFile.text
+          .replace("import net.minecraft.world.entity.monster.Zombie;", "import " + npcClass.class + ";")
+          .replace("import de.markusbordihn.easynpc.data.skin.variant.ZombieSkinVariant;", "import de.markusbordihn.easynpc.data.skin.variant." + npcClass.variant.replaceAll(/\.[^.]+$/, "") + ";")
+          .replace("npc_raw_template", npcClass.id)
+          .replace("NPCRawTemplate", npcClass.className)
+          .replaceAll("\\bZombie\\b", npcClass.baseClass)
+          .replace("SkinModel.ZOMBIE", "SkinModel." + (npcClass.skinModel ?: toUpperSnakeCase(npcClass.baseClass)))
+          .replace("ModelType.ZOMBIE", "ModelType." + (npcClass.modelType ?: toUpperSnakeCase(npcClass.baseClass)))
+          .replace("ZombieSkinVariant.ZOMBIE", npcClass.variant)
+          .replace("ZombieSkinVariant.values()", npcClass.variant.replaceAll(/\.[^.]+$/, "") + ".values()")
+          .replace("ZombieSkinVariant.valueOf(", npcClass.variant.replaceAll(/\.[^.]+$/, "") + ".valueOf(")
+          .replace("// TEMPLATE_INSERT:IMPORTS", loadImports(npcClass.className))
+          .replace("// TEMPLATE_INSERT:METHODS", loadMethods(npcClass.className))
+
+      outputFile.write(content)
+      println "✅ [${npcClass.className}] Generated ${outputFile}"
+    }
+  }
+}

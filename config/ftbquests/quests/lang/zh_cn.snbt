@@ -1,0 +1,910 @@
+{
+	chapter.0A339E631AC882D0.title: "田园生活"
+	chapter.5A8D3F2E1B4C6901.title: "军旅生涯"
+	chapter_group.4E5AA64291FA4369.title: "属于自己的角落&c(核心玩法)&r"
+	chapter_group.5F9ABE3ACEA913EF.title: "认识这个世界"
+	chapter_group.6A83FBBB746164FB.title: "方块里的奇妙世界"
+	quest.010BBA6A8F47B641.desc: "具备三连发功能的全自动/半自动机器手枪。"
+	quest.010BBA6A8F47B641.quest_desc: [
+		"93R 是一款有着冲锋枪野心的手枪。它配备了可折叠的前握把，以抑制其标志性的三连发模式带来的强劲后坐力。"
+		"当你需要在近距离瞬间投射大量火力时，它是你最可靠的战友。"
+	]
+	quest.010BBA6A8F47B641.subtitle: "暴烈爆发"
+	quest.02AB73611D09327E.quest_desc: [
+		"这个炉灶和农夫乐事里的有区别，他最大的不同是，他是一个&a职业方块&r！"
+		""
+		"村民绑定炉灶时，会变成厨子！"
+	]
+	quest.02AB73611D09327E.title: "一个特殊的热源"
+	quest.033FD68E4E06AFA5.desc: "冲锋枪的标杆。"
+	quest.033FD68E4E06AFA5.subtitle: "冲锋枪系列 - MP5A5"
+	quest.033FD68E4E06AFA5.title: "MP5A5"
+	quest.05FD3ACED90B6FDA.quest_desc: [
+		"在森罗厨房中，不同的美食有不同的效果。"
+		"接下来，让我为你介绍森罗美食的buff与debuff。"
+		""
+		"[&e胀气&r]当你获得胀气效果时，蹲下就能放屁~"
+		"[&e芥末&r]苦力怕也不爱吃芥末，所以他们现在离你远远的:)。"
+		"[&e硫磺&r]幻翼讨厌它！"
+		"[&a保鲜&r]保鲜可以让我们吃食物不会获得debuff(例如腐肉)。"
+		"[&a饱腹代偿&r]用饥饿值帮你的血条抗几刀！"
+		"[&a寒带疾行&r]在雪地、冰块上跑快快，还不会掉进细雪里！"
+		"[&a活力&r]冲！！！你现在奔跑不会消耗饥饿度了。"
+		"[&a温暖&r]靠近火源时，会回血哦~"
+	]
+	quest.05FD3ACED90B6FDA.quest_subtitle: "森罗美食的buff与debuff"
+	quest.05FD3ACED90B6FDA.title: "我好像获得了一个不得了的效果！"
+	quest.09C89C27729611D8.quest_desc: [
+		"用纸在工作台可以合成菜谱。"
+		""
+		"菜谱对着锅右键，就可以记录当前的状态。"
+		""
+		"记录好的食谱可以贴在墙上，也可以直接对着锅使用，一键预制菜！"
+		""
+		"食谱可以记录你缺少的材料，他也会统计你背包内容器中的食材。"
+	]
+	quest.09C89C27729611D8.quest_subtitle: "菜谱教学"
+	quest.09C89C27729611D8.title: "美食家！"
+	quest.09F31B9C7062EFE1.quest_desc: ["镰刀可以大面积收割作物哦~"]
+	quest.0A1A60157ADA725C.desc: "高射速，低后坐力。"
+	quest.0A1A60157ADA725C.subtitle: "冲锋枪系列 - 短剑 .45"
+	quest.0A1A60157ADA725C.title: "Vector .45"
+	quest.0ABEC856091D922B.quest_desc: [
+		"注意和 &a农夫乐事&r 的 &e小刀&r 和 &e砧板&r 区分开来。"
+		"且森罗厨房的菜板主要负责切肉(菜和肉分开切更卫生哦~)。"
+		""
+		"把食材放在菜板上，用菜刀即可。"
+	]
+	quest.0ABEC856091D922B.quest_subtitle: "菜刀与菜板的正确使用方式"
+	quest.0ABEC856091D922B.title: "切切切！"
+	quest.0AC058C8706877B3.quest_desc: [
+		"一个优秀的农民，应该有一套农民装~"
+		"穿上农民装，可以加速在水中的行走，方便种植和收割稻田~"
+	]
+	quest.0AC058C8706877B3.title: "优秀的农民！"
+	quest.0AF145B708E0A103.desc: "高爆反坦克火箭弹。"
+	quest.0AF145B708E0A103.quest_desc: ["能造成大范围爆炸性伤害的大口径火箭弹。请务必极度小心地使用，避免波及友军。"]
+	quest.0AF145B708E0A103.subtitle: "难题解决者：RPG 火箭弹"
+	quest.0BB359F89F308855.quest_desc: [
+		"辣死啦！"
+		""
+		"辣椒可以合成&a辣椒串串&r，可以挂起来当装饰哦~"
+		"当然也可以放在门口辟邪，对触碰到的亡灵生物造成伤害！"
+		""
+		"同时辣椒也是调味的一部分，这会在后面的烹饪里用到。"
+	]
+	quest.0BB359F89F308855.title: "辣椒"
+	quest.0BD9C2CB200D2916.quest_desc: [
+		"油壶可以替代油脂进行炒菜哦~"
+		""
+		"植物油更健康~"
+	]
+	quest.0C7CBD1583F688E7.quest_desc: ["厨具架可以挂在墙上，存放工具来装饰。"]
+	quest.0C7CBD1583F688E7.title: "更多的厨房工具"
+	quest.0DF541F92F7A3B8C.quest_desc: [
+		"打开&a发酵桶&r，在发酵桶的上方放入葡萄汁，下方放入原材料，右下角放入酒瓶，等待你的第一瓶葡萄酒吧！"
+		""
+		"这次教程，我们制作红葡萄酒，所需原料为&a红葡萄汁&r、&a糖&r、&a葡萄酒瓶&r。"
+	]
+	quest.0DF541F92F7A3B8C.quest_subtitle: "木桶里的酒香"
+	quest.0DF541F92F7A3B8C.title: "发酵！"
+	quest.0F261F762D616F15.quest_desc: [
+		"一个不会用锅铲的农民，不是好厨子！"
+		""
+		"炒菜怎么能没有&a锅&r、&a铲&r呢？"
+		""
+		"在工作台里合成 &a锅铲&r 和 &a炒锅&r 吧~"
+	]
+	quest.0F261F762D616F15.title: "优秀的厨子！"
+	quest.0FFD44D1B3E73C1F.desc: "收集 64 发 5.7x28mm 弹。"
+	quest.0FFD44D1B3E73C1F.subtitle: "消耗品"
+	quest.0FFD44D1B3E73C1F.title: "5.7x28mm 弹"
+	quest.10DED764ED7FEC7A.desc: "具备高度模块化性能的现代击针平移式手枪。"
+	quest.10DED764ED7FEC7A.quest_desc: [
+		"P320（美军代号 M17/M18）是现役美军的制式副武器。它设计现代、性能可靠且射击动态极其流畅。"
+		"非常适合那些追求外观干练且实战性能卓越的 9mm 手枪的玩家。"
+	]
+	quest.10DED764ED7FEC7A.subtitle: "模块化典范"
+	quest.11C12DDBF71379FA.quest_desc: [
+		"自己种的菜，吃着才放心！"
+		"种田生活，不种田怎么行呢？"
+		""
+		"在农夫乐事中，有一种叫做 &e有机肥料&r 的东西，可以在村庄里找到。"
+		"把有机肥料放在外面风干，即可形成 &e沃土&r 。"
+		""
+		"用沃土形成的耕地不会被破坏，用脚踩踏也没关系，同时农作物产量会提高。"
+		""
+		"农夫乐事里的种子，都可以种在普通耕地和沃土耕地上。(稻米必须种在水里)"
+		""
+		"加油！你现在已经是合格的农民了，快去种田吧！"
+	]
+	quest.11C12DDBF71379FA.quest_subtitle: "一个不想当农民的厨师不是好厨师！"
+	quest.11C12DDBF71379FA.title: "优秀的农民！"
+	quest.1225B8478DE629C8.desc: "增强型战斗步枪。"
+	quest.1225B8478DE629C8.subtitle: "狙击步枪系列 - Mk14 EBR"
+	quest.1225B8478DE629C8.title: "Mk14 EBR"
+	quest.12B780F3C43957D3.desc: "采用弹链供弹的标准班用自动武器。"
+	quest.12B780F3C43957D3.quest_desc: [
+		"M249 SAW 是班用自动武器的黄金标准。它采用弹链供弹，随时准备投射海量火力以统治战场。"
+		"扣死扳机，在连绵不断的枪声中目睹敌人仓皇寻找掩体的狼狈像吧。"
+	]
+	quest.12B780F3C43957D3.subtitle: "班用机枪：M249"
+	quest.12FCBCC4EF420A3E.quest_desc: ["呼呼呼~"]
+	quest.12FCBCC4EF420A3E.title: "来碗面条吧~"
+	quest.13EC93A4A00940BF.quest_desc: [
+		"&b田园生活&r是本服&l&4核心玩法之一&r&r"
+		"所有的模组都被我们&b修改过&r，能够方便各个模组直接的联动，增强你的沉浸式体验~"
+		"想种就种，想养就养，"
+		"一切都为了“住得久、玩得舒服”。"
+		"如果你对田园生活感兴趣，本章节会为你&l&a详细介绍田园玩法&r&r。"
+	]
+	quest.13EC93A4A00940BF.quest_subtitle: "欢迎来到田园生活篇"
+	quest.13EC93A4A00940BF.title: "田园生活"
+	quest.143B707C3D651141.quest_desc: [
+		"农夫乐事农业篇中，提供了一些其他的工具。"
+		"此处我们以绳子为例，在工作台中用草杆合成绳子吧！"
+		"{@pagebreak}"
+		"&l绳子的正确&b使用方法&r&r"
+		""
+		"绳子在高处时，对同一个地方使用绳子，即可让它往下延伸。"
+		"人可以爬绳子，也可以让番茄顺着绳子方向长。"
+		"绳子放在地面，也可以防止掉落伤害，跟蜘蛛网一样~"
+	]
+	quest.143B707C3D651141.title: "其他的工具"
+	quest.19222B59A173595D.quest_desc: [
+		"我要喝汤！"
+		""
+		"将&a汤锅&r放在火源上，右键打开界面，在左边放入&a食材&r，下方放入&a汤底&r，最后盖上&a锅盖&r！"
+		""
+		"记得揭开锅盖，看看汤煲好了吗？"
+		""
+		"[汤底]原版所有液体均可作为汤底。"
+	]
+	quest.19222B59A173595D.title: "煲汤"
+	quest.1A06F05953C3949F.quest_desc: [
+		"自己种的葡萄，吃着才放心！"
+		""
+		"不同的葡萄有不同的生长方式。"
+		"[&e普通葡萄&r、&e针叶林葡萄&r、&e热带草原葡萄&r]可以直接种在任意方块上。"
+		"[&a丛林葡萄&r]像藤蔓一样，需要种植在墙上。"
+	]
+	quest.1A06F05953C3949F.quest_subtitle: "葡萄的种植技术"
+	quest.1A06F05953C3949F.title: "葡萄农民！"
+	quest.1B707FCF83AD0149.desc: "大规模杀伤性武器，绝对的火力压制。"
+	quest.1B707FCF83AD0149.subtitle: "系列概览"
+	quest.1B707FCF83AD0149.title: "重型武器"
+	quest.1C3D02FCA3F575A4.desc: "经过现代化配件改装的实战型卡宾枪。"
+	quest.1C3D02FCA3F575A4.quest_desc: [
+		"战术版 SKS 迎来了彻底的蜕变。从传统的木质枪托进化为现代聚合物护木和皮卡汀尼导轨，它已完全适应 21 世纪的战场。"
+		"它发射常见的 7.62x39mm 子弹，并比原版拥有更优秀的瞄准镜扩展性。"
+	]
+	quest.1C3D02FCA3F575A4.subtitle: "老兵新生：SKS 战术版"
+	quest.1CA58A9ACD74BB96.desc: "举世公认的经典开膛待击式冲锋枪。"
+	quest.1CA58A9ACD74BB96.quest_desc: [
+		"乌兹（Uzi）是历史上最具辨识度的冲锋枪之一。其紧凑的尺寸和开膛待击设计使其成为要员保护和快速反应任务的首选。"
+		"在空间狭窄的室内清剿任务中，它能发挥出巨大的战术价值。"
+	]
+	quest.1CA58A9ACD74BB96.subtitle: "袖珍火力：乌兹"
+	quest.1D375D3731040A9D.quest_desc: [
+		"把炒锅放在火源上，用锅铲铲一勺油脂(或者直接手持油脂放入)，接下来发挥你的想象添加食材~"
+		""
+		"做好了用 &a碗&r 就可以盛出来。"
+		""
+		"记得中途要用锅铲翻面哦，不然会糊掉~"
+	]
+	quest.1D375D3731040A9D.quest_subtitle: "热气腾腾的炒菜来咯~"
+	quest.1D375D3731040A9D.title: "炒菜"
+	quest.1D54A89069593DFD.quest_desc: [
+		"未成年人禁止饮酒哦~"
+		""
+		"把苹果放进苹果压榨机的左边，把葡萄酒瓶放在压榨机的右边，你就可以喝到苹果汁啦！"
+	]
+	quest.1D54A89069593DFD.title: "我是未成年，只能喝苹果汁！"
+	quest.1D87063A704AAA71.desc: "享誉盛名的大口径北极战争狙击步枪。"
+	quest.1D87063A704AAA71.quest_desc: [
+		"冷静、致命且极其精准。AWP 是模组中威力最强的狙击武器之一。"
+		"精准的射击通常意味着敌人的终结，但缓慢的栓动机构决定了你必须珍惜每一次扣下扳机的机会，做到弹无虚发。"
+	]
+	quest.1D87063A704AAA71.subtitle: "一击必杀"
+	quest.1EDD7BB48843790F.desc: "收集 64 发 7.62x54mmR 弹。"
+	quest.1EDD7BB48843790F.subtitle: "消耗品"
+	quest.1EDD7BB48843790F.title: "7.62x54mmR 弹"
+	quest.1F1254086A2B7B87.quest_desc: [
+		"在前面的学习中，你学会了如何获取部分蔬菜!"
+		""
+		"炒菜第一步，先得放油不是吗~"
+		""
+		"现在，让我教你如何获取油脂。"
+		""
+		"用&a菜刀&r击杀猪、猪灵、疣猪时，会掉落油脂。"
+		""
+		"(提示:菜刀可以在工作台合成)"
+	]
+	quest.1F1254086A2B7B87.quest_subtitle: "获取油脂"
+	quest.1F1254086A2B7B87.title: "炒菜没油怎么炒？"
+	quest.1F42405664EF221A.desc: "半自动战斗霰弹枪。"
+	quest.1F42405664EF221A.subtitle: "霰弹枪系列 - 伯奈利 M1014"
+	quest.1F42405664EF221A.title: "Benelli M1014"
+	quest.209527EB6F371208.desc: "在这里制造你所需要的各种弹药。"
+	quest.209527EB6F371208.quest_desc: [
+		"没有子弹的枪只是一根沉重的铁棍。使用弹药装配台可以大批量生产各种口径的弹药。"
+		"不同类型的弹药需要不同的资源：黄铜、铅锭和火药是核心消耗品。在进入激烈的战场之前，请务必确保存备充足。"
+	]
+	quest.209527EB6F371208.subtitle: "持续作战"
+	quest.20F005E2AC86E2CE.quest_desc: [
+		"农夫乐事农场篇"
+		"从&a认识作物&r开始吧~"
+		""
+		"在农夫乐事中，有一些&e新增的作物&r，这些作物可以在野外或是野外的战利品箱中获得。"
+		"如果用手破坏，那么他们会掉落种子. 如果用剪刀破坏，那么它们会掉落作物本身. 所以你现在需要制作一把&a剪刀&r。"
+	]
+	quest.20F005E2AC86E2CE.title: "从认识植物开始吧~"
+	quest.23B9E6819C10D862.desc: "存放各类弹药的专属容器。"
+	quest.23B9E6819C10D862.quest_desc: [
+		"厌倦了零散的弹药塞满你的背包空间？弹药箱为存放数千发子弹提供了一种极其高效且紧凑的解决方案。"
+		"你可以将其携带在身上，或者放置在基地中，让你的战备物资井井有条。"
+	]
+	quest.23B9E6819C10D862.subtitle: "紧凑物流"
+	quest.23CCAC29A26B7BAB.quest_desc: [
+		"牛马！"
+		""
+		"把生物推到石磨把手处，可以让它当牛做马！"
+		""
+		"在石磨上放上原材料，他可以被碾磨成新的物品。"
+		""
+		"石磨也能榨取种子得到植物油，使用 &a油壶&r 就能盛起来。"
+		""
+		"石磨也可以进行自动化操作，下方可以接漏斗，推磨的也可以换成驴，给驴装上箱子，它会自动使用箱子里的物品。"
+	]
+	quest.23CCAC29A26B7BAB.quest_subtitle: "石磨教程"
+	quest.23CCAC29A26B7BAB.title: "吃饱喝足，当牛做马！"
+	quest.2517F9FEB3E2BCAE.quest_desc: [
+		"在田里放几条鱼，可以促进生态循环，加速水稻生长！"
+		"现在去抓 &a一条鱼&r 吧~"
+		"(以上任意一种即可)"
+	]
+	quest.2517F9FEB3E2BCAE.quest_subtitle: "鱼稻共生"
+	quest.2517F9FEB3E2BCAE.title: "水稻长得太慢啦！"
+	quest.256885CB7255FA09.desc: "拥有极低后坐力的全自动霰弹枪。"
+	quest.256885CB7255FA09.quest_desc: [
+		"AA-12 是一款霰弹枪中的巨兽。它具备全自动射击能力，且几乎感觉不到后坐力，能瞬间瓦解整支敌方小队。"
+		"它是处理最高强度近距离交火环境的终极利器。"
+	]
+	quest.256885CB7255FA09.subtitle: "铅弹泼洒者：AA-12"
+	quest.2643F76259B9FAB5.quest_desc: [
+		"在阳光与微风滋养的土地上，葡萄悄然成熟，时间开始酝酿它的魔法。"
+		"拿起你的工具，学会种植、采摘与发酵，让第一缕&b葡萄酒香&r，从你手中诞生。"
+	]
+	quest.2643F76259B9FAB5.title: "[Let's Do]葡萄酒香"
+	quest.26D9F12542B50770.quest_desc: ["在石磨下面放上炼药锅，往里面倒上水，就可以自动获得面团啦！"]
+	quest.26D9F12542B50770.title: "面团也能自动化！"
+	quest.2881B20DFF54D3DF.desc: "开启你的永恒与经典：零号（TACZ）之旅。"
+	quest.2881B20DFF54D3DF.quest_desc: [
+		"欢迎来到 TACZ！本模组为 Minecraft 带来了极高精细度的现代武器体验，包含逼真的动画、配件系统以及复杂的射击机制。"
+		"在这个章节中，我们将引导你从零开始：从制作第一台枪械工匠台，到管理弹药储备，再到全方位自定义你的武器配件。"
+		"请务必检查你的按键绑定：默认情况下，'R' 键负责装填，'N' 键切换夜视仪（若装备），'Z' 键切换射击模式（单发/连发）。"
+		"祝你好运，突击队员！"
+	]
+	quest.2881B20DFF54D3DF.subtitle: "锁定与加注"
+	quest.2A829D59919460F9.quest_desc: [
+		"油脂块可以被放置在地上。"
+		""
+		"油脂块比较滑，踩上去要小心哦~"
+		""
+		"同时油脂块上的火可以持续燃烧，注意防火哦~"
+	]
+	quest.2A870DF6A9EF0B5D.quest_desc: [
+		"太棒啦！"
+		"你现在已经获得了各种各样的种子，现在教你播种！"
+		""
+		"对于&a生菜&r、&a番茄&r、&a辣椒&r而言，可以像普通作物一样种植，也可以种在&b沃土&r上。"
+		""
+		"对于&a水稻&r而言，你需要将泥土放在水中，然后在水中开垦，最后把野稻米种在&b水中的耕地&r里。"
+	]
+	quest.2A870DF6A9EF0B5D.quest_subtitle: "播种教学"
+	quest.2A870DF6A9EF0B5D.title: "种下去！"
+	quest.2C313909C66E8D79.quest_desc: [
+		"旋风烤肉塔，可以让你的食材旋起来~"
+		""
+		"(利用 &4红石&r 激活)"
+	]
+	quest.2C313909C66E8D79.title: "旋起来啦~"
+	quest.2CE215F5B670469A.quest_desc: [
+		"绳子可以在工作台里合成安全网。"
+		"安全网可以连起来，类似粘液块一样把你弹高高~"
+	]
+	quest.2CE215F5B670469A.title: "还有玩法？"
+	quest.2F1190F30C9F1886.desc: ".45 柯尔特自动手枪弹。"
+	quest.2F1190F30C9F1886.quest_desc: ["一种重型、低速的弹药，以其在近距离极其惊人的制止力和破坏力而闻名。"]
+	quest.2F1190F30C9F1886.subtitle: "沉重打击：.45 ACP"
+	quest.33DEA06438AE1857.quest_desc: ["如果在锅里煮稻米，那么就会得到香喷喷的大米饭！"]
+	quest.33DEA06438AE1857.title: "干饭人！"
+	quest.34A7A4F5EAF7D5B2.quest_desc: [
+		"将葡萄放在&a葡萄盆&r里，用脚踩踏，再装入酒瓶内，第一缸葡萄汁伴着木香淌出。"
+		"空气里开始有甜味，你正式踏入酿酒之路。"
+	]
+	quest.34A7A4F5EAF7D5B2.quest_subtitle: "老酒庄的第一课"
+	quest.34A7A4F5EAF7D5B2.title: "我要喝葡萄酒！"
+	quest.3566A734C4B26AE3.desc: "采用弹匣供弹的轻机枪。"
+	quest.3566A734C4B26AE3.quest_desc: [
+		"RPK 是 AK 系列的轻机枪衍生型。通过加长的重型枪管和大容量弹鼓，它能为你的小队提供持久的火力压制。"
+		"强悍且可靠，它与 AK 系列通用的弹药和部分零件使其成为极佳的战场支援武器。"
+	]
+	quest.3566A734C4B26AE3.subtitle: "持久压制：RPK"
+	quest.37227BBA30022E21.quest_desc: ["经过一番耕耘与探索，你已经掌握了种植、烹饪与收获的艺术。每一次挥铲、每一锅炖煮，都凝聚着你的努力与耐心。现在，放下工具，品味你的劳动成果，享受属于你的田园生活吧！"]
+	quest.373DC6FD396B6000.desc: "经典的三连发制式步枪。"
+	quest.373DC6FD396B6000.subtitle: "步枪系列 - M16A4"
+	quest.373DC6FD396B6000.title: "M16A4"
+	quest.3774DAC96EFF2B71.desc: "7.62x39mm 中间型威力步枪弹。"
+	quest.3774DAC96EFF2B71.quest_desc: ["为 AK-47 提供动力的核心弹药。以其卓越的穿透力和在恶劣环境下的可靠性而闻名。"]
+	quest.3774DAC96EFF2B71.subtitle: "东方力量：7.62x39mm"
+	quest.379DA7D7EBD2FF0A.quest_desc: [
+		"很好！你现在已经认识了农夫乐事的作物！接下来，&e我们开始做饭&r！"
+		""
+		"首先，你需要一把&a小刀&r和一个&a砧板&r。"
+		"[1]使用&e铁锭&r和&e木棍&r，可以在&e工作台&r上合成铁刀！"
+		"[2]使用&e木板&r和&e木棍&r，可以在&e工作台&r上合成砧板！"
+	]
+	quest.379DA7D7EBD2FF0A.title: "种田怎么能少了做饭呢？"
+	quest.37DB618523BDE496.desc: "收集 64 发 5.8x42mm 弹。"
+	quest.37DB618523BDE496.subtitle: "消耗品"
+	quest.37DB618523BDE496.title: "5.8x42mm 弹"
+	quest.37FCA417955BF382.desc: "5.56x45mm 北约标准步枪弹。"
+	quest.37FCA417955BF382.quest_desc: ["北约制式步枪弹。极高的初速和低平的弹道使其成为中远距离各种接敌任务的理想选择。"]
+	quest.37FCA417955BF382.subtitle: "西方精度：5.56x45mm"
+	quest.387132BF77945837.quest_desc: ["森罗厨房的美食，和农夫乐事一样，有些可以直接吃，有些可以右键摆放做装饰，等你探索哦~"]
+	quest.387132BF77945837.title: "菜做好啦！"
+	quest.38B007A0EA3872AE.desc: "全球特种部队公认的最佳冲锋枪。"
+	quest.38B007A0EA3872AE.quest_desc: [
+		"射击平顺、极易掌控且战果丰硕。MP5 是衡量所有冲锋枪的行业标杆。"
+		"较低的后坐力和极高的射速使其在近距离遭遇战中展现出绝对的统治地位，是清理室内的不二之选。"
+	]
+	quest.38B007A0EA3872AE.subtitle: "精准冲锋"
+	quest.38C4CD49988E3874.desc: "收集 64 发 12号口径霰弹。"
+	quest.38C4CD49988E3874.subtitle: "消耗品"
+	quest.38C4CD49988E3874.title: "12号口径霰弹"
+	quest.38EE4F55A13628D3.quest_desc: ["炒菜时身高不够可以制作一个小板凳站上去炒哦~"]
+	quest.38EE4F55A13628D3.title: "哎哎呀，身高不够啦~"
+	quest.39065CA0F595AA3E.quest_desc: [
+		"呜呜呜，我们辛苦制作的耕地被踩坏啦~"
+		""
+		"利用稻米，只做一个稻草人，可以防止周围的普通耕地被踩坏~"
+		""
+		"同时稻草人可以作为装饰，手持工具可以给稻草人穿装备。"
+	]
+	quest.39065CA0F595AA3E.title: "呜呜呜，耕地被踩坏啦"
+	quest.3972FE3BF5119C7B.quest_desc: [
+		"饭袋可以收纳食物和药水。"
+		""
+		"手持饭袋可以直接开吃！"
+		""
+		"如果饭袋内的东西有buff，那么每次食用都会叠加所有buff，&a干饭神器&r！"
+	]
+	quest.3972FE3BF5119C7B.title: "噢~是饭袋！"
+	quest.39934CA1E5B6F0C8.quest_desc: [
+		"在&b葡萄酒香&r中，有许多的葡萄，这些葡萄可以从野外采集，也可以在&a流浪酿酒师&r处购买。"
+		""
+		"流浪酿酒师跟旅行商人一样，会随机刷新。"
+	]
+	quest.39934CA1E5B6F0C8.title: "从认识葡萄开始吧~"
+	quest.3B205E3D1BC0094C.desc: "发射 5.56mm 子弹的现代模块化步枪。"
+	quest.3B205E3D1BC0094C.quest_desc: [
+		"SCAR-L 专为特种作战而生。其独特的外观之下是极其稳定的射击性能和极佳的操控性。"
+		"配合各种瞄具配件，它在中距离战斗中有着出类拔萃的表现。"
+	]
+	quest.3B205E3D1BC0094C.subtitle: "特战突击：SCAR-L"
+	quest.3B63F8C1A08D1858.quest_desc: [
+		"想要成为优秀的厨师，那就要掌握各种各样的菜肴。"
+		"在农夫乐事中，不止有一人份的食物，还有 &e大餐&r ！"
+		"这些大餐不仅可以吃，还能看！"
+		""
+		"合成一个烤鸡尝尝吧！"
+		""
+		"在工作台里合成烤鸡，合成之后，将烤鸡摆放在桌子上，此时它 &e可以看&r ！"
+		"对摆放好的烤鸡使用碗，此时它 &e可以吃&r ！"
+	]
+	quest.3B63F8C1A08D1858.quest_subtitle: "请尽情探索更多的食物吧~"
+	quest.3B63F8C1A08D1858.title: "优秀的厨师！"
+	quest.3C5C93DAA9679B89.quest_desc: [
+		"果篮可以存放物品，打破可以打包带走哦~"
+		""
+		"(猫猫很喜欢果篮~)"
+	]
+	quest.3C9E27419A2D03E0.desc: "7.62x51mm 北约全威力步枪弹。"
+	quest.3C9E27419A2D03E0.quest_desc: ["一种全威力步枪弹药，广泛应用于战斗步枪和狙击系统，以确保在远距离上的杀伤效能。"]
+	quest.3C9E27419A2D03E0.subtitle: "精准强权：7.62x51mm"
+	quest.3DC8B225A1B1B86A.quest_desc: ["森罗厨房还有更多的厨房工具等你探索哦~"]
+	quest.3DC8B225A1B1B86A.title: "更多的工具"
+	quest.3EAC5A59BA42F4B4.desc: "多用途的美国卡宾枪。"
+	quest.3EAC5A59BA42F4B4.subtitle: "步枪系列 - M4A1"
+	quest.3EAC5A59BA42F4B4.title: "M4A1"
+	quest.3EFA282FB714E76D.desc: "SCAR系统的轻型版本。"
+	quest.3EFA282FB714E76D.subtitle: "步枪系列 - SCAR-L"
+	quest.3EFA282FB714E76D.title: "SCAR-L"
+	quest.3FBD3719DEAD1C78.desc: "Timeless and Classics Guns: Zero (TACZ) 为 Minecraft 带来了极致的枪械体验。点击勾选框开始你的军械库建设之旅！"
+	quest.3FBD3719DEAD1C78.subtitle: "现代战争的开始"
+	quest.3FBD3719DEAD1C78.title: "欢迎来到 TACZ"
+	quest.3FF51C0534451303.quest_desc: ["番茄作为食材的一种，在后面的烹饪会用到。"]
+	quest.3FF51C0534451303.quest_subtitle: "酸酸甜甜~"
+	quest.41334BDA175365B0.quest_desc: ["在广袤的田野间，你迎来了属于自己的农场——这里是&b农夫乐事&r的世界。播下的种子，会在阳光与雨露的滋养下慢慢生长，等待你去收获。每一次耕作、每一份收获，都是田园生活的乐趣。农夫乐事不仅教会你种植和收获，更让你体验劳动的喜悦与生活的宁静，让每一片土地都充满希望与故事。"]
+	quest.41334BDA175365B0.title: "农夫乐事"
+	quest.41E967BFCD9AAD02.quest_desc: [
+		"石磨碾磨小麦，可以获得面粉。"
+		"而用水桶收集面粉，就可以获得&a生面团&r。"
+	]
+	quest.41E967BFCD9AAD02.quest_subtitle: "面食的源头"
+	quest.41E967BFCD9AAD02.title: "喜欢吃面食吗？"
+	quest.421DE3C01BC24B34.desc: "利用瞄具、握把等配件微调你的武器性能。"
+	quest.421DE3C01BC24B34.quest_desc: [
+		"现代战争对环境的适应能力有着极高的要求。配件工作台允许你为武器安装瞄准镜、激光指示器、前握把以及各种枪口补偿器。"
+		"合理的配件选择可以显著降低后坐力，提升腰射精度，或者为侦察和狙击任务提供更卓越的倍率支持。"
+	]
+	quest.421DE3C01BC24B34.subtitle: "战术自定义"
+	quest.421EEAC57A479305.quest_desc: [
+		"你吃了烤鸡对吧！"
+		"你现在获得了一个叫做 &e滋养&r 的buff。"
+		"接下来让我为你介绍农夫乐事中的食物buff！"
+		""
+		"[&a滋养&r]饱食度和饥饿值会大幅下降。"
+		"[&a舒适&r]在饥饿值不满的情况下也会回血，并且免疫&4缓慢&r、&4虚弱&r、&4饥饿&r。"
+	]
+	quest.421EEAC57A479305.quest_subtitle: "农夫乐事食物的buff与debuff"
+	quest.421EEAC57A479305.title: "我好像获得了一个不得了的效果！"
+	quest.441F355F79650C28.desc: "近战之王，一发入魂。"
+	quest.441F355F79650C28.subtitle: "系列概览"
+	quest.441F355F79650C28.title: "霰弹枪系列"
+	quest.4590A994D98958FD.desc: "毁灭性的 .50 口径半自动火力打击平台。"
+	quest.4590A994D98958FD.quest_desc: [
+		"M107 不仅仅是一支狙击枪，它更是战场上的反器材利器。发射的 .50 BMG 子弹足以击穿几乎任何护甲。 "
+		"在安全的距离外运用它，去粉碎那些最棘手的敌人或防御设施。"
+	]
+	quest.4590A994D98958FD.subtitle: "反器材巨兽"
+	quest.46F566E6031458BA.desc: "介于AK和SKS之间的可靠步枪。"
+	quest.46F566E6031458BA.subtitle: "步枪系列 - 81式步枪"
+	quest.46F566E6031458BA.title: "Type 81"
+	quest.481878635073CA68.desc: "奥地利无托突击步枪。"
+	quest.481878635073CA68.subtitle: "步枪系列 - AUG"
+	quest.481878635073CA68.title: "AUG"
+	quest.48859012C0C192E2.desc: "经历百年战火洗礼的经典 .45 ACP 副武器。"
+	quest.48859012C0C192E2.quest_desc: [
+		"跨越两次世界大战且至今仍活跃在第一线，M1911 是手枪界的永恒传奇。 "
+		"它发射威力巨大的 .45 ACP 子弹，在修长的单排弹匣结构中蕴含着极强的制止力。"
+	]
+	quest.48859012C0C192E2.subtitle: "世纪之王"
+	quest.488B4B3D7E19DCC9.desc: "采用活塞导气系统的高端突击步枪。"
+	quest.488B4B3D7E19DCC9.quest_desc: [
+		"可靠性与精准度的完美碰撞。HK416 因其在极端环境下依然稳健的性能，深受全球顶级特种部队的青睐。"
+		"相比同类步枪，它能提供更平稳的后坐表现和更高的射击精度。"
+	]
+	quest.488B4B3D7E19DCC9.subtitle: "德意志之精"
+	quest.498DD8381D0E9329.quest_desc: [
+		"首先第一步，把蒸笼放在火源上~"
+		""
+		"蒸笼可以叠高高，但是只能和最上面的一层交互。"
+		""
+		"直接右键是叠高高，空手潜行+右键是封顶。"
+		""
+		"在有火源的情况下，蒸笼上方有蒸笼或封顶，那就会直接开蒸！"
+		""
+		"而一个火源最高只能热8层蒸笼。"
+		""
+		"把包子放进蒸笼里，蒸好之后直接打掉最下面一层的蒸笼，上面的也会往下掉哦~"
+	]
+	quest.4B266B3F49117DB5.desc: "最具代表性的突击步枪。"
+	quest.4B266B3F49117DB5.quest_desc: [
+		"坚固、强悍、永恒。AK-47 以其简单粗犷的结构发射威力巨大的 7.62x39mm 子弹，展现出惊人的战场可靠性。"
+		"虽然它的后坐力比西方同类产品更难掌控，但在经验丰富的射手手中，其强大的停止力足令任何敌手胆寒。"
+	]
+	quest.4B266B3F49117DB5.subtitle: "钢铁与原木"
+	quest.4BA7F82CB28B88C2.quest_desc: [
+		"很好！你现在已经入门了，已经学会如何切菜了！"
+		"接下来，我们学习如何烹饪食物，烹饪食物首先需要一个 &a炉灶&r 和一个 &a厨锅&r 或 &a煎锅&r 。"
+		""
+		"炉灶和锅可以在 &e工作台&r 合成。"
+		"{@pagebreak}"
+		"&l炉灶的正确使用&b方式&r&r"
+		""
+		"炉灶可以 &e像篝火一样&r 直接把食物放上去烤熟。"
+		"对炉灶使用 &e水桶&r 会让炉灶熄火，对炉灶使用 &e打火石&r 则可重新点燃。"
+		"{@pagebreak}"
+		"&l厨锅的正确使用&b方式&r&r"
+		""
+		"将 &e厨锅&r 放置在 &e点燃的炉灶&r 上方即可使用。"
+		"对锅 &e右键&r 打开界面，可以通过界面上的状态来查看厨锅是否处于加热状态。"
+		"放入食材后，等待烹饪完成即可取出料理，产物 &e需要对应的容器&r 进行承载，可以将鼠标 &e悬浮&r 在产物上，查看所需的容器，把容器放在产物旁边的 &e容器格&r 内即可。"
+		""
+		"厨锅必须依赖 &e火源&r 才能正常工作。"
+		"{@pagebreak}"
+		"&l煎锅的正确使用&b方式&r&r"
+		""
+		"[1]将煎锅放在炉灶上，用生食材 &e右键&r 煎锅，即可煮熟。"
+		"[2]&e主手&r持煎锅，&e副手&r持生食材，对着空炉灶长按即可快速煮熟食材。"
+	]
+	quest.4BA7F82CB28B88C2.quest_subtitle: "炉灶和锅的正确使用方法"
+	quest.4BA7F82CB28B88C2.title: "哪有厨师不认识炉和锅？"
+	quest.4BC6023434217439.quest_desc: ["在你的田园里有一座温暖的小厨房——&b森罗厨房&r。这里不仅是烹饪的地方，更是生活的中心：你可以将自己辛苦种植的蔬菜、采集的食材，变成香喷喷的美味料理。森罗厨房让平凡的田园生活充满乐趣，每一次切菜、翻炒、烘焙，都是对勤劳与创意的奖励。在这里，你不仅烹饪食物，更烹饪属于自己的田园故事。"]
+	quest.4BC82406469C37CE.desc: "威力巨大的精确射手步枪。"
+	quest.4BC82406469C37CE.quest_desc: [
+		"Mk14 EBR 是经典 M14 的现代化升级版。它填补了突击步枪与专业狙击步枪之间的火力空白。"
+		"配合高倍率瞄准镜，它能统治任何中远距离的交火区域。"
+	]
+	quest.4BC82406469C37CE.subtitle: "增强型战斗步枪：Mk14"
+	quest.4DDC6D30026EF6B3.quest_desc: [
+		"用油脂可以合成搪瓷盆。"
+		""
+		"用锅铲可以在里面铲出猪油~"
+	]
+	quest.4DDC6D30026EF6B3.quest_subtitle: "香香的猪油盆~"
+	quest.4E541219CD8146DC.desc: "用于远距离狩猎或精准射击的可靠栓动步枪。"
+	quest.4E541219CD8146DC.quest_desc: [
+		"雷明顿 700 是无数狙击步枪系统赖以构建的基石平台。它结构简单、射击精准且极其可靠。"
+		"对于那些正在学习远距离射击艺术的玩家来说，它是一款完美的入门级专业狙击武器。"
+	]
+	quest.4E541219CD8146DC.subtitle: "精准标靶：M700"
+	quest.5209B7D526B63AF5.desc: "西方军队标准配备的卡宾枪。"
+	quest.5209B7D526B63AF5.quest_desc: [
+		"射速极快且具备高度的可定制性。M4A1 是一款能够胜任几乎所有作战环境的多用途卡宾枪。"
+		"其模块化的设计意味着通过选择正确的配件，它可以轻松在近距离室内强袭和中距离精准打击之间自由切换。"
+	]
+	quest.5209B7D526B63AF5.subtitle: "全能平台"
+	quest.530737F279ED5AA1.desc: "举世瞩目的反坦克火箭推进榴弹发射器。"
+	quest.530737F279ED5AA1.quest_desc: [
+		"当轻武器无法解决棘手目标时，就轮到 RPG-7 登场了。它能造成巨大的范围伤害，是终极的战场难题解决者。"
+		"发射时请注意尾焰伤人！"
+	]
+	quest.530737F279ED5AA1.subtitle: "众生平等：RPG-7"
+	quest.53479F8D2051D162.desc: "现代工程的杰作。"
+	quest.53479F8D2051D162.subtitle: "手枪系列 - 永恒 .50"
+	quest.53479F8D2051D162.title: "Timeless .50"
+	quest.537426BB06C2782D.desc: "收集 64 发 5.56x45mm 北约弹。"
+	quest.537426BB06C2782D.subtitle: "消耗品"
+	quest.537426BB06C2782D.title: "5.56x45mm 北约弹"
+	quest.546BD6A6D8DD0338.desc: "极致经典的泵动式霰弹枪。"
+	quest.546BD6A6D8DD0338.quest_desc: [
+		"结构简单、坚固耐用且在近距离拥有毁灭性的破坏力。M870 是泵动式霰弹枪的代名词。"
+		"一声清脆的“咔哒”上膛声后，致命的铅弹云便足以终结几乎任何短兵相接的战斗。"
+	]
+	quest.546BD6A6D8DD0338.subtitle: "破门尖兵"
+	quest.54A47867DC638F71.quest_desc: ["你可以左手拿锅盖，右手拿锅铲，你就是最强厨子！"]
+	quest.54A47867DC638F71.title: "厨子最强大的武器是什么？"
+	quest.54BC3B3F4D0F69B8.desc: "制造枪械的核心工作台。"
+	quest.54BC3B3F4D0F69B8.subtitle: "核心设施"
+	quest.54BC3B3F4D0F69B8.title: "枪械工匠台"
+	quest.569AEA30DED2375A.desc: "班用机枪。"
+	quest.569AEA30DED2375A.subtitle: "重型武器 - M249"
+	quest.569AEA30DED2375A.title: "M249 SAW"
+	quest.587A2D57970953FE.desc: "中国军队现役标准配备的无托结构突击步枪。"
+	quest.587A2D57970953FE.quest_desc: [
+		"95式突击步枪是中国军队的骨干力量。其无托化的设计使其极其紧凑，且发射独特的 5.8mm 小口径步枪弹。"
+		"它表现可靠且易于抵肩射击，是任何接敌环境下的通用之选。"
+	]
+	quest.587A2D57970953FE.subtitle: "卧虎：95式"
+	quest.58C38D49603B0ADE.desc: "旋转机枪。"
+	quest.58C38D49603B0ADE.subtitle: "重型武器 - M134 米尼岗"
+	quest.58C38D49603B0ADE.title: "M134 Minigun"
+	quest.5931084901770695.desc: "发射威力强大的7.62毫米子弹的重型版本。"
+	quest.5931084901770695.subtitle: "步枪系列 - SCAR-H"
+	quest.5931084901770695.title: "SCAR-H"
+	quest.5C2FC86C4CA630DE.quest_desc: [
+		"好吃！"
+		""
+		"带馅面食的打开更多方式，等你探索哦~"
+	]
+	quest.5E62A8D21CA4B17F.quest_desc: [
+		"透明的瓶身装住了第一批成酒，木塞声比礼炮还珍贵。"
+		"请把美酒珍藏起来，酒放得越久越好哦~"
+		""
+		"使用各种各样的装酒工具把你的酒装起来吧~"
+	]
+	quest.5E62A8D21CA4B17F.quest_subtitle: "装瓶仪式"
+	quest.5E62A8D21CA4B17F.title: "珍藏美酒~"
+	quest.600A77F8B1482BC0.quest_desc: [
+		"太棒啦！你离成功只差一步之遥！"
+		"现在你已经凑齐了所有食材，终于要开火啦！"
+		""
+		"把你在前面任务中得到的&e卷心菜叶&r，&e南瓜片&r，&e培根&r，&e奶瓶&r，全部放入 &a厨锅&r 中，同时将碗放在容器格内。"
+		""
+		"静待你的劳动成果吧！"
+	]
+	quest.600A77F8B1482BC0.quest_subtitle: "你的第一份食物"
+	quest.600A77F8B1482BC0.title: "入门的厨师！"
+	quest.6049BEE3E33E65A3.desc: "发射威力巨大的 .50 AE 弹药的重型手枪。"
+	quest.6049BEE3E33E65A3.quest_desc: [
+		"沙漠之鹰与其说是一把手枪，不如说是一种力量的宣言。它的后坐力惊人，但造成的破坏力更加震撼。"
+		"被这头怪兽送出的子弹击中头部，对任何目标来说都意味着终结。"
+	]
+	quest.6049BEE3E33E65A3.subtitle: "沙漠之鹰 / 手炮"
+	quest.60D3DD281BB9FB7F.quest_desc: ["拿着米饭，对着炒锅里的菜，就能获得&a盖浇饭&r！！！"]
+	quest.60D3DD281BB9FB7F.title: "盖浇饭！"
+	quest.616F3AD391EAA0A0.desc: "大容量无托个人防卫武器。"
+	quest.616F3AD391EAA0A0.subtitle: "冲锋枪系列 - P90"
+	quest.616F3AD391EAA0A0.title: "P90"
+	quest.649AE536C33F1C34.desc: "SCAR 家族中发射 7.62mm 重型弹药的型号。"
+	quest.649AE536C33F1C34.quest_desc: [
+		"当 5.56mm 无法解决问题时，就轮到 SCAR-H 登场了。它发射的 7.62x51mm 重型步枪弹能迅速放倒远处的目标。"
+		"虽然较大的后坐力对手感有一定要求，但其恐怖的伤害输出绝对物有所值。"
+	]
+	quest.649AE536C33F1C34.subtitle: "战场利刃：SCAR-H"
+	quest.64D8BA5B03D884F4.desc: "收集 64 发 .50 AE 弹。"
+	quest.64D8BA5B03D884F4.subtitle: "消耗品"
+	quest.64D8BA5B03D884F4.title: ".50 AE 弹"
+	quest.6510AC1A864D5250.desc: "9x19mm 帕拉贝鲁姆手枪弹。"
+	quest.6510AC1A864D5250.quest_desc: ["全球应用最广泛的手枪和冲锋枪口径。以其良好的精度、可靠性以及温和的后坐力而著称。"]
+	quest.6510AC1A864D5250.subtitle: "通用标准：9mm"
+	quest.652077FF4B9632B6.desc: "配有 50 发大容量弹匣的无托结构个人防卫武器。"
+	quest.652077FF4B9632B6.quest_desc: [
+		"P90 最初为二线部队设计，但因其卓越性能被全球特种部队采用。它最大的特色是透明的 50 发顶置弹匣以及穿透力极强的 5.7mm 子弹。"
+		"极大的载弹量和微乎其微的后坐力使其成为动态机动作战的完美选择。"
+	]
+	quest.652077FF4B9632B6.subtitle: "个人防卫王者"
+	quest.6609899C2DFBEA2A.desc: "经过现代化改良的经典国产步枪。"
+	quest.6609899C2DFBEA2A.quest_desc: [
+		"81式自动步枪是一款因卓越的可靠性和精度而闻名遐迩的传奇武器。它完美融合了 AK 的耐用性和 SKS 的精准度。"
+		"对于那些比起射速更看重单发精神的射手来说，它是真正值得信赖的“老伙计”。"
+	]
+	quest.6609899C2DFBEA2A.subtitle: "老兵之选：81式"
+	quest.66F239436E212311.desc: "设计独特、高度紧凑的无托结构步枪。"
+	quest.66F239436E212311.quest_desc: [
+		"AUG 的无托设计（Bullpup）将动作机构置于扳机后方，在缩短全枪长度的同时维持了长枪管带来的弹道优势。"
+		"它操控灵动，手感极佳，并拥有标志性的射击音效。"
+	]
+	quest.66F239436E212311.subtitle: "奥地利革新"
+	quest.67A88244048C7346.desc: "兼具平衡性与人体工程学的半自动手枪。"
+	quest.67A88244048C7346.quest_desc: [
+		"CZ-75 以其极佳的握持手感和高载弹量而闻名。无论是竞技射击还是警务执法，它都是首选之一。"
+		"在 TACZ 中，它作为手枪平台表现得极其稳健，适合连续快速射击。"
+	]
+	quest.67A88244048C7346.subtitle: "捷克杰作"
+	quest.68BF803E9CB919CB.desc: "用于装配各种口径的弹药。"
+	quest.68BF803E9CB919CB.subtitle: "核心设施"
+	quest.68BF803E9CB919CB.title: "弹药装配台"
+	quest.68E13544F5C1A090.desc: "火力迅猛的半自动战斗霰弹枪。"
+	quest.68E13544F5C1A090.quest_desc: [
+		"M1014（伯奈利 M4）将半自动射击引入了霰弹枪平台。它允许射手在极短时间内倾泻大量弹药，瞬间肃清整个房间。"
+		"极高的可靠性和强悍的火力压制力使其成为霰弹枪爱好者眼中的顶级利器。"
+	]
+	quest.68E13544F5C1A090.subtitle: "半自动狂怒"
+	quest.6B595CD19517130E.desc: "高精度狙击步枪。"
+	quest.6B595CD19517130E.subtitle: "狙击步枪系列 - AWP"
+	quest.6B595CD19517130E.title: "AI AWP"
+	quest.6BD866FE964FCCE4.desc: "收集 64 发 RPG 火箭弹。"
+	quest.6BD866FE964FCCE4.subtitle: "消耗品"
+	quest.6BD866FE964FCCE4.title: "RPG 火箭弹"
+	quest.6CACEE8BB2FE3EDA.quest_desc: [
+		"&l小刀的正确使用&b方式1&r&r"
+		""
+		"首先将 &e砧板&r 点击 &e右键&r 进行放置。"
+		"然后 &e右键&r 将卷心菜和南瓜放置在&e砧板&r上。"
+		"&e主手&r持刀，&e右键&r即可切菜。"
+		"{@pagebreak}"
+		"&l小刀的正确使用&b方式2&r&r"
+		""
+		"&e主手&r持刀，&e副手&r拿菜。"
+		"对着空砧板长按 &e右键&r ，即可进行连续切菜。"
+		""
+		"tips:"
+		"如果你离砧板有一定距离，那么切出的菜会向旁边飞出去，此时可以用 &a篮子&r 接住。"
+		"{@pagebreak}"
+		"&l小刀的正确使用&b方式3&r&r"
+		""
+		"用小刀击杀生物，可以提高稀有物品的掉落概率。"
+		"例如用小刀杀牛，那么就会百分百掉落皮革~"
+		"{@pagebreak}"
+		"&l小刀的正确使用&b方式4&r&r"
+		""
+		"用小刀破坏草、草丛、小麦、稻米，有概率获得 &e草杆&r 。"
+		"草杆可以参与很多物品的合成，详见服务器内置的REI(按E打开背包后，在下面搜索)。"
+		"{@pagebreak}"
+		"&l砧板的正确&b使用方式&r&r"
+		""
+		"&e右键&r砧板，即可把物品&e放&r在砧板上。"
+		"&e潜行键&r+&e右键&r，即可把物品&e插&r在砧板上，作为装饰用。"
+	]
+	quest.6CACEE8BB2FE3EDA.quest_subtitle: "小刀与砧板的正确使用方式"
+	quest.6CACEE8BB2FE3EDA.title: "切切切！"
+	quest.6D6784E7FA61FE29.desc: "泵动式霰弹枪。"
+	quest.6D6784E7FA61FE29.subtitle: "霰弹枪系列 - 雷明顿 870"
+	quest.6D6784E7FA61FE29.title: "Remington 870"
+	quest.6F150DE414303F5C.desc: "满足你所有枪械制造需求的核心工作台。"
+	quest.6F150DE414303F5C.quest_desc: [
+		"枪械工匠台是所有战术装备诞生的摇篮。绝大多数现代火器及其核心组件都在这里通过精密加工而成。"
+		"右键打开界面即可查看可制造的各种武器。你将需要大量的钢锭、聚合物以及各种高级零部件来构建你的私人军火库。"
+	]
+	quest.6F150DE414303F5C.subtitle: "火力基石"
+	quest.705007081291C7F2.quest_desc: ["在葡萄成熟的季节，你用心栽培、采摘、压榨，每一滴葡萄汁都凝聚着你的努力。经过时间的沉淀与发酵，美酒终于在你的手中诞生。举起酒杯，品味这份辛勤的成果，也品味你在这片田园里书写的故事。干杯吧——这是属于你的葡萄酒世界。"]
+	quest.705007081291C7F2.title: "愿你早日开起属于自己的酒馆~"
+	quest.720B4FE715234A9E.desc: "一款极度可靠的 9mm 聚合物框架半自动手枪。"
+	quest.720B4FE715234A9E.quest_desc: [
+		"格洛克 17 以其无与伦比的可靠性和简洁的设计享誉全球。在 TACZ 中，它是新手的理想起点，拥有平易近人的后坐力和可观的弹匣容量。"
+		"无论是近身自卫，还是在主武器弹药耗尽时作为救命的后援，它都是你最值得信赖的伙伴。"
+	]
+	quest.720B4FE715234A9E.subtitle: "执勤手枪"
+	quest.731C552260B82BDD.quest_desc: [
+		"在森罗厨房中，带上草帽破坏草，可以获得四种新的作物种子。"
+		"分别是&a生菜&r、&a辣椒&r、&a番茄&r、&a水稻&r。"
+		"带上你的草帽，去获取一个 &a生菜种子&r 吧~"
+	]
+	quest.731C552260B82BDD.quest_subtitle: "带上草帽，飞一般的感觉~"
+	quest.731C552260B82BDD.title: "从播种开始吧~"
+	quest.735090D5EEB03F61.desc: "在千里之外取敌将首级。精度就是一切。"
+	quest.735090D5EEB03F61.subtitle: "系列概览"
+	quest.735090D5EEB03F61.title: "狙击步枪系列"
+	quest.74FB91B872262106.desc: "用于制造和加装瞄具、枪口等配件。"
+	quest.74FB91B872262106.subtitle: "核心设施"
+	quest.74FB91B872262106.title: "配件工作台"
+	quest.752D01803D614405.desc: "收集 64 发 9mm 帕拉贝鲁姆弹。"
+	quest.752D01803D614405.subtitle: "消耗品"
+	quest.752D01803D614405.title: "9mm 帕拉贝鲁姆弹"
+	quest.759C84F7B83A0812.desc: "拥有疯狂射速的多管重型机枪。"
+	quest.759C84F7B83A0812.quest_desc: [
+		"米尼岗（Minigun）绝不仅仅是在射击，它是在抹除目标。凭借每分钟数千发的恐怖射速，它能在战场上筑起一道钢铁之墙。"
+		"虽然庞大的弹药消耗和预热时间是其限制，但一旦枪管开始旋转，你面前的任何阻碍都将化为齑粉。"
+	]
+	quest.759C84F7B83A0812.subtitle: "钢铁风暴"
+	quest.760B782686B7EED2.quest_desc: [
+		"哪有人不爱大米饭？"
+		""
+		"稻米可以作为食材被烹饪，在后面的烹饪会用到。"
+	]
+	quest.76411AB110514716.desc: "配有折叠枪托的标志性战斗霰弹枪。"
+	quest.76411AB110514716.quest_desc: [
+		"SPAS-12 因其独特的半自动与泵动双模式切换能力而闻名。在 TACZ 中，它是一款打击感强悍且极具威慑力的武器。"
+		"带上这款传奇装备，满怀信心地突入任何敌方据点吧。"
+	]
+	quest.76411AB110514716.subtitle: "双模强权：SPAS-12"
+	quest.7694459F8E905FE5.quest_desc: [
+		"我饿了！"
+		""
+		"用木棍敲击搪瓷盆，可以发出\"悦耳\"的声音。"
+	]
+	quest.7696DC0D5B9DA2B8.quest_desc: [
+		"当生菜成熟之后，破坏生菜即可收获。"
+		"在收获时，有概率掉落&a猪儿虫&r，猪儿虫可以喂食给小鸡，让小鸡快速成长。"
+	]
+	quest.7696DC0D5B9DA2B8.quest_subtitle: "要多吃蔬菜哦~"
+	quest.76B9E1CD2A99FF14.quest_desc: [
+		"面食有很多做法，有包子、饺子、馅饼等等~"
+		""
+		"今天咱们试一下蒸包子吧！"
+		""
+		"首先用任意蔬菜+任意肉食+生面团，即可获得带馅面食哦~"
+	]
+	quest.76D285E7B1291DF4.quest_desc: [
+		"拿着生面团，长按右键，然后松开！"
+		""
+		"啦啦啦啦啦啦啦~~~面！"
+	]
+	quest.76D285E7B1291DF4.title: "拉拉拉拉拉面！"
+	quest.781F487E098F5945.quest_desc: [
+		"你已经学会了如何种植、收获、料理食材。"
+		""
+		"这一路的付出都会化作餐桌上的香气。"
+		""
+		"感谢你一路的耐心与付出。"
+		""
+		"愿你在这里，慢慢生活。"
+	]
+	quest.781F487E098F5945.quest_subtitle: "农夫乐事农业篇到此结束~"
+	quest.784C2A945BEFCCF2.desc: "三连发冲锋手枪。"
+	quest.784C2A945BEFCCF2.subtitle: "手枪系列 - B93R"
+	quest.784C2A945BEFCCF2.title: "B93R"
+	quest.7977683C74AF4951.desc: "12号口径霰弹枪弹药。"
+	quest.7977683C74AF4951.quest_desc: ["极致的近距离伤害。每一枚弹壳内都含有多颗铅丸，以确保在近距离内达到最大的火力覆盖面积。"]
+	quest.7977683C74AF4951.subtitle: "散弹狂欢：12号口径"
+	quest.7A958CE4E4461207.desc: "收集 64 发 7.62x39mm 弹。"
+	quest.7A958CE4E4461207.subtitle: "消耗品"
+	quest.7A958CE4E4461207.title: "7.62x39mm 弹"
+	quest.7B293F918ABD4978.quest_desc: [
+		"丛林葡萄可以生长在&a格架&r上，对着格架使用丛林葡萄种子，即可种植。格架也可以横着放置在天上，让葡萄竖着长哦~"
+		""
+		"如果格架两边的架子不好看，可以用斧头对着格架右键，隐藏架子。"
+		""
+		"(橡木格架目前有未知bug，所以在本服暂时被禁用，请等待我们修复。)"
+	]
+	quest.7B293F918ABD4978.quest_subtitle: "葡萄格架"
+	quest.7B293F918ABD4978.title: "另一种种植方式"
+	quest.7B9AE5CCE4CA2599.desc: "定制型号的大口径重型手枪。"
+	quest.7B9AE5CCE4CA2599.quest_desc: [
+		"枪械工匠的巅峰之作，将优雅的设计与 .50 口径的纯粹力量融为一体。"
+		"虽然射速较慢，但每一发子弹都足以成为致命的一击。"
+	]
+	quest.7B9AE5CCE4CA2599.subtitle: "终极副武器"
+	quest.7B9E513A78438F7A.desc: "拥有独特后坐缓冲系统的近战神器。"
+	quest.7B9E513A78438F7A.quest_desc: [
+		"Vector / “短剑”是现代枪械工程的奇迹。其 Super V 核心系统将后坐力向下导向，使得即使在极高的射速下也能保持惊人的操控力。"
+		"在近距离格斗中，这头每分钟 1200 发射速的猛兽能粉碎路径上的一切障碍。"
+	]
+	quest.7B9E513A78438F7A.subtitle: "超速打击：短剑"
+	quest.7D9D01A21A0CA8C9.desc: "带有集成瞄准镜的德国卡宾枪。"
+	quest.7D9D01A21A0CA8C9.subtitle: "步枪系列 - G36K"
+	quest.7D9D01A21A0CA8C9.title: "G36K"
+	quest.80E25C34294613B9.desc: "冲锋枪以高射速著称，是近距离战斗的利器。"
+	quest.80E25C34294613B9.subtitle: "系列概览"
+	quest.80E25C34294613B9.title: "冲锋枪系列"
+	quest.86747F7FF8DC7ABF.desc: "全自动霰弹枪。"
+	quest.86747F7FF8DC7ABF.subtitle: "霰弹枪系列 - AA-12"
+	quest.86747F7FF8DC7ABF.title: "AA-12"
+	quest.9FB59C5FB770EC7E.desc: "手枪是你的最后一道防线，虽然小巧但能在关键时刻救命。"
+	quest.9FB59C5FB770EC7E.subtitle: "系列概览"
+	quest.9FB59C5FB770EC7E.title: "手枪系列"
+	quest.A14F20568BEABECB.desc: "现代化的经典卡宾枪。"
+	quest.A14F20568BEABECB.subtitle: "狙击步枪系列 - SKS 战术版"
+	quest.A14F20568BEABECB.title: "SKS Tactical"
+	quest.ADBE986FDF56BD3E.desc: "收集 64 发 .45 ACP 弹。"
+	quest.ADBE986FDF56BD3E.subtitle: "消耗品"
+	quest.ADBE986FDF56BD3E.title: ".45 ACP 弹"
+	quest.B173BA3CFB0B1F91.desc: "突击步枪是现代战争的中流砥柱，火力猛且用途多。"
+	quest.B173BA3CFB0B1F91.subtitle: "系列概览"
+	quest.B173BA3CFB0B1F91.title: "步枪系列"
+	quest.B340DD5DEB28ED71.desc: "没有子弹的枪只是沉重的铁棍。确保持续的弹药供应。"
+	quest.B340DD5DEB28ED71.title: "弹药储备"
+	quest.BA8B76538E470DF0.desc: "采用导气活塞系统的增强型卡宾枪。"
+	quest.BA8B76538E470DF0.subtitle: "步枪系列 - HK416D"
+	quest.BA8B76538E470DF0.title: "HK416D"
+	quest.BCF0DD9FCD2DCE0A.desc: "紧凑的中国无托突击步枪。"
+	quest.BCF0DD9FCD2DCE0A.subtitle: "步枪系列 - 95式步枪"
+	quest.BCF0DD9FCD2DCE0A.title: "QBZ-95"
+	quest.C143498251B2F0C6.desc: "收集 64 发 .338 拉普阿弹。"
+	quest.C143498251B2F0C6.subtitle: "消耗品"
+	quest.C143498251B2F0C6.title: ".338 拉普阿弹"
+	quest.C144C1AA614F006D.desc: "流行的栓动步枪。"
+	quest.C144C1AA614F006D.subtitle: "狙击步枪系列 - 雷明顿 700"
+	quest.C144C1AA614F006D.title: "Remington 700"
+	quest.C57288F3575C1D45.desc: "收集 64 发 .308 温彻斯特弹。"
+	quest.C57288F3575C1D45.subtitle: "消耗品"
+	quest.C57288F3575C1D45.title: ".308 温彻斯特弹"
+	quest.C6B7C35C6AFBCEBA.desc: "收集 64 发 .50 BMG 弹。"
+	quest.C6B7C35C6AFBCEBA.subtitle: "消耗品"
+	quest.C6B7C35C6AFBCEBA.title: ".50 BMG 弹"
+	quest.C78883C46CF80346.desc: "模块化制式手枪。"
+	quest.C78883C46CF80346.subtitle: "手枪系列 - P320"
+	quest.C78883C46CF80346.title: "P320"
+	quest.C96595FD61A66334.desc: "可靠且威力强大的突击步枪。"
+	quest.C96595FD61A66334.subtitle: "步枪系列 - AK-47"
+	quest.C96595FD61A66334.title: "AK-47"
+	quest.CB77C2872AE516E5.desc: "可靠的捷克半自动手枪。"
+	quest.CB77C2872AE516E5.subtitle: "手枪系列 - CZ75"
+	quest.CB77C2872AE516E5.title: "CZ75"
+	quest.CCA2205058D95DFF.desc: "射速较慢但威力巨大的冲锋枪。"
+	quest.CCA2205058D95DFF.subtitle: "冲锋枪系列 - UMP-45"
+	quest.CCA2205058D95DFF.title: "UMP-45"
+	quest.DFD842494CB75695.desc: "传奇的美国制式手枪。"
+	quest.DFD842494CB75695.subtitle: "手枪系列 - M1911"
+	quest.DFD842494CB75695.title: "M1911"
+	quest.E30EB69BEA596C0A.desc: "标志性的紧凑型冲锋枪。"
+	quest.E30EB69BEA596C0A.subtitle: "冲锋枪系列 - UZI"
+	quest.E30EB69BEA596C0A.title: "UZI"
+	quest.E490E2F3F0C8E07F.desc: "便携式火箭发射器。"
+	quest.E490E2F3F0C8E07F.subtitle: "重型武器 - RPG-7"
+	quest.E490E2F3F0C8E07F.title: "RPG-7"
+	quest.E5F7FADCAA44AC00.desc: "半自动反器材步枪。"
+	quest.E5F7FADCAA44AC00.subtitle: "狙击步枪系列 - 巴雷特 M107"
+	quest.E5F7FADCAA44AC00.title: "Barrett M107"
+	quest.E9318187F1A00E20.desc: "威力巨大的手炮。"
+	quest.E9318187F1A00E20.subtitle: "手枪系列 - 沙漠之鹰"
+	quest.E9318187F1A00E20.title: "Desert Eagle"
+	quest.EAEB3B45185DF28D.desc: "经典的奥地利聚合物框架手枪。"
+	quest.EAEB3B45185DF28D.subtitle: "手枪系列 - 格洛克 17"
+	quest.EAEB3B45185DF28D.title: "Glock 17"
+	quest.FDC1332DFCFF7FD6.desc: "双模式战斗霰弹枪。"
+	quest.FDC1332DFCFF7FD6.subtitle: "霰弹枪系列 - SPAS-12"
+	quest.FDC1332DFCFF7FD6.title: "SPAS-12"
+	reward.076E0D59FBA1E022.title: "100元！"
+	reward.106950D66EBBE409.title: "钻石锄！"
+	task.047CB7D8C83B2328.title: "爽~"
+	task.0E4988CCD2404877.title: "愿你享受生活~"
+	task.112539B32461A8F1.title: "我炫炫炫！"
+	task.229152F9742B7795.title: "敲敲敲！"
+	task.2743DAF6268CDEE1.title: "感谢有你~"
+	task.28886459917C7A4E.title: "1"
+	task.2D2608F60BBD4414.title: "我已了解"
+	task.32DBA4AF24569EB7.title: "没错，就是锅盖！"
+	task.3FDA9E3E0865F5D4.title: "未成年人禁止饮酒！"
+	task.403B88F14FF6AB82.title: "好吃！"
+	task.45FCFE325C3D0AF2.title: "我已简单了解田园生活玩法"
+	task.49493B96A556FD8C.title: "好哦~"
+	task.4CA5222C04C6B91B.title: "森罗厨房"
+	task.53794FE4A79216BD.title: "爽~"
+	task.72E6FABC9C5BE68C.title: "感谢有你~"
+	task.76613D96E9C5667B.title: "森罗厨房"
+}

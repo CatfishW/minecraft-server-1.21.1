@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "id": "tacz",
+  "version": "${version}",
+  "name": "Timeless & Classics Guns: Zero Refabricated",
+  "description": "An unofficial Fabric port of Timeless & Classics Guns: Zero",
+  "authors": [
+    "Sh1roCu"
+  ],
+  "contact": {},
+  "license": "GPL3 / CC BY-NC-ND 4.0",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "cn.sh1rocu.tacz.client.TaCZFabricClient"
+    ],
+    "main": [
+      "cn.sh1rocu.tacz.TaCZFabric"
+    ],
+    "cardinal-components-entity": [
+      "com.tacz.guns.init.CapabilityRegistry"
+    ],
+    "modmenu": [
+      "cn.sh1rocu.tacz.compat.modmenu.ModMenuApiImpl"
+    ],
+    "jei_mod_plugin": [
+      "com.tacz.guns.compat.jei.GunModPlugin"
+    ],
+    "rei_client": [
+      "cn.sh1rocu.tacz.compat.rei.REIClientPlugin"
+    ],
+    "rei_common": [
+      "cn.sh1rocu.tacz.compat.rei.REIPlugin"
+    ]
+  },
+  "custom": {
+    "loom:injected_interfaces": {
+      "net/minecraft/class_276": [
+        "cn/sh1rocu/tacz/api/mixin/RenderTargetStencil"
+      ],
+      "net/minecraft/class_1309": [
+        "cn/sh1rocu/tacz/api/mixin/ItemHandlerCapability"
+      ]
+    },
+    "cardinal-components": [
+      "tacz:synced_entity_data"
+    ]
+  },
+  "mixins": [
+    "tacz.mixins.json",
+    "tacz.fabric.mixins.json",
+    "tacz.compat.acceleratedrendering.mixins.json"
+  ],
+  "accessWidener": "tacz.accesswidener",
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": [
+      "1.21.1"
+    ],
+    "forgeconfigapiport": "*"
+  }
+}

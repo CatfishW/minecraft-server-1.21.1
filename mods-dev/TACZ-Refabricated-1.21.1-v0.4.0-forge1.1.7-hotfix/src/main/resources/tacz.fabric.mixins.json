@@ -1,0 +1,59 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.sh1rocu.tacz.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "refmap": "tacz.refmap.json",
+  "plugin": "cn.sh1rocu.tacz.util.MixinPlugin",
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
+  "mixins": [
+    "accessor.ExplosionAccessor",
+    "common.AbstractMinecartMixin",
+    "common.ArmorStandMixin",
+    "common.BlockBehaviourMixin",
+    "common.BundlePacketMixin",
+    "common.EntityMixin",
+    "common.LivingEntityMixin",
+    "common.PackRepositoryMixin",
+    "common.PersistentEntitySectionManagerMixin",
+    "common.PlayerListMixin",
+    "common.PlayerMixin",
+    "common.RecipeManagerMixin",
+    "common.ReloadableResourcesMixin",
+    "common.ServerEntityMixin",
+    "common.ServerLevelMixin",
+    "common.ServerPacksSourceMixin",
+    "common.itemhandler.AbstractHorseMixin",
+    "common.itemhandler.LivingEntityMixin",
+    "common.itemhandler.PlayerMixin",
+    "compat.carryon.ConfigLoaderMixin",
+    "compat.controllable.BindingContextMixin",
+    "compat.tweakeroo.ItemMixin"
+  ],
+  "client": [
+    "accessor.AbstractSliderButtonAccessor",
+    "accessor.BlockableEventLoopAccessor",
+    "accessor.GameRendererAccessor",
+    "accessor.ScreenAccessor",
+    "client.AbstractPlayerMixin",
+    "client.CameraMixin",
+    "client.ChannelAccessHandleMixin",
+    "client.ClientLevelMixin",
+    "client.ClientPacketListenerMixin",
+    "client.CreateWorldScreenMixin",
+    "client.GameRendererMixin",
+    "client.GuiMixin",
+    "client.ItemInHandRendererMixin",
+    "client.KeyboardHandlerMixin",
+    "client.MinecraftMixin",
+    "client.MouseHandlerMixin",
+    "client.RenderTargetMixin",
+    "client.SoundEngineMixin",
+    "client.TextureAtlasMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

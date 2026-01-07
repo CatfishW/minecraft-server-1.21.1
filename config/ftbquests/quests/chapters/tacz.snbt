@@ -1,0 +1,1572 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tacz"
+	group: "4E5AA64291FA4369"
+	icon: {
+		components: {
+			"minecraft:custom_data": {
+				GunCurrentAmmoCount: 30
+				GunFireMode: "AUTO"
+				GunId: "tacz:ak47"
+				HasBulletInBarrel: 1b
+			}
+		}
+		id: "tacz:modern_kinetic_gun"
+	}
+	id: "5A8D3F2E1B4C6901"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			id: "2881B20DFF54D3DF"
+			rewards: [{
+				id: "46F229B50725D7E0"
+				type: "xp"
+				xp: 100
+			}]
+			tasks: [{
+				id: "3E3919F0008D8C0E"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2881B20DFF54D3DF"]
+			id: "6F150DE414303F5C"
+			rewards: [{
+				count: 5
+				id: "156AE97483D7C25F"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "305A9F8F05FFF6A2"
+				item: { count: 1, id: "tacz:gun_smith_table" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "209527EB6F371208"
+			rewards: [{
+				count: 5
+				id: "7736590D5FBBA255"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "5A89615F3991DBA6"
+				item: { components: { "minecraft:custom_data": { BlockId: "tacz:ammo_workbench" } }, count: 1, id: "tacz:workbench_a" }
+				type: "item"
+			}]
+			x: -2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "421DE3C01BC24B34"
+			rewards: [{
+				count: 5
+				id: "5A48FA782FD7604E"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "75B50C800DA21AB1"
+				item: { components: { "minecraft:custom_data": { BlockId: "tacz:attachment_workbench" } }, count: 1, id: "tacz:workbench_c" }
+				type: "item"
+			}]
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "23B9E6819C10D862"
+			rewards: [{
+				count: 5
+				id: "3A5675DCC7B49D41"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "1D31206857F5369D"
+				item: { count: 1, id: "tacz:ammo_box" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 5.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "0A3786E76BF1C994"
+			rewards: [{
+				count: 5
+				id: "1BF8ED8400E8EE2F"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "301978CA728CBAC2"
+				item: { count: 1, id: "tacz:target" }
+				type: "item"
+			}]
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "6E2BD9EADB85FD64"
+			rewards: [{
+				count: 5
+				id: "69F5AE5E7F928F43"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "469E05AD793A0F39"
+				item: { count: 1, id: "tacz:statue" }
+				type: "item"
+			}]
+			x: -4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "720B4FE715234A9E"
+			rewards: [
+				{
+					count: 5
+					id: "481FD2EEA3F4F30E"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "65D74B110004F7F9"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "0BC008CDE10DA07F"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:glock_17" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["720B4FE715234A9E"]
+			id: "48859012C0C192E2"
+			rewards: [
+				{
+					count: 5
+					id: "6A71C9196F5C4F33"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "28ED34E26B9EF853"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "496926683F36357E"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m1911" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["48859012C0C192E2"]
+			id: "67A88244048C7346"
+			rewards: [
+				{
+					count: 5
+					id: "396458797A37FAC0"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "73952C55CAE49777"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "1601CD9974A37EE1"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:cz75" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["67A88244048C7346"]
+			id: "6049BEE3E33E65A3"
+			rewards: [
+				{
+					count: 8
+					id: "2BACC01A7043EED5"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "27E32246C7A2DE2F"
+					type: "xp"
+					xp: 80
+				}
+			]
+			tasks: [{
+				id: "5FCCB929CB78C4C2"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:deagle" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "10DED764ED7FEC7A"
+			rewards: [
+				{
+					count: 6
+					id: "5A45603CE61A988E"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "1C18BF4096C18E5B"
+					type: "xp"
+					xp: 60
+				}
+			]
+			tasks: [{
+				id: "6D064573D9F3DC93"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:p320" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["10DED764ED7FEC7A"]
+			id: "010BBA6A8F47B641"
+			rewards: [
+				{
+					count: 6
+					id: "2AC6D9D121ACAD21"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "434B020D8AED0A2C"
+					type: "xp"
+					xp: 60
+				}
+			]
+			tasks: [{
+				id: "661DA44FAF69AD03"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:b93r" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6049BEE3E33E65A3"]
+			id: "7B9AE5CCE4CA2599"
+			rewards: [
+				{
+					id: "632F30529CBAD282"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "1A8DC51DB48FA702"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "059B7E684FA0D1FC"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:timeless50" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -6.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "4B266B3F49117DB5"
+			rewards: [
+				{
+					count: 5
+					id: "68539096B53E8DBD"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "2ABBB371C5DEEC6D"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "0463D58AE58F7BE3"
+					type: "xp"
+					xp: 150
+				}
+			]
+			tasks: [{
+				id: "1A3BEC8554C14286"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:ak47" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4B266B3F49117DB5"]
+			id: "5209B7D526B63AF5"
+			rewards: [
+				{
+					count: 5
+					id: "6993FC80F2073816"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "4510E02485120E84"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "1FCAA2B3C400E77E"
+					type: "xp"
+					xp: 150
+				}
+			]
+			tasks: [{
+				id: "33C17DC3E9F4130C"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m4a1" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["5209B7D526B63AF5"]
+			id: "488B4B3D7E19DCC9"
+			rewards: [
+				{
+					count: 6
+					id: "5A84E665227EE946"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "2D8B7A5E9F3C6D1B"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "279E7C64F763BBC7"
+					type: "xp"
+					xp: 160
+				}
+			]
+			tasks: [{
+				id: "15BE4A4A524B6D65"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:hk416d" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["488B4B3D7E19DCC9"]
+			id: "3B205E3D1BC0094C"
+			rewards: [
+				{
+					count: 6
+					id: "62A7E21F5ACE0D04"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "1E7C4B2F5A9D8E3A"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "6D5C6564A0F7C398"
+					type: "xp"
+					xp: 160
+				}
+			]
+			tasks: [{
+				id: "0EFE1C12683FEECF"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:scar_l" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["3B205E3D1BC0094C"]
+			id: "649AE536C33F1C34"
+			rewards: [
+				{
+					count: 8
+					id: "204064DA89F83AC5"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "3F9D1E6C8B5A2D7E"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "7FE6CB5AB1AA52F3"
+					type: "xp"
+					xp: 180
+				}
+			]
+			tasks: [{
+				id: "1BBB093B41D9560A"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:scar_h" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -3.0d
+			y: 14.0d
+		}
+		{
+			dependencies: ["5209B7D526B63AF5"]
+			id: "66F239436E212311"
+			rewards: [
+				{
+					count: 7
+					id: "0DC74776CB838F3F"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "5A6B8D1C3E4F9A2B"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "0260CFA042E46608"
+					type: "xp"
+					xp: 170
+				}
+			]
+			tasks: [{
+				id: "11A012C10ADF7051"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:aug" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["66F239436E212311"]
+			id: "3B3FF5F435687929"
+			rewards: [
+				{
+					count: 7
+					id: "3A7028BE54803449"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "4C5D7E8F9A1B2C3D"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "70DF8E56EF4D4CA3"
+					type: "xp"
+					xp: 170
+				}
+			]
+			tasks: [{
+				id: "0BCC071D3042E0A9"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:g36k" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -1.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["5209B7D526B63AF5"]
+			id: "7327D9070BF647D2"
+			rewards: [
+				{
+					count: 5
+					id: "0C331E9F959C0A62"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "43AED903BEEDB569"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "410DACE59686AB8E"
+					type: "xp"
+					xp: 150
+				}
+			]
+			tasks: [{
+				id: "65D5F7A92E0D2740"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m16a4" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -4.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["4B266B3F49117DB5"]
+			id: "587A2D57970953FE"
+			rewards: [
+				{
+					count: 5
+					id: "662AF6936DCD5940"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "7B6C5D4E3F2A1B9D"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "32D5AD5AE3055434"
+					type: "xp"
+					xp: 150
+				}
+			]
+			tasks: [{
+				id: "21C869D046CBCA21"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:qbz_95" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -4.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4B266B3F49117DB5"]
+			id: "6609899C2DFBEA2A"
+			rewards: [
+				{
+					count: 4
+					id: "7944FE0EF8B21F22"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "15DF3BDD278BDDBC"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "01ED679080131B3B"
+					type: "xp"
+					xp: 140
+				}
+			]
+			tasks: [{
+				id: "069A5A48C5D53D62"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:type_81" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: -1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "38B007A0EA3872AE"
+			rewards: [
+				{
+					count: 2
+					id: "31C3FDFCD25B446F"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "440E0C69B1FD33C4"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "24511E9F2E90A730"
+					type: "xp"
+					xp: 120
+				}
+			]
+			tasks: [{
+				id: "4BDA34DF43EB0DD3"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:hk_mp5a5" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["38B007A0EA3872AE"]
+			id: "7B9E513A78438F7A"
+			rewards: [
+				{
+					count: 4
+					id: "7CA47AFC6B7691B0"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "2BCEBD0096883FA4"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "44503DD981254FD7"
+					type: "xp"
+					xp: 140
+				}
+			]
+			tasks: [{
+				id: "697532DFDEDFD575"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:vector45" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["7B9E513A78438F7A"]
+			id: "7B5471AEA101FA53"
+			rewards: [
+				{
+					id: "18E87EB4F177CC77"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "7E5613B9E670FEA1"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "772502319236C92E"
+					type: "xp"
+					xp: 110
+				}
+			]
+			tasks: [{
+				id: "0BA583D513D9B984"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:ump45" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["7B5471AEA101FA53"]
+			id: "652077FF4B9632B6"
+			rewards: [
+				{
+					count: 5
+					id: "00D7D871D386691B"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "023EB03DCB07E2CB"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "039F0FBAD19022B4"
+					type: "xp"
+					xp: 150
+				}
+			]
+			tasks: [{
+				id: "1BDD6877BE5ED24D"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:p90" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["38B007A0EA3872AE"]
+			id: "1CA58A9ACD74BB96"
+			rewards: [
+				{
+					id: "25EE477130559B2A"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "1C59625527CEF89D"
+					type: "xp"
+					xp: 100
+				}
+			]
+			tasks: [{
+				id: "72311C22605F11B9"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:uzi" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["4E541219CD8146DC"]
+			id: "1D87063A704AAA71"
+			rewards: [
+				{
+					count: 5
+					id: "4F015E0CDF781F22"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "381F443819CB89E8"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "0B0017CAE5FDAC57"
+					type: "xp"
+					xp: 250
+				}
+			]
+			tasks: [{
+				id: "09BE9EAA2C883383"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:ai_awp" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["1C3D02FCA3F575A4"]
+			id: "4E541219CD8146DC"
+			rewards: [
+				{
+					count: 2
+					id: "2FC0BCF3C86C0AA3"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "75DC681854257E02"
+					type: "xp"
+					xp: 200
+				}
+			]
+			tasks: [{
+				id: "523B4BADD26AEFB1"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m700" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["1D87063A704AAA71"]
+			id: "4590A994D98958FD"
+			rewards: [
+				{
+					count: 5
+					id: "3FB45D7946ADF42A"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "5EB82BA052D593FE"
+					type: "xp"
+					xp: 500
+				}
+			]
+			tasks: [{
+				id: "4BE07D0CC8C66B63"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m107" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["1C3D02FCA3F575A4"]
+			id: "4BC82406469C37CE"
+			rewards: [
+				{
+					count: 2
+					id: "53A06EE64F429351"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "62A3A4EB38EB4F31"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "03F28DE370FDD7B5"
+					type: "xp"
+					xp: 220
+				}
+			]
+			tasks: [{
+				id: "58AACDC121B84E72"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:mk14" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 7.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "1C3D02FCA3F575A4"
+			rewards: [
+				{
+					count: 8
+					id: "7218D114EEEEA0D1"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "25774C2561E4E8D5"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "38EA3F2F8ED51D91"
+					type: "xp"
+					xp: 180
+				}
+			]
+			tasks: [{
+				id: "273968B99C7DF6CC"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:sks_tactical" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 6.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "546BD6A6D8DD0338"
+			rewards: [
+				{
+					count: 2
+					id: "62D027F945DBA4B1"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "4CA4632942F0D2D4"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "0E28574DC49AC42F"
+					type: "xp"
+					xp: 120
+				}
+			]
+			tasks: [{
+				id: "418950E6AF223376"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m870" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["546BD6A6D8DD0338"]
+			id: "68E13544F5C1A090"
+			rewards: [
+				{
+					count: 8
+					id: "706C79B4E224B84E"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "211E6FC865E565FB"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "14F7CDF5FCED056D"
+					type: "xp"
+					xp: 180
+				}
+			]
+			tasks: [{
+				id: "3F38B42656D3D8D3"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m1014" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["68E13544F5C1A090"]
+			id: "256885CB7255FA09"
+			rewards: [
+				{
+					count: 5
+					id: "41F66F8030D32482"
+					item: {
+						count: 1
+						id: "novus_items:bronze_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "13129DDA20C883EA"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "2636D6B00D242D3B"
+					type: "xp"
+					xp: 250
+				}
+			]
+			tasks: [{
+				id: "3CC09DB2C1F1B2E7"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:aa12" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 3.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["546BD6A6D8DD0338"]
+			id: "76411AB110514716"
+			rewards: [
+				{
+					count: 2
+					id: "4533E17E78A4DDF1"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "607513B85CB46C59"
+					type: "xp"
+					xp: 200
+				}
+			]
+			tasks: [{
+				id: "7473EDFE3F8DA10A"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:spas_12" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 4.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["6F150DE414303F5C"]
+			id: "3566A734C4B26AE3"
+			rewards: [
+				{
+					count: 3
+					id: "73347FBCEC47CD57"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "3DA88225010B3B48"
+					type: "xp"
+					xp: 300
+				}
+			]
+			tasks: [{
+				id: "64724AAB50576C75"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:rpk" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 9.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3566A734C4B26AE3"]
+			id: "12B780F3C43957D3"
+			rewards: [
+				{
+					count: 3
+					id: "0B5B11234988CF7A"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "587DBBEEE146EA7C"
+					type: "xp"
+					xp: 300
+				}
+			]
+			tasks: [{
+				id: "4311BDB063E5C265"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:m249" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 9.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["12B780F3C43957D3"]
+			id: "759C84F7B83A0812"
+			rewards: [
+				{
+					count: 6
+					id: "35576A9C4D3343C5"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "073F22DD133658FB"
+					type: "xp"
+					xp: 600
+				}
+			]
+			tasks: [{
+				id: "2918A536C4A076C8"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:minigun" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 9.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["3566A734C4B26AE3"]
+			id: "530737F279ED5AA1"
+			rewards: [
+				{
+					count: 4
+					id: "02BDF8D639445BBF"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "7CAEEE8283F3FC88"
+					type: "xp"
+					xp: 400
+				}
+			]
+			tasks: [{
+				id: "640E1AA8E508E9A5"
+				item: { components: { "minecraft:custom_data": { GunId: "tacz:rpg7" } }, count: 1, id: "tacz:modern_kinetic_gun" }
+				type: "item"
+			}]
+			x: 10.5d
+			y: 8.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "6510AC1A864D5250"
+			rewards: [{
+				count: 3
+				id: "4EAC6A43525AB949"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "478FFAC7EC853BB6"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:9mm" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "2F1190F30C9F1886"
+			rewards: [{
+				count: 3
+				id: "686098D1A6A5A94C"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "6BEFB476EBA8A066"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:45acp" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -2.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "3774DAC96EFF2B71"
+			rewards: [{
+				count: 3
+				id: "32AB323E347F19C7"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "7F26871668F8EB38"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:762x39" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "37FCA417955BF382"
+			rewards: [{
+				count: 3
+				id: "7D6F14DE334390F4"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "5E864FA929BB4680"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:556x45" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -4.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "08F6FB31F5BF3AC1"
+			rewards: [{
+				count: 3
+				id: "308B7287E396CA9B"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "40E6E35B7829C1F4"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:308" }, "minecraft:max_stack_size": 48 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 1.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "5696BC8BA37D39B4"
+			rewards: [{
+				count: 3
+				id: "006749AD9B02032C"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "7A2179C23AB5B1FC"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:58x42" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "19D89E16615CDC41"
+			rewards: [{
+				count: 3
+				id: "7F815D821D3B0AE4"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "6617F8F01051D697"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:57x28" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -1.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "3BA7D7A3E8793285"
+			rewards: [{
+				count: 3
+				id: "365C6E302D1B6693"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "243793ECAC52D1AD"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:338" }, "minecraft:max_stack_size": 30 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -5.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "587EA611ED9E83D8"
+			rewards: [{
+				count: 3
+				id: "7D6B4A792566EA51"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "05C19CE75C84F36E"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:50ae" }, "minecraft:max_stack_size": 48 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "34E11DEF3C6C3BE4"
+			rewards: [{
+				count: 3
+				id: "6ED83CBFC2DA604B"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "1987A48B86D9EA1C"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:50bmg" }, "minecraft:max_stack_size": 30 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -6.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "7977683C74AF4951"
+			rewards: [{
+				count: 3
+				id: "56F4476C145B38B9"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "4AD8DC922DC93E6D"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:12g" }, "minecraft:max_stack_size": 36 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "4E4D0E770FEB6046"
+			rewards: [{
+				count: 3
+				id: "69BE1DC7F906195A"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "41941D440F3A4AD9"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:762x54" }, "minecraft:max_stack_size": 60 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -7.0d
+		}
+		{
+			dependencies: ["209527EB6F371208"]
+			id: "0AF145B708E0A103"
+			rewards: [{
+				count: 3
+				id: "2C95B61110730D03"
+				item: {
+					count: 1
+					id: "novus_items:bronze_novus_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "0EF1ABDCD129CC8A"
+				item: { components: { "minecraft:custom_data": { AmmoId: "tacz:rpg_rocket" }, "minecraft:max_stack_size": 6 }, count: 1, id: "tacz:ammo" }
+				type: "item"
+			}]
+			x: -7.5d
+			y: -8.0d
+		}
+		{
+			dependencies: [
+				"3E3919F0008D8C0E"
+				"2881B20DFF54D3DF"
+			]
+			id: "4F254CFA4C483109"
+			rewards: [
+				{
+					count: 10
+					id: "4D3381A45CAF9F6C"
+					item: {
+						count: 1
+						id: "novus_items:silver_novus_coin"
+					}
+					type: "item"
+				}
+				{
+					id: "18CA2D6B2A58B78C"
+					type: "xp"
+					xp: 100
+				}
+				{
+					id: "0C75182D88E23436"
+					item: {
+						components: {
+							"minecraft:custom_data": {
+								Level: 2
+							}
+						}
+						count: 1
+						id: "tacz:ammo_box"
+					}
+					type: "item"
+				}
+			]
+			tasks: [{
+				entity: "easy_npc:humanoid"
+				icon: {
+					components: {
+						"!ftbquests:icon": { }
+						"ftbquests:entity_face": "easy_npc:bogged_raw"
+					}
+					id: "ftbquests:custom_icon"
+				}
+				id: "69E9DEEDD58807B8"
+				type: "kill"
+				value: 1L
+			}]
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+}

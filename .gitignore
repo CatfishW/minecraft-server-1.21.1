@@ -1,0 +1,32 @@
+# Minecraft Server Gitignore
+world/
+logs/
+backup/
+tacz_backup/
+*.log
+libraries/
+versions/
+usercache.json
+banned-ips.json
+banned-players.json
+ops.json
+whitelist.json
+crash-reports/
+debug/
+stats/
+advancements/
+playerdata/
+.fabric/
+
+# Build artifacts in mods-dev
+mods-dev/**/build/
+mods-dev/**/.gradle/
+mods-dev/**/*.jar
+mods-dev/**/*.zip
+mods-dev/**/*.swp
+mods-dev/**/bin/
+mods-dev/**/out/
+
+# System files
+.DS_Store
+thumbs.db
