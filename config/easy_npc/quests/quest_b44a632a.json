@@ -1,0 +1,15 @@
+{
+    "id": "b44a632a-c3f9-47c1-a58a-4c9a1185573e",
+    "title": "清理尸鬼",
+    "description": "沼泽里的尸鬼吵得我睡不着觉，去解决掉它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

@@ -1,0 +1,203 @@
+{
+    "name": "§eMartin Brenner",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Papa. The scientist behind the experiments.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MartinBrenner.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "啊，是位新面孔。你在我的实验室外徘徊，是有什么事吗？这里是禁区，普通人不得入内。但我看你的眼神，不像那些无知的农夫。你似乎……对未知有着特殊的渴望。",
+            "buttons": [
+                {
+                    "label": "寻找亨利",
+                    "action": "OPEN_QUEST_DIALOG:6b2d5b7a-8f4c-4c22-9d21-8e5a5b5c5d5e",
+                    "id": "btn_quest_3ce65723"
+                },
+                {
+                    "label": "异常样本收集",
+                    "action": "OPEN_QUEST_DIALOG:e0e6f6e5-8c8b-4d5d-91a2-b4575e8a4a26",
+                    "id": "btn_quest_edf34450"
+                },
+                {
+                    "label": "暗物质样本",
+                    "action": "OPEN_QUEST_DIALOG:beb48f5d-9d44-4964-b5da-a774e006c7bd",
+                    "id": "btn_quest_5ab29942"
+                },
+                {
+                    "label": "清除实验误差",
+                    "action": "OPEN_QUEST_DIALOG:cc2d932f-7104-4f18-9296-90dcb077b3fd",
+                    "id": "btn_quest_eec575a0"
+                },
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:identity",
+                    "id": "btn_who"
+                },
+                {
+                    "label": "这里在做什么实验？",
+                    "action": "SHOW_DIALOG:experiment",
+                    "id": "btn_exp"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "identity": {
+            "greeting": "你可以叫我布伦纳博士。在这个设施里，我负责引导人类走向进化的下一步。有些人叫我‘爸爸’，因为我是他们的创造者，也是他们唯一的依靠。当然，那些不懂科学的人，只会用恐惧来评价我的工作。",
+            "buttons": [
+                {
+                    "label": "你的‘孩子’们是什么？",
+                    "action": "SHOW_DIALOG:children",
+                    "id": "btn_children"
+                },
+                {
+                    "label": "听起来很危险。",
+                    "action": "SHOW_DIALOG:danger",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "experiment": {
+            "greeting": "我们在探索意识的边界，以及联通平行维度的可能性。利用极其特殊的脑电波共振，我们找到了一个镜像世界，一个充满阴影和奇观的地方。当然，这需要牺牲，任何伟大的科学突破都伴随着代价。",
+            "buttons": [
+                {
+                    "label": "代价是什么？",
+                    "action": "SHOW_DIALOG:cost",
+                    "id": "btn_cost"
+                },
+                {
+                    "label": "我要离开这里。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "children": {
+            "greeting": "他们是天赋异禀的孩子，拥有常人无法想象的力量。我在抚养他们，教导他们控制这种力量。如果没有我，他们只会被世界视为怪物。我是在保护他们，也是在保护这个世界免受他们的失控。",
+            "buttons": [
+                {
+                    "label": "那个叫Eleven的女孩呢？",
+                    "action": "SHOW_DIALOG:eleven",
+                    "id": "btn_eleven"
+                },
+                {
+                    "label": "听起来像是囚禁。",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_judge"
+                }
+            ]
+        },
+        "danger": {
+            "greeting": "恐惧是无知的产物。那个维度的存在——我们称之为‘逆世界’——确实具有威胁性，但这正是我们要征服的目标。就像早期的疫苗一样，只要控制得当，最致命的病毒也能变成进化的催化剂。",
+            "buttons": [
+                {
+                    "label": "你能控制它吗？",
+                    "action": "SHOW_DIALOG:control",
+                    "id": "btn_control"
+                },
+                {
+                    "label": "我想见见那些孩子。",
+                    "action": "SHOW_DIALOG:children",
+                    "id": "btn_see_kids"
+                }
+            ]
+        },
+        "cost": {
+            "greeting": "生命力，或者理智。想要打开那扇门，就需要强大的精神作为钥匙，或者作为祭品。这也是为什么我们需要寻找像你这样……意志坚定的人。但如果你只是个过客，最好忘记今晚看到的一切。",
+            "buttons": [
+                {
+                    "label": "我拒绝参与。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_refuse"
+                },
+                {
+                    "label": "如果我有超能力呢？",
+                    "action": "SHOW_DIALOG:recruit",
+                    "id": "btn_recruit"
+                }
+            ]
+        },
+        "eleven": {
+            "greeting": "她是特殊的，是我最杰出的作品，也是最大的失误。她太强了，强到连我都开始无法预测她的行为。她以为她逃掉了，但她身上永远流淌着我的血液，有着无法逃避的命运。她会回来的，或者我会把她找回来。",
+            "buttons": [
+                {
+                    "label": "我会告诉她你在这里。",
+                    "action": "SHOW_DIALOG:warning",
+                    "id": "btn_threat"
+                },
+                {
+                    "label": "祝你好运。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "conclusion": {
+            "greeting": "囚禁？不，是引导。就像修剪树木一样，为了让它长得更好，必须剪掉多余的枝叶。你不会理解的，这是一种为了更崇高目标的仁慈。现在，你的参观时间结束了，卫兵会送你出去的。",
+            "buttons": [
+                {
+                    "label": "再见，博士。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "control": {
+            "greeting": "控制不是压制，而是同化。我们要理解它，吸收它，最终成为它。如果无法控制，那就将它毁灭。这是我与那个‘怪物’唯一的区别——我拥有理智和计划，而它只有食欲。",
+            "buttons": [
+                {
+                    "label": "我明白了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_understand"
+                }
+            ]
+        },
+        "recruit": {
+            "greeting": "真的吗？这可不是开玩笑的。如果你真有这样的天赋，你应该为国家服务，为人类的进步献身。留下来吧，我们可以一起探索这无限的可能。我保证，你会得到最好的资源和……关注。",
+            "buttons": [
+                {
+                    "label": "我加入。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_join"
+                },
+                {
+                    "label": "我需要考虑一下。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_wait"
+                }
+            ]
+        },
+        "warning": {
+            "greeting": "去吧。告诉她，爸爸还在等她回家。顺便提醒她，那个玩弄她情感的男孩（Mike）保护不了她。在这个残酷的宇宙里，只有力量才是永恒的，而那是我赋予她的。",
+            "buttons": [
+                {
+                    "label": "我会转达的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_warn"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_pickaxe",
+            "count": 1
+        }
+    }
+}

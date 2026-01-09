@@ -1,0 +1,15 @@
+{
+    "id": "e4f2a8c3-57e0-4256-a06c-55a1416351e0",
+    "title": "清理路障",
+    "description": "下水道里潜伏着僵尸，去清理几只。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

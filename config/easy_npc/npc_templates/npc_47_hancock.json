@@ -1,0 +1,128 @@
+{
+    "name": "§cHancock",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Ghoul mayor of Goodneighbor.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Hancock.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哟，陌生人。欢迎来到好邻居。我是汉考克，这里的市长……某种意义上是。看到这辐射烧焦的皮囊了吗？这让我比这废土上任何一个装模作样的人都活得更久，也看得更清。想喝一杯，还是想惹点麻烦？",
+            "buttons": [
+                {
+                    "label": "清理变种人威胁",
+                    "action": "OPEN_QUEST_DIALOG:b1f4a5c2-3e19-4d8e-9a2b-5c7d8e9f0a1b",
+                    "id": "btn_quest_a7c0775b"
+                },
+                {
+                    "label": "清理下水道",
+                    "action": "OPEN_QUEST_DIALOG:a7b1e48d-3c5f-4a2e-9c8d-1f0a2b3c4d5e",
+                    "id": "btn_quest_e7f1ab40"
+                },
+                {
+                    "label": "收集辐射浆果",
+                    "action": "OPEN_QUEST_DIALOG:279dbd8c-cd52-48f7-bdc2-b069dc9f4fd8",
+                    "id": "btn_quest_9f46046d"
+                },
+                {
+                    "label": "Hancock的善意",
+                    "action": "OPEN_QUEST_DIALOG:f1ee4b28-53ae-40f4-b5d2-8d23cacffa77",
+                    "id": "btn_quest_9b0eb18d"
+                },
+                {
+                    "label": "你是怎么变成这样的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_hancock"
+                },
+                {
+                    "label": "我想找点乐子",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_fun"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "哈！贪婪和放射性尘埃的杰作。我以前也是个正常人，为了寻找传说中的「长寿药」吞下了无数胶囊。结果？我活下来了，代价是这副尊容。但我反而觉得这样更自在，至少不用再伪装成什么正人君子了。",
+            "buttons": [
+                {
+                    "label": "听起来很孤独",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_lonely"
+                },
+                {
+                    "label": "活下来就是硬道理",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_realist"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "好样的。在这个操蛋的世界里，及时行乐比什么都重要。去「第三铁轨」喝一杯，账单算我的。或者你想去底特律巷看看？那里有些不守规矩的混混，如果你手痒的话，我可以给你指个方向。",
+            "buttons": [
+                {
+                    "label": "去第三铁轨",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bar"
+                },
+                {
+                    "label": "去底特律巷惹事",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_riots"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "孤独？也许吧。但我有我的兄弟姐妹们，还有这个该死的社区。只要我还喘气，我就不会让学院或者钢铁兄弟会那种僵化的教条把这里毁掉。你想体验一下当个边缘人的感觉吗？我这里有几副抗辐射服。",
+            "buttons": [
+                {
+                    "label": "给我来一副",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_suit"
+                },
+                {
+                    "label": "我想听听你对学院的看法",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_school"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "学院？一群躲在地下不敢见人的书呆子。他们以为自己能用代码改变世界，却不知道地上的人是怎么活下来的。还有兄弟会，一群只会开飞机的暴君。只有在这里，在好邻居，我们才拥有真正的自由。",
+            "buttons": [
+                {
+                    "label": "为了自由！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_free"
+                },
+                {
+                    "label": "我得走了，市长",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye_hancock"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:compass",
+            "count": 1
+        }
+    }
+}

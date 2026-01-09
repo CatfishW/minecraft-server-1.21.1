@@ -1,0 +1,15 @@
+{
+    "id": "b5376c38-6573-4d8e-b341-125d97388345",
+    "title": "装甲尸潮",
+    "description": "那些穿着铁甲的僵尸太碍事了，把它们清理掉，别让它们靠近我的车。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

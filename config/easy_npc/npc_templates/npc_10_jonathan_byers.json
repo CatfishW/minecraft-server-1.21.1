@@ -1,0 +1,233 @@
+{
+    "name": "§6Jonathan Byers",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Quiet photographer. Courageous outsider.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/JonathanByers.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "……你好。你是新来的吗？小心点，这个镇子不像看起来那么平静。我在检查我的相机，光线有点奇怪，空气中有一种……静电的味道。通常这种时候，就会有不好的事情发生。如果你没事，最好早点回家，锁好门窗。",
+            "buttons": [
+                {
+                    "label": "暗处的注视",
+                    "action": "OPEN_QUEST_DIALOG:b1a535c2-688d-4a5f-a295-27812c606e56",
+                    "id": "btn_quest_39bc6564"
+                },
+                {
+                    "label": "寻找亨利",
+                    "action": "OPEN_QUEST_DIALOG:5a1b3c4d-5e6f-7890-1234-567890abcdef",
+                    "id": "btn_quest_ac68974f"
+                },
+                {
+                    "label": "静止之光",
+                    "action": "OPEN_QUEST_DIALOG:e611a0ac-d19a-433a-9dac-92dc0f8bf458",
+                    "id": "btn_quest_fce03a5b"
+                },
+                {
+                    "label": "暗影中的异响",
+                    "action": "OPEN_QUEST_DIALOG:f7342475-b385-4bfa-b335-3e0705c0d991",
+                    "id": "btn_quest_3be8d1b2"
+                },
+                {
+                    "label": "你在拍什么?",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_what_photo"
+                },
+                {
+                    "label": "你妈妈还好吗?",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_mom_ok"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "我在尝试捕捉一些不寻常的光影。有时候，当那些生物穿过缝隙时，它们会在现实世界留下短暂的痕迹。肉眼可能看不见，但底片能捕捉到。就像水面上的油渍，或者……热浪中的扭曲。我必须在它们消失前记录下来，这是唯一的证据。",
+            "buttons": [
+                {
+                    "label": "这很危险吗?",
+                    "action": "SHOW_DIALOG:story_1a",
+                    "id": "btn_danger"
+                },
+                {
+                    "label": "给我看看照片",
+                    "action": "SHOW_DIALOG:story_1b",
+                    "id": "btn_see_photos"
+                }
+            ]
+        },
+        "story_1a": {
+            "greeting": "非常危险。如果我离得太近，或者闪光灯激怒了它们，我可能会被拖进缝隙里，或者被它们的护卫者攻击。我试过一次，那次差点就没命了。但我不能停止，如果我不记录下来，没人会相信这一切，连警察都可能会忽视。",
+            "buttons": [
+                {
+                    "label": "别太冒险",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_be_careful"
+                },
+                {
+                    "label": "警察不管吗?",
+                    "action": "SHOW_DIALOG:story_1a_extra",
+                    "id": "btn_cops_ignore"
+                }
+            ]
+        },
+        "story_1a_extra": {
+            "greeting": "Hopper 警长知道真相，但他受制于上头和保密协议。其他的警察只会认为是恶作剧或者幻觉。只有我拍到的照片是铁证。而且，我想找到这些生物出现的规律，这样也许我能……警告其他人。我不想再看到有人像我朋友那样消失。",
+            "buttons": [
+                {
+                    "label": "你很勇敢",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_brave"
+                },
+                {
+                    "label": "需要帮助吗?",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_off_help"
+                }
+            ]
+        },
+        "story_1b": {
+            "greeting": "现在还不能给你看，光线还没处理好。而且……这些照片很令人不安。你看不到实体，只能看到一团模糊的黑影，但如果你仔细看，你会发现黑影里有……眼睛。很多双眼睛。我不想让你做噩梦。等我冲洗出来，让 Nancy 检测过之后再说吧。",
+            "buttons": [
+                {
+                    "label": "好吧，理解",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_understand"
+                },
+                {
+                    "label": "那就告诉我你看到了什么",
+                    "action": "SHOW_DIALOG:story_1b_extra",
+                    "id": "btn_describe"
+                }
+            ]
+        },
+        "story_1b_extra": {
+            "greeting": "我看到过一个影子在水塔上爬行，没有借助任何梯子，垂直的。我看到过一个像枯树枝一样的生物在树林里快速移动，速度快得不像生物。我还拍到过……一个半透明的、像果冻一样的东西包裹住了一只鹿，然后那只鹿就消失了。画面是黑白的，但那种恐惧感是彩色的。",
+            "buttons": [
+                {
+                    "label": "太诡异了",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_creepy"
+                },
+                {
+                    "label": "继续拍",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_keep_shooting"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我妈妈……她很坚强，比任何人都坚强。但她受的伤太深了。有时候我看到她对着那些闪烁的灯泡说话，我就觉得很难过。我应该做得更多，我应该保护她和 Will。以前我太软弱了，总是躲在镜头后面，但现在不同了。",
+            "buttons": [
+                {
+                    "label": "你已经做得很好了",
+                    "action": "SHOW_DIALOG:story_2a",
+                    "id": "btn_you_good"
+                },
+                {
+                    "label": "Will 现在怎么样?",
+                    "action": "SHOW_DIALOG:story_2b",
+                    "id": "btn_how_will"
+                }
+            ]
+        },
+        "story_2a": {
+            "greeting": "还不够。以前是 Steve 在保护他们，现在我也能战斗了。我有猎枪，我也知道怎么瞄准。当怪物出现时，我不再只是拍照，我会开火。我不想再看着家人受伤了。那段黑暗的日子改变了我，让我变得……更坚硬了一些。",
+            "buttons": [
+                {
+                    "label": "这种改变是必要的",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_necessary"
+                },
+                {
+                    "label": "Steve 也是个好帮手",
+                    "action": "SHOW_DIALOG:story_2a_extra",
+                    "id": "btn_steve_help"
+                }
+            ]
+        },
+        "story_2a_extra": {
+            "greeting": "是的，虽然我以前很嫉妒他，觉得他抢走了 Nancy 的注意力，觉得他是个只会耍酷的混蛋。但经历了那些事之后，我知道他是个好人，是个值得信赖的伙伴。他的球棒和我的相机，我们配合得还不错。我们都在用自己的方式保护重要的人。",
+            "buttons": [
+                {
+                    "label": "成熟了",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_mature"
+                },
+                {
+                    "label": "回到 Will 的话题",
+                    "action": "SHOW_DIALOG:story_2b",
+                    "id": "btn_back_will"
+                }
+            ]
+        },
+        "story_2b": {
+            "greeting": "Will 变得更内向了，但他也在努力恢复正常。他画画，画很多风景，但总会在角落里画上一些黑色的裂缝。他能感觉到那些东西的存在，就像一个生物雷达。有时候他会突然僵住，指着空无一物的空气说‘那里有东西’。我必须时刻留意他。",
+            "buttons": [
+                {
+                    "label": "他还在受苦",
+                    "action": "SHOW_DIALOG:story_2b_extra",
+                    "id": "btn_still_suffering"
+                },
+                {
+                    "label": "怎么帮他?",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_help_him"
+                }
+            ]
+        },
+        "story_2b_extra": {
+            "greeting": "我不让他独自待着，而且我教他摄影。我想让他学会通过镜头看世界，这能让他感到安全一点。至少如果有什么东西出现，他能拍下来告诉我。我们之间有这种默契，不用说话也能明白对方的意思。他是我最好的弟弟，也是我的战友。",
+            "buttons": [
+                {
+                    "label": "姐弟情深",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_brothers"
+                },
+                {
+                    "label": "你们都很不容易",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_hard"
+                }
+            ]
+        },
+        "conclusion": {
+            "greeting": "光线变了，也许我的预感是对的。我得去看看。如果你在镇上看到任何奇怪的、像胶片噪点一样的东西，或者闻到烧焦的臭氧味，马上躲起来，然后通知 Hopper。保持警惕，别相信你的眼睛，有时候镜头比眼睛更诚实。",
+            "buttons": [
+                {
+                    "label": "去吧，注意安全",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go_safe"
+                },
+                {
+                    "label": "我也去看看",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_lets_go"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_pickaxe",
+            "count": 1
+        }
+    }
+}

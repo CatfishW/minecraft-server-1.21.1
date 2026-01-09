@@ -1,0 +1,15 @@
+{
+    "id": "a567f26a-b838-4689-8986-72a63580f69f",
+    "title": "清理威胁",
+    "description": "城墙外的僵尸越来越近了，我们需要保持警戒。把它们清理掉。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

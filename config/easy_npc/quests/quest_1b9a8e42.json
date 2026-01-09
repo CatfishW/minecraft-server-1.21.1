@@ -1,0 +1,15 @@
+{
+    "id": "1b9a8e42-3c2d-4d91-8f6a-123456789abc",
+    "title": "动力装甲部件",
+    "description": "亨利，你得帮帮我！我在收集动力装甲的零件。你去把那个叫Mike Wheeler的家伙手里的心血来潮水晶给我弄来。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

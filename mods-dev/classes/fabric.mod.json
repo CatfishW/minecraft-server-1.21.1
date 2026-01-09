@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "physicsmod",
+  "version": "3.0.24-fixed-2",
+  "accessWidener" : "physicsmod.accesswidener",
+
+  "name": "Physics Mod",
+  "description": "Welcome to a more destructive Minecraft then you've ever seen before!",
+  "authors": [
+    "Haubna"
+  ],
+  "environment": "client",
+  "contact": {
+    "homepage": "https://minecraftphysicsmod.com/"
+  },
+
+  "license": "All rights reserved",
+  "icon": "assets/physicsmod/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.diebuddies.physics.ModExecutorClient"
+    ],
+    "server": [
+      "net.diebuddies.physics.ModExecutorServer"
+    ],
+    "modmenu": [
+      "net.diebuddies.compat.ModMenu"
+    ]
+  },
+  "mixins": [
+    "physicsmod.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.14",
+    "minecraft": ">=1.19.3",
+    "fabric-api": ">=0.75",
+    "java": ">=17"
+  }
+}

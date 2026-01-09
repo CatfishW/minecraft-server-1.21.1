@@ -37,9 +37,18 @@ public class ServerEntityData {
   private final EnumMap<ServerDataIndex, ServerDataItem<?>> customEntityDataMap =
       new EnumMap<>(ServerDataIndex.class);
   private final boolean isClientSide;
+  private String faction = "default";
 
   public ServerEntityData(Entity entity) {
     this.isClientSide = entity != null && entity.level().isClientSide;
+  }
+  
+  public String getFaction() {
+    return faction;
+  }
+  
+  public void setFaction(String faction) {
+    this.faction = faction != null ? faction : "default";
   }
 
   /*

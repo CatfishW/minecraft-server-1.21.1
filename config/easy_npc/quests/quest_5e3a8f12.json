@@ -1,0 +1,15 @@
+{
+    "id": "5e3a8f12-b4c5-4d0a-9c1b-6e7d8f9a0b1c",
+    "title": "超感应测试",
+    "description": "亨利似乎对我的能力很感兴趣。去和他谈谈，看看他想要什么。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

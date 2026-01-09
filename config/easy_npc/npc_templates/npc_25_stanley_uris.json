@@ -1,0 +1,198 @@
+{
+    "name": "§bStanley Uris",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Logical and skeptical. Bird watcher.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/StanleyUris.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "我在数鸟。乌鸦。它们是聪明的生物，也是糟糕的预兆。通常它们成群结队，但现在它们飞走了。就像逃离火灾的蚂蚁。这让我很不安。逻辑告诉我，动物对危险的感知比人类敏锐得多。而这里的危险……不合逻辑。",
+            "buttons": [
+                {
+                    "label": "寻找红尾鸟",
+                    "action": "OPEN_QUEST_DIALOG:c42b1f70-5e27-4d5a-8f36-3a8c2159d6e1",
+                    "id": "btn_quest_b80c8b8c"
+                },
+                {
+                    "label": "稀有的观察对象",
+                    "action": "OPEN_QUEST_DIALOG:d16a2b5c-b301-4adb-8ff9-b51269d05abd",
+                    "id": "btn_quest_b44dc5aa"
+                },
+                {
+                    "label": "天空的异变",
+                    "action": "OPEN_QUEST_DIALOG:52a0ae8c-1b6e-458a-b39d-5e573be82cce",
+                    "id": "btn_quest_b20ed0fb"
+                },
+                {
+                    "label": "什么不合逻辑？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_stan_logic"
+                },
+                {
+                    "label": "你看起来很焦虑",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_stan_anxious"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "一切都不合逻辑。一个会变形的小丑？把人像气球一样放气？我是会计，Stanley Uris。我负责把数字加起来，账目平掉。但这个镇子的账目永远平不了。这里有一个巨大的负数，而我们都填不平它。",
+            "buttons": [
+                {
+                    "label": "你相信有超自然力量吗？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_stan_super"
+                },
+                {
+                    "label": "也许我们该放弃",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_stan_giveup"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "我不信。我只信眼睛看到的，数据证明的。但我看到了什么？我看到了不可能。我看到了违反物理定律的把戏。如果我承认它是真的，我就得承认我一直生活在一个谎言里，一个脆弱的、随时会被撕碎的现实。",
+            "buttons": [
+                {
+                    "label": "现实已经被撕碎了",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_stan_shred"
+                },
+                {
+                    "label": "我们只能接受",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_accept"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "我知道。这就是为什么我想逃跑。小时候我们可以因为是孩子而相信。但现在我们是成年人。成年人应该相信逻辑，相信秩序。如果我拿起武器去对抗那个……东西，我就承认了混乱是宇宙的法则。我做不到。",
+            "buttons": [
+                {
+                    "label": "你需要战胜恐惧",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_fear"
+                },
+                {
+                    "label": "我会理解你的选择",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_choice"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "放弃？听起来很诱人。就像一张整洁的资产负债表。零。但是比尔不这么想。比尔认为只要我们在一起，就能改变事实。但我见过太多无法改变的事实。有些账目，是永远无法清零的。",
+            "buttons": [
+                {
+                    "label": "比尔是对的",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_bill"
+                },
+                {
+                    "label": "现实点是好事",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_real"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "焦虑？不，这是理性的预警。我的心率加快，手心出汗，这是交感神经系统在告诉我：有致命威胁。但我找不到威胁的来源。它无处不在，又无处可寻。这种未知最折磨人。",
+            "buttons": [
+                {
+                    "label": "有什么能让你冷静？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_stan_calm"
+                },
+                {
+                    "label": "我们需要你的分析能力",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_stan_analysis"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "秩序。确定性。如果我能把这一切像解谜一样拼凑起来，我就能冷静。但这里没有规律。死老鼠堆成的塔，血雨，这些都不是自然现象。这像是一个疯子的画作，没有透视，没有比例，只有疯狂。",
+            "buttons": [
+                {
+                    "label": "也许这就是它的本质",
+                    "action": "SHOW_DIALOG:story_2_1_1",
+                    "id": "btn_stan_essence"
+                },
+                {
+                    "label": "试着专注于细节",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_details"
+                }
+            ]
+        },
+        "story_2_1_1": {
+            "greeting": "如果这是它的本质，那我们赢不了。因为我们在和纯粹的混乱作战。这是一场必败的战争。除非……除非混乱也是某种巨大的结构。也许它也有弱点，也有它必须遵守的规则，即使那些规则丑陋不堪。",
+            "buttons": [
+                {
+                    "label": "这就是我们需要你的地方",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_needed"
+                },
+                {
+                    "label": "找到那个规则",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_rule"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "我的分析？好吧。它捕食孩子，每隔27年。它住在下水道。它利用恐惧。但是为什么是27年？为什么是下水道？这些数字和地点可能有关联。也许有某种周期性的能量波动，或者地磁异常？我在瞎猜。",
+            "buttons": [
+                {
+                    "label": "继续分析",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan_keep"
+                },
+                {
+                    "label": "也许这就是线索",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_stan线索"
+                }
+            ]
+        },
+        "story_end": {
+            "greeting": "我得走了。我需要看天空，看树。那些东西是真实的，它们遵循物理定律。如果我陷在这个逻辑死循环里太久，我会疯的。祝你们好运。希望你们能找到你们的答案。",
+            "buttons": [
+                {
+                    "label": "保持联系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_stan_close"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_stan_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_pickaxe",
+            "count": 1
+        }
+    }
+}

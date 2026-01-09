@@ -30,6 +30,7 @@ import de.markusbordihn.easynpc.Constants;
 import de.markusbordihn.easynpc.config.NPCJsonConfig;
 import de.markusbordihn.easynpc.config.NPCTemplateManager;
 import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
+import de.markusbordihn.easynpc.item.configuration.SpawnRectWandItem;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
@@ -37,9 +38,11 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.arguments.EntityArgument;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.item.ItemStack;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -68,6 +71,11 @@ public class TemplateCommand {
         .then(registerList())
         .then(registerReload())
         .then(registerSpawn())
+        .then(registerSpawnAll())
+        .then(registerSpawnRect())
+        .then(registerSpawnWand())
+        .then(registerSpawnTimers())
+        .then(registerStopSpawnRect())
         .then(registerExport());
   }
   
@@ -95,6 +103,14 @@ public class TemplateCommand {
         .then(Commands.argument("template_name", StringArgumentType.word())
             .suggests(TemplateCommand::suggestTemplateNames)
             .executes(TemplateCommand::executeSpawn));
+  }
+
+  /**
+   * Register the spawn_all subcommand.
+   */
+  private static ArgumentBuilder<CommandSourceStack, ?> registerSpawnAll() {
+    return Commands.literal("spawn_all")
+        .executes(TemplateCommand::executeSpawnAll);
   }
   
   /**
@@ -189,6 +205,48 @@ public class TemplateCommand {
     
     return Command.SINGLE_SUCCESS;
   }
+
+  /**
+   * Execute the spawn_all command.
+   */
+  private static int executeSpawnAll(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+    CommandSourceStack source = context.getSource();
+    ServerPlayer player = source.getPlayerOrException();
+    Set<String> templates = NPCTemplateManager.getTemplateNames();
+
+    if (templates.isEmpty()) {
+      source.sendFailure(Component.literal("§cNo templates found to spawn."));
+      return 0;
+    }
+
+    int spawnedCount = 0;
+    java.util.Random random = new java.util.Random();
+    net.minecraft.server.level.ServerLevel level = player.serverLevel();
+
+    for (String templateName : templates) {
+      // Calculate random position in 15-80 block radius
+      double angle = random.nextDouble() * 2 * Math.PI;
+      double distance = 15 + random.nextDouble() * 65; // 15 to 80
+      
+      double x = player.getX() + distance * Math.cos(angle);
+      double z = player.getZ() + distance * Math.sin(angle);
+      
+      // Find ground level
+      int y = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int)x, (int)z);
+      
+      if (NPCTemplateManager.spawnFromTemplate(level, templateName, x, y, z)) {
+        spawnedCount++;
+      } else {
+        log.warn("{} Failed to spawn NPC from template: {}", LOG_PREFIX, templateName);
+      }
+    }
+
+    int finalCount = spawnedCount;
+    source.sendSuccess(() -> Component.literal("§aSpawned " + finalCount + " NPCs from templates within 15-80 blocks."), true);
+    log.info("{} {} spawned all {} NPCs from templates", LOG_PREFIX, player.getName().getString(), spawnedCount);
+
+    return Command.SINGLE_SUCCESS;
+  }
   
   /**
    * Execute the export command.
@@ -227,4 +285,186 @@ public class TemplateCommand {
     
     return Command.SINGLE_SUCCESS;
   }
+  /**
+   * Register the spawn_rect subcommand.
+   */
+  private static ArgumentBuilder<CommandSourceStack, ?> registerSpawnRect() {
+    return Commands.literal("spawn_rect")
+        .then(Commands.argument("template_name", StringArgumentType.word())
+            .suggests(TemplateCommand::suggestTemplateNames)
+            .then(Commands.argument("pos1", net.minecraft.commands.arguments.coordinates.BlockPosArgument.blockPos())
+                .then(Commands.argument("pos2", net.minecraft.commands.arguments.coordinates.BlockPosArgument.blockPos())
+                    .then(Commands.argument("max_count", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1))
+                        .then(Commands.argument("delay_ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1))
+                            .executes(TemplateCommand::executeSpawnRect))))));
+  }
+
+  /**
+   * Execute the spawn_rect command.
+   */
+  private static int executeSpawnRect(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
+    CommandSourceStack source = context.getSource();
+    String templateName = StringArgumentType.getString(context, "template_name");
+    net.minecraft.core.BlockPos pos1 = net.minecraft.commands.arguments.coordinates.BlockPosArgument.getLoadedBlockPos(context, "pos1");
+    net.minecraft.core.BlockPos pos2 = net.minecraft.commands.arguments.coordinates.BlockPosArgument.getLoadedBlockPos(context, "pos2");
+    int maxCount = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "max_count");
+    int delayTicks = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "delay_ticks");
+
+    // Check if template exists
+    if (!NPCTemplateManager.hasTemplate(templateName)) {
+      source.sendFailure(Component.literal("§cTemplate not found: " + templateName));
+      return 0;
+    }
+
+    try {
+      ServerPlayer player = source.getPlayerOrException();
+      de.markusbordihn.easynpc.handler.SpawningHandler.addSpawningTask(
+          templateName, player.serverLevel(), pos1, pos2, maxCount, delayTicks);
+      
+      source.sendSuccess(() -> Component.literal(
+          String.format("§aStarted spawning %d %s NPCs every %d ticks within the defined area.", 
+              maxCount, templateName, delayTicks)), true);
+      log.info("{} {} started rect spawn for template '{}' (count: {}, delay: {})", 
+          LOG_PREFIX, player.getName().getString(), templateName, maxCount, delayTicks);
+    } catch (Exception e) {
+      source.sendFailure(Component.literal("§cFailed to start spawning: " + e.getMessage()));
+      return 0;
+    }
+
+    return Command.SINGLE_SUCCESS;
+  }
+
+  /**
+   * Register the spawn_wand subcommand - uses positions from held Spawn Rect Wand.
+   */
+  private static ArgumentBuilder<CommandSourceStack, ?> registerSpawnWand() {
+    return Commands.literal("spawn_wand")
+        .then(Commands.argument("template_name", StringArgumentType.word())
+            .suggests(TemplateCommand::suggestTemplateNames)
+            .then(Commands.argument("max_count", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1))
+                .then(Commands.argument("delay_ticks", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1))
+                    .executes(ctx -> executeSpawnWandWithGroup(ctx, false))
+                    .then(Commands.literal("group")
+                        .executes(ctx -> executeSpawnWandWithGroup(ctx, true))))));
+  }
+
+  /**
+   * Execute the spawn_wand command - reads pos1/pos2 from held wand.
+   */
+  private static int executeSpawnWandWithGroup(CommandContext<CommandSourceStack> context, boolean groupSpawn) throws CommandSyntaxException {
+    CommandSourceStack source = context.getSource();
+    ServerPlayer player = source.getPlayerOrException();
+    String templateName = StringArgumentType.getString(context, "template_name");
+    int maxCount = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "max_count");
+    int delayTicks = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "delay_ticks");
+
+    // Check if template exists
+    if (!NPCTemplateManager.hasTemplate(templateName)) {
+      source.sendFailure(Component.literal("§cTemplate not found: " + templateName));
+      return 0;
+    }
+
+    // Get held item
+    ItemStack mainHand = player.getMainHandItem();
+    ItemStack offHand = player.getOffhandItem();
+    ItemStack wandStack = null;
+    
+    if (mainHand.getItem() instanceof SpawnRectWandItem) {
+      wandStack = mainHand;
+    } else if (offHand.getItem() instanceof SpawnRectWandItem) {
+      wandStack = offHand;
+    }
+    
+    if (wandStack == null) {
+      source.sendFailure(Component.literal("§cYou must be holding a Spawn Rect Wand!"));
+      return 0;
+    }
+
+    BlockPos pos1 = SpawnRectWandItem.getPos1(wandStack);
+    BlockPos pos2 = SpawnRectWandItem.getPos2(wandStack);
+    
+    if (pos1 == null || pos2 == null) {
+      source.sendFailure(Component.literal("§cBoth corners must be set on the wand!"));
+      source.sendFailure(Component.literal("§7Right-click block = corner 1, Shift+Right-click = corner 2"));
+      return 0;
+    }
+
+    try {
+      de.markusbordihn.easynpc.handler.SpawningHandler.addSpawningTask(
+          templateName, player.serverLevel(), pos1, pos2, maxCount, delayTicks, groupSpawn);
+      
+      String modeStr = groupSpawn ? " (GROUP MODE)" : "";
+      source.sendSuccess(() -> Component.literal(
+          String.format("§aStarted spawning %d %s NPCs every %d ticks%s in area (%d,%d,%d) to (%d,%d,%d)", 
+              maxCount, templateName, delayTicks, modeStr,
+              pos1.getX(), pos1.getY(), pos1.getZ(),
+              pos2.getX(), pos2.getY(), pos2.getZ())), true);
+      log.info("{} {} started wand spawn for template '{}' (count: {}, delay: {}, group: {})", 
+          LOG_PREFIX, player.getName().getString(), templateName, maxCount, delayTicks, groupSpawn);
+    } catch (Exception e) {
+      source.sendFailure(Component.literal("§cFailed to start spawning: " + e.getMessage()));
+      return 0;
+    }
+
+    return Command.SINGLE_SUCCESS;
+  }
+
+  /**
+   * Register the stop_rect_spawn subcommand.
+   */
+  private static ArgumentBuilder<CommandSourceStack, ?> registerStopSpawnRect() {
+    return Commands.literal("stop_rect_spawn")
+        .executes(TemplateCommand::executeStopSpawnRect);
+  }
+
+  /**
+   * Execute the stop_rect_spawn command.
+   */
+  private static int executeStopSpawnRect(CommandContext<CommandSourceStack> context) {
+    int count = de.markusbordihn.easynpc.handler.SpawningHandler.stopSpawningTasks();
+    context.getSource().sendSuccess(() -> Component.literal("§eStopped " + count + " active spawning tasks."), true);
+    return Command.SINGLE_SUCCESS;
+  }
+
+  /**
+   * Register the spawn_timers subcommand - no permission required so all players can use it.
+   */
+  private static ArgumentBuilder<CommandSourceStack, ?> registerSpawnTimers() {
+    return Commands.literal("spawn_timers")
+        .requires(source -> source.hasPermission(0)) // Anyone can use this
+        .executes(TemplateCommand::executeSpawnTimers);
+  }
+
+  /**
+   * Execute the spawn_timers command - shows current spawn timer status.
+   */
+  private static int executeSpawnTimers(CommandContext<CommandSourceStack> context) {
+    CommandSourceStack source = context.getSource();
+    java.util.List<Object[]> timers = de.markusbordihn.easynpc.handler.SpawningHandler.getTimerInfo();
+    
+    if (timers.isEmpty()) {
+      source.sendSuccess(() -> Component.literal("§7No active spawn tasks."), false);
+      return Command.SINGLE_SUCCESS;
+    }
+    
+    source.sendSuccess(() -> Component.literal("§6=== Spawn Timers ==="), false);
+    for (Object[] timer : timers) {
+      String templateName = (String) timer[0];
+      int ticksRemaining = (int) timer[1];
+      int totalTicks = (int) timer[2];
+      boolean isGroupSpawn = (boolean) timer[3];
+      
+      float secondsRemaining = ticksRemaining / 20.0f;
+      float totalSeconds = totalTicks / 20.0f;
+      String modeStr = isGroupSpawn ? "§c[GROUP]§r " : "§a[MAINTAIN]§r ";
+      
+      source.sendSuccess(() -> Component.literal(
+          String.format("%s%s: §e%.1fs §7/ %.1fs remaining", 
+              modeStr, templateName, secondsRemaining, totalSeconds)), false);
+    }
+    
+    source.sendSuccess(() -> Component.literal("§7Tip: Use client key N to toggle HUD overlay"), false);
+    return Command.SINGLE_SUCCESS;
+  }
 }
+

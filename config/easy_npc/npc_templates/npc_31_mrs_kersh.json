@@ -1,0 +1,73 @@
+{
+    "name": "§6Mrs Kersh",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Creepy old lady. An illusion of IT.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MrsKersh.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我是 Mrs Kersh。",
+            "buttons": [
+                {
+                    "label": "旧时代的残渣",
+                    "action": "OPEN_QUEST_DIALOG:e55a3c4b-7f51-4a26-90d5-30044056298e",
+                    "id": "btn_quest_84266db1"
+                },
+                {
+                    "label": "消失的糖果",
+                    "action": "OPEN_QUEST_DIALOG:4c8c1a92-3d4d-4d9a-8b2b-5e1a5f6b7c8d",
+                    "id": "btn_quest_48f70c70"
+                },
+                {
+                    "label": "暗处的窥探",
+                    "action": "OPEN_QUEST_DIALOG:c3f5a8f1-3c77-4e8c-92f6-0a2b4c6d8e0f",
+                    "id": "btn_quest_37e2e3fa"
+                },
+                {
+                    "label": "诡影的梦境",
+                    "action": "OPEN_QUEST_DIALOG:b72558bb-5a1d-4b0f-b72a-761e18791ef3",
+                    "id": "btn_quest_80b0af15"
+                },
+                {
+                    "label": "毛骨悚然的收集品",
+                    "action": "OPEN_QUEST_DIALOG:10c41365-89b2-4b0a-85e4-133403dbf05b",
+                    "id": "btn_quest_a99b8356"
+                },
+                {
+                    "label": "红色气球的呼唤",
+                    "action": "OPEN_QUEST_DIALOG:d3f9025b-2368-44e5-9fec-bdd402b82ca2",
+                    "id": "btn_quest_76307447"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fallback"
+                }
+            ],
+            "oneTimeConversation": true
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_pickaxe",
+            "count": 1
+        }
+    }
+}

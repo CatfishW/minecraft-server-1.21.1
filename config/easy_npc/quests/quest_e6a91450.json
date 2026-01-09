@@ -1,0 +1,15 @@
+{
+    "id": "e6a91450-71b0-41d4-b415-7b7d004946b2",
+    "title": "农场主的麻烦",
+    "description": "亨利的农场被破坏了，麻烦你去清理一下僵尸。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

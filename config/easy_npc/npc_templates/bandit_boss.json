@@ -1,0 +1,59 @@
+{
+    "name": "§c§o土匪头子",
+    "entityType": "easy_npc:humanoid",
+    "faction": "bandits",
+    "description": "一个手持 AK47 的敌对土匪。",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/11/06/nemesis---fire-emblem-three-houses-13604692.png?v938"
+    },
+    "attributes": {
+        "maxHealth": 1000,
+        "movementSpeed": 0.3,
+        "attackDamage": 1.0,
+        "armor": 5.0,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
+    },
+    "equipment": {
+        "mainHand": {
+            "item": "tacz:modern_kinetic_gun",
+            "count": 1,
+            "nbt": "{GunId:\"tacz:ak47\",GunCurrentAmmoCount:30,HasBulletInBarrel:1b}"
+        }
+    },
+    "drop": {
+        "item": {
+            "item": "novus_items:silver_novus_coin",
+            "count": 1
+        },
+        "chance": 0.99,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": true,
+        "attackHostileFactions": true,
+        "hostileFactions": [
+            "guards",
+            "default"
+        ],
+        "returnToSpawn": false,
+        "wanderRange": 30.0,
+        "useCustomAttack": true,
+        "isFullAuto": true,
+        "attackRadius": 40
+    },
+    "story": "这是一个出没在荒野中的危险分子。",
+    "dialog": {
+        "greeting": "把你的Money都交出来！否则别怪老子的枪子儿不长眼！",
+        "buttons": [
+            {
+                "label": "除非从我的尸体上踏过去！",
+                "action": "CLOSE_DIALOG",
+                "id": "btn_close_bye"
+            }
+        ]
+    }
+}

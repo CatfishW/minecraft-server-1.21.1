@@ -45,6 +45,19 @@ public class ServerEvents {
 
     // Prepare custom data directory for server.
     DataFileHandler.registerServerDataFiles(minecraftServer);
+
+    // Load quests from config directory
+    de.markusbordihn.easynpc.data.quest.QuestManager.loadQuests(Constants.CONFIG_DIR.resolve(Constants.MOD_ID).resolve("quests"));
+  }
+
+  public static void handleServerStarted(MinecraftServer minecraftServer) {
+    if (minecraftServer == null) {
+      return;
+    }
+    log.info("{} Server Started Events ...", Constants.LOG_REGISTER_PREFIX);
+
+    // Load persistent spawning tasks.
+    de.markusbordihn.easynpc.handler.SpawningHandler.loadTasks(minecraftServer);
   }
 
   public static void handleServerTick(MinecraftServer minecraftServer) {
@@ -54,5 +67,8 @@ public class ServerEvents {
 
     // Perform backup each hour.
     BackupManager.performBackup();
+
+    // Handle delayed spawning tasks.
+    de.markusbordihn.easynpc.handler.SpawningHandler.handleServerTick(minecraftServer);
   }
 }

@@ -1,0 +1,15 @@
+{
+    "id": "b1f4a5c2-3e19-4d8e-9a2b-5c7d8e9f0a1b",
+    "title": "清理变种人威胁",
+    "description": "好neighborhood的安宁不能被打破，去把那些变种人赶出我的地盘。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:super_mutant",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

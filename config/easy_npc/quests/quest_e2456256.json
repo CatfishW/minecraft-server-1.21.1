@@ -1,0 +1,15 @@
+{
+    "id": "e2456256-3e58-461d-bf15-11228e7938d4",
+    "title": "格斗家的试炼",
+    "description": "爱尔兰拳手Cait需要你证明自己的实力。去把那群僵尸揍扁，让她看看你的能耐。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

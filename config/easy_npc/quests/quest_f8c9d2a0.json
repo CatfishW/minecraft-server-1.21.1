@@ -1,0 +1,15 @@
+{
+    "id": "f8c9d2a0-1b3e-4567-8910-a1b2c3d4e5f6",
+    "title": "来自亨利的口信",
+    "description": "亨利想和你谈谈，那个跟班看起来很不情愿。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

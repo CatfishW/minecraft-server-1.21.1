@@ -1,0 +1,29 @@
+accessWidener	v1	intermediary
+accessible	field	com/mojang/blaze3d/systems/RenderSystem	shaderLightDirections	[Lorg/joml/Vector3f;
+accessible	class	net/minecraft/class_2841$class_6561
+accessible	field	net/minecraft/class_2841	field_34560	Lnet/minecraft/class_2841$class_6561;
+accessible	method	net/minecraft/class_922	method_4058	(Lnet/minecraft/class_1309;Lnet/minecraft/class_4587;FFFF)V
+accessible	field	net/minecraft/class_591	field_3485	Lnet/minecraft/class_630;
+accessible	field	net/minecraft/class_631$class_3681	field_19204	I
+accessible	field	net/minecraft/class_631$class_3681	field_19205	I
+accessible	method	net/minecraft/class_761	method_3295	(IIIZ)V
+accessible	class	net/minecraft/class_631$class_3681
+accessible	field	net/minecraft/class_1095	field_5427	Ljava/util/List;
+accessible	field	net/minecraft/class_1095	field_5431	Ljava/util/Map;
+accessible	class	net/minecraft/class_630$class_618
+accessible	class	net/minecraft/class_630$class_593
+accessible	field	net/minecraft/class_630$class_628	field_3649	[Lnet/minecraft/class_630$class_593;
+accessible	field	net/minecraft/class_630	field_3663	Ljava/util/List;
+accessible	field	net/minecraft/class_630	field_3661	Ljava/util/Map;
+accessible	method	net/minecraft/class_4592	method_22946	()Ljava/lang/Iterable;
+accessible	method	net/minecraft/class_4592	method_22948	()Ljava/lang/Iterable;
+accessible	field	net/minecraft/class_437	field_22786	Ljava/util/List;
+accessible	method	net/minecraft/class_757	method_3196	(Lnet/minecraft/class_4184;FZ)D
+accessible	method	net/minecraft/class_897	method_24087	(Lnet/minecraft/class_1297;Lnet/minecraft/class_2338;)I
+accessible	method	net/minecraft/class_759	method_3228	(Lnet/minecraft/class_742;FFLnet/minecraft/class_1268;FLnet/minecraft/class_1799;FLnet/minecraft/class_4587;Lnet/minecraft/class_4597;I)V
+accessible	field	net/minecraft/class_759	field_4043	F
+accessible	field	net/minecraft/class_759	field_4053	F
+accessible	class	net/minecraft/class_778$class_780
+accessible	field	net/minecraft/class_778$class_780	field_4196	[F
+accessible	field	net/minecraft/class_9801	field_52093	Lnet/minecraft/class_9799$class_9800;
+accessible	field	net/minecraft/class_9801	field_52094	Lnet/minecraft/class_9799$class_9800;

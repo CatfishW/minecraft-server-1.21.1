@@ -1,0 +1,15 @@
+{
+    "id": "a0437b45-89d3-4d9c-952a-29e11c69837b",
+    "title": "清除恶棍",
+    "description": "亨利被村外的土匪骚扰，去教训一下那些家伙。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

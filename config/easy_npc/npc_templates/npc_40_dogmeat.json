@@ -1,0 +1,207 @@
+{
+    "name": "§9Dogmeat",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Loyal dog companion. Finds items.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Dogmeat.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（一只毛发粗糙、眼神坚毅的德国牧羊犬，它的右眼上方有一道伤疤。它没有叫，只是静静地看着你，尾巴微微摇晃，似乎在判断你的意图。）",
+            "buttons": [
+                {
+                    "label": "叼回来！",
+                    "action": "OPEN_QUEST_DIALOG:a4c2904a-602d-4f6b-9794-811715638352",
+                    "id": "btn_quest_4fbc4eaf"
+                },
+                {
+                    "label": "失落的骨头",
+                    "action": "OPEN_QUEST_DIALOG:e05dd7b2-d4fc-4bd6-8238-5f3e55d27c0c",
+                    "id": "btn_quest_a6d63b06"
+                },
+                {
+                    "label": "恶犬的獠牙",
+                    "action": "OPEN_QUEST_DIALOG:997119dc-17fe-42f6-b32c-df555c82d21b",
+                    "id": "btn_quest_7507c691"
+                },
+                {
+                    "label": "友好地打招呼",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_hello_dog"
+                },
+                {
+                    "label": "检查它的项圈",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_check_tag"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "（它歪了歪头，凑近闻了闻你的手，然后发出一声低沉的呜咽，用头蹭了蹭你的手掌。看起来它觉得你很安全。它似乎在等待你下达指令，或者分享食物。）",
+            "buttons": [
+                {
+                    "label": "给它一点食物",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_give_food"
+                },
+                {
+                    "label": "请求搜寻",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_request_search"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "（它小心翼翼地接过食物，迅速吞下，然后兴奋地摇着尾巴，不停地舔着你的手。信任感瞬间建立。它绕着你转了一圈，似乎在问：‘还有吗？或者我们要去哪？’）",
+            "buttons": [
+                {
+                    "label": "请求寻找药品",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_find_med"
+                },
+                {
+                    "label": "请求寻找武器",
+                    "action": "SHOW_DIALOG:story_1_1_2",
+                    "id": "btn_find_weapon"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "（它大声叫了一下，表示明白。它开始在地上嗅探，耳朵竖起，警惕地转动。它示意你跟上，然后小跑着向一个方向走去，时不时回头确认你是否跟在后面。）",
+            "buttons": [
+                {
+                    "label": "跟上",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_follow_dog"
+                }
+            ]
+        },
+        "story_1_1_2": {
+            "greeting": "（它似乎对‘武器’这个词有反应，但显得有些困惑。它用爪子刨了刨地，然后试着咬住你的一角，拖向一堆废料。也许那里有金属的味道，但它不确定是不是你要的。）",
+            "buttons": [
+                {
+                    "label": "跟过去看看",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_check_scrap"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "（它立刻进入警戒状态，毛发微微竖起。它压低身体，鼻子紧贴地面，开始缓缓向前推进。它示意你保持安静，紧跟在它身后。它的动作专业得不像一只普通的野狗。）",
+            "buttons": [
+                {
+                    "label": "指示方向(东)",
+                    "action": "SHOW_DIALOG:end_go",
+                    "id": "btn_go_east"
+                },
+                {
+                    "label": "指示方向(西)",
+                    "action": "SHOW_DIALOG:end_go",
+                    "id": "btn_go_west"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "（你轻轻抚摸它的脖子，找到了一个磨损的皮革项圈。上面挂着一个军用狗牌，刻着一个名字：‘REX’。还有一个几乎看不清的标记，似乎是某个部队的徽章。它安静地让你检查，眼神中流露出一丝悲伤。）",
+            "buttons": [
+                {
+                    "label": "取下项圈",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_remove_collar"
+                },
+                {
+                    "label": "帮它调整",
+                    "action": "SHOW_DIALOG:end_friend",
+                    "id": "btn_adjust_collar"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "（当你试图解开扣环时，它突然低吼了一声，向后退了一步。它并不想丢掉这个项圈。这或许是它与过去唯一的联系，或者是它身为军犬的骄傲。它警惕地看着你，似乎在责怪你的冒犯。）",
+            "buttons": [
+                {
+                    "label": "道歉",
+                    "action": "SHOW_DIALOG:end_apology",
+                    "id": "btn_apologize_dog"
+                },
+                {
+                    "label": "强行夺取",
+                    "action": "SHOW_DIALOG:end_hostile_dog",
+                    "id": "btn_force_take"
+                }
+            ]
+        },
+        "story_1_1_1_1": {
+            "greeting": "（这个分支理论上不会出现，但为了防止错误，这里留空。）",
+            "buttons": []
+        },
+        "end_go": {
+            "greeting": "（它得到指令后，毫不犹豫地冲了出去。它的嗅觉敏锐地捕捉着空气中的分子，穿过荆棘和废墟。突然，它停下来，对着一个生锈的储物柜低吼，里面显然藏着它找到的东西。）",
+            "buttons": [
+                {
+                    "label": "搜查储物柜",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_loot_locker"
+                },
+                {
+                    "label": "表扬它",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_praise_dog"
+                }
+            ]
+        },
+        "end_friend": {
+            "greeting": "（你帮它把项圈调整得更舒适了一些，不再勒着皮肉。它感激地舔了舔你的手，然后用头蹭你的腿。它似乎认定了你这个伙伴，欢快地绕着你跑了几圈，尾巴摇得像直升机螺旋桨。）",
+            "buttons": [
+                {
+                    "label": "出发探险",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_start_journey"
+                }
+            ]
+        },
+        "end_apology": {
+            "greeting": "（看到你退让，它紧绷的身体放松下来。它再次凑过来，用湿漉漉的鼻子顶了顶你，表示原谅。它知道你没有恶意，只是不懂它的规矩。它又变回了那只忠诚的伙伴。）",
+            "buttons": [
+                {
+                    "label": "带它走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bond"
+                }
+            ]
+        },
+        "end_hostile_dog": {
+            "greeting": "（你刚有动作，它就猛地咬向你的手腕！幸好你反应快躲开了。它夹着尾巴后退，对着你狂吠，眼神里充满了敌意和被背叛的痛苦。它转身逃进了黑暗的废墟中，不再信任你。）",
+            "buttons": [
+                {
+                    "label": "放弃",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_dog_bite"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

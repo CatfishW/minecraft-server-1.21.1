@@ -1,0 +1,15 @@
+{
+    "id": "a249d362-5087-4a32-a2e2-d692f22546f8",
+    "title": "寻找Henry",
+    "description": "Beverly需要你找到Henry询问重要情报。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

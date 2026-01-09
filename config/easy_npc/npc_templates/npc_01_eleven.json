@@ -1,0 +1,203 @@
+{
+    "name": "§cEleven",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Possesses psychokinetic abilities. Mysterious and powerful.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Eleven.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你来了。我能感觉到你的...思想。它们在我的脑海里像无数个微小的声音在嗡嗡作响。我叫 Eleven，但我以前也有过别的名字，那些名字现在都不重要了。重要的是现在，是这个时刻，是你为什么会站在这里，直视着我。",
+            "buttons": [
+                {
+                    "label": "超感应测试",
+                    "action": "OPEN_QUEST_DIALOG:5e3a8f12-b4c5-4d0a-9c1b-6e7d8f9a0b1c",
+                    "id": "btn_quest_2c8ea0c4"
+                },
+                {
+                    "label": "未知的波动",
+                    "action": "OPEN_QUEST_DIALOG:b51a6d01-99e8-41b2-8654-653b1e039e55",
+                    "id": "btn_quest_68dbf51d"
+                },
+                {
+                    "label": "能量过载",
+                    "action": "OPEN_QUEST_DIALOG:ed5e9f8b-6651-46ee-a4d6-fbbe2c46e93a",
+                    "id": "btn_quest_34b963e9"
+                },
+                {
+                    "label": "破碎的共鸣",
+                    "action": "OPEN_QUEST_DIALOG:c869a52f-24fd-4b52-8ac3-82bcaf530113",
+                    "id": "btn_quest_aef7b3c6"
+                },
+                {
+                    "label": "询问她的能力",
+                    "action": "SHOW_DIALOG:ask_abilities",
+                    "id": "btn_ask_power"
+                },
+                {
+                    "label": "询问她的过去",
+                    "action": "SHOW_DIALOG:ask_past",
+                    "id": "btn_ask_past"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "ask_abilities": {
+            "greeting": "他们对我做了一些事。在那个白得刺眼的房间里，他们把我的头按进水里，试图让我看到不存在的东西。但最后，我看到了...我看到了现实的缝隙。我能用我的意念撕开它。这股力量是一把双刃剑，它能保护我的朋友，也能带来毁灭，就像那扇被撕裂的门。",
+            "buttons": [
+                {
+                    "label": "你能控制它吗？",
+                    "action": "SHOW_DIALOG:ask_control",
+                    "id": "btn_ask_control"
+                },
+                {
+                    "label": "听起来很危险",
+                    "action": "SHOW_DIALOG:conclusion_danger",
+                    "id": "btn_concl_danger"
+                }
+            ]
+        },
+        "ask_past": {
+            "greeting": "我的童年是一片空白的记忆，只有一扇紧锁的门和无尽的实验。他们叫我武器，而不是女孩。我从那里逃了出来，来到了霍金斯。在这里，我第一次尝到了友情的滋味，那是...煎饼的味道。但过去的东西，它们从未真正离开，它们像影子一样跟随着我。",
+            "buttons": [
+                {
+                    "label": "谁是你的朋友？",
+                    "action": "SHOW_DIALOG:ask_friends",
+                    "id": "btn_ask_friends"
+                },
+                {
+                    "label": "你还在被追捕吗？",
+                    "action": "SHOW_DIALOG:ask_hunted",
+                    "id": "btn_ask_hunted"
+                }
+            ]
+        },
+        "ask_control": {
+            "greeting": "控制...有时可以，但当我感到愤怒或恐惧时，它就会失控。它会像野兽一样冲破牢笼。我必须集中精神，想象一个平静的地方。但当怪物出现时，平静很难维持。如果我失败了，我身边的人就会陷入危险，比任何时候都危险。",
+            "buttons": [
+                {
+                    "label": "我相信你能做到",
+                    "action": "SHOW_DIALOG:conclusion_trust",
+                    "id": "btn_concl_trust"
+                },
+                {
+                    "label": "太可怕了...",
+                    "action": "SHOW_DIALOG:conclusion_danger",
+                    "id": "btn_concl_danger2"
+                }
+            ]
+        },
+        "conclusion_danger": {
+            "greeting": "是的，它很可怕。但这就是我。为了保护麦克、乔纳森和所有我在乎的人，我愿意承受这份可怕。因为没有他们，我会比任何怪物都更加迷失。你需要走了，我感觉到...它在靠近。",
+            "buttons": [
+                {
+                    "label": "保持警惕",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_alert"
+                },
+                {
+                    "label": "需要帮助吗？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_help"
+                }
+            ]
+        },
+        "ask_friends": {
+            "greeting": "麦克...他是第一个不害怕我的人。他给了我名字，给了我一个家。还有达斯汀，他总是有很多糖果和奇怪的想法；卢卡斯，他一开始很警惕，但现在他是最可靠的战士。他们是我的盾牌，我是他们的剑。没有他们，我什么都不是。",
+            "buttons": [
+                {
+                    "label": "听起来他们很爱你",
+                    "action": "SHOW_DIALOG:conclusion_family",
+                    "id": "btn_concl_family"
+                },
+                {
+                    "label": "你为他们付出了很多",
+                    "action": "SHOW_DIALOG:conclusion_sacrifice",
+                    "id": "btn_concl_sacrifice"
+                }
+            ]
+        },
+        "ask_hunted": {
+            "greeting": "猎犬...他们是这么叫我的。他们是我的创造者，也是我的猎人。即使我摧毁了他们的一部分，剩下的部分也会像种子一样在黑暗中发芽。我必须不断移动，不断隐藏。但我不再是那个无助的试验品了。如果他们再来，我会让他们见识到真正的力量。",
+            "buttons": [
+                {
+                    "label": "你会没事的",
+                    "action": "SHOW_DIALOG:conclusion_trust",
+                    "id": "btn_concl_trust2"
+                },
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_luck"
+                }
+            ]
+        },
+        "conclusion_family": {
+            "greeting": "家...我以前不知道那是什么意思。现在我知道了，家不是一栋房子，一个地方。家就是他们。只要和他们在一起，哪怕是面对整个军队的猎犬，我也不怕。现在，我得走了，我感觉到了麦克斯的呼唤，她需要我。",
+            "buttons": [
+                {
+                    "label": "快去吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_go"
+                },
+                {
+                    "label": "保护好她们",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_protect"
+                }
+            ]
+        },
+        "conclusion_sacrifice": {
+            "greeting": "这是值得的。因为我得到的，远比我付出的要多。在实验室里，我只是一个号码。在这里，我是一个人。一个能爱，能恨，能保护的人。这就够了。再见，陌生人。希望你的世界里没有那么多的阴影。",
+            "buttons": [
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_careful"
+                },
+                {
+                    "label": "再会",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_bye"
+                }
+            ]
+        },
+        "conclusion_trust": {
+            "greeting": "谢谢。你的信任...它很重要。它像一盏灯。当黑暗变得太浓时，这些微小的光亮能指引我找到回家的路。现在，我也要去寻找我的路了。保持安全，别让黑暗吞噬你。",
+            "buttons": [
+                {
+                    "label": "你也是",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_you_too"
+                },
+                {
+                    "label": "我们会胜利的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_win"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_pickaxe",
+            "count": 1
+        }
+    }
+}

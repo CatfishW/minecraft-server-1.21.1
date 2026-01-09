@@ -1,0 +1,223 @@
+{
+    "name": "§bPaladin Danse",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Brotherhood of Steel Paladin.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/PaladinDanse.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "站住，平民！报上名来。我是钢铁兄弟会的圣骑士丹斯。在这个混乱的世界里，只有秩序和力量才能带来安全。我们的飞艇坠毁了，但这不会阻止我们净化这片土地的使命。如果你没有恶意，那就最好，因为我的激光步枪已经饥渴难耐了。",
+            "buttons": [
+                {
+                    "label": "清除变种人威胁",
+                    "action": "OPEN_QUEST_DIALOG:5b8c4d3a-7e9f-4a1c-9d2b-8f3e1a0c5d6b",
+                    "id": "btn_quest_11f5bd8d"
+                },
+                {
+                    "label": "钢铁兄弟会的肃清令",
+                    "action": "OPEN_QUEST_DIALOG:2b1f2852-05a4-4020-9818-b25107220116",
+                    "id": "btn_quest_6f16d6c2"
+                },
+                {
+                    "label": "净化污染",
+                    "action": "OPEN_QUEST_DIALOG:8c011d4b-4e1b-4a2c-a751-c54fcb79ce0f",
+                    "id": "btn_quest_4efc0b95"
+                },
+                {
+                    "label": "清除异端",
+                    "action": "OPEN_QUEST_DIALOG:5fa31fda-7c47-40ef-8d37-00498ed10ce6",
+                    "id": "btn_quest_f8c26a50"
+                },
+                {
+                    "label": "钢铁兄弟会？你们是军人吗？",
+                    "action": "SHOW_DIALOG:brotherhood",
+                    "id": "btn_brotherhood"
+                },
+                {
+                    "label": "净化土地？这是什么意思？",
+                    "action": "SHOW_DIALOG:mission",
+                    "id": "btn_mission"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "brotherhood": {
+            "greeting": "我们是最后的骑士，废土的守护者。我们从旧世界中拯救了那些宝贵的技术，防止它们落入掠夺者和变种人的手中。钢铁兄弟会不仅是一支军队，更是一种信仰。我们相信，只有通过严格控制危险科技，人类才能避免再次重蹈覆辙。",
+            "buttons": [
+                {
+                    "label": "听起来你们很排外。",
+                    "action": "SHOW_DIALOG:exclusive",
+                    "id": "btn_exclusive"
+                },
+                {
+                    "label": "我想要加入。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join"
+                }
+            ]
+        },
+        "mission": {
+            "greeting": "意思就是，我们要消灭所有威胁人类生存的实体。这包括那些肮脏的超级变种人，那些到处都是的辐射生物，以及最危险的——学院的合成人。他们就像病毒一样渗透进我们的社会，必须被连根拔起。任何阻碍这一进程的人或物，都将被视为敌人。",
+            "buttons": [
+                {
+                    "label": "学院也是你们的敌人？",
+                    "action": "SHOW_DIALOG:enemy_institute",
+                    "id": "btn_enemy_institute"
+                },
+                {
+                    "label": "我能帮上什么忙？",
+                    "action": "SHOW_DIALOG:assist",
+                    "id": "btn_assist"
+                }
+            ]
+        },
+        "exclusive": {
+            "greeting": "没错，我们很排外。这不是偏见，是生存法则。你不能把激光步枪交给一个刚学会走路的孩子，同样，你也不能把核能科技交给一群只会用它来互相残杀的野蛮人。只有经过考验，拥有坚定意志和高尚品德的人，才有资格穿上这身动力装甲，才有资格掌握未来。",
+            "buttons": [
+                {
+                    "label": "我想证明自己。",
+                    "action": "SHOW_DIALOG:prove",
+                    "id": "btn_prove"
+                },
+                {
+                    "label": "那我该如何加入？",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join_2"
+                }
+            ]
+        },
+        "join": {
+            "greeting": "想加入兄弟会？那就得拿出点真本事来。口说无凭，我们需要行动。我正在协助队伍建立一个前线基地，叫‘修道院’。那里现在全是那些该死的变种人。如果你能去那里清理掉那些绿皮怪物，帮我们夺回控制权，我就承认你有加入的资格。",
+            "buttons": [
+                {
+                    "label": "接受任务，我会清除那些变种人。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "修道院在哪？那里有多少敌人？",
+                    "action": "SHOW_DIALOG:location_force",
+                    "id": "btn_location_force"
+                }
+            ]
+        },
+        "enemy_institute": {
+            "greeting": "他们是我们的头号死敌。学院制造的合成人不仅威胁到普通平民的安全，更是对人类正统的亵渎。他们混淆真假，破坏秩序。我们兄弟会的首要任务就是找到学院的总部，然后将其彻底摧毁。我们要烧尽邪恶，让人类重回正轨。",
+            "buttons": [
+                {
+                    "label": "我同意，学院必须被消灭。",
+                    "action": "SHOW_DIALOG:alliance",
+                    "id": "btn_alliance"
+                },
+                {
+                    "label": "你们有学院的线索吗？",
+                    "action": "SHOW_DIALOG:线索",
+                    "id": "btn线索"
+                }
+            ]
+        },
+        "assist": {
+            "greeting": "如果你真的想为正义事业贡献力量，那就证明你的价值。外面有无数的变种人巢穴，还有掠夺者营地。去清理它们，收集战利品，展示你的战斗力。或者，如果你有技术背景，我们的技术员可能会需要帮手。但记住，我们不养闲人。",
+            "buttons": [
+                {
+                    "label": "给我指个方向。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "我想参加夺回修道院的行动。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept_2"
+                }
+            ]
+        },
+        "prove": {
+            "greeting": "很好，这种进取心正是我们需要的。但光有热情是不够的，你必须服从命令，严守纪律。从最基础的做起，证明你对兄弟会的忠诚。如果你能通过考验，你将获得前所未有的力量和荣耀。但现在，你只是个需要证明自己的平民。",
+            "buttons": [
+                {
+                    "label": "请下达指令。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join_3"
+                }
+            ]
+        },
+        "accept": {
+            "greeting": "很好！我就喜欢这样的硬骨头。修道院位于波士顿西北部，那里地势险要。带上最好的武器和护甲，那里可没有温室让你养花。消灭所有变种人，守住阵地，我们会派出增援。让那些怪物见识一下钢铁的意志！",
+            "buttons": [
+                {
+                    "label": "为了钢铁兄弟会！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2"
+                },
+                {
+                    "label": "完成任务后我去哪找你？",
+                    "action": "SHOW_DIALOG:return_to",
+                    "id": "btn_return_to"
+                }
+            ]
+        },
+        "location_force": {
+            "greeting": "修道院就在十松庄西北边，那座高耸的尖塔就是标志。里面的变种人数量不明，但肯定少不了，还有几只猎犬。建议携带穿甲武器和大量弹药。如果你能占据制高点，会更有优势。记住，不要恋战，目标是肃清，不是表演。",
+            "buttons": [
+                {
+                    "label": "了解，我去去就回。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept_3"
+                }
+            ]
+        },
+        "alliance": {
+            "greeting": "你有这种觉悟很好，但现在的你还不够格和我们一起行动。先在战场上磨练自己吧。当你证明了自己的能力，我们再谈合作。我们欢迎所有对抗学院的战士，但前提是他们必须能跟上我们的步伐，不会拖后腿。",
+            "buttons": [
+                {
+                    "label": "我会证明我的能力。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3"
+                }
+            ]
+        },
+        "线索": {
+            "greeting": "情报正在收集中。学院就像鼹鼠一样躲藏在地下，他们的网络系统非常复杂。我们的技术专家正在尝试破解他们的通讯，但需要时间。在那之前，我们需要清除地面上的障碍，确保后方安全。别急，敌人迟早会露出马脚的。",
+            "buttons": [
+                {
+                    "label": "我会做好准备。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_4"
+                }
+            ]
+        },
+        "return_to": {
+            "greeting": "完成任务后，去剑桥的警察局找我们。我们在那里设有一个临时据点。或者，如果你通过了考验，我会带你去见麦克森长老，他会亲自为你授勋。别让我失望，战士。这片废土需要更多的利剑，而不是废铁。",
+            "buttons": [
+                {
+                    "label": "明白。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_5"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "easy_npc_bundle",
   "version": "${version}",
-  "name": "Easy NPC (Bundle)",
+  "name": "Warm Pixel NPC Mod",
   "description": "Bundle version of Easy NPC mod with configuration UI included",
   "authors": [
     "Markus Bordihn"

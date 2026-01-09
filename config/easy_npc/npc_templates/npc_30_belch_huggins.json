@@ -1,0 +1,133 @@
+{
+    "name": "§aBelch Huggins",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The muscle. Drives the Trans Am.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/BelchHuggins.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嗝！Victor，你跑哪去了？哦，是个陌生人。别挡着我的路，我在找Henry。我的火辣玛琳在等我呢，但我得先帮Henry办点事。他说要去下水道抓几个小耗子，听起来挺有意思的，嗝！",
+            "buttons": [
+                {
+                    "label": "肌肉男的复仇",
+                    "action": "OPEN_QUEST_DIALOG:a1b2c3d4-e5f6-7890-1234-567890abcdef",
+                    "id": "btn_quest_b344e69d"
+                },
+                {
+                    "label": "传说中的燃油",
+                    "action": "OPEN_QUEST_DIALOG:892aaa99-4317-4e06-9e60-5968ad37c7d2",
+                    "id": "btn_quest_07dc4ad8"
+                },
+                {
+                    "label": "肌肉车的轰鸣",
+                    "action": "OPEN_QUEST_DIALOG:545e0d12-f40d-4add-9d01-17082f77c42a",
+                    "id": "btn_quest_4225428a"
+                },
+                {
+                    "label": "你的车？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_car"
+                },
+                {
+                    "label": "下水道有什么？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_sewer"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "那辆火辣的玛琳·特兰萨姆！V8引擎，听起来像野兽在咆哮。我刚加满了油。Henry说办完事后我们可以开车去兜风，把那帮小屁孩吓得屁滚尿流。Victor坐在后座，总是吐得到处都是，嗝！",
+            "buttons": [
+                {
+                    "label": "听起来很酷",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_cool"
+                },
+                {
+                    "label": "兜风？",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_joyride"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "不知道。Henry神神秘秘的。他说有东西在召唤我们。Patrick看起来很兴奋，那家伙本来就不太正常。我只管开车和打人，思考不是我的强项，嗝！只要能把比尔那个死瘸子揍趴下就行。",
+            "buttons": [
+                {
+                    "label": "比尔怎么惹你们了？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_bill"
+                },
+                {
+                    "label": "Patrick确实怪怪的",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_patrick_weird"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "他老是用那种眼神看我们，好像我们是笨蛋一样。而且他身边总围着那群人，像苍蝇一样。Henry讨厌他们，我也讨厌他们。我要把他们的头按进泥里，嗝！然后再去下水道看看。",
+            "buttons": [
+                {
+                    "label": "别太过了",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_be_careful"
+                },
+                {
+                    "label": "下水道见",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_meet_there"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "我听到声音了。从排水口传来的。像是个小孩子在哭...或者是小丑在笑？听起来怪怪的。Victor肯定又要尿裤子了。我去看看，Henry说要勇敢，嗝！",
+            "buttons": [
+                {
+                    "label": "我也听到了",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_hear_too"
+                },
+                {
+                    "label": "小心点",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_watch_out"
+                }
+            ]
+        },
+        "bad_end": {
+            "greeting": "嘿！那里有个红气球！还有把打火机！真酷！我想点个火...咦？我的腿...什么东西抓住了我的腿？是Victor吗？别闹了！呃啊啊啊——！",
+            "buttons": [
+                {
+                    "label": "...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_pickaxe",
+            "count": 1
+        }
+    }
+}

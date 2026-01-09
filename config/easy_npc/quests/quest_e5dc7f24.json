@@ -1,0 +1,15 @@
+{
+    "id": "e5dc7f24-6f9b-4d2a-8a8e-3e6b1c2f3f5e",
+    "title": "急需的强效药剂",
+    "description": "Eddie 焦虑地搓着手，他觉得这里的怪物让他呼吸困难。他需要 3 瓶喷溅型虚弱药水来缓解紧张，不然他感觉自己要窒息了。",
+    "objective": {
+        "type": "CRAFT",
+        "target": "minecraft:splash_potion_of_weakness",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

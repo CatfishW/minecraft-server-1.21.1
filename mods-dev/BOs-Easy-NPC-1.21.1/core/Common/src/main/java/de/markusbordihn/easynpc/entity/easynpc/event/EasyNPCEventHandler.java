@@ -30,6 +30,9 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.portal.DimensionTransition;
+import de.markusbordihn.easynpc.handler.SpawningHandler;
+
+
 
 public final class EasyNPCEventHandler {
 
@@ -40,6 +43,7 @@ public final class EasyNPCEventHandler {
       objectiveData.onPlayerJoinUpdateObjective(serverPlayer);
     }
   }
+
 
   public static <E extends PathfinderMob> void handlePlayerLeaveEvent(
       EasyNPC<E> easyNPC, ServerPlayer serverPlayer) {
@@ -83,6 +87,42 @@ public final class EasyNPCEventHandler {
 
   public static <E extends PathfinderMob> void handleDieEvent(
       EasyNPC<E> easyNPC, DamageSource damageSource) {
+    // Notify spawning handler about death to maintain population
+    SpawningHandler.onNPCDeath(easyNPC.getEntity());
+    
+    // Check for custom drop configuration via Tags
+    for (String tag : easyNPC.getEntity().getTags()) {
+      if (tag.startsWith("easynpc_drop|")) {
+        try {
+          String[] parts = tag.split("\\|");
+          if (parts.length >= 5) {
+            String itemId = parts[1];
+            int count = Integer.parseInt(parts[2]);
+            float chance = Float.parseFloat(parts[3]);
+            boolean playerKillOnly = Boolean.parseBoolean(parts[4]);
+            
+            boolean shouldDrop = true;
+            if (playerKillOnly && !(damageSource.getEntity() instanceof ServerPlayer)) {
+              shouldDrop = false;
+            }
+            
+            if (shouldDrop) {
+              if (easyNPC.getEntity().getRandom().nextFloat() < chance) {
+                net.minecraft.world.item.Item item = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(
+                    net.minecraft.resources.ResourceLocation.parse(itemId));
+                    
+                if (item != null && item != net.minecraft.world.item.Items.AIR) {
+                   easyNPC.getEntity().spawnAtLocation(new net.minecraft.world.item.ItemStack(item, count > 0 ? count : 1));
+                }
+              }
+            }
+          }
+        } catch (Exception e) {
+           // Ignore parsing errors
+        }
+      }
+    }
+
     TradingDataCapable<E> tradingData = easyNPC.getEasyNPCTradingData();
     if (tradingData != null) {
       tradingData.stopMerchantTrading();
@@ -96,6 +136,9 @@ public final class EasyNPCEventHandler {
   }
 
   public static <E extends PathfinderMob> void handleKillEvent(EasyNPC<E> easyNPC) {
+    // Notify spawning handler about kill to maintain population
+    SpawningHandler.onNPCDeath(easyNPC.getEntity());
+
     TradingDataCapable<E> tradingData = easyNPC.getEasyNPCTradingData();
     if (tradingData != null) {
       tradingData.stopMerchantTrading();

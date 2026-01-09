@@ -21,10 +21,15 @@ package de.markusbordihn.easynpc.data.objective;
 
 import de.markusbordihn.easynpc.entity.LivingEntityManager;
 import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
+import java.util.HashSet;
 import java.util.Locale;
+import java.util.Set;
 import java.util.UUID;
 import java.util.function.BooleanSupplier;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
@@ -51,6 +56,9 @@ public final class ObjectiveDataEntry {
   public static final String DATA_TARGET_OWNER_UUID_TAG = "TargetOwnerUUID";
   public static final String DATA_TARGET_PLAYER_NAME_TAG = "TargetPlayerName";
   public static final String DATA_TYPE_TAG = "Type";
+  public static final String DATA_IS_FULL_AUTO_TAG = "IsFullAuto";
+  public static final String DATA_HOSTILE_FACTIONS_TAG = "HostileFactions";
+  public static final String DATA_NPC_FACTION_TAG = "NPCFaction";
 
   public static final double DEFAULT_SPEED_MODIFIER = 0.7D;
   public static final float DEFAULT_ATTACK_RADIUS = 8.0F;
@@ -80,6 +88,7 @@ public final class ObjectiveDataEntry {
   private boolean mustReachTarget = true;
   private boolean mustSeeTarget = true;
   private boolean onlyAtNight = false;
+  private boolean isFullAuto = false;
 
   private Goal goal = null;
   private String id = UUID.randomUUID().toString();
@@ -87,6 +96,10 @@ public final class ObjectiveDataEntry {
   private UUID targetEntityUUID;
   private UUID targetOwnerUUID;
   private String targetPlayerName;
+  
+  // Faction-based targeting
+  private Set<String> hostileFactions = new HashSet<>();
+  private String npcFaction = "default";
 
   public ObjectiveDataEntry() {}
 
@@ -158,6 +171,30 @@ public final class ObjectiveDataEntry {
 
   public boolean isMustReachTarget() {
     return this.mustReachTarget;
+  }
+
+  public boolean isFullAuto() {
+    return this.isFullAuto;
+  }
+
+  public void setFullAuto(boolean isFullAuto) {
+    this.isFullAuto = isFullAuto;
+  }
+  
+  public Set<String> getHostileFactions() {
+    return this.hostileFactions;
+  }
+  
+  public void setHostileFactions(Set<String> hostileFactions) {
+    this.hostileFactions = hostileFactions != null ? hostileFactions : new HashSet<>();
+  }
+  
+  public String getNpcFaction() {
+    return this.npcFaction;
+  }
+  
+  public void setNpcFaction(String npcFaction) {
+    this.npcFaction = npcFaction != null ? npcFaction : "default";
   }
 
   public String getId() {
@@ -363,6 +400,21 @@ public final class ObjectiveDataEntry {
     if (compoundTag.contains(DATA_PROBABILITY_TAG)) {
       this.probability = compoundTag.getFloat(DATA_PROBABILITY_TAG);
     }
+    if (compoundTag.contains(DATA_IS_FULL_AUTO_TAG)) {
+      this.isFullAuto = compoundTag.getBoolean(DATA_IS_FULL_AUTO_TAG);
+    }
+    
+    // Faction-based targeting
+    if (compoundTag.contains(DATA_NPC_FACTION_TAG)) {
+      this.npcFaction = compoundTag.getString(DATA_NPC_FACTION_TAG);
+    }
+    if (compoundTag.contains(DATA_HOSTILE_FACTIONS_TAG)) {
+      this.hostileFactions.clear();
+      ListTag factionList = compoundTag.getList(DATA_HOSTILE_FACTIONS_TAG, Tag.TAG_STRING);
+      for (int i = 0; i < factionList.size(); i++) {
+        this.hostileFactions.add(factionList.getString(i));
+      }
+    }
   }
 
   public CompoundTag save(CompoundTag compoundTag) {
@@ -427,6 +479,21 @@ public final class ObjectiveDataEntry {
     }
     if (this.probability != 1.0F) {
       compoundTag.putFloat(DATA_PROBABILITY_TAG, this.probability);
+    }
+    if (this.isFullAuto) {
+      compoundTag.putBoolean(DATA_IS_FULL_AUTO_TAG, true);
+    }
+    
+    // Faction-based targeting
+    if (this.npcFaction != null && !this.npcFaction.equals("default")) {
+      compoundTag.putString(DATA_NPC_FACTION_TAG, this.npcFaction);
+    }
+    if (!this.hostileFactions.isEmpty()) {
+      ListTag factionList = new ListTag();
+      for (String faction : this.hostileFactions) {
+        factionList.add(StringTag.valueOf(faction));
+      }
+      compoundTag.put(DATA_HOSTILE_FACTIONS_TAG, factionList);
     }
 
     return compoundTag;

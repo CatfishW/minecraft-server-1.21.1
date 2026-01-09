@@ -80,6 +80,7 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
   source(project(":Common").sourceSets.main.allSource)
+  source(fileTree(dir: "../Client/src/main/java", include: "**/*.java"))
 }
 
 publishing {

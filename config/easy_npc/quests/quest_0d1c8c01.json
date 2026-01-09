@@ -1,0 +1,15 @@
+{
+    "id": "0d1c8c01-58e2-4c8f-b5f0-08b49077c9c3",
+    "title": "笑对恐惧",
+    "description": "这帮该死的史莱姆到处乱跳，简直是我的噩梦。去给我弄点史莱姆球回来，好让我今晚能睡个安稳觉——如果我还能睡着的话。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:slime_ball",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

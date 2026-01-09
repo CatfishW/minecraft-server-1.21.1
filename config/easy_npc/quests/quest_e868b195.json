@@ -1,0 +1,15 @@
+{
+    "id": "e868b195-d1b4-4784-a30e-1b6919b35288",
+    "title": "极限特技",
+    "description": "嘿！光说不练假把式，展示一下你的酷劲儿。去滑个300米，让我看看你行不行！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:distance",
+        "amount": 300
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

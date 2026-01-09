@@ -1,0 +1,15 @@
+{
+    "id": "c4a11617-274c-4454-b88b-65b9e193236d",
+    "title": "火焰的洗礼",
+    "description": "这地方太潮湿了，烧起来肯定很壮观。去给我弄点火药来，我要让这里燃起大火。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gunpowder",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

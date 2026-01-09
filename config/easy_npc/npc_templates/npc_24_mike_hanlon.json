@@ -1,0 +1,198 @@
+{
+    "name": "§bMike Hanlon",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The keeper of Derry's history.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MikeHanlon.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你来了。我一直在这里等着。Derry从不遗忘，即使人们强迫自己遗忘。作为图书管理员，我是这里的记忆守护者。我知道每一个失踪案，每一处异常的暴力。你想知道什么？关于过去的，还是关于……即将发生的？",
+            "buttons": [
+                {
+                    "label": "德里的往事",
+                    "action": "OPEN_QUEST_DIALOG:9b1c3e2f-5a4d-4b8a-9c1d-7e6f2a3b5c8d",
+                    "id": "btn_quest_8d9872c8"
+                },
+                {
+                    "label": "湮灭神节的仪式",
+                    "action": "OPEN_QUEST_DIALOG:b72d42d8-145d-47a3-93d9-95291e9b72ed",
+                    "id": "btn_quest_d1469fce"
+                },
+                {
+                    "label": "遗忘的低语",
+                    "action": "OPEN_QUEST_DIALOG:3399ddd6-5f37-4461-a7f3-1a818d71abc0",
+                    "id": "btn_quest_786af44b"
+                },
+                {
+                    "label": "告诉我Derry的历史",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_mike_history"
+                },
+                {
+                    "label": "我们该如何面对它？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_mike_future"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "Derry的历史写在鲜血和沉默里。1957年，孩子们被屠杀。1985年，恐怖重演。每隔27年，It就会苏醒，狩猎。而最可怕的是，镇上的人会配合它。他们会掩盖尸体，忽视求救，最后彻底忘掉发生过什么。这就像一种群体性的精神疾病。",
+            "buttons": [
+                {
+                    "label": "为什么只有你记得？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_mike_remember"
+                },
+                {
+                    "label": "这种循环怎么打破？",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_mike_break"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "因为我从未离开。Bill走了，Richie走了，Eddie走了，Ben走了，Bev也走了。我留下了。我是你们所有人的锚点。我用这些书，这些档案，这些剪报，强迫自己记住。这很痛苦，每一分钟都很痛苦。但我是记忆，我是你们找回自己的路标。",
+            "buttons": [
+                {
+                    "label": "谢谢你留下来",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_thanks"
+                },
+                {
+                    "label": "这太沉重了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_heavy"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "打破循环的唯一方法就是面对它。不是逃避，不是遗忘，而是回去。比尔说过，我们要像孩子一样回去。找回那时候的勇气和信念。我们得把它从它的巢穴里揪出来，直面它的真身，然后杀了它。彻底地。",
+            "buttons": [
+                {
+                    "label": "它的巢穴在哪里？",
+                    "action": "SHOW_DIALOG:story_1_2_1",
+                    "id": "btn_mike_lair"
+                },
+                {
+                    "label": "孩子般的信念？",
+                    "action": "SHOW_DIALOG:story_1_2_2",
+                    "id": "btn_mike_belief"
+                }
+            ]
+        },
+        "story_1_2_1": {
+            "greeting": "在镇子最古老的中心，那个被炸毁的中城购物中心下面。它利用人类的贪婪和遗忘作为掩护。那里很深，充满了隧道和过去的废墟。下去就像是进入地狱的喉咙。",
+            "buttons": [
+                {
+                    "label": "我们需要装备",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_equip"
+                },
+                {
+                    "label": "这是一条不归路",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_noreturn"
+                }
+            ]
+        },
+        "story_1_2_2": {
+            "greeting": "是的。相信我们能赢。相信我们在一起是无敌的。那个怪物以恐惧为食，以怀疑为饮。如果你带着成年的愤怒和绝望去见它，它会吃掉你。但如果你带着童年的纯真和勇气……那是它唯一的毒药。",
+            "buttons": [
+                {
+                    "label": "我会试着找回童心",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_child"
+                },
+                {
+                    "label": "这听起来很难",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_hard"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "面对它？这意味着你要面对自己最深的恐惧。不是比喻，是真的。它会变成你最怕的东西。它会让你觉得你是个失败者，是个怪胎。它会把你所有的不安全感具象化。你必须看着它的眼睛，告诉它：你不是真的。",
+            "buttons": [
+                {
+                    "label": "如果我做不到呢？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_mike_fail"
+                },
+                {
+                    "label": "除了信念，我们需要什么？",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_mike_needs"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "那你就会死。或者更糟，变成它的一部分。这也是为什么我们不能单独行动。当恐惧把你拉入深渊时，你的朋友就是你的救生索。他们能把你拉回来，提醒你你是谁。所以我们必须一起行动，寸步不离。",
+            "buttons": [
+                {
+                    "label": "我们不会分开",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_together"
+                },
+                {
+                    "label": "这让我更害怕了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_afraid"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "我们需要武器。不仅仅是肉体上的。我们需要象征性的武器。在1958年，我们用石头砸它。我们用我们的团结去对抗它的孤立。现在，我们需要找到能代表这种力量的东西。也许是武器，也许是誓言。",
+            "buttons": [
+                {
+                    "label": "我会寻找这种力量",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_power"
+                },
+                {
+                    "label": "指引我吧",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_mike_guide"
+                }
+            ]
+        },
+        "story_end": {
+            "greeting": "图书馆的书架里藏着答案，但时间不多了。去和大家汇合吧。比尔在老电影院等你们，Bev在检查通讯。我们需要重新集结。记住，我们属于这里。这是我们未完成的命运。",
+            "buttons": [
+                {
+                    "label": "我们这就去",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_mike_close"
+                },
+                {
+                    "label": "谢谢你，Mike",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_mike_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:compass",
+            "count": 1
+        }
+    }
+}

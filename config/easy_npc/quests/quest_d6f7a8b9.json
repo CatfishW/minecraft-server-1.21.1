@@ -1,0 +1,15 @@
+{
+    "id": "d6f7a8b9-c012-4567-89ab-cdef01234567",
+    "title": "可疑的鸟鸣",
+    "description": "Stanley 怀疑那些 '鸟' 的叫声不自然，去附近的村庄找 Mike Wheeler 问问情况。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

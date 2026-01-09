@@ -69,8 +69,8 @@
 				item: { components: { "minecraft:custom_data": { BlockId: "tacz:ammo_workbench" } }, count: 1, id: "tacz:workbench_a" }
 				type: "item"
 			}]
-			x: -2.0d
-			y: 4.0d
+			x: -4.0d
+			y: 0.0d
 		}
 		{
 			dependencies: ["6F150DE414303F5C"]

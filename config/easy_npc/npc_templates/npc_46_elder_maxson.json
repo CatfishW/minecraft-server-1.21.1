@@ -1,0 +1,123 @@
+{
+    "name": "§cElder Maxson",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Leader of the brotherhood. Strict.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/ElderMaxson.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "公民。你踏入了钢铁兄弟会的领地，这里是秩序与原则的庇护所。在这一片废土的混乱中，我们是唯一能够重建文明的力量。告诉我，你的来意是什么？我们不欢迎漫无目的的闲逛者。",
+            "buttons": [
+                {
+                    "label": "肃清异端",
+                    "action": "OPEN_QUEST_DIALOG:7b3a1c9e-4260-4c5c-8e2a-3f8d9a1b2c3d",
+                    "id": "btn_quest_1a4717e7"
+                },
+                {
+                    "label": "钢铁献礼",
+                    "action": "OPEN_QUEST_DIALOG:597a9e4d-340a-45f1-9e72-f6f107c7630d",
+                    "id": "btn_quest_7c507ec6"
+                },
+                {
+                    "label": "钢铁的净化",
+                    "action": "OPEN_QUEST_DIALOG:ea372c9d-7e5f-409c-8a01-0f0d946ad11c",
+                    "id": "btn_quest_601ec1db"
+                },
+                {
+                    "label": "询问兄弟会的目标",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_goal"
+                },
+                {
+                    "label": "展示你获得的战利品",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_show_loot"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "我们的目标很明确：回收所有危险的高科技，将它们从无知的掠夺者手中夺回，直到我们将人类带回失落的黄金时代。任何滥用科技的行为都是对未来的背叛。你若是认同这份理想，或许能为我们所用。",
+            "buttons": [
+                {
+                    "label": "我愿意协助回收科技",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_join"
+                },
+                {
+                    "label": "你们这是在垄断技术",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_critique"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "这把武器……做工精良。它曾经属于那个疯子骑士，对吗？很好。如果你能从那些野蛮人手中夺取这种力量，说明你至少懂得分辨优劣。把它们交给我们，我们会给予你应有的报酬。",
+            "buttons": [
+                {
+                    "label": "交易完成",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_trade"
+                },
+                {
+                    "label": "我想知道更多关于骑士的事",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_knight_info"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "明智的选择。但请记住，背叛兄弟会的下场只有一个。去废土中寻找那些失落的神器吧，将它们带回普罗维登斯的飞艇残骸处。我们的技术员会处理剩下的事情。不要让我们失望，骑士。",
+            "buttons": [
+                {
+                    "label": "为了钢铁！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_steel"
+                },
+                {
+                    "label": "我还有最后一个问题",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_more"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "垄断？这是保护！让那些拾荒者拿着核子手雷乱跑就是你所谓的自由？退下吧，你的言论充满了危险的幼稚。除非你改变想法，否则这里没有你的位置。",
+            "buttons": [
+                {
+                    "label": "我再考虑一下",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_angry"
+                },
+                {
+                    "label": "我收回刚才的话，我需要证明自己",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_redemption"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

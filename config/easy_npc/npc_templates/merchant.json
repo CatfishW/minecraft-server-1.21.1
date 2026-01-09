@@ -1,6 +1,7 @@
 {
   "name": "Village Merchant",
   "entityType": "easy_npc:villager",
+  "faction": "default",
   "description": "A friendly merchant selling various goods",
   "skin": {
     "type": "PLAYER_SKIN",

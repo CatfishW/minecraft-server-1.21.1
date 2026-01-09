@@ -1,0 +1,15 @@
+{
+    "id": "2f418a35-7b21-4a41-b978-3b4e5c81d2e0",
+    "title": "军需官的执念",
+    "description": "战备军需官 Maximus 渴望获得动力装甲，让你去收集制作装甲所需的高纯度钢铁。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

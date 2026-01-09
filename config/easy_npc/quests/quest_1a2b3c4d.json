@@ -1,0 +1,15 @@
+{
+    "id": "1a2b3c4d-5e6f-7890-1234-567890abcdef",
+    "title": "为母则刚",
+    "description": "帮我去寻找Mike Wheeler，这个孩子可能知道我儿子的下落。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

@@ -7,7 +7,8 @@
     "/mods/*.jar",
     "/kubejs/**",
     "!/kubejs/server_scripts/**",
-    "/emotes/*"
+    "/emotes/*",
+    "/tacz/*"
   ],
   "allowEditsInFiles": [
     "/options.txt",

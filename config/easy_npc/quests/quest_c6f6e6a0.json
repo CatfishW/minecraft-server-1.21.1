@@ -1,0 +1,15 @@
+{
+    "id": "c6f6e6a0-1c6f-4a32-a85c-2d257e254721",
+    "title": "寻找老朋友",
+    "description": "汪！帮我找到流浪商人亨利，他身上总带着好闻的肉味。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

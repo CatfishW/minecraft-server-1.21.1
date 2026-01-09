@@ -1,0 +1,15 @@
+{
+    "id": "b1a535c2-688d-4a5f-a295-27812c606e56",
+    "title": "暗处的注视",
+    "description": "我拍到了一些不该出现的东西...它们盯上我了。帮我解决掉那些黑暗中的敌人。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

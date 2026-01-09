@@ -1,0 +1,15 @@
+{
+    "id": "e0e9a6a2-7b3f-4b8a-9d84-0a2e4582a044",
+    "title": "强哥的善意",
+    "description": "我是强，寻找善良牛奶。亨利知道配方，你去问问他。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

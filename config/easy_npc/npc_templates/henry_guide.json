@@ -1,6 +1,7 @@
 {
     "name": "亨利 (Henry)",
     "entityType": "easy_npc:humanoid",
+    "faction": "default",
     "description": "Novus 领域的资深向导，似乎有着不为人知的过去。",
     "skin": {
         "type": "URL_SKIN",
@@ -16,6 +17,26 @@
         "main": {
             "greeting": "欢迎来到 Novus 领域。我是亨利。这里充满了机遇，但也危机四伏。你想先了解哪方面的生存之道？",
             "buttons": [
+                {
+                    "label": "老友重逢",
+                    "action": "OPEN_QUEST_DIALOG:1c8b3d2a-5e4f-4a9c-9d8e-7f6a2b1c0d9e",
+                    "id": "btn_quest_d860dca6"
+                },
+                {
+                    "label": "昔日阴影",
+                    "action": "OPEN_QUEST_DIALOG:7c4b1a8c-8d6e-4f9a-9c2b-3e5f6a7d8c9b",
+                    "id": "btn_quest_0ceda083"
+                },
+                {
+                    "label": "昔日的回响",
+                    "action": "OPEN_QUEST_DIALOG:77ecf06a-367c-4d96-9891-e3e13a511aaa",
+                    "id": "btn_quest_163437b5"
+                },
+                {
+                    "label": "荒野的低语",
+                    "action": "OPEN_QUEST_DIALOG:f38876a9-f80f-460b-9056-6259311cd256",
+                    "id": "btn_quest_c62bc12d"
+                },
                 {
                     "label": "📍 新手生存指南",
                     "id": "btn_start",

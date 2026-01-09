@@ -1,0 +1,15 @@
+{
+    "id": "b5a28e3f-4e9d-4b1a-8a62-f4f5f520f534",
+    "title": "找个能说上话的",
+    "description": "喂，那个穿花衬衫的家伙，看着像个孩子王。去帮我找到 Steve Harrington，告诉他我要和他谈谈，顺便给我带个信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Steve Harrington",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

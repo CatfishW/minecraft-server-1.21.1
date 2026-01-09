@@ -1,0 +1,15 @@
+{
+    "id": "b2c4a4f8-9371-46f8-9460-35b5a75a3b1a",
+    "title": "雨夜的线索",
+    "description": "在这个方块构成的都市里，每一个转角都藏着秘密。我需要知道亨利昨晚在霓虹灯下看到了什么，报酬是两枚铜币。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

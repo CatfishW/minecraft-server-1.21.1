@@ -1,0 +1,198 @@
+{
+    "name": "§6Piper Wright",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Reporter for Publick Occurrences.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/PiperWright.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，陌生人。看你一脸茫然的样子，是刚从哪个冷冻仓里出来吗？我是派普·赖特，《公共事件报》的记者。在这个疯狂的世界里，真相就像金子一样稀缺，而我就是要把它挖出来。想在这个城市活下去，你需要情报，而我刚好就是卖情报的，或者说，换取情报。",
+            "buttons": [
+                {
+                    "label": "农场主的麻烦",
+                    "action": "OPEN_QUEST_DIALOG:e6a91450-71b0-41d4-b415-7b7d004946b2",
+                    "id": "btn_quest_2f23e7e8"
+                },
+                {
+                    "label": "血腥运动的报道",
+                    "action": "OPEN_QUEST_DIALOG:a8b2c3d4-e5f6-7890-1234-567890abcdef",
+                    "id": "btn_quest_cc68cb68"
+                },
+                {
+                    "label": "头条新闻：蘑菇圈的秘密",
+                    "action": "OPEN_QUEST_DIALOG:9686ca44-f5c4-4862-8083-e40e38f9106e",
+                    "id": "btn_quest_23b6e5eb"
+                },
+                {
+                    "label": "独家新闻：销毁证据",
+                    "action": "OPEN_QUEST_DIALOG:9c7d7eff-e166-495c-b0f2-90cb9382380d",
+                    "id": "btn_quest_7c7b0584"
+                },
+                {
+                    "label": "头版头条：僵尸危机！",
+                    "action": "OPEN_QUEST_DIALOG:83fdab00-0be0-4452-9b55-72d6408b2ac9",
+                    "id": "btn_quest_5a454ef8"
+                },
+                {
+                    "label": "《公共事件报》？钻石城的那份报纸？",
+                    "action": "SHOW_DIALOG:paper",
+                    "id": "btn_paper"
+                },
+                {
+                    "label": "你能告诉我什么？",
+                    "action": "SHOW_DIALOG:info",
+                    "id": "btn_info"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "paper": {
+            "greeting": "没错！就是那份报纸。虽然有人觉得我是异想天开，觉得在这个世界里报纸毫无意义。但如果不记录下发生的一切，那我们和外面那些只会嚎叫的野兽有什么区别？我报道真相，揭露黑幕，给那些被遗忘的人发声的机会。当然，这也让我惹上了不少麻烦。",
+            "buttons": [
+                {
+                    "label": "你都惹上了什么麻烦？",
+                    "action": "SHOW_DIALOG:trouble",
+                    "id": "btn_trouble"
+                },
+                {
+                    "label": "我喜欢你的精神。",
+                    "action": "SHOW_DIALOG:admire",
+                    "id": "btn_admire"
+                }
+            ]
+        },
+        "info": {
+            "greeting": "那得看你想知道什么了。钻石城的内幕？钢铁兄弟会的真实目的？还是那些穿着奇怪白大褂的“学院”？我这里的消息很灵通，但天下没有免费的午餐。帮我个小忙，或者给我点独家新闻，我就告诉你你想知道的。",
+            "buttons": [
+                {
+                    "label": "说说学院吧。",
+                    "action": "SHOW_DIALOG:institute",
+                    "id": "btn_institute"
+                },
+                {
+                    "label": "需要我帮什么忙？",
+                    "action": "SHOW_DIALOG:favor",
+                    "id": "btn_favor"
+                }
+            ]
+        },
+        "trouble": {
+            "greeting": "主要是那些学院的混蛋。他们神出鬼没，总是在绑架平民，然后那些人回来后就变得怪怪的。我一直在调查他们，但这很危险，因为和他们扯上关系的人，通常都会“意外”消失。还有钻石城的守卫，他们总想阻止我调查真相，觉得我在制造恐慌。",
+            "buttons": [
+                {
+                    "label": "听起来你需要帮助。",
+                    "action": "SHOW_DIALOG:favor",
+                    "id": "btn_favor_2"
+                },
+                {
+                    "label": "学院到底是什么？",
+                    "action": "SHOW_DIALOG:institute",
+                    "id": "btn_institute_2"
+                }
+            ]
+        },
+        "admire": {
+            "greeting": "谢谢，虽然这种精神经常让我吃不上饭。你知道吗，有时候我也想过，是不是该像其他人一样，只顾着自己活命就好。但每当我看到那些因为无知而受害的人，我就觉得我必须得做点什么。至少，我要让真相大白于天下，哪怕没人看我的报纸。",
+            "buttons": [
+                {
+                    "label": "我支持你。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "说说你要我帮的忙吧。",
+                    "action": "SHOW_DIALOG:favor",
+                    "id": "btn_favor_3"
+                }
+            ]
+        },
+        "institute": {
+            "greeting": "他们是波士顿的幽灵，废土上最大的谜团。没人知道他们在哪，也没人知道他们想干什么。有人说他们在地下建立了一个乌托邦，有人说他们在制造杀戮机器。我只知道，每当有人提到‘学院’，他们的脸上都会露出恐惧。我正在搜集关于他们的证据，只要你能帮我找到任何线索，我都感激不尽。",
+            "buttons": [
+                {
+                    "label": "我会留意的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2"
+                },
+                {
+                    "label": "回到刚才的话题，你需要我做什么？",
+                    "action": "SHOW_DIALOG:favor",
+                    "id": "btn_favor_4"
+                }
+            ]
+        },
+        "favor": {
+            "greeting": "爽快！我的妹妹，奈蒂，她住在钻石城外的一间小屋里。她最近总是在抱怨有掠夺者在骚扰她。我得赶稿子，没办法亲自去处理。如果你能去清理一下那些麻烦制造者，确保她的安全，我会给你非常有价值的情报作为回报。怎么样？",
+            "buttons": [
+                {
+                    "label": "包在我身上，我去保护奈蒂。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "保护你妹妹有什么奖励？",
+                    "action": "SHOW_DIALOG:reward",
+                    "id": "btn_reward"
+                }
+            ]
+        },
+        "accept": {
+            "greeting": "太棒了！我就知道你是个好人。奈蒂就在钻石城东边不远处，就在那座老断路塔下面。别跟她说是我让你去的，她那个脾气……你只要把那些掠夺者赶跑就行。等你回来，我请你喝一杯，顺便告诉你一条关于钻石城内部的重要消息。",
+            "buttons": [
+                {
+                    "label": "收到，我这就去。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3"
+                },
+                {
+                    "label": "你自己不也在钻石城吗？",
+                    "action": "SHOW_DIALOG:about_natty",
+                    "id": "btn_about_natty"
+                }
+            ]
+        },
+        "reward": {
+            "greeting": "奖励？你救了我妹妹的命，这可不是瓶盖能衡量的。但如果你坚持，我可以告诉你一条关于“铁路”组织的情报。他们专门帮助合成年人类逃离学院的控制，非常神秘。这条情报对某些人来说价值连城，当然，前提是你有胆量去找他们。",
+            "buttons": [
+                {
+                    "label": "成交。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept_2"
+                }
+            ]
+        },
+        "about_natty": {
+            "greeting": "唉，说来话长。钻石城的守卫——那个叫斯壮的肌肉男，总觉得我是个麻烦精，整天在外面惹事。所以他不让我进城，怕我把什么不好的东西带进去。但我妹妹住在外面反而更安全，至少不用看那些官僚的脸色行事。",
+            "buttons": [
+                {
+                    "label": "明白了，我会照顾好她的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_4"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:compass",
+            "count": 1
+        }
+    }
+}

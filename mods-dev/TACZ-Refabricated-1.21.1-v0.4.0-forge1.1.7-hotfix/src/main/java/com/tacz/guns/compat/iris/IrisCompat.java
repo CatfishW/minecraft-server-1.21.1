@@ -3,7 +3,6 @@ package com.tacz.guns.compat.iris;
 import com.tacz.guns.init.CompatRegistry;
 import net.fabricmc.loader.api.FabricLoader;
 import net.irisshaders.batchedentityrendering.impl.FullyBufferedMultiBufferSource;
-import net.irisshaders.iris.Iris;
 import net.irisshaders.iris.api.v0.IrisApi;
 import net.irisshaders.iris.shadows.ShadowRenderingState;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -24,7 +23,8 @@ public final class IrisCompat {
 
     public static boolean isPackInUseQuick() {
         if (FabricLoader.getInstance().isModLoaded(CompatRegistry.IRIS)) {
-            return Iris.isPackInUseQuick();
+            // Use IrisApi instead of Iris.isPackInUseQuick() which may not exist in all Iris versions
+            return IrisApi.getInstance().isShaderPackInUse();
         }
         return false;
     }

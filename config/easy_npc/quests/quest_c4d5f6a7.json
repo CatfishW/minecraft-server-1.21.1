@@ -1,0 +1,15 @@
+{
+    "id": "c4d5f6a7-8b9c-4d3e-f0a1-2b3c4d5e6f7a",
+    "title": "清理凋灵骷髅",
+    "description": "村口的凋灵骷髅越来越猖狂了，请帮我们消灭几只。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:wither_skeleton",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a38f2b5c-1d4e-4a9f-8c2b-3e5f6a7b8c9d",
+    "title": "裂隙的回响",
+    "description": "时空出现了不稳定的裂隙，你需要收集 4 个龙息来稳定这片区域的传送通道。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:dragon_breath",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

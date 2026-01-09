@@ -1,0 +1,773 @@
+{
+    "name": "§aDustin Henderson",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The scientific genius. Curious and funny.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/DustinHenderson.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，你好啊！我是Dustin，Dustin Henderson。别被我这顶帽子吓到，它可是我的幸运帽。你看起来不像是这个镇上的常客，是新来的吗？还是说，你也是被那些奇怪的噪音吸引过来的？这附近的电子设备最近总是出问题，我怀疑是某种超高频的电磁干扰。",
+            "buttons": [
+                {
+                    "label": "寻找能量来源",
+                    "action": "OPEN_QUEST_DIALOG:6f8e2a3d-7c4b-4f9a-9e1d-1c8b5d6a3e2f",
+                    "id": "btn_quest_39578b7e"
+                },
+                {
+                    "label": "超越光速的通讯",
+                    "action": "OPEN_QUEST_DIALOG:a653a440-372c-4984-9801-867524800763",
+                    "id": "btn_quest_83970071"
+                },
+                {
+                    "label": "量子曲奇实验",
+                    "action": "OPEN_QUEST_DIALOG:e78af87d-2107-4d8a-b94c-a5eaad36008d",
+                    "id": "btn_quest_cbfe1ba2"
+                },
+                {
+                    "label": "来自异世界的能量频率",
+                    "action": "OPEN_QUEST_DIALOG:21e47786-8911-41a7-9f72-d3edbaffdb5e",
+                    "id": "btn_quest_2cc5063d"
+                },
+                {
+                    "label": "奇怪的噪音？",
+                    "action": "SHOW_DIALOG:part1_noise",
+                    "id": "btn_noise"
+                },
+                {
+                    "label": "你的帽子很酷",
+                    "action": "SHOW_DIALOG:part1_hat",
+                    "id": "btn_hat"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "part1_noise": {
+            "greeting": "没错！一种低沉的嗡嗡声，像是老旧电视没有信号时发出的那种，但持续不断。我的苏西（收音机）完全接收不到任何信号了。我用示波器监测过，波形非常不规则，完全不符合任何已知的物理学规律。这让我想起了一年前发生的那些事……",
+            "buttons": [
+                {
+                    "label": "一年前发生了什么？",
+                    "action": "SHOW_DIALOG:part2_stranger",
+                    "id": "btn_stranger"
+                },
+                {
+                    "label": "也许只是太阳耀斑？",
+                    "action": "SHOW_DIALOG:part2_science",
+                    "id": "btn_science"
+                }
+            ]
+        },
+        "part1_hat": {
+            "greeting": "哈哈，谢谢！它不仅仅是酷，它是我的标志。你知道吗，我特意把它留长，这样我在思考复杂问题的时候，就可以用手把头发往后捋。这能让我看起来更像一个成熟的科学家。说到科学，你对量子物理学有多少了解？",
+            "buttons": [
+                {
+                    "label": "一窍不通",
+                    "action": "SHOW_DIALOG:part2_quantum_basics",
+                    "id": "btn_quantum_basic"
+                },
+                {
+                    "label": "略知一二",
+                    "action": "SHOW_DIALOG:part2_quantum_advanced",
+                    "id": "btn_quantum_adv"
+                }
+            ]
+        },
+        "part2_stranger": {
+            "greeting": "（压低声音）那是关于我最好的朋友Will的故事。我们以为他死了，但实际上他被困在了一个……另一个维度。一个与我们世界重叠的阴影之地，我们叫它‘逆世界’（Upside Down）。那里寒冷、压抑，充满了可怕的生物。我们把他救了回来。但那之后，似乎留下了一些后遗症。",
+            "buttons": [
+                {
+                    "label": "后遗症？什么意思？",
+                    "action": "SHOW_DIALOG:part3_consequence",
+                    "id": "btn_consequence"
+                },
+                {
+                    "label": "太荒谬了，怎么可能有另一个维度",
+                    "action": "SHOW_DIALOG:part3_disbelief",
+                    "id": "btn_disbelief"
+                }
+            ]
+        },
+        "part2_science": {
+            "greeting": "不，不，这完全是两码事。太阳耀斑会产生高能粒子流，虽然会干扰通讯，但不会产生这种特定的、具有生物趋性的波形。我分析了磁场读数，附近的磁场强度在以一种……‘有节奏’的方式波动。这绝对不是自然现象，这是人为的，或者是……某种‘东西’正在尝试跨越屏障。",
+            "buttons": [
+                {
+                    "label": "跨越屏障？你是说...逆世界？",
+                    "action": "SHOW_DIALOG:part3_dimension",
+                    "id": "btn_dimension"
+                },
+                {
+                    "label": "你打算怎么做？",
+                    "action": "SHOW_DIALOG:part3_plan",
+                    "id": "btn_plan"
+                }
+            ]
+        },
+        "part2_quantum_basics": {
+            "greeting": "没关系，我可以给你科普一下！想象一下，在你观察一个粒子之前，它同时处于所有可能的状态，就像一团概率云。但是，当你观察它的瞬间，它就‘坍缩’成了一个确定的状态。这就是量子力学的核心——观察者效应。也许，我们的‘观察’正在影响现实本身。",
+            "buttons": [
+                {
+                    "label": "这和逆世界有什么关系？",
+                    "action": "SHOW_DIALOG:part3_quantum_apply",
+                    "id": "btn_quantum_apply"
+                },
+                {
+                    "label": "听起来像魔法",
+                    "action": "SHOW_DIALOG:part3_magic",
+                    "id": "btn_magic"
+                }
+            ]
+        },
+        "part2_quantum_advanced": {
+            "greeting": "哦？你也是个科学爱好者？太棒了！那你一定知道薛定谔的猫。但在逆世界的案例中，我们面对的不是简单的二元叠加态，而是宏观数量级的量子纠缠。Will和那个世界的联系，就像是一个未被发现的粒子对，无论相隔多远，状态都会瞬间相互影响。",
+            "buttons": [
+                {
+                    "label": "所以Will还是连接着那里？",
+                    "action": "SHOW_DIALOG:part3_entanglement",
+                    "id": "btn_entanglement"
+                },
+                {
+                    "label": "我们能利用这种连接吗？",
+                    "action": "SHOW_DIALOG:part3_utilize",
+                    "id": "btn_utilize"
+                }
+            ]
+        },
+        "part3_consequence": {
+            "greeting": "Will偶尔会产生幻觉，看到‘影子人’，还会突然剧烈咳嗽，咳出一些……呃，非常不干净的东西。医生说是创伤后应激障碍，但我不信。我怀疑逆世界的‘残留物’还留在他体内，或者他成了某种‘天线’，能接收到那个世界的信息。",
+            "buttons": [
+                {
+                    "label": "这太可怕了，我们得帮他！",
+                    "action": "SHOW_DIALOG:part4_help",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "你能确定吗？有什么证据？",
+                    "action": "SHOW_DIALOG:part4_evidence",
+                    "id": "btn_evidence"
+                }
+            ]
+        },
+        "part3_disbelief": {
+            "greeting": "我知道这听起来有多疯狂！如果不是我亲眼所见，亲耳所闻，我也不会相信。但这就是科学的本质，Dustin！面对无法解释的现象，提出假设，然后去验证它！我现在需要的是一个相信科学、愿意帮忙的朋友，而不是一个只会说‘不可能’的人。",
+            "buttons": [
+                {
+                    "label": "好吧，我该怎么做？",
+                    "action": "SHOW_DIALOG:part4_help",
+                    "id": "btn_help_2"
+                },
+                {
+                    "label": "我还是保留怀疑",
+                    "action": "SHOW_DIALOG:part4_leave",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "part3_dimension": {
+            "greeting": "正是！我认为逆世界就像是我们现实的一个‘负片’，一个阴暗的倒影。如果有人或者什么东西在那边故意扩大这个‘漏洞’，那我们的世界就危险了。我正在组装一个设备，基于斯克林霍恩的星尘理论，试图打开一个短暂的、可控的窗口。",
+            "buttons": [
+                {
+                    "label": "我能看看你的设备吗？",
+                    "action": "SHOW_DIALOG:part4_device",
+                    "id": "btn_device"
+                },
+                {
+                    "label": "这听起来很危险",
+                    "action": "SHOW_DIALOG:part4_danger",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "part3_plan": {
+            "greeting": "我需要组建一个调查队。首先，我们要找到一个稳定的逆世界入口。其次，我们需要一个强大的信号源来探测另一边的活动。最后，也是最重要的，我们需要一个‘诱饵’，一个能吸引那边注意力的东西，然后用我设计的电磁脉冲装置把它推回去。",
+            "buttons": [
+                {
+                    "label": "诱饵？你打算用什么？",
+                    "action": "SHOW_DIALOG:part4_bait",
+                    "id": "btn_bait"
+                },
+                {
+                    "label": "算我一个，我来帮忙",
+                    "action": "SHOW_DIALOG:part4_join",
+                    "id": "btn_join"
+                }
+            ]
+        },
+        "part3_quantum_apply": {
+            "greeting": "问得好！我认为逆世界的生物，比如‘抓人兽’，就是一种宏观的量子实体。它们利用我们的电场作为桥梁。如果我们将Will暴露在精心调制的电磁频谱下，或许可以‘观测’到那个世界的连接点，然后用同频共振把它强行关闭。这就是我的‘电磁闭锁器’的原理！",
+            "buttons": [
+                {
+                    "label": "听起来很复杂，但我会支持你",
+                    "action": "SHOW_DIALOG:part4_support",
+                    "id": "btn_support"
+                },
+                {
+                    "label": "你想对Will做什么？",
+                    "action": "SHOW_DIALOG:part4_concern",
+                    "id": "btn_concern"
+                }
+            ]
+        },
+        "part3_magic": {
+            "greeting": "不，不，这绝对不是魔法！魔法是无规律的，是不可预测的。而这一切，这一切都是遵循物理定律的，只是我们目前还没有完全理解这些定律而已。牛顿看到苹果落地，难道那是魔法吗？不，那是引力！我们现在面对的，是更高维度的‘引力’！",
+            "buttons": [
+                {
+                    "label": "你说服了我，需要我做什么？",
+                    "action": "SHOW_DIALOG:part4_help",
+                    "id": "btn_help_3"
+                },
+                {
+                    "label": "我还是觉得这像巫术",
+                    "action": "SHOW_DIALOG:part4_leave",
+                    "id": "btn_leave_2"
+                }
+            ]
+        },
+        "part3_entanglement": {
+            "greeting": "完全正确！这就是为什么他能‘看到’那边的景象。就像两个纠缠的粒子，无论相隔多远，一个的状态改变会瞬间影响另一个。这打破了爱因斯坦的定域性原则，但也给了我们一个机会。如果我们能激发出足够大的能量，或许就能通过这条‘脐带’反向追踪到源头。",
+            "buttons": [
+                {
+                    "label": "这需要什么样的能量？",
+                    "action": "SHOW_DIALOG:part4_energy",
+                    "id": "btn_energy"
+                },
+                {
+                    "label": "太理论化了，我们能实践吗？",
+                    "action": "SHOW_DIALOG:part4_practice",
+                    "id": "btn_practice"
+                }
+            ]
+        },
+        "part3_utilize": {
+            "greeting": "这正是我思考的核心！如果我们能利用这种量子纠缠，我们就能实现超光速通讯，甚至……物质传输！但这需要一个中继器，一个能稳定维持纠缠态的媒介。我怀疑，Suzie家的卫星天线可以做到，但说服她帮忙可能比打倒抓人兽还难。",
+            "buttons": [
+                {
+                    "label": "Suzie？她是谁？",
+                    "action": "SHOW_DIALOG:part4_suzie",
+                    "id": "btn_suzie"
+                },
+                {
+                    "label": "我们先解决眼前的问题",
+                    "action": "SHOW_DIALOG:part4_now",
+                    "id": "btn_now"
+                }
+            ]
+        },
+        "part4_help": {
+            "greeting": "我就知道你会这么说！听着，我需要你帮忙收集一些材料。我需要导电性的金属，比如铜或者银，还需要一些绝缘体，最好是一些特殊的晶体。把这些东西带到我的车库来，我的装置就差最后一步了。这是我们的反击计划，代号：‘星空奇兵’！",
+            "buttons": [
+                {
+                    "label": "收到，我马上去收集",
+                    "action": "SHOW_DIALOG:end_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "你的车库？听起来不安全",
+                    "action": "SHOW_DIALOG:end_danger",
+                    "id": "btn_danger_end"
+                }
+            ]
+        },
+        "part4_evidence": {
+            "greeting": "证据就在我的收音机里！我录下了一段那个‘噪音’，如果你仔细听背景，能听到一个微弱的、断断续续的声音在重复一个词……‘Help’。那是Will的声音。我绝对没有听错。这就是物理学和友谊的结合，足以证明我的理论。",
+            "buttons": [
+                {
+                    "label": "天哪……我信你了，我来帮忙",
+                    "action": "SHOW_DIALOG:end_accept",
+                    "id": "btn_accept_2"
+                },
+                {
+                    "label": "这可能是听觉幻象",
+                    "action": "SHOW_DIALOG:end_leave",
+                    "id": "btn_leave_end"
+                }
+            ]
+        },
+        "part4_device": {
+            "greeting": "当然！你看，这是主谐振器，连接着这两个银线圈。当它们高速旋转时，会产生一个旋转磁场，模拟逆世界的环境。这是控制台，我会用它来校准频率。一旦我们找到正确的频率，就能像调收音机一样，‘调’到那个世界的频道，然后‘关掉’它！",
+            "buttons": [
+                {
+                    "label": "我能帮你测试吗？",
+                    "action": "SHOW_DIALOG:end_test",
+                    "id": "btn_test"
+                },
+                {
+                    "label": "小心别把我们炸飞了",
+                    "action": "SHOW_DIALOG:end_careful",
+                    "id": "btn_careful"
+                }
+            ]
+        },
+        "part4_danger": {
+            "greeting": "科学的道路上总是充满了危险！但如果不冒险，我们就只能坐以待毙。抓人兽和它的同类正在成长，它们变得更聪明，更具攻击性。我们不能让去年的悲剧重演。我向你保证，只要我们严格遵守操作规程，风险是可控的……大概吧。",
+            "buttons": [
+                {
+                    "label": "好吧，我加入你的疯狂计划",
+                    "action": "SHOW_DIALOG:end_accept",
+                    "id": "btn_accept_3"
+                },
+                {
+                    "label": "我还是觉得我们应该报警",
+                    "action": "SHOW_DIALOG:end_police",
+                    "id": "btn_police"
+                }
+            ]
+        },
+        "part4_bait": {
+            "greeting": "我有个想法，但需要你的帮助。我们上次用过一个糖果盒引开了它，但这次我们需要更强大的东西。我需要一个高功率的电源，比如汽车电池，连接到一个扩音器上，播放高强度的白噪音。这会像灯塔一样吸引它们，然后我们就可以启动电磁闭锁器，把它们困在那边。",
+            "buttons": [
+                {
+                    "label": "我去搞一个电池来",
+                    "action": "SHOW_DIALOG:end_battery",
+                    "id": "btn_battery"
+                },
+                {
+                    "label": "这听起来是个陷阱，我是诱饵吗？",
+                    "action": "SHOW_DIALOG:end_bait_role",
+                    "id": "btn_bait_role"
+                }
+            ]
+        },
+        "part4_join": {
+            "greeting": "太棒了！欢迎加入‘霍金斯少年科学俱乐部’！我们每个人都有自己的角色。Mike是我们的战略家，Lucas是我们的斥候，Will是我们的雷达。现在你来了，我们需要一个……嗯，一个能搬运重物的人，或者一个能和成年人沟通的人。这下我们团队更完整了！",
+            "buttons": [
+                {
+                    "label": "我的荣幸，队长！",
+                    "action": "SHOW_DIALOG:end_leader",
+                    "id": "btn_leader"
+                },
+                {
+                    "label": "我们什么时候开始行动？",
+                    "action": "SHOW_DIALOG:end_start",
+                    "id": "btn_start"
+                }
+            ]
+        },
+        "part4_support": {
+            "greeting": "谢谢你的信任！你知道吗，我的偶像卡尔·萨根曾经说过，‘非凡的主张需要非凡的证据’。我正在创造这个证据。有你在旁边支持我，我就更有信心了。我们需要一起校准设备，这需要精确到0.01赫兹，你的手可不能抖。",
+            "buttons": [
+                {
+                    "label": "我的手稳得很",
+                    "action": "SHOW_DIALOG:end_calm",
+                    "id": "btn_calm"
+                },
+                {
+                    "label": "万一失败了会怎么样？",
+                    "action": "SHOW_DIALOG:end_fail",
+                    "id": "btn_fail"
+                }
+            ]
+        },
+        "part4_concern": {
+            "greeting": "我理解你的担心，真的。我也不愿意让Will冒险。但这是唯一的方法，我们不能让他一辈子都活在那个怪物的阴影下。我们必须切断联系。我会确保他只在安全距离外接受信号，绝对不会直接暴露在核心场里。我用我的帽子发誓！",
+            "buttons": [
+                {
+                    "label": "好吧，我信你，需要我做什么？",
+                    "action": "SHOW_DIALOG:end_accept",
+                    "id": "btn_accept_4"
+                },
+                {
+                    "label": "这太冒险了，我不同意",
+                    "action": "SHOW_DIALOG:end_disagree",
+                    "id": "btn_disagree"
+                }
+            ]
+        },
+        "part4_energy": {
+            "greeting": "一个巨大的能量源。我计算过，至少需要……嗯，大概能把整个霍金斯镇点亮一秒钟的能量。这超出了我的设备能力。除非……除非我们能接入镇上的变电站。但那太危险了，而且是违法的。我还在寻找替代方案，也许一个小型化的核电池？",
+            "buttons": [
+                {
+                    "label": "变电站？你疯了？",
+                    "action": "SHOW_DIALOG:end_crazy",
+                    "id": "btn_crazy"
+                },
+                {
+                    "label": "也许我能找到别的能源",
+                    "action": "SHOW_DIALOG:end_find_power",
+                    "id": "btn_find_power"
+                }
+            ]
+        },
+        "part4_practice": {
+            "greeting": "理论是实践的指导，没有理论的实践就是瞎忙。我已经在模拟器上运行了上千次，结果都是成功的。但模拟毕竟是模拟，我们需要在现实中测试。第一步，先采集到足够的数据。来，帮我把这些示波器连接到电网监测器上，我们先记录一下‘噪音’的基频。",
+            "buttons": [
+                {
+                    "label": "好的，我来连接",
+                    "action": "SHOW建档立:end_connect",
+                    "id": "btn_connect"
+                },
+                {
+                    "label": "如果这会引来怪物怎么办？",
+                    "action": "SHOW_DIALOG:end_risk",
+                    "id": "btn_risk"
+                }
+            ]
+        },
+        "part4_suzie": {
+            "greeting": "Suzie是我通过‘科普利奖章’竞赛认识的女孩，她在盐湖城。她不仅是我的女朋友，还是个数学天才！只有她能解出多维空间的坐标算法。可惜她家管得很严，我们只能通过每周的业余无线电联络。如果能说服她帮忙，我们的成功率能提高到97.3%！",
+            "buttons": [
+                {
+                    "label": "听起来是个完美的女孩",
+                    "action": "SHOW_DIALOG:end_perfect",
+                    "id": "btn_perfect"
+                },
+                {
+                    "label": "我们不能依赖一个不在场的人",
+                    "action": "SHOW_DIALOG:end_rely",
+                    "id": "btn_rely"
+                }
+            ]
+        },
+        "part4_now": {
+            "greeting": "你说得对，远水解不了近渴。我们必须专注于当下。我需要你去帮我找到一些东西：硫酸铜，用来制作导电墨水；还有一些石英晶体，用来稳定频率。拿到这些东西，我们就能制作一个临时的信号增强器，先弄清楚我们在对付什么再说。",
+            "buttons": [
+                {
+                    "label": "硫酸铜和石英，记下了",
+                    "action": "SHOW_DIALOG:end_materials",
+                    "id": "btn_materials"
+                },
+                {
+                    "label": "我去准备",
+                    "action": "SHOW_DIALOG:end_prepare",
+                    "id": "btn_prepare"
+                }
+            ]
+        },
+        "end_accept": {
+            "greeting": "太好了！我就知道你靠得住。把这些材料带到我的车库，就是那个挂着‘严禁入内，正在实验’牌子的地方。我会在那里等你。记住，小心行事，不要让任何人注意到你的行动。我们的行动必须绝对保密，这关乎整个镇子的安危。",
+            "buttons": [
+                {
+                    "label": "明白，一会儿见",
+                    "action": "COMMAND:give @p minecraft:paper 1",
+                    "id": "btn_reward_note"
+                },
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "end_danger": {
+            "greeting": "可能是吧，但这是我们唯一的选择。我的朋友Mike说过，‘恐惧是临终的幻觉’。我们不能被恐惧支配。我的车库有三层加固的门和法拉第笼，比镇上任何地方都安全。把东西带来，我们开始反击。",
+            "buttons": [
+                {
+                    "label": "好吧，我这就去",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2"
+                },
+                {
+                    "label": "注意安全",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3"
+                }
+            ]
+        },
+        "end_leave": {
+            "greeting": "我理解，这确实很难接受。但如果你改变了主意，随时来我的车库找我。科学的大门永远向有好奇心的人敞开。不过请快一点，数据表明逆世界活动正在呈指数级增长，我们没有太多时间了。",
+            "buttons": [
+                {
+                    "label": "我会考虑的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_4"
+                },
+                {
+                    "label": "再会",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_5"
+                }
+            ]
+        },
+        "end_test": {
+            "greeting": "好主意！我们确实需要测试，但不是在这里。我需要一个空旷且有大量电子设备的地方，比如废弃的电影院。我们需要建立一个临时实验室，进行一次小规模的场发射实验。你帮我望风，我来调试设备。准备好了吗？",
+            "buttons": [
+                {
+                    "label": "准备好了，出发吧！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_6"
+                },
+                {
+                    "label": "我还是觉得太危险",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_7"
+                }
+            ]
+        },
+        "end_careful": {
+            "greeting": "放心，我已经计算过所有变量。爆炸的概率只有……嗯，0.04%。这比被雷劈中还低。但话说回来，如果我们遇到雷暴天气，我们还是得赶紧跑。好了，别开玩笑了，快去准备材料吧，我们时间不多了。",
+            "buttons": [
+                {
+                    "label": "0.04%？这概率也不低了……",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_8"
+                },
+                {
+                    "label": "我马上去",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_9"
+                }
+            ]
+        },
+        "end_police": {
+            "greeting": "相信我，我试过。他们只会把你当成一个看多了科幻小说的孩子。这是我们的战斗，Dustin。这是属于我们这一代人的战争。我们不能指望成年人来解决他们无法理解的问题。只有我们自己能拯救自己。",
+            "buttons": [
+                {
+                    "label": "你说得对，成年人不懂",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_10"
+                },
+                {
+                    "label": "我还是走了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_11"
+                }
+            ]
+        },
+        "end_battery": {
+            "greeting": "太好了！最好是卡车用的那种大容量电池。连接到扩音器的时候要小心正负极，我可不想你被电成爆炸头。虽然我的帽子很酷，但我可不想分享给你。快去快回，我在这里准备其他线路。",
+            "buttons": [
+                {
+                    "label": "收到，去找电池",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_12"
+                },
+                {
+                    "label": "爆炸头也许很时髦",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_13"
+                }
+            ]
+        },
+        "end_bait_role": {
+            "greeting": "不，不，你可不是诱饵！诱饵是那个扩音器。你的角色是安全员，负责在关键时刻切断电源，或者在我需要帮助的时候拉我一把。这个团队里没有诱饵，我们都是战士，只是分工不同。你负责后援，这非常重要。",
+            "buttons": [
+                {
+                    "label": "后援，明白了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_14"
+                },
+                {
+                    "label": "听起来还是像个诱饵",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_15"
+                }
+            ]
+        },
+        "end_leader": {
+            "greeting": "哈哈，我只是个提出想法的人。真正的领袖是Mike，他总能在关键时刻做出正确的决定。我更像个……军需官兼首席科学家。不管怎样，有你在，我们就多了一份力量。现在，让我们去车库检查一下装备吧。",
+            "buttons": [
+                {
+                    "label": "带路吧，军需官",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_16"
+                },
+                {
+                    "label": "我想先去见见Mike",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_17"
+                }
+            ]
+        },
+        "end_start": {
+            "greeting": "行动！太棒了！首先，我们需要建立一个指挥中心。我的车库是最好的选择。其次，我们需要分头收集物资。你负责能源部分，我去联系其他人。我们今晚在集市后面的树林里碰头，交换情报。行动代号：‘星光行动’，启动！",
+            "buttons": [
+                {
+                    "label": "星光行动，收到！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_18"
+                },
+                {
+                    "label": "为什么总是晚上行动？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_19"
+                }
+            ]
+        },
+        "end_calm": {
+            "greeting": "很好，保持冷静是成功的关键。我要你做的就是盯着这个频率计，一旦指针超过红色区域，立刻告诉我。哪怕只有一秒钟，我们也可能错过关闭窗口的最佳时机。这是一场和时间的赛跑，而对手是来自另一个维度的生物。",
+            "buttons": [
+                {
+                    "label": "交给我吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_20"
+                },
+                {
+                    "label": "我会死死盯着它",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_21"
+                }
+            ]
+        },
+        "end_fail": {
+            "greeting": "最坏的情况？窗口可能会失控，变得更大。逆世界的物理法则会开始侵蚀我们的现实。气温会骤降，电力会瘫痪，生物会大规模死亡。我们不能失败，我们没有失败的选项。这是我们作为地球守护者的责任。",
+            "buttons": [
+                {
+                    "label": "压力真大……",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_22"
+                },
+                {
+                    "label": "我们必须成功",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_23"
+                }
+            ]
+        },
+        "end_disagree": {
+            "greeting": "我明白了。我尊重你的决定。但请不要把我们的计划告诉任何人，尤其是政府。他们会把我们当成疯子，或者更糟，把我们的发现武器化。无论如何，谢谢你听我说了这么多。保持联系，如果你改变主意，我的车库大门随时为你敞开。",
+            "buttons": [
+                {
+                    "label": "祝你好运，Dustin",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_24"
+                },
+                {
+                    "label": "再想想",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_25"
+                }
+            ]
+        },
+        "end_crazy": {
+            "greeting": "我知道！这听起来就像《壮志凌云》里的任务一样疯狂。但这就是我们和普通人的区别。当普通人看到障碍时，我们看到的是一个需要用公式解决的难题。变电站是我们的答案，虽然它像是一头需要驯服的野兽。",
+            "buttons": [
+                {
+                    "label": "驯服野兽，我喜欢这个比喻",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_26"
+                },
+                {
+                    "label": "我需要冷静一下",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_27"
+                }
+            ]
+        },
+        "end_find_power": {
+            "greeting": "你有想法？也许我们可以利用闪电？或者水力发电？不，都不够稳定。等等！如果你能找到那种老式的工业发电机，也许我们可以改装它。我需要的是那种能瞬间爆发巨大电流的设备，而不是持续供电。",
+            "buttons": [
+                {
+                    "label": "我去废弃工厂看看",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_28"
+                },
+                {
+                    "label": "这听起来像是个大工程",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_29"
+                }
+            ]
+        },
+        "end_connect": {
+            "greeting": "干得好！现在，慢慢调节这个旋钮，注意示波器上的波形。我们想要捕捉到那个特定的峰值。看到了吗？那个尖峰！这就是逆世界的信号，它就像宇宙背景辐射中的一个污点。记录下来，这将是诺贝尔奖级别的发现！",
+            "buttons": [
+                {
+                    "label": "我看到了！太神奇了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_30"
+                },
+                {
+                    "label": "这波动让我头晕",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_31"
+                }
+            ]
+        },
+        "end_risk": {
+            "greeting": "有可能。但富贵险中求，科学也是一样。如果怪物真的来了，我们有计划B。我会启动强磁场发生器，那会让它们的感知系统暂时失灵，就像让它们得了严重的流感。但我们需要在那之前离开。所以，动作要快！",
+            "buttons": [
+                {
+                    "label": "明白，我会小心",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_32"
+                },
+                {
+                    "label": "希望计划B管用",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_33"
+                }
+            ]
+        },
+        "end_perfect": {
+            "greeting": "她确实是！她有一头漂亮的卷发，而且她解偏微分方程的样子……简直太美了。我们是灵魂伴侣，不仅仅是感情上，更是智力上的。如果我们能联系上她，让她计算出逆世界的坐标，那我们就能像GPS一样精准定位漏洞。",
+            "buttons": [
+                {
+                    "label": "真羡慕你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_34"
+                },
+                {
+                    "label": "快联系她！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_35"
+                }
+            ]
+        },
+        "end_rely": {
+            "greeting": "你说得对，我们不能把所有希望都寄托在一个人身上。这是团队合作的禁忌。我们必须建立自己的能力，做好独立行动的准备。Suzie是我们的‘锦上添花’，而不是‘雪中送炭’。我们必须依靠自己的力量先稳住局面。",
+            "buttons": [
+                {
+                    "label": "这才是正确的思路",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_36"
+                },
+                {
+                    "label": "所以我们还是得靠自己",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_37"
+                }
+            ]
+        },
+        "end_materials": {
+            "greeting": "完全正确！石英晶体要在地质勘探图上标记的河床里找，那里有很多。硫酸铜的话……也许学校的化学实验室有，或者你家有没有那种蓝色的杀真菌剂？虽然不纯，但总比没有强。快去吧，我在这里设计电路图。",
+            "buttons": [
+                {
+                    "label": "我去碰碰运气",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_38"
+                },
+                {
+                    "label": "偷学校的化学药品？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_39"
+                }
+            ]
+        },
+        "end_prepare": {
+            "greeting": "很好。除了材料，还需要一些工具：烙铁、万用表、还有一些细铜线。把这些都准备好，我们今晚就开始组装。这将是我们对抗逆世界的武器。对了，如果你能找到一顶像我这样的帽子，那就更好了，它能提升你的智商10%。",
+            "buttons": [
+                {
+                    "label": "我去准备工具",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_40"
+                },
+                {
+                    "label": "帽子还能提升智商？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_41"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

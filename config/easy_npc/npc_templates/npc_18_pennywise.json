@@ -1,0 +1,208 @@
+{
+    "name": "§aPennywise",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The dancing clown. Horror incarnate.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Pennywise.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Tasty, tasty little children~ 或者我该说，美味的成年人？欢迎来到下水道的深处，这里充满了惊喜。你想看气球吗？红色的，黄色的……只要你想要，我都能给你。当然，代价是很小的，只是一点……恐惧。",
+            "buttons": [
+                {
+                    "label": "红气球的邀请",
+                    "action": "OPEN_QUEST_DIALOG:e6a0f5c1-7d15-4e8f-bf54-9340e6e6f9a7",
+                    "id": "btn_quest_d98b68e7"
+                },
+                {
+                    "label": "来自深渊的凝视",
+                    "action": "OPEN_QUEST_DIALOG:a56e1669-56e2-4619-a8a6-2906b7b1c307",
+                    "id": "btn_quest_6a8ceb83"
+                },
+                {
+                    "label": "来自深渊的凝视",
+                    "action": "OPEN_QUEST_DIALOG:4c8d1a2e-5f3b-4b7a-8c1d-9e0f2a4b6c5d",
+                    "id": "btn_quest_eb48bd0e"
+                },
+                {
+                    "label": "红色气球的邀约",
+                    "action": "OPEN_QUEST_DIALOG:c5e1dce4-e18b-4725-a57e-4d13da7d2dbb",
+                    "id": "btn_quest_1b4a0be9"
+                },
+                {
+                    "label": "血色气球的邀约",
+                    "action": "OPEN_QUEST_DIALOG:16e5aa2a-368b-4abe-ad0d-e2fbc81fda7f",
+                    "id": "btn_quest_7e72f151"
+                },
+                {
+                    "label": "来自深渊的微笑",
+                    "action": "OPEN_QUEST_DIALOG:cad5f6fb-6a43-4c65-a7a2-35a71cf7ac82",
+                    "id": "btn_quest_2a635917"
+                },
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:who_am_i",
+                    "id": "btn_who_c"
+                },
+                {
+                    "label": "我不怕你。",
+                    "action": "SHOW_DIALOG:fearless",
+                    "id": "btn_fearless"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "who_am_i": {
+            "greeting": "我是梦境，也是梦魇。我是一千种形式，是你内心最深处的恐惧。我是马戏团的小丑，我是沉睡的怪物，我是……你的死亡。但首先，让我们玩个游戏吧。亮黄色的气球，你喜欢吗？",
+            "buttons": [
+                {
+                    "label": "走开，怪物。",
+                    "action": "SHOW_DIALOG:angry",
+                    "id": "btn_anger"
+                },
+                {
+                    "label": "游戏？什么游戏？",
+                    "action": "SHOW_DIALOG:game_time",
+                    "id": "btn_game_time"
+                }
+            ]
+        },
+        "fearless": {
+            "greeting": "哦？不怕？真是新鲜的脆饼干！每个人都这么说，直到他们看到我真正的样子，直到他们的牙齿开始打颤，直到他们尿湿裤子。你是认真的吗？还是在假装勇敢？来，让我看看你的心跳加速了没有？",
+            "buttons": [
+                {
+                    "label": "滚出我的脑子！",
+                    "action": "SHOW_DIALOG:resist",
+                    "id": "btn_resist"
+                },
+                {
+                    "label": "我只是在虚张声势。",
+                    "action": "SHOW_DIALOG:admit",
+                    "id": "btn_admit"
+                }
+            ]
+        },
+        "angry": {
+            "greeting": "走开？**走开？！** 你以为这是谁的地盘？这是我的下水道！我的游乐场！激怒我是个坏主意，一个非常非常坏的主意。现在，我的脸要裂开了，这都是因为你！",
+            "buttons": [
+                {
+                    "label": "离我远点！",
+                    "action": "SHOW_DIALOG:attack",
+                    "id": "btn_attack"
+                },
+                {
+                    "label": "对不起！(假装)",
+                    "action": "SHOW_DIALOG:fake_sorry",
+                    "id": "btn_sorry"
+                }
+            ]
+        },
+        "game_time": {
+            "greeting": "好孩子！游戏很简单。我问你一个问题，你必须说实话。如果你撒谎……呵呵，你的恐惧会变成我的甜点。准备好了吗？第一个问题：你最害怕什么？别害羞，告诉我，告诉我！",
+            "buttons": [
+                {
+                    "label": "我害怕黑暗。",
+                    "action": "SHOW_DIALOG:darkness",
+                    "id": "btn_dark"
+                },
+                {
+                    "label": "我什么都不怕。",
+                    "action": "SHOW_DIALOG:lie",
+                    "id": "btn_lie"
+                }
+            ]
+        },
+        "resist": {
+            "greeting": "把你的思想筑成高墙？哈哈！那是用牙签搭的房子，小丑一脚就能踹倒。我能感觉到你的血在流动，你的恐惧在尖叫。它在呼唤我！Tasty!",
+            "buttons": [
+                {
+                    "label": "我是铸铁造的！(说谎)",
+                    "action": "SHOW_DIALOG:lie",
+                    "id": "btn_iron"
+                },
+                {
+                    "label": "救命！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_run"
+                }
+            ]
+        },
+        "admit": {
+            "greeting": "我就知道！承认吧，承认你是多么的弱小，多么的可口。恐惧就像盐，让你更美味。现在，闭上眼睛，数到三……或者让我直接把你带走？三……二……",
+            "buttons": [
+                {
+                    "label": "一！(睁开眼)",
+                    "action": "SHOW_DIALOG:attack",
+                    "id": "btn_open"
+                },
+                {
+                    "label": "不要！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_plead"
+                }
+            ]
+        },
+        "attack": {
+            "greeting": "Tasty! **TASTY!** 你的尖叫是如此的悦耳！反抗吧！挣扎吧！恐惧越强烈，肉就越鲜美！哦，我迫不及待要品尝你的心脏了！",
+            "buttons": [
+                {
+                    "label": "去死吧！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fight_death"
+                }
+            ]
+        },
+        "fake_sorry": {
+            "greeting": "（咯咯笑）你的脸上写满了谎言，就像一本打开的书。你在想怎么逃跑，对吗？没用的。你在我的肚子里，你在我的梦里。你无处可逃。",
+            "buttons": [
+                {
+                    "label": "（掏出武器）",
+                    "action": "SHOW_DIALOG:attack",
+                    "id": "btn_weapon"
+                }
+            ]
+        },
+        "darkness": {
+            "greeting": "黑暗！啊，那是我的老朋友。在黑暗中，你看不见我，但我能看见你。当你一个人在黑暗中，你听不到父母的呼喊，只能听到……我的呼吸声。你喜欢这个画面吗？",
+            "buttons": [
+                {
+                    "label": "闭嘴！",
+                    "action": "SHOW_DIALOG:angry",
+                    "id": "btn_stfu"
+                }
+            ]
+        },
+        "lie": {
+            "greeting": "撒谎！撒谎！撒谎！你的灵魂散发着腐烂的臭味！**IT** 恨撒谎的孩子！现在，我要惩罚你！我要把你的恐惧揉碎，塞进你的眼睛里！",
+            "buttons": [
+                {
+                    "label": "来吧！(虚张声势)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_brave_death"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_axe",
+            "count": 1
+        }
+    }
+}

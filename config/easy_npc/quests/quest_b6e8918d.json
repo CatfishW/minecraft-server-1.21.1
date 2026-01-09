@@ -1,0 +1,15 @@
+{
+    "id": "b6e8918d-a3c2-4b04-a0f0-8d8a5e84a338",
+    "title": "清理前哨",
+    "description": "附近的僵尸越来越猖獗了，为了保证大家的安全，必须清理掉它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

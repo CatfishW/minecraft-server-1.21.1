@@ -1,0 +1,15 @@
+{
+    "id": "5e735d84-38e5-4e4f-ba23-112a3f57281a",
+    "title": "寻找亨利",
+    "description": "亨利知道政府的秘密，必须找到他！",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

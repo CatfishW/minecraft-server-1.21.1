@@ -1,0 +1,15 @@
+{
+    "id": "a301f0c8-4e1d-4c53-b24e-86b663552271",
+    "title": "来自阴影的命令",
+    "description": "亨克总管似乎有些关于麦克的秘密要分享。去听听他想说什么。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

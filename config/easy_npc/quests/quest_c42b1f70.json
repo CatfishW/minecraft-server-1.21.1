@@ -1,0 +1,15 @@
+{
+    "id": "c42b1f70-5e27-4d5a-8f36-3a8c2159d6e1",
+    "title": "寻找红尾鸟",
+    "description": "Stanley Uris 希望你能找到并捕获一只红尾鸟，用来制作标本。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:red_fox",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

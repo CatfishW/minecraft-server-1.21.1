@@ -1,0 +1,163 @@
+{
+    "name": "§bRobin Buckley",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Smarts and sarcasm. Works at Scoops Ahoy.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/RobinBuckley.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（她正拿着一张奇怪的电路图比对，看到你后推了推眼镜）哦，嗨。你是新的补给员吗？如果是的话，麻烦把那边的红石粉递给我。谢天谢地，终于来了个活人，我可以不用对着墙自言自语了。",
+            "buttons": [
+                {
+                    "label": "来自史酷比的建议",
+                    "action": "OPEN_QUEST_DIALOG:8c9f7d2a-1e3b-4d5f-9a2c-8e6d4f1b0a5c",
+                    "id": "btn_quest_7ec78c43"
+                },
+                {
+                    "label": "冷饮店的扩张计划",
+                    "action": "OPEN_QUEST_DIALOG:fd7f239b-429c-4ca6-9f36-22c5e6d3e033",
+                    "id": "btn_quest_bc1ba5f4"
+                },
+                {
+                    "label": "不给糖就捣蛋",
+                    "action": "OPEN_QUEST_DIALOG:2f28eae2-28bf-4c84-baac-e2a670f96efc",
+                    "id": "btn_quest_3d734417"
+                },
+                {
+                    "label": "你在做什么？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_robin_start"
+                },
+                {
+                    "label": "这地方真怪。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_robin_comment"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "我在尝试破解这个世界的某种信号。你看，这些晶体的震动频率不符合物理常数，我怀疑它们是某种跨维度的通讯载体。简单来说，我想给我的大脑找点正经事做，不然我会发疯的。",
+            "buttons": [
+                {
+                    "label": "你是科学家？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_robin_scientist"
+                },
+                {
+                    "label": "有什么发现吗？",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_robin_findings"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "科学家？不，我只是个在冷饮店打工的。只不过我有颗爱解谜的大脑，而且比大多数所谓的专家都要好使。如果你有不懂的外语或者复杂的密码，尽管来找我，别去问那些只会挥镐子的家伙。",
+            "buttons": [
+                {
+                    "label": "精英的头脑。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_praise"
+                },
+                {
+                    "label": "冷饮店？",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_scoops"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "发现？我发现这里比俄罗斯间谍基地还要离谱。有些东西根本不是这个维度该存在的。听着，我对这些超自然的东西有点... 特别的见解。如果你看到奇怪的影子，最好离远点，或者带上我，我可以帮你分析。",
+            "buttons": [
+                {
+                    "label": "谢谢你提醒。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_thanks"
+                },
+                {
+                    "label": "我不怕怪东西。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_brave"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "怪？这词太保守了。这里简直是个逻辑的噩梦。我经常觉得自己像是在做一个荒诞的梦，醒来发现我还在Scoops Ahoy，然后就能闻到香草甜筒的味道。说实话，我甚至有点想念那身傻气的水手服了。",
+            "buttons": [
+                {
+                    "label": "想念水手服？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_robin_uniform"
+                },
+                {
+                    "label": "我也想回去。",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_robin_want_back"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "是啊，听着很蠢对吧？但我那是自由的象征。不用面对这些怪物，不用面对... 算了。总之，如果能修好这个传送门，我第一个冲回去。哪怕是为了去嘲笑Steve那个笨蛋。",
+            "buttons": [
+                {
+                    "label": "Steve听起来很有趣。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_steve"
+                },
+                {
+                    "label": "我们会回去的。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_hope"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "我们都想。但这取决于我们能不能搞懂这里的机制。我需要数据，需要时间。也许我们可以合作？你负责外面的物理探索，我负责室内的逻辑推演。怎么样，听起来像个不错的B计划？",
+            "buttons": [
+                {
+                    "label": "成交。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_deal"
+                },
+                {
+                    "label": "我独来独往。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_robin_solo"
+                }
+            ]
+        },
+        "story_conclusion": {
+            "greeting": "好吧，不管怎样，我得继续我的工作了。如果你有合成台或者不懂的物品，记得来找我。在这个疯狂的世界里，至少我们还有智商不是吗？去吧，小心点。",
+            "buttons": [
+                {
+                    "label": "保重。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_robin_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:writable_book",
+            "count": 1
+        }
+    }
+}

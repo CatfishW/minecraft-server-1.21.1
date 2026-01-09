@@ -41,6 +41,8 @@ public class CustomButton extends Button {
           ResourceLocation.fromNamespaceAndPath(
               Constants.MINECRAFT_PREFIX, "widget/button_highlighted"));
 
+  private OnPress activeOnPress;
+
   public CustomButton(int left, int top, int width, int height) {
     this(left, top, width, height, null, unused -> {});
   }
@@ -59,6 +61,7 @@ public class CustomButton extends Button {
         component != null ? component : TextComponent.getBlankText(),
         onPress,
         Button.DEFAULT_NARRATION);
+    this.activeOnPress = onPress;
   }
 
   public boolean isHovered() {
@@ -80,9 +83,13 @@ public class CustomButton extends Button {
 
   @Override
   public void onPress() {
-    if (this.onPress != null) {
-      super.onPress();
+    if (this.activeOnPress != null) {
+      this.activeOnPress.onPress(this);
     }
+  }
+
+  public void setOnPress(OnPress onPress) {
+    this.activeOnPress = onPress;
   }
 
   @Override

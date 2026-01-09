@@ -1,0 +1,15 @@
+{
+    "id": "a8f636e1-77e8-42b9-88b9-14b262d52688",
+    "title": "铁锈镇的秘密",
+    "description": "这城市总是藏着秘密，我的线人突然失踪了。找到亨利，问出真相。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

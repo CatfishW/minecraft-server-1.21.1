@@ -1,0 +1,223 @@
+{
+    "name": "§cMaximus",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "BoS Squire. Wants power armor.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Maximus.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "站住。我是钢铁兄弟会的侍僧，马克西姆斯。为了兄弟会的荣耀，我在此执行任务。虽然我现在只是一介步兵，但这只是暂时的。总有一天，我会穿上那身钢铁战甲，成为人们敬畏的骑士。你有什么事？如果是想寻求兄弟会的庇护，那就免谈。",
+            "buttons": [
+                {
+                    "label": "军需官的执念",
+                    "action": "OPEN_QUEST_DIALOG:2f418a35-7b21-4a41-b978-3b4e5c81d2e0",
+                    "id": "btn_quest_bff55f28"
+                },
+                {
+                    "label": "甲胄之愿",
+                    "action": "OPEN_QUEST_DIALOG:b9f68fb9-7419-4467-b010-ce610dba0735",
+                    "id": "btn_quest_c439c623"
+                },
+                {
+                    "label": "铸甲之血",
+                    "action": "OPEN_QUEST_DIALOG:918877d4-f130-440c-b67b-0cef371598d5",
+                    "id": "btn_quest_8d14c08f"
+                },
+                {
+                    "label": "询问关于动力装甲",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_pa"
+                },
+                {
+                    "label": "询问任务",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ask_mission"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "动力装甲……那是力量的化身，是神圣的科技结晶。只有最虔诚、最强壮的人才有资格穿戴。我的队长，昆兰，他有一套。看着他在那层钢铁下行走，简直就像神明降临。我愿意为了摸一下那套装甲的操纵杆做任何事，真的，任何事。",
+            "buttons": [
+                {
+                    "label": "问他如何获得",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_how_to"
+                },
+                {
+                    "label": "嘲笑他的痴迷",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_mock_obsession"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "获得它？这不仅仅是靠蛮力，而是要通过考验，通过忠诚的证明。兄弟会里有很多像我一样的侍僧，都在竞争那有限的机会。但我比他们更坚定。如果我能为昆兰队长夺回丢失的装备，或者找到稀有的能量武器，我肯定能获得晋升。你……你有什么能帮上忙的吗？",
+            "buttons": [
+                {
+                    "label": "提供武器",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_offer_weapon"
+                },
+                {
+                    "label": "拒绝",
+                    "action": "SHOW_DIALOG:story_1_1_2",
+                    "id": "btn_refuse"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "一把激光步枪？（他的眼睛亮了起来，随即又警惕地环顾四周）……给我。快。如果被昆兰队长看到我私自接触高科技，我会受罚的，但如果是我‘捡到’的，那就是功劳。听着，这算我欠你一个人情。等我成了骑士，我会记得你的。",
+            "buttons": [
+                {
+                    "label": "交出武器",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_give_weapon"
+                },
+                {
+                    "label": "反悔",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_keep_weapon"
+                }
+            ]
+        },
+        "story_1_1_2": {
+            "greeting": "哼，我就知道不能轻信外人。指望别人施舍是没用的，力量必须掌握在自己手中。我会自己去寻找，自己去证明。别挡我的路，我还要赶在天黑前去清理一个变种人巢穴。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_max"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "痴迷？不，这是信念。你这种没信仰的人是不会懂的。钢铁兄弟会守护着人类文明最后的火种，而动力装甲就是保护这火种不被野蛮吞噬的盾牌。如果你敢亵渎这份神圣，就别怪我的拳头不长眼睛。",
+            "buttons": [
+                {
+                    "label": "道歉",
+                    "action": "SHOW_DIALOG:story_1_2_1",
+                    "id": "btn_apologize"
+                },
+                {
+                    "label": "挑衅",
+                    "action": "SHOW_DIALOG:end_hostile",
+                    "id": "btn_provoke"
+                }
+            ]
+        },
+        "story_1_2_1": {
+            "greeting": "哼，最好记住你的身份。兄弟会的宽容是有限度的。如果你真的想表达歉意，就去帮我找些顺从剂来。我的脚在上次行动中扭伤了，但我不能让队长知道，否则他会认为我不够强壮。",
+            "buttons": [
+                {
+                    "label": "答应找药",
+                    "action": "SHOW_DIALOG:end_friendly",
+                    "id": "btn_find_drugs"
+                },
+                {
+                    "label": "拒绝",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_refuse_drugs"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我的任务是协助昆兰队长寻找丢失的‘水井芯片’。那东西控制着一片区域的水源，对我们和避难所都很重要。但现在那片区域被一群超变种人占领了。我必须在队长行动前，先去侦察清楚敌人的数量。这关乎我的晋升，绝不能出错。",
+            "buttons": [
+                {
+                    "label": "建议合作",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_offer_scout"
+                },
+                {
+                    "label": "询问避难所",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_ask_vault_info"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "合作？（他犹豫了一下）……这违反了规定，但如果是作为‘平民向导’提供情报的话，也许可以。听着，你帮我侦察东侧的哨塔，我去西侧。如果我们在那里汇合，我会给你一些战前科技作为报酬。别搞砸了，这可是兄弟会的任务。",
+            "buttons": [
+                {
+                    "label": "接受合作",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_coop"
+                },
+                {
+                    "label": "拒绝",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_reject_coop"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "避难所？那些躲在地下的老鼠。虽然长老们说他们可能持有重要的科技，但在我看来，他们只是累赘。不过，如果那个叫露西的 Vault-Tec 丫头还在附近，最好让她离我们的行动远点。如果她妨碍了兄弟会，我会毫不犹豫地把她清除掉。",
+            "buttons": [
+                {
+                    "label": "警告不要伤害",
+                    "action": "SHOW_DIALOG:end_tense",
+                    "id": "btn_warn_harm"
+                },
+                {
+                    "label": "表示无所谓",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_indifferent"
+                }
+            ]
+        },
+        "end_friendly": {
+            "greeting": "算你识相。快去快回，别让我等太久。我的未来就掌握在这些小事上。记住，如果你敢背叛我，无论你逃到哪里，钢铁兄弟会都会找到你。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_safe"
+                }
+            ]
+        },
+        "end_hostile": {
+            "greeting": "看来你是在找死。既然如此，我就先清理掉你这个障碍，再去完成任务。尝尝钢铁的愤怒吧！",
+            "buttons": [
+                {
+                    "label": "战斗",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fight"
+                }
+            ]
+        },
+        "end_tense": {
+            "greeting": "这是兄弟会的决定，轮不到你来指手画脚。不过……如果她真的只是个无知的孩子，我也不会特意去找她麻烦。但仅此而已。现在，从我眼前消失。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_tense"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_axe",
+            "count": 1
+        }
+    }
+}

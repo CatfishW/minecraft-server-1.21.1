@@ -1,0 +1,213 @@
+{
+    "name": "§9Lucas Sinclair",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The ranger. Realistic and brave.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/LucasSinclair.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，陌生人。我是卢卡斯。我猜你也是为了那些...传言而来的吧？关于镇上的怪事。听着，我不是什么神秘学家，我只是个想保护朋友的普通人。但我知道，当事情不对劲时，你必须像对待一场真实的狩猎一样对待它。",
+            "buttons": [
+                {
+                    "label": "清理前哨",
+                    "action": "OPEN_QUEST_DIALOG:b6e8918d-a3c2-4b04-a0f0-8d8a5e84a338",
+                    "id": "btn_quest_820c876e"
+                },
+                {
+                    "label": "清理边境",
+                    "action": "OPEN_QUEST_DIALOG:6a7f8d3c-4b2e-4d9a-9f1c-8e5d2a3b4c7d",
+                    "id": "btn_quest_3c4e085c"
+                },
+                {
+                    "label": "荒野的威胁",
+                    "action": "OPEN_QUEST_DIALOG:8b2a4f5d-3c1e-4a7b-9d6f-8e1a0b3c5d7e",
+                    "id": "btn_quest_be7c455c"
+                },
+                {
+                    "label": "腐化晶石的采集",
+                    "action": "OPEN_QUEST_DIALOG:b5adc99b-7919-4ace-8140-2f2b0b795ba5",
+                    "id": "btn_quest_1e221635"
+                },
+                {
+                    "label": "幽影密林的威胁",
+                    "action": "OPEN_QUEST_DIALOG:6427adb8-55af-4f36-9a7d-854b8dfde6e0",
+                    "id": "btn_quest_2e7e6beb"
+                },
+                {
+                    "label": "净化林地",
+                    "action": "OPEN_QUEST_DIALOG:c8ec6814-33ae-4c74-973a-f6a278bc7602",
+                    "id": "btn_quest_0eb21063"
+                },
+                {
+                    "label": "什么传言？",
+                    "action": "SHOW_DIALOG:ask_rumors",
+                    "id": "btn_ask_rumors"
+                },
+                {
+                    "label": "你是个猎人？",
+                    "action": "SHOW_DIALOG:ask_hunter",
+                    "id": "btn_ask_hunter"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "ask_rumors": {
+            "greeting": "你知道的，关于失踪的孩子，关于那些...从裂缝里钻出来的东西。一开始我以为是DND里的怪物，后来发现比那糟多了。我们称它为逆世界的怪物。它能模仿人类，用触手寄生。我亲眼见过。那种景象，你不会想忘记的，即使你拼命想。",
+            "buttons": [
+                {
+                    "label": "你是怎么对抗它的？",
+                    "action": "SHOW_DIALOG:story_fight",
+                    "id": "btn_ask_fight"
+                },
+                {
+                    "label": "听起来很可怕",
+                    "action": "SHOW_DIALOG:story_scary",
+                    "id": "btn_ask_scary"
+                }
+            ]
+        },
+        "ask_hunter": {
+            "greeting": "哈哈，可以这么说。我擅长使用弹弓，以前是用来打松鼠，现在...用途更广了。在我们的团队里，我负责侦察和确保大家不会陷入埋伏。我是那个在迈克和达斯汀讨论魔法时，检查弹药和撤退路线的人。现实点，总得有人干这个。",
+            "buttons": [
+                {
+                    "label": "迈克是队长？",
+                    "action": "SHOW_DIALOG:story_mike",
+                    "id": "btn_ask_mike"
+                },
+                {
+                    "label": "你很谨慎",
+                    "action": "SHOW_DIALOG:story_cautious",
+                    "id": "btn_ask_cautious"
+                }
+            ]
+        },
+        "story_fight": {
+            "greeting": "用尽一切办法。第一次是在学校，我和迈克、达斯汀用自制的燃烧瓶和弹弓上的烟花弹把它赶跑了。第二次，我们用高压电线把它烤焦了。关键是不能慌，瞄准它的弱点。那些怪物可能来自另一个世界，但它们同样怕火，怕电。它们不是神，它们会死。",
+            "buttons": [
+                {
+                    "label": "你很了解它们",
+                    "action": "SHOW_DIALOG:story_experience",
+                    "id": "btn_concl_exp"
+                },
+                {
+                    "label": "这能彻底消灭它们吗？",
+                    "action": "SHOW_DIALOG:story_future",
+                    "id": "btn_ask_future"
+                }
+            ]
+        },
+        "story_mike": {
+            "greeting": "迈克...他是我们的核心。他总能让我们相信奇迹。有时候我觉得他太冲动，太理想主义了，尤其是在艾莉的事情上。但我不能否认，没有他，我们可能早就散了。他是那个能把大家聚在一起的人，即使这意味着把我们带向最危险的地方。",
+            "buttons": [
+                {
+                    "label": "你觉得艾莉怎么样？",
+                    "action": "SHOW_DIALOG:story_eleven",
+                    "id": "btn_ask_eleven"
+                },
+                {
+                    "label": "你们会有分歧？",
+                    "action": "SHOW_DIALOG:story_conflict",
+                    "id": "btn_ask_conflict"
+                }
+            ]
+        },
+        "story_cautious": {
+            "greeting": "必须的。当你的朋友里有一个能用意念掰弯勺子的女孩，还有一个能被怪物拖进镜像世界的男孩时，你就不能再像个傻乎乎的DND玩家了。这不是游戏，一次失误就是永久的Game Over。所以我负责踩刹车，确保大家能活到下一关。",
+            "buttons": [
+                {
+                    "label": "他们很幸运有你",
+                    "action": "SHOW_DIALOG:story_friends",
+                    "id": "btn_concl_lucky"
+                },
+                {
+                    "label": "保持警惕是好事",
+                    "action": "SHOW_DIALOG:story_fight",
+                    "id": "btn_concl_alert"
+                }
+            ]
+        },
+        "story_eleven": {
+            "greeting": "艾莉？她很强大，但也...很脆弱。她来自一个我们无法想象的世界，对她来说，信任是件奢侈品。迈克很爱她，我能看出来。作为朋友，我承认她救过我们很多次。但我也会保持警惕，因为她的力量...如果失控，后果不堪设想。我尊重她，但我会一直盯着。",
+            "buttons": [
+                {
+                    "label": "你的怀疑有道理",
+                    "action": "SHOW_DIALOG:story_future",
+                    "id": "btn_concl_reason"
+                },
+                {
+                    "label": "她是你朋友",
+                    "action": "SHOW_DIALOG:story_friends",
+                    "id": "btn_concl_friend"
+                }
+            ]
+        },
+        "story_future": {
+            "greeting": "我不知道未来会怎样。怪物可能还会回来，生活还会变得一团糟。但你知道吗？我们已经打败过它们一次，两次。我们有经验了。而且，现在我们有彼此。只要我们还在，只要我们团结，不管从哪个维度来的东西，我们都能把它们打回老家。",
+            "buttons": [
+                {
+                    "label": "说得好！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_cheer"
+                },
+                {
+                    "label": "保持联系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_keepintouch"
+                }
+            ]
+        },
+        "story_friends": {
+            "greeting": "是啊，我们是朋友。真正的朋友就是会告诉你真相，即使真相不好听的人。我们吵过架，甚至打过架，但我们总能和好。因为归根结底，我们是站在同一条战线上的。我们是家人。我为能成为其中一员而自豪。",
+            "buttons": [
+                {
+                    "label": "真令人羡慕",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_envy"
+                },
+                {
+                    "label": "祝你们一切顺利",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_well"
+                }
+            ]
+        },
+        "story_scary": {
+            "greeting": "是啊，很可怕。但恐惧是正常的，恐惧让你活下来。关键是不要让恐惧支配你。深呼吸，握紧你的武器，然后瞄准。当我看到威尔被附身，或者看到那些触手时，我也很害怕。但我更害怕失去他们。那种恐惧能战胜另一种恐惧。",
+            "buttons": [
+                {
+                    "label": "你很坚强",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_strong"
+                },
+                {
+                    "label": "我明白了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_understood"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_pickaxe",
+            "count": 1
+        }
+    }
+}

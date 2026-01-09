@@ -1,0 +1,168 @@
+{
+    "name": "§cErica Sinclair",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Sassy and smart. Can't spell America without Erica.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/EricaSinclair.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（她正坐在一个高高的方块上，手里把玩着一颗发光的红石）哟，看看这是谁来了。一个迷路的冒险家？还是又一个被这无聊世界困住的倒霉蛋？别用那种眼神看我，我可不是什么迷路的小孩。",
+            "buttons": [
+                {
+                    "label": "寻找亨利",
+                    "action": "OPEN_QUEST_DIALOG:8c8b0a2f-3f6c-4a9b-8d2e-7f1a9b8c5d4e",
+                    "id": "btn_quest_77ec0232"
+                },
+                {
+                    "label": "爱国者必须做的事",
+                    "action": "OPEN_QUEST_DIALOG:f47ac10b-58cc-4372-a567-0e02b2c3d479",
+                    "id": "btn_quest_a6340156"
+                },
+                {
+                    "label": "为国采购",
+                    "action": "OPEN_QUEST_DIALOG:2f10fe38-cbce-481e-8f75-9aba01a25bd6",
+                    "id": "btn_quest_7d090055"
+                },
+                {
+                    "label": "爱国者认证",
+                    "action": "OPEN_QUEST_DIALOG:1dfa0f46-9a71-42c3-8c66-774e0040a55b",
+                    "id": "btn_quest_d0b54431"
+                },
+                {
+                    "label": "你一个人？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_eric_start"
+                },
+                {
+                    "label": "你很淡定啊。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_eric_calm"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "当然不是，我在等我的骑士们来救我。可惜他们好像迷路了，或者是被什么史莱姆粘住了。不过也好，这让我有时间研究下这个世界的运作原理。说实话，比拼乐高积木还有意思。",
+            "buttons": [
+                {
+                    "label": "你是说D&D小队？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_eric_dnd"
+                },
+                {
+                    "label": "这原理复杂吗？",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_eric_complex"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "哈，看来你也听说过他们的事迹。没错，那群只会挥舞着骰子的家伙。虽然他们经常犯蠢，但关键时刻还是靠得住的。当然，前提是他们别把怪兽引到我这边来。我可不想弄脏我的靴子。",
+            "buttons": [
+                {
+                    "label": "朋友很重要。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_friends"
+                },
+                {
+                    "label": "你很依赖他们？",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_rely"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "复杂？对普通人来说可能吧。对我来说，这就像是在看一本写给小孩子看的图画书。只要掌握了规律，一切都是那么显而易见。如果你想学，我可以勉强教你两招，学费嘛... 看你表现。",
+            "buttons": [
+                {
+                    "label": "请指教。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_teach"
+                },
+                {
+                    "label": "我不需要教。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_no_need"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "淡定是强者的修养。我可是未来的美国第一任女总统，要是被这点小场面吓到，以后还怎么治理国家？再说了，比起期末考试的数学题，这些方块怪物简直是小儿科。",
+            "buttons": [
+                {
+                    "label": "总统阁下好。",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_eric_president"
+                },
+                {
+                    "label": "数学题有这么可怕？",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_eric_math"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "免礼平身。如果你表现好，我可以任命你当我的国防部长。现在，给本总统汇报一下，外面的情况如何？有没有发现什么值得利用的资源？这可是关乎国家存亡的大事。",
+            "buttons": [
+                {
+                    "label": "一切尽在掌握。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric掌控"
+                },
+                {
+                    "label": "局势很严峻。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_serious"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "那简直是我的噩梦！你知道勾股定理在实战中有什么用吗？完全没有！但在这里，它能帮你计算爬梯子的最佳角度。这就是现实和书本的区别，也是我和那群书呆子的区别。",
+            "buttons": [
+                {
+                    "label": "你是天才。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_genius"
+                },
+                {
+                    "label": "有道理。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_eric_smart"
+                }
+            ]
+        },
+        "story_conclusion": {
+            "greeting": "好了，今天的‘接见’时间结束了。我要继续我的探索了。如果你想找我，就在最高的塔顶喊‘ERICA’，我听得见。记得带点好吃的作为贡品，我对这儿的干粮已经忍无可忍了。",
+            "buttons": [
+                {
+                    "label": "遵命。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_eric_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "e69c3a2c-5e01-4f6d-8d3a-9e2b3b8a4d7c",
+    "title": "清理下水道",
+    "description": "下水道的腐肉怪太多了，严重影响了卫队的补给线，去清理掉它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

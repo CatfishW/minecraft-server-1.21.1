@@ -1,0 +1,218 @@
+{
+    "name": "§9Eddie Munson",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Hellfire Club leader. Metalhead hero.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/EddieMunson.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，朋友！欢迎来到地狱火俱乐部的领地。别被那些谣言吓到了，我可不是什么邪教头子，我只是个热爱摇滚和桌游的普通人。当然，在这个沉闷的霍金斯小镇，做个普通人就已经够叛逆了。",
+            "buttons": [
+                {
+                    "label": "地狱火的试炼",
+                    "action": "OPEN_QUEST_DIALOG:943a3f3c-1f4a-4d28-9469-64a1069239a5",
+                    "id": "btn_quest_dffc2173"
+                },
+                {
+                    "label": "讨伐潜伏者",
+                    "action": "OPEN_QUEST_DIALOG:e2e2154f-415f-43d3-885c-414161e3c3a1",
+                    "id": "btn_quest_37315eb0"
+                },
+                {
+                    "label": "地狱火的召唤",
+                    "action": "OPEN_QUEST_DIALOG:086259f2-880a-4ccf-9952-56f187525e81",
+                    "id": "btn_quest_dd5489d9"
+                },
+                {
+                    "label": "地狱火的金属怒火",
+                    "action": "OPEN_QUEST_DIALOG:0f092b15-6370-40e5-8a65-6f0b8712e9d1",
+                    "id": "btn_quest_1c93bdb4"
+                },
+                {
+                    "label": "你在玩什么游戏？",
+                    "action": "SHOW_DIALOG:game",
+                    "id": "btn_game"
+                },
+                {
+                    "label": "听说你在散播邪教？",
+                    "action": "SHOW_DIALOG:rumors",
+                    "id": "btn_rumors"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "game": {
+            "greeting": "哈！好问题！我们正在最新的战役中冒险，屠龙、寻宝、对抗黑暗法师！这不仅仅是游戏，朋友。这是一种艺术，一种让我们在平庸现实中喘息的方式。你要来掷一把骰子吗？运气也是实力的一部分。",
+            "buttons": [
+                {
+                    "label": "听起来很有趣。",
+                    "action": "SHOW_DIALOG:join_club",
+                    "id": "btn_interest"
+                },
+                {
+                    "label": "太幼稚了。",
+                    "action": "SHOW_DIALOG:offended",
+                    "id": "btn_insult"
+                }
+            ]
+        },
+        "rumors": {
+            "greeting": "邪教？老天，那帮蠢货只会嚼舌根。我是达米恩·索恩，是大家的‘公爵’。我只是在教大家要有质疑精神，不要像羊群一样被赶进屠宰场。如果这也算邪教，那我只能说，摇滚精神万岁！",
+            "buttons": [
+                {
+                    "label": "那你为什么总被警察找麻烦？",
+                    "action": "SHOW_DIALOG:police",
+                    "id": "btn_police"
+                },
+                {
+                    "label": "我相信你。",
+                    "action": "SHOW_DIALOG:trust",
+                    "id": "btn_trust"
+                }
+            ]
+        },
+        "join_club": {
+            "greeting": "我就知道你有眼光！听着，最近镇上有些不对劲，孩子们在消失，恐惧在蔓延。但这正是我们需要团结的时候。来吧，加入我们，戴上你的面具，在这个疯狂的世界里一起摇滚至死！",
+            "buttons": [
+                {
+                    "label": "好，我加入！",
+                    "action": "SHOW_DIALOG:sacrifice",
+                    "id": "btn_yes"
+                },
+                {
+                    "label": "等等，什么不对劲？",
+                    "action": "SHOW_DIALOG:stranger_things",
+                    "id": "btn_what"
+                }
+            ]
+        },
+        "offended": {
+            "greeting": "幼稚？哈，看来你是个‘大人’了，一个无聊、循规蹈矩的大人。你的一生都在‘正确’的轨道上，直到你撞上一堵墙。去吧，去过你那乏味的生活吧，别来打扰我的冒险。",
+            "buttons": [
+                {
+                    "label": "我只是开玩笑。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_jk"
+                },
+                {
+                    "label": "好吧，再见。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "police": {
+            "greeting": "那是因为他们害怕！他们害怕无法理解的东西，害怕像我这样自由的灵魂。在这个镇子里，如果你不和大家一样平庸，你就是异类。但我告诉你，我不会改变，Never！(永不！)",
+            "buttons": [
+                {
+                    "label": "你是对的。",
+                    "action": "SHOW_DIALOG:trust",
+                    "id": "btn_agree"
+                },
+                {
+                    "label": "也许你应该低调点。",
+                    "action": "SHOW_DIALOG:offended",
+                    "id": "btn_lowkey"
+                }
+            ]
+        },
+        "trust": {
+            "greeting": "谢谢你，兄弟。真的。很少有人能看到面具下的我。既然你信任我，那我就直说了。我的朋友们遇到了大麻烦，那种……超自然的麻烦。我需要帮手，非常需要。",
+            "buttons": [
+                {
+                    "label": "什么超自然麻烦？",
+                    "action": "SHOW_DIALOG:demogorgon",
+                    "id": "btn_what_crisis"
+                },
+                {
+                    "label": "我很能打。",
+                    "action": "SHOW_DIALOG:combat",
+                    "id": "btn_fight"
+                }
+            ]
+        },
+        "stranger_things": {
+            "greeting": "你真的不知道？天哪，你错过了本世纪最精彩（也是最可怕）的戏码。有怪物，有政府阴谋，还有……嗯，我会慢慢告诉你的。但现在，你只要知道，我们需要战士，而不是旁观者。",
+            "buttons": [
+                {
+                    "label": "我是战士。",
+                    "action": "SHOW_DIALOG:combat",
+                    "id": "btn_warrior"
+                },
+                {
+                    "label": "听起来太疯狂了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_crazy"
+                }
+            ]
+        },
+        "sacrifice": {
+            "greeting": "太棒了！看着这枚硬币，这是我的幸运符。在接下来的战斗中，我们可能都需要一点运气。记住，当你身处地狱，唯一的出路就是继续前行，像个摇滚明星一样！",
+            "buttons": [
+                {
+                    "label": "为了摇滚！(To rock!)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_rock"
+                }
+            ]
+        },
+        "demogorgon": {
+            "greeting": "那玩意儿……它有花瓣一样的脑袋，满嘴利齿。它来自另一个地方，一个充满寒冷和阴影的地方。它带走了我的朋友，我要把它碎尸万段，给它来一段死亡金属般的审判！",
+            "buttons": [
+                {
+                    "label": "算我一个。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_join"
+                },
+                {
+                    "label": "用音乐对抗它？",
+                    "action": "SHOW_DIALOG:music",
+                    "id": "btn_music"
+                }
+            ]
+        },
+        "combat": {
+            "greeting": "有你这句话就够了！我虽然只会弹吉他，但我也是乐队的指挥。拿起你的武器，我们要去直面恐惧了。如果那怪物想吃人，我们就让它尝尝地狱火的滋味！",
+            "buttons": [
+                {
+                    "label": "出发！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_depart"
+                }
+            ]
+        },
+        "music": {
+            "greeting": "为什么不呢？音乐是灵魂的食粮，也许那怪物也有灵魂，或者至少会被高分贝震碎内脏！不管怎样，我会用Riff（连复段）炸死它！这就是我们的反击，这是属于霍金斯的重金属挽歌！",
+            "buttons": [
+                {
+                    "label": "这就够了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_metal"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

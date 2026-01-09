@@ -1,0 +1,63 @@
+{
+    "name": "§cVault Dweller",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Survivor from a Vault. Seeking water chip.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/VaultDweller.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我是 Vault Dweller。",
+            "buttons": [
+                {
+                    "label": "水井危机",
+                    "action": "OPEN_QUEST_DIALOG:a04b8c3f-2d8a-4b5c-8e21-f7960b5d3491",
+                    "id": "btn_quest_1ac3ff47"
+                },
+                {
+                    "label": "寻找水源",
+                    "action": "OPEN_QUEST_DIALOG:9b74c1f2-8d3e-4f5a-9c6d-1e8f7a2b3c4d",
+                    "id": "btn_quest_da64d33d"
+                },
+                {
+                    "label": "尘封的记忆",
+                    "action": "OPEN_QUEST_DIALOG:f175497c-c705-49d0-979a-a4d1eedea7d8",
+                    "id": "btn_quest_8c473daf"
+                },
+                {
+                    "label": "腐朽图书馆的芯片",
+                    "action": "OPEN_QUEST_DIALOG:05f64a84-520b-4b21-b14b-6dedf1fed9ce",
+                    "id": "btn_quest_718a5d40"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fallback"
+                }
+            ],
+            "oneTimeConversation": true
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_axe",
+            "count": 1
+        }
+    }
+}

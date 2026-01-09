@@ -1,0 +1,15 @@
+{
+    "id": "c6b2d4a3-5c7d-4561-9876-f8a9b2c1d3e4",
+    "title": "清除威胁",
+    "description": "兄弟会需要净化这片区域。消灭那些游荡的僵尸，证明你的忠诚。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

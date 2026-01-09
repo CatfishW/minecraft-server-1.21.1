@@ -1,0 +1,15 @@
+{
+    "id": "e55a3c4b-7f51-4a26-90d5-30044056298e",
+    "title": "旧时代的残渣",
+    "description": "亨利这个孩子总是知道太多。去帮我看看他在做什么，告诉他离我的糖果屋远点。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

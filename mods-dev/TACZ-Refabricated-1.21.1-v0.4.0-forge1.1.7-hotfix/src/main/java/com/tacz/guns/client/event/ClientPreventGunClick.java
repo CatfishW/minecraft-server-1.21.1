@@ -34,8 +34,8 @@ public class ClientPreventGunClick {
                 return;
             }
             // 这个设置为 false 就能阻止客户端粒子的生成
-            // event.setSwingHand(false);
-            // event.setCanceled(true);
+            event.setSwingHand(false);
+            event.setCanceled(true);
         }
     }
 }

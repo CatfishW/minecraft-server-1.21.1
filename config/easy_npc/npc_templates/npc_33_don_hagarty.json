@@ -1,0 +1,68 @@
+{
+    "name": "§aDon Hagarty",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Adrian's partner.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/DonHagarty.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我是 Don Hagarty。",
+            "buttons": [
+                {
+                    "label": "伐木工的请求",
+                    "action": "OPEN_QUEST_DIALOG:c47b11a4-7a97-4268-bf6f-873776165c6c",
+                    "id": "btn_quest_203b8b34"
+                },
+                {
+                    "label": "给亨利的传话",
+                    "action": "OPEN_QUEST_DIALOG:f47ac10b-58cc-4372-a567-0e02b2c3d479",
+                    "id": "btn_quest_146ba22a"
+                },
+                {
+                    "label": "失落的图纸",
+                    "action": "OPEN_QUEST_DIALOG:86812732-b8bd-47f3-9e39-ca71d81aee52",
+                    "id": "btn_quest_6efe8e2c"
+                },
+                {
+                    "label": "失落的野餐篮子",
+                    "action": "OPEN_QUEST_DIALOG:d414f590-9a81-4b55-9285-513a2c16f1f2",
+                    "id": "btn_quest_d137aff7"
+                },
+                {
+                    "label": "亡者之森的威胁",
+                    "action": "OPEN_QUEST_DIALOG:7544eb4c-9d3c-4f08-955c-b68871c75d24",
+                    "id": "btn_quest_0dc6838b"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fallback"
+                }
+            ],
+            "oneTimeConversation": true
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:writable_book",
+            "count": 1
+        }
+    }
+}

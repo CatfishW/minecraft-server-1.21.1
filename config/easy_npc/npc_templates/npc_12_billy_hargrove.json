@@ -1,0 +1,163 @@
+{
+    "name": "§aBilly Hargrove",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Antagonist stepbrother. Wild and dangerous.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/BillyHargrove.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（他猛地转身，眼神充满野性，手中紧握着一把附魔钻石剑）嘿，小子，我认得你的眼神。你是想来挑战我，还是单纯想找死？别在我面前晃悠，我脾气可不好，尤其是现在。",
+            "buttons": [
+                {
+                    "label": "扫除障碍",
+                    "action": "OPEN_QUEST_DIALOG:a5d801e2-4c4f-45a3-959c-222c7329e1b4",
+                    "id": "btn_quest_f9654fd7"
+                },
+                {
+                    "label": "别多管闲事",
+                    "action": "OPEN_QUEST_DIALOG:billy_hargrove_001",
+                    "id": "btn_quest_527af027"
+                },
+                {
+                    "label": "麻烦的杂草",
+                    "action": "OPEN_QUEST_DIALOG:billy_hargrove_001",
+                    "id": "btn_quest_a99cc5be"
+                },
+                {
+                    "label": "暴力是答案",
+                    "action": "OPEN_QUEST_DIALOG:9eb72032-25e0-4c36-8202-bc6c9e109e13",
+                    "id": "btn_quest_602a7400"
+                },
+                {
+                    "label": "野性的试炼",
+                    "action": "OPEN_QUEST_DIALOG:2766e4df-b61a-4c7c-820e-c6fc860ffbfd",
+                    "id": "btn_quest_33c30b88"
+                },
+                {
+                    "label": "真正的丛林霸主",
+                    "action": "OPEN_QUEST_DIALOG:b775820e-0ed1-4465-b9e5-8da9ca3165ee",
+                    "id": "btn_quest_9991579d"
+                },
+                {
+                    "label": "你看起来很生气。",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_billy_start"
+                },
+                {
+                    "label": "不想死就滚开。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_billy_threaten"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "生气？这词太轻了。我被困在这个该死的方块世界里，那个讨厌的小鬼（指Max）整天像个苍蝇一样围着我转。还有那些怪物... 来吧，让我把怒火发泄在你身上！",
+            "buttons": [
+                {
+                    "label": "我不想打架。",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_billy_peace"
+                },
+                {
+                    "label": "你太弱了。",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_billy_taunt"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "不想打架？那你就是个懦夫！在这个世界上，只有强者才能生存。看看我，这就是力量的代价。如果你不握紧你的剑，下一个倒下的就是你！",
+            "buttons": [
+                {
+                    "label": "我会记住的。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_billy_remember"
+                },
+                {
+                    "label": "你被某种东西控制了吗？",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_billy_suspicious"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "（大笑）弱？我可是这里最强的男人！来，拔剑！让我看看你有什么本事。如果你能接下我三招，我就饶你不死。但如果不能... 呵呵。",
+            "buttons": [
+                {
+                    "label": "拔剑决斗",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_billy_fight"
+                },
+                {
+                    "label": "激将法没用",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_billy_ignore"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "哦？还挺横。我喜欢有骨气的人，因为把骨头打断的声音最好听。我以前在霍金斯也是这么对那些敢顶撞我的家伙的。现在，跪下，叫我一声老大，也许我能让你少受点罪。",
+            "buttons": [
+                {
+                    "label": "绝不。",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_billy_no"
+                },
+                {
+                    "label": "休想。",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_billy_never"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "好，很好。我就喜欢这种硬骨头。这样打碎起来才过瘾。准备好了吗？这可是你自找的！（他摆出了攻击姿态，周围空气仿佛都变冷了）",
+            "buttons": [
+                {
+                    "label": "时刻准备着。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_billy_ready"
+                },
+                {
+                    "label": "这可是你说的。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_billy_warn"
+                }
+            ]
+        },
+        "story_conclusion": {
+            "greeting": "哼，算你走运，我突然没兴趣了。但这不代表事情结束了。下次再让我看到你，我保证会让你后悔出生在这个世界上。现在，滚出我的视线。",
+            "buttons": [
+                {
+                    "label": "后会有期。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_billy_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

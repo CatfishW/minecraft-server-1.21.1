@@ -267,6 +267,7 @@ public class DialogDataSet {
     return switch (condition.conditionType()) {
       case SCOREBOARD -> evaluateScoreboardCondition(condition, serverPlayer);
       case EXECUTION_LIMIT -> ConditionUtils.evaluateCondition(condition, serverPlayer, dialogId);
+      case QUEST_NOT_ACCEPTED -> ConditionUtils.evaluateQuestNotAccepted(condition, serverPlayer);
       case NONE -> {
         log.warn("Encountered NONE condition type, skipping");
         yield true;

@@ -1,0 +1,15 @@
+{
+    "id": "bc48c1e7-4a8a-4b98-8a53-7c0d21c6d66e",
+    "title": "除草计划",
+    "description": "咳...咳咳，我们得清理掉那些害虫，为了重建家园。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

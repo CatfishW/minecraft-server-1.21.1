@@ -1,0 +1,15 @@
+{
+    "id": "c4b0c4c3-9d37-4f26-b249-d31d86c21522",
+    "title": "破碎镇的往事",
+    "description": "我想知道亨利对当年的事还记多少。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

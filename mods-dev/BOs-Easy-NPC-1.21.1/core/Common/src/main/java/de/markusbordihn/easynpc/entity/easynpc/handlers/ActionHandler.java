@@ -330,6 +330,8 @@ public interface ActionHandler<E extends PathfinderMob> extends EasyNPC<E> {
         if (serverPlayer != null) {
           DialogActionExecutor.openNamedDialog(
               actionDataEntry, serverPlayer, this.getEasyNPCDialogData());
+          // Trigger Talk Objective
+          de.markusbordihn.easynpc.handler.QuestObjectiveHandler.onTalk(serverPlayer, this);
         } else {
           log.warn("Skipping OPEN_NAMED_DIALOG action because no ServerPlayer is available");
         }
@@ -354,6 +356,29 @@ public interface ActionHandler<E extends PathfinderMob> extends EasyNPC<E> {
           ScoreboardActionExecutor.execute(actionDataEntry, serverPlayer);
         } else {
           log.warn("Skipping SCOREBOARD action because no ServerPlayer is available");
+        }
+        break;
+      case OPEN_QUEST_DIALOG:
+        if (serverPlayer != null) {
+            java.util.UUID questId = actionDataEntry.targetUUID();
+            de.markusbordihn.easynpc.data.quest.QuestDataEntry quest = null;
+            
+            if (questId != null) {
+                quest = de.markusbordihn.easynpc.data.quest.QuestManager.getQuest(questId);
+            }
+            
+            if (quest != null) {
+                serverPlayer.closeContainer();
+                de.markusbordihn.easynpc.network.NetworkHandlerManager.sendMessageToPlayer(
+                    new de.markusbordihn.easynpc.network.message.client.OpenQuestDialogMessage(quest), 
+                    serverPlayer);
+                log.info("Opening Quest Dialog '{}' ({}) for player {}", quest.getTitle(), questId, serverPlayer);
+            } else {
+                log.warn("Quest not found for ID: {} or no ID provided in action {}", questId, actionDataEntry);
+                serverPlayer.displayClientMessage(net.minecraft.network.chat.Component.literal("§cQuest not available."), true);
+            }
+        } else {
+            log.warn("Skipping OPEN_QUEST_DIALOG action because no ServerPlayer is available");
         }
         break;
       default:

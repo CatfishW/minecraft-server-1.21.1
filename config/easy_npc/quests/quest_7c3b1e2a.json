@@ -1,0 +1,15 @@
+{
+    "id": "7c3b1e2a-4d5f-4a8e-9b2c-3f6d1e9a8b4c",
+    "title": "来自阴影的威胁",
+    "description": "你能感觉到那道裂缝在变大……那些生物正在渗透过来。在它们彻底占领这个世界之前，我们必须消灭它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

@@ -1,0 +1,273 @@
+{
+    "name": "§9Bill Denbrough",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Stuttering Bill. Leader of the Losers.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/BillDenbrough.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，你看起来像个外乡人。小心点，这镇子最近不太平。如果你是来找乐子的，那你来错地方了。如果你是来帮忙的……嗯，我们可能需要你。我是比尔，比尔·登布罗。",
+            "buttons": [
+                {
+                    "label": "除草计划",
+                    "action": "OPEN_QUEST_DIALOG:bc48c1e7-4a8a-4b98-8a53-7c0d21c6d66e",
+                    "id": "btn_quest_70ae7912"
+                },
+                {
+                    "label": "召集幸存者",
+                    "action": "OPEN_QUEST_DIALOG:a1b2c3d4-e5f6-7890-1234-567890abcdef",
+                    "id": "btn_quest_f2c2a17d"
+                },
+                {
+                    "label": "它回来了",
+                    "action": "OPEN_QUEST_DIALOG:8c12a2d8-7baf-4e78-9a5a-c2853808eb10",
+                    "id": "btn_quest_5b6a3aa3"
+                },
+                {
+                    "label": "小丑的阴影",
+                    "action": "OPEN_QUEST_DIALOG:25d1a957-75c5-4e3d-9861-c270bb7c859c",
+                    "id": "btn_quest_0c530538"
+                },
+                {
+                    "label": "有什么不对劲？",
+                    "action": "SHOW_DIALOG:whats_wrong",
+                    "id": "btn_wrong"
+                },
+                {
+                    "label": "你是谁？‘我们’是谁？",
+                    "action": "SHOW_DIALOG:who_are_you",
+                    "id": "btn_us"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "whats_wrong": {
+            "greeting": "是乔治……我弟弟。他走了，就在那个雨天。然后是其他孩子，他们都消失了。警察说是意外，但我知道不是。我能感觉到，有个东西在盯着我们，在下水道里，在阴影里。它带走了他。",
+            "buttons": [
+                {
+                    "label": "我很抱歉。",
+                    "action": "SHOW_DIALOG:apology",
+                    "id": "btn_sorry_b"
+                },
+                {
+                    "label": "也许只是个意外？",
+                    "action": "SHOW_DIALOG:doubt",
+                    "id": "btn_accident"
+                }
+            ]
+        },
+        "who_are_you": {
+            "greeting": "我是‘失败者俱乐部’的头儿。我们是学校里被欺负的怪咖，但我们是最好的朋友。现在，我们在追查同一个东西。它穿着小丑的伪装，但它不是人。它吃恐惧，也吃……孩子。",
+            "buttons": [
+                {
+                    "label": "你们要怎么对付它？",
+                    "action": "SHOW_DIALOG:plan",
+                    "id": "btn_how"
+                },
+                {
+                    "label": "听起来像疯了。",
+                    "action": "SHOW_DIALOG:crazy",
+                    "id": "btn_mad"
+                }
+            ]
+        },
+        "apology": {
+            "greeting": "谢谢。但我现在不需要同情。我需要勇气。我只需要把这个该死的 Paper Boat（纸船）折好，放进下水道……也许它会漂到乔治那里去。我必须相信他还活着。",
+            "buttons": [
+                {
+                    "label": "我帮你折。",
+                    "action": "SHOW_DIALOG:help_boat",
+                    "id": "btn_help_boat"
+                },
+                {
+                    "label": "面对现实吧，他走了。",
+                    "action": "SHOW_DIALOG:harsh",
+                    "id": "btn_harsh"
+                }
+            ]
+        },
+        "doubt": {
+            "greeting": "你不明白！我看到了！它在排水沟里，它穿着银色的硬币眼睛！它模仿乔治的声音……只有我能听见。这不是意外，这是谋杀。而且它还会再来的。",
+            "buttons": [
+                {
+                    "label": "我相信你。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join_b"
+                },
+                {
+                    "label": "我会报警的。",
+                    "action": "SHOW_DIALOG:police_no",
+                    "id": "btn_police_b"
+                }
+            ]
+        },
+        "plan": {
+            "greeting": "我们要找到它的巢穴。我们有银弹（至少我们希望有用），还有爱（听起来很蠢，但它说这是我们唯一的武器）。我们要把它逼出来，然后……用我们的方式跟它算账。",
+            "buttons": [
+                {
+                    "label": "听起来很危险。",
+                    "action": "SHOW_DIALOG:danger_b",
+                    "id": "btn_danger_b"
+                },
+                {
+                    "label": "算我一个。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join_plan"
+                }
+            ]
+        },
+        "crazy": {
+            "greeting": "我知道听起来像疯话。我甚至自己都分不清是梦还是现实。但恐惧是真实的。如果你也有害怕的东西，它就会找上你。到时候，你就不会觉得我疯了。",
+            "buttons": [
+                {
+                    "label": "我也有恐惧。",
+                    "action": "SHOW_DIALOG:shared_fear",
+                    "id": "btn_fear"
+                },
+                {
+                    "label": "好吧，祝你好运。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye_b"
+                }
+            ]
+        },
+        "help_boat": {
+            "greeting": "真的吗？谢谢。这很简单，就像乔治教我的那样。折好了……（放入水中）。如果它能漂回来，也许就代表他还在。我们必须抱有希望，对吗？",
+            "buttons": [
+                {
+                    "label": "是的，会有希望的。",
+                    "action": "SHOW_DIALOG:hope",
+                    "id": "btn_hope"
+                },
+                {
+                    "label": "我们必须反击。",
+                    "action": "SHOW_DIALOG:revenge",
+                    "id": "btn_revenge"
+                }
+            ]
+        },
+        "harsh": {
+            "greeting": "闭嘴！你懂什么！只要我不放弃希望，他就还活着！这是我的诅咒，也是我的力量。如果你不能说点有用的，就滚开！",
+            "buttons": [
+                {
+                    "label": "对不起，我只是担心你。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_sorry_deep"
+                },
+                {
+                    "label": "好吧，我走了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_sad"
+                }
+            ]
+        },
+        "join": {
+            "greeting": "真的？太好了！我们需要所有能用的人手。去CSD（中心街小学）的旧矿井找我们。小心那些水坑，还有……那个声音。如果你听到有人叫你的名字，千万别回头。",
+            "buttons": [
+                {
+                    "label": "我会去的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_meet"
+                },
+                {
+                    "label": "什么声音？",
+                    "action": "SHOW_DIALOG:voice",
+                    "id": "btn_voice"
+                }
+            ]
+        },
+        "police_no": {
+            "greeting": "没用的！他们只会把我们当小孩子打发走，或者把我们关进精神病院。只有我们自己能救自己。如果你不相信我们，至少别挡我们的路。",
+            "buttons": [
+                {
+                    "label": "我明白了，加油。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_b"
+                }
+            ]
+        },
+        "danger_b": {
+            "greeting": "我知道。可能会死。但如果现在什么都不做，我们都会死，只是时间问题。你是选择在床上瑟瑟发抖地等死，还是握紧拳头冲进黑暗？",
+            "buttons": [
+                {
+                    "label": "握紧拳头。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_fist"
+                },
+                {
+                    "label": "我需要想想。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "shared_fear": {
+            "greeting": "那么它也会找上你。这就是它的游戏规则。但只要你加入我们，我们就不再是孤身一人。我们虽然会害怕，但我们在一起。我们是‘失败者’，我们团结在一起。",
+            "buttons": [
+                {
+                    "label": "加入‘失败者’。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join_loser"
+                },
+                {
+                    "label": "我不想惹麻烦。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_no_trouble"
+                }
+            ]
+        },
+        "hope": {
+            "greeting": "是的。只要我们不放弃，只要我们记得我们是谁。记得我们的朋友。这就是我们和它的区别。它吃掉希望，而我们以此为生。走吧，朋友，故事才刚开始。",
+            "buttons": [
+                {
+                    "label": "为了乔治。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_for_george"
+                }
+            ]
+        },
+        "revenge": {
+            "greeting": "没错。我们要杀了它。我们要让它知道，惹恼‘失败者俱乐部’是它这辈子犯过最大的错误。准备好迎接一场恶战了吗？因为我们已经准备好了。",
+            "buttons": [
+                {
+                    "label": "我已经准备好了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_ready_fight"
+                }
+            ]
+        },
+        "voice": {
+            "greeting": "那是它的陷阱。它会变成你最亲近的人，或者最害怕的人。它会动摇你，让你怀疑自己。只有比声音更大的东西才能打败它——那就是记忆。记住谁是真正在你身边的人。",
+            "buttons": [
+                {
+                    "label": "我记住了。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_remember"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

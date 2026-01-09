@@ -1,0 +1,15 @@
+{
+    "id": "5b3d2a1f-8c9e-4a7b-9d1e-3f5b8c2a1d9e",
+    "title": "清理下水道",
+    "description": "镇上的下水道有僵尸在徘徊，我需要你去清理一下，别让它们靠近居民区。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

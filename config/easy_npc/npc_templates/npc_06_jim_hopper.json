@@ -1,0 +1,218 @@
+{
+    "name": "§6Jim Hopper",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Police Chief. Grumpy but protective.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/JimHopper.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "孩子，这里不是你该来的地方。霍金斯最近不太平，到处都是些说不清道不明的怪事。如果你只是路过，我建议你赶紧离开；如果你有麻烦，最好现在就说清楚。这雨下得让人心烦，我也懒得跟你绕弯子。",
+            "buttons": [
+                {
+                    "label": "清理下水道",
+                    "action": "OPEN_QUEST_DIALOG:5b3d2a1f-8c9e-4a7b-9d1e-3f5b8c2a1d9e",
+                    "id": "btn_quest_867448a9"
+                },
+                {
+                    "label": "清理下水道",
+                    "action": "OPEN_QUEST_DIALOG:a4f7c210-3b5e-4d8f-9c1a-2e6d8f0b1a3c",
+                    "id": "btn_quest_6ed6b593"
+                },
+                {
+                    "label": "镇长的烦恼",
+                    "action": "OPEN_QUEST_DIALOG:81493105-2f2e-4d76-af9b-de62da09544c",
+                    "id": "btn_quest_8aa01fa9"
+                },
+                {
+                    "label": "治安官的委托",
+                    "action": "OPEN_QUEST_DIALOG:5e50de30-6ca7-42ad-8e93-1a87137ce156",
+                    "id": "btn_quest_7ccbf738"
+                },
+                {
+                    "label": "询问怪事",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_mystery"
+                },
+                {
+                    "label": "提到乔伊斯",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_mention_joyce"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "哼，怪事？这镇子底下藏着的东西比你想象的要可怕得多。几年前，我们差点就全完了，一个该死的政府实验室打开了不该打开的门。最近又有孩子失踪，监控全是雪花，气味像是烧焦的橡胶。我不管你是谁，别让我发现你跟这些事有关。",
+            "buttons": [
+                {
+                    "label": "继续追问实验室",
+                    "action": "SHOW_DIALOG:story_1a",
+                    "id": "btn追问_lab"
+                },
+                {
+                    "label": "表示想帮忙",
+                    "action": "SHOW_DIALOG:story_1b",
+                    "id": "btn_offer_help"
+                }
+            ]
+        },
+        "story_1a": {
+            "greeting": "那是黑山基地，表面上是搞科研，实际上是捅了马蜂窝。他们研究那个所谓的‘平行空间’，结果把里面的怪物放出来了。那地方现在被封了，但我总觉得事情还没完。如果你看到任何粉色的雾气或者奇怪的影子，立刻跑，别回头，然后来找我。",
+            "buttons": [
+                {
+                    "label": "明白了，我会注意",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_understand"
+                },
+                {
+                    "label": "我还是想了解更多",
+                    "action": "SHOW_DIALOG:story_1a_extra",
+                    "id": "btn_more_info"
+                }
+            ]
+        },
+        "story_1a_extra": {
+            "greeting": "够了，我知道的都已经告诉你了。我还有工作要做，不能在一个陌生人身上浪费一整天。记住我的话，好奇心会害死猫。现在，拿着这个手电筒，如果没别的事就去别处转转。保持警惕，伙计。",
+            "buttons": [
+                {
+                    "label": "谢谢提醒",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_thanks"
+                },
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "story_1b": {
+            "greeting": "帮忙？你连发生了什么都不知道就想帮忙？这里的水深着呢，不是靠蛮力就能解决的。我需要的是证据和情报，而不是一个鲁莽的志愿者。不过……如果你看到什么可疑的人或物，记得给我打传呼。别逞英雄。",
+            "buttons": [
+                {
+                    "label": "接受传呼机",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_take_pager"
+                },
+                {
+                    "label": "改变主意询问乔伊斯",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_switch_joyce"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "乔伊斯……她是这个镇上最坚强的女人，也是最让我心疼的。她经历了太多，两个儿子都卷进过那些破事里。如果你是她的朋友，请帮我看着点她。她总是把自己逼得太紧，试图在那些杂乱的灯光里寻找她丢失的儿子。",
+            "buttons": [
+                {
+                    "label": "她在找威利?",
+                    "action": "SHOW_DIALOG:story_2a",
+                    "id": "btn_ask_will"
+                },
+                {
+                    "label": "杂乱的灯光?",
+                    "action": "SHOW_DIALOG:story_2b",
+                    "id": "btn_ask_lights"
+                }
+            ]
+        },
+        "story_2a": {
+            "greeting": "是的，威利。那个聪明又敏感的孩子。当年他失踪后，乔伊斯几乎疯了。后来虽然找到了他，但他带回来的阴影一直笼罩着这个家。现在她在调查一些新的失踪案，我真担心她又要把自己逼进死胡同。我得保护好她，这是我欠她的。",
+            "buttons": [
+                {
+                    "label": "我会留意的",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_look_out"
+                },
+                {
+                    "label": "询问她现在的调查",
+                    "action": "SHOW_DIALOG:story_2a_extra",
+                    "id": "btn_ask_inv"
+                }
+            ]
+        },
+        "story_2a_extra": {
+            "greeting": "她在调查一些电力异常，还有失踪的流浪汉。我让她别管，但她不听。她说她能感觉到那种‘嗡嗡’声，那种只有在出事前才有的声音。我只能一边警告她别乱跑，一边暗中派人盯着她。希望这次别出什么大事。",
+            "buttons": [
+                {
+                    "label": "她有你很幸运",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_lucky"
+                },
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_2"
+                }
+            ]
+        },
+        "story_2b": {
+            "greeting": "那是她的通讯方式。她在地下室的墙上挂满了彩灯，用莫尔斯电码跟……跟某种东西交流。或者是她以为的交流。那场面看着真让人心碎。每次看到那些闪烁的灯泡，我就想起那段最黑暗的日子。她不肯放弃，我也不能。",
+            "buttons": [
+                {
+                    "label": "听起来很疯狂",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_crazy"
+                },
+                {
+                    "label": "那是真的吗?",
+                    "action": "SHOW_DIALOG:story_2b_extra",
+                    "id": "btn_is_real"
+                }
+            ]
+        },
+        "story_2b_extra": {
+            "greeting": "在霍金斯，‘疯狂’只是对现实的一种暂时定义。是的，那是真的，或者说，她相信那是真的。有时候，信念比事实更重要。如果你看到她在摆弄那些灯泡，别嘲笑她。如果你能帮上忙，就帮一把。如果不能，就离远点。",
+            "buttons": [
+                {
+                    "label": "我会尊重她",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_respect"
+                },
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_3"
+                }
+            ]
+        },
+        "conclusion": {
+            "greeting": "行了，该说的我都说了。记住，保持低调，别惹麻烦。如果真有危险，找我，或者找那个拿着球棒的小子，他现在也算是个硬骨头了。霍金斯需要更多像我们这样守望相助的人。现在走吧，我得去喝杯咖啡提提神了。",
+            "buttons": [
+                {
+                    "label": "保持联系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_keep_touch"
+                },
+                {
+                    "label": "再见，警长",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye_hopper"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

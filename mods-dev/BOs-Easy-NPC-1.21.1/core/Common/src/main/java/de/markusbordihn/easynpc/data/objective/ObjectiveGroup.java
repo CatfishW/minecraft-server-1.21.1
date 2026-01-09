@@ -46,7 +46,8 @@ public class ObjectiveGroup {
           ObjectiveType.ATTACK_ANIMAL,
           ObjectiveType.ATTACK_MONSTER,
           ObjectiveType.ATTACK_MOB,
-          ObjectiveType.ATTACK_MOB_WITHOUT_CREEPER);
+          ObjectiveType.ATTACK_MOB_WITHOUT_CREEPER,
+          ObjectiveType.ATTACK_HOSTILE_FACTION);
 
   private ObjectiveGroup() {}
 }

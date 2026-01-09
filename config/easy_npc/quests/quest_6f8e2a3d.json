@@ -1,0 +1,15 @@
+{
+    "id": "6f8e2a3d-7c4b-4f9a-9e1d-1c8b5d6a3e2f",
+    "title": "寻找能量来源",
+    "description": "我的电磁炮需要黑曜石来聚焦能量，快去帮我搞点来！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:obsidian",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

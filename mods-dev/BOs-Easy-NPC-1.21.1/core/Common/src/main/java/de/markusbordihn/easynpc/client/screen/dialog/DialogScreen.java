@@ -202,6 +202,30 @@ public class DialogScreen<T extends DialogMenu> extends Screen<T, AdditionalScre
 
     // Set dialog button visibility.
     dialogButton.visible = dialogButtonEntry.name() != null && !dialogButtonEntry.name().isBlank();
+    
+    // Toggle Quest Button to Cancel if quest is already active
+    if (dialogButtonEntry.actionDataSet() != null && dialogButtonEntry.actionDataSet().hasActionData()) {
+        for (de.markusbordihn.easynpc.data.action.ActionDataEntry action : dialogButtonEntry.actionDataSet().getEntries()) {
+            if (action.actionDataType() == de.markusbordihn.easynpc.data.action.ActionDataType.OPEN_QUEST_DIALOG) {
+                UUID questId = action.targetUUID();
+                if (questId != null && de.markusbordihn.easynpc.client.quest.ClientQuestManager.hasQuest(questId)) {
+                        // Change button execution to Cancel action
+                        dialogButton.setMessage(Component.literal("§c取消任务"));
+                        if (dialogButton instanceof de.markusbordihn.easynpc.client.screen.components.CustomButton customButton) {
+                            customButton.setOnPress(onPress -> {
+                                NetworkHandlerManager.sendMessageToServer(
+                                    new de.markusbordihn.easynpc.network.message.server.CancelQuestMessage(questId)
+                                );
+                                this.onClose();
+                            });
+                        }
+                        // Ensure it is visible
+                        dialogButton.visible = true; 
+                        break; // Found matching quest action, no need to check others
+                }
+            }
+        }
+    }
 
     this.dialogButtons.add(dialogButton);
   }

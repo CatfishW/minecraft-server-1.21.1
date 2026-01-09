@@ -1,0 +1,15 @@
+{
+    "id": "e69d8e0a-5f8c-4a3d-9b4f-7e5c5e9c6b2a",
+    "title": "笑掉它们的大牙！",
+    "description": "听着，我受够了这些阴沉的家伙在耳边嗡嗡叫。去给我找点火药来，我要做个大烟花，或者把它们炸上天——总之，别让那些怪物太嚣张！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gunpowder",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

@@ -1,0 +1,208 @@
+{
+    "name": "§6Ben Hanscom",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Historian. Architect. Sensitive soul.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/BenHanscom.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "啊，你好。抱歉，我正在看这栋建筑的结构。这简直是……灾难中的杰作。有些东西即使在末日里也保持着惊人的工艺。我是说，你看这拱门，即使历经岁月和恐惧的侵蚀，它依然屹立不倒。",
+            "buttons": [
+                {
+                    "label": "失落大教堂的基石",
+                    "action": "OPEN_QUEST_DIALOG:c1a7d0a3-9b9e-4d68-9c6e-8c7d0e9b1a2c",
+                    "id": "btn_quest_1b75e4e4"
+                },
+                {
+                    "label": "失落的乐高积木",
+                    "action": "OPEN_QUEST_DIALOG:8a14a53a-536a-4716-a542-c752b9e57a0a",
+                    "id": "btn_quest_e1f46e82"
+                },
+                {
+                    "label": "旧神殿的蓝图",
+                    "action": "OPEN_QUEST_DIALOG:d9aab47c-9665-4d67-8ea8-cb068702535e",
+                    "id": "btn_quest_c7c4b1da"
+                },
+                {
+                    "label": "砖石挽歌",
+                    "action": "OPEN_QUEST_DIALOG:7a41ed7d-792e-4b1e-800c-e2177ac93707",
+                    "id": "btn_quest_5af8edba"
+                },
+                {
+                    "label": "沉睡砖窑的哀歌",
+                    "action": "OPEN_QUEST_DIALOG:f3c949f1-84c1-4e40-9c89-a675194ecc82",
+                    "id": "btn_quest_34bfc2d8"
+                },
+                {
+                    "label": "你在研究什么？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ben_study"
+                },
+                {
+                    "label": "看起来你很懂建筑",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ben_arch"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "我……我在试图弄明白这里的布局。Derry不仅仅是街道和房子。地下有下水道系统，有旧的矿道，甚至还有我不知道的秘密通道。这就像是一个巨大的、复杂的迷宫。如果我们能理解它，也许就能利用它来对抗那个……东西。",
+            "buttons": [
+                {
+                    "label": "你发现了什么线索？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_ben_clues"
+                },
+                {
+                    "label": "这听起来太复杂了",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_ben_comp"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "我发现了奇怪的符号，刻在石头上。和我小时候在图书馆看到的那些古老传说很像。还有，看这张地图，这些建筑的排列方式……这不仅仅是巧合。这像是某种……阵法，或者是用来困住什么东西的囚笼。",
+            "buttons": [
+                {
+                    "label": "你是说这镇子是个监狱？",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_ben_prison"
+                },
+                {
+                    "label": "你能画出来吗？",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_map"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "也许。或者是一个祭坛。历史书上说，很多古老的文明都会在有力量的地方建立据点。如果这里确实有某种邪恶的力量，那么也许人们无意中建立的城市，其实是在加强它的封印。或者……是在喂养它。",
+            "buttons": [
+                {
+                    "label": "我们要怎么破坏它？",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_destroy"
+                },
+                {
+                    "label": "这太不可思议了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_incredible"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "其实只要理清逻辑就不难。一切都有其规律，即使是混乱也有混乱的模式。我在阿富汗服役时学到了这一点。恐惧是混乱的，但如果我们能找到支撑这种混乱的骨架，我们就能找到它的弱点。",
+            "buttons": [
+                {
+                    "label": "你是军人？",
+                    "action": "SHOW_DIALOG:story_1_2_1",
+                    "id": "btn_ben_military"
+                },
+                {
+                    "label": "逻辑在恐惧面前有用吗？",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_logic"
+                }
+            ]
+        },
+        "story_1_2_1": {
+            "greeting": "不完全是。我是个工程师，是个建筑工人。但我见过很多东西。有些东西比炸弹更可怕。但我发现，只要你有计划，有蓝图，你就能建造出能抵挡任何风暴的避难所。也许我们现在需要的不是武器，而是一个计划。",
+            "buttons": [
+                {
+                    "label": "我相信你的计划",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_plan"
+                },
+                {
+                    "label": "让我们开始吧",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_start"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "建筑不仅仅是堆砖块。它是关于光影，关于空间，关于人如何在其中生活。记得小时候，我总是把自己关起来画画，画那些巨大的城堡。我觉得如果我造出足够坚固的墙，就没有什么能伤害我。现在看来，我可能想错了。",
+            "buttons": [
+                {
+                    "label": "你觉得自己想错了吗？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_ben_wrong"
+                },
+                {
+                    "label": "你的城堡在哪里？",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_ben_castle"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "我是说，墙保护不了我们。Bev的丈夫把她锁在公寓里，但伤害来自于内部。真正的墙应该建在心里。那是信念和友谊的墙。那个怪物想拆掉的，就是这堵墙。它让我们相互猜疑，这样我们就不堪一击了。",
+            "buttons": [
+                {
+                    "label": "所以我们必须团结",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_unite"
+                },
+                {
+                    "label": "它差点成功了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_almost"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "我没有城堡。但我有记忆。我记得我们在那条河里游泳，记得我们在那片废墟上野餐。那些快乐的记忆就像灯塔。当周围一片漆黑，当那个东西试图把你拉进深渊时，这些记忆就是你唯一能抓住的东西。",
+            "buttons": [
+                {
+                    "label": "美好的回忆",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_memories"
+                },
+                {
+                    "label": "我会记住的",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_ben_remember"
+                }
+            ]
+        },
+        "story_end": {
+            "greeting": "我得继续去查看那些地图了。如果我们想赢，我们需要了解我们的战场。如果你看到什么奇怪的构造，或者发现任何古老的东西，记得来告诉我。历史和建筑，也许这就是解开谜题的钥匙。",
+            "buttons": [
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_ben_close"
+                },
+                {
+                    "label": "我会留意的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_ben_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_shovel",
+            "count": 1
+        }
+    }
+}

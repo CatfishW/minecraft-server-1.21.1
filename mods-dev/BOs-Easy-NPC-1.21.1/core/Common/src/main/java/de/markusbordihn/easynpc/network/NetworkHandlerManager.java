@@ -23,6 +23,7 @@ import de.markusbordihn.easynpc.Constants;
 import de.markusbordihn.easynpc.network.message.NetworkMessageRecord;
 import de.markusbordihn.easynpc.network.message.client.LLMChatResponseMessage;
 import de.markusbordihn.easynpc.network.message.client.OpenMenuCallbackMessage;
+import de.markusbordihn.easynpc.network.message.client.SpawnTimerSyncMessage;
 import de.markusbordihn.easynpc.network.message.client.SyncDataMessage;
 import de.markusbordihn.easynpc.network.message.server.ExecuteActionEventMessage;
 import de.markusbordihn.easynpc.network.message.server.ExecuteDialogButtonActionMessage;
@@ -115,6 +116,30 @@ public class NetworkHandlerManager {
         LLMChatResponseMessage.STREAM_CODEC,
         LLMChatResponseMessage.class,
         LLMChatResponseMessage::create);
+
+    networkHandler.registerClientNetworkMessage(
+        SpawnTimerSyncMessage.PAYLOAD_TYPE,
+        SpawnTimerSyncMessage.STREAM_CODEC,
+        SpawnTimerSyncMessage.class,
+        SpawnTimerSyncMessage::create);
+
+    networkHandler.registerClientNetworkMessage(
+        de.markusbordihn.easynpc.network.message.client.OpenQuestDialogMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.client.OpenQuestDialogMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.client.OpenQuestDialogMessage.class,
+        de.markusbordihn.easynpc.network.message.client.OpenQuestDialogMessage::create);
+
+    networkHandler.registerClientNetworkMessage(
+        de.markusbordihn.easynpc.network.message.client.QuestProgressSyncMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.client.QuestProgressSyncMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.client.QuestProgressSyncMessage.class,
+        de.markusbordihn.easynpc.network.message.client.QuestProgressSyncMessage::create);
+
+    networkHandler.registerClientNetworkMessage(
+        de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage.class,
+        de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage::create);
   }
 
   public static void registerServerNetworkHandler() {
@@ -151,9 +176,21 @@ public class NetworkHandlerManager {
         RequestDataSyncMessage::create);
 
     networkHandler.registerServerNetworkMessage(
+        de.markusbordihn.easynpc.network.message.server.AcceptQuestMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.server.AcceptQuestMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.server.AcceptQuestMessage.class,
+        de.markusbordihn.easynpc.network.message.server.AcceptQuestMessage::create);
+        
+    networkHandler.registerServerNetworkMessage(
         LLMChatRequestMessage.PAYLOAD_TYPE,
         LLMChatRequestMessage.STREAM_CODEC,
         LLMChatRequestMessage.class,
         LLMChatRequestMessage::create);
+
+    networkHandler.registerServerNetworkMessage(
+        de.markusbordihn.easynpc.network.message.server.CancelQuestMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.server.CancelQuestMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.server.CancelQuestMessage.class,
+        de.markusbordihn.easynpc.network.message.server.CancelQuestMessage::create);
   }
 }

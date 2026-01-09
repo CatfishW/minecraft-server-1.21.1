@@ -1,0 +1,188 @@
+{
+    "name": "§eMike Wheeler",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Leader of the party. Loyal and determined.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MikeWheeler.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，你看起来不像这里的人。小心点，霍金斯最近不太平。我是迈克·惠勒，保卫者小队的...呃，队长。我们经历过很多，和你在DND里打过最史诗的战役，甚至更糟。但只要我们在一起，就没什么解决不了的。",
+            "buttons": [
+                {
+                    "label": "清理农场威胁",
+                    "action": "OPEN_QUEST_DIALOG:8d7a6b5e-9f2c-4d3a-8e1b-5c6f4a2d1e9b",
+                    "id": "btn_quest_9182a28d"
+                },
+                {
+                    "label": "亨利的下落",
+                    "action": "OPEN_QUEST_DIALOG:4a1e046c-2745-4f84-8850-d6f5971869f8",
+                    "id": "btn_quest_6936d66c"
+                },
+                {
+                    "label": "失落的指挥棒",
+                    "action": "OPEN_QUEST_DIALOG:2788f278-37c1-439b-a5d9-264b28beed87",
+                    "id": "btn_quest_0dff06e5"
+                },
+                {
+                    "label": "队长的试炼",
+                    "action": "OPEN_QUEST_DIALOG:64254aee-6990-4a18-a157-494701b88df1",
+                    "id": "btn_quest_4c4896db"
+                },
+                {
+                    "label": "保卫者小队？",
+                    "action": "SHOW_DIALOG:ask_team",
+                    "id": "btn_ask_team"
+                },
+                {
+                    "label": "发生了什么？",
+                    "action": "SHOW_DIALOG:ask_events",
+                    "id": "btn_ask_events"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "ask_team": {
+            "greeting": "我们是...嗯，就像是兄弟会。我、卢卡斯、达斯汀还有威尔。我们从一年级就在一起玩了。后来，我们遇到了艾莉。她是我们的一员，绝对的核心成员。我们保护彼此，对抗...嗯，对抗来自另一个世界的威胁。我们是彼此的后盾。",
+            "buttons": [
+                {
+                    "label": "听起来很酷",
+                    "action": "SHOW_DIALOG:story_leadership",
+                    "id": "btn_story_lead"
+                },
+                {
+                    "label": "威尔？他怎么样了？",
+                    "action": "SHOW_DIALOG:ask_will",
+                    "id": "btn_ask_will"
+                }
+            ]
+        },
+        "ask_events": {
+            "greeting": "一言难尽。一切都从威尔失踪开始。然后是艾莉的出现，那个实验室，还有...怪物。它们来自一个和我们世界重叠的镜像维度，我们称之为“逆世界”。那个东西，它带走了威尔，差一点就毁了我们所有人。我们把它送了回去，但那扇门...它从未真正关闭。",
+            "buttons": [
+                {
+                    "label": "你是怎么领导大家的？",
+                    "action": "SHOW_DIALOG:story_leadership",
+                    "id": "btn_ask_how"
+                },
+                {
+                    "label": "这太疯狂了",
+                    "action": "SHOW_DIALOG:story_reality",
+                    "id": "btn_ask_real"
+                }
+            ]
+        },
+        "story_leadership": {
+            "greeting": "我只是...做我必须做的事。当所有人都陷入恐慌时，你必须是那个保持冷静的人。我要确保每个人都在计划中，每个人都清楚自己的位置。但说实话，最难的部分是看着他们陷入危险。每当卢卡斯冲锋，或者艾莉动用她的能力时，我的心都提到了嗓子眼。",
+            "buttons": [
+                {
+                    "label": "他们是你的家人",
+                    "action": "SHOW_DIALOG:story_family",
+                    "id": "btn_concl_family"
+                },
+                {
+                    "label": "你很勇敢",
+                    "action": "SHOW_DIALOG:story_bravery",
+                    "id": "btn_concl_bravery"
+                }
+            ]
+        },
+        "ask_will": {
+            "greeting": "威尔...他是我们中最敏感，也是最坚强的一个。他独自在逆世界里撑了整整一周，我们都以为失去了他。把他救回来后，他变了，他能看到那个世界，能感觉到那个东西。他受了很多苦，但他总是在笑，努力不让我们担心。我发誓，再也不会让那种事发生在他身上。",
+            "buttons": [
+                {
+                    "label": "他有你这样的朋友真好",
+                    "action": "SHOW_DIALOG:story_family",
+                    "id": "btn_concl_friend"
+                },
+                {
+                    "label": "他现在安全了吗？",
+                    "action": "SHOW_DIALOG:story_reality",
+                    "id": "btn_ask_safe"
+                }
+            ]
+        },
+        "story_reality": {
+            "greeting": "安全？在这个镇上，没人是绝对安全的。我们以为战胜了它，但阴影总会回来。我们长大了，但问题也随之而来。关系变得复杂，每个人都有自己的秘密。但我们学会了，只要我们能像以前那样团结一致，我们就能再次面对它。不管它是什么。",
+            "buttons": [
+                {
+                    "label": "你们准备好了吗？",
+                    "action": "SHOW_DIALOG:story_future",
+                    "id": "btn_ask_ready"
+                },
+                {
+                    "label": "我支持你们",
+                    "action": "SHOW_DIALOG:story_family",
+                    "id": "btn_support"
+                }
+            ]
+        },
+        "story_family": {
+            "greeting": "没错，他们就是我的家人。我们可能没有血缘关系，但这种羁绊比任何东西都坚固。我们一起面对怪物，一起参加舞会，一起在地下室里度过无数个下午。这就是一切的意义。为了他们，我愿意再次跳进地狱。我们是保卫者小队，我们永不放弃。",
+            "buttons": [
+                {
+                    "label": "祝你们好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_luck"
+                },
+                {
+                    "label": "请一定小心",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_careful"
+                }
+            ]
+        },
+        "story_future": {
+            "greeting": "说实话，我不知道。但我们会的。我们不再是只会玩DND的小孩了。我们经历过生死，我们了解这个世界的黑暗。下一次，当阴影来临时，我们会准备好。我们会保护我们的小镇，保护我们的家人。这就是我们的使命。",
+            "buttons": [
+                {
+                    "label": "我相信你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_trust"
+                },
+                {
+                    "label": "保持警惕",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_alert"
+                }
+            ]
+        },
+        "story_bravery": {
+            "greeting": "勇敢？我只是不想再失去任何人了。当我看着威尔的妈妈，她那双绝望的眼睛...不，我没有选择。我必须坚强。我是他们的队长，我必须是那个相信我们能赢的人。如果连我都不信了，那一切都完了。",
+            "buttons": [
+                {
+                    "label": "你做得很好",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_goodjob"
+                },
+                {
+                    "label": "压力一定很大",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_pressure"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:writable_book",
+            "count": 1
+        }
+    }
+}

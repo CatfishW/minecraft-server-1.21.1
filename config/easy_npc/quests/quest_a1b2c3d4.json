@@ -1,0 +1,15 @@
+{
+    "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "title": "肌肉男的复仇",
+    "description": "亨利那个混蛋把我的宝贝车划了！去给我教训他一顿，让他知道我的厉害。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

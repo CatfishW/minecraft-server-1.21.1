@@ -1,0 +1,80 @@
+{
+    "name": "§b空间行者",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "掌握时空传送技艺的神秘行者，可以帮助旅行者到达不同的地点。",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/06/black-hole-23773740.png?v938"
+    },
+    "attributes": {
+        "maxHealth": 100,
+        "invulnerable": true,
+        "movementSpeed": 0.0,
+        "canBePushed": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "旅行者，你好。我是空间行者，掌握着时空传送的奥秘。在这里，我可以帮你瞬间到达目的地。",
+            "buttons": [
+                {
+                    "label": "裂隙的回响",
+                    "action": "OPEN_QUEST_DIALOG:a38f2b5c-1d4e-4a9f-8c2b-3e5f6a7b8c9d",
+                    "id": "btn_quest_16845935"
+                },
+                {
+                    "label": "撕裂的帷幕",
+                    "action": "OPEN_QUEST_DIALOG:8a90c5f1-3e6b-4f2d-a3b2-3c5f2b1d0e6f",
+                    "id": "btn_quest_a73ac696"
+                },
+                {
+                    "label": "遗落的传送信标",
+                    "action": "OPEN_QUEST_DIALOG:fe338812-ea7a-41ef-9fc8-9f393a029251",
+                    "id": "btn_quest_6de1a00f"
+                },
+                {
+                    "label": "撕裂的次元裂隙",
+                    "action": "OPEN_QUEST_DIALOG:2a118bd3-6c03-47fb-9c46-ee5fac2b3138",
+                    "id": "btn_quest_c5c2573f"
+                },
+                {
+                    "label": "🧱 传送到区块 (Block)",
+                    "id": "btn_warp_block",
+                    "action": "PLAYER_COMMAND:/warp tp Block;CLOSE"
+                },
+                {
+                    "label": "🎲 随机传送",
+                    "id": "btn_rtp",
+                    "action": "PLAYER_COMMAND:/rtp;CLOSE"
+                },
+                {
+                    "label": "❓ 这是什么？",
+                    "id": "btn_intro",
+                    "action": "SHOW_DIALOG:introduction"
+                },
+                {
+                    "label": "再见",
+                    "id": "btn_close",
+                    "action": "CLOSE_DIALOG"
+                }
+            ]
+        },
+        "introduction": {
+            "greeting": "我是这里的次元导航员。通过操控微小的空间裂缝，我能让你在瞬间完成数百里的旅程。无论是前往繁荣的区块中心，还是去未知的远方开启新的冒险，只需向我说明你的意图即可。",
+            "buttons": [
+                {
+                    "label": "我明白了",
+                    "id": "btn_understand",
+                    "action": "SHOW_DIALOG:main"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:ender_eye",
+            "count": 1
+        }
+    }
+}

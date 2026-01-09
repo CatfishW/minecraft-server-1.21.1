@@ -46,6 +46,7 @@ public class AttackObjectiveConfigurationScreen<T extends ConfigurationMenu>
   protected Checkbox attackMobCheckbox;
   protected Checkbox attackMobWithoutCreeperCheckbox;
   protected Checkbox attackVillagerCheckbox;
+  protected Checkbox attackHostileFactionCheckbox;
   protected Checkbox ownerHurtByTargetCheckbox;
   protected Checkbox hurtByTargetCheckbox;
 
@@ -122,6 +123,18 @@ public class AttackObjectiveConfigurationScreen<T extends ConfigurationMenu>
                     .addOrUpdateObjective(this.getEasyNPCUUID(), objectiveDataEntry);
               },
               SliderButton.Type.DOUBLE));
+      this.addRenderableWidget(
+          new Checkbox(
+              objectiveEntriesSecondColumn + 175,
+              objectiveEntriesTop - 2,
+              Component.literal("Full Auto"),
+              objectiveDataEntry.isFullAuto(),
+              true,
+              checkbox -> {
+                objectiveDataEntry.setFullAuto(checkbox.selected());
+                NetworkMessageHandlerManager.getServerHandler()
+                    .addOrUpdateObjective(this.getEasyNPCUUID(), objectiveDataEntry);
+              }));
     }
 
 
@@ -175,6 +188,15 @@ public class AttackObjectiveConfigurationScreen<T extends ConfigurationMenu>
                 objectiveEntriesSecondColumn,
                 objectiveEntriesTop,
                 ObjectiveType.ATTACK_MOB_WITHOUT_CREEPER));
+
+    // Attack Hostile Faction
+    objectiveEntriesTop += SPACE_BETWEEN_ENTRIES;
+    this.attackHostileFactionCheckbox =
+        this.addRenderableWidget(
+            this.getObjectiveCheckbox(
+                objectiveEntriesFirstColumn,
+                objectiveEntriesTop,
+                ObjectiveType.ATTACK_HOSTILE_FACTION));
 
     // Protection/Defense section
     objectiveEntriesTop += SPACE_BETWEEN_ENTRIES + 10;

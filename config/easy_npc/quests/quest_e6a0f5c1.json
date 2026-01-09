@@ -1,0 +1,15 @@
+{
+    "id": "e6a0f5c1-7d15-4e8f-bf54-9340e6e6f9a7",
+    "title": "红气球的邀请",
+    "description": "下水道里有东西在呼唤我...去看看那个红气球吧。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 666,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

@@ -1,0 +1,188 @@
+{
+    "name": "§dNick Valentine",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Synth detective. Noir style.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/NickValentine.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "外面雨真大，不是吗？虽然我的光学传感器不需要眼泪，但这种氛围总是让我想起很多往事。我是尼克·瓦伦坦，一名私家侦探。你脸上的迷茫告诉我，你刚从那场该死的战争中醒来。这座城市吞没过无数梦想，如果你不小心点，它也会吞没你。",
+            "buttons": [
+                {
+                    "label": "铁锈镇的秘密",
+                    "action": "OPEN_QUEST_DIALOG:a8f636e1-77e8-42b9-88b9-14b262d52688",
+                    "id": "btn_quest_d634d1c8"
+                },
+                {
+                    "label": "消失的磁带",
+                    "action": "OPEN_QUEST_DIALOG:4104d093-3bd0-48e7-ab64-2c82dda1399b",
+                    "id": "btn_quest_4a98fc42"
+                },
+                {
+                    "label": "尼克·瓦伦坦？这名字听起来很……人类。",
+                    "action": "SHOW_DIALOG:synth",
+                    "id": "btn_synth"
+                },
+                {
+                    "label": "我需要一个侦探，我找不到我的家人。",
+                    "action": "SHOW_DIALOG:missing",
+                    "id": "btn_missing"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "synth": {
+            "greeting": "我知道你在想什么。是的，我是个合成年人类，或者按他们的叫法，‘合成人’。但我脑子里装着一个老派侦探的记忆和良心，那是很久以前一个叫瓦伦坦的警察留下的。有时候，我不知道究竟是我在用这副躯壳，还是这躯壳在用我。但这不重要，重要的是帮客户解决问题。",
+            "buttons": [
+                {
+                    "label": "那你的过去……",
+                    "action": "SHOW_DIALOG:memory",
+                    "id": "btn_memory"
+                },
+                {
+                    "label": "帮帮我找到家人。",
+                    "action": "SHOW_DIALOG:missing",
+                    "id": "btn_missing_2"
+                }
+            ]
+        },
+        "missing": {
+            "greeting": "找人在这座废城里就像大海捞针，但我擅长这个。你得给我提供线索，比如他们的名字，失踪的时间，或者任何可能的去向。学院经常绑架平民，如果你家人是被他们抓走的，那事情会变得非常棘手。即便如此，只要有一丝希望，我就不会放弃。",
+            "buttons": [
+                {
+                    "label": "他们被带进了学院。",
+                    "action": "SHOW_DIALOG:institute_case",
+                    "id": "btn_institute_case"
+                },
+                {
+                    "label": "我有他们的照片。",
+                    "action": "SHOW_DIALOG:photo",
+                    "id": "btn_photo"
+                }
+            ]
+        },
+        "memory": {
+            "greeting": "我的记忆就像一本被撕掉很多页的书。我记得那个真正的瓦伦坦是个什么样的人，他爱什么，恨什么。但我没有他童年的记忆，没有他的触感。有时候我会盯着镜子里的自己看，试图找到一丝‘人类’的痕迹。这很讽刺，一个合成人比很多废土上的人更有道德感。",
+            "buttons": [
+                {
+                    "label": "至少你拥有了新的生命。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到我家人的话题。",
+                    "action": "SHOW_DIALOG:missing",
+                    "id": "btn_missing_3"
+                }
+            ]
+        },
+        "institute_case": {
+            "greeting": "学院……那是最棘手的案子。他们像幽灵一样，不留痕迹。但我认识一个女人，她的名字叫阿马利博士。她以前是学院的首席科学家，现在躲在钻石城的旅馆里，像只受惊的老鼠。如果你能找到她，或许能套出点什么。但我警告你，她很害怕，而且可能不值得完全信任。",
+            "buttons": [
+                {
+                    "label": "带我去见她。",
+                    "action": "SHOW_DIALOG:meet_amari",
+                    "id": "btn_meet_amari"
+                },
+                {
+                    "label": "除了她还有别的办法吗？",
+                    "action": "SHOW_DIALOG:other_clues",
+                    "id": "btn_other_clues"
+                }
+            ]
+        },
+        "photo": {
+            "greeting": "照片……那可是好东西。在没有全息影像的时代，照片是承载记忆的圣物。把照片给我看看。嗯……面孔很清晰。我会把这加入我的数据库，让我的线人留意。如果他们在钻石城或者被卖为奴隶，我会听到风声的。但我不能保证时间，这城市每天都有人消失。",
+            "buttons": [
+                {
+                    "label": "请务必帮我找到他们。",
+                    "action": "SHOW_DIALOG:promise",
+                    "id": "btn_promise"
+                },
+                {
+                    "label": "关于学院，你还知道什么？",
+                    "action": "SHOW_DIALOG:institute_knowledge",
+                    "id": "btn_institute_knowledge"
+                }
+            ]
+        },
+        "meet_amari": {
+            "greeting": "好的，跟我来。她住在‘Third Rail’酒吧后面的小房间里。别被她的样子吓到，心灵上的创伤比肉体的伤口更难愈合。进去后说话温柔点，把她当成一个随时可能碎裂的玻璃杯。如果她愿意开口，我们就能找到通往学院秘密的钥匙。",
+            "buttons": [
+                {
+                    "label": "我准备好了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2"
+                },
+                {
+                    "label": "她为什么这么害怕？",
+                    "action": "SHOW_DIALOG:amari_fear",
+                    "id": "btn_amari_fear"
+                }
+            ]
+        },
+        "other_clues": {
+            "greeting": "还有一个地方，‘钻石城蓝调’广播站。那里的主持人，老麦克，他的耳朵比雷达还灵。如果你愿意付点瓶盖，他可能会告诉你一些关于学院运送‘货物’的传闻。另外，留意那些穿着奇怪制服的‘钢铁兄弟会’，他们也在调查学院，有时候他们的档案比我的还全。",
+            "buttons": [
+                {
+                    "label": "我会去调查的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3"
+                }
+            ]
+        },
+        "promise": {
+            "greeting": "我会的，这是我作为侦探的承诺。在这个乱世，承诺是我们仅剩的几样有价值的东西之一。现在，去忙你的吧，我也该去巡逻了。如果有了消息，我会去‘老北教堂’找你，那是我的安全屋。保持警惕，朋友，这城市不总是善待寻找者。",
+            "buttons": [
+                {
+                    "label": "谢谢你，尼克。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_4"
+                }
+            ]
+        },
+        "institute_knowledge": {
+            "greeting": "他们代表着废土上最大的恐惧：未知。他们制造合成人混入人群，偷走我们所爱的人，用高科技玩弄生命。有人说他们是救世主，想用科技重建秩序；也有人说他们是地狱的恶魔。作为一个合成人，我夹在两者之间，感到无比困惑。但我只知道一点：他们必须停止这种行为。",
+            "buttons": [
+                {
+                    "label": "我明白了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_5"
+                }
+            ]
+        },
+        "amari_fear": {
+            "greeting": "因为她见过地狱。她见过学院如何剥离人性，如何制造出完美的复制体，然后把原版彻底销毁。她逃出来是个奇迹，但代价是她的精神几乎崩溃。她害怕每一扇关上的门，害怕每一个长得像学院特工的人。帮她，也是在帮所有被学院抓走的人。",
+            "buttons": [
+                {
+                    "label": "我会小心的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_6"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_shovel",
+            "count": 1
+        }
+    }
+}

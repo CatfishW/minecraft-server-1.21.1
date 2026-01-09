@@ -21,6 +21,7 @@ package de.markusbordihn.easynpc.data.objective;
 
 import de.markusbordihn.easynpc.Constants;
 import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
+import de.markusbordihn.easynpc.entity.easynpc.data.ConfigDataCapable;
 import de.markusbordihn.easynpc.entity.easynpc.ai.goal.BowAttackGoal;
 import de.markusbordihn.easynpc.entity.easynpc.ai.goal.CrossbowAttackGoal;
 import de.markusbordihn.easynpc.entity.easynpc.ai.goal.CustomAttackGoal;
@@ -61,6 +62,8 @@ import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.util.Set;
 
 public class ObjectiveUtils {
 
@@ -171,7 +174,8 @@ public class ObjectiveUtils {
             easyNPC,
             objectiveDataEntry.getSpeedModifier(),
             objectiveDataEntry.getAttackInterval(),
-            objectiveDataEntry.getAttackRadius());
+            objectiveDataEntry.getAttackRadius(),
+            objectiveDataEntry.isFullAuto());
       case RANDOM_SWIMMING:
         return new RandomSwimmingGoal(
             pathfinderMob, objectiveDataEntry.getSpeedModifier(), objectiveDataEntry.getInterval());
@@ -222,6 +226,27 @@ public class ObjectiveUtils {
       case ATTACK_ANIMAL ->
           new NearestAttackableTargetGoal<>(
               pathfinderMob, Animal.class, objectiveDataEntry.isMustSeeTarget());
+      case ATTACK_HOSTILE_FACTION -> {
+        Set<String> hostileFactions = objectiveDataEntry.getHostileFactions();
+        String myFaction = (easyNPC instanceof ConfigDataCapable<?> myCapable) ? myCapable.getFaction() : "default";
+        yield new NearestAttackableTargetGoal<>(
+            pathfinderMob,
+            LivingEntity.class,
+            objectiveDataEntry.getInterval(),
+            objectiveDataEntry.isMustSeeTarget(),
+            objectiveDataEntry.isMustReachTarget(),
+            entity -> {
+              if (entity instanceof ConfigDataCapable<?> targetNPC) {
+                String targetFaction = targetNPC.getFaction();
+                if (hostileFactions != null && !hostileFactions.isEmpty()) {
+                  return hostileFactions.contains(targetFaction);
+                }
+                // Default behavior: attack any other faction
+                return !targetFaction.equals(myFaction);
+              }
+              return false;
+            });
+      }
       case ATTACK_PLAYER ->
           new NearestAttackableTargetGoal<>(
               pathfinderMob, Player.class, objectiveDataEntry.isMustSeeTarget());

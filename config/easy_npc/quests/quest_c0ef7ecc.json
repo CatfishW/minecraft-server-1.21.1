@@ -1,0 +1,15 @@
+{
+    "id": "c0ef7ecc-732e-4da1-8539-07226a988771",
+    "title": "厨房卫生危机",
+    "description": "我的主人，厨房里出现了一些讨厌的害虫，严重影响了下午茶的准备。请您清理一下，好吗？",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:silverfish",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

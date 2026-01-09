@@ -1,0 +1,128 @@
+{
+    "name": "§9MacCready",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Mercenary sharpshooter.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MacCready.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你是雇主，还是路过的？如果是后者，建议你赶紧滚蛋。如果是前者，价钱好商量。我叫麦克里迪，以前是断钢的队长，现在是个自由职业者。只要给够瓶盖，哪怕是要射穿老冰棍的脑袋我也干。",
+            "buttons": [
+                {
+                    "label": "清理威胁",
+                    "action": "OPEN_QUEST_DIALOG:9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+                    "id": "btn_quest_9fbd045a"
+                },
+                {
+                    "label": "清除威胁",
+                    "action": "OPEN_QUEST_DIALOG:2f41a8e3-5b2a-4f9c-8d1b-7e6a5c3d2f1a",
+                    "id": "btn_quest_6a176249"
+                },
+                {
+                    "label": "危险的实验品",
+                    "action": "OPEN_QUEST_DIALOG:da797119-3e27-499a-9559-c26fbaa46521",
+                    "id": "btn_quest_efa7d764"
+                },
+                {
+                    "label": "野兽的威胁",
+                    "action": "OPEN_QUEST_DIALOG:41edf8f7-cccb-473b-ad27-9506cfdff543",
+                    "id": "btn_quest_0db56f34"
+                },
+                {
+                    "label": "你以前是断钢的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_dweller"
+                },
+                {
+                    "label": "我需要一个神枪手",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_sniper"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "那是以前的事了。为了生存，我不得不离开那个鬼地方。那里除了辐射蟑螂，就是发疯的人。后来我做过枪手，当过保镖，结果运气不好，感染了灰死病。如果不是运气好找到了解药，你现在看到的就是个丧尸。",
+            "buttons": [
+                {
+                    "label": "听起来很惊险",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_risk"
+                },
+                {
+                    "label": "那你现在完全康复了？",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_health"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "神枪手？这词我喜欢。我的狙击镜里从不缺目标。先付一半定金，告诉我目标是谁，地点在哪。我保证一枪毙命，绝不拖泥带水。当然，如果目标是超级变种人，得加钱。",
+            "buttons": [
+                {
+                    "label": "成交，这是定金",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_pay"
+                },
+                {
+                    "label": "我再考虑考虑",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "惊险？那是对没死的人来说的。对我来说，那就是日常。在这个废土，你不能相信任何人，除了你手里的枪和银行里的瓶盖。我见过太多人因为轻信别人，最后连骨头都被狗啃了。",
+            "buttons": [
+                {
+                    "label": "你很悲观",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_pessimist"
+                },
+                {
+                    "label": "我欣赏你的直率",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_blunt"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "这不是悲观，是现实。我还有个儿子，在昂克雷格的医院里。我得赚够瓶盖，才能确保他安全。这就是我扣动扳机的理由。其他的什么重建联邦、道德准则，都是狗屁。只有家人是真实的。",
+            "buttons": [
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_luck"
+                },
+                {
+                    "label": "我理解你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_understand"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:compass",
+            "count": 1
+        }
+    }
+}

@@ -1,0 +1,283 @@
+{
+    "name": "§eBeverly Marsh",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Brave and kind. The heart of the group.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/BeverlyMarsh.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你也是被那股奇怪的能量吸引过来的吗？我叫贝芙莉·马什，在这群伙伴里负责后勤和联络。别担心，既然你出现在这里，说明你也是对抗‘它’的关键一环。这片区域的红石信号受到了强烈的干扰，像是某种未知的程序正在覆盖现实世界的底层逻辑。",
+            "buttons": [
+                {
+                    "label": "寻找Henry",
+                    "action": "OPEN_QUEST_DIALOG:a249d362-5087-4a32-a2e2-d692f22546f8",
+                    "id": "btn_quest_d5e65e26"
+                },
+                {
+                    "label": "筹集探险资金",
+                    "action": "OPEN_QUEST_DIALOG:a5f1b2c3-d4e5-f6a7-b8c9-d0e1f2a3b4c5",
+                    "id": "btn_quest_72711523"
+                },
+                {
+                    "label": "守望相助",
+                    "action": "OPEN_QUEST_DIALOG:b8e25f36-c8c8-4a34-89ec-5f7d9c59776e",
+                    "id": "btn_quest_113c0076"
+                },
+                {
+                    "label": "迷雾森林的阴影",
+                    "action": "OPEN_QUEST_DIALOG:f1b3f40f-ed32-473f-a9f0-6c15c8b9262a",
+                    "id": "btn_quest_4622e5cc"
+                },
+                {
+                    "label": "对抗‘它’？你是说那个大 clown？",
+                    "action": "SHOW_DIALOG:story_1_a",
+                    "id": "btn_start_a"
+                },
+                {
+                    "label": "红石干扰？也许我能帮忙调试。",
+                    "action": "SHOW_DIALOG:story_1_b",
+                    "id": "btn_start_b"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1_a": {
+            "greeting": "是的，就是那个披着滑稽外皮的恶魔。它不仅是现实的入侵者，更是在利用孩子们的恐惧作为‘能源’来扭曲这里的物理法则。我虽然害怕，但只要我们七个人聚在一起，爱的力量就能形成一道不可摧毁的屏障。你愿意成为守护这道屏障的第八人吗？",
+            "buttons": [
+                {
+                    "label": "我愿意，我们需要制定计划。",
+                    "action": "SHOW_DIALOG:story_2_a",
+                    "id": "btn_accept_mission"
+                },
+                {
+                    "label": "听起来太疯狂了，恐惧真的能变成力量？",
+                    "action": "SHOW_DIALOG:story_1_c",
+                    "id": "btn_question_fear"
+                }
+            ]
+        },
+        "story_1_b": {
+            "greeting": "真的吗？那太好了！我是说，虽然我懂一些基础的红石传导，但这下面的逻辑门电路完全乱套了。原本应该是‘或门’的地方变成了‘非门’，搞得照明系统忽明忽暗。如果你能修复这些，我们在下面探索时的安全系数会高很多。",
+            "buttons": [
+                {
+                    "label": "带我去看看故障点，我有铁砧和扳手。",
+                    "action": "SHOW_DIALOG:story_2_b",
+                    "id": "btn_go_repair"
+                },
+                {
+                    "label": "这种干扰可能是某种信号攻击。",
+                    "action": "SHOW_DIALOG:story_2_b",
+                    "id": "btn_analyze_signal"
+                }
+            ]
+        },
+        "story_1_c": {
+            "greeting": "我知道这听起来难以置信。但在这个充满了方块和逻辑的世界里，‘信念’也是一种可以被观测到的物理量。当比尔写下‘不死’这个词时，它实际上是在修改我们的状态数据。恐惧让我们退缩，但爱和勇气能让我们突破系统限制，甚至创造奇迹。",
+            "buttons": [
+                {
+                    "label": "我明白了，让我加入你们的‘俱乐部’吧。",
+                    "action": "SHOW_DIALOG:story_2_a",
+                    "id": "btn_join_club"
+                },
+                {
+                    "label": "那么，我需要做些什么来增强‘信念’？",
+                    "action": "SHOW_DIALOG:story_2_c",
+                    "id": "btn_ask_duty"
+                }
+            ]
+        },
+        "story_2_a": {
+            "greeting": "欢迎加入失真俱乐部（The Losers' Club）。听着，我们现在的首要任务是找到比尔留下的那个储物盒，里面装着我们对抗‘它’的第一件武器——一把由信念凝聚而成的银剑。但是下水道入口被某种腐化的黑曜石堵住了，需要特殊的炸药才能炸开。",
+            "buttons": [
+                {
+                    "label": "我去收集黑火药和沙砾来制作炸药。",
+                    "action": "SHOW_DIALOG:story_3_a",
+                    "id": "btn_collect_mat"
+                },
+                {
+                    "label": "为什么不直接用钻石镐挖？",
+                    "action": "SHOW_DIALOG:story_2_d",
+                    "id": "btn_ask_tool"
+                }
+            ]
+        },
+        "story_2_b": {
+            "greeting": "根据我的笔记，这些红石线路原本连接着一个‘现实稳定器’。但现在，源头被某种紫色的荆棘缠绕了。这让我想起小时候那个废弃的房屋……那里藏着‘它’的巢穴。如果你能帮我压制住那些荆棘，我就能重新校准线路，或许还能激活那个古老的传送装置。",
+            "buttons": [
+                {
+                    "label": "压制荆棘？这需要用到水桶还是火焰弹？",
+                    "action": "SHOW_DIALOG:story_3_b",
+                    "id": "btn_ask_weakness"
+                },
+                {
+                    "label": "传送装置？能带我去‘它’的老巢吗？",
+                    "action": "SHOW_DIALOG:story_2_e",
+                    "id": "btn_ask_teleport"
+                }
+            ]
+        },
+        "story_2_c": {
+            "greeting": "你需要找回属于你的‘信物’。每个人心里都有一件物品，代表着最纯粹的勇气。对于我来说，那是我父亲留下的口琴声。对于你，可能是一把精心打磨的剑，或者是一张守护图腾。只有当你完全信任这件物品时，它才会在关键时刻释放出护盾效果。",
+            "buttons": [
+                {
+                    "label": "我这就去打磨我的钻石剑，赋予它意义。",
+                    "action": "SHOW_DIALOG:story_3_c",
+                    "id": "btn打磨武器"
+                },
+                {
+                    "label": "除了武器，还有什么能增强信念？",
+                    "action": "SHOW_DIALOG:story_3_c",
+                    "id": "btn_ask_more"
+                }
+            ]
+        },
+        "story_2_d": {
+            "greeting": "普通的镐子对‘腐化黑曜石’无效，那是被诅咒的方块，甚至会反噬挖掘者的耐久度。只有利用化学反应产生的瞬间高温——也就是黑火药，才能破坏它的结构稳定性。这是物理法则，也是这里的魔法规则。拜托了，我们必须赶在下一个‘血月’升起前进去。",
+            "buttons": [
+                {
+                    "label": "明白了，我这就去准备TNT。",
+                    "action": "SHOW_DIALOG:story_3_a",
+                    "id": "btn_get_tnt"
+                },
+                {
+                    "label": "血月？那会发生什么？",
+                    "action": "SHOW_DIALOG:story_3_d",
+                    "id": "btn_ask_moon"
+                }
+            ]
+        },
+        "story_2_e": {
+            "greeting": "是的，但那太危险了。我们需要先激活它，然后通过它直接切入‘它’的思维迷宫。在那里，物理伤害是无效的，只有逻辑和意志力的对抗。在你准备好面对最终形态之前，我们需要先收集足够的‘快乐记忆’来合成抗性药水。",
+            "buttons": [
+                {
+                    "label": "快乐记忆？这要怎么收集？",
+                    "action": "SHOW_DIALOG:story_3_e",
+                    "id": "btn_ask_memory"
+                },
+                {
+                    "label": "我不怕，带我去传送点。",
+                    "action": "SHOW_DIALOG:story_3_e",
+                    "id": "btn_force_teleport"
+                }
+            ]
+        },
+        "story_3_a": {
+            "greeting": "太好了！把火药和沙砾合成TNT，然后小心地安放在黑曜石上。我会在旁边用红石火把激活它。注意掩护，爆炸可能会引来‘它’的触手。一旦炸开缺口，我们必须立刻跳下去，不能犹豫。",
+            "buttons": [
+                {
+                    "label": "（点燃导火索）快跑！",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_explode"
+                }
+            ]
+        },
+        "story_3_b": {
+            "greeting": "火焰对它有效，但会激怒它。水是最好的选择，它们怕水，就像那个怕冷的家伙一样。用桶装满水，浇在荆棘根部，它们会暂时枯萎，露出下面的红石中继器。趁那个时候，调整频率到 12.5Hz，那是共鸣的频率。",
+            "buttons": [
+                {
+                    "label": "倒水，调整中继器……搞定！",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_fix_circuit"
+                }
+            ]
+        },
+        "story_3_c": {
+            "greeting": "把你的剑放在铁砧上，不要用铁锤，用你的心去敲击它。想象你最在乎的人，想象你为了保护他们而战的决心。如果剑身闪烁出微弱的白光，那就成功了。这把剑现在不仅是武器，更是你勇气的延伸。",
+            "buttons": [
+                {
+                    "label": "（注入信念）它亮了！",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_enchant_sword"
+                }
+            ]
+        },
+        "story_3_d": {
+            "greeting": "血月升起时，所有的怪物都会变异，攻击力翻倍，而且会无视光线直接生成。更糟糕的是，‘它’的力量会达到顶峰，下水道的入口会被彻底封死，直到第二天日出。所以我们必须争分夺秒。",
+            "buttons": [
+                {
+                    "label": "（看着天空，月亮开始泛红）该死，没时间了！",
+                    "action": "SHOW_DIALOG:story_3_a",
+                    "id": "btn_rush_tnt"
+                }
+            ]
+        },
+        "story_3_e": {
+            "greeting": "跟我来。在地图的东南角有一片向日葵田，那是我们小时候野餐的地方。在那里，如果你能合成出‘金苹果’，并在心中回忆起那段无忧无虑的时光，它就会变成‘闪耀的金苹果’。那是我们通往思维迷宫的钥匙。",
+            "buttons": [
+                {
+                    "label": "（吃下金苹果，感受暖流）我准备好了。",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_eat_apple"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "干得漂亮！缺口打开了。听着，下面很黑，跟紧我的火把。一旦看到红色的气球，千万不要靠近，那是它的眼睛。我们要去的地方是排水系统的主干道，那里藏着第一件信物。准备好潜行药水了吗？",
+            "buttons": [
+                {
+                    "label": "（喝下药水）出发吧，为了俱乐部！",
+                    "action": "COMMAND:give @p minecraft:potion{Potion:\"minecraft:night_vision\"} 1",
+                    "id": "btn_give_reward_1"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "电路恢复了！看，那边的暗门打开了。这是通往地下图书馆的捷径，比尔的笔记都在那里。作为感谢，这个给你。这是我在废墟里找到的‘空白卷轴’，你可以把它附魔成任何你想要的书籍，只要你的信念足够强。",
+            "buttons": [
+                {
+                    "label": "谢谢你，贝芙莉。我会善加利用的。",
+                    "action": "COMMAND:give @p minecraft:book{Enchantments:[{}]} 1",
+                    "id": "btn_give_reward_2"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "这光芒……太美了。这把剑现在足以斩断恐惧的锁链。拿着它，去守护你想守护的一切吧。无论前方是数据的深渊还是现实的崩塌，请记住，只要我们团结在一起，就没有过不去的坎。这是我们最后的王牌之一。",
+            "buttons": [
+                {
+                    "label": "以此剑之名，终结噩梦。",
+                    "action": "COMMAND:give @p minecraft:diamond_sword{display:{Name:'{\"text\":\"勇气之刃\",\"color\":\"gold\",\"italic\":false}'},Enchantments:[{id:sharpness,lvl:5},{id:smite,lvl:5}]} 1",
+                    "id": "btn_give_reward_3"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "你做到了。这颗苹果散发着纯净的光，足以照亮任何黑暗的角落。现在，站在这个传送阵上（由刚才修复的电路构成），我们将直接进入‘它’的核心。恐惧在那里具象化，但只要手里握着希望，我们就赢了一半。准备好了吗？",
+            "buttons": [
+                {
+                    "label": "（紧握苹果和武器）带我走！",
+                    "action": "COMMAND:execute in minecraft:the_nether run tp @p ~ ~ ~",
+                    "id": "btn_teleport_final"
+                },
+                {
+                    "label": "等等，我还需要准备一下。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_wait"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:spyglass",
+            "count": 1
+        }
+    }
+}

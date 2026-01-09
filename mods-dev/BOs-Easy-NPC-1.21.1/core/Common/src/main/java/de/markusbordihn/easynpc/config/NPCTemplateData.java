@@ -19,6 +19,8 @@
 
 package de.markusbordihn.easynpc.config;
 
+import java.util.Map;
+
 /**
  * POJO class representing a complete NPC configuration template.
  * Used for JSON serialization/deserialization.
@@ -28,16 +30,27 @@ public class NPCTemplateData {
   private String name;
   private String entityType;
   private String description;
+  private String faction = "default";
   private SkinConfig skin;
   private DialogConfig dialog;
+  private Map<String, DialogConfig> dialogs;
   private TradingConfig trading;
   private AttributeConfig attributes;
   private ObjectiveConfig objectives;
   private ActionConfig actions;
+  private EquipmentConfig equipment;
+  private DropConfig drop;
   
   // Getters and setters
   public String getName() { return name; }
   public void setName(String name) { this.name = name; }
+
+  public DropConfig getDrop() { return drop; }
+  public void setDrop(DropConfig drop) { this.drop = drop; }
+
+  
+  public EquipmentConfig getEquipment() { return equipment; }
+  public void setEquipment(EquipmentConfig equipment) { this.equipment = equipment; }
   
   public String getEntityType() { return entityType; }
   public void setEntityType(String entityType) { this.entityType = entityType; }
@@ -45,11 +58,17 @@ public class NPCTemplateData {
   public String getDescription() { return description; }
   public void setDescription(String description) { this.description = description; }
   
+  public String getFaction() { return faction; }
+  public void setFaction(String faction) { this.faction = faction; }
+  
   public SkinConfig getSkin() { return skin; }
   public void setSkin(SkinConfig skin) { this.skin = skin; }
   
   public DialogConfig getDialog() { return dialog; }
   public void setDialog(DialogConfig dialog) { this.dialog = dialog; }
+  
+  public Map<String, DialogConfig> getDialogs() { return dialogs; }
+  public void setDialogs(Map<String, DialogConfig> dialogs) { this.dialogs = dialogs; }
   
   public TradingConfig getTrading() { return trading; }
   public void setTrading(TradingConfig trading) { this.trading = trading; }
@@ -94,6 +113,9 @@ public class NPCTemplateData {
     private AdditionalDialog[] additionalDialogs;
     private boolean useLLM = false;
     private String llmSystemPrompt;
+    private boolean oneTimeConversation = false;
+    private String shortDialogText = "我们之前聊过了。再见！";
+    private String shortDialogButtonLabel = "告别";
     
     public String getGreeting() { return greeting; }
     public void setGreeting(String greeting) { this.greeting = greeting; }
@@ -109,6 +131,15 @@ public class NPCTemplateData {
     
     public String getLlmSystemPrompt() { return llmSystemPrompt; }
     public void setLlmSystemPrompt(String llmSystemPrompt) { this.llmSystemPrompt = llmSystemPrompt; }
+    
+    public boolean isOneTimeConversation() { return oneTimeConversation; }
+    public void setOneTimeConversation(boolean oneTimeConversation) { this.oneTimeConversation = oneTimeConversation; }
+    
+    public String getShortDialogText() { return shortDialogText; }
+    public void setShortDialogText(String shortDialogText) { this.shortDialogText = shortDialogText; }
+    
+    public String getShortDialogButtonLabel() { return shortDialogButtonLabel; }
+    public void setShortDialogButtonLabel(String shortDialogButtonLabel) { this.shortDialogButtonLabel = shortDialogButtonLabel; }
   }
   
   /**
@@ -116,6 +147,7 @@ public class NPCTemplateData {
    */
   public static class DialogButton {
     private String label;
+    private String id;
     private String action;
     private String condition;
     
@@ -128,6 +160,9 @@ public class NPCTemplateData {
     
     public String getLabel() { return label; }
     public void setLabel(String label) { this.label = label; }
+
+    public String getId() { return id; }
+    public void setId(String id) { this.id = id; }
     
     public String getAction() { return action; }
     public void setAction(String action) { this.action = action; }
@@ -258,6 +293,8 @@ public class NPCTemplateData {
     private boolean canFloat = true;
     private boolean canOpenDoors = true;
     private boolean canClimb = true;
+    private boolean attackableByPlayers = false;
+    private boolean attackableByMonsters = false;
     
     public int getMaxHealth() { return maxHealth; }
     public void setMaxHealth(int maxHealth) { this.maxHealth = maxHealth; }
@@ -285,6 +322,12 @@ public class NPCTemplateData {
     
     public boolean isCanClimb() { return canClimb; }
     public void setCanClimb(boolean canClimb) { this.canClimb = canClimb; }
+    
+    public boolean isAttackableByPlayers() { return attackableByPlayers; }
+    public void setAttackableByPlayers(boolean attackableByPlayers) { this.attackableByPlayers = attackableByPlayers; }
+    
+    public boolean isAttackableByMonsters() { return attackableByMonsters; }
+    public void setAttackableByMonsters(boolean attackableByMonsters) { this.attackableByMonsters = attackableByMonsters; }
   }
   
   /**
@@ -319,6 +362,60 @@ public class NPCTemplateData {
     
     public String[] getTargetEntityTypes() { return targetEntityTypes; }
     public void setTargetEntityTypes(String[] targetEntityTypes) { this.targetEntityTypes = targetEntityTypes; }
+
+    // Custom Attack config
+    private boolean useCustomAttack = false;
+    private boolean isFullAuto = false;
+    private double attackRadius = 32.0;
+
+    public boolean isUseCustomAttack() { return useCustomAttack; }
+    public void setUseCustomAttack(boolean useCustomAttack) { this.useCustomAttack = useCustomAttack; }
+
+    public boolean isFullAuto() { return isFullAuto; }
+    public void setFullAuto(boolean isFullAuto) { this.isFullAuto = isFullAuto; }
+
+    public double getAttackRadius() { return attackRadius; }
+    public void setAttackRadius(double attackRadius) { this.attackRadius = attackRadius; }
+    
+    // Faction-based targeting
+    private boolean attackHostileFactions = false;
+    private String[] hostileFactions;
+    
+    public boolean isAttackHostileFactions() { return attackHostileFactions; }
+    public void setAttackHostileFactions(boolean attackHostileFactions) { this.attackHostileFactions = attackHostileFactions; }
+    
+    public String[] getHostileFactions() { return hostileFactions; }
+    public void setHostileFactions(String[] hostileFactions) { this.hostileFactions = hostileFactions; }
+  }
+  
+  /**
+   * Equipment configuration.
+   */
+  public static class EquipmentConfig {
+    private ItemStack mainHand;
+    private ItemStack offHand;
+    private ItemStack head;
+    private ItemStack chest;
+    private ItemStack legs;
+    private ItemStack feet;
+    
+    public ItemStack getMainHand() { return mainHand; }
+    public void setMainHand(ItemStack mainHand) { this.mainHand = mainHand; }
+    
+    public ItemStack getOffHand() { return offHand; }
+    public void setOffHand(ItemStack offHand) { this.offHand = offHand; }
+    
+    public ItemStack getHead() { return head; }
+    public void setHead(ItemStack head) { this.head = head; }
+    
+    public ItemStack getChest() { return chest; }
+    public void setChest(ItemStack chest) { this.chest = chest; }
+    
+    public ItemStack getLegs() { return legs; }
+    public void setLegs(ItemStack legs) { this.legs = legs; }
+    
+    public ItemStack getFeet() { return feet; }
+    public void setFeet(ItemStack feet) { this.feet = feet; }
   }
   
   /**
@@ -367,5 +464,23 @@ public class NPCTemplateData {
     
     public String getCondition() { return condition; }
     public void setCondition(String condition) { this.condition = condition; }
+  }
+
+  /**
+   * Drop configuration.
+   */
+  public static class DropConfig {
+    private ItemStack item;
+    private float chance = 1.0f;
+    private boolean playerKillOnly = true;
+
+    public ItemStack getItem() { return item; }
+    public void setItem(ItemStack item) { this.item = item; }
+
+    public float getChance() { return chance; }
+    public void setChance(float chance) { this.chance = chance; }
+
+    public boolean isPlayerKillOnly() { return playerKillOnly; }
+    public void setPlayerKillOnly(boolean playerKillOnly) { this.playerKillOnly = playerKillOnly; }
   }
 }

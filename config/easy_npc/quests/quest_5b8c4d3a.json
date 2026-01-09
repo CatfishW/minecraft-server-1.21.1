@@ -1,0 +1,15 @@
+{
+    "id": "5b8c4d3a-7e9f-4a1c-9d2b-8f3e1a0c5d6b",
+    "title": "清除变种人威胁",
+    "description": "钢铁兄弟会需要清理这片区域的变种人。确保你的能量护甲已经充能，准备好激光步枪。为了钢铁兄弟会！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

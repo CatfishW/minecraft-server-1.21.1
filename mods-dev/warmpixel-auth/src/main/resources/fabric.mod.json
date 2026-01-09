@@ -1,0 +1,30 @@
+{
+    "schemaVersion": 1,
+    "id": "novus_auth",
+    "version": "${version}",
+    "name": "Warm Pixel Auth",
+    "description": "A robust registration system for Warm Pixel.",
+    "authors": [
+        "Antigravity"
+    ],
+    "contact": {},
+    "license": "MIT",
+    "icon": "assets/novus_auth/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.novus.auth.NovusAuth"
+        ],
+        "client": [
+            "com.novus.auth.client.NovusAuthClient"
+        ]
+    },
+    "mixins": [
+        "novus_auth.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.18.3",
+        "minecraft": "~1.21.1",
+        "fabric-api": "*"
+    }
+}

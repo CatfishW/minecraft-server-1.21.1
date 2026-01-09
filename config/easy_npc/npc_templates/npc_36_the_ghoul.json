@@ -1,0 +1,153 @@
+{
+    "name": "§dThe Ghoul",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Cooper Howard. Bounty hunter mutant.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/TheGhoul.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "别靠近我，小家伙。我的眼睛能看穿你的骨头，我的手指能比你的念头更快地扣下扳机。这片废土上的每一颗子弹都有名字，而我正在寻找一些名字，一些关于我失去的过去的名字。你看起来不像是会付我钱的人，但也许你能提供一些情报。",
+            "buttons": [
+                {
+                    "label": "清理尸鬼",
+                    "action": "OPEN_QUEST_DIALOG:b44a632a-c3f9-47c1-a58a-4c9a1185573e",
+                    "id": "btn_quest_b15ae330"
+                },
+                {
+                    "label": "荒野的呼唤",
+                    "action": "OPEN_QUEST_DIALOG:c51fcd97-fc52-4ea0-b028-03bbac663fd8",
+                    "id": "btn_quest_2f3abffc"
+                },
+                {
+                    "label": "询问过去",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_past"
+                },
+                {
+                    "label": "寻求任务",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ask_work"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "过去？（他发出一声干涩的笑，像砂纸摩擦骨骼）那是比核子乐透还要昂贵的东西。在被辐射烧焦之前，我曾有过一张脸，一个家庭，甚至可以说是某种生活。但现在，我只是一具行尸走肉，靠着老维克多的发光水和复仇的念头活着。我追猎那些记得‘库珀’这个名字的人，希望他们能告诉我，是谁夺走了一切。",
+            "buttons": [
+                {
+                    "label": "提供帮助",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_offer_help"
+                },
+                {
+                    "label": "这是你的宿命",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_curse"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "帮助？（他眯起眼睛，审视着你）你连自己的生存都成问题。那些抓走我的家人、把我变成这副鬼样子的混蛋，他们穿着干净的制服，躲在防爆门后面。如果你真想帮忙，就去那片废墟里找找‘战前科技’的线索，任何关于‘融合科技’或者‘居民冷冻计划’的东西都行。那可能是通往真相的唯一钥匙。",
+            "buttons": [
+                {
+                    "label": "承诺寻找",
+                    "action": "SHOW_DIALOG:end_friendly",
+                    "id": "btn_promises"
+                },
+                {
+                    "label": "嘲讽他的执念",
+                    "action": "SHOW_DIALOG:end_hostile",
+                    "id": "btn_mock"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "宿命？在这个地狱里，宿命就是给那些放弃抵抗的人准备的墓志铭。我拒绝死，直到我把那些躲在避难所里的伪君子拖进阳光下，让他们尝尝被辐射烤焦的滋味。滚吧，别挡我的路，不然我连你身上那点肉都懒得浪费子弹。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_angry"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "工作？哼，这片废土上最不缺的就是死人和想杀活人的人。我正在追捕一个收藏家，一个专门收集‘活标本’的变态。他在新洛杉矶的废墟里建立了一个动物园，里面关着各种稀奇古怪的变种人。如果你能帮我把那个混蛋从他的龟壳里引出来，我可以分你一点战利品——前提是你的尸体还完整。",
+            "buttons": [
+                {
+                    "label": "接受诱饵任务",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_accept_bait"
+                },
+                {
+                    "label": "拒绝送死",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_refuse_bait"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "有胆量。去那个挂着红色旗子的废墟，大声喊你的名字，直到那些穿着皮衣的走狗出来抓你。我会在阴影里盯着，等他们把你塞进卡车的时候，我就从后面敲碎他们的脊椎。别让我失望，不然你就是下一个‘标本’。",
+            "buttons": [
+                {
+                    "label": "准备行动",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go_action"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "软弱的废物。在这个世界，拒绝风险就等于选择了缓慢的饥饿。滚开，别浪费我的时间。我的扳机手指已经开始发痒了。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_coward"
+                }
+            ]
+        },
+        "end_friendly": {
+            "greeting": "好吧，保持安静，保持警惕。如果你找到了关于‘31号避难所’或者那个金发女人的线索，去钻石城或者铁路上的任何酒吧找我。别耍花招，我嗅得出谎言的味道。现在，滚吧，让我一个人待会儿。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_peacefully"
+                }
+            ]
+        },
+        "end_hostile": {
+            "greeting": "执念是驱动我这副腐烂身躯的燃料。如果你不想帮忙就滚，别在我面前摆出那副高高在上的嘴脸。再不滚，我就把你做成诱饵。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_humiliated"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_shovel",
+            "count": 1
+        }
+    }
+}

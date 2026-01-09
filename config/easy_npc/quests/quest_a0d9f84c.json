@@ -1,0 +1,15 @@
+{
+    "id": "a0d9f84c-1b2e-4f3a-9c8b-3e7d5a1c9b02",
+    "title": "乐观的开端",
+    "description": "嘿！我是Lucy。Okey dokey！我需要一把木镐来扩建避难所，你能帮我制作一把吗？",
+    "objective": {
+        "type": "CRAFT",
+        "target": "minecraft:wooden_pickaxe",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

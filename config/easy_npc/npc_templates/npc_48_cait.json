@@ -1,0 +1,128 @@
+{
+    "name": "§dCait",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Irish cage fighter. Tough.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Cait.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "看什么看？想找茬是吗？我告诉你，我可是全联邦最硬的拳头。以前在那个该死的笼子里，每天都要把别人打个半死，或者被别人打个半死。如果你想挑战我，先掂量掂量自己的骨头够不够硬。",
+            "buttons": [
+                {
+                    "label": "格斗家的试炼",
+                    "action": "OPEN_QUEST_DIALOG:e2456256-3e58-461d-bf15-11228e7938d4",
+                    "id": "btn_quest_556b395e"
+                },
+                {
+                    "label": "铁笼热身",
+                    "action": "OPEN_QUEST_DIALOG:5b314e0d-5d35-4b0c-b41b-bb3d982d9462",
+                    "id": "btn_quest_571919fa"
+                },
+                {
+                    "label": "铁匠的委托",
+                    "action": "OPEN_QUEST_DIALOG:25629e12-7010-41a5-89bb-91f784ba4f4b",
+                    "id": "btn_quest_5e1d9a55"
+                },
+                {
+                    "label": "地下拳场的挑战",
+                    "action": "OPEN_QUEST_DIALOG:272c3305-59ec-46fa-adb3-680f77d0270a",
+                    "id": "btn_quest_5c1866d5"
+                },
+                {
+                    "label": "你以前是打黑拳的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_cage_fight"
+                },
+                {
+                    "label": "我想和你比划比划",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_fight"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "没错，为了几个瓶盖卖命。那是爱尔兰贫民窟的日子，后来到了这里。除了拳头，我什么都没有。你知道那种感觉吗？身体里的毒素……不管是化学毒品还是别的什么，让你觉得自己像个废物。但我现在戒了，纯粹靠这双手。",
+            "buttons": [
+                {
+                    "label": "你很坚强",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_strong"
+                },
+                {
+                    "label": "现在的你看起来很危险",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "哈！你认真的？行啊，我成全你。不过先说好，要是断了胳膊腿的，我可不会给你找医生。来吧，摆好架势！让我看看你是不是像你的嘴巴那么硬！",
+            "buttons": [
+                {
+                    "label": "放马过来！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go"
+                },
+                {
+                    "label": "我突然想起有急事",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_flee"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "坚强？那是被逼出来的。但我现在开始觉得，也许我能活得像个人样了。虽然这废土也没比那个铁笼子好多少。如果你有需要动手的活儿，尽管找我。至少我的拳头比那些生锈的枪管好使。",
+            "buttons": [
+                {
+                    "label": "很高兴能有你做搭档",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_partners"
+                },
+                {
+                    "label": "你为什么不再碰那些药了？",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_ask_drugs"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "那些药……它们夺走了我太多东西，让我分不清谁是朋友谁是猎物。我讨厌那种失控的感觉。现在我只相信我的本能和我的拳头。只要我还能感觉到疼痛，我就知道自己还活着。",
+            "buttons": [
+                {
+                    "label": "保持这种状态",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_keep_it"
+                },
+                {
+                    "label": "跟我来，去发泄一下",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_vent"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

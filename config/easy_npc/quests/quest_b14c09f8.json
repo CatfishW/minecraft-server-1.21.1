@@ -1,0 +1,15 @@
+{
+    "id": "b14c09f8-673d-4a5c-821e-5b19a3c7b1a3",
+    "title": "安全第一，嘿！",
+    "description": "噢，天哪！这些僵尸让我没法安心晒太阳。能不能麻烦你清理几只？Okey dokey！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

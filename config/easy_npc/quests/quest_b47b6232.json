@@ -1,0 +1,15 @@
+{
+    "id": "b47b6232-54b4-42a5-8a40-623b6c2a3c21",
+    "title": "清理门户",
+    "description": "那个叫Henry的家伙知道的太多了，干掉他。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 500,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

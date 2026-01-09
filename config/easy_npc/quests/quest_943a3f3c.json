@@ -1,0 +1,15 @@
+{
+    "id": "943a3f3c-1f4a-4d28-9469-64a1069239a5",
+    "title": "地狱火的试炼",
+    "description": "地狱火俱乐部需要燃料来演奏金属。去杀20只僵尸，证明你对黑暗力量的忠诚！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

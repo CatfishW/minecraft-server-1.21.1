@@ -1,0 +1,15 @@
+{
+    "id": "0e492226-03f6-40b6-9f4f-7d4405858f1b",
+    "title": "绝赞的机械神教",
+    "description": "嘿，那边那个拿着扳手的。我是Robin，科学天才。我的冰淇淋机坏了，但我有个更好的主意——造个‘全自动冰淇淋机器人’。但我懒得自己去挖矿。去给我弄点铁锭和红石，让那些呆头呆脑的僵尸见识下科技的力量。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

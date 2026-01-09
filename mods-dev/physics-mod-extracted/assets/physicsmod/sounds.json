@@ -1,0 +1,14 @@
+{
+  "wind": {
+    "sounds": [
+      "physicsmod:wind"
+    ]
+  },
+  "splash_sound": {
+  	"sounds": [
+      "physicsmod:splash_0",
+      "physicsmod:splash_1",
+      "physicsmod:splash_2"
+    ]
+  }
+}

@@ -51,8 +51,29 @@ public class ConditionUtils {
     return switch (conditionDataEntry.conditionType()) {
       case SCOREBOARD -> evaluateScoreboardCondition(conditionDataEntry, player);
       case EXECUTION_LIMIT -> evaluateExecutionLimit(conditionDataEntry, player, actionUUID);
+      case QUEST_NOT_ACCEPTED -> evaluateQuestNotAccepted(conditionDataEntry, player);
       case NONE -> true;
     };
+  }
+
+  public static boolean evaluateQuestNotAccepted(ConditionDataEntry conditionDataEntry, ServerPlayer player) {
+      if (player == null) return false;
+      de.markusbordihn.easynpc.data.quest.QuestProgressTracker tracker = de.markusbordihn.easynpc.data.quest.QuestProgressTracker.get(player.serverLevel());
+      java.util.Map<UUID, de.markusbordihn.easynpc.data.quest.QuestProgressTracker.QuestProgressEntry> playerQuests = tracker.getPlayerQuests(player.getUUID());
+      
+      // If we have a quest ID in the name/text field, check for that specific quest
+      if (conditionDataEntry.hasName()) {
+          try {
+              UUID questId = UUID.fromString(conditionDataEntry.name());
+              return !playerQuests.containsKey(questId);
+          } catch (IllegalArgumentException e) {
+              // Not a UUID, fallback to general check
+          }
+      }
+      
+      // General check: if player has NO active/completed quests (this might be too broad)
+      // For now, if no ID provided, we assume it's true if no quests are tracked for this player
+      return playerQuests.isEmpty();
   }
 
   public static boolean evaluateConditions(

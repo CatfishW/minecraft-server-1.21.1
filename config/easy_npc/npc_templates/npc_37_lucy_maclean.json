@@ -1,0 +1,173 @@
+{
+    "name": "§dLucy MacLean",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Optimistic vault dweller. Okey dokey.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/LucyMacLean.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿！你好！哦，天哪，见到一个活生生的人真是太好了！我是露西·麦克莱恩，来自33号避难所。我出来是为了寻找一些……嗯，一些能让我们的水源过滤器重新运作的东西。外面的世界虽然有点……脏乱，但我相信只要我们互相帮助，一切都会好起来的。你看起来像个好人，对吧？",
+            "buttons": [
+                {
+                    "label": "乐观的开端",
+                    "action": "OPEN_QUEST_DIALOG:a0d9f84c-1b2e-4f3a-9c8b-3e7d5a1c9b02",
+                    "id": "btn_quest_89a8ac99"
+                },
+                {
+                    "label": "发掘希望",
+                    "action": "OPEN_QUEST_DIALOG:59a4ed05-252e-4d10-8a82-e4d141b7e913",
+                    "id": "btn_quest_6015cb79"
+                },
+                {
+                    "label": "荒野的小小威胁",
+                    "action": "OPEN_QUEST_DIALOG:a9ce0397-8d82-47f4-a035-39c38ca5a339",
+                    "id": "btn_quest_680e295c"
+                },
+                {
+                    "label": "询问避难所",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_vault"
+                },
+                {
+                    "label": "询问需要",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ask_help"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "33号避难所？哦，它很棒！虽然有点狭窄，但每个人都很友善。我的爸爸是那里的负责人，他教我要乐观，要有信任感。但是……（她的声音稍微低沉了一些）最近发生了一些奇怪的事情。有人破坏了我们的设备，还有一些……奇怪的访客。所以我必须出来，这不仅是为了任务，也是为了证明我可以独立处理事情。",
+            "buttons": [
+                {
+                    "label": "给予鼓励",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_encourage"
+                },
+                {
+                    "label": "提醒废土危险",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_warn"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "谢谢你的鼓励！你知道吗，我爸爸也总是这么说。只要心中有光，就能照亮前路。我打算去附近的废墟寻找一些铜线和旧电路板。如果你愿意帮我一起找，我们可以更快完成任务，然后我请你去避难所吃好吃的‘变异甲虫排’！虽然味道有点怪，但绝对是真材实料！",
+            "buttons": [
+                {
+                    "label": "乐意效劳",
+                    "action": "SHOW_DIALOG:end_friendly",
+                    "id": "btn_agree_help"
+                },
+                {
+                    "label": "拒绝食物",
+                    "action": "SHOW_DIALOG:end_neutral",
+                    "id": "btn_refuse_food"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "废土确实很危险，这我知道。我见过那些把人当做大腿肉的食尸鬼，也见过为了半瓶水就开枪的人。但我不能因为害怕就退缩。我的人民还在等着我，我的父亲也在看着我。我必须学会适应，哪怕这意味着要学会使用这个（她晃了晃腰间的动能手枪）。",
+            "buttons": [
+                {
+                    "label": "教她瞄准",
+                    "action": "SHOW_DIALOG:story_1_2_1",
+                    "id": "btn_teach"
+                },
+                {
+                    "label": "祝她好运",
+                    "action": "SHOW_DIALOG:end_neutral",
+                    "id": "btn_wish_luck"
+                }
+            ]
+        },
+        "story_1_2_1": {
+            "greeting": "真的吗？你愿意教我？哦，太好了！我看过手册，但实际操作起来手总是抖。你看，我应该这样握持吗？还是说我的肩膀太紧绷了？（她摆出一个笨拙但认真的射击姿势）没关系，我会学得很快的，我可是优等生！",
+            "buttons": [
+                {
+                    "label": "实战演练",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_practice"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我需要很多东西！首先是铜线，用来修复断路器。还有……呃，一些干净的绷带？我们在避难所里的医疗储备不多了。哦对了，如果你能搞到一本《核子乐透》的旧杂志，我爸爸会很开心的！他以前总是念叨着要中奖。这听起来是不是有点贪心？",
+            "buttons": [
+                {
+                    "label": "承诺寻找铜线",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_fetch_copper"
+                },
+                {
+                    "label": "承诺寻找医疗",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_fetch_med"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "太棒了！铜线通常在旧电子设备里，比如那些被炸毁的收音机或者终端机里。如果你能找到足够多的，我们的饮水净化器就能重新全速运转了。谢谢你，你真是个好人！这就是所谓的‘废土友谊’吗？",
+            "buttons": [
+                {
+                    "label": "告别",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "医疗用品？那太重要了！尤其是抗生素和止痛药。我们有一些受伤的居民，虽然我爸爸尽力了，但他不是专业的医生。如果你能找到这些，你就是33号避难所的英雄！我会为你准备一个盛大的……好吧，可能只是小小的欢迎会，但心意绝对满满的！",
+            "buttons": [
+                {
+                    "label": "告别",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye_2"
+                }
+            ]
+        },
+        "end_friendly": {
+            "greeting": "真的吗？你愿意和我一起去？哦，这简直太棒了！有人作伴感觉安全多了。走吧，我知道一个地方，那里可能有我们要找的东西。保持警惕，但也别忘了享受风景！这废土在夕阳下其实还挺……壮观的？至少我是这么觉得的！",
+            "buttons": [
+                {
+                    "label": "一起出发",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go_together"
+                }
+            ]
+        },
+        "end_neutral": {
+            "greeting": "好吧，我明白了。不管怎样，谢谢你的建议和信息。我会小心的。如果我们在废土上再次相遇，记得打个招呼哦！保持乐观，再见！",
+            "buttons": [
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_axe",
+            "count": 1
+        }
+    }
+}

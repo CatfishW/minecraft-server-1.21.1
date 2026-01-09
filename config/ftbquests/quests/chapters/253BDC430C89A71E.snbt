@@ -1,0 +1,24 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "253BDC430C89A71E"
+	group: "6A83FBBB746164FB"
+	icon: {
+		id: "automobility:automobile"
+	}
+	id: "253BDC430C89A71E"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "200B02B1D397A1A3"
+		shape: "square"
+		size: 5.0d
+		tasks: [{
+			id: "3125DD860A871E07"
+			item: { count: 1, id: "automobility:crowbar" }
+			type: "item"
+		}]
+		x: 12.5d
+		y: 9.0d
+	}]
+}

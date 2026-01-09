@@ -176,35 +176,66 @@ public class AttackHandler {
     try {
       Class<?> iGunClass = Class.forName("com.tacz.guns.api.item.IGun");
       if (iGunClass.isInstance(itemStack.getItem())) {
+        // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.info("AttackHandler: Item {} is a TACZ Gun.", itemStack.getItem());
         Class<?> iGunOperatorClass = Class.forName("com.tacz.guns.api.entity.IGunOperator");
         if (iGunOperatorClass.isInstance(livingEntity)) {
+          // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.info("AttackHandler: Entity {} is an IGunOperator.", livingEntity);
+          
           // Ensure data initialization
           java.lang.reflect.Method getDataHolderMethod = iGunOperatorClass.getMethod("getDataHolder");
           Object dataHolder = getDataHolderMethod.invoke(livingEntity);
           java.lang.reflect.Field currentGunItemField = dataHolder.getClass().getField("currentGunItem");
           if (currentGunItemField.get(dataHolder) == null) {
+              // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.info("AttackHandler: Initializing gun data for entity.");
               java.lang.reflect.Method initialDataMethod = iGunOperatorClass.getMethod("initialData");
               initialDataMethod.invoke(livingEntity);
           }
+          
           // Look at target
           if (livingEntity instanceof net.minecraft.world.entity.Mob mob) {
             mob.getLookControl().setLookAt(livingEntityTarget, 30.0F, 30.0F);
           }
 
+          // Auto-Reload / Infinite Ammo Logic
+          net.minecraft.world.item.component.CustomData customData = itemStack.get(DataComponents.CUSTOM_DATA);
+          if (customData != null) {
+            net.minecraft.nbt.CompoundTag tag = customData.copyTag();
+            if (tag.contains("GunCurrentAmmoCount")) {
+              int currentAmmo = tag.getInt("GunCurrentAmmoCount");
+              if (currentAmmo <= 0) {
+                 // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.info("AttackHandler: Ammo empty, reloading/refilling.");
+                 // Refill to 30 or similar. Ideally should be max ammo but hardcoded for safety is better than 0.
+                 tag.putInt("GunCurrentAmmoCount", 30);
+                 tag.putBoolean("HasBulletInBarrel", true);
+                 itemStack.set(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
+              }
+            } else {
+               // Initial fill if missing
+               // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.info("AttackHandler: Ammo tag missing, initializing.");
+               tag.putInt("GunCurrentAmmoCount", 30);
+               tag.putBoolean("HasBulletInBarrel", true);
+               itemStack.set(DataComponents.CUSTOM_DATA, net.minecraft.world.item.component.CustomData.of(tag));
+            }
+          }
+
           // Call shoot(Supplier<Float> pitch, Supplier<Float> yaw)
+          // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.debug("AttackHandler: Calling shoot method.");
           java.lang.reflect.Method shootMethod =
               iGunOperatorClass.getMethod(
                   "shoot", java.util.function.Supplier.class, java.util.function.Supplier.class);
           java.util.function.Supplier<Float> pitchSupplier = livingEntity::getXRot;
           java.util.function.Supplier<Float> yawSupplier = livingEntity::getYRot;
-          shootMethod.invoke(livingEntity, pitchSupplier, yawSupplier);
+          Object result = shootMethod.invoke(livingEntity, pitchSupplier, yawSupplier);
+          // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.debug("AttackHandler: Shoot method result: {}", result);
           return;
+        } else {
+             // de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.warn("AttackHandler: Entity {} is NOT an IGunOperator.", livingEntity);
         }
       }
     } catch (Exception e) {
-      // TACZ not present or error
+      de.markusbordihn.easynpc.entity.easynpc.EasyNPC.log.error("AttackHandler: Error handling TACZ gun attack: {}", e.getMessage(), e);
     }
-
+    
     // Default behavior for other items: use them or perform standard ranged attack
     if (itemStack.getItem() instanceof net.minecraft.world.item.ProjectileWeaponItem) {
       performDefaultRangedAttack(livingEntity, livingEntityTarget, damage);

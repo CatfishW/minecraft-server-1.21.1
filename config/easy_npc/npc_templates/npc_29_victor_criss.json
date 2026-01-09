@@ -1,0 +1,128 @@
+{
+    "name": "§bVictor Criss",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Henry's reluctant follower.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/VictorCriss.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "听着，我...我只是跟着Henry转转。我可不想惹麻烦。你看到Belch了吗？我们刚分开没多久。这镇子最近怪事太多了，我有点想回家。Henry说我们要去把比尔那群人吓个半死，但我总觉得心里发毛。",
+            "buttons": [
+                {
+                    "label": "寻找亨利",
+                    "action": "OPEN_QUEST_DIALOG:2f4b8c1a-3e7d-4f2a-9b6c-8e5d4a1f2c9b",
+                    "id": "btn_quest_ea6ed83b"
+                },
+                {
+                    "label": "违反原则的交易",
+                    "action": "OPEN_QUEST_DIALOG:ae565ed1-1d31-4477-8d78-0191570c521c",
+                    "id": "btn_quest_2d980cc4"
+                },
+                {
+                    "label": "你觉得怪事是指什么？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_weird"
+                },
+                {
+                    "label": "Henry看起来很吓人",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_henry_scary"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "就是...到处都是血。死老鼠，死鸟，还有那个失踪的小男孩Georgie。最可怕的是，我好像在水里见过他...就在路边的水坑里。但那是幻觉对吧？我肯定是压力太大了。",
+            "buttons": [
+                {
+                    "label": "也许是某种诅咒",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_curse"
+                },
+                {
+                    "label": "别自己吓自己",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_deny"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "他越来越不对劲了。自从他爹把他关进狗笼子之后，他就疯了。现在他整天说着要杀了谁谁谁。还有Patrick，那家伙简直就是个变态。我真不想跟他们混在一起，但我不敢离开。",
+            "buttons": [
+                {
+                    "label": "Belch会保护你吗？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_belch"
+                },
+                {
+                    "label": "为什么不试着逃走？",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_escape"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "Belch？Belch只听Henry的。再说了，那东西能钻进你的脑子里。我昨晚做梦，梦见它了。一个穿着破烂衣服的小丑，手里拿着红气球。它就在下水道里，它在笑，它的嘴裂到了耳朵根。",
+            "buttons": [
+                {
+                    "label": "听起来很可怕",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_terrifying"
+                },
+                {
+                    "label": "也许只是个噩梦",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_dream"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "我不敢！Henry会打死我的！哦天哪，听！那是谁的声音？听起来像是Belch！他在惨叫！就在那边的排水口！我听到了！",
+            "buttons": [
+                {
+                    "label": "快去看看！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_go"
+                },
+                {
+                    "label": "别去，快跑！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_flee"
+                }
+            ]
+        },
+        "bad_end": {
+            "greeting": "是Belch的口哨声...他在求救！那不是他平常的调子！天啊，排水口里有光...红色的光。它看到我了！救救我！我不想死！",
+            "buttons": [
+                {
+                    "label": "...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:clock",
+            "count": 1
+        }
+    }
+}

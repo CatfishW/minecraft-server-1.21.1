@@ -1,0 +1,168 @@
+{
+    "name": "§aMurray Bauman",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Conspiracy theorist. Speaks Russian.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MurrayBauman.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（他警惕地从角落探出头，手里拿着一把改装过的弩）站住！口令！... 好吧，看来你不是他们派来的。小心点，朋友，这地方到处都是眼睛。我在我的藏身处装了传感器，你触发了警报。",
+            "buttons": [
+                {
+                    "label": "寻找亨利",
+                    "action": "OPEN_QUEST_DIALOG:5e735d84-38e5-4e4f-ba23-112a3f57281a",
+                    "id": "btn_quest_e5c76094"
+                },
+                {
+                    "label": "边境密语",
+                    "action": "OPEN_QUEST_DIALOG:5d449f77-09b8-4510-b93a-a64e421d8e2f",
+                    "id": "btn_quest_e9e19877"
+                },
+                {
+                    "label": "绝对的深度挖掘",
+                    "action": "OPEN_QUEST_DIALOG:9c4e1520-9405-4d8a-8a3a-1e7808485787",
+                    "id": "btn_quest_c7a972c2"
+                },
+                {
+                    "label": "窃听风暴",
+                    "action": "OPEN_QUEST_DIALOG:1e97531b-9927-4ced-97a2-b052970e2520",
+                    "id": "btn_quest_5b521f8d"
+                },
+                {
+                    "label": "谁派来的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_murray_start"
+                },
+                {
+                    "label": "你太紧张了。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_murray_nervous"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "（压低声音）还能有谁？那个影子议会，或者是那个所谓的‘系统’。听着，我们正在被监视。这些方块... 它们不是死的。它们记录我们的一举一动，然后上传到某个中央服务器。这是一个巨大的阴谋！",
+            "buttons": [
+                {
+                    "label": "影子议会？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_murray_council"
+                },
+                {
+                    "label": "你有证据吗？",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_murray_proof"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "没错，一群躲在幕后的控制狂。他们操纵天气，制造怪物，就是为了让我们陷入恐慌，从而控制我们的心智。我在地下室发现过他们的通讯记录，虽然大部分都被加密了，但我破解了一部分。",
+            "buttons": [
+                {
+                    "label": "你是怎么知道的？",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_how"
+                },
+                {
+                    "label": "这太疯狂了。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_crazy"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "证据？等你看到证据就晚了！但我有我的渠道。我截获过一段高频信号，里面提到了‘坐标锁定’和‘清理协议’。如果我没猜错，他们打算把这一片区域彻底格式化。我们得赶紧行动。",
+            "buttons": [
+                {
+                    "label": "我们要怎么做？",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_plan"
+                },
+                {
+                    "label": "也许是你搞错了。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_wrong"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "紧张是生存的本能！我年轻时在克格勃训练营待过，我知道什么叫真正的危险。这种无声的恐惧，比真枪实弹更可怕。我见过人们在毫无防备的情况下消失，连尸体都找不到。",
+            "buttons": [
+                {
+                    "label": "克格勃？你是间谍？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_murray_spy"
+                },
+                {
+                    "label": "这里确实很诡异。",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_murray_creepy"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "曾经是，现在只是个被遗忘的老人。但我的技能还没生锈。如果我们要对抗那个‘系统’，你需要我这样的人。我懂密码，懂潜行，还懂怎么在没有补给的情况下生存三个月。",
+            "buttons": [
+                {
+                    "label": "我们需要你。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_need"
+                },
+                {
+                    "label": "你的过去很复杂。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_past"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "诡异？这是委婉的说法。这是‘非自然’。这里的物理法则不适用，时间流速也不对劲。我怀疑我们其实处于一个虚拟实境中，或者是一个巨大的实验场。就像《楚门的世界》，但更糟糕。",
+            "buttons": [
+                {
+                    "label": "我们要怎么逃出去？",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_escape"
+                },
+                {
+                    "label": "我会小心的。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_murray_careful"
+                }
+            ]
+        },
+        "story_conclusion": {
+            "greeting": "嘘... 我听到了脚步声。可能是巡逻的机器人。你得走了，沿着这条地道往南走，那里有个安全屋。如果想找我，就在午夜时分，在最高的山峰上点燃三堆篝火。记住，不要相信任何人！",
+            "buttons": [
+                {
+                    "label": "明白了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_murray_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_pickaxe",
+            "count": 1
+        }
+    }
+}

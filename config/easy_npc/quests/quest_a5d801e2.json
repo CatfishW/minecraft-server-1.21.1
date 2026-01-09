@@ -1,0 +1,15 @@
+{
+    "id": "a5d801e2-4c4f-45a3-959c-222c7329e1b4",
+    "title": "扫除障碍",
+    "description": "亨利那个爱管闲事的家伙挡了我的路。去，把这堆腐肉交给他，让他滚远点。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

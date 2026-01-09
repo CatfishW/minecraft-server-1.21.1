@@ -20,17 +20,22 @@
 package de.markusbordihn.easynpc;
 
 import de.markusbordihn.easynpc.client.ClientEventHandler;
+import de.markusbordihn.easynpc.client.ModKeyBindings;
 import de.markusbordihn.easynpc.client.model.ModModelLayer;
 import de.markusbordihn.easynpc.client.renderer.BlockEntityRenderer;
 import de.markusbordihn.easynpc.client.renderer.EntityRenderer;
+import de.markusbordihn.easynpc.client.renderer.SpawnRectRenderer;
+import de.markusbordihn.easynpc.client.renderer.SpawnTimerOverlay;
 import de.markusbordihn.easynpc.client.screen.ClientScreens;
 import de.markusbordihn.easynpc.entity.LivingEntityEventHandler;
 import de.markusbordihn.easynpc.network.NetworkHandlerManager;
 import de.markusbordihn.easynpc.network.NetworkHandlerManagerType;
 import de.markusbordihn.easynpc.network.NetworkMessageHandlerManager;
 import de.markusbordihn.easynpc.network.ServerNetworkMessageHandler;
+import de.markusbordihn.easynpc.network.message.client.QuestProgressSyncMessage;
 import de.markusbordihn.easynpc.tabs.ModTabs;
 import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -42,10 +47,22 @@ public class EasyNPCClient implements ClientModInitializer {
   public void onInitializeClient() {
     log.info("Initializing {} (Fabric-Client) ...", Constants.MOD_NAME);
 
+    log.info("{} Constants ...", Constants.LOG_REGISTER_PREFIX);
+    Constants.CONFIG_DIR = FabricLoader.getInstance().getConfigDir();
+
+    log.info("{} Quests ...", Constants.LOG_REGISTER_PREFIX);
+    de.markusbordihn.easynpc.data.quest.QuestManager.loadQuests(Constants.CONFIG_DIR.resolve(Constants.MOD_ID).resolve("quests"));
+
     log.info("{} Renderer ...", Constants.LOG_REGISTER_PREFIX);
     BlockEntityRenderer.register();
     BlockEntityRenderer.registerRenderLayers();
     EntityRenderer.register();
+    SpawnRectRenderer.register();
+    SpawnTimerOverlay.register();
+    de.markusbordihn.easynpc.client.renderer.QuestOverlay.register();
+
+    log.info("{} Keybindings ...", Constants.LOG_REGISTER_PREFIX);
+    ModKeyBindings.register();
 
     log.info("{} Entity Layer Definitions ...", Constants.LOG_REGISTER_PREFIX);
     ModModelLayer.registerEntityLayerDefinitions();

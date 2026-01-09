@@ -1,0 +1,253 @@
+{
+    "name": "§cOverseer Hank",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Overseer of Vault 33. Has secrets.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/OverseerHank.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎，我是汉克，33号避难所的监督。虽然这里不是你的家，但只要你遵守规矩，我允许你在此短暂停留。外面的世界充满了混乱与毁灭，而这里代表着秩序与希望。我们肩负着重建文明的重任，每一份资源都必须精打细算。你看起来很困惑，是有什么关于避难所的问题吗？",
+            "buttons": [
+                {
+                    "label": "来自阴影的命令",
+                    "action": "OPEN_QUEST_DIALOG:a301f0c8-4e1d-4c53-b24e-86b663552271",
+                    "id": "btn_quest_7e89ac11"
+                },
+                {
+                    "label": "清除威胁",
+                    "action": "OPEN_QUEST_DIALOG:9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+                    "id": "btn_quest_86e34087"
+                },
+                {
+                    "label": "尘封的密道",
+                    "action": "OPEN_QUEST_DIALOG:179ba5b8-90c3-4971-83eb-7743092ff0bd",
+                    "id": "btn_quest_7c315e08"
+                },
+                {
+                    "label": "肃清穹顶",
+                    "action": "OPEN_QUEST_DIALOG:0ddd180d-fdc0-463b-b484-4e355cab0097",
+                    "id": "btn_quest_81eaa183"
+                },
+                {
+                    "label": "询问职责",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_duty"
+                },
+                {
+                    "label": "询问最近的袭击",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ask_attack"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "作为监督，我的职责是确保所有居民的生存与繁衍。这包括分配食物、水、空气，以及维护休眠仓的稳定。虽然这听起来很枯燥，但正是这种日复一日的秩序，让我们在大毁灭中幸存下来。有时候，为了大多数人的利益，我必须做出一些……艰难的决定。你也是领导者吗？",
+            "buttons": [
+                {
+                    "label": "同情他的压力",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_empathize"
+                },
+                {
+                    "label": "质疑他的权威",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_question"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "（他的眼神柔和了一瞬，随即又变得坚硬）谢谢你的理解。很少有人知道坐在这个位置上的孤独。外面的世界变得更加危险了，不仅仅是辐射和变种人，还有……那些曾经属于我们的人。为了保护33号，我必须时刻保持警惕，绝不能让过去的错误重演。",
+            "buttons": [
+                {
+                    "label": "追问‘过去’",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_ask_past_hank"
+                },
+                {
+                    "label": "表示支持",
+                    "action": "SHOW_DIALOG:end_trust",
+                    "id": "btn_support"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "（他的脸色瞬间阴沉下来）过去的事情就让它过去吧。有些秘密最好永远埋葬在防爆门之后。你只需要知道，33号避难所现在是安全的，这就够了。如果你真的想帮忙，不如去帮忙修理一下食堂的制冰机？那里的水管又冻住了。",
+            "buttons": [
+                {
+                    "label": "接受杂务",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_chore"
+                },
+                {
+                    "label": "坚持追问",
+                    "action": "SHOW_DIALOG:story_1_1_1_1",
+                    "id": "btn_insist"
+                }
+            ]
+        },
+        "story_1_1_1_1": {
+            "greeting": "（猛地拍了一下桌子，但很快控制住情绪）我说了，这是机密！不要试图挑战监督的底线。在这个避难所里，好奇心是一种危险的品质。回到大厅去，或者离开避难所。这是最后一次警告。",
+            "buttons": [
+                {
+                    "label": "服从",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_obey"
+                },
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_angry_hank"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "质疑？（他推了推眼镜，目光锐利）我的权威来自于Vault-Tec的授权和居民的信任。如果你觉得你能做得更好，欢迎你提出建设性的意见，而不是盲目的质疑。但如果你试图煽动不满，我会视你为避难所的威胁。",
+            "buttons": [
+                {
+                    "label": "平息冲突",
+                    "action": "SHOW_DIALOG:story_1_2_1",
+                    "id": "btn_peace"
+                },
+                {
+                    "label": "继续施压",
+                    "action": "SHOW_DIALOG:end_distrust",
+                    "id": "btn_pressure"
+                }
+            ]
+        },
+        "story_1_2_1": {
+            "greeting": "很好。理性和克制也是监督需要的品质。或许你真的有潜力。听着，如果你能帮我解决露西带来的那个‘访客’问题，我可以考虑给你一些额外的补给。那人是个麻烦，不能让他接触避难所的深层机密。",
+            "buttons": [
+                {
+                    "label": "询问细节",
+                    "action": "SHOW_DIALOG:story_1_2_1_1",
+                    "id": "btn_ask_details"
+                },
+                {
+                    "label": "拒绝脏活",
+                    "action": "SHOW_DIALOG:end_distrust",
+                    "id": "btn_refuse_dirty"
+                }
+            ]
+        },
+        "story_1_2_1_1": {
+            "greeting": "那个访客（这里指的是尸鬼或其他人）知道太多关于过去的事。特别是关于其他避难所的事。有些避难所的实验失败了，导致了不可控的后果。为了防止恐慌，我必须确保这些信息被‘处理’掉。你明白我的意思吗？",
+            "buttons": [
+                {
+                    "label": "明白",
+                    "action": "SHOW_DIALOG:end_dark",
+                    "id": "btn_understand"
+                },
+                {
+                    "label": "表示震惊",
+                    "action": "SHOW_DIALOG:end_distrust",
+                    "id": "btn_shocked"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "最近的袭击？（他长叹一声）那是来自22号避难所的残党。他们的监督疯了，把居民当成了实验品。现在那些幸存者变成了掠夺者，不断骚扰我们的边境。我们在尽力防御，但资源紧缺。露西在外面，我很担心她，但她坚持要证明自己。",
+            "buttons": [
+                {
+                    "label": "安慰他",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_comfort"
+                },
+                {
+                    "label": "询问22号避难所",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_ask_22"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "谢谢。露西是个好孩子，她有着那个年代少有的纯真。我希望她不要被外面的世界磨平了棱角。也许你是对的，也许我太保护她了。但如果连她都出了事，我不知道该怎么向她的母亲交代……（他突然停住，似乎说了不该说的话）",
+            "buttons": [
+                {
+                    "label": "询问母亲",
+                    "action": "SHOW_DIALOG:story_2_1_1",
+                    "id": "btn_ask_mom"
+                },
+                {
+                    "label": "给与空间",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_give_space"
+                }
+            ]
+        },
+        "story_2_1_1": {
+            "greeting": "（眼神躲闪）没什么，我只是太累了。露西的母亲……她在休眠仓里出了点‘意外’，很早就去世了。这也是为什么我如此溺爱她的原因。好了，我不该和外人谈论这些私事。你如果没事，就去忙吧。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_private"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "22号避难所……那是Vault-Tec的一个实验性设施，旨在测试极端环境下的心理承受能力。显然，实验失控了。我们不能重蹈覆辙。这就是为什么我必须严格控制这里的一切。有些真相，不知道比知道要幸福得多。",
+            "buttons": [
+                {
+                    "label": "结束对话",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_end_convo"
+                }
+            ]
+        },
+        "end_trust": {
+            "greeting": "很高兴能有一个理智的交谈对象。如果你在避难所期间有任何需要，可以直接来找我。只要是为了集体的利益，我会尽力提供帮助。请务必遵守规矩，为了我们共同的未来。",
+            "buttons": [
+                {
+                    "label": "告别",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye_hank"
+                }
+            ]
+        },
+        "end_distrust": {
+            "greeting": "看来我们的理念不合。33号避难所不欢迎潜在的破坏分子。请你离开。如果你再次试图进入，防御系统将视你为敌对目标。",
+            "buttons": [
+                {
+                    "label": "被驱逐",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_kicked_out"
+                }
+            ]
+        },
+        "end_dark": {
+            "greeting": "（他露出一丝满意的微笑，但显得阴森）很高兴你能理解‘必要性’。去吧，做好你该做的事。记住，秩序高于一切，即使是为了秩序必须弄脏双手。33号避难所会记住你的贡献。",
+            "buttons": [
+                {
+                    "label": "接受任务",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_dark"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_pickaxe",
+            "count": 1
+        }
+    }
+}

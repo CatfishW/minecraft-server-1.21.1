@@ -1,0 +1,15 @@
+{
+    "id": "a23b1f23-c12a-47e8-9b03-d64a0d02b87c",
+    "title": "迷失的纸船",
+    "description": "在雨天的喷泉旁，我折的纸船被风吹走了，你能帮我找回来吗？",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

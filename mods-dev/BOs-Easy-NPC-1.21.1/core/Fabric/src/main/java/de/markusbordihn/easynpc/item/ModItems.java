@@ -31,6 +31,7 @@ import de.markusbordihn.easynpc.item.attack.BulletItem;
 import de.markusbordihn.easynpc.item.configuration.EasyNPCPresetEmptyItem;
 import de.markusbordihn.easynpc.item.configuration.EasyNPCPresetItem;
 import de.markusbordihn.easynpc.item.configuration.MoveEasyNPCItem;
+import de.markusbordihn.easynpc.item.configuration.SpawnRectWandItem;
 import java.util.EnumMap;
 import java.util.Map;
 import net.minecraft.core.Registry;
@@ -67,6 +68,7 @@ public class ModItems {
       new EasyNPCSpawnerBlockItem(
           ModBlocks.EASY_NPC_SPAWNER_SINGLE, new Item.Properties(), SpawnerType.SINGLE_SPAWNER);
   public static final Item MOVE_EASY_NPC = new MoveEasyNPCItem(new Item.Properties());
+  public static final Item SPAWN_RECT_WAND = new SpawnRectWandItem(new Item.Properties().rarity(Rarity.UNCOMMON));
   public static final Item CUSTOM_DATA_TEST_ITEM =
       new CustomDataTestItem(new Item.Properties().stacksTo(1));
   private static final Logger log = LogManager.getLogger(Constants.LOG_NAME);
@@ -77,6 +79,7 @@ public class ModItems {
 
     log.info("{} Configuration Items ...", Constants.LOG_REGISTER_PREFIX);
     registerItem(MoveEasyNPCItem.ID, MOVE_EASY_NPC);
+    registerItem(SpawnRectWandItem.ID, SPAWN_RECT_WAND);
     registerItem(EasyNPCPresetItem.NAME, EASY_NPC_PRESET_ITEM);
     registerItem(EasyNPCPresetEmptyItem.NAME, EASY_NPC_PRESET_EMPTY_ITEM);
 

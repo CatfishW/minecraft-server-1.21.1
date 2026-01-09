@@ -1,0 +1,15 @@
+{
+    "id": "4a8b2c1d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+    "title": "保卫霍金斯",
+    "description": "我们需要清理掉镇上游荡的怪物。拿上你的武器，消灭它们！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

@@ -23,6 +23,7 @@ public enum ConditionType {
   NONE(false, false, false),
   SCOREBOARD(true, true, true),
   EXECUTION_LIMIT(false, true, false),
+  QUEST_NOT_ACCEPTED(false, false, false),
   ;
 
   private final boolean requiresName;

@@ -1,0 +1,15 @@
+{
+    "id": "a4c2904a-602d-4f6b-9794-811715638352",
+    "title": "叼回来！",
+    "description": "我闻到了...僵尸腐烂的味道。去消灭5只僵尸，证明你是最棒的猎手！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

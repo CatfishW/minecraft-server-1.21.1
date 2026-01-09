@@ -1,0 +1,15 @@
+{
+    "id": "9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
+    "title": "清理威胁",
+    "description": "附近有僵尸威胁据点安全，帮我解决掉它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

@@ -44,6 +44,7 @@
   "item.easy_npc.easy_npc_preset": "NPC Preset",
   "item.easy_npc.easy_npc_preset_empty": "Empty NPC Preset",
   "item.easy_npc.move_easy_npc": "Move EasyNPC",
+  "item.easy_npc.spawn_rect_wand": "Spawn Rect Wand",
   "item.easy_npc.custom_data_test": "Custom Data Test Item",
   "item.easy_npc.spawn_egg": "%s NPC Spawn Egg",
   "item.easy_npc.epic_fight_spawn_egg": "Epic Fight %s Spawn Egg",
@@ -63,6 +64,7 @@
   "text.easy_npc.item.easy_npc_preset.custom_name": "Name: %s",
   "text.easy_npc.item.easy_npc_preset.entity_type": "Entity Type: %s",
   "text.easy_npc.item.move_easy_npc": "Select the EasyNPC with the right mouse button and move it with the left mouse button to the targeted position.",
+  "text.easy_npc.item.spawn_rect_wand": "Right-click block to set corner 1. Shift+Right-click to set corner 2. Right-click air to manage spawn rects.",
   "text.easy_npc.item.custom_data_test": "Right click to verify custom item data.",
   "text.easy_npc.locked": "Locked",
   "text.easy_npc.not_implemented": "Not implemented yet!",
@@ -75,5 +77,7 @@
   "tooltip.easy_npc.spawner.boss_spawner": "The Boss Spawner is a special spawner that allows you to spawn a boss NPC.",
   "tooltip.easy_npc.spawner.default_spawner": "The Default Spawner is a spawner that allows you to spawn a default NPC.",
   "tooltip.easy_npc.spawner.group_spawner": "The Group Spawner is a spawner that allows you to spawn a group of NPCs.",
-  "tooltip.easy_npc.spawner.single_spawner": "The Single Spawner is a spawner that allows you to spawn a single NPC."
+  "tooltip.easy_npc.spawner.single_spawner": "The Single Spawner is a spawner that allows you to spawn a single NPC.",
+  "key.easy_npc.toggle_spawn_timer": "Toggle Spawn Timer Overlay",
+  "category.easy_npc.keys": "EasyNPC"
 }

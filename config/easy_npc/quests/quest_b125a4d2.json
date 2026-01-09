@@ -1,0 +1,15 @@
+{
+    "id": "b125a4d2-6a66-476e-a3a8-4e9f17e7a962",
+    "title": "绝不停止搜寻",
+    "description": "我的孩子不见了……我不能就这样放弃。我需要你的帮助，不管是谁，只要能带我找到他。帮我除掉那些威胁，让我们能继续寻找。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

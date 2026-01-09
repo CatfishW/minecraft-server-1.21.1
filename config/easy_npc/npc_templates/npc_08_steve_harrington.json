@@ -1,0 +1,248 @@
+{
+    "name": "§eSteve Harrington",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The babysitter. Brave with a bat.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/SteveHarrington.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，伙计，你好。这镇子最近是不是又出什么幺蛾子了？看你的表情，你肯定也是惹上麻烦了。别担心，不管是啥，只要那该死的怪物敢露头，我就给它点颜色看看。我的球棒就在手边，上面抹了足够的沥青，够它们喝一壶的。",
+            "buttons": [
+                {
+                    "label": "保卫霍金斯",
+                    "action": "OPEN_QUEST_DIALOG:4a8b2c1d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
+                    "id": "btn_quest_aab812bd"
+                },
+                {
+                    "label": "高中保镖",
+                    "action": "OPEN_QUEST_DIALOG:b0e4a93c-465c-4b9d-b6e9-a5538e81a0a6",
+                    "id": "btn_quest_1a3b12c5"
+                },
+                {
+                    "label": "挥舞的球棒",
+                    "action": "OPEN_QUEST_DIALOG:291772a5-3a10-4d0d-937b-51a2e87725a5",
+                    "id": "btn_quest_839604f8"
+                },
+                {
+                    "label": "夺命狂奔",
+                    "action": "OPEN_QUEST_DIALOG:2a9b41dc-d3b7-47c9-a3b2-9fe0254e0323",
+                    "id": "btn_quest_9e6e7f35"
+                },
+                {
+                    "label": "你是那个球棒专家?",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_bat_expert"
+                },
+                {
+                    "label": "你在保护谁?",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_protecting"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "哈哈，专家谈不上，就是实战经验比较丰富。一开始我也只是个只会做发型的混蛋，直到我遇到了那些触手怪。这根球棒救过我的命，也救过我朋友们的命。只要拿着它，我就感觉自己像个该死的圣骑士。要试试手感吗？这玩意儿可比看起来重多了。",
+            "buttons": [
+                {
+                    "label": "你是怎么变勇敢的?",
+                    "action": "SHOW_DIALOG:story_1a",
+                    "id": "btn_brave"
+                },
+                {
+                    "label": "那些怪物长什么样?",
+                    "action": "SHOW_DIALOG:story_1b",
+                    "id": "btn怪物样子"
+                }
+            ]
+        },
+        "story_1a": {
+            "greeting": "说实话，我一开始怕得要死，腿都软了。但我看到我的朋友们，那些比我小的孩子们都在战斗，我怎么能跑？我是大哥，大哥就得保护小弟。后来我发现，只要你不退缩，哪怕手在抖，你就能打中。恐惧是正常的，把它变成动力就行了。",
+            "buttons": [
+                {
+                    "label": "说得好",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_say_good"
+                },
+                {
+                    "label": "还有其他诀窍吗?",
+                    "action": "SHOW_DIALOG:story_1a_extra",
+                    "id": "btn_tips"
+                }
+            ]
+        },
+        "story_1a_extra": {
+            "greeting": "当然有。第一，瞄准眼睛或者嘴巴这些脆弱的地方。第二，别单独行动，一定要有人掩护你。第三，也是最重要的，别逞强，打不过就跑，活着才能继续打。还有，多备点发胶，虽然对怪物没用，但能让你在战斗后看起来依然帅气。",
+            "buttons": [
+                {
+                    "label": "学到了",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_learned"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_back_topic"
+                }
+            ]
+        },
+        "story_1b": {
+            "greeting": "哦，那可是噩梦般的景象。有的像是一堆乱动的黑色触手，能钻进你的身体里控制你；有的则是那种直立行走的、皮肤像枯树皮一样的大家伙，看着就让人头皮发麻。它们行动迅速，而且极其凶残。看到它们千万别发愣，先下手为强！",
+            "buttons": [
+                {
+                    "label": "听起来真恶心",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_gross"
+                },
+                {
+                    "label": "弱点是什么?",
+                    "action": "SHOW_DIALOG:story_1b_extra",
+                    "id": "btn_weakness"
+                }
+            ]
+        },
+        "story_1b_extra": {
+            "greeting": "就像我刚才说的，眼睛是弱点，还有关节部位。火对它们有奇效，特别是那种带着硫磺味的异界火焰。但最有效的还是切断它们和‘母体’的联系，比如关上那些缝隙，或者破坏它们的能量源。这通常需要 Nancy 的高科技分析或者 Jonathan 的摄影取证。",
+            "buttons": [
+                {
+                    "label": "Nancy 和 Jonathan?",
+                    "action": "SHOW_DIALOG:story_1b_extra_b",
+                    "id": "btn_ask_team"
+                },
+                {
+                    "label": "了解",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_copy"
+                }
+            ]
+        },
+        "story_1b_extra_b": {
+            "greeting": "对，Nancy 那个姑娘简直是个天才，她能把复杂的线索拼凑起来找出真相，而且枪法比我还准。Jonathan 那小子看着闷不吭声，但他总能拍到决定性的证据，而且关键时刻非常靠得住。我们是一个团队，虽然有时候吵吵闹闹，但我们互相信任。",
+            "buttons": [
+                {
+                    "label": "听起来是个强队",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_strong_team"
+                },
+                {
+                    "label": "回到保护的话题",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_back_protect"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "保护？哈，这现在就是我的主业了， babysitter Steve。Dustin 和那帮小鬼总是惹麻烦，还有……呃，还有 Robin。但我不是抱怨，真的。这种时候，你需要你在乎的人在身边。如果他们出事了，赢了怪物又有什么意义？",
+            "buttons": [
+                {
+                    "label": "你很像个好父亲",
+                    "action": "SHOW_DIALOG:story_2a",
+                    "id": "btn_father_figure"
+                },
+                {
+                    "label": "Dustin 又闯祸了?",
+                    "action": "SHOW_DIALOG:story_2b",
+                    "id": "btn_dustin_trouble"
+                }
+            ]
+        },
+        "story_2a": {
+            "greeting": "父亲？天哪，别让 Dustin 听到你这么说，他会尴尬死的。我只是个比他们大几岁的朋友，不想再看到任何人受伤了。当年我没能救好 Barbara，这个遗憾我背负很久了。现在我绝不允许同样的事发生在任何人身上。这是我的赎罪。",
+            "buttons": [
+                {
+                    "label": "这不是你的错",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_not_ur_fault"
+                },
+                {
+                    "label": "Barbara 是谁?",
+                    "action": "SHOW_DIALOG:story_2a_extra",
+                    "id": "btn_who_barb"
+                }
+            ]
+        },
+        "story_2a_extra": {
+            "greeting": "她是我当时的女朋友，一个很好很单纯的姑娘。一切都发生得太快了，我甚至没来得及好好跟她说再见。如果我当时勇敢一点，早点发现不对劲……算了，说这些没用。我现在能做的，就是确保剩下的人都平安无事。这是我对她的承诺，哪怕她听不见了。",
+            "buttons": [
+                {
+                    "label": "我很抱歉",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_sorry"
+                },
+                {
+                    "label": "你会做到的",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_you_will"
+                }
+            ]
+        },
+        "story_2b": {
+            "greeting": "闯祸？那是他的天赋！但这孩子脑子好使，总能搞出些有用的发明，或者发现些我们忽略的线索。虽然有时候他太信任别人了，容易被骗。所以我得时刻盯着，像个保镖一样。虽然我总是装作不耐烦，但其实……我挺为他骄傲的。",
+            "buttons": [
+                {
+                    "label": "他有你这样的朋友很幸运",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_lucky_dustin"
+                },
+                {
+                    "label": "他发明了什么?",
+                    "action": "SHOW_DIALOG:story_2b_extra",
+                    "id": "btn_inventions"
+                }
+            ]
+        },
+        "story_2b_extra": {
+            "greeting": "他搞过那个‘超级收音机’，能接收异世界的信号；还有那个装在棒球上的小陷阱，虽然没派上大用场。这孩子脑子里装满了各种疯狂的点子，有些是受那帮科幻漫画启发的。我虽然看不懂，但我负责帮他把把关，别让他把自己炸飞了。",
+            "buttons": [
+                {
+                    "label": "真有意思",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_interesting"
+                },
+                {
+                    "label": "保护好他们",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_protect_them"
+                }
+            ]
+        },
+        "conclusion": {
+            "greeting": "好了，闲聊时间结束。我得去巡逻了，确保街道上没有那些该死的影子。如果你看到什么不对劲的东西，或者需要一根结实的球棒，随时来找我。记住，直视它们的眼睛，别眨眼，然后狠狠地打下去。保持冷静，伙计。",
+            "buttons": [
+                {
+                    "label": "去吧，史蒂夫",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go_steve"
+                },
+                {
+                    "label": "我也去巡逻",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_patrol_too"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

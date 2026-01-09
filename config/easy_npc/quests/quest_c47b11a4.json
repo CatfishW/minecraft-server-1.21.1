@@ -1,0 +1,15 @@
+{
+    "id": "c47b11a4-7a97-4268-bf6f-873776165c6c",
+    "title": "伐木工的请求",
+    "description": "Adrian忙着打理铁匠铺，我需要一些橡木木板来修缮屋顶。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:oak_planks",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

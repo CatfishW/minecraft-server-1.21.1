@@ -1,0 +1,32 @@
+{
+    "schemaVersion": 1,
+    "id": "novus_pay",
+    "version": "${version}",
+    "name": "Warm Pixel Pay",
+    "description": "Secure payment system for Warm Pixel.",
+    "authors": [
+        "Server Admin"
+    ],
+    "contact": {
+        "homepage": "https://example.com/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "MIT",
+    "icon": "assets/novus_pay/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.novus.pay.NovusPayMod"
+        ]
+    },
+    "mixins": [],
+    "depends": {
+        "fabricloader": ">=0.15.11",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
+}

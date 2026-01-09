@@ -1,0 +1,158 @@
+{
+    "name": "§dPreston Garvey",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Minuteman. Another settlement needs help.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/PrestonGarvey.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "很高兴见到你，朋友。我是普雷斯顿·加维，是这片土地上最后自由的保卫者。我们是义勇军，我们不向任何人低头，尤其是那些邪恶的掠夺者和铁锈怪物。我们相信互助共生，只有团结起来，才能在这片废土上重建文明。",
+            "buttons": [
+                {
+                    "label": "前线支援",
+                    "action": "OPEN_QUEST_DIALOG:a895d678-080c-4d50-b745-10e21415f1d0",
+                    "id": "btn_quest_f9729448"
+                },
+                {
+                    "label": "南方桥头堡",
+                    "action": "OPEN_QUEST_DIALOG:a3a89f88-7f21-4a26-b22f-d01394625594",
+                    "id": "btn_quest_f83691cd"
+                },
+                {
+                    "label": "收集石英",
+                    "action": "OPEN_QUEST_DIALOG:b5478e21-8a7e-4f10-95c2-6f57d16bea4e",
+                    "id": "btn_quest_39a3ca66"
+                },
+                {
+                    "label": "清理碍事的匪徒",
+                    "action": "OPEN_QUEST_DIALOG:fec5d398-d8ae-4126-a215-5267328812cc",
+                    "id": "btn_quest_4e226a4a"
+                },
+                {
+                    "label": "义勇军？你们是做什么的？",
+                    "action": "SHOW_DIALOG:about",
+                    "id": "btn_about"
+                },
+                {
+                    "label": "我听说有定居点需要帮助？",
+                    "action": "SHOW_DIALOG:help",
+                    "id": "btn_help"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "about": {
+            "greeting": "我们是这片土地上的普通居民，为了保护家园和亲人而战。我们致力于帮助那些受到威胁的定居点，保护商路，并重建基础设施。我们可能没有钢铁兄弟那样的动力装甲，也没有学院的高科技，但我们有信念，还有彼此。如果你愿意，你也可以成为我们的一员。",
+            "buttons": [
+                {
+                    "label": "听起来很崇高。",
+                    "action": "SHOW_DIALOG:join",
+                    "id": "btn_join"
+                },
+                {
+                    "label": "那么，那个需要帮助的定居点呢？",
+                    "action": "SHOW_DIALOG:help",
+                    "id": "btn_help_2"
+                }
+            ]
+        },
+        "help": {
+            "greeting": "啊，我就知道你是个热心人。康科德的博物馆里有一群人被掠夺者包围了，他们被困在那里好几天了，弹尽粮绝。我们人手不足，无法强行突围。我们需要一个像你这样身手敏捷的人潜入进去，帮他们清除威胁，或者至少指引他们突围。",
+            "buttons": [
+                {
+                    "label": "康科德博物馆？我这就去。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "为什么我要帮他们？有什么好处？",
+                    "action": "SHOW_DIALOG:reward",
+                    "id": "btn_reward"
+                }
+            ]
+        },
+        "join": {
+            "greeting": "这不仅仅是崇高，朋友，这是生存之道。如果你加入我们，你就是这片土地的守护者。我们可以为你提供补给，分享情报，甚至在你建立自己的定居点时提供支援。当然，作为回报，我们也希望你在能力范围内帮助其他需要帮助的人。",
+            "buttons": [
+                {
+                    "label": "我加入你们。",
+                    "action": "SHOW_DIALOG:joined",
+                    "id": "btn_joined"
+                },
+                {
+                    "label": "我需要再考虑一下。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "accept": {
+            "greeting": "太好了！我就知道可以指望你。请务必小心，那些掠夺者装备精良，领头的好像叫“枪手帮”。救出里面的人后，带他们去钻石城或者任何安全的避难所。我会在北方的城堡等你的好消息，保持联系，朋友！",
+            "buttons": [
+                {
+                    "label": "收到，我会搞定的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2"
+                },
+                {
+                    "label": "如果我成功了，去哪里找你？",
+                    "action": "SHOW_DIALOG:where",
+                    "id": "btn_where"
+                }
+            ]
+        },
+        "reward": {
+            "greeting": "虽然我们物资匮乏，但绝不会让朋友白忙一场。幸存者们会感激你的，他们可能会给你一些弹药或者食物。更重要的是，你的善举会像野火一样在废土上传播，吸引更多志同道合的伙伴。在这个世界，信誉和友谊是最好的货币。",
+            "buttons": [
+                {
+                    "label": "好吧，为了更大的利益。",
+                    "action": "SHOW_DIALOG:accept",
+                    "id": "btn_accept_2"
+                }
+            ]
+        },
+        "joined": {
+            "greeting": "欢迎入队，同志！你的加入让我们又多了一份力量。戴上这枚红色的义勇军徽章吧，它代表着我们共同的信念。现在，让我们去康科德，那里的人们正等着我们去拯救。为了自由，为了家园！",
+            "buttons": [
+                {
+                    "label": "为了家园！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3"
+                }
+            ]
+        },
+        "where": {
+            "greeting": "我们主要在“城堡”活动，那是波士顿北边的一座旧堡垒，固若金汤。如果你路过这片区域，随时可以去那里休整。或者你也可以在废土上建立一个无线电发射台，收听我们的广播，我们会发布新的任务和求救信号。",
+            "buttons": [
+                {
+                    "label": "记下了，我会去的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_4"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:compass",
+            "count": 1
+        }
+    }
+}

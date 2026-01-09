@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "easy_npc_config_ui",
   "version": "${version}",
-  "name": "Easy NPC: Config UI",
+  "name": "Warm Pixel NPC Mod (Config UI)",
   "description": "Create easily NPCs for your world or for your mods.",
   "authors": [
     "Markus Bordihn"

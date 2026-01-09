@@ -1,0 +1,15 @@
+{
+    "id": "6b2d5b7a-8f4c-4c22-9d21-8e5a5b5c5d5e",
+    "title": "寻找亨利",
+    "description": "亨利失踪了，我很担心他。请帮我找到亨利。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

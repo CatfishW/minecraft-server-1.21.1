@@ -1,0 +1,203 @@
+{
+    "name": "§5Eddie Kaspbrak",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Hypochondriac. Carries an inhaler.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/EddieKaspbrak.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "离我远点！你身上有细菌吗？哦，是你啊。听着，我很紧张，所以如果你有什么想法，最好别是那种容易感染的。我的药快没了，而且这里的空气简直糟糕透顶。简直比那个充满了死老鼠的地下室还糟糕。",
+            "buttons": [
+                {
+                    "label": "急需的强效药剂",
+                    "action": "OPEN_QUEST_DIALOG:e5dc7f24-6f9b-4d2a-8a8e-3e6b1c2f3f5e",
+                    "id": "btn_quest_4bc9dc53"
+                },
+                {
+                    "label": "救命的药草",
+                    "action": "OPEN_QUEST_DIALOG:a817046c-9287-436a-b923-1f819379706c",
+                    "id": "btn_quest_ee9bd702"
+                },
+                {
+                    "label": "药草寻踪",
+                    "action": "OPEN_QUEST_DIALOG:1f2fe3b3-a358-4bc6-ba6c-ec3d1b642ab1",
+                    "id": "btn_quest_9b93b52b"
+                },
+                {
+                    "label": "哮喘粉的恐惧",
+                    "action": "OPEN_QUEST_DIALOG:a03e8bd1-e309-47b4-99c1-2dedb0e0e9c4",
+                    "id": "btn_quest_c9db1c6f"
+                },
+                {
+                    "label": "你需要安静一下",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_eddie_calm"
+                },
+                {
+                    "label": "关于你的药",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_eddie_meds"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "安静？你要我怎么安静！你知道那种感觉吗？肺部就像被什么东西堵住了，完全吸不进空气。我妈妈说过，外面的世界充满了致死的病毒，而现在的证明就摆在我眼前！",
+            "buttons": [
+                {
+                    "label": "深呼吸，Eddie",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_eddie_breath"
+                },
+                {
+                    "label": "病毒不全是坏事",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_eddie_virus"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "深呼吸？如果我能深呼吸我就不会像个哮喘发作的金鱼一样了！我需要我的药，或者一个无菌环境。或者至少……一个没有那个穿着波点衣服的怪物的地方。那东西看起来就像是一场行走的皮肤病灾难。",
+            "buttons": [
+                {
+                    "label": "那个怪物怕什么？",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_eddie_afraid"
+                },
+                {
+                    "label": "我会保护你",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_protect"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "怕？它看起来什么都不怕！它把痛苦当晚餐。但我跟你说，它好像……好像不喜欢被反击。当比尔和Richie冲过去的时候，它退缩了。也许它怕的不是暴力，而是……决心？我可不是专家，我只是个随时可能死掉的病人！",
+            "buttons": [
+                {
+                    "label": "所以我们需要勇气",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_courage"
+                },
+                {
+                    "label": "这太冒险了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_risk"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "病毒？全是坏事！没有全是好事的病毒！你以为这是进化吗？这是灭绝！我们就像被困在培养皿里的细菌，而上帝正在拿着喷壶看着我们。我要去找我的药，别挡路。",
+            "buttons": [
+                {
+                    "label": "我知道哪里有药",
+                    "action": "SHOW_DIALOG:story_1_2_1",
+                    "id": "btn_eddie_supply"
+                },
+                {
+                    "label": "别走散了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_stay"
+                }
+            ]
+        },
+        "story_1_2_1": {
+            "greeting": "真的吗？在哪里？废弃的药店？还是诊所？哦天哪，那里肯定充满了各种耐药菌和变异真菌。但……但我得去。你能陪我吗？我一个人不行，我太……脆弱了。",
+            "buttons": [
+                {
+                    "label": "跟我来，我们去拿药",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_go"
+                },
+                {
+                    "label": "那里可能很危险",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_danger"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我的药？这是救命的稻草！没有它，我的支气管就会痉挛，我的心脏就会乱跳，然后我就完蛋了。通常我备着好几周的量，但这次逃亡太匆忙了。我只带了这一小瓶。",
+            "buttons": [
+                {
+                    "label": "还能维持多久？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_eddie_duration"
+                },
+                {
+                    "label": "也许我们可以找到替代品",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_eddie_alt"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "按照目前的恐慌频率……大概还够用两天。如果我不再剧烈运动，也许能撑三天。但这不可能。我们要么在跑，要么在尖叫。我感觉我的药效就像沙漏里的沙子一样在流逝。",
+            "buttons": [
+                {
+                    "label": "我们必须省着点用",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_save"
+                },
+                {
+                    "label": "我会帮你找更多",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_find"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "替代品？你是说草药？偏方？我可不要吃那些没经过临床试验的东西！那可能会引起过敏性休克，或者长出第三只耳朵！除非你确定那是救命的，否则我宁愿依赖我这瓶经过精密化学合成的救命水。",
+            "buttons": [
+                {
+                    "label": "好吧，相信科学",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_science"
+                },
+                {
+                    "label": "但科学救不了我们",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_eddie_noscience"
+                }
+            ]
+        },
+        "story_end": {
+            "greeting": "好吧，我想我得走了。我得找个安静的地方，吸一口气，数数我的心跳。如果你看到那个红鼻子的家伙，或者任何看起来像传染病源头的东西，记得叫我……虽然我大概会跑得比你还快。",
+            "buttons": [
+                {
+                    "label": "保重，Eddie",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_eddie_close"
+                },
+                {
+                    "label": "需要我陪你吗？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_eddie_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_axe",
+            "count": 1
+        }
+    }
+}

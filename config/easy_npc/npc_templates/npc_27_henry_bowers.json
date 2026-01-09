@@ -1,0 +1,138 @@
+{
+    "name": "§9Henry Bowers",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Town bully. Violent and crazy.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/HenryBowers.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你挡着我的路了，弱鸡。这镇子是我罩的，连下水道里的老鼠都得听我的。我今天心情很糟，特别是想到那个叫比尔的死瘸子，还有那个穿黄雨衣的爱哭鬼。你最好别惹我。",
+            "buttons": [
+                {
+                    "label": "恶棍的挑衅",
+                    "action": "OPEN_QUEST_DIALOG:f47ac10b-58cc-4372-a567-0e02b2c3d479",
+                    "id": "btn_quest_eb14c912"
+                },
+                {
+                    "label": "亨利的挑战",
+                    "action": "OPEN_QUEST_DIALOG:6c5c68e1-d488-4e84-b4e6-e157885c2121",
+                    "id": "btn_quest_90911ca3"
+                },
+                {
+                    "label": "痛苦的乐章",
+                    "action": "OPEN_QUEST_DIALOG:2779491d-bc1a-4a7b-a7b3-84bf43ae446d",
+                    "id": "btn_quest_460dc3c1"
+                },
+                {
+                    "label": "替我清扫垃圾",
+                    "action": "OPEN_QUEST_DIALOG:118f0bbf-40a9-42b5-bd60-351d9c38a796",
+                    "id": "btn_quest_eb37afd2"
+                },
+                {
+                    "label": "你想对Georgie做什么？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_georgie"
+                },
+                {
+                    "label": "你看起来很生气",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_angry"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "那个小屁孩？我还没来得及教训他，他就失踪了。真没劲。不过他的哥哥比尔，还有那个死胖子和那个黑鬼，他们得付出代价。我要把他们全扔进脏水沟里，就像我经常对Patrick做的那样。",
+            "buttons": [
+                {
+                    "label": "Patrick？那个跟班？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_patrick"
+                },
+                {
+                    "label": "你这样做是不对的",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_moral"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我当然生气！连我老爹都不把我放在眼里，整天只会打我。但在这个镇子上，我就是王。我要证明给他们看。我要把所有人都踩在脚下，包括你，如果你再用那种眼神看我的话。",
+            "buttons": [
+                {
+                    "label": "没人该被那样对待",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_sympathy"
+                },
+                {
+                    "label": "你的跟班们呢？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_minions"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "Patrick？还有Victor和Belch。他们是我的左膀右臂，虽然Belch那个蠢货总是打嗝，Victor又总是畏畏缩缩的。我们正准备找个乐子。听说下水道里有什么东西...也许那里有比老鼠更有趣的东西在等我们。",
+            "buttons": [
+                {
+                    "label": "下水道很危险",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_danger"
+                },
+                {
+                    "label": "我也想加入你们",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_join"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "少跟我说教！我不需要你可怜。我要去找Patrick他们了。我们要去那个废弃的屋子，或者去排水口。那里有东西在呼唤我...我能听见它在叫我名字。",
+            "buttons": [
+                {
+                    "label": "那是什么声音？",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_voice"
+                },
+                {
+                    "label": "离那远点",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_stay_away"
+                }
+            ]
+        },
+        "bad_end": {
+            "greeting": "闭嘴！我听到了...是黄色的...它在那里！在黑暗里！它有银色的眼睛...不，别过来！我才是老大！我不怕你！啊啊啊——！",
+            "buttons": [
+                {
+                    "label": "...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_shovel",
+            "count": 1
+        }
+    }
+}

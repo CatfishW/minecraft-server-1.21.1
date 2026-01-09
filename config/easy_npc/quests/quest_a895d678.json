@@ -1,0 +1,15 @@
+{
+    "id": "a895d678-080c-4d50-b745-10e21415f1d0",
+    "title": "前线支援",
+    "description": "另一个定居点急需帮助，清理附近的掠夺者营地。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

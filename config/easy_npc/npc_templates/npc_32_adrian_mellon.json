@@ -1,0 +1,63 @@
+{
+    "name": "§aAdrian Mellon",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Victim of hate crime in Derry.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/AdrianMellon.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我是 Adrian Mellon。",
+            "buttons": [
+                {
+                    "label": "伤痕与记忆",
+                    "action": "OPEN_QUEST_DIALOG:9a87c3b5-0c1a-4a21-9e3a-1e5f2c8d4a62",
+                    "id": "btn_quest_be407bf1"
+                },
+                {
+                    "label": "寻求慰藉",
+                    "action": "OPEN_QUEST_DIALOG:e3f0c6d0-1a2b-4c3d-8e4f-5a6b7c8d9e0f",
+                    "id": "btn_quest_1e23dcc6"
+                },
+                {
+                    "label": "挥之不去的噩梦",
+                    "action": "OPEN_QUEST_DIALOG:d939dda7-b9ff-41f9-bb77-71389601f80c",
+                    "id": "btn_quest_3b1ffb97"
+                },
+                {
+                    "label": "驱逐噩梦",
+                    "action": "OPEN_QUEST_DIALOG:e9d70ae3-6c89-4f5b-b1da-2a879092909d",
+                    "id": "btn_quest_1600be95"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fallback"
+                }
+            ],
+            "oneTimeConversation": true
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:clock",
+            "count": 1
+        }
+    }
+}

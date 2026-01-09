@@ -1,0 +1,47 @@
+{
+    "name": "§7卫队",
+    "entityType": "easy_npc:humanoid",
+    "faction": "guards",
+    "description": "A standard town guard armed with a Glock 17.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/06/phase-2-soldier-23772931.png?v938"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
+    },
+    "equipment": {
+        "mainHand": {
+            "item": "tacz:modern_kinetic_gun",
+            "count": 1,
+            "nbt": "{GunId:\"tacz:glock_17\",GunCurrentAmmoCount:17,HasBulletInBarrel:1b}"
+        }
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "attackHostileFactions": true,
+        "hostileFactions": [
+            "bandits"
+        ],
+        "returnToSpawn": true,
+        "useCustomAttack": true,
+        "isFullAuto": false,
+        "attackRadius": 24.0
+    },
+    "dialog": {
+        "greeting": "Stop right there! Identify yourself.",
+        "buttons": [
+            {
+                "label": "I'm a traveler.",
+                "action": "CLOSE_DIALOG"
+            }
+        ]
+    }
+}

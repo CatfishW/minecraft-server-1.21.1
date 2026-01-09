@@ -24,6 +24,7 @@ import java.util.Optional;
 
 public enum ObjectiveType {
   ATTACK_ANIMAL("animal", 2),
+  ATTACK_HOSTILE_FACTION("hostile_faction", 2),
   ATTACK_MOB_WITHOUT_CREEPER("mob_without_creeper", 2),
   ATTACK_MOB("mob", 2),
   ATTACK_MONSTER("monster", 2),

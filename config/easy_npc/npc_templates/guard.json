@@ -1,6 +1,7 @@
 {
   "name": "Village Guard",
   "entityType": "easy_npc:iron_golem",
+  "faction": "default",
   "description": "A guard that protects the village from hostile mobs",
   "skin": {
     "type": "DEFAULT"

@@ -1,0 +1,15 @@
+{
+    "id": "a04b8c3f-2d8a-4b5c-8e21-f7960b5d3491",
+    "title": "水井危机",
+    "description": "我是来自避难所的居民，我们的净水芯片坏了。为了生存，我需要寻找水源。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:water_bucket",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

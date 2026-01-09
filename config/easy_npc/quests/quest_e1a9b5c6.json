@@ -1,0 +1,15 @@
+{
+    "id": "e1a9b5c6-7c22-4f0b-a8d6-18e9c3d21c9b",
+    "title": "调查失踪案",
+    "description": "亨利看起来很惊恐，我需要和他谈谈发生了什么。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

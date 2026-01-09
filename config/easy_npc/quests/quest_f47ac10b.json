@@ -1,0 +1,15 @@
+{
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "title": "恶棍的挑衅",
+    "description": "亨利这个混蛋又在街头惹事了，给他点教训，让他知道谁才是老大。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:player",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 5
+    }
+}

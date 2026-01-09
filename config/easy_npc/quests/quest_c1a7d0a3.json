@@ -1,0 +1,15 @@
+{
+    "id": "c1a7d0a3-9b9e-4d68-9c6e-8c7d0e9b1a2c",
+    "title": "失落大教堂的基石",
+    "description": "那座废弃教堂的石料蕴含着旧时代的重量，帮我收集一些圆石，也许我们能重建那段记忆。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:cobblestone",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

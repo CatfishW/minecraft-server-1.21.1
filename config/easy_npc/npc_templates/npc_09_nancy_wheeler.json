@@ -1,0 +1,248 @@
+{
+    "name": "§cNancy Wheeler",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Investigative journalist. Sharp shooter.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/NancyWheeler.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我在整理一些旧档案和剪报，需要绝对的安静。如果你是来闲聊的，恐怕我现在没时间。霍金斯发生的事情远比表面看起来复杂，我必须把所有的线索串联起来。有些事情，如果不记录下来，就会被永远遗忘，或者被篡改。",
+            "buttons": [
+                {
+                    "label": "调查失踪案",
+                    "action": "OPEN_QUEST_DIALOG:e1a9b5c6-7c22-4f0b-a8d6-18e9c3d21c9b",
+                    "id": "btn_quest_9fa49f22"
+                },
+                {
+                    "label": "失踪的亨利",
+                    "action": "OPEN_QUEST_DIALOG:8a4b3c2d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
+                    "id": "btn_quest_620ea951"
+                },
+                {
+                    "label": "肃清瞭望塔",
+                    "action": "OPEN_QUEST_DIALOG:5cb120f1-0414-4985-beec-581c7b823e79",
+                    "id": "btn_quest_9ed72aa1"
+                },
+                {
+                    "label": "罪证猎手",
+                    "action": "OPEN_QUEST_DIALOG:d0a0fd13-3b27-4013-a54f-2f7a1d666b96",
+                    "id": "btn_quest_41f975ad"
+                },
+                {
+                    "label": "你在调查什么?",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_investigation"
+                },
+                {
+                    "label": "关于梅格诺工业?",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_mtg_ind"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "我在调查最近一系列奇怪的失踪案，还有那些关于‘流浪汉被袭击’的新闻。官方的说法是帮派斗殴或者毒气泄漏，但我在案发现场发现了非人的抓痕，还有那种只有在实验室里才有的辐射残留。我在比对这些数据，试图找出作案手法的规律。",
+            "buttons": [
+                {
+                    "label": "你发现了什么规律?",
+                    "action": "SHOW_DIALOG:story_1a",
+                    "id": "btn_pattern"
+                },
+                {
+                    "label": "这听起来很危险",
+                    "action": "SHOW_DIALOG:story_1b",
+                    "id": "btn_dangerous"
+                }
+            ]
+        },
+        "story_1a": {
+            "greeting": "所有的袭击都发生在特定的电力节点附近，而且都在满月前后。还有，受害者都有一个共同点：他们都曾在梅格诺工业的旧址附近出现过。这绝对不是巧合。我在地图上把这些点连起来，形成了一个……很像电路板的图案。这让我很在意。",
+            "buttons": [
+                {
+                    "label": "电路板?",
+                    "action": "SHOW_DIALOG:story_1a_extra",
+                    "id": "btn_circuit"
+                },
+                {
+                    "label": "证据确凿吗?",
+                    "action": "SHOW_DIALOG:story_1a_extra_b",
+                    "id": "btn_evidence"
+                }
+            ]
+        },
+        "story_1a_extra": {
+            "greeting": "是的，就像某种能量传输网络。我在想，这些失踪的人是不是被当成了某种‘燃料’？或者是为了维持某种跨维度的通道？这听起来很疯狂，但我有目击者的口述，还有 Jonathan 拍到的照片作为佐证。照片上的阴影……它们有实体，但不是我们这个维度的实体。",
+            "buttons": [
+                {
+                    "label": "Jonathan 拍到了?",
+                    "action": "SHOW_DIALOG:story_1a_extra_b",
+                    "id": "btn_jonathan_photo"
+                },
+                {
+                    "label": "下一步计划?",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_next_step"
+                }
+            ]
+        },
+        "story_1a_extra_b": {
+            "greeting": "对，他的摄影技术帮了大忙。他能捕捉到红外线和紫外线频段，这让我们看到了那些怪物在隐形状态下的轮廓。虽然冲洗胶卷的时候差点把暗房炸了，但结果是值得的。我们现在有了它们的‘热成像’，虽然看起来更像是‘地狱成像’。",
+            "buttons": [
+                {
+                    "label": "你们配合得真好",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_good_team"
+                },
+                {
+                    "label": "回到梅格诺的话题",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_back_mtg"
+                }
+            ]
+        },
+        "story_1b": {
+            "greeting": "我知道，Steven 总是让我离远点，霍普也是。但我不能袖手旁观。如果我掌握的信息能阻止下一次袭击，那冒点险也是值得的。况且，我不是赤手空拳，我受过射击训练，而且我比那些怪物更了解人性的黑暗面——比如那些躲在实验室里做实验的人。",
+            "buttons": [
+                {
+                    "label": "你的枪法怎么样?",
+                    "action": "SHOW_DIALOG:story_1b_extra",
+                    "id": "btn_shooting"
+                },
+                {
+                    "label": "支持你的做法",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_support"
+                }
+            ]
+        },
+        "story_1b_extra": {
+            "greeting": "还算不错。我专门练习过，为了自卫，也为了能精准命中目标的弱点。Steven 总是嘲笑我的姿势，但我总能打中。对付这些东西，你不需要重火力，你需要的是冷静和精准。就像解一道复杂的数学题，找到那个唯一的正确答案，然后扣动扳机。",
+            "buttons": [
+                {
+                    "label": "听起来很专业",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_pro"
+                },
+                {
+                    "label": "继续调查",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_cont_inv"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "梅格诺工业……那是噩梦的源头。表面上是做电子零件的，实际上他们在进行非法的超自然实验。他们把两个世界撕开了一道口子，还试图控制它。现在公司倒闭了，地下的实验室也被封了，但我觉得他们留下了某种……后门程序。",
+            "buttons": [
+                {
+                    "label": "后门程序?",
+                    "action": "SHOW_DIALOG:story_2a",
+                    "id": "btn_backdoor"
+                },
+                {
+                    "label": "你知道实验室在哪?",
+                    "action": "SHOW_DIALOG:story_2b",
+                    "id": "btn_lab_loc"
+                }
+            ]
+        },
+        "story_2a": {
+            "greeting": "是的，他们在实验数据里植入了某种自毁序列，但也隐藏了重启的指令。我怀疑最近的电力波动和失踪案，就是有人或者有东西试图激活这个序列。也许是残留的自动防御系统，也许是……那个世界的智慧生物在试图重新建立连接。我必须破解这段代码。",
+            "buttons": [
+                {
+                    "label": "你能破解吗?",
+                    "action": "SHOW_DIALOG:story_2a_extra",
+                    "id": "btn_crack"
+                },
+                {
+                    "label": "需要帮手吗?",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_help_needed"
+                }
+            ]
+        },
+        "story_2a_extra": {
+            "greeting": "很难。他们的加密方式很诡异，结合了二进制和某种……象形符号。我和 Robin 正在努力，她对这些符号有独特的直觉。如果我们能成功，我们就能彻底关闭那个通道，或者至少能预测它们什么时候会入侵。这是一场和时间的赛跑。",
+            "buttons": [
+                {
+                    "label": "加油，我相信你",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_good_luck"
+                },
+                {
+                    "label": "保持联系",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_keep联络"
+                }
+            ]
+        },
+        "story_2b": {
+            "greeting": "具体位置是机密，但我有线索。通过比对市政蓝图和当年的施工记录，我发现了一个被废弃的入口，就在老面粉厂的地下室下面。那里被水泥封死了，但我听说 Jonathan 曾经进去过。我想去核实一下，但还没准备好面对那里的东西。",
+            "buttons": [
+                {
+                    "label": "Jonathan 进去过?",
+                    "action": "SHOW_DIALOG:story_2b_extra",
+                    "id": "btn_jon_in"
+                },
+                {
+                    "label": "准备什么?",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_prep"
+                }
+            ]
+        },
+        "story_2b_extra": {
+            "greeting": "是的，他去寻找他弟弟失踪的线索时误打误撞进去的。他说那里一片狼藉，到处都是奇怪的涂鸦和被撕碎的设备。他说他听到了低语声，感觉像是有人在黑暗中盯着他。他当时只顾着逃命，没来得及详细探查。我要去的话，必须带上他，或者带上 Steven 和他的球棒。",
+            "buttons": [
+                {
+                    "label": "听起来很可怕",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_scary"
+                },
+                {
+                    "label": "祝你好运",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_wish_luck"
+                }
+            ]
+        },
+        "conclusion": {
+            "greeting": "我得继续工作了，这些文件堆得像山一样高。记住，如果你看到任何与梅格诺有关的旧文件或设备，请立刻联系我。真相就在那里，我们必须把它找出来，为了所有失踪的人，也为了我们还能安稳睡觉的夜晚。",
+            "buttons": [
+                {
+                    "label": "我会留意",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_will_look"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_take_care"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

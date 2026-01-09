@@ -1,0 +1,228 @@
+{
+    "name": "§bJoyce Byers",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "A fierce mother. Never gives up.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/JoyceByers.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你是谁？我不认识你。如果你是来找乔纳森或者威利的，他们不在家。我正忙着呢，你看这灯泡又开始不对劲了，忽明忽暗的。我得检查一下线路，这很重要，不能有任何差错，绝对不能。",
+            "buttons": [
+                {
+                    "label": "为母则刚",
+                    "action": "OPEN_QUEST_DIALOG:1a2b3c4d-5e6f-7890-1234-567890abcdef",
+                    "id": "btn_quest_a3cb305c"
+                },
+                {
+                    "label": "母亲的寻子启事",
+                    "action": "OPEN_QUEST_DIALOG:f7161412-fa40-4c3b-a530-25419e28c58f",
+                    "id": "btn_quest_e4c3a172"
+                },
+                {
+                    "label": "绝望的母爱",
+                    "action": "OPEN_QUEST_DIALOG:91dda42a-ca71-4fea-9d49-3d6b4d0b0d03",
+                    "id": "btn_quest_25a78c7b"
+                },
+                {
+                    "label": "询问灯泡的事",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask_lights"
+                },
+                {
+                    "label": "询问威利",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ask_will"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "哦，这灯泡！它们不是普通的故障，它们在跟我交流。以前，威利就是用这些灯光跟我说话的，开是‘是’，关是‘不’。现在虽然不是他了，但我知道这是一种警告。有什么东西回来了，那种冷冰冰的、令人窒息的感觉又来了。",
+            "buttons": [
+                {
+                    "label": "相信你",
+                    "action": "SHOW_DIALOG:story_1a",
+                    "id": "btn_believe_you"
+                },
+                {
+                    "label": "也许只是电压不稳",
+                    "action": "SHOW_DIALOG:story_1b",
+                    "id": "btn_voltage"
+                }
+            ]
+        },
+        "story_1a": {
+            "greeting": "谢谢你，谢谢你愿意相信我。没人把我当回事，他们都觉得我疯了，连霍普有时候都觉得我该歇着了。但我没有疯，我知道我听到了什么。那种‘嗡嗡’声，那种低频的震动，就在墙后面，就在这房子的骨头里。你能感觉到吗？",
+            "buttons": [
+                {
+                    "label": "我能感觉到震动",
+                    "action": "SHOW_DIALOG:story_1a_extra",
+                    "id": "btn_feel_it"
+                },
+                {
+                    "label": "这太不可思议了",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_unbelievable"
+                }
+            ]
+        },
+        "story_1a_extra": {
+            "greeting": "看吧！我就知道不止我一个人能听见。这说明它是真的，它就在隔壁，或者就在楼上。我得准备点东西，胶带、纸板……我得把这些缝隙都封死。你愿意帮我吗？我需要把所有的缝隙都贴上纸，我得把它画出来，我需要看到它的形状！",
+            "buttons": [
+                {
+                    "label": "帮你贴纸",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_help_paper"
+                },
+                {
+                    "label": "我们需要武器",
+                    "action": "SHOW_DIALOG:story_1a_extra_b",
+                    "id": "btn_need_weapons"
+                }
+            ]
+        },
+        "story_1a_extra_b": {
+            "greeting": "武器？光有武器是不够的，你得知道怎么对付它，得找到它的弱点。它怕火吗？还是怕光？我不知道。乔纳森以前试着用过猎枪，但这东西不是靠子弹就能打死的。我们得更聪明点，得把它们逼回那个该死的缝隙里去。",
+            "buttons": [
+                {
+                    "label": "我会想办法",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_figure_out"
+                },
+                {
+                    "label": "回到贴纸计划",
+                    "action": "SHOW_DIALOG:story_1a_extra",
+                    "id": "btn_back_paper"
+                }
+            ]
+        },
+        "story_1b": {
+            "greeting": "电压不稳？这绝对不是电压的问题！我试过所有的保险丝，换过所有的插座。但这只发生在特定的时候，当我感到害怕或者当它靠近的时候。这不是物理学，这是……这是它们的把戏。你得相信我，等你看到它的时候就晚了！",
+            "buttons": [
+                {
+                    "label": "我错了，我相信你",
+                    "action": "SHOW_DIALOG:story_1a",
+                    "id": "btn_change_mind"
+                },
+                {
+                    "label": "我会去检查变压器",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_check_transformer"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "威利……我的儿子。他现在好多了，但他还是那么安静，总是看着远处，好像能看到我看不见的东西。他是那个‘被带走又回来’的孩子。但他带回来的不仅仅是记忆，还有那个世界的伤痕。我必须保护他，不再让他受到任何伤害。",
+            "buttons": [
+                {
+                    "label": "他经历了什么?",
+                    "action": "SHOW_DIALOG:story_2a",
+                    "id": "btn_what_happened"
+                },
+                {
+                    "label": "他现在在哪?",
+                    "action": "SHOW_DIALOG:story_2b",
+                    "id": "btn_where_is_he"
+                }
+            ]
+        },
+        "story_2a": {
+            "greeting": "他被困在一个倒影里的世界，一个没有光、没有希望的寒冷地狱。他在那里独自生存了整整一周，躲避那些猎食者。当你在那边待久了，现实世界反而变得像梦境一样不真实。他有时会做噩梦，大喊着让我关上门，关上所有的门。",
+            "buttons": [
+                {
+                    "label": "真可怕",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_terrible"
+                },
+                {
+                    "label": "关上门是什么意思?",
+                    "action": "SHOW_DIALOG:story_2a_extra",
+                    "id": "btn_close_door"
+                }
+            ]
+        },
+        "story_2a_extra": {
+            "greeting": "那是他在警告我，门是通道。那个世界的生物会通过意念薄弱的人或者物理上的缝隙穿过来。他能感觉到它们要来了，就像风暴前的气压变化。所以我现在很小心门和窗，但我更担心的是他，我怕他再次被拉走。我不能再失去他一次，绝不。",
+            "buttons": [
+                {
+                    "label": "我会替你看着他",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_watch_him"
+                },
+                {
+                    "label": "告辞",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye_joyce"
+                }
+            ]
+        },
+        "story_2b": {
+            "greeting": "他在学校，或者和他的朋友在一起。他的朋友，那些孩子，他们都经历过类似的事，虽然他们不记得了。霍普也帮了忙，把他安排进了一个很安全的地方。但我还是不放心，我总觉得有双眼睛在盯着他，盯着我们全家。我必须保持警惕。",
+            "buttons": [
+                {
+                    "label": "也许你该休息一下",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_rest"
+                },
+                {
+                    "label": "谁在盯着?",
+                    "action": "SHOW_DIALOG:story_2b_extra",
+                    "id": "btn_who_watching"
+                }
+            ]
+        },
+        "story_2b_extra": {
+            "greeting": "我不知道具体是谁，但我能感觉到。有时候是路边的车停得太久，有时候是陌生人的眼神。可能是政府的人，也可能……是别的什么东西伪装的。我不能告诉威利这些，我不想让他害怕。但我必须把眼睛擦亮，我是母亲，这是我的天性。",
+            "buttons": [
+                {
+                    "label": "保持坚强",
+                    "action": "SHOW_DIALOG:conclusion",
+                    "id": "btn_be_strong"
+                },
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_joyce"
+                }
+            ]
+        },
+        "conclusion": {
+            "greeting": "我得走了，灯泡又开始闪了，声音越来越大。谢谢你听我说话，谢谢你没有把我当疯子。如果你听到墙里有刮擦声，如果你看到阴影在动，记得：永远不要独自面对它们。我们要团结在一起。现在我得去找霍普，或者去找那个拿着球棒的史蒂夫，他们知道怎么打架。",
+            "buttons": [
+                {
+                    "label": "去吧，小心",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go_careful"
+                },
+                {
+                    "label": "我也去",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_im_coming"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:spyglass",
+            "count": 1
+        }
+    }
+}

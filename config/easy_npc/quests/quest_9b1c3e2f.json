@@ -1,0 +1,15 @@
+{
+    "id": "9b1c3e2f-5a4d-4b8a-9c1d-7e6f2a3b5c8d",
+    "title": "德里的往事",
+    "description": "亨利似乎知道些旧事，去问问。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

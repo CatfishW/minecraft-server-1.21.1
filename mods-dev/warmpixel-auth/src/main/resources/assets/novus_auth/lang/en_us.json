@@ -1,0 +1,16 @@
+{
+    "novus_auth.gui.login.title": "Login - Warm Pixel Auth",
+    "novus_auth.gui.login.prompt": "Enter Password",
+    "novus_auth.gui.register.title": "Register - Warm Pixel Auth",
+    "novus_auth.gui.register.prompt": "Enter New Password (min 6 chars)",
+    "novus_auth.gui.prompt": "Password...",
+    "novus_auth.msg.login_success": "§aLogin successful! Welcome back.",
+    "novus_auth.msg.login_failed": "§cWrong password. Please try again.",
+    "novus_auth.msg.register_success": "§aRegistration successful! Welcome.",
+    "novus_auth.msg.register_failed": "§cRegistration failed. Please try again.",
+    "novus_auth.msg.invalid_password": "§cPassword too short. Minimum 6 characters.",
+    "novus_auth.msg.not_registered": "§cYou are not registered. Please register first.",
+    "novus_auth.msg.already_authenticated": "§eYou are already logged in.",
+    "novus_auth.msg.password_changed": "§aPassword changed successfully.",
+    "novus_auth.msg.password_change_failed": "§cFailed to change password. check old password."
+}

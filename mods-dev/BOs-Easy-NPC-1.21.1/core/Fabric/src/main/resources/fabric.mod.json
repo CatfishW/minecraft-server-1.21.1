@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "easy_npc",
   "version": "${version}",
-  "name": "Easy NPC",
+  "name": "Warm Pixel NPC Mod (Core)",
   "description": "Create easily NPCs for your world or for your mods.",
   "authors": [
     "Markus Bordihn"

@@ -1,0 +1,15 @@
+{
+    "id": "2f4b8c1a-3e7d-4f2a-9b6c-8e5d4a1f2c9b",
+    "title": "寻找亨利",
+    "description": "Victor不想和你说话，除非你先找到Henry。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

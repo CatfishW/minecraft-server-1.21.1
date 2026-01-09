@@ -79,6 +79,7 @@
   "text.easy_npc.config.attack_targets": "Attack Targets",
   "text.easy_npc.config.attack_types": "Attack Types",
   "text.easy_npc.config.attack_villager": "Attack Villager",
+  "text.easy_npc.config.attack_hostile_faction": "Attack Other Factions",
   "text.easy_npc.config.attributes": "Attributes",
   "text.easy_npc.config.avoid_sun": "Avoid Sun",
   "text.easy_npc.config.base": "Base",

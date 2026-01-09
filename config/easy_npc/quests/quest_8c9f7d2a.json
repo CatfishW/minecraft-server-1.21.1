@@ -1,0 +1,15 @@
+{
+    "id": "8c9f7d2a-1e3b-4d5f-9a2c-8e6d4f1b0a5c",
+    "title": "来自史酷比的建议",
+    "description": "听着，想要在这个无聊的港口找点乐子吗？去海底下转转，解决几只闹腾的鱿鱼。别让我失望，菜鸟。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:squid",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

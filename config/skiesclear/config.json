@@ -1,0 +1,54 @@
+{
+  "debug": false,
+  "clears": {
+    "example": {
+      "enabled": true,
+      "interval": 8888,
+      "dimensions": [],
+      "messages": {
+        "clear": [
+          "",
+          "<dark_red><b>!!</b> <green>Successfully cleared <white>%clear_amount%</white> entities! Clearing again in <white>%clear_time%</white>",
+          ""
+        ],
+        "warnings": {
+          "10": [
+            "",
+            "<dark_red><b>!!</b> <red>An entity clear is incoming in <white>%time_remaining%</white>! Most entities will be removed.",
+            ""
+          ],
+          "5": [
+            "",
+            "<dark_red><b>!!</b> <red>An entity clear is incoming in <white>%time_remaining%</white>! Most entities will be removed.",
+            ""
+          ]
+        },
+        "info": "<red>The Example Clear will be clearing in <white>%time_remaining%</white>!"
+      },
+      "sounds": {
+        "clear": {
+          "sound": "minecraft:block.amethyst_block.break",
+          "volume": 0.2,
+          "pitch": 0.5
+        },
+        "warnings": {
+          "10": {
+            "sound": "minecraft:block.note_block.cow_bell",
+            "volume": 0.2,
+            "pitch": 0.5
+          },
+          "5": {
+            "sound": "minecraft:block.note_block.cow_bell",
+            "volume": 0.2,
+            "pitch": 0.5
+          }
+        }
+      },
+      "clearables": {},
+      "clear_persistent": false,
+      "clear_named": false,
+      "clear_passengers": true,
+      "inform_dimensions_only": true
+    }
+  }
+}

@@ -27,9 +27,15 @@ import net.minecraft.world.entity.PathfinderMob;
 public interface ConfigDataCapable<T extends PathfinderMob> extends EasyNPC<T> {
 
   String DATA_EASY_NPC_DATA_VERSION_TAG = "EasyNPCVersion";
+  String DATA_FACTION_TAG = "Faction";
+  String DEFAULT_FACTION = "default";
 
   default void addAdditionalConfigData(CompoundTag compoundTag) {
     compoundTag.putInt(DATA_EASY_NPC_DATA_VERSION_TAG, Constants.NPC_DATA_VERSION);
+    String faction = getFaction();
+    if (faction != null && !faction.equals(DEFAULT_FACTION)) {
+      compoundTag.putString(DATA_FACTION_TAG, faction);
+    }
   }
 
   default void readAdditionalConfigData(CompoundTag compoundTag) {
@@ -55,6 +61,31 @@ public interface ConfigDataCapable<T extends PathfinderMob> extends EasyNPC<T> {
       log.warn("Legacy Easy NPC Data for {}!", this);
       log.warn("It could be possible that the data is not compatible with the current version.");
       this.setNPCDataVersion(-1);
+    }
+    
+    // Read faction
+    if (compoundTag.contains(DATA_FACTION_TAG)) {
+      setFaction(compoundTag.getString(DATA_FACTION_TAG));
+    }
+  }
+  
+  // Faction data - stored in ServerEntityData
+  default String getFaction() {
+    ServerDataCapable<?> serverData = getEasyNPCServerData();
+    if (serverData != null && serverData.hasServerEntityData()) {
+      String faction = serverData.getServerEntityData().getFaction();
+      return faction != null ? faction : DEFAULT_FACTION;
+    }
+    return DEFAULT_FACTION;
+  }
+  
+  default void setFaction(String faction) {
+    ServerDataCapable<?> serverData = getEasyNPCServerData();
+    if (serverData != null) {
+      if (!serverData.hasServerEntityData()) {
+        serverData.defineServerEntityData();
+      }
+      serverData.getServerEntityData().setFaction(faction != null ? faction : DEFAULT_FACTION);
     }
   }
 }

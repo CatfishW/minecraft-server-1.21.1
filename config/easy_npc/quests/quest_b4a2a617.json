@@ -1,0 +1,15 @@
+{
+    "id": "b4a2a617-67e5-46e3-a552-6374d225629f",
+    "title": "腐烂的残骸",
+    "description": "这肮脏的躯壳还需要更多...更多腐肉。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

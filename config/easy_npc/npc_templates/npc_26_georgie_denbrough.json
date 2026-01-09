@@ -1,0 +1,133 @@
+{
+    "name": "§dGeorgie Denbrough",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The first victim. In a yellow raincoat.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/GeorgieDenbrough.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "我的船...我的纸船！它漂得好远啊。外面下着好大的雨，雨水把街道都淹没了，正好可以放船。你看到我的小船了吗？它可是我哥哥比尔亲手帮我做的，虽然他总是生病，但他做的东西最棒了。",
+            "buttons": [
+                {
+                    "label": "纸船的邀约",
+                    "action": "OPEN_QUEST_DIALOG:a550e42b-fd05-4e9c-8531-88b2241a65a0",
+                    "id": "btn_quest_9627201e"
+                },
+                {
+                    "label": "红气球的召唤",
+                    "action": "OPEN_QUEST_DIALOG:f1b3e702-dcfa-4ba3-85f7-cc09a8c18113",
+                    "id": "btn_quest_826e625b"
+                },
+                {
+                    "label": "红色气球的呼唤",
+                    "action": "OPEN_QUEST_DIALOG:449fd574-d737-43e7-b691-2c6281b32508",
+                    "id": "btn_quest_6682e81d"
+                },
+                {
+                    "label": "你的纸船真厉害",
+                    "action": "SHOW_DIALOG:step_1",
+                    "id": "btn_ask_boat"
+                },
+                {
+                    "label": "雨下得真大",
+                    "action": "SHOW_DIALOG:step_2",
+                    "id": "btn_rain"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "step_1": {
+            "greeting": "是吧！比尔说折好船头，它就能乘风破浪。它漂过排水口了...嘿，那里怎么有光？排水口的盖子被掀开了，有什么东西在下面。是个气球！红色的气球！",
+            "buttons": [
+                {
+                    "label": "气球？这里怎么会有气球？",
+                    "action": "SHOW_DIALOG:step_3",
+                    "id": "btn_balloon"
+                },
+                {
+                    "label": "快回来，那里很危险",
+                    "action": "SHOW_DIALOG:step_4",
+                    "id": "btn_warning"
+                }
+            ]
+        },
+        "step_2": {
+            "greeting": "我喜欢下雨天。比尔说我不该在外面玩，但我能看到我的船漂得那么开心。等等，排水口那里...有个东西在抓我的船！",
+            "buttons": [
+                {
+                    "label": "是什么东西？",
+                    "action": "SHOW_DIALOG:step_3",
+                    "id": "btn_what"
+                },
+                {
+                    "label": "别管船了，快回家",
+                    "action": "SHOW_DIALOG:step_4",
+                    "id": "btn_go_home"
+                }
+            ]
+        },
+        "step_3": {
+            "greeting": "它穿着像雨衣一样的东西...是亮橙色的！还带着个大鼻子。它把船还给我了！它问我要不要气球...你想看看吗？",
+            "buttons": [
+                {
+                    "label": "是小丑！快跑！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_run"
+                },
+                {
+                    "label": "离它远点！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_warn_again"
+                }
+            ]
+        },
+        "step_4": {
+            "greeting": "可是那是比尔做的船...哦！那个小丑！它在下面！它手里拿着我的船，还有一只红气球。它在笑，它的笑容好大...",
+            "buttons": [
+                {
+                    "label": "大声呼救！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_scream"
+                },
+                {
+                    "label": "把手给我，我拉你上来！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_reach"
+                }
+            ]
+        },
+        "bad_end": {
+            "greeting": "它抓住我的手了...它把手伸出来了...它的嘴好大...它裂开了...金...金红色的气球...",
+            "buttons": [
+                {
+                    "label": "...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

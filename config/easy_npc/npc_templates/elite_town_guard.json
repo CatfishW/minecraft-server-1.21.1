@@ -1,0 +1,48 @@
+{
+    "name": "§6精锐卫队",
+    "entityType": "easy_npc:humanoid",
+    "faction": "guards",
+    "description": "An elite town guard armed with an M249 Machine Gun.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/03/assault--wellspring----fireteam-vedmak--pax-armata--battlefield-6-23767275.png?v938"
+    },
+    "attributes": {
+        "maxHealth": 80,
+        "movementSpeed": 0.3,
+        "attackDamage": 8.0,
+        "armor": 12.0,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
+    },
+    "equipment": {
+        "mainHand": {
+            "item": "tacz:modern_kinetic_gun",
+            "count": 1,
+            "nbt": "{GunId:\"tacz:m249\",GunCurrentAmmoCount:100,HasBulletInBarrel:1b}"
+        }
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "attackHostileFactions": true,
+        "hostileFactions": [
+            "bandits"
+        ],
+        "returnToSpawn": true,
+        "useCustomAttack": true,
+        "isFullAuto": true,
+        "attackRadius": 60.0,
+        "wanderRange": 20.0
+    },
+    "dialog": {
+        "greeting": "This area is under elite protection. Move along.",
+        "buttons": [
+            {
+                "label": "Understood.",
+                "action": "CLOSE_DIALOG"
+            }
+        ]
+    }
+}

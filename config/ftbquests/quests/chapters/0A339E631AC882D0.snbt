@@ -12,8 +12,8 @@
 		image: "server_resource:textures/farmer_delight_logo.png"
 		rotation: 0.0d
 		width: 7.0d
-		x: 30.0d
-		y: 45.5d
+		x: 92.0d
+		y: 121.5d
 	}]
 	order_index: 0
 	quest_links: [ ]
@@ -29,8 +29,8 @@
 				id: "45FCFE325C3D0AF2"
 				type: "checkmark"
 			}]
-			x: 37.0d
-			y: 47.0d
+			x: 99.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["13EC93A4A00940BF"]
@@ -57,8 +57,8 @@
 				id: "2D2608F60BBD4414"
 				type: "checkmark"
 			}]
-			x: 24.5d
-			y: 47.0d
+			x: 86.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["41334BDA175365B0"]
@@ -139,8 +139,8 @@
 				item: { count: 1, id: "minecraft:shears" }
 				type: "item"
 			}]
-			x: 21.5d
-			y: 47.0d
+			x: 83.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["20F005E2AC86E2CE"]
@@ -188,8 +188,8 @@
 					type: "item"
 				}
 			]
-			x: 18.5d
-			y: 47.0d
+			x: 80.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["379DA7D7EBD2FF0A"]
@@ -273,8 +273,8 @@
 					type: "item"
 				}
 			]
-			x: 15.5d
-			y: 47.0d
+			x: 77.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["6CACEE8BB2FE3EDA"]
@@ -318,8 +318,8 @@
 					type: "item"
 				}
 			]
-			x: 13.0d
-			y: 47.0d
+			x: 75.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["4BA7F82CB28B88C2"]
@@ -401,8 +401,8 @@
 				item: { count: 1, id: "farmersdelight:pumpkin_soup" }
 				type: "item"
 			}]
-			x: 10.5d
-			y: 47.0d
+			x: 72.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["600A77F8B1482BC0"]
@@ -413,8 +413,8 @@
 				item: { count: 1, id: "farmersdelight:roast_chicken" }
 				type: "item"
 			}]
-			x: 8.0d
-			y: 45.0d
+			x: 70.0d
+			y: 121.0d
 		}
 		{
 			dependencies: ["3B63F8C1A08D1858"]
@@ -424,8 +424,8 @@
 				id: "047CB7D8C83B2328"
 				type: "checkmark"
 			}]
-			x: 5.0d
-			y: 45.0d
+			x: 67.0d
+			y: 121.0d
 		}
 		{
 			dependencies: ["600A77F8B1482BC0"]
@@ -454,8 +454,8 @@
 				item: { count: 1, id: "farmersdelight:rich_soil" }
 				type: "item"
 			}]
-			x: 8.0d
-			y: 49.5d
+			x: 70.0d
+			y: 125.5d
 		}
 		{
 			dependencies: [
@@ -478,8 +478,8 @@
 				id: "72E6FABC9C5BE68C"
 				type: "checkmark"
 			}]
-			x: 1.0d
-			y: 47.0d
+			x: 63.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["600A77F8B1482BC0"]
@@ -499,8 +499,8 @@
 				item: { count: 1, id: "farmersdelight:rope" }
 				type: "item"
 			}]
-			x: 8.0d
-			y: 47.0d
+			x: 70.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["600A77F8B1482BC0"]
@@ -520,8 +520,8 @@
 				item: { count: 1, id: "farmersdelight:safety_net" }
 				type: "item"
 			}]
-			x: 5.0d
-			y: 47.0d
+			x: 67.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["13EC93A4A00940BF"]
@@ -543,8 +543,8 @@
 				id: "76613D96E9C5667B"
 				type: "checkmark"
 			}]
-			x: 48.0d
-			y: 47.0d
+			x: 110.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["4BC6023434217439"]
@@ -583,8 +583,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:lettuce_seed" }
 				type: "item"
 			}]
-			x: 54.5d
-			y: 47.0d
+			x: 116.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["731C552260B82BDD"]
@@ -593,8 +593,8 @@
 				id: "11D220D23F93A0A9"
 				type: "checkmark"
 			}]
-			x: 54.5d
-			y: 45.0d
+			x: 116.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["2A870DF6A9EF0B5D"]
@@ -630,8 +630,8 @@
 					type: "item"
 				}
 			]
-			x: 51.0d
-			y: 43.0d
+			x: 113.0d
+			y: 119.0d
 		}
 		{
 			dependencies: ["2A870DF6A9EF0B5D"]
@@ -642,8 +642,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:red_chili" }
 				type: "item"
 			}]
-			x: 53.5d
-			y: 43.0d
+			x: 115.5d
+			y: 119.0d
 		}
 		{
 			dependencies: ["2A870DF6A9EF0B5D"]
@@ -661,8 +661,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:rice" }
 				type: "item"
 			}]
-			x: 55.5d
-			y: 43.0d
+			x: 117.5d
+			y: 119.0d
 		}
 		{
 			dependencies: ["760B782686B7EED2"]
@@ -687,8 +687,8 @@
 					type: "item"
 				}
 			]
-			x: 55.5d
-			y: 41.0d
+			x: 117.5d
+			y: 117.0d
 		}
 		{
 			dependencies: ["731C552260B82BDD"]
@@ -730,8 +730,8 @@
 					type: "item"
 				}
 			]
-			x: 57.5d
-			y: 47.0d
+			x: 119.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["0AC058C8706877B3"]
@@ -749,8 +749,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:scarecrow" }
 				type: "item"
 			}]
-			x: 57.5d
-			y: 49.5d
+			x: 119.5d
+			y: 125.5d
 		}
 		{
 			dependencies: ["0AC058C8706877B3"]
@@ -789,8 +789,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:oil" }
 				type: "item"
 			}]
-			x: 60.5d
-			y: 47.0d
+			x: 122.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["0ABEC856091D922B"]
@@ -817,8 +817,8 @@
 					type: "item"
 				}
 			]
-			x: 66.5d
-			y: 47.0d
+			x: 128.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["2A870DF6A9EF0B5D"]
@@ -828,8 +828,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:tomato" }
 				type: "item"
 			}]
-			x: 58.0d
-			y: 43.0d
+			x: 120.0d
+			y: 119.0d
 		}
 		{
 			dependencies: ["1F1254086A2B7B87"]
@@ -847,8 +847,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:oil_block" }
 				type: "item"
 			}]
-			x: 59.5d
-			y: 45.0d
+			x: 121.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["1F1254086A2B7B87"]
@@ -866,8 +866,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:enamel_basin" }
 				type: "item"
 			}]
-			x: 61.5d
-			y: 45.0d
+			x: 123.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["4DDC6D30026EF6B3"]
@@ -876,8 +876,8 @@
 				id: "229152F9742B7795"
 				type: "checkmark"
 			}]
-			x: 61.5d
-			y: 43.0d
+			x: 123.5d
+			y: 119.0d
 		}
 		{
 			dependencies: ["1F1254086A2B7B87"]
@@ -922,8 +922,8 @@
 					type: "item"
 				}
 			]
-			x: 63.0d
-			y: 47.0d
+			x: 125.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["3DC8B225A1B1B86A"]
@@ -933,8 +933,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:kitchenware_racks" }
 				type: "item"
 			}]
-			x: 61.0d
-			y: 51.5d
+			x: 123.0d
+			y: 127.5d
 		}
 		{
 			dependencies: ["0ABEC856091D922B"]
@@ -943,8 +943,8 @@
 				id: "49493B96A556FD8C"
 				type: "checkmark"
 			}]
-			x: 63.0d
-			y: 49.5d
+			x: 125.0d
+			y: 125.5d
 		}
 		{
 			dependencies: ["3DC8B225A1B1B86A"]
@@ -954,8 +954,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:fruit_basket" }
 				type: "item"
 			}]
-			x: 64.5d
-			y: 51.5d
+			x: 126.5d
+			y: 127.5d
 		}
 		{
 			dependencies: ["0F261F762D616F15"]
@@ -974,8 +974,8 @@
 				item: { count: 1, id: "minecraft:bowl" }
 				type: "item"
 			}]
-			x: 63.5d
-			y: 45.0d
+			x: 125.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["0F261F762D616F15"]
@@ -985,8 +985,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:shawarma_spit" }
 				type: "item"
 			}]
-			x: 67.5d
-			y: 45.0d
+			x: 129.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["0F261F762D616F15"]
@@ -1003,8 +1003,8 @@
 					type: "item"
 				}
 			]
-			x: 65.5d
-			y: 45.0d
+			x: 127.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["0F261F762D616F15"]
@@ -1013,8 +1013,8 @@
 				id: "32DBA4AF24569EB7"
 				type: "checkmark"
 			}]
-			x: 69.5d
-			y: 45.0d
+			x: 131.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["19222B59A173595D"]
@@ -1024,8 +1024,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:cooked_rice" }
 				type: "item"
 			}]
-			x: 65.5d
-			y: 43.0d
+			x: 127.5d
+			y: 119.0d
 		}
 		{
 			dependencies: [
@@ -1037,8 +1037,8 @@
 				id: "112539B32461A8F1"
 				type: "checkmark"
 			}]
-			x: 64.5d
-			y: 41.0d
+			x: 126.5d
+			y: 117.0d
 		}
 		{
 			dependencies: ["0F261F762D616F15"]
@@ -1048,8 +1048,8 @@
 				id: "403B88F14FF6AB82"
 				type: "checkmark"
 			}]
-			x: 71.5d
-			y: 47.0d
+			x: 133.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["387132BF77945837"]
@@ -1058,8 +1058,8 @@
 				id: "53794FE4A79216BD"
 				type: "checkmark"
 			}]
-			x: 71.5d
-			y: 49.5d
+			x: 133.5d
+			y: 125.5d
 		}
 		{
 			dependencies: ["0F261F762D616F15"]
@@ -1069,8 +1069,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:stove" }
 				type: "item"
 			}]
-			x: 66.5d
-			y: 49.5d
+			x: 128.5d
+			y: 125.5d
 		}
 		{
 			dependencies: ["1D375D3731040A9D"]
@@ -1080,8 +1080,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:cook_stool_oak" }
 				type: "item"
 			}]
-			x: 63.5d
-			y: 43.0d
+			x: 125.5d
+			y: 119.0d
 		}
 		{
 			dependencies: ["387132BF77945837"]
@@ -1127,8 +1127,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:recipe_item" }
 				type: "item"
 			}]
-			x: 75.5d
-			y: 47.0d
+			x: 137.5d
+			y: 123.0d
 		}
 		{
 			dependencies: ["09C89C27729611D8"]
@@ -1139,8 +1139,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:millstone" }
 				type: "item"
 			}]
-			x: 79.0d
-			y: 47.0d
+			x: 141.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["23CCAC29A26B7BAB"]
@@ -1159,8 +1159,8 @@
 					type: "item"
 				}
 			]
-			x: 77.5d
-			y: 45.0d
+			x: 139.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["23CCAC29A26B7BAB"]
@@ -1170,8 +1170,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:raw_dough" }
 				type: "item"
 			}]
-			x: 80.0d
-			y: 45.0d
+			x: 142.0d
+			y: 121.0d
 		}
 		{
 			dependencies: ["41E967BFCD9AAD02"]
@@ -1188,8 +1188,8 @@
 					type: "item"
 				}
 			]
-			x: 82.0d
-			y: 45.0d
+			x: 144.0d
+			y: 121.0d
 		}
 		{
 			dependencies: ["41E967BFCD9AAD02"]
@@ -1208,8 +1208,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:raw_noodles" }
 				type: "item"
 			}]
-			x: 78.5d
-			y: 43.0d
+			x: 140.5d
+			y: 119.0d
 		}
 		{
 			dependencies: ["76D285E7B1291DF4"]
@@ -1219,8 +1219,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:udon_noodle" }
 				type: "item"
 			}]
-			x: 78.5d
-			y: 41.0d
+			x: 140.5d
+			y: 117.0d
 		}
 		{
 			dependencies: ["41E967BFCD9AAD02"]
@@ -1230,8 +1230,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:stuffed_dough_food" }
 				type: "item"
 			}]
-			x: 81.5d
-			y: 43.0d
+			x: 143.5d
+			y: 119.0d
 		}
 		{
 			dependencies: ["498DD8381D0E9329"]
@@ -1241,8 +1241,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:baozi" }
 				type: "item"
 			}]
-			x: 81.5d
-			y: 39.0d
+			x: 143.5d
+			y: 115.0d
 		}
 		{
 			dependencies: ["76B9E1CD2A99FF14"]
@@ -1252,8 +1252,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:steamer" }
 				type: "item"
 			}]
-			x: 81.5d
-			y: 41.0d
+			x: 143.5d
+			y: 117.0d
 		}
 		{
 			dependencies: ["387132BF77945837"]
@@ -1263,8 +1263,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:transmutation_lunch_bag" }
 				type: "item"
 			}]
-			x: 71.5d
-			y: 45.0d
+			x: 133.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["0AC058C8706877B3"]
@@ -1274,8 +1274,8 @@
 				item: { count: 1, id: "kaleidoscope_cookery:sickle" }
 				type: "item"
 			}]
-			x: 57.5d
-			y: 45.0d
+			x: 119.5d
+			y: 121.0d
 		}
 		{
 			dependencies: ["23CCAC29A26B7BAB"]
@@ -1285,8 +1285,8 @@
 				id: "0E4988CCD2404877"
 				type: "checkmark"
 			}]
-			x: 85.0d
-			y: 47.0d
+			x: 147.0d
+			y: 123.0d
 		}
 		{
 			dependencies: ["2643F76259B9FAB5"]
@@ -1337,8 +1337,8 @@
 					type: "item"
 				}
 			]
-			x: 27.5d
-			y: 62.5d
+			x: 89.5d
+			y: 138.5d
 		}
 		{
 			dependencies: ["13EC93A4A00940BF"]
@@ -1352,8 +1352,8 @@
 				id: "3FDA9E3E0865F5D4"
 				type: "checkmark"
 			}]
-			x: 27.5d
-			y: 57.5d
+			x: 89.5d
+			y: 133.5d
 		}
 		{
 			dependencies: ["39934CA1E5B6F0C8"]
@@ -1365,8 +1365,8 @@
 				item: { count: 1, id: "vinery:red_grape" }
 				type: "item"
 			}]
-			x: 27.5d
-			y: 67.5d
+			x: 89.5d
+			y: 143.5d
 		}
 		{
 			dependencies: ["1A06F05953C3949F"]
@@ -1387,8 +1387,8 @@
 					type: "item"
 				}
 			]
-			x: 27.5d
-			y: 72.5d
+			x: 89.5d
+			y: 148.5d
 		}
 		{
 			dependencies: ["34A7A4F5EAF7D5B2"]
@@ -1428,8 +1428,8 @@
 					type: "item"
 				}
 			]
-			x: 27.5d
-			y: 77.5d
+			x: 89.5d
+			y: 153.5d
 		}
 		{
 			dependencies: ["0DF541F92F7A3B8C"]
@@ -1450,8 +1450,8 @@
 					type: "item"
 				}
 			]
-			x: 27.5d
-			y: 82.5d
+			x: 89.5d
+			y: 158.5d
 		}
 		{
 			dependencies: ["1A06F05953C3949F"]
@@ -1506,8 +1506,8 @@
 					type: "item"
 				}
 			]
-			x: 22.0d
-			y: 67.5d
+			x: 84.0d
+			y: 143.5d
 		}
 		{
 			dependencies: ["34A7A4F5EAF7D5B2"]
@@ -1517,8 +1517,8 @@
 				item: { count: 1, id: "vinery:apple_press" }
 				type: "item"
 			}]
-			x: 32.0d
-			y: 72.5d
+			x: 94.0d
+			y: 148.5d
 		}
 		{
 			dependencies: ["5E62A8D21CA4B17F"]
@@ -1528,8 +1528,8 @@
 				id: "2743DAF6268CDEE1"
 				type: "checkmark"
 			}]
-			x: 27.5d
-			y: 88.0d
+			x: 89.5d
+			y: 164.0d
 		}
 	]
 }

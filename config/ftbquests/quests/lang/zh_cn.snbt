@@ -1,9 +1,12 @@
 {
 	chapter.0A339E631AC882D0.title: "田园生活"
+	chapter.253BDC430C89A71E.title: "开车车咯！"
 	chapter.5A8D3F2E1B4C6901.title: "军旅生涯"
 	chapter_group.4E5AA64291FA4369.title: "属于自己的角落&c(核心玩法)&r"
 	chapter_group.5F9ABE3ACEA913EF.title: "认识这个世界"
 	chapter_group.6A83FBBB746164FB.title: "方块里的奇妙世界"
+	chapters.automobility: "Automobility 载具指南"
+	chapters.automobility.subtitle: "打造属于你的载具！"
 	quest.010BBA6A8F47B641.desc: "具备三连发功能的全自动/半自动机器手枪。"
 	quest.010BBA6A8F47B641.quest_desc: [
 		"93R 是一款有着冲锋枪野心的手枪。它配备了可折叠的前握把，以抑制其标志性的三连发模式带来的强劲后坐力。"
@@ -225,6 +228,14 @@
 	quest.1F42405664EF221A.desc: "半自动战斗霰弹枪。"
 	quest.1F42405664EF221A.subtitle: "霰弹枪系列 - 伯奈利 M1014"
 	quest.1F42405664EF221A.title: "Benelli M1014"
+	quest.200B02B1D397A1A3.quest_desc: [
+		"听说你想当车神？"
+		""
+		"WarmPixel让你在方块世界里造车、飙车、&m翻车&r"
+		""
+		"从今天起，告别骑猪的日子！"
+	]
+	quest.200B02B1D397A1A3.title: "开车车咯~"
 	quest.209527EB6F371208.desc: "在这里制造你所需要的各种弹药。"
 	quest.209527EB6F371208.quest_desc: [
 		"没有子弹的枪只是一根沉重的铁棍。使用弹药装配台可以大批量生产各种口径的弹药。"
@@ -889,6 +900,204 @@
 	quest.FDC1332DFCFF7FD6.desc: "双模式战斗霰弹枪。"
 	quest.FDC1332DFCFF7FD6.subtitle: "霰弹枪系列 - SPAS-12"
 	quest.FDC1332DFCFF7FD6.title: "SPAS-12"
+	quests.A001000000000001.description: [
+		"Automobility 是一个让你可以建造和自定义载具的模组！"
+		"在这个任务线中，你将学习如何制作车架、车轮、引擎，并组装你的第一辆汽车！"
+		"让我们开始吧！"
+	]
+	quests.A001000000000001.subtitle: "让我们造一些车吧！"
+	quests.A001000000000001.title: "欢迎来到 Automobility！"
+	quests.A001000000000002.description: [
+		"在我们建造载具之前，需要收集一些基础资源。"
+		"你需要铁锭、红石和其他各种材料。"
+		"查看配方书了解具体需求！"
+	]
+	quests.A001000000000002.subtitle: "是时候收集材料了"
+	quests.A001000000000002.title: "收集资源"
+	quests.A001000000000003.description: [
+		"汽车技工台是你制作载具部件的主要工作站。"
+		"放置它并右键点击来访问载具制作界面。"
+		"在这里你可以制作车架、车轮、引擎等！"
+	]
+	quests.A001000000000003.subtitle: "你的载具工作站"
+	quests.A001000000000003.title: "汽车技工台"
+	quests.A001000000000004.description: [
+		"车架决定了你载具的基本形状和风格。"
+		"不同的车架有不同的属性和外观。"
+		"让我们制作一些车架来开始！"
+	]
+	quests.A001000000000004.subtitle: "载具的基础"
+	quests.A001000000000004.title: "载具车架"
+	quests.A001000000000005.description: [
+		"标准车架是初学者的平衡选择。"
+		"它提供良好的稳定性和经典的汽车外观。"
+	]
+	quests.A001000000000005.subtitle: "经典的汽车车架"
+	quests.A001000000000005.title: "标准车架"
+	quests.A001000000000006.description: [
+		"拖拉机车架非常适合农业工作。"
+		"它有更高的扭矩，能更好地应对崎岖地形。"
+	]
+	quests.A001000000000006.subtitle: "用于农业工作"
+	quests.A001000000000006.title: "拖拉机车架"
+	quests.A001000000000007.description: [
+		"谁说载具一定要无聊？"
+		"购物车车架是一个古怪有趣的选择！"
+	]
+	quests.A001000000000007.subtitle: "有趣的替代选择"
+	quests.A001000000000007.title: "购物车车架"
+	quests.A001000000000008.description: [
+		"车轮影响你载具的速度、抓地力和操控性。"
+		"不同类型的车轮适合不同的地形。"
+		"一辆完整的载具需要4个车轮！"
+	]
+	quests.A001000000000008.subtitle: "保持滚动"
+	quests.A001000000000008.title: "车轮"
+	quests.A001000000000009.description: [
+		"标准车轮在大多数表面上提供平衡的性能。"
+		"是通用的绝佳选择！"
+	]
+	quests.A001000000000009.subtitle: "可靠的全能型"
+	quests.A001000000000009.title: "标准车轮"
+	quests.A001000000000010.description: [
+		"越野车轮在草地、泥土和不平坦地形上有更好的抓地力。"
+		"非常适合探索！"
+	]
+	quests.A001000000000010.subtitle: "适合崎岖地形"
+	quests.A001000000000010.title: "越野车轮"
+	quests.A001000000000011.description: [
+		"钢制车轮极其耐用，在硬质表面上表现出色。"
+		"非常适合工业应用！"
+	]
+	quests.A001000000000011.subtitle: "工业级强度"
+	quests.A001000000000011.title: "钢制车轮"
+	quests.A001000000000012.description: [
+		"引擎决定你载具的速度和加速度。"
+		"更好的材料意味着更强的动力！"
+		"根据你的需求和资源明智选择。"
+	]
+	quests.A001000000000012.subtitle: "为你的座驾提供动力"
+	quests.A001000000000012.title: "引擎"
+	quests.A001000000000013.description: [
+		"石质引擎是最基础的引擎。"
+		"它速度慢但制作成本低——非常适合初学者！"
+	]
+	quests.A001000000000013.subtitle: "基础但实用"
+	quests.A001000000000013.title: "石质引擎"
+	quests.A001000000000014.description: [
+		"铁质引擎提供比石质更好的速度和加速度。"
+		"是不错的中级选择！"
+	]
+	quests.A001000000000014.subtitle: "可靠的升级"
+	quests.A001000000000014.title: "铁质引擎"
+	quests.A001000000000015.description: [
+		"金质引擎提供出色的速度！"
+		"在飞驰的同时展示你的财富！"
+	]
+	quests.A001000000000015.subtitle: "快速又闪亮"
+	quests.A001000000000015.title: "金质引擎"
+	quests.A001000000000016.description: [
+		"钻石引擎是最好的引擎之一。"
+		"为挑剔的驾驶员提供最大速度和加速度！"
+	]
+	quests.A001000000000016.subtitle: "顶级性能"
+	quests.A001000000000016.title: "钻石引擎"
+	quests.A001000000000017.description: [
+		"现在你有了车架、车轮和引擎，是时候组装你的载具了！"
+		"使用汽车技工台来组合你的部件。"
+		"将组装好的载具放置在世界中开始驾驶！"
+	]
+	quests.A001000000000017.subtitle: "把它们组合在一起"
+	quests.A001000000000017.title: "组装你的载具"
+	quests.A001000000000018.description: [
+		"恭喜你建造了第一辆载具！"
+		"将它放置在世界中并右键点击进入。"
+		"使用 WASD 驾驶，空格键刹车。玩得开心！"
+	]
+	quests.A001000000000018.subtitle: "上路吧"
+	quests.A001000000000018.title: "首次驾驶！"
+	quests.A001000000000019.description: [
+		"附件为你的载具添加功能。"
+		"你可以添加储存、武器、装饰等！"
+		"让我们探索可用的选项。"
+	]
+	quests.A001000000000019.subtitle: "自定义你的座驾"
+	quests.A001000000000019.title: "附件"
+	quests.A001000000000020.description: [
+		"前置附件安装在载具前部。"
+		"可以包括铲子、灯光等！"
+	]
+	quests.A001000000000020.subtitle: "引领前方"
+	quests.A001000000000020.title: "前置附件"
+	quests.A001000000000021.description: [
+		"后置附件安装在载具后部。"
+		"非常适合增加储存容量或实用功能！"
+	]
+	quests.A001000000000021.subtitle: "扩展储存空间"
+	quests.A001000000000021.title: "后置附件"
+	quests.A001000000000022.description: [
+		"旗帜柱让你可以在载具上展示旗帜。"
+		"非常适合展示队伍颜色或个人风格！"
+	]
+	quests.A001000000000022.subtitle: "展示你的旗帜"
+	quests.A001000000000022.title: "旗帜柱"
+	quests.A001000000000023.description: [
+		"弹射凝胶是一种能将载具弹射到空中的特殊方块！"
+		"将它放在地上并开车经过获得弹射。"
+		"非常适合跳跃和特技！"
+	]
+	quests.A001000000000023.subtitle: "飞向天空"
+	quests.A001000000000023.title: "弹射凝胶"
+	quests.A001000000000024.description: [
+		"加速凝胶在载具经过时提供速度提升。"
+		"将它放在赛道或道路上获得额外加速！"
+	]
+	quests.A001000000000024.subtitle: "极速需求"
+	quests.A001000000000024.title: "加速凝胶"
+	quests.A001000000000025.description: [
+		"创造引擎是终极引擎！"
+		"它提供无限动力和最高速度。"
+		"只为最有奉献精神的建造者准备！"
+	]
+	quests.A001000000000025.subtitle: "终极动力"
+	quests.A001000000000025.title: "创造引擎"
+	quests.A001000000000026.description: [
+		"恭喜！你已完成 Automobility 任务线！"
+		"你现在知道如何建造和自定义载具了。"
+		"继续探索并创造你梦想中的座驾！"
+	]
+	quests.A001000000000026.subtitle: "你已精通 Automobility！"
+	quests.A001000000000026.title: "大师技工"
+	quests.A001000000000027.description: [
+		"陡坡允许你为载具建造坡道。"
+		"非常适合创建赛道和障碍课程！"
+	]
+	quests.A001000000000027.subtitle: "建造坡道"
+	quests.A001000000000027.title: "陡坡"
+	quests.A001000000000028.description: [
+		"缓坡为载具提供更平滑的坡度。"
+		"非常适合渐进的高度变化！"
+	]
+	quests.A001000000000028.subtitle: "平滑过渡"
+	quests.A001000000000028.title: "缓坡"
+	quests.A001000000000029.description: [
+		"C.A.R.R. 车架是一个高级载具选择。"
+		"它为有经验的建造者提供特殊属性！"
+	]
+	quests.A001000000000029.subtitle: "高级载具车架"
+	quests.A001000000000029.title: "C.A.R.R. 车架"
+	quests.A001000000000030.description: [
+		"收集16个弹射凝胶方块来建造精彩的赛道！"
+		"创造史诗般的跳跃和空中特技！"
+	]
+	quests.A001000000000030.subtitle: "储备弹射凝胶"
+	quests.A001000000000030.title: "弹射凝胶收集"
+	quests.A001000000000031.description: [
+		"收集16个加速凝胶方块用于速度赛道！"
+		"创造终极赛车体验！"
+	]
+	quests.A001000000000031.subtitle: "储备加速凝胶"
+	quests.A001000000000031.title: "加速凝胶收集"
 	reward.076E0D59FBA1E022.title: "100元！"
 	reward.106950D66EBBE409.title: "钻石锄！"
 	task.047CB7D8C83B2328.title: "爽~"

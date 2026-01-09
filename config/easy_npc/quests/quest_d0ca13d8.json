@@ -1,0 +1,15 @@
+{
+    "id": "d0ca13d8-6d88-4118-a7a2-fc3519658371",
+    "title": "火焰的净化",
+    "description": "亨利(Henry)太碍眼了，烧掉他的田地。让他知道什么叫真正的快乐。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:chicken",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 1
+    }
+}

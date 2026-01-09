@@ -37,13 +37,15 @@ public class CustomAttackGoal<T extends EasyNPC<?>> extends Goal {
   private boolean strafingBackwards;
   private boolean strafingClockwise;
   private int strafingTime = -1;
+  private boolean isFullAuto;
 
-  public CustomAttackGoal(T easyNPC, double targetDistance, int hasLineOfSight, float hasSeen) {
+  public CustomAttackGoal(T easyNPC, double speedModifier, int attackInterval, float attackRadius, boolean isFullAuto) {
     this.easyNPC = easyNPC;
     this.pathfinderMob = easyNPC.getPathfinderMob();
-    this.speedModifier = targetDistance;
-    this.attackIntervalMin = hasLineOfSight;
-    this.attackRadiusSqr = hasSeen * hasSeen;
+    this.speedModifier = speedModifier;
+    this.attackIntervalMin = attackInterval;
+    this.attackRadiusSqr = attackRadius * attackRadius;
+    this.isFullAuto = isFullAuto;
     this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
   }
 
@@ -138,7 +140,7 @@ public class CustomAttackGoal<T extends EasyNPC<?>> extends Goal {
           return;
         }
         AttackHandler.performCustomAttack(this.pathfinderMob, livingEntity, 10);
-        this.attackTime = this.attackIntervalMin;
+        this.attackTime = this.isFullAuto ? 1 : this.attackIntervalMin;
       }
     }
   }

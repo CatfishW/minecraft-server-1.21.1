@@ -1,0 +1,228 @@
+{
+    "name": "§6Richie Tozier",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Trashmouth. Jokes to hide fear.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/RichieTozier.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，朋友！看我看什么？难道我的新发型在末日里还挺时髦？别那么紧张，笑一个！虽然这鬼地方让人连笑话都讲不出来，但我Richie 'Trashmouth' Tozier保证，只要我们还活着，就有理由找点乐子。说吧，有什么需要我帮忙的？",
+            "buttons": [
+                {
+                    "label": "笑对恐惧",
+                    "action": "OPEN_QUEST_DIALOG:0d1c8c01-58e2-4c8f-b5f0-08b49077c9c3",
+                    "id": "btn_quest_57f585be"
+                },
+                {
+                    "label": "别看井底",
+                    "action": "OPEN_QUEST_DIALOG:bfd5b72c-8223-4eb0-ad8e-12534773ccdd",
+                    "id": "btn_quest_a5d1c8c2"
+                },
+                {
+                    "label": "恐怖小丑清理特惠",
+                    "action": "OPEN_QUEST_DIALOG:2bbe4ab2-8f3e-4276-8201-847fb2fcf023",
+                    "id": "btn_quest_1500e246"
+                },
+                {
+                    "label": "你怎么还在开玩笑？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_richie_joke"
+                },
+                {
+                    "label": "我需要情报",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_richie_info"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "你以为我想吗？如果不闭上嘴说点废话，我脑子里的声音就会告诉我，我们全都死定了。听着，恐惧就像那该死的下水道里的怪物，你越是盯着它看，它就越强大。所以我讲笑话，是为了把它当饭吃，直到它噎死。或者在我被吓死之前。",
+            "buttons": [
+                {
+                    "label": "什么怪物？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_richie_monster"
+                },
+                {
+                    "label": "听起来你需要帮助",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_richie_help"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "别装傻了，伙计。它在你害怕的时候出现，变成了你最深的恐惧。小丑、狼人、麻风病人……它有无数张脸。当你一个人的时候，最好祈祷手电筒的电池别耗尽。它就爱那些独处的人，那样它们可以慢慢玩。",
+            "buttons": [
+                {
+                    "label": "我们要怎么打败它？",
+                    "action": "SHOW_DIALOG:story_1_1_1",
+                    "id": "btn_richie_fight"
+                },
+                {
+                    "label": "这太荒谬了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_deny"
+                }
+            ]
+        },
+        "story_1_1_1": {
+            "greeting": "这就是问题所在，不是吗？比尔总是说我们需要信念，需要像孩子一样相信自己能赢。但我呢？我只剩下这把该死的嘴巴和一身发抖的肉。也许我们只要跑得比身边的人快就行了？开个玩笑……我是说，真的。",
+            "buttons": [
+                {
+                    "label": "我们不会放弃彼此",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_friend"
+                },
+                {
+                    "label": "我要去准备战斗了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_leave"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "帮我？除非你有能把恐惧变成笑话的药丸。我见过那东西，Eddie见过，我们都见过。有些人跑了，有些人疯了，有些人……消失了。我只能不停地说话，只要我还在说话，我就知道我还活着。",
+            "buttons": [
+                {
+                    "label": "保持冷静，带我去见其他人",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_calm"
+                },
+                {
+                    "label": "好吧，你自己小心",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_sorry"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "情报？在这种地方，情报通常比子弹还贵，而且往往更致命。你是想知道哪里有补给，还是想知道那个该死的马戏团今晚在哪里上演？如果是后者，我建议你把耳朵堵上，眼睛闭上。",
+            "buttons": [
+                {
+                    "label": "关于这个镇子的怪事",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_richie_town"
+                },
+                {
+                    "label": "关于……那个家伙",
+                    "action": "SHOW_DIALOG:story_2_2",
+                    "id": "btn_richie_clown"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "Derry。这地方从不吉利。我记得小时候，每个27年就会发生一次大灾难，人们就像集体失忆一样。失踪的孩子，恐怖的意外。但这不是普通的瘟疫，伙计。这是有意识的恶意。它在玩弄我们。",
+            "buttons": [
+                {
+                    "label": "这听起来像个诅咒",
+                    "action": "SHOW_DIALOG:story_2_1_1",
+                    "id": "btn_richie_curse"
+                },
+                {
+                    "label": "我要去图书馆查查",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_lib"
+                }
+            ]
+        },
+        "story_2_1_1": {
+            "greeting": "诅咒？也许吧。但比尔和迈克认为这更像是一个循环。历史在重演，只是每次换了个更恐怖的剧本。如果你真想帮忙，就别去阴暗的角落，特别是那些闻起来像蛋糕和腐烂肉味的地方。",
+            "buttons": [
+                {
+                    "label": "谢谢提醒",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_thanks"
+                },
+                {
+                    "label": "我要去验证一下",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_verify"
+                }
+            ]
+        },
+        "story_2_2": {
+            "greeting": "哦，你说Pennywise？还是它变的那个红气球？听着，那东西能钻进你的脑子。它知道你怕什么，然后把它变成现实。它会变成你妈妈，你爸爸，或者你死去的弟弟。如果你想活命，就别去想它。",
+            "buttons": [
+                {
+                    "label": "如果我已经看到它了呢？",
+                    "action": "SHOW_DIALOG:story_2_2_1",
+                    "id": "btn_richie_seen"
+                },
+                {
+                    "label": "它有弱点吗？",
+                    "action": "SHOW_DIALOG:story_2_2_2",
+                    "id": "btn_richie_weak"
+                }
+            ]
+        },
+        "story_2_2_1": {
+            "greeting": "那就意味着它看上你了，伙计。别让它知道你怕。你要表现得像个傻瓜，像个疯子，就像我一样。当你不再恐惧，它就没那么可怕了。至少……理论上是这样。",
+            "buttons": [
+                {
+                    "label": "我会试着这么做",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_try"
+                },
+                {
+                    "label": "这太难了",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_hard"
+                }
+            ]
+        },
+        "story_2_2_2": {
+            "greeting": "力量？比尔说是信念。团结。如果我们像小时候那样在一起，也许能伤到它。但现在的我们，充满了怀疑和成年的烦恼。除非我们找回那种孩子气的勇气，否则我们只是在给它送餐。",
+            "buttons": [
+                {
+                    "label": "我们会找回勇气的",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_courage"
+                },
+                {
+                    "label": "这听起来很绝望",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_richie_despair"
+                }
+            ]
+        },
+        "story_end": {
+            "greeting": "好了，好了。话说得够多了。口水都干了。如果你要去送死，记得带上好装备。如果你要躲起来，找个好点的藏身处。我得去找比尔了，不然他又会一个人去干蠢事。保持警惕，朋友。",
+            "buttons": [
+                {
+                    "label": "保持联系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_richie_close"
+                },
+                {
+                    "label": "再见，Richie",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_richie_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_pickaxe",
+            "count": 1
+        }
+    }
+}

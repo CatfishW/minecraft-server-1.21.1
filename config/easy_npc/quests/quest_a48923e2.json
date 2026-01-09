@@ -1,0 +1,15 @@
+{
+    "id": "a48923e2-4e5d-4a3e-8c9b-1234567890ab",
+    "title": "善意之乳",
+    "description": "我是Strong。寻找能治愈伤口的牛奶。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

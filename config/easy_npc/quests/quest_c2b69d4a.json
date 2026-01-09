@@ -1,0 +1,15 @@
+{
+    "id": "c2b69d4a-3f1b-4f07-b89a-1c8e92a3d761",
+    "title": "收集煤炭",
+    "description": "我需要煤炭来加热我的熔炉，帮我收集一些吧。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

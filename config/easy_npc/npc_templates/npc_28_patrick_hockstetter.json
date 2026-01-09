@@ -1,0 +1,133 @@
+{
+    "name": "§6Patrick Hockstetter",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Psychopathic bully. Likes fire.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/PatrickHockstetter.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你身上有气味。新的气味。我很擅长记住气味，尤其是那些即将消失的气味。Henry在哪儿？我得跟着他。没人能离开我，就像那些苍蝇一样，它们一旦飞进我的手里，就再也出不去了。",
+            "buttons": [
+                {
+                    "label": "火焰的净化",
+                    "action": "OPEN_QUEST_DIALOG:d0ca13d8-6d88-4118-a7a2-fc3519658371",
+                    "id": "btn_quest_cbb05892"
+                },
+                {
+                    "label": "野火燎原",
+                    "action": "OPEN_QUEST_DIALOG:45062120-7311-4867-bc60-205cf427253b",
+                    "id": "btn_quest_9aaea079"
+                },
+                {
+                    "label": "焰之献祭",
+                    "action": "OPEN_QUEST_DIALOG:110ec4a9-d38b-47de-af56-297dc6e17207",
+                    "id": "btn_quest_19535d97"
+                },
+                {
+                    "label": "你的手？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_hands"
+                },
+                {
+                    "label": "你和Henry在计划什么？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_plan"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "我以前有个笔记本，上面记录了我杀死的所有东西。苍蝇、甲虫、鸟...我用力一拍，它们就完蛋了。有时候我甚至能把它们闷死在手里，直到它们不再挣扎。那种感觉...很美妙。你懂吗？",
+            "buttons": [
+                {
+                    "label": "这太残忍了",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_cruel"
+                },
+                {
+                    "label": "那你能控制其他东西吗？",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_control"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Henry想让那些小屁孩受苦。Belch在开车，Victor在发抖。但我想要别的。我在医院里死过一次，我记得那种冰冷。但后来我活了过来，因为有东西救了我。它想让我看一些更好玩的东西。",
+            "buttons": [
+                {
+                    "label": "什么东西？",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_thing"
+                },
+                {
+                    "label": "你在医院死过？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_hospital"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "残忍？不，这是净化。只有强者才能生存。但我现在知道了，还有比强者更强的东西。它在下水道里等我。它说会给我看火。我喜欢火，火能烧掉一切气味，把所有东西变成灰烬。",
+            "buttons": [
+                {
+                    "label": "去下水道？",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_sewer"
+                },
+                {
+                    "label": "别去，那是陷阱",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_trap"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "它穿着像小丑一样的衣服，但它不是人。它有巨大的眼睛，像蜘蛛网一样的眼睛。它给我看了一把打火机。银色的。它说我们可以把整个镇子都点着。Henry会喜欢的。",
+            "buttons": [
+                {
+                    "label": "快醒醒，Patrick！",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_wake"
+                },
+                {
+                    "label": "把打火机给我",
+                    "action": "SHOW_DIALOG:bad_end",
+                    "id": "btn_lighter"
+                }
+            ]
+        },
+        "bad_end": {
+            "greeting": "它来了。就在黑暗里。它抓住了我的腿！不！滚开！那不是真的！那只是血！好多血！我的手！我的手被粘住了！啊啊啊——！",
+            "buttons": [
+                {
+                    "label": "...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:iron_sword",
+            "count": 1
+        }
+    }
+}

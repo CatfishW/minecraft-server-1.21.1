@@ -1,0 +1,123 @@
+{
+    "name": "§eStrong",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Super Mutant. Looking for milk of kindness.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Strong.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "吼！我是强力。大块头，强力！你是好人，还是坏人？如果你手里有肉，你就是好人。如果没有……强力就打断你的腿。我饿了。我想喝牛奶，那种好心的牛奶！",
+            "buttons": [
+                {
+                    "label": "强哥的善意",
+                    "action": "OPEN_QUEST_DIALOG:e0e9a6a2-7b3f-4b8a-9d84-0a2e4582a044",
+                    "id": "btn_quest_07a80e40"
+                },
+                {
+                    "label": "仁慈的甘露",
+                    "action": "OPEN_QUEST_DIALOG:da1d0790-aa77-4b1e-9ebc-eb45bb4db83d",
+                    "id": "btn_quest_64f7ad8c"
+                },
+                {
+                    "label": "寻觅温柔之乳",
+                    "action": "OPEN_QUEST_DIALOG:fafcbfd3-54a0-4cd6-8ddc-4f5baed91743",
+                    "id": "btn_quest_8502fd12"
+                },
+                {
+                    "label": "什么是「好心的牛奶」？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_milk"
+                },
+                {
+                    "label": "肉？我这里有变种肉",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_mutant_meat"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "那是书里说的！人类很狡猾，他们有牛奶，但不给强力喝。他们说那是「好心」。强力不懂，但强力喜欢牛奶！喝了牛奶，强力就觉得……很温柔。就像书里的人类一样。你有吗？",
+            "buttons": [
+                {
+                    "label": "我会帮你找牛奶",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_find_milk"
+                },
+                {
+                    "label": "变种人不应该喝牛奶",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_no_milk"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "肉！好！嚼劲足！虽然不如新鲜的人肉，但也能塞牙缝。给我！强力饿坏了。吃了肉，强力就有力气帮你打坏蛋。打那些拿着棍子的人类，或者那些飞来飞去的小虫子！",
+            "buttons": [
+                {
+                    "label": "给你肉",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_give_meat"
+                },
+                {
+                    "label": "忍着点，等会带你去打猎",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_hunt"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "打猎！好主意！强力喜欢狩猎！我们要去把那些大虫子，那些发光的鹿，统统抓来！把它们撕碎，烤熟，吃掉！人类说这是野蛮，但强力觉得这是生存！你懂吗？",
+            "buttons": [
+                {
+                    "label": "这就带你去",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go_hunt"
+                },
+                {
+                    "label": "你得学会控制自己",
+                    "action": "SHOW_DIALOG:story_4",
+                    "id": "btn_control"
+                }
+            ]
+        },
+        "story_4": {
+            "greeting": "控制？强力不想控制！强力想做什么就做什么！但是……强力记得那段文字。关于「好心」。也许……也许不咬断你的喉咙，就是一种「好心」？强力试着做。但你要给牛奶！",
+            "buttons": [
+                {
+                    "label": "成交，为了牛奶和好心",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deal"
+                },
+                {
+                    "label": "你还有很长的路要走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_long_way"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_axe",
+            "count": 1
+        }
+    }
+}

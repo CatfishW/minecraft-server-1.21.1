@@ -1,0 +1,15 @@
+{
+    "id": "a550e42b-fd05-4e9c-8531-88b2241a65a0",
+    "title": "纸船的邀约",
+    "description": "下水道里有一艘黄色的纸船，那是乔治留下的线索。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 2
+    }
+}

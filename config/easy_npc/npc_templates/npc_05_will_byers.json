@@ -1,0 +1,208 @@
+{
+    "name": "§bWill Byers",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The survivor. Has a connection to the Upside Down.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/WillByers.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哦，你好。你是新来的吗？我叫威尔·拜尔斯。小心点，霍金斯的冬天很长，而且...有时候会很冷，不是那种普通的冷。就好像有扇门开着，冷风从一个不该存在的地方吹进来。你感觉到了吗？那种...注视感。",
+            "buttons": [
+                {
+                    "label": "来自阴影的威胁",
+                    "action": "OPEN_QUEST_DIALOG:7c3b1e2a-4d5f-4a8e-9b2c-3f6d1e9a8b4c",
+                    "id": "btn_quest_3cc97987"
+                },
+                {
+                    "label": "裂隙回响",
+                    "action": "OPEN_QUEST_DIALOG:a63ccdaa-0f0d-439a-9a69-17341b690811",
+                    "id": "btn_quest_1af781cd"
+                },
+                {
+                    "label": "你感觉到了什么？",
+                    "action": "SHOW_DIALOG:ask_feelings",
+                    "id": "btn_ask_feel"
+                },
+                {
+                    "label": "你经历过什么？",
+                    "action": "SHOW_DIALOG:ask_past",
+                    "id": "btn_ask_past"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "ask_feelings": {
+            "greeting": "一种连接。就像一根看不见的线。它让我知道它什么时候回来。有时候，在深夜，我能听到它的声音，像冰冷的呼吸，贴在我的脖子后面。他们叫我幸存者，但我觉得我更像一个...警报器。一个永远无法关闭的警报器。",
+            "buttons": [
+                {
+                    "label": "那是什么感觉？",
+                    "action": "SHOW_DIALOG:story_connection",
+                    "id": "btn_ask_what"
+                },
+                {
+                    "label": "这一定很痛苦",
+                    "action": "SHOW_DIALOG:story_pain",
+                    "id": "btn_ask_pain"
+                }
+            ]
+        },
+        "ask_past": {
+            "greeting": "我被带走了。在一个漆黑的雨夜，被一个...东西。我被困在了一个没有光的世界，一个和我们的世界重叠的灰色地狱。那里的一切都在腐烂，天空是红色的。我躲在涵洞里，听着它的脚步声，还有那些...爬行的声音。我以为我会死在那里。",
+            "buttons": [
+                {
+                    "label": "你是怎么活下来的？",
+                    "action": "SHOW_DIALOG:story_survival",
+                    "id": "btn_ask_survive"
+                },
+                {
+                    "label": "他们救了你？",
+                    "action": "SHOW_DIALOG:story_rescue",
+                    "id": "btn_ask_rescue"
+                }
+            ]
+        },
+        "story_connection": {
+            "greeting": "就像你画了一幅画，但你不知道为什么要画它。或者你梦游，醒来时发现手里拿着蜡笔，墙上画满了门。每次它要来，或者逆世界要扩张时，我就会不自觉地画画。妈妈把它们都收起来了。那些画...它们不是我画的，是它通过我画的。",
+            "buttons": [
+                {
+                    "label": "它想干什么？",
+                    "action": "SHOW_DIALOG:story_motive",
+                    "id": "btn_ask_motive"
+                },
+                {
+                    "label": "这太诡异了",
+                    "action": "SHOW_DIALOG:story_pain",
+                    "id": "btn_concl_weird"
+                }
+            ]
+        },
+        "story_survival": {
+            "greeting": "我不知道。靠运气？靠意志力？我只是...不想让妈妈和乔纳森失望。我告诉自己要勇敢，像科幻小说里的英雄一样。我找到了一个没水的涵洞，在里面用泥巴和树枝做了记号。我试着生火，但那里的一切都是湿的。我只是在等。等他们来找我。",
+            "buttons": [
+                {
+                    "label": "你的哥哥一定很担心你",
+                    "action": "SHOW_DIALOG:story_family",
+                    "id": "btn_ask_brother"
+                },
+                {
+                    "label": "你当时一定很害怕",
+                    "action": "SHOW_DIALOG:story_fear",
+                    "id": "btn_concl_afraid"
+                }
+            ]
+        },
+        "story_rescue": {
+            "greeting": "他们找到了我。我最好的朋友们，在达斯汀的探测器帮助下。还有艾莉。她用她的力量打开了通往我所在地方的门。当我看到迈克的脸时，我知道我回家了。他们把我从黑暗里拉了出来。没有他们，我早就迷失了，就像威灵顿镇的那个男孩一样。",
+            "buttons": [
+                {
+                    "label": "艾莉救了你？",
+                    "action": "SHOW_DIALOG:story_eleven",
+                    "id": "btn_ask_eleven"
+                },
+                {
+                    "label": "你们的友谊真伟大",
+                    "action": "SHOW_DIALOG:story_family",
+                    "id": "btn_concl_friendship"
+                }
+            ]
+        },
+        "story_motive": {
+            "greeting": "它想要...一切。它渴望生命，渴望温暖。它是一个饥饿的捕食者，而我们的世界是它的猎场。它会学习，会模仿。它模仿我，试图接近我的妈妈。它想要吞噬我们，把我们的世界变成它的家。我们不能让它得逞，绝不能。",
+            "buttons": [
+                {
+                    "label": "我们能阻止它吗？",
+                    "action": "SHOW_DIALOG:story_hope",
+                    "id": "btn_ask_hope"
+                },
+                {
+                    "label": "你肩负着重任",
+                    "action": "SHOW_DIALOG:story_duty",
+                    "id": "btn_concl_duty"
+                }
+            ]
+        },
+        "story_family": {
+            "greeting": "我的朋友们...他们是我生命的一部分。迈克总是保护我，达斯汀用他的科学头脑想办法，卢卡斯保持警惕。还有我哥哥乔纳森，他一直都在。没有他们，我不可能站在这里和你说话。他们是我对抗黑暗的光。",
+            "buttons": [
+                {
+                    "label": "你们是真正的英雄",
+                    "action": "SHOW_DIALOG:story_hope",
+                    "id": "btn_concl_hero"
+                },
+                {
+                    "label": "我很高兴你还活着",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_concl_alive"
+                }
+            ]
+        },
+        "story_hope": {
+            "greeting": "希望是唯一的武器。在逆世界里，我靠着希望活了下来。我相信他们会找到我。现在，我相信我们能最终战胜它。也许它会回来，也许阴影会再次笼罩霍金斯，但只要我们在一起，只要我们还记得过去，我们就不会输。我们会赢的，对吗？",
+            "buttons": [
+                {
+                    "label": "是的，我们会赢的",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_close_win"
+                },
+                {
+                    "label": "永远不要放弃希望",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_hope"
+                }
+            ]
+        },
+        "story_pain": {
+            "greeting": "是的，很痛苦。有时候我觉得它还在我的身体里，像一个冰冷的肿瘤。但我不想只做一个受害者。我想成为一个有用的人。我想用我的经历帮助大家。如果我能提前感觉到危险，也许我就能保护别人，不让他们经历我所经历的。",
+            "buttons": [
+                {
+                    "label": "你很无私",
+                    "action": "SHOW_DIALOG:story_family",
+                    "id": "btn_concl_selfless"
+                },
+                {
+                    "label": "保护好自己",
+                    "action": "SHOW_DIALOG:story_end",
+                    "id": "btn_concl_self"
+                }
+            ]
+        },
+        "story_end": {
+            "greeting": "谢谢你能听我说这些。很少有人能真正理解。但没关系，只要我的朋友们理解就够了。我要回家了，妈妈还在等我。替我向外面问好，告诉他们...威尔·拜尔斯还在坚守阵地。",
+            "buttons": [
+                {
+                    "label": "保重，威尔",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_bye"
+                },
+                {
+                    "label": "我们都在",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_here"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_sword",
+            "count": 1
+        }
+    }
+}

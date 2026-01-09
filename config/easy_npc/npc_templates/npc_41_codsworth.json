@@ -1,0 +1,143 @@
+{
+    "name": "§5Codsworth",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Mr Handy robot butler.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Codsworth.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哎呀！我的老天爷啊，您总算醒了！看看这地方，简直是一团糟，真该用吸尘器好好清理一下。我的传感器检测到您已经昏迷了足足200年，虽然这听起来有点离谱，但请相信我的计时器绝对精准。您需要来点茶吗？还是说我们得先找个安全的地方，好让我能继续履行管家的职责？",
+            "buttons": [
+                {
+                    "label": "厨房卫生危机",
+                    "action": "OPEN_QUEST_DIALOG:c0ef7ecc-732e-4da1-8539-07226a988771",
+                    "id": "btn_quest_b02615d4"
+                },
+                {
+                    "label": "吸尘器坏了",
+                    "action": "OPEN_QUEST_DIALOG:a93c04f7-3f27-4845-8c69-88f334134a98",
+                    "id": "btn_quest_1622a3f7"
+                },
+                {
+                    "label": "温室修复",
+                    "action": "OPEN_QUEST_DIALOG:63920dae-2772-440e-a690-eb0765da2e63",
+                    "id": "btn_quest_32bd095f"
+                },
+                {
+                    "label": "熏香大扫除",
+                    "action": "OPEN_QUEST_DIALOG:5209f056-aa5b-470b-8418-ef47c979eac3",
+                    "id": "btn_quest_4bdf5f2c"
+                },
+                {
+                    "label": "这是哪里？我们安全了吗？",
+                    "action": "SHOW_DIALOG:location",
+                    "id": "btn_location"
+                },
+                {
+                    "label": "我的家人呢？",
+                    "action": "SHOW_DIALOG:family",
+                    "id": "btn_family"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "location": {
+            "greeting": "根据我刚刚下载的地图数据显示，这里还是我们美丽的家园——庇护山丘。只不过现在外面有些……不太友好。政府建议我们待在屋内，但我扫描到外面到处都是辐射和可怕的强盗。我强烈建议我们加固住所，毕竟我可不想让那些野蛮人弄脏我的地板。",
+            "buttons": [
+                {
+                    "label": "那你有什么好主意？",
+                    "action": "SHOW_DIALOG:plan",
+                    "id": "btn_plan"
+                },
+                {
+                    "label": "外面真的那么危险吗？",
+                    "action": "SHOW_DIALOG:danger",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "family": {
+            "greeting": "我很抱歉，先生/女士。主冷冻仓的系统日志显示，除了您之外的所有人都被强制解冻并带走了。我不敢想象他们经历了什么，但我发誓，只要您一声令下，我会尽全力找回他们。现在的当务之急是确保您的安全，只有您活着，我们才有希望找回那两位小主人。",
+            "buttons": [
+                {
+                    "label": "你说得对，我们得先准备一下。",
+                    "action": "SHOW_DIALOG:plan",
+                    "id": "btn_plan_2"
+                },
+                {
+                    "label": "不，我现在就要去找他们！",
+                    "action": "SHOW_DIALOG:rush",
+                    "id": "btn_rush"
+                }
+            ]
+        },
+        "plan": {
+            "greeting": "明智的选择，先生/女士！我们可以先清理一下院子里的杂草和废料，把这里变成一个像样的堡垒。然后，也许我们可以找找看有没有幸存的邻居能帮上忙。哦，如果看到那些拿着激光枪的家伙，记得躲在我后面，我的火焰喷射器可是保养得很好的！",
+            "buttons": [
+                {
+                    "label": "听起来不错，开始干活吧。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "火焰喷射器？你还有这种功能？",
+                    "action": "SHOW_DIALOG:weapons",
+                    "id": "btn_weapons"
+                }
+            ]
+        },
+        "danger": {
+            "greeting": "危险？那简直是太轻描淡写了！外面有那些穿着动力装甲的疯子，还有像恶鬼一样的掠夺者。更别提那些在废土上游荡的可怕生物了。作为您的管家，我的首要任务就是确保您的生命安全，其次是维护环境的整洁。这两者现在都很有挑战性。",
+            "buttons": [
+                {
+                    "label": "我明白了，我们得小心行事。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2"
+                }
+            ]
+        },
+        "weapons": {
+            "greeting": "当然！作为一台多功能家用管家机器人，我配备了全套的“园艺维护”工具包。其中包括一挺标准的突击步枪，一具火焰喷射器用于除草，以及一套相当有威慑力的近战格斗系统。请不要告诉太太，她一直反对我改装这些模块，但现在看来，这真是个明智的决定！",
+            "buttons": [
+                {
+                    "label": "干得好，我的好管家。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3"
+                }
+            ]
+        },
+        "rush": {
+            "greeting": "先生/女士，请冷静！我知道您心急如焚，但赤手空拳冲进废土无异于自杀。那些绑走家人的恶棍肯定全副武装。我们需要制定一个周密的计划，找到武器和装备，才能有效地展开救援。请相信我，我的计算结果显示，鲁莽行动的成功率低于1%。",
+            "buttons": [
+                {
+                    "label": "好吧，你说服我了。",
+                    "action": "SHOW_DIALOG:plan",
+                    "id": "btn_plan_3"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:spyglass",
+            "count": 1
+        }
+    }
+}

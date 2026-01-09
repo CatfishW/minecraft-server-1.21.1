@@ -1,0 +1,15 @@
+{
+    "id": "7b3a1c9e-4260-4c5c-8e2a-3f8d9a1b2c3d",
+    "title": "肃清异端",
+    "description": "铁道兄弟会不需要弱者。证明你的价值，把那些腐烂的僵尸从我们的领地上抹去。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "novus_items:bronze_novus_coin",
+        "amount": 3
+    }
+}

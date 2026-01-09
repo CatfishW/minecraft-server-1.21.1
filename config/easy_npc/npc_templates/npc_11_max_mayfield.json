@@ -1,0 +1,128 @@
+{
+    "name": "§eMax Mayfield",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "The zoomer. Tough and skateboarder.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/MaxMayfield.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false,
+        "wanderRange": 25.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "看什么看？没见过玩滑板的吗？如果你是来烦我的，最好趁我还没发火赶紧滚蛋。这鬼地方除了那些发光的蘑菇和怪物，连个像样的坡都找不到，真是受够了。",
+            "buttons": [
+                {
+                    "label": "极限特技",
+                    "action": "OPEN_QUEST_DIALOG:e868b195-d1b4-4784-a30e-1b6919b35288",
+                    "id": "btn_quest_be7b4bc4"
+                },
+                {
+                    "label": "街头风格涂鸦",
+                    "action": "OPEN_QUEST_DIALOG:37002643-ea59-4305-9a24-7663815e134a",
+                    "id": "btn_quest_3ecb3449"
+                },
+                {
+                    "label": "我看到你滑得很酷。",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_max_start"
+                },
+                {
+                    "label": "你在躲什么人吗？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_max_avoid"
+                }
+            ],
+            "oneTimeConversation": true
+        },
+        "story_1": {
+            "greeting": "哈，算你有眼光。以前在霍金斯，我可是碾压那帮臭小子的王者。不过现在这鬼世界，滑板更多是用来逃命的。你知道那种感觉吗？身后全是追兵，只有轮子摩擦地面的声音，这才是最纯粹的自由。",
+            "buttons": [
+                {
+                    "label": "听起来你经历过很多。",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_max_listen"
+                },
+                {
+                    "label": "想不想比比？",
+                    "action": "SHOW_DIALOG:story_1_2",
+                    "id": "btn_max_race"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "哼，比你想象的要多。我见过现实崩塌的样子，也见过那些所谓的大人吓得像老鼠一样乱窜。所以我才告诉自己，绝对不能软弱。哪怕只是为了保护我那个笨蛋弟弟，我也必须一直赢下去。",
+            "buttons": [
+                {
+                    "label": "你很在乎家人。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_max_family"
+                },
+                {
+                    "label": "但这世界变了。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_max_change"
+                }
+            ]
+        },
+        "story_1_2": {
+            "greeting": "比比？你以为你是谁？行啊，前面那个岩浆瀑布是个不错的终点。但我先警告你，我可不会放水。要是摔断了腿，别指望我会停下来扶你，明白吗？",
+            "buttons": [
+                {
+                    "label": "一言为定！",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_max_accept_race"
+                },
+                {
+                    "label": "还是算了吧。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_max_decline_race"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "躲人？我不躲任何人。我只是不想跟一群整天只会在这挖方块的无趣家伙混在一起。听着，我不是那个总是哭哭啼啼的十一号，我有我自己的活法。我不需要骑士来救我，我自己就是女王。",
+            "buttons": [
+                {
+                    "label": "独立自主，我喜欢。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_max_independent"
+                },
+                {
+                    "label": "听起来你很孤独。",
+                    "action": "SHOW_DIALOG:story_conclusion",
+                    "id": "btn_max_lonely"
+                }
+            ]
+        },
+        "story_conclusion": {
+            "greeting": "行了，废话少说。我得去练我的新招式了。如果你真想帮忙，就帮我留意下周围有没有红石引擎之类的东西，我想改装下我的滑板。谢了，回头见。",
+            "buttons": [
+                {
+                    "label": "保重。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_max_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:stone_sword",
+            "count": 1
+        }
+    }
+}
