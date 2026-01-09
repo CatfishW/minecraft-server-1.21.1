@@ -1,0 +1,8 @@
+"textures": {
+"4": "warmpixel:item/wpcoin/side",
+"8": "warmpixel:item/wpcoin/base",
+"10": "warmpixel:item/wpcoin/heart",
+"11": "warmpixel:item/wpcoin/pink",
+"12": "warmpixel:item/wpcoin/blue",
+"particle": "warmpixel:/item/wpcoin/base"
+}
