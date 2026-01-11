@@ -147,4 +147,35 @@ public class InventoryAdapter {
         }
         return remaining.isEmpty();
     }
+
+    public CompletableFuture<Boolean> canInsertStack(ServerPlayer player, ItemStack stack) {
+        CompletableFuture<Boolean> future = new CompletableFuture<>();
+        server.execute(() -> future.complete(canInsertStackSync(player, stack)));
+        return future;
+    }
+
+    private boolean canInsertStackSync(ServerPlayer player, ItemStack stack) {
+        if (stack.isEmpty()) {
+            return true;
+        }
+        Container inventory = player.getInventory();
+        ItemStack remaining = stack.copy();
+        int max = Math.min(remaining.getMaxStackSize(), inventory.getMaxStackSize());
+        int available = 0;
+        for (int i = 0; i < inventory.getContainerSize(); i++) {
+            ItemStack slotStack = inventory.getItem(i);
+            if (slotStack.isEmpty()) {
+                available += max;
+                continue;
+            }
+            if (!ItemStack.isSameItemSameComponents(slotStack, remaining)) {
+                continue;
+            }
+            int space = max - slotStack.getCount();
+            if (space > 0) {
+                available += space;
+            }
+        }
+        return available >= remaining.getCount();
+    }
 }

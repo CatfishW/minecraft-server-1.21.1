@@ -21,13 +21,14 @@ public class ClientPreventGunClick {
         if (player == null) {
             return;
         }
-        // 当交互键按下时，允许交互 - Use InputExtraCheck to bypass key conflict detection
+
         if (InputExtraCheck.isKeyDown(InteractKey.INTERACT_KEY)) {
             return;
         }
-        // 只要主手有枪，那么禁止交互
+        
         ItemStack itemInHand = player.getItemInHand(InteractionHand.MAIN_HAND);
         if (itemInHand.getItem() instanceof IGun) {
+            // 只要主手有枪，那么禁止交互
             // 展示框可以交互
             HitResult hitResult = Minecraft.getInstance().hitResult;
             if (hitResult instanceof EntityHitResult entityHitResult && entityHitResult.getEntity() instanceof ItemFrame) {

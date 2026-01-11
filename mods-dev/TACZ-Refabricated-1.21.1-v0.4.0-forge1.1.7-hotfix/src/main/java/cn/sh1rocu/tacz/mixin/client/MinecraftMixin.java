@@ -5,6 +5,8 @@ import cn.sh1rocu.tacz.api.event.InputEvent;
 import cn.sh1rocu.tacz.api.event.RenderTickEvent;
 import cn.sh1rocu.tacz.api.mixin.PackRepositoryExtension;
 import cn.sh1rocu.tacz.util.forge.ClientHooks;
+import com.tacz.guns.api.item.IGun;
+import com.tacz.guns.client.input.ShootKey;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
 import com.llamalad7.mixinextras.sugar.Local;
@@ -61,6 +63,18 @@ public abstract class MinecraftMixin {
     @Shadow
     @Final
     private DeltaTracker.Timer timer;
+
+    @Shadow
+    protected abstract boolean startAttack();
+
+    @Inject(method = "handleKeybinds", at = @At("HEAD"))
+    private void tacz$handleAttackConflict(CallbackInfo ci) {
+        if (this.player != null && !(this.player.getMainHandItem().getItem() instanceof IGun)) {
+            while (ShootKey.SHOOT_KEY.consumeClick()) {
+                this.startAttack();
+            }
+        }
+    }
 
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/packs/repository/PackRepository;reload()V"))
     private void tacz$addPacks(GameConfig gameConfig, CallbackInfo ci) {

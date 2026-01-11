@@ -24,8 +24,7 @@ import static com.tacz.guns.util.InputExtraCheck.isInGame;
 @Environment(EnvType.CLIENT)
 public class ShootKey {
     public static final KeyMapping SHOOT_KEY = new KeyMapping("key.tacz.shoot.desc",
-            InputConstants.Type.MOUSE,
-            GLFW.GLFW_MOUSE_BUTTON_LEFT,
+            InputConstants.UNKNOWN.getValue(),
             "key.category.tacz");
     private static boolean lastTimeShootSuccess = false;
 
@@ -47,7 +46,9 @@ public class ShootKey {
                     .orElse(false);
             IClientPlayerGunOperator operator = IClientPlayerGunOperator.fromLocalPlayer(player);
             // Use InputExtraCheck.isKeyDown to bypass key conflict detection
-            if (InputExtraCheck.isKeyDown(SHOOT_KEY)) {
+            // Compatibility: We check both the dedicated SHOOT_KEY and the vanilla Attack key.
+            // This allows the user to shoot using Left Click (Attack) even if SHOOT_KEY is unbound.
+            if (InputExtraCheck.isKeyDown(SHOOT_KEY) || InputExtraCheck.isKeyDown(mc.options.keyAttack)) {
                 // 能开火时禁止冲刺
                 LocalPlayerSprint.stopSprint = true;
 
@@ -88,13 +89,13 @@ public class ShootKey {
     }
 
     public static void semiShoot(InputEvent.MouseButton.Post event) {
-        if (isInGame() && SHOOT_KEY.matchesMouse(event.getButton())) {
+        Minecraft mc = Minecraft.getInstance();
+        if (isInGame() && (SHOOT_KEY.matchesMouse(event.getButton()) || mc.options.keyAttack.matchesMouse(event.getButton()))) {
             // 松开鼠标，重置 DryFire 状态
             if (event.getAction() == GLFW.GLFW_RELEASE) {
                 SoundPlayManager.resetDryFireSound();
                 return;
             }
-            Minecraft mc = Minecraft.getInstance();
             LocalPlayer player = mc.player;
             if (player == null || player.isSpectator()) {
                 return;

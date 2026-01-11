@@ -182,41 +182,47 @@ public class ShopService {
                     }
                     long tax = Math.round(baseTotal * config.taxes.shopTaxRate);
                     long total = baseTotal + tax;
-                    return currencyService.withdraw(player, total).thenCompose(withdrawn -> {
-                        if (!withdrawn) {
-                            return CompletableFuture.completedFuture(EconomyResult.fail("message.warm_pixel_economy.insufficient_funds"));
+                    ItemStack checkStack = ItemKeyFactory.stackFromSnbt(offer.itemJson(), totalCount, player.getServer().registryAccess());
+                    return inventoryAdapter.canInsertStack(player, checkStack).thenCompose(canInsert -> {
+                        if (!canInsert) {
+                            return CompletableFuture.completedFuture(EconomyResult.fail("message.warm_pixel_economy.inventory_full"));
                         }
-                        return CompletableFuture.supplyAsync(() -> {
-                            ShopOffer fresh = storage.getOffer(offerId).orElse(null);
-                            if (fresh == null || !fresh.buyEnabled()) {
-                                throw new TransactionAbortException("Offer unavailable.");
+                        return currencyService.withdraw(player, total).thenCompose(withdrawn -> {
+                            if (!withdrawn) {
+                                return CompletableFuture.completedFuture(EconomyResult.fail("message.warm_pixel_economy.insufficient_funds"));
                             }
-                            if (!fresh.infiniteStock() && fresh.stock() < totalCount) {
-                                throw new TransactionAbortException("Out of stock.");
-                            }
-                            if (!fresh.infiniteStock()) {
-                                boolean updated = storage.updateStock(fresh.offerId(), fresh.stock() - totalCount, fresh.version());
-                                if (!updated) {
-                                    throw new TransactionAbortException("Stock changed.");
+                            return CompletableFuture.supplyAsync(() -> {
+                                ShopOffer fresh = storage.getOffer(offerId).orElse(null);
+                                if (fresh == null || !fresh.buyEnabled()) {
+                                    throw new TransactionAbortException("Offer unavailable.");
                                 }
-                            }
-                            return fresh;
-                        }, executor).thenCompose(fresh -> {
-                            ItemStack stack = ItemKeyFactory.stackFromSnbt(fresh.itemJson(), totalCount, player.getServer().registryAccess());
-                            return inventoryAdapter.insertStack(player, stack).thenCompose(success -> {
-                                if (success) {
-                                    playSound(player, SoundEvents.VILLAGER_TRADE);
-                                    return CompletableFuture.completedFuture(EconomyResult.ok("message.warm_pixel_economy.purchase_complete"));
+                                if (!fresh.infiniteStock() && fresh.stock() < totalCount) {
+                                    throw new TransactionAbortException("Out of stock.");
                                 }
-                                return deliveryService.createItemDelivery(player.getUUID(), fresh.itemHash(), fresh.itemJson(), totalCount)
-                                        .thenApply(delivery -> {
-                                            playSound(player, SoundEvents.VILLAGER_TRADE);
-                                            return EconomyResult.ok("message.warm_pixel_economy.items_sent_delivery");
-                                        });
+                                if (!fresh.infiniteStock()) {
+                                    boolean updated = storage.updateStock(fresh.offerId(), fresh.stock() - totalCount, fresh.version());
+                                    if (!updated) {
+                                        throw new TransactionAbortException("Stock changed.");
+                                    }
+                                }
+                                return fresh;
+                            }, executor).thenCompose(fresh -> {
+                                ItemStack stack = ItemKeyFactory.stackFromSnbt(fresh.itemJson(), totalCount, player.getServer().registryAccess());
+                                return inventoryAdapter.insertStack(player, stack).thenCompose(success -> {
+                                    if (success) {
+                                        playSound(player, SoundEvents.VILLAGER_TRADE);
+                                        return CompletableFuture.completedFuture(EconomyResult.ok("message.warm_pixel_economy.purchase_complete"));
+                                    }
+                                    return deliveryService.createItemDelivery(player.getUUID(), fresh.itemHash(), fresh.itemJson(), totalCount)
+                                            .thenApply(delivery -> {
+                                                playSound(player, SoundEvents.VILLAGER_TRADE);
+                                                return EconomyResult.ok("message.warm_pixel_economy.items_sent_delivery");
+                                            });
+                                });
+                            }).exceptionally(ex -> {
+                                currencyService.deposit(player, total);
+                                return EconomyResult.fail("message.warm_pixel_economy.offer_unavailable");
                             });
-                        }).exceptionally(ex -> {
-                            currencyService.deposit(player, total);
-                            return EconomyResult.fail("message.warm_pixel_economy.offer_unavailable");
                         });
                     });
                 });

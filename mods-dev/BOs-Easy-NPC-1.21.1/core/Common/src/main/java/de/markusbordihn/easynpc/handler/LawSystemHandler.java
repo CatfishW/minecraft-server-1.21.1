@@ -163,6 +163,12 @@ public class LawSystemHandler {
           if (decayProgress >= config.getWantedDecayRate()) {
             state.decayWantedLevel();
             state.setWantedDecayCooldown(0);
+            
+            // If wanted level drops to 0, stop all NPC aggression
+            if (state.getWantedLevel() == 0) {
+              clearAggressionForPlayer(player.getUUID());
+              log.info("{} Player {} wanted level decayed to 0, clearing NPC aggression", LOG_PREFIX, player.getName().getString());
+            }
           } else {
             state.setWantedDecayCooldown(decayProgress);
           }
@@ -464,8 +470,15 @@ public class LawSystemHandler {
    */
   public void setPlayerWantedLevel(UUID playerUUID, int level) {
     PlayerLawState state = getOrCreatePlayerState(playerUUID);
-    state.setWantedLevel(Math.min(level, config.getMaxWantedLevel()));
-    log.info("{} Set player {} wanted level to {}", LOG_PREFIX, playerUUID, level);
+    int newLevel = Math.min(level, config.getMaxWantedLevel());
+    state.setWantedLevel(newLevel);
+    
+    if (newLevel == 0) {
+      clearAggressionForPlayer(playerUUID);
+      log.info("{} Player {} wanted level set to 0, clearing NPC aggression", LOG_PREFIX, playerUUID);
+    }
+    
+    log.info("{} Set player {} wanted level to {}", LOG_PREFIX, playerUUID, newLevel);
     syncPlayerStateByUUID(playerUUID);
   }
 
@@ -648,7 +661,9 @@ public class LawSystemHandler {
         }
         if (easyNPC instanceof de.markusbordihn.easynpc.entity.easynpc.data.ConfigDataCapable<?> configCapable) {
           String faction = configCapable.getFaction();
-          if (faction == null || faction.isEmpty() || faction.equalsIgnoreCase("default")) {
+          // Reset aggression for any faction that is NOT explicitly hostile/bandit
+          if (faction == null || faction.isEmpty() || 
+              (!faction.toLowerCase().contains("bandit") && !faction.toLowerCase().contains("hostile") && !faction.toLowerCase().contains("enemy"))) {
             objectiveCapable.removeCustomObjective(de.markusbordihn.easynpc.data.objective.ObjectiveType.ATTACK_PLAYER);
           }
         }
