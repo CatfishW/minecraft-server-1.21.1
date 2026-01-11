@@ -1,0 +1,15 @@
+{
+    "id": "4ecc999a-c1af-4eff-afef-8ce297725793",
+    "title": "保姆的勇气",
+    "description": "我是Steve，村里的保姆。最近，附近的洞穴里出现了大量僵尸，它们在黑夜中徘徊，威胁着孩子们的安全。我需要你协助我守护这片宁静。\n\n请前往村庄外的森林深处，杀死5只僵尸。这样能消除威胁，确保村民和孩子们的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 188
+    }
+}

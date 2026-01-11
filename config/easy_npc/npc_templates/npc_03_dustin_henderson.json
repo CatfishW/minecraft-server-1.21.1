@@ -5,14 +5,16 @@
     "description": "The scientific genius. Curious and funny.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/DustinHenderson.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/07/19/dustin-stranger-things-13211627.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "嘿，你好啊！我是Dustin，Dustin Henderson。别被我这顶帽子吓到，它可是我的幸运帽。你看起来不像是这个镇上的常客，是新来的吗？还是说，你也是被那些奇怪的噪音吸引过来的？这附近的电子设备最近总是出问题，我怀疑是某种超高频的电磁干扰。",
             "buttons": [
                 {
-                    "label": "寻找能量来源",
-                    "action": "OPEN_QUEST_DIALOG:6f8e2a3d-7c4b-4f9a-9e1d-1c8b5d6a3e2f",
-                    "id": "btn_quest_39578b7e"
-                },
-                {
-                    "label": "超越光速的通讯",
-                    "action": "OPEN_QUEST_DIALOG:a653a440-372c-4984-9801-867524800763",
-                    "id": "btn_quest_83970071"
-                },
-                {
-                    "label": "量子曲奇实验",
-                    "action": "OPEN_QUEST_DIALOG:e78af87d-2107-4d8a-b94c-a5eaad36008d",
-                    "id": "btn_quest_cbfe1ba2"
-                },
-                {
-                    "label": "来自异世界的能量频率",
-                    "action": "OPEN_QUEST_DIALOG:21e47786-8911-41a7-9f72-d3edbaffdb5e",
-                    "id": "btn_quest_2cc5063d"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:3f582509-708b-4953-b8fb-88ae3057ae25,3b991660-d7af-4108-9518-2b83ed6e8f30,9941979c-3866-460b-b9b0-92a2d20785f6,a1f0df05-ff80-45fc-b127-25041d023687,cdfc018d-4b98-498d-9362-66d05f631517",
+                    "id": "btn_quest_2ca2f5a9"
                 },
                 {
                     "label": "奇怪的噪音？",
@@ -53,6 +40,11 @@
                     "label": "你的帽子很酷",
                     "action": "SHOW_DIALOG:part1_hat",
                     "id": "btn_hat"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_f77a5941"
                 }
             ],
             "oneTimeConversation": true
@@ -769,5 +761,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

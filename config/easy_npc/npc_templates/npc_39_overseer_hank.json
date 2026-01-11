@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "欢迎，我是汉克，33号避难所的监督。虽然这里不是你的家，但只要你遵守规矩，我允许你在此短暂停留。外面的世界充满了混乱与毁灭，而这里代表着秩序与希望。我们肩负着重建文明的重任，每一份资源都必须精打细算。你看起来很困惑，是有什么关于避难所的问题吗？",
             "buttons": [
                 {
-                    "label": "来自阴影的命令",
-                    "action": "OPEN_QUEST_DIALOG:a301f0c8-4e1d-4c53-b24e-86b663552271",
-                    "id": "btn_quest_7e89ac11"
-                },
-                {
-                    "label": "清除威胁",
-                    "action": "OPEN_QUEST_DIALOG:9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-                    "id": "btn_quest_86e34087"
-                },
-                {
-                    "label": "尘封的密道",
-                    "action": "OPEN_QUEST_DIALOG:179ba5b8-90c3-4971-83eb-7743092ff0bd",
-                    "id": "btn_quest_7c315e08"
-                },
-                {
-                    "label": "肃清穹顶",
-                    "action": "OPEN_QUEST_DIALOG:0ddd180d-fdc0-463b-b484-4e355cab0097",
-                    "id": "btn_quest_81eaa183"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7be535bc-79bc-4f7d-b119-4b7c76c72203,ad50275d-0711-4cd1-8b4b-94f5f3fa6504,77afbb21-a19f-4919-9675-05a0abc27fd0,44fe03d6-c59d-4c9b-b650-6a9af8530856,2963afae-f196-4828-9fac-83c8f00d6b2b",
+                    "id": "btn_quest_9a564542"
                 },
                 {
                     "label": "询问职责",
@@ -53,6 +40,11 @@
                     "label": "询问最近的袭击",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_ask_attack"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_519269cd"
                 }
             ],
             "oneTimeConversation": true
@@ -249,5 +241,15 @@
             "item": "minecraft:iron_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

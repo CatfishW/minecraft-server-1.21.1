@@ -1,0 +1,32 @@
+{
+    "name": "公交车司机",
+    "entityType": "easy_npc:humanoid",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "http://textures.minecraft.net/texture/c95d732869150774a3f25d7c57457788167f1373322197305963a568b20925e0"
+    },
+    "dialog": {
+        "greeting": "请上车！不要挡道。",
+        "buttons": [
+            {
+                "label": "去哪里？",
+                "action": "CLOSE"
+            }
+        ]
+    },
+    "actions": {
+        "onSpawn": [
+            {
+                "type": "COMMAND",
+                "command": "npcbusdriver setup_bus_driver city_route_1 city_vehicles:blue_bus",
+                "permissionLevel": 2
+            }
+        ]
+    },
+    "attributes": {
+        "movementSpeed": 0.0,
+        "invulnerable": true,
+        "attackableByPlayers": false,
+        "attackableByMonsters": false
+    }
+}

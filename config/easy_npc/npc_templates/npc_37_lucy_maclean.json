@@ -5,14 +5,16 @@
     "description": "Optimistic vault dweller. Okey dokey.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/LucyMacLean.png"
+        "skinUrl": "https://static.planetminecraft.com/files/image/minecraft/skin/2024/937/skinseedskin-1717541921683-17887845_iso_l.png"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "嘿！你好！哦，天哪，见到一个活生生的人真是太好了！我是露西·麦克莱恩，来自33号避难所。我出来是为了寻找一些……嗯，一些能让我们的水源过滤器重新运作的东西。外面的世界虽然有点……脏乱，但我相信只要我们互相帮助，一切都会好起来的。你看起来像个好人，对吧？",
             "buttons": [
                 {
-                    "label": "乐观的开端",
-                    "action": "OPEN_QUEST_DIALOG:a0d9f84c-1b2e-4f3a-9c8b-3e7d5a1c9b02",
-                    "id": "btn_quest_89a8ac99"
-                },
-                {
-                    "label": "发掘希望",
-                    "action": "OPEN_QUEST_DIALOG:59a4ed05-252e-4d10-8a82-e4d141b7e913",
-                    "id": "btn_quest_6015cb79"
-                },
-                {
-                    "label": "荒野的小小威胁",
-                    "action": "OPEN_QUEST_DIALOG:a9ce0397-8d82-47f4-a035-39c38ca5a339",
-                    "id": "btn_quest_680e295c"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:17b50fb0-194f-45e7-bae7-3dda65f43c74,2225e314-8452-40ec-9eae-0df0702d31a1,332fc258-f7af-429c-b9e2-fe8f4c7dcef5,6d043300-93e4-48d9-b205-62bdbb92914e,6f907020-0ee4-485e-a532-bc667cc162f7",
+                    "id": "btn_quest_60a90b57"
                 },
                 {
                     "label": "询问避难所",
@@ -48,6 +40,11 @@
                     "label": "询问需要",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_ask_help"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_bb64d192"
                 }
             ],
             "oneTimeConversation": true
@@ -169,5 +166,15 @@
             "item": "minecraft:iron_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

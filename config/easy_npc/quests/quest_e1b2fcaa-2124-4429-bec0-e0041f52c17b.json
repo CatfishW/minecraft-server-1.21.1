@@ -1,0 +1,15 @@
+{
+    "id": "e1b2fcaa-2124-4429-bec0-e0041f52c17b",
+    "title": "野性怒火",
+    "description": "我是Billy Hargrove，那个狂野不羁的继兄弟。最近，我在森林深处的废弃矿井附近惹上了大麻烦，一群僵尸在夜里不断逼近我的藏身处，威胁着我的安全。\n\n去森林深处的废弃矿井，杀死5只僵尸。它们在矿井入口游荡，干扰了我的计划，我需要你彻底清理掉它们，这样我才能安心继续行动。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 71
+    }
+}

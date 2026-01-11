@@ -1,0 +1,15 @@
+{
+    "id": "ba43dd46-4ff0-4925-a9a8-f2697715e477",
+    "title": "呼吸之忧",
+    "description": "我的忧郁症又发作了，呼吸越来越急促，连随身携带的吸入器都几乎没用了。这黑暗的环境让我更加恐惧，急需一些外界的帮助来稳定情绪。\n\n请去村庄外找到亨利，和他谈谈我的症状。他可能了解如何缓解这种状况，只有他能给我一些建议或物品。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

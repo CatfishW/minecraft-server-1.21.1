@@ -1,0 +1,15 @@
+{
+    "id": "cbd5942a-ace3-4a0a-a036-1f9ebac64c91",
+    "title": "边境清剿",
+    "description": "我是小镇的守卫，每日持枪巡逻，守护着村庄的安宁。但最近村庄外的森林中僵尸频繁出没，它们袭击村民，破坏庄稼，若不尽快处理，整个社区将陷入危机。\n\n请你前往村庄外的森林，击杀5只僵尸。这样做是为了清除威胁，确保村民能够安全生活，恢复地区的平静。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 186
+    }
+}

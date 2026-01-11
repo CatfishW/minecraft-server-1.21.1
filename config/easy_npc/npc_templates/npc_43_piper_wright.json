@@ -5,14 +5,16 @@
     "description": "Reporter for Publick Occurrences.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/PiperWright.png"
+        "skinUrl": "https://static.planetminecraft.com/files/resource_media/preview/1703/download110810205_minecraft_skin-10810205.jpg"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,29 +27,9 @@
             "greeting": "嘿，陌生人。看你一脸茫然的样子，是刚从哪个冷冻仓里出来吗？我是派普·赖特，《公共事件报》的记者。在这个疯狂的世界里，真相就像金子一样稀缺，而我就是要把它挖出来。想在这个城市活下去，你需要情报，而我刚好就是卖情报的，或者说，换取情报。",
             "buttons": [
                 {
-                    "label": "农场主的麻烦",
-                    "action": "OPEN_QUEST_DIALOG:e6a91450-71b0-41d4-b415-7b7d004946b2",
-                    "id": "btn_quest_2f23e7e8"
-                },
-                {
-                    "label": "血腥运动的报道",
-                    "action": "OPEN_QUEST_DIALOG:a8b2c3d4-e5f6-7890-1234-567890abcdef",
-                    "id": "btn_quest_cc68cb68"
-                },
-                {
-                    "label": "头条新闻：蘑菇圈的秘密",
-                    "action": "OPEN_QUEST_DIALOG:9686ca44-f5c4-4862-8083-e40e38f9106e",
-                    "id": "btn_quest_23b6e5eb"
-                },
-                {
-                    "label": "独家新闻：销毁证据",
-                    "action": "OPEN_QUEST_DIALOG:9c7d7eff-e166-495c-b0f2-90cb9382380d",
-                    "id": "btn_quest_7c7b0584"
-                },
-                {
-                    "label": "头版头条：僵尸危机！",
-                    "action": "OPEN_QUEST_DIALOG:83fdab00-0be0-4452-9b55-72d6408b2ac9",
-                    "id": "btn_quest_5a454ef8"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:13597935-990b-4bcb-a6cf-c8bdef3ef6df,77dcdd96-0163-41c3-8d12-8004122bf899,486b6e11-6172-4e4a-85e6-4f1d13a991e9,e59ce14f-1704-4dd2-b5c9-9180d59a291f,4890d87d-79e3-4f1f-88c7-943ad03e5322",
+                    "id": "btn_quest_0a876207"
                 },
                 {
                     "label": "《公共事件报》？钻石城的那份报纸？",
@@ -58,6 +40,11 @@
                     "label": "你能告诉我什么？",
                     "action": "SHOW_DIALOG:info",
                     "id": "btn_info"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_69d92b09"
                 }
             ],
             "oneTimeConversation": true
@@ -194,5 +181,15 @@
             "item": "minecraft:compass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

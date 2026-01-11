@@ -1,0 +1,1028 @@
+[
+  {
+    "registryId": "minecraft:cobblestone",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:stone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:stone_bricks",
+    "count": 1,
+    "price": 12,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:mossy_cobblestone",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:mossy_stone_bricks",
+    "count": 1,
+    "price": 18,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:cracked_stone_bricks",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:dirt",
+    "count": 1,
+    "price": 2,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:grass_block",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:sand",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:red_sand",
+    "count": 1,
+    "price": 8,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:gravel",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:glass",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:oak_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:spruce_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:birch_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:jungle_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:acacia_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:dark_oak_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:mangrove_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:cherry_log",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:oak_planks",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:deepslate",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:polished_deepslate",
+    "count": 1,
+    "price": 18,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:deepslate_bricks",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:white_wool",
+    "count": 1,
+    "price": 30,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:granite",
+    "count": 1,
+    "price": 8,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:polished_granite",
+    "count": 1,
+    "price": 12,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:diorite",
+    "count": 1,
+    "price": 8,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:polished_diorite",
+    "count": 1,
+    "price": 12,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:andesite",
+    "count": 1,
+    "price": 8,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:polished_andesite",
+    "count": 1,
+    "price": 12,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:red_sandstone",
+    "count": 1,
+    "price": 12,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:quartz_block",
+    "count": 1,
+    "price": 160,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:smooth_quartz",
+    "count": 1,
+    "price": 180,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:white_concrete",
+    "count": 1,
+    "price": 25,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:black_concrete",
+    "count": 1,
+    "price": 25,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:white_terracotta",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:sea_lantern",
+    "count": 1,
+    "price": 400,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:glowstone",
+    "count": 1,
+    "price": 150,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Building"
+  },
+  {
+    "registryId": "minecraft:iron_ingot",
+    "count": 1,
+    "price": 100,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:raw_iron",
+    "count": 1,
+    "price": 80,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:copper_ingot",
+    "count": 1,
+    "price": 50,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:gold_ingot",
+    "count": 1,
+    "price": 400,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:diamond",
+    "count": 1,
+    "price": 2000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:emerald",
+    "count": 1,
+    "price": 500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:netherite_ingot",
+    "count": 1,
+    "price": 15000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:coal",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:charcoal",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:quartz",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:amethyst_shard",
+    "count": 1,
+    "price": 100,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:lapis_lazuli",
+    "count": 1,
+    "price": 150,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:redstone",
+    "count": 1,
+    "price": 30,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Materials"
+  },
+  {
+    "registryId": "minecraft:apple",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:bread",
+    "count": 1,
+    "price": 30,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:cooked_beef",
+    "count": 1,
+    "price": 60,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:cooked_porkchop",
+    "count": 1,
+    "price": 60,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:cooked_chicken",
+    "count": 1,
+    "price": 50,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:cooked_salmon",
+    "count": 1,
+    "price": 50,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:cooked_cod",
+    "count": 1,
+    "price": 45,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:golden_apple",
+    "count": 1,
+    "price": 2000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:golden_carrot",
+    "count": 1,
+    "price": 150,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:enchanted_golden_apple",
+    "count": 1,
+    "price": 50000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:potato",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:carrot",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:melon_slice",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:pumpkin_pie",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Food"
+  },
+  {
+    "registryId": "minecraft:rotten_flesh",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:bone",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:gunpowder",
+    "count": 1,
+    "price": 80,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:string",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:spider_eye",
+    "count": 1,
+    "price": 50,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:ender_pearl",
+    "count": 1,
+    "price": 250,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:blaze_rod",
+    "count": 1,
+    "price": 400,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:ghast_tear",
+    "count": 1,
+    "price": 1500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:slime_ball",
+    "count": 1,
+    "price": 300,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:leather",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:feather",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:magma_cream",
+    "count": 1,
+    "price": 350,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:phantom_membrane",
+    "count": 1,
+    "price": 800,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Mob Drops"
+  },
+  {
+    "registryId": "minecraft:torch",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:soul_torch",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:lantern",
+    "count": 1,
+    "price": 120,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:crafting_table",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:furnace",
+    "count": 1,
+    "price": 30,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:chest",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:barrel",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:white_bed",
+    "count": 1,
+    "price": 150,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:iron_pickaxe",
+    "count": 1,
+    "price": 350,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:iron_axe",
+    "count": 1,
+    "price": 350,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:iron_sword",
+    "count": 1,
+    "price": 250,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:iron_shovel",
+    "count": 1,
+    "price": 150,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:diamond_pickaxe",
+    "count": 1,
+    "price": 6500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:diamond_axe",
+    "count": 1,
+    "price": 6500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:diamond_sword",
+    "count": 1,
+    "price": 4500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:water_bucket",
+    "count": 1,
+    "price": 350,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:lava_bucket",
+    "count": 1,
+    "price": 500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:shield",
+    "count": 1,
+    "price": 500,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:ender_chest",
+    "count": 1,
+    "price": 10000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:shulker_box",
+    "count": 1,
+    "price": 20000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:totem_of_undying",
+    "count": 1,
+    "price": 25000,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:campfire",
+    "count": 1,
+    "price": 50,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:shears",
+    "count": 1,
+    "price": 250,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Utility"
+  },
+  {
+    "registryId": "minecraft:oak_sapling",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:spruce_sapling",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:birch_sapling",
+    "count": 1,
+    "price": 40,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:sugar_cane",
+    "count": 1,
+    "price": 15,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:wheat_seeds",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:pumpkin_seeds",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:melon_seeds",
+    "count": 1,
+    "price": 20,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:bamboo",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:pink_petals",
+    "count": 1,
+    "price": 50,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:oak_leaves",
+    "count": 1,
+    "price": 5,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  },
+  {
+    "registryId": "minecraft:lily_pad",
+    "count": 1,
+    "price": 80,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "Nature"
+  }
+]

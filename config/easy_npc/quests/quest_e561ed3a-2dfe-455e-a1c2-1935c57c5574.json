@@ -1,0 +1,15 @@
+{
+    "id": "e561ed3a-2dfe-455e-a1c2-1935c57c5574",
+    "title": "幽影随行",
+    "description": "我真是受够了！亨利那个家伙，总是命令我做这做那。这次他让我去清理附近的洞穴里的僵尸，可我一个人哪敢去啊？那些怪物太可怕了。\n\n请你帮我个忙，去那个洞穴里杀死4只僵尸。亨利说我们需要僵尸的腐肉来制作药水，如果你能完成，我会给你一些报酬。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 73
+    }
+}

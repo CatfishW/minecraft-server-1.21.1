@@ -1,0 +1,15 @@
+{
+    "id": "f3ca1467-f9fb-4fea-a403-5e2b499f72e8",
+    "title": "羽翼疑云",
+    "description": "我是Stanley，一个鸟类观察者。最近，我注意到附近的森林深处鸟类行为异常，它们似乎在躲避某种威胁。作为逻辑严谨的人，我怀疑有捕食者潜伏，但需要证据来验证我的理论。\n\n请前往村庄外的森林深处，收集5个羽毛。这些羽毛样本将帮助我分析鸟类种类和状态，从而找出问题的根源。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:feather",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 188
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "87323760-6cde-4950-89fb-efad97aaa862",
+    "title": "血色邀请",
+    "description": "哦，可爱的小家伙，你以为这个方块世界是安全的吗？恐惧正在森林深处蠕动，像腐烂的藤蔓一样缠绕着每一个角落。我Pennywise需要更多黑暗的养分来维持这场永恒的狂欢，否则寂静将吞噬一切。\n\n去森林深处寻找那些游荡的僵尸，杀死5只并带回它们的腐肉。这将为我的把戏提供材料，让恐惧在每一个夜晚绽放。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 73
+    }
+}

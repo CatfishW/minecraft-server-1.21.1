@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "站住。我是钢铁兄弟会的侍僧，马克西姆斯。为了兄弟会的荣耀，我在此执行任务。虽然我现在只是一介步兵，但这只是暂时的。总有一天，我会穿上那身钢铁战甲，成为人们敬畏的骑士。你有什么事？如果是想寻求兄弟会的庇护，那就免谈。",
             "buttons": [
                 {
-                    "label": "军需官的执念",
-                    "action": "OPEN_QUEST_DIALOG:2f418a35-7b21-4a41-b978-3b4e5c81d2e0",
-                    "id": "btn_quest_bff55f28"
-                },
-                {
-                    "label": "甲胄之愿",
-                    "action": "OPEN_QUEST_DIALOG:b9f68fb9-7419-4467-b010-ce610dba0735",
-                    "id": "btn_quest_c439c623"
-                },
-                {
-                    "label": "铸甲之血",
-                    "action": "OPEN_QUEST_DIALOG:918877d4-f130-440c-b67b-0cef371598d5",
-                    "id": "btn_quest_8d14c08f"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:fd25bb65-4b95-467e-8e68-d66fc0d750f0,d8cf0a33-ba00-4515-a1f7-74e9c26b42dd,4f07909d-df75-4304-85ca-9f123e3617df,20661eca-623a-4d46-ab10-2858453f50b2,3ec99a1f-030c-45a7-a19a-3e3aacd98299",
+                    "id": "btn_quest_4d636240"
                 },
                 {
                     "label": "询问关于动力装甲",
@@ -48,6 +40,11 @@
                     "label": "询问任务",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_ask_mission"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_b67fb015"
                 }
             ],
             "oneTimeConversation": true
@@ -219,5 +216,15 @@
             "item": "minecraft:iron_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

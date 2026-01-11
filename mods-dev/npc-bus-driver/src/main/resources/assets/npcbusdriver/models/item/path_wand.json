@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "npcbusdriver:item/path_wand"
+    }
+}

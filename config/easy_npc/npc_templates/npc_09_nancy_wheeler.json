@@ -5,14 +5,16 @@
     "description": "Investigative journalist. Sharp shooter.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/NancyWheeler.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2021/07/14/nancy-wheeler-18395929.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你好，我在整理一些旧档案和剪报，需要绝对的安静。如果你是来闲聊的，恐怕我现在没时间。霍金斯发生的事情远比表面看起来复杂，我必须把所有的线索串联起来。有些事情，如果不记录下来，就会被永远遗忘，或者被篡改。",
             "buttons": [
                 {
-                    "label": "调查失踪案",
-                    "action": "OPEN_QUEST_DIALOG:e1a9b5c6-7c22-4f0b-a8d6-18e9c3d21c9b",
-                    "id": "btn_quest_9fa49f22"
-                },
-                {
-                    "label": "失踪的亨利",
-                    "action": "OPEN_QUEST_DIALOG:8a4b3c2d-5e6f-7a8b-9c0d-1e2f3a4b5c6d",
-                    "id": "btn_quest_620ea951"
-                },
-                {
-                    "label": "肃清瞭望塔",
-                    "action": "OPEN_QUEST_DIALOG:5cb120f1-0414-4985-beec-581c7b823e79",
-                    "id": "btn_quest_9ed72aa1"
-                },
-                {
-                    "label": "罪证猎手",
-                    "action": "OPEN_QUEST_DIALOG:d0a0fd13-3b27-4013-a54f-2f7a1d666b96",
-                    "id": "btn_quest_41f975ad"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:3d190510-d479-4a80-89dd-3f6ad10a887e,ac21dd16-e2ee-4563-93ba-7363ce474a9f,0682abc2-b4b4-40e5-84df-64247ea4028d,f00b730b-9a90-4f12-949b-89a11b6b21b0,32d9162d-cf61-4e9b-9612-45cc654bdc56",
+                    "id": "btn_quest_3aa6393a"
                 },
                 {
                     "label": "你在调查什么?",
@@ -53,6 +40,11 @@
                     "label": "关于梅格诺工业?",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_mtg_ind"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_d1cef61d"
                 }
             ],
             "oneTimeConversation": true
@@ -244,5 +236,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

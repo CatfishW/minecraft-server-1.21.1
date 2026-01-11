@@ -1,0 +1,15 @@
+{
+    "id": "9ad5d58f-01ef-4129-beb5-cbbe1ff55c30",
+    "title": "雨衣的呼唤",
+    "description": "我是Georgie，那个永远穿着黄色雨衣的孩子。我在森林里玩耍时，雨衣被尖锐的树枝撕破了，现在我孤零零地站在雨中，找不到回家的路。雨水冰冷，我需要你的帮助，否则我会一直迷失在这里。\n\n请去附近的森林深处，收集6个黄色羊毛（minecraft:yellow_wool）。你可以从绵羊身上获取羊毛，或者在森林中的草地上寻找。帮我修补好雨衣，我就能安全地返回村庄，不再害怕黑暗中的影子。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:yellow_wool",
+        "amount": 6
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

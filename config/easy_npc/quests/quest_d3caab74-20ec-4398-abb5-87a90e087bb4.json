@@ -1,0 +1,15 @@
+{
+    "id": "d3caab74-20ec-4398-abb5-87a90e087bb4",
+    "title": "滑板之影",
+    "description": "我是Max，滑板就是我的生命。但最近附近的洞穴里总有僵尸冒出来，把我的滑板路线都毁了，简直烦死了。\n\n请去附近的洞穴杀死3只僵尸，清理掉这些障碍。这样我就能继续我的滑板冒险了。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

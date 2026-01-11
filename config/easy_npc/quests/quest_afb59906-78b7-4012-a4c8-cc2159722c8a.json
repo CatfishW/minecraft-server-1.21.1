@@ -1,0 +1,15 @@
+{
+    "id": "afb59906-78b7-4012-a4c8-cc2159722c8a",
+    "title": "幽影低语",
+    "description": "我，Kersh夫人，是IT编织的幻影，被困于这扭曲的现实。森林的黑暗在吞噬我的轮廓，那些被遗忘的洞穴中回荡着它的低语，若不阻止，我将彻底消散。\n\n请前往村庄外的废弃矿井，收集5个腐肉。腐肉是IT腐化力量的碎片，只有摧毁它们的核心，才能稳固我的存在。小心，矿井深处藏着它的爪牙。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 373
+    }
+}

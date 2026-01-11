@@ -1,0 +1,15 @@
+{
+    "id": "f293e1b5-2a60-4f24-9544-13bdc6b6c5b8",
+    "title": "雾都迷踪",
+    "description": "我是Nick Valentine，一个合成侦探，游荡在这个被方块切割的霓虹都市边缘。最近，村庄外的森林深处总传来异常的骚动，仿佛有什么东西在黑暗中蠢蠢欲动，威胁着这脆弱的宁静。我怀疑是那些被遗忘的造物在作祟。\n\n我需要你前往村庄外的森林深处，调查那些骚动的源头。如果遇到敌对的不死生物，就彻底消灭它们。这不仅是为了社区的安全，还可能揭开一个更大的秘密——关于那些本不该存在的‘影子’。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 63
+    }
+}

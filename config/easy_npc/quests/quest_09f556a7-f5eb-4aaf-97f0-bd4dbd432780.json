@@ -1,0 +1,15 @@
+{
+    "id": "09f556a7-f5eb-4aaf-97f0-bd4dbd432780",
+    "title": "密林中的煤痕",
+    "description": "同志，你来了。我监视森林深处已经好几周了，那些黑影总是在月圆之夜聚集，我怀疑他们在用煤炭进行某种仪式，这背后一定有更大的阴谋！我们的世界正被阴影侵蚀，我需要证据。\n\n请前往附近的洞穴或森林深处，收集5个煤炭。这些煤炭是他们活动的关键证据，只有揭露这个秘密，我们才能阻止他们的计划。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 158
+    }
+}

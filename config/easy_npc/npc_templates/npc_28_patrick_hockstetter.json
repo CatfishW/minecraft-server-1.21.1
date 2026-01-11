@@ -5,14 +5,16 @@
     "description": "Psychopathic bully. Likes fire.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/PatrickHockstetter.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2024/12/07/patrick-hockstetter-22920601.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "你身上有气味。新的气味。我很擅长记住气味，尤其是那些即将消失的气味。Henry在哪儿？我得跟着他。没人能离开我，就像那些苍蝇一样，它们一旦飞进我的手里，就再也出不去了。",
             "buttons": [
                 {
-                    "label": "火焰的净化",
-                    "action": "OPEN_QUEST_DIALOG:d0ca13d8-6d88-4118-a7a2-fc3519658371",
-                    "id": "btn_quest_cbb05892"
-                },
-                {
-                    "label": "野火燎原",
-                    "action": "OPEN_QUEST_DIALOG:45062120-7311-4867-bc60-205cf427253b",
-                    "id": "btn_quest_9aaea079"
-                },
-                {
-                    "label": "焰之献祭",
-                    "action": "OPEN_QUEST_DIALOG:110ec4a9-d38b-47de-af56-297dc6e17207",
-                    "id": "btn_quest_19535d97"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:cf517f01-09c5-4391-b10a-61b698ce7689,710c3cb9-2af6-45ca-afdb-4adb344970a6,88371da6-a6c6-4c0f-a1c3-ba28ed0c2310,dc5c58a0-f11e-4c78-bcd1-2e8e410fd01b,f67e0694-baa1-4e23-9a24-e1e11810a790",
+                    "id": "btn_quest_ecd6d2cc"
                 },
                 {
                     "label": "你的手？",
@@ -48,6 +40,11 @@
                     "label": "你和Henry在计划什么？",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_plan"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_c1876554"
                 }
             ],
             "oneTimeConversation": true
@@ -129,5 +126,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

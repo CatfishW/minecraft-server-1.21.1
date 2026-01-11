@@ -1,0 +1,15 @@
+{
+    "id": "8891cd2f-adcf-4d7a-ba6d-4d65d219ef51",
+    "title": "干涸寻水",
+    "description": "我的Vault中，水净化系统崩溃了，水芯片损坏，水源即将枯竭。所有人都指望着我能找到解决之道，否则我们将在绝望中渴死。\n\n请前往附近的废弃矿井，收集4个红石。这些红石可以用来模拟水芯片的功能，修复Vault的供水系统，确保大家的生存。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

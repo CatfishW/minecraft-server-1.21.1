@@ -1,0 +1,15 @@
+{
+    "id": "e58c2f25-e846-4ef5-a4f5-0a903b7f6ad1",
+    "title": "遗忘的蓝图",
+    "description": "我，本·汉斯康，一名历史学家兼建筑师，在森林深处发现了一座被遗忘的古老建筑遗迹。它承载着我们世界的历史记忆，却因岁月侵蚀而濒临崩塌，我内心敏感的灵魂为此深感痛惜，急需修复它以保留这份珍贵的遗产。\n\n请前往附近的洞穴收集20个石头。这些石头是重建遗迹墙壁的基础材料，只有通过你的帮助，才能确保结构的稳固，让历史的轮廓重新清晰起来。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:stone",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 193
+    }
+}

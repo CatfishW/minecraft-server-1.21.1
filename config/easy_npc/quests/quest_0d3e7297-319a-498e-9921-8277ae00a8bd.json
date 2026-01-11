@@ -1,0 +1,15 @@
+{
+    "id": "0d3e7297-319a-498e-9921-8277ae00a8bd",
+    "title": "黄雨衣的求助",
+    "description": "我穿着黄色雨衣，但附近的森林深处有奇怪的声音，我很害怕。那些游荡的怪物让我不敢移动，仿佛回到了那个可怕的时刻。\n\n请前往森林深处，杀死3只僵尸，以消除威胁。这样我就能安心地留在这里，等待救援了。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

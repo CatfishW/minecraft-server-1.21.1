@@ -1,0 +1,15 @@
+{
+    "id": "118ec724-f794-403d-a863-7cd5ce3b1300",
+    "title": "暗影伤痕",
+    "description": "我在Derry的街头遭受了无情的仇恨袭击，那些伤痛像幽灵一样缠绕着我，让我无法安宁。每一个阴影都让我回想起那天的恐惧，我需要有人帮我打破这循环。\n\n请前往村庄外的森林深处，杀死5只僵尸。因为这些僵尸象征着那些伤害我的黑暗力量，消灭它们能帮助我找回内心的平静，证明我不会被击倒。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 164
+    }
+}

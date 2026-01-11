@@ -1,0 +1,15 @@
+{
+    "id": "de45be62-c9f9-4614-be07-f5c515fb3ff6",
+    "title": "幽谷守卫",
+    "description": "作为团体的领袖，我Mike Wheeler必须守护大家的安全。最近，村庄外的森林深处出现了大量僵尸，它们夜夜嚎叫，逼近我们的营地，威胁着每一个成员的生命。\n\n请你立即前往森林深处的洞穴，杀死5只僵尸，以清除威胁并保护营地，确保我们能安然度过这个危机。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 116
+    }
+}

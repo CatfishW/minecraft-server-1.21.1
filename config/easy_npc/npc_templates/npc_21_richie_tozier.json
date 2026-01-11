@@ -5,14 +5,16 @@
     "description": "Trashmouth. Jokes to hide fear.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/RichieTozier.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2021/07/17/richie-tozier-18423400.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "嘿，朋友！看我看什么？难道我的新发型在末日里还挺时髦？别那么紧张，笑一个！虽然这鬼地方让人连笑话都讲不出来，但我Richie 'Trashmouth' Tozier保证，只要我们还活着，就有理由找点乐子。说吧，有什么需要我帮忙的？",
             "buttons": [
                 {
-                    "label": "笑对恐惧",
-                    "action": "OPEN_QUEST_DIALOG:0d1c8c01-58e2-4c8f-b5f0-08b49077c9c3",
-                    "id": "btn_quest_57f585be"
-                },
-                {
-                    "label": "别看井底",
-                    "action": "OPEN_QUEST_DIALOG:bfd5b72c-8223-4eb0-ad8e-12534773ccdd",
-                    "id": "btn_quest_a5d1c8c2"
-                },
-                {
-                    "label": "恐怖小丑清理特惠",
-                    "action": "OPEN_QUEST_DIALOG:2bbe4ab2-8f3e-4276-8201-847fb2fcf023",
-                    "id": "btn_quest_1500e246"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:9ff7963d-e67e-444a-a79a-a9c8d29b3306,ceb89681-1faa-4881-b7ae-23703cddbd1b,66c3ede8-0866-48df-ad6a-fcfccaf2bbe8,5e924a12-0c9c-4a11-88ef-7890b6d747d4,9eb20585-8d29-4206-a39f-90e52e4e2f46",
+                    "id": "btn_quest_87210f4c"
                 },
                 {
                     "label": "你怎么还在开玩笑？",
@@ -48,6 +40,11 @@
                     "label": "我需要情报",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_richie_info"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_71dc9329"
                 }
             ],
             "oneTimeConversation": true
@@ -224,5 +221,15 @@
             "item": "minecraft:stone_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

@@ -1,0 +1,31 @@
+{
+  "defaultCurrency": "coins",
+  "enableGui": true,
+  "enablePlayerShops": false,
+  "enableAuctionHouse": true,
+  "deliveryRetrySeconds": 30,
+  "auctionExpirationCheckSeconds": 15,
+  "maxListingsPerPlayer": 20,
+  "database": {
+    "type": "sqlite",
+    "sqlitePath": "config/warm-pixel-economy/economy.db",
+    "postgresUrl": "",
+    "postgresUser": "",
+    "postgresPassword": ""
+  },
+  "taxes": {
+    "shopTaxRate": 0.0,
+    "auctionListingFee": 0.0,
+    "auctionFinalFeeRate": 0.0
+  },
+  "shop": {
+    "adminShopId": "admin",
+    "adminShopInfiniteStock": true,
+    "pageSize": 45
+  },
+  "auction": {
+    "defaultDurationSeconds": 86400,
+    "minBidIncrement": 1,
+    "minStartPrice": 1
+  }
+}

@@ -5,14 +5,16 @@
     "description": "Minuteman. Another settlement needs help.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/PrestonGarvey.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2015/12/29/skin_20151229215555122274.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "很高兴见到你，朋友。我是普雷斯顿·加维，是这片土地上最后自由的保卫者。我们是义勇军，我们不向任何人低头，尤其是那些邪恶的掠夺者和铁锈怪物。我们相信互助共生，只有团结起来，才能在这片废土上重建文明。",
             "buttons": [
                 {
-                    "label": "前线支援",
-                    "action": "OPEN_QUEST_DIALOG:a895d678-080c-4d50-b745-10e21415f1d0",
-                    "id": "btn_quest_f9729448"
-                },
-                {
-                    "label": "南方桥头堡",
-                    "action": "OPEN_QUEST_DIALOG:a3a89f88-7f21-4a26-b22f-d01394625594",
-                    "id": "btn_quest_f83691cd"
-                },
-                {
-                    "label": "收集石英",
-                    "action": "OPEN_QUEST_DIALOG:b5478e21-8a7e-4f10-95c2-6f57d16bea4e",
-                    "id": "btn_quest_39a3ca66"
-                },
-                {
-                    "label": "清理碍事的匪徒",
-                    "action": "OPEN_QUEST_DIALOG:fec5d398-d8ae-4126-a215-5267328812cc",
-                    "id": "btn_quest_4e226a4a"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:eea8c774-8edd-4710-95df-d446032b53b8,ba0c9535-a8cf-4942-9d64-0eba2471124b,f671a526-d0b5-42f7-8133-102dc19aa85b,96c71ed5-bf41-46fd-8820-60be39c2572b,bc0a1a63-a8fa-41a3-855c-4a573d395bf1",
+                    "id": "btn_quest_c2955c36"
                 },
                 {
                     "label": "义勇军？你们是做什么的？",
@@ -53,6 +40,11 @@
                     "label": "我听说有定居点需要帮助？",
                     "action": "SHOW_DIALOG:help",
                     "id": "btn_help"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_d688a2da"
                 }
             ],
             "oneTimeConversation": true
@@ -154,5 +146,15 @@
             "item": "minecraft:compass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

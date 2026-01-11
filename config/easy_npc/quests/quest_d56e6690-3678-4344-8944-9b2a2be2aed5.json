@@ -1,0 +1,15 @@
+{
+    "id": "d56e6690-3678-4344-8944-9b2a2be2aed5",
+    "title": "星夜寻冰记",
+    "description": "这星夜下的Scoops Ahoy真是让人抓狂，生意冷清得像冰窖，我急需新鲜牛奶来调配新口味冰激凌，否则老板又要唠叨了。\n\n请去附近的村庄外收集5桶牛奶。记得带上空桶，从牛身上挤奶，这能帮我们度过难关。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 99
+    }
+}

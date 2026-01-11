@@ -1,0 +1,15 @@
+{
+    "id": "841f8886-82f2-4ef5-b5e9-80eb74982ea9",
+    "title": "遗迹的呼唤",
+    "description": "作为一名历史学家和建筑师，我目睹了森林深处那些古老遗迹正被时光与怪物无情侵蚀，那些承载着先民智慧的石碑与书籍正在消逝，这让我敏感的心灵深感痛楚。\n\n我需要你前往森林深处的遗迹废墟中，寻找并收集3本古老的书籍（minecraft:book）。这些书籍可能藏在废弃的箱子或书架上，它们是重建那段失落历史的关键，务必带回来交给我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:book",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 404
+    }
+}

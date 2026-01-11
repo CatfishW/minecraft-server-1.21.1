@@ -1,0 +1,15 @@
+{
+    "id": "3bf6e3e9-72da-44ac-9995-fbc1d8ae3184",
+    "title": "迷雾心安",
+    "description": "我这身子骨总让我心神不宁，胸口发闷，呼吸急促，仿佛随时会被一阵咳嗽击倒。这该死的疑病症让我无法安心生活，急需一些东西来平复我这过度紧张的神经。\n\n请前往附近的森林深处，采集5朵红色花朵。它们生长在树木环绕的静谧之地，或许能帮我缓解焦虑。记住，森林中可能潜藏着危险，务必小心。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:red_flower",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 84
+    }
+}

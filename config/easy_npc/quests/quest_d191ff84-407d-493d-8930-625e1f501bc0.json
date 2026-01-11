@@ -1,0 +1,15 @@
+{
+    "id": "d191ff84-407d-493d-8930-625e1f501bc0",
+    "title": "幽暗低语",
+    "description": "我总是能在深夜听到那些来自裂隙的低语，它们像是另一个世界的回声，试图将我也拖入黑暗。那些幻翼般的生物不断从虚空中涌现，我害怕它们会彻底撕裂我们世界的屏障。\n\n请前往附近的森林深处，杀死3只幻翼。它们只在夜晚出现，消灭它们可以暂时阻断裂隙的扩张，保护我们免受更多入侵。只有这样做，我才能获得片刻的安宁。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:phantom",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 108
+    }
+}

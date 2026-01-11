@@ -1,0 +1,15 @@
+{
+    "id": "9c39c6f1-59d3-455a-9275-44ab95061f4d",
+    "title": "幽谷问医",
+    "description": "我是Eddie Kaspbrak，总感觉身体不适，尤其是最近在森林中活动后，呼吸变得困难。我的吸入器快用完了，我需要专业的建议。\n\n请前往附近的村庄外，找到名为亨利 (Henry)的智者，向他咨询我的病情。他可能知道如何缓解我的症状。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

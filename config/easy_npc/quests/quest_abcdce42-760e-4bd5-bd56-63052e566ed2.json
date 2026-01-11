@@ -1,0 +1,15 @@
+{
+    "id": "abcdce42-760e-4bd5-bd56-63052e566ed2",
+    "title": "隐秘的实验",
+    "description": "孩子们，我的实验正面临前所未有的危机。能源核心在衰减，如果不及时补充，所有研究都将付诸东流。作为一名科学家，我深知红石是唯一能稳定供应能量的材料。\n\n请前往森林深处的洞穴，收集至少5个红石。这能帮助我修复实验装置，继续揭示那些隐藏在维度背后的秘密。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 131
+    }
+}

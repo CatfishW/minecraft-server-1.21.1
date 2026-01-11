@@ -1,0 +1,15 @@
+{
+    "id": "fd25bb65-4b95-467e-8e68-d66fc0d750f0",
+    "title": "铁甲征途",
+    "description": "我，Maximus，兄弟会骑士团的见习骑士，日夜梦想着穿上那强大的动力装甲。但在这危机四伏的世界，怪物横行，我必须证明自己的价值，才能获得骑士团的认可。\n\n请前往附近的洞穴，收集10个铁锭。这些铁锭将作为打造动力装甲的基础材料，帮助我一步步接近梦想。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 427
+    }
+}

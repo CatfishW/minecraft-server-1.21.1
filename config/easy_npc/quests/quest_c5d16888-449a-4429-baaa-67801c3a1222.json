@@ -1,0 +1,15 @@
+{
+    "id": "c5d16888-449a-4429-baaa-67801c3a1222",
+    "title": "暗影实验",
+    "description": "我是Martin Brenner，一个科学家。我的实验意外导致一些失控的生物在附近的废弃矿井中游荡，它们威胁着我们安全区的稳定，我必须尽快控制住局面。\n\n我需要你前往废弃矿井，消灭3个骷髅，收集它们的骨骼用于实验分析。这将帮助我阻止实验体的进一步扩散。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "4be0e7ee-f571-4cbf-ac67-161ecffe0417",
+    "title": "血色恐吓",
+    "description": "听着，这镇上每个人都要知道谁才是老大。那些新搬来的家伙居然敢无视我的警告，我需要用点特别的手段让他们学会尊重。\n\n去村庄北边的废弃矿井，给我带回10颗骷髅的骨头。我要用这些骨头在镇中心做个纪念品，让所有人都看看惹怒亨利·鲍尔斯的下场。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 312
+    }
+}

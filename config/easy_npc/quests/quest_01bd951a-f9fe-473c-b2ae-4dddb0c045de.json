@@ -1,0 +1,15 @@
+{
+    "id": "01bd951a-f9fe-473c-b2ae-4dddb0c045de",
+    "title": "历史的守护者",
+    "description": "我是Mike Hanlon，Derry的历史守护者。最近，附近的洞穴中涌现出大量僵尸，它们正在侵蚀我们祖先留下的遗迹，威胁着整个社区的记忆。\n\n请前往村庄外的洞穴，消灭5只僵尸，以保护这些珍贵的历史遗迹。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 362
+    }
+}

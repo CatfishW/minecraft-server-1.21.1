@@ -1,6 +1,11 @@
 {
+	chapter.014603D984656A62.title: "时装"
 	chapter.0A339E631AC882D0.title: "田园生活"
+	chapter.0ED616B082498A8E.title: "萌新必看~"
+	chapter.2083B1A5078BECE1.title: "货币与交易"
 	chapter.253BDC430C89A71E.title: "开车车咯！"
+	chapter.314295D22AC3D6E2.title: "快速旅行！"
+	chapter.326DF02059866FB2.title: "地契"
 	chapter.5A8D3F2E1B4C6901.title: "军旅生涯"
 	chapter_group.4E5AA64291FA4369.title: "属于自己的角落&c(核心玩法)&r"
 	chapter_group.5F9ABE3ACEA913EF.title: "认识这个世界"
@@ -320,6 +325,8 @@
 		"(利用 &4红石&r 激活)"
 	]
 	quest.2C313909C66E8D79.title: "旋起来啦~"
+	quest.2C62D71502FF92B3.quest_desc: ["没轮子的车叫啥？叫滑板。"]
+	quest.2C62D71502FF92B3.title: "咕噜咕噜~"
 	quest.2CE215F5B670469A.quest_desc: [
 		"绳子可以在工作台里合成安全网。"
 		"安全网可以连起来，类似粘液块一样把你弹高高~"
@@ -398,6 +405,11 @@
 		"流浪酿酒师跟旅行商人一样，会随机刷新。"
 	]
 	quest.39934CA1E5B6F0C8.title: "从认识葡萄开始吧~"
+	quest.3996F32EA13A3E13.quest_desc: [
+		"没有引擎怎么启动？"
+		"萌新的第一选择，不寒碜。"
+	]
+	quest.3996F32EA13A3E13.title: "嗡嗡嗡~"
 	quest.3B205E3D1BC0094C.desc: "发射 5.56mm 子弹的现代模块化步枪。"
 	quest.3B205E3D1BC0094C.quest_desc: [
 		"SCAR-L 专为特种作战而生。其独特的外观之下是极其稳定的射击性能和极佳的操控性。"
@@ -558,6 +570,16 @@
 		"其模块化的设计意味着通过选择正确的配件，它可以轻松在近距离室内强袭和中距离精准打击之间自由切换。"
 	]
 	quest.5209B7D526B63AF5.subtitle: "全能平台"
+	quest.52B45A131951B66D.quest_desc: [
+		"将&a机动车加工台&r放置在地面上，然后把&a外壳&r、&a轮子&r、&a引擎&r、&e其他部件(非必须)&r，放上去。(对着加工台右键。)"
+		""
+		"在加工过程中，有放置错误的部件，可以用&a撬棍&r右键取下来。"
+		""
+		"接下来，直接开走!"
+		"{@pagebreak}"
+		"如果想回收已经放置的车辆，用&a撬棍&r对着车辆右键，会自动拆解零部件。"
+	]
+	quest.52B45A131951B66D.title: "第一台车车！"
 	quest.530737F279ED5AA1.desc: "举世瞩目的反坦克火箭推进榴弹发射器。"
 	quest.530737F279ED5AA1.quest_desc: [
 		"当轻武器无法解决棘手目标时，就轮到 RPG-7 登场了。它能造成巨大的范围伤害，是终极的战场难题解决者。"
@@ -601,6 +623,16 @@
 		""
 		"带馅面食的打开更多方式，等你探索哦~"
 	]
+	quest.5CD4377973477F3A.quest_desc: [
+		"车架决定你的座驾长啥样。"
+		""
+		"是要经典轿车，还是拖拉机，或者...购物车？"
+		""
+		"没有交警，随便选。"
+		""
+		"在教程中，我们本次使用&a机动车外壳(木质)&r。"
+	]
+	quest.5CD4377973477F3A.title: "汽车需要有个好看的壳子~"
 	quest.5E62A8D21CA4B17F.quest_desc: [
 		"透明的瓶身装住了第一批成酒，木塞声比礼炮还珍贵。"
 		"请把美酒珍藏起来，酒放得越久越好哦~"
@@ -740,6 +772,12 @@
 	quest.735090D5EEB03F61.desc: "在千里之外取敌将首级。精度就是一切。"
 	quest.735090D5EEB03F61.subtitle: "系列概览"
 	quest.735090D5EEB03F61.title: "狙击步枪系列"
+	quest.73FEBF06EFD4A8C1.quest_desc: [
+		"每个老司机都从修车学徒做起。"
+		""
+		"&a机动车部件制造台&r就是你的私人4S店，各个部分的零件都在这里搓出来。"
+	]
+	quest.73FEBF06EFD4A8C1.title: "先搞个修车铺"
 	quest.74FB91B872262106.desc: "用于制造和加装瞄具、枪口等配件。"
 	quest.74FB91B872262106.subtitle: "核心设施"
 	quest.74FB91B872262106.title: "配件工作台"
@@ -1114,6 +1152,7 @@
 	task.49493B96A556FD8C.title: "好哦~"
 	task.4CA5222C04C6B91B.title: "森罗厨房"
 	task.53794FE4A79216BD.title: "爽~"
+	task.6D3E047EC7F1DEAD.title: "组装好咯！"
 	task.72E6FABC9C5BE68C.title: "感谢有你~"
 	task.76613D96E9C5667B.title: "森罗厨房"
 }

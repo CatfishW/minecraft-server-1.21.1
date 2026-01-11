@@ -1,0 +1,15 @@
+{
+    "id": "8e538b36-d603-4e93-ac3d-2c73192d0031",
+    "title": "荒野寻踪",
+    "description": "我是Dogmeat，一只忠诚的狗伴侣。最近在森林深处，我总是闻到一些奇怪的气味，似乎有重要的物品被埋藏了，但我独自一人无法找到它们。这让我感到不安，因为如果找不到这些线索，我们可能会错过一些危险或秘密。\n\n请前往附近的废弃矿井，收集3根骨头（minecraft:bone）。因为这些骨头可能与最近出现的生物有关，帮我追踪它们的来源，才能确保我们的安全。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 357
+    }
+}

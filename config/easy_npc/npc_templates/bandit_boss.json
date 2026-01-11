@@ -25,10 +25,12 @@
     },
     "drop": {
         "item": {
-            "item": "novus_items:silver_novus_coin",
+            "item": "numismatic-overhaul:gold_coin",
             "count": 1
         },
-        "chance": 0.99,
+        "minCount": 1,
+        "maxCount": 3,
+        "chance": 1.0,
         "playerKillOnly": true
     },
     "objectives": {

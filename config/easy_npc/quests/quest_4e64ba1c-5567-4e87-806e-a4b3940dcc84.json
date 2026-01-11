@@ -1,0 +1,15 @@
+{
+    "id": "4e64ba1c-5567-4e87-806e-a4b3940dcc84",
+    "title": "暗夜守护者",
+    "description": "勇敢的冒险者，最近村庄的夜晚被阴影笼罩，僵尸和骷髅在围墙外徘徊，村民们的安宁生活受到威胁。作为村庄的守卫，我日夜巡逻但仍力不从心，急需你的援助来抵御这些入侵的敌对生物。\n\n请你前往村庄外的森林深处，击杀至少5只僵尸，以消除它们对村庄的直接威胁。这样能确保村民的安全，并巩固我们的防御线。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 191
+    }
+}

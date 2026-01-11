@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "哎呀！我的老天爷啊，您总算醒了！看看这地方，简直是一团糟，真该用吸尘器好好清理一下。我的传感器检测到您已经昏迷了足足200年，虽然这听起来有点离谱，但请相信我的计时器绝对精准。您需要来点茶吗？还是说我们得先找个安全的地方，好让我能继续履行管家的职责？",
             "buttons": [
                 {
-                    "label": "厨房卫生危机",
-                    "action": "OPEN_QUEST_DIALOG:c0ef7ecc-732e-4da1-8539-07226a988771",
-                    "id": "btn_quest_b02615d4"
-                },
-                {
-                    "label": "吸尘器坏了",
-                    "action": "OPEN_QUEST_DIALOG:a93c04f7-3f27-4845-8c69-88f334134a98",
-                    "id": "btn_quest_1622a3f7"
-                },
-                {
-                    "label": "温室修复",
-                    "action": "OPEN_QUEST_DIALOG:63920dae-2772-440e-a690-eb0765da2e63",
-                    "id": "btn_quest_32bd095f"
-                },
-                {
-                    "label": "熏香大扫除",
-                    "action": "OPEN_QUEST_DIALOG:5209f056-aa5b-470b-8418-ef47c979eac3",
-                    "id": "btn_quest_4bdf5f2c"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e5e80eea-9d1d-4ea8-ab87-3f92b389bd36,c7158987-c469-4710-b11b-9c7f3f0c8311,bbf063cb-cbf1-4a14-8ec5-706f89a44283,66fa5c39-1e8f-4754-bfc6-95e6b98e7489,6cc9441f-2fdd-4212-a6b0-a46802c24b93",
+                    "id": "btn_quest_2e8f9e62"
                 },
                 {
                     "label": "这是哪里？我们安全了吗？",
@@ -53,6 +40,11 @@
                     "label": "我的家人呢？",
                     "action": "SHOW_DIALOG:family",
                     "id": "btn_family"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2ced05ac"
                 }
             ],
             "oneTimeConversation": true
@@ -139,5 +131,15 @@
             "item": "minecraft:spyglass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

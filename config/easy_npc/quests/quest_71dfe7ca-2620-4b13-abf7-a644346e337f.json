@@ -1,0 +1,15 @@
+{
+    "id": "71dfe7ca-2620-4b13-abf7-a644346e337f",
+    "title": "鸟鸣之谜",
+    "description": "我是Stanley Uris，一个逻辑严谨的观鸟者。最近，我注意到森林中的鸟儿行为异常，它们不再歌唱，仿佛被某种未知的威胁所困扰。我怀疑附近的洞穴中有东西在影响它们，这违背了自然规律，必须调查清楚。\n\n请前往村庄外的森林，收集5个羽毛（minecraft:feather）。这些羽毛可能残留着洞穴中物质的痕迹，帮助我验证怀疑并找出鸟异常行为的原因。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:feather",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 402
+    }
+}

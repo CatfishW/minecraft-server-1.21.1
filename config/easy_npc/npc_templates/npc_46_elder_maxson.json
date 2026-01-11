@@ -5,14 +5,16 @@
     "description": "Leader of the brotherhood. Strict.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/ElderMaxson.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2022/01/18/elder-maxson-19738057.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "公民。你踏入了钢铁兄弟会的领地，这里是秩序与原则的庇护所。在这一片废土的混乱中，我们是唯一能够重建文明的力量。告诉我，你的来意是什么？我们不欢迎漫无目的的闲逛者。",
             "buttons": [
                 {
-                    "label": "肃清异端",
-                    "action": "OPEN_QUEST_DIALOG:7b3a1c9e-4260-4c5c-8e2a-3f8d9a1b2c3d",
-                    "id": "btn_quest_1a4717e7"
-                },
-                {
-                    "label": "钢铁献礼",
-                    "action": "OPEN_QUEST_DIALOG:597a9e4d-340a-45f1-9e72-f6f107c7630d",
-                    "id": "btn_quest_7c507ec6"
-                },
-                {
-                    "label": "钢铁的净化",
-                    "action": "OPEN_QUEST_DIALOG:ea372c9d-7e5f-409c-8a01-0f0d946ad11c",
-                    "id": "btn_quest_601ec1db"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:84f131f6-6739-4af5-8a60-3d32ae5e8845,39ea448d-4b89-4865-8310-0fc0a7e52314,99b85c34-2cac-460d-8dd2-ea983f7bfe45,c8edeb04-8aa3-4aca-ab90-fe26d9313aa7,6bf8d649-b480-4137-acfd-0f18134f8ff1",
+                    "id": "btn_quest_066a1fd4"
                 },
                 {
                     "label": "询问兄弟会的目标",
@@ -48,6 +40,11 @@
                     "label": "展示你获得的战利品",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_show_loot"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_60644806"
                 }
             ],
             "oneTimeConversation": true
@@ -119,5 +116,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

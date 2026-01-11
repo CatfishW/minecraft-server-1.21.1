@@ -1,0 +1,15 @@
+{
+    "id": "9ea6c57a-d75e-4103-a03d-3471cac32a9a",
+    "title": "荒野的试炼",
+    "description": "我是游侠Lucas Sinclair。最近村庄外的森林深处变得异常危险，僵尸和骷髅在夜色中游荡，威胁着村民的生计。作为守护者，我必须直面这些威胁，但人手不足，危机日益加剧。\n\n请你前往村庄东边的森林深处，杀死5只僵尸。这样能清除那些徘徊的怪物，保护村庄的安宁，确保村民能安心耕作。记住，行动要果断，勇敢面对一切挑战。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 108
+    }
+}

@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你挡着我的路了，弱鸡。这镇子是我罩的，连下水道里的老鼠都得听我的。我今天心情很糟，特别是想到那个叫比尔的死瘸子，还有那个穿黄雨衣的爱哭鬼。你最好别惹我。",
             "buttons": [
                 {
-                    "label": "恶棍的挑衅",
-                    "action": "OPEN_QUEST_DIALOG:f47ac10b-58cc-4372-a567-0e02b2c3d479",
-                    "id": "btn_quest_eb14c912"
-                },
-                {
-                    "label": "亨利的挑战",
-                    "action": "OPEN_QUEST_DIALOG:6c5c68e1-d488-4e84-b4e6-e157885c2121",
-                    "id": "btn_quest_90911ca3"
-                },
-                {
-                    "label": "痛苦的乐章",
-                    "action": "OPEN_QUEST_DIALOG:2779491d-bc1a-4a7b-a7b3-84bf43ae446d",
-                    "id": "btn_quest_460dc3c1"
-                },
-                {
-                    "label": "替我清扫垃圾",
-                    "action": "OPEN_QUEST_DIALOG:118f0bbf-40a9-42b5-bd60-351d9c38a796",
-                    "id": "btn_quest_eb37afd2"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4be0e7ee-f571-4cbf-ac67-161ecffe0417,62e79fe1-bd52-4c2b-a5f5-ed9b95c37ebf,5d74dcaf-b6e4-464c-b78d-577331028c93,12d637a2-6505-4bda-9e68-62e40ebb1699,8b62af20-cdd8-4a97-8384-324bf4ab7e8e",
+                    "id": "btn_quest_5e20b5d1"
                 },
                 {
                     "label": "你想对Georgie做什么？",
@@ -53,6 +40,11 @@
                     "label": "你看起来很生气",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_angry"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_81e86154"
                 }
             ],
             "oneTimeConversation": true
@@ -134,5 +126,15 @@
             "item": "minecraft:iron_shovel",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

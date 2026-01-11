@@ -1,0 +1,3620 @@
+[
+  {
+    "registryId": "minecraft:acacia_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:acacia_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:amethyst_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:andesite",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:andesite_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:andesite_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:andesite_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_mosaic",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_mosaic_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_mosaic_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bamboo_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:basalt",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:birch_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:blackstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:blackstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:blackstone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:blackstone_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chain",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cherry_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_deepslate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_nether_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_polished_blackstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_quartz_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_red_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_stone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_tuff",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:chiseled_tuff_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:coal_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobbled_deepslate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobbled_deepslate_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobbled_deepslate_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobbled_deepslate_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobblestone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobblestone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobblestone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cobblestone_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:copper_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cracked_deepslate_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cracked_deepslate_tiles",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cracked_nether_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cracked_polished_blackstone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cracked_stone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_hyphae",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_stem",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:crimson_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_red_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_red_sandstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:cut_sandstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_oak_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_prismarine",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_prismarine_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:dark_prismarine_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_tile_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_tile_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_tile_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:deepslate_tiles",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:diamond_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:diorite",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:diorite_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:diorite_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:diorite_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:emerald_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:end_stone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:end_stone_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:end_stone_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:end_stone_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:end_stone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:exposed_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:gilded_blackstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:gold_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:granite",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:granite_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:granite_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:granite_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:heavy_weighted_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:iron_bars",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:iron_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:iron_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:iron_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:jungle_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:lapis_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:light_weighted_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mangrove_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_cobblestone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_cobblestone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_cobblestone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_cobblestone_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_stone_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_stone_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_stone_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mossy_stone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mud_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mud_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mud_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:mud_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:nether_brick_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:nether_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:nether_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:nether_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:nether_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:netherite_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:netherrack",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oak_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:oxidized_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:packed_mud",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_andesite",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_andesite_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_andesite_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_basalt",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_blackstone_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_deepslate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_deepslate_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_deepslate_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_deepslate_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_diorite",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_diorite_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_diorite_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_granite",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_granite_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_granite_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_tuff",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_tuff_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_tuff_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:polished_tuff_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:prismarine_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:purpur_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:purpur_pillar",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:purpur_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:purpur_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:quartz_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:quartz_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:quartz_pillar",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:quartz_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:quartz_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_nether_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_nether_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_nether_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_nether_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_sandstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_sandstone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:red_sandstone_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:redstone_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:reinforced_deepslate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:sandstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:sandstone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:sandstone_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:sea_lantern",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_basalt",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_quartz",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_quartz_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_quartz_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_red_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_red_sandstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_red_sandstone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_sandstone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_sandstone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_sandstone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_stone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:smooth_stone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:spruce_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stone_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_acacia_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_acacia_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_bamboo_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_birch_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_birch_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_cherry_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_cherry_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_crimson_hyphae",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_crimson_stem",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_dark_oak_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_dark_oak_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_jungle_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_jungle_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_mangrove_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_mangrove_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_oak_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_oak_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_spruce_log",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_spruce_wood",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_warped_hyphae",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:stripped_warped_stem",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_brick_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_brick_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_brick_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_bricks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:tuff_wall",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_button",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_fence",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_fence_gate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_hyphae",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_planks",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_pressure_plate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_stem",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:warped_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_copper_block",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_exposed_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_oxidized_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:waxed_weathered_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_chiseled_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_copper_bulb",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_copper_door",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_copper_grate",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_copper_trapdoor",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_cut_copper",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_cut_copper_slab",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  },
+  {
+    "registryId": "minecraft:weathered_cut_copper_stairs",
+    "count": 1,
+    "price": 10,
+    "stock": 0,
+    "buyEnabled": true,
+    "sellEnabled": true,
+    "category": "building_blocks"
+  }
+]

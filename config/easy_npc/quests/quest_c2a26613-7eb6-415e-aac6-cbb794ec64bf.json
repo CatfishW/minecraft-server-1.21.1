@@ -1,0 +1,15 @@
+{
+    "id": "c2a26613-7eb6-415e-aac6-cbb794ec64bf",
+    "title": "隐秘的方程式",
+    "description": "作为一名科学家，我一直在研究这个世界的底层规律。但最近，我的实验数据出现了异常，似乎有某种力量在干扰能量场。这让我夜不能寐，急需新的样本来验证我的假设。\n\n请你前往村庄外的废弃矿井，击杀5个骷髅，并带回它们的骨头。这些骨头可能含有关键的同位素，能帮助我解开能量波动的谜团。废弃矿井阴暗危险，请务必小心。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 194
+    }
+}

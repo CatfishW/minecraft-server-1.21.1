@@ -1,89 +1,206 @@
 {
-  "name": "Village Merchant",
-  "entityType": "easy_npc:villager",
-  "faction": "default",
-  "description": "A friendly merchant selling various goods",
-  "skin": {
-    "type": "PLAYER_SKIN",
-    "playerName": "Steve"
-  },
-  "dialog": {
-    "greeting": "Welcome to my shop, traveler! What can I help you with?",
-    "buttons": [
-      {
-        "label": "Trade",
-        "action": "OPEN_TRADING"
-      },
-      {
-        "label": "Tell me about yourself",
-        "action": "SHOW_DIALOG:about"
-      },
-      {
-        "label": "Goodbye",
-        "action": "CLOSE_DIALOG"
-      }
-    ],
-    "additionalDialogs": [
-      {
-        "id": "about",
-        "text": "I've been a merchant in this village for many years. My family has traded here for generations!"
-      }
-    ],
-    "useLLM": false
-  },
-  "trading": {
-    "type": "BASIC",
-    "maxUses": 64,
-    "rewardedXP": 5,
-    "resetsEveryMin": 1440,
-    "offers": [
-      {
-        "buy": {
-          "item": "minecraft:emerald",
-          "count": 1
-        },
-        "sell": {
-          "item": "minecraft:diamond",
-          "count": 1
-        },
+    "name": "§6商人",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "A friendly merchant selling various goods",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/08/fancy-merchant-minecraft-23778573.png?v938"
+    },
+    "dialog": {
+        "greeting": "欢迎光临，旅人！需要什么帮助？",
+        "buttons": [
+            {
+                "label": "交易",
+                "action": "OPEN_TRADING",
+                "id": "btn_trade"
+            },
+            {
+                "label": "介绍一下你自己",
+                "action": "SHOW_DIALOG:about",
+                "id": "btn_about"
+            },
+            {
+                "label": "再见",
+                "action": "CLOSE_DIALOG",
+                "id": "btn_goodbye"
+            }
+        ],
+        "additionalDialogs": [
+            {
+                "id": "about",
+                "text": "我在这个村子做买卖很多年了。我的家族世世代代都在这里经商。"
+            }
+        ],
+        "useLLM": false
+    },
+    "trading": {
+        "type": "BASIC",
         "maxUses": 64,
-        "xpReward": 1
-      },
-      {
-        "buy": {
-          "item": "minecraft:emerald",
-          "count": 5
+        "rewardedXP": 5,
+        "resetsEveryMin": 1440,
+        "randomizeOffers": true,
+        "randomOfferCount": 6,
+        "buyList": [
+            {
+                "item": "numismatic-overhaul:bronze_coin",
+                "count": 2
+            },
+            {
+                "item": "numismatic-overhaul:silver_coin",
+                "count": 1
+            },
+            {
+                "item": "numismatic-overhaul:gold_coin",
+                "count": 1
+            },
+            {
+                "item": "numismatic-overhaul:bronze_coin",
+                "count": 5
+            },
+            {
+                "item": "numismatic-overhaul:silver_coin",
+                "count": 3
+            },
+            {
+                "item": "numismatic-overhaul:gold_coin",
+                "count": 2
+            },
+            {
+                "item": "numismatic-overhaul:bronze_coin",
+                "count": 8
+            },
+            {
+                "item": "numismatic-overhaul:silver_coin",
+                "count": 4
+            },
+            {
+                "item": "numismatic-overhaul:gold_coin",
+                "count": 3
+            },
+            {
+                "item": "numismatic-overhaul:bronze_coin",
+                "count": 12
+            },
+            {
+                "item": "numismatic-overhaul:silver_coin",
+                "count": 6
+            },
+            {
+                "item": "numismatic-overhaul:gold_coin",
+                "count": 5
+            }
+        ],
+        "sellList": [
+            {
+                "item": "yuushya:air_conditioning_condenser",
+                "count": 1
+            },
+            {
+                "item": "yuushya:old_tv",
+                "count": 1
+            },
+            {
+                "item": "yuushya:coffee_machine",
+                "count": 1
+            },
+            {
+                "item": "yuushya:acacia_table",
+                "count": 1
+            },
+            {
+                "item": "yuushya:classroom_chair",
+                "count": 1
+            },
+            {
+                "item": "yuushya:classroom_desk",
+                "count": 1
+            },
+            {
+                "item": "yuushya:microwaver",
+                "count": 1
+            },
+            {
+                "item": "yuushya:refrigerator",
+                "count": 1
+            },
+            {
+                "item": "yuushya:vending_machine_blue_v",
+                "count": 1
+            },
+            {
+                "item": "tacz:glock_17",
+                "count": 1
+            },
+            {
+                "item": "tacz:ak47",
+                "count": 1
+            },
+            {
+                "item": "tacz:hk_mp5a5",
+                "count": 1
+            }
+        ],
+        "offers": [
+            {
+                "buy": {
+                    "item": "minecraft:emerald",
+                    "count": 1
+                },
+                "sell": {
+                    "item": "minecraft:diamond",
+                    "count": 1
+                },
+                "maxUses": 64,
+                "xpReward": 1
+            },
+            {
+                "buy": {
+                    "item": "minecraft:emerald",
+                    "count": 5
+                },
+                "sell": {
+                    "item": "minecraft:iron_ingot",
+                    "count": 16
+                },
+                "maxUses": 64,
+                "xpReward": 1
+            },
+            {
+                "buy": {
+                    "item": "minecraft:wheat",
+                    "count": 20
+                },
+                "sell": {
+                    "item": "minecraft:emerald",
+                    "count": 1
+                },
+                "maxUses": 64,
+                "xpReward": 1
+            }
+        ]
+    },
+    "attributes": {
+        "maxHealth": 20,
+        "movementSpeed": 0.25,
+        "attackDamage": 2.0,
+        "armor": 0.0,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "canBePushed": false,
+        "canFloat": true,
+        "canOpenDoors": true,
+        "canClimb": true
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
         },
-        "sell": {
-          "item": "minecraft:iron_ingot",
-          "count": 16
-        },
-        "maxUses": 64,
-        "xpReward": 1
-      },
-      {
-        "buy": {
-          "item": "minecraft:wheat",
-          "count": 20
-        },
-        "sell": {
-          "item": "minecraft:emerald",
-          "count": 1
-        },
-        "maxUses": 64,
-        "xpReward": 1
-      }
-    ]
-  },
-  "attributes": {
-    "maxHealth": 20,
-    "movementSpeed": 0.25,
-    "attackDamage": 2.0,
-    "armor": 0.0,
-    "invulnerable": true,
-    "canBePushed": false,
-    "canFloat": true,
-    "canOpenDoors": true,
-    "canClimb": true
-  }
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
+    }
 }

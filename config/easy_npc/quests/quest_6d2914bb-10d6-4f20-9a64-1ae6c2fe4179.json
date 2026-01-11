@@ -1,0 +1,15 @@
+{
+    "id": "6d2914bb-10d6-4f20-9a64-1ae6c2fe4179",
+    "title": "幻影的召唤",
+    "description": "孩子，我这老妇人总在夜晚听到头顶的呼啸，那些幻影般的生物在盘旋，仿佛是我的噩梦成形，纠缠不休。\n\n请在夜晚去森林深处消灭2只幻影，因为它们的消失或许能让我从这无尽的恐惧中解脱，重获安宁。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:phantom",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 172
+    }
+}

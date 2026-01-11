@@ -1,0 +1,15 @@
+{
+    "id": "b777495c-ada6-4244-b151-b29995d0c71a",
+    "title": "幽暗回声",
+    "description": "我是Adrian Mellon，Derry的黑暗记忆仍萦绕我心。那段因仇恨而起的暴力，如同这片土地上永不停歇的诅咒，让我在方块的夜晚中无法安宁。\n\n我需要你前往森林深处的洞穴，杀死3只僵尸。这些怪物象征着我过去所面对的恶意，消灭它们或许能为我破碎的灵魂带来一丝平静。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 401
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "139bc7bc-800f-4ed4-852f-272465cd824b",
+    "title": "荒野的试炼",
+    "description": "听着，我是Erica，这个荒野可不是旅游景点！那些僵尸在村庄外游荡，打扰了我的计划。我需要你帮忙清理一下。\n\n去村庄外杀掉5只僵尸。只有这样，我才能安心地继续我的美国式冒险，而不被这些怪物拖后腿。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

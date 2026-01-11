@@ -5,14 +5,16 @@
     "description": "Historian. Architect. Sensitive soul.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/BenHanscom.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/10/28/ben-hanscom---it-13600733.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,29 +27,9 @@
             "greeting": "啊，你好。抱歉，我正在看这栋建筑的结构。这简直是……灾难中的杰作。有些东西即使在末日里也保持着惊人的工艺。我是说，你看这拱门，即使历经岁月和恐惧的侵蚀，它依然屹立不倒。",
             "buttons": [
                 {
-                    "label": "失落大教堂的基石",
-                    "action": "OPEN_QUEST_DIALOG:c1a7d0a3-9b9e-4d68-9c6e-8c7d0e9b1a2c",
-                    "id": "btn_quest_1b75e4e4"
-                },
-                {
-                    "label": "失落的乐高积木",
-                    "action": "OPEN_QUEST_DIALOG:8a14a53a-536a-4716-a542-c752b9e57a0a",
-                    "id": "btn_quest_e1f46e82"
-                },
-                {
-                    "label": "旧神殿的蓝图",
-                    "action": "OPEN_QUEST_DIALOG:d9aab47c-9665-4d67-8ea8-cb068702535e",
-                    "id": "btn_quest_c7c4b1da"
-                },
-                {
-                    "label": "砖石挽歌",
-                    "action": "OPEN_QUEST_DIALOG:7a41ed7d-792e-4b1e-800c-e2177ac93707",
-                    "id": "btn_quest_5af8edba"
-                },
-                {
-                    "label": "沉睡砖窑的哀歌",
-                    "action": "OPEN_QUEST_DIALOG:f3c949f1-84c1-4e40-9c89-a675194ecc82",
-                    "id": "btn_quest_34bfc2d8"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e58c2f25-e846-4ef5-a4f5-0a903b7f6ad1,841f8886-82f2-4ef5-b5e9-80eb74982ea9,57c9455d-4c29-4fa3-b351-27765d7795af,a4fd5c30-c965-4ece-b05e-d6ed71b670cc,edcf5fe1-2c11-44aa-b524-6a2594219947",
+                    "id": "btn_quest_653e9e72"
                 },
                 {
                     "label": "你在研究什么？",
@@ -58,6 +40,11 @@
                     "label": "看起来你很懂建筑",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_ben_arch"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_fe44662f"
                 }
             ],
             "oneTimeConversation": true
@@ -204,5 +191,15 @@
             "item": "minecraft:iron_shovel",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

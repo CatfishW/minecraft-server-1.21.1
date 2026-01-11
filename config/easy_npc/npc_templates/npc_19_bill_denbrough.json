@@ -5,14 +5,16 @@
     "description": "Stuttering Bill. Leader of the Losers.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/BillDenbrough.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/07/bill-23775492.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "嘿，你看起来像个外乡人。小心点，这镇子最近不太平。如果你是来找乐子的，那你来错地方了。如果你是来帮忙的……嗯，我们可能需要你。我是比尔，比尔·登布罗。",
             "buttons": [
                 {
-                    "label": "除草计划",
-                    "action": "OPEN_QUEST_DIALOG:bc48c1e7-4a8a-4b98-8a53-7c0d21c6d66e",
-                    "id": "btn_quest_70ae7912"
-                },
-                {
-                    "label": "召集幸存者",
-                    "action": "OPEN_QUEST_DIALOG:a1b2c3d4-e5f6-7890-1234-567890abcdef",
-                    "id": "btn_quest_f2c2a17d"
-                },
-                {
-                    "label": "它回来了",
-                    "action": "OPEN_QUEST_DIALOG:8c12a2d8-7baf-4e78-9a5a-c2853808eb10",
-                    "id": "btn_quest_5b6a3aa3"
-                },
-                {
-                    "label": "小丑的阴影",
-                    "action": "OPEN_QUEST_DIALOG:25d1a957-75c5-4e3d-9861-c270bb7c859c",
-                    "id": "btn_quest_0c530538"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:d59966f8-a0a2-46cc-96f5-020bc0f8295b,84a7bfa2-d4d8-4834-9fbc-d94719a4fe9e,b5eb7e92-bc06-4192-8f2f-b0d7fbbc48ea,40add717-868a-4ced-bf55-a906d72fb8e2,7703ffbb-f30f-483c-8dce-b06ccd84cb7f",
+                    "id": "btn_quest_34fce963"
                 },
                 {
                     "label": "有什么不对劲？",
@@ -53,6 +40,11 @@
                     "label": "你是谁？‘我们’是谁？",
                     "action": "SHOW_DIALOG:who_are_you",
                     "id": "btn_us"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_478648b0"
                 }
             ],
             "oneTimeConversation": true
@@ -269,5 +261,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

@@ -1,0 +1,15 @@
+{
+    "id": "a82b5c6e-ceaf-417d-8b46-ff54a70d4e4c",
+    "title": "水源的呼唤",
+    "description": "作为来自Vault的幸存者，我们的避难所净水系统正在崩溃，水源日益枯竭，必须找到古老的水芯片来修复它，否则所有人都将陷入危机。\n\n请前往附近的河流，用空桶收集3份水桶。这能帮助我们净化水源，确保避难所的存续。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:water_bucket",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 187
+    }
+}

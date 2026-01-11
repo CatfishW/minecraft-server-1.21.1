@@ -1,0 +1,15 @@
+{
+    "id": "8abd04f6-079f-49c9-8c96-e6510e5225cc",
+    "title": "雨夜寻踪",
+    "description": "夜雨如墨，浸透了这座破败的村庄。近来，盗贼频频出没，掠夺了居民的存粮，留下一片狼藉。我作为合成侦探，在这阴冷的夜晚中嗅到了一丝熟悉的阴谋气息，仿佛回到了那些在霓虹灯下追寻真相的岁月。\n\n我需要你前往村庄外的废弃矿井，收集一些煤炭（minecraft:coal）。盗贼在黑暗中行动，必定留下了火把的痕迹。只有找到这些线索，我才能追踪到他们的巢穴，揭开这场失窃案的真相。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 113
+    }
+}

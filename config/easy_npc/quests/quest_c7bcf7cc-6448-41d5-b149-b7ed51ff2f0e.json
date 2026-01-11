@@ -1,0 +1,15 @@
+{
+    "id": "c7bcf7cc-6448-41d5-b149-b7ed51ff2f0e",
+    "title": "寒霜秘藏",
+    "description": "我是Robin Buckley，在Scoops Ahoy打工。最近店里的冰淇淋总是莫名其妙地融化，顾客们都快跑光了。我怀疑是附近的洞穴里的怪物在作祟，它们散发的热量让一切都不稳定。\n\n请你去附近的洞穴，击杀5只僵尸，带回它们的腐肉。腐肉可以用来制作防腐剂，稳定冰淇淋的温度，拯救我们的生意。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 340
+    }
+}

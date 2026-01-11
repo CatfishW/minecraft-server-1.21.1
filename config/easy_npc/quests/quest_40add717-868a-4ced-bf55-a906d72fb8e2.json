@@ -1,0 +1,15 @@
+{
+    "id": "40add717-868a-4ced-bf55-a906d72fb8e2",
+    "title": "失语者的抗争",
+    "description": "我是比尔·登布罗，失败者们的领袖。尽管我的言语时常卡顿，但我们必须直面阴影中的威胁。僵尸正从附近的废弃矿井中涌出，威胁着我们的藏身处和家园。\n\n请前往废弃矿井，杀死5只僵尸。它们在不断逼近，只有清除这些怪物，我们才能保住安全的栖身之地。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 397
+    }
+}

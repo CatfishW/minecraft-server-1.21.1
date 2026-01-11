@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "吼！我是强力。大块头，强力！你是好人，还是坏人？如果你手里有肉，你就是好人。如果没有……强力就打断你的腿。我饿了。我想喝牛奶，那种好心的牛奶！",
             "buttons": [
                 {
-                    "label": "强哥的善意",
-                    "action": "OPEN_QUEST_DIALOG:e0e9a6a2-7b3f-4b8a-9d84-0a2e4582a044",
-                    "id": "btn_quest_07a80e40"
-                },
-                {
-                    "label": "仁慈的甘露",
-                    "action": "OPEN_QUEST_DIALOG:da1d0790-aa77-4b1e-9ebc-eb45bb4db83d",
-                    "id": "btn_quest_64f7ad8c"
-                },
-                {
-                    "label": "寻觅温柔之乳",
-                    "action": "OPEN_QUEST_DIALOG:fafcbfd3-54a0-4cd6-8ddc-4f5baed91743",
-                    "id": "btn_quest_8502fd12"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:402542d9-f81d-4273-a3c9-48e202282fb9,6f797fd7-86cf-4719-ae4f-ad10971c53b0,d15d23e8-464b-4a8d-b0e5-ac571b4dae86,c54d3a85-276c-4b2c-bd6e-5b2cc9c3c9f1,9131970f-bf13-41d8-8863-9b26d223eaeb",
+                    "id": "btn_quest_3fd02914"
                 },
                 {
                     "label": "什么是「好心的牛奶」？",
@@ -48,6 +40,11 @@
                     "label": "肉？我这里有变种肉",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_mutant_meat"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_9a32c019"
                 }
             ],
             "oneTimeConversation": true
@@ -119,5 +116,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

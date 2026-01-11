@@ -1,0 +1,15 @@
+{
+    "id": "4890d87d-79e3-4f1f-88c7-943ad03e5322",
+    "title": "矿井深处的秘密",
+    "description": "我是Publick Occurrences的记者Piper Wright，最近在调查附近废弃矿井的异常活动。那里传出奇怪的声音，我怀疑有怪物聚集，需要一些证据来报道真相。\n\n请前往村庄附近的废弃矿井，收集5个煤炭。这些煤炭可能被污染，能帮我揭露矿井中的隐患。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 335
+    }
+}

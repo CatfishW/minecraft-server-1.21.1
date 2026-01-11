@@ -1,0 +1,15 @@
+{
+    "id": "ad50275d-0711-4cd1-8b4b-94f5f3fa6504",
+    "title": "幽暗回响",
+    "description": "作为33号避难所的监督者，我，汉克，必须维持这里的秩序。但最近，能源核心的读数极不稳定，仿佛某种未知力量在附近的森林深处干扰着一切。这威胁到所有居民的生存，我不能再坐视不管。\n\n我需要你前往东北方向的废弃矿井，收集5个红石粉。只有用这些材料加固核心，我们才能避免灾难发生。这关乎整个避难所的命运。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 398
+    }
+}

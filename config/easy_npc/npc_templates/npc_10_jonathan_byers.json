@@ -5,14 +5,16 @@
     "description": "Quiet photographer. Courageous outsider.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/JonathanByers.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/07/14/jonathan-byers-13187188.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "……你好。你是新来的吗？小心点，这个镇子不像看起来那么平静。我在检查我的相机，光线有点奇怪，空气中有一种……静电的味道。通常这种时候，就会有不好的事情发生。如果你没事，最好早点回家，锁好门窗。",
             "buttons": [
                 {
-                    "label": "暗处的注视",
-                    "action": "OPEN_QUEST_DIALOG:b1a535c2-688d-4a5f-a295-27812c606e56",
-                    "id": "btn_quest_39bc6564"
-                },
-                {
-                    "label": "寻找亨利",
-                    "action": "OPEN_QUEST_DIALOG:5a1b3c4d-5e6f-7890-1234-567890abcdef",
-                    "id": "btn_quest_ac68974f"
-                },
-                {
-                    "label": "静止之光",
-                    "action": "OPEN_QUEST_DIALOG:e611a0ac-d19a-433a-9dac-92dc0f8bf458",
-                    "id": "btn_quest_fce03a5b"
-                },
-                {
-                    "label": "暗影中的异响",
-                    "action": "OPEN_QUEST_DIALOG:f7342475-b385-4bfa-b335-3e0705c0d991",
-                    "id": "btn_quest_3be8d1b2"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:cab19933-868f-47fd-8f7c-683a4ef4d10a,8de0a703-0561-4faa-81f7-d2b702abf551,7110de81-e69c-4591-a3c4-88e090966944,2cb2c626-727e-4535-bd1e-d3b75f6cf677,88b2ab82-38df-4ef6-be87-321114d0407b",
+                    "id": "btn_quest_36ad3e5e"
                 },
                 {
                     "label": "你在拍什么?",
@@ -53,6 +40,11 @@
                     "label": "你妈妈还好吗?",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_mom_ok"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_90aed88e"
                 }
             ],
             "oneTimeConversation": true
@@ -229,5 +221,15 @@
             "item": "minecraft:iron_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

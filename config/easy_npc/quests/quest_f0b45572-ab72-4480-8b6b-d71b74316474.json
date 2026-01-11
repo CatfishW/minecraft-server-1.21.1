@@ -1,0 +1,15 @@
+{
+    "id": "f0b45572-ab72-4480-8b6b-d71b74316474",
+    "title": "荒野追猎",
+    "description": "我是Cooper Howard，一个游荡在废土中的赏金猎人变种人。最近，怪物们在森林深处集结，威胁着附近的村庄，我需要你帮忙清除它们，否则这片土地将不再安宁。\n\n请前往森林深处，杀死5个僵尸。这样做是为了确保村民的安全，并让我能继续我的狩猎任务。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 453
+    }
+}

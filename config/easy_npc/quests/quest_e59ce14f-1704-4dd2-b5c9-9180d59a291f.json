@@ -1,0 +1,15 @@
+{
+    "id": "e59ce14f-1704-4dd2-b5c9-9180d59a291f",
+    "title": "废墟中的证言",
+    "description": "我是Publick Occurrences的记者Piper Wright。村庄附近的废弃矿井中传出怪声，村民们都不敢靠近，我需要找到目击者获取第一手信息。\n\n请前往废弃矿井附近，寻找名叫亨利 (Henry) 的矿工，与他交谈。他的证言对报道至关重要。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 427
+    }
+}

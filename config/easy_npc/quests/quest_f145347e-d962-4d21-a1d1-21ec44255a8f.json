@@ -1,0 +1,15 @@
+{
+    "id": "f145347e-d962-4d21-a1d1-21ec44255a8f",
+    "title": "心能的回响",
+    "description": "我察觉到一股异常的精神波动，从村庄外的废弃矿井深处传来。它如同尖刺般刺痛我的感知，扰乱了我的心灵之力，让宁静的夜晚充满不安的低语。\n\n请前往村庄外的废弃矿井，杀死4只骷髅以平息这股扰乱。因为它们被那黑暗能量所操控，是侵蚀我能力的根源。只有消除它们，我才能重获平静。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 145
+    }
+}

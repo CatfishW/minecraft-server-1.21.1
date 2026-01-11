@@ -40,6 +40,7 @@ import de.markusbordihn.easynpc.data.skin.SkinDataEntry;
 import de.markusbordihn.easynpc.data.synched.SynchedDataIndex;
 import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
 import de.markusbordihn.easynpc.entity.easynpc.data.ConfigDataCapable;
+import de.markusbordihn.easynpc.entity.easynpc.data.ActionEventDataCapable;
 import de.markusbordihn.easynpc.entity.easynpc.data.DialogDataCapable;
 import de.markusbordihn.easynpc.entity.easynpc.data.ObjectiveDataCapable;
 import de.markusbordihn.easynpc.entity.easynpc.data.SkinDataCapable;
@@ -220,6 +221,12 @@ public class NPCTemplateManager {
         configCapable.setFaction(template.getFaction());
         log.info("{} Applied faction: {}", LOG_PREFIX, template.getFaction());
       }
+    }
+
+    // Apply action permission level
+    if (npc instanceof ActionEventDataCapable<?> actionCapable) {
+        actionCapable.setActionPermissionLevel(template.getActionPermissionLevel());
+        log.info("{} Applied action permission level: {}", LOG_PREFIX, template.getActionPermissionLevel());
     }
     
     // Apply attributes
@@ -1067,9 +1074,13 @@ public class NPCTemplateManager {
     }
     
     Entity entity = npc.getEntity();
-    String configString = String.format("easynpc_drop|%s|%d|%f|%b",
+    int minCount = dropConfig.getMinCount() > 0 ? dropConfig.getMinCount() : dropConfig.getItem().getCount();
+    int maxCount = dropConfig.getMaxCount() > 0 ? dropConfig.getMaxCount() : minCount;
+    
+    String configString = String.format("easynpc_drop|%s|%d|%d|%f|%b",
         dropConfig.getItem().getItem(),
-        dropConfig.getItem().getCount(),
+        minCount,
+        maxCount,
         dropConfig.getChance(),
         dropConfig.isPlayerKillOnly());
         

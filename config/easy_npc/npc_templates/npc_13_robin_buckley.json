@@ -5,14 +5,16 @@
     "description": "Smarts and sarcasm. Works at Scoops Ahoy.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/RobinBuckley.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/08/05/robin---stranger-things-13292657.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "（她正拿着一张奇怪的电路图比对，看到你后推了推眼镜）哦，嗨。你是新的补给员吗？如果是的话，麻烦把那边的红石粉递给我。谢天谢地，终于来了个活人，我可以不用对着墙自言自语了。",
             "buttons": [
                 {
-                    "label": "来自史酷比的建议",
-                    "action": "OPEN_QUEST_DIALOG:8c9f7d2a-1e3b-4d5f-9a2c-8e6d4f1b0a5c",
-                    "id": "btn_quest_7ec78c43"
-                },
-                {
-                    "label": "冷饮店的扩张计划",
-                    "action": "OPEN_QUEST_DIALOG:fd7f239b-429c-4ca6-9f36-22c5e6d3e033",
-                    "id": "btn_quest_bc1ba5f4"
-                },
-                {
-                    "label": "不给糖就捣蛋",
-                    "action": "OPEN_QUEST_DIALOG:2f28eae2-28bf-4c84-baac-e2a670f96efc",
-                    "id": "btn_quest_3d734417"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4203376e-d018-47fc-89fc-d75db27823b4,c7bcf7cc-6448-41d5-b149-b7ed51ff2f0e,a4ed2778-a346-451c-b04e-e9fd8494b1cb,0f43c2a3-d744-4cd7-904d-45c0c457bbe0,d56e6690-3678-4344-8944-9b2a2be2aed5",
+                    "id": "btn_quest_68068632"
                 },
                 {
                     "label": "你在做什么？",
@@ -48,6 +40,11 @@
                     "label": "这地方真怪。",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_robin_comment"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_38186278"
                 }
             ],
             "oneTimeConversation": true
@@ -159,5 +156,15 @@
             "item": "minecraft:writable_book",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

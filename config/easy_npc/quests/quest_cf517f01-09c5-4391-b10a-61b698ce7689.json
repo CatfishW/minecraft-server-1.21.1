@@ -1,0 +1,15 @@
+{
+    "id": "cf517f01-09c5-4391-b10a-61b698ce7689",
+    "title": "烈焰焚心",
+    "description": "（Patrick Hockstetter蹲在墙角，手里摆弄着一只焦黑的木棍）'这村子闷得发慌...你闻到过木头燃烧时的甜美气息吗？就在北边废弃矿井的深处，我藏了一堆上好的引火柴。但昨晚我听见里面有僵尸的嘶吼，那些腐烂的蠢货会毁了我的杰作！'\n\n（他突然拽住你的衣领，瞳孔在阴影中放大）'去废弃矿井，杀掉挡路的僵尸。只要清理掉五只，我的引火柴就不会被那些恶心的腐肉污染了。记住，必须烧得干干净净——就像被烈焰吞噬的落叶。'",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 60
+    }
+}

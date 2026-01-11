@@ -1,0 +1,15 @@
+{
+    "id": "ceb89681-1faa-4881-b7ae-23703cddbd1b",
+    "title": "笑语藏锋",
+    "description": "我，Richie，总爱说笑话，但你知道吗？那些洞穴里的僵尸太吵了，让我整晚合不上眼。只是觉得它们该清理一下，哈哈。\n\n所以，你能去附近的洞穴杀死5只僵尸吗？这样我就能安静地讲笑话了。记住，别告诉别人我其实有点怕。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 114
+    }
+}

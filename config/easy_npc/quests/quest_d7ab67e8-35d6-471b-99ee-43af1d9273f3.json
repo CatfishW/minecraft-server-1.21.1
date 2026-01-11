@@ -1,0 +1,15 @@
+{
+    "id": "d7ab67e8-35d6-471b-99ee-43af1d9273f3",
+    "title": "暗影猎手",
+    "description": "我是MacCready，一名游走于荒野的雇佣兵。最近，这片区域的僵尸数量激增，它们在森林深处游荡，威胁着村庄的安宁和商路的安全。我无法独自应对这一切，需要你的支援来扭转局势。\n\n请前往村庄外的森林深处，杀死5只僵尸。这将帮助我们清除威胁，恢复道路的畅通，确保旅行者不再受到袭击。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 85
+    }
+}

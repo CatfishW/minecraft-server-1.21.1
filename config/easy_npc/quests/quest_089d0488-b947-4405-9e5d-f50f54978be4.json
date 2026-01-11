@@ -1,0 +1,15 @@
+{
+    "id": "089d0488-b947-4405-9e5d-f50f54978be4",
+    "title": "荒原寻水记",
+    "description": "我是来自Vault的幸存者，我们的净水系统即将崩溃，水芯片的缺失让所有人陷入干渴的绝望。必须尽快找到替代方案，否则家园将化为死地。\n\n请前往附近的废弃矿井，收集5个铁锭，用于紧急制造水芯片的备用零件。矿井中潜伏着危险，但这是唯一能拯救水源的希望。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 125
+    }
+}

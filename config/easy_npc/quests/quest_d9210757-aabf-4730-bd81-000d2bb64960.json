@@ -1,0 +1,15 @@
+{
+    "id": "d9210757-aabf-4730-bd81-000d2bb64960",
+    "title": "荒野的呼唤",
+    "description": "听着，玩家！这个世界简直糟透了，那些僵尸就像没头苍蝇一样到处乱撞，毁了我的计划。我Erica·辛克莱，本应享受自由，却总被这些愚蠢的家伙打扰，它们比美国的官僚还烦人。\n\n所以，我需要你帮忙。去废弃矿井附近的森林深处，找到并杀死至少5只僵尸。这样我们才能清理道路，确保安全旅行，别让我失望！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 109
+    }
+}

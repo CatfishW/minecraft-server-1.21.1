@@ -1,0 +1,15 @@
+{
+    "id": "7ac3ab04-2bd3-4ca7-9f93-3eb7e67b14c2",
+    "title": "荒野狙影",
+    "description": "我是MacCready，一名独行的神射手，游荡在这片荒野中。最近，村庄外的森林深处潜伏着一群僵尸，它们在夜幕降临时袭击过往的旅人，连我这样的老手也感到棘手。这些怪物威胁着所有生灵的安宁，我不能坐视不管。\n\n你需要前往村庄北边的森林深处，击杀5只僵尸。这些僵尸经常在月光下游荡，清除它们可以确保商路的安全，避免更多无辜者受害。完成后，我会给你应得的报酬。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 74
+    }
+}

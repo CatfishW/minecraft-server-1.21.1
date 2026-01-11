@@ -1,0 +1,15 @@
+{
+    "id": "9ddc43f3-f384-4eb7-b120-4c2c5a8ea944",
+    "title": "伙伴的召唤",
+    "description": "我是Don Hagarty，Adrian是我的伙伴。最近他在村庄外的森林深处失踪了，我担心他被那些游荡的怪物袭击了，必须尽快找到他的下落。\n\n请去森林深处杀死5个僵尸，因为它们经常在那一片出没，可能与Adrian的失踪有关。这样或许能找到一些线索，帮助我确认他的安危。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 159
+    }
+}

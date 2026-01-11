@@ -20,7 +20,7 @@
         "mainHand": {
             "item": "tacz:modern_kinetic_gun",
             "count": 1,
-            "nbt": "{GunId:\"tacz:p320\",GunCurrentAmmoCount:30,HasBulletInBarrel:1b}"
+            "nbt": "{GunId:\"tacz:glock_17\",GunCurrentAmmoCount:30,HasBulletInBarrel:1b}"
         }
     },
     "objectives": {
@@ -50,10 +50,12 @@
     },
     "drop": {
         "item": {
-            "item": "novus_items:bronze_novus_coin",
-            "count": 1
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 5
         },
-        "chance": 0.4,
+        "minCount": 5,
+        "maxCount": 10,
+        "chance": 0.35,
         "playerKillOnly": true
     }
 }

@@ -1,0 +1,15 @@
+{
+    "id": "7b45e389-69bc-4fd7-a38e-992b8a5fe8f8",
+    "title": "荒野猎手",
+    "description": "我是MacCready，一名游荡在荒野的狙击手。最近，僵尸群在村庄附近徘徊，威胁着村民的性命，让我无法安心休息。\n\n我需要你前往村庄外的森林，消灭5只僵尸。这将清除威胁，保护村民的安全，确保这片区域的宁静。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 91
+    }
+}

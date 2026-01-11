@@ -8,10 +8,12 @@ public class CompatRegistry {
     public static final String CLOTH_CONFIG = "cloth-config";
     public static final String IRIS = "iris";
     public static final String CARRY_ON_ID = "carryon";
+    public static final String FLAN_ID = "flan";
 
     public static void onEnqueue() {
         checkModLoad(IRIS, IrisCompat::initCompat);
         checkModLoad(CARRY_ON_ID, BlackList::addBlackList);
+        checkModLoad(FLAN_ID, com.tacz.guns.compat.flan.FlanCompat::initCompat);
     }
 
     public static void checkModLoad(String modId, Runnable runnable) {

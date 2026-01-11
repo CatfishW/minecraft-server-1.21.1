@@ -1,0 +1,15 @@
+{
+    "id": "b5229596-2a3d-4aac-aacc-34d224312f1c",
+    "title": "忠诚寻骨",
+    "description": "Dogmeat在你身边焦急地刨着地面，它的鼻子紧紧贴着泥土，似乎在追寻什么珍贵的气味。但最近森林里的怪物太多，它总是被干扰，找不到那个丢失已久的骨头玩具，这让它显得有些沮丧。\n\n请带着Dogmeat前往森林深处，仔细搜寻并收集一个minecraft:bone。只有你能保护它免受怪物侵扰，帮助它完成心愿；一旦找到，Dogmeat会用它忠诚的方式回报你的善意。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 70
+    }
+}

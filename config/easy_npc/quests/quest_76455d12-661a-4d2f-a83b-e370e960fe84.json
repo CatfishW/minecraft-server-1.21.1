@@ -1,0 +1,15 @@
+{
+    "id": "76455d12-661a-4d2f-a83b-e370e960fe84",
+    "title": "夜幕守护",
+    "description": "我是Steve，曾经是孩子们的保姆。最近，村庄外的森林深处出现了大量僵尸，它们威胁着孩子们的安全，我必须保护他们，就像我过去用棒球棍做的那样。\n\n请前往村庄外的森林深处，杀死5只僵尸，以阻止它们靠近村庄。完成后回来找我，我会给你应得的奖励。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 145
+    }
+}

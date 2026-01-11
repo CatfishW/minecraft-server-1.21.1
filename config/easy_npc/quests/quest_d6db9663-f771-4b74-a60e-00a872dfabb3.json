@@ -1,0 +1,15 @@
+{
+    "id": "d6db9663-f771-4b74-a60e-00a872dfabb3",
+    "title": "边境的獠牙",
+    "description": "最近村庄外围的森林深处常有僵尸出没，这些怪物威胁着村民的安危，作为守卫，我必须挺身而出，守护这片土地的宁静。\n\n请前往村庄东边的森林区域，消灭至少5只僵尸，以防止它们进一步侵扰村庄，确保道路安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 98
+    }
+}

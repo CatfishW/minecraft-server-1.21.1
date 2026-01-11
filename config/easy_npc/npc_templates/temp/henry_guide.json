@@ -1,0 +1,350 @@
+{
+    "name": "亨利 (Henry)",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "Novus 领域的资深向导，似乎有着不为人知的过去。",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2022/12/03/001-21108673.png?v938"
+    },
+    "attributes": {
+        "maxHealth": 100,
+        "invulnerable": false,
+        "movementSpeed": 0.0,
+        "canBePushed": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎来到 Novus 领域。我是亨利。这里充满了机遇，但也危机四伏。你想先了解哪方面的生存之道？",
+            "buttons": [
+                {
+                    "label": "狩猎暗影",
+                    "action": "OPEN_QUEST_DIALOG:a3d1e2c8-b9f4-4d2a-8b5e-6f7c9d0e1a2b",
+                    "id": "btn_quest_373aeaae"
+                },
+                {
+                    "label": "📍 新手生存指南",
+                    "id": "btn_start",
+                    "action": "SHOW_DIALOG:guide_start"
+                },
+                {
+                    "label": "🔫 现代武装 (TACZ)",
+                    "id": "btn_tacz",
+                    "action": "SHOW_DIALOG:guide_tacz"
+                },
+                {
+                    "label": "🛡️ 领地保护 (Flan)",
+                    "id": "btn_flan",
+                    "action": "SHOW_DIALOG:guide_flan"
+                },
+                {
+                    "label": "🌾 生活与贸易",
+                    "id": "btn_life",
+                    "action": "SHOW_DIALOG:guide_life"
+                },
+                {
+                    "label": "️ 你的过去...",
+                    "id": "btn_lore",
+                    "action": "SHOW_DIALOG:lore_intro"
+                },
+                {
+                    "label": "再见",
+                    "id": "btn_close",
+                    "action": "CLOSE_DIALOG"
+                }
+            ]
+        },
+        "guide_start": {
+            "greeting": "在这个世界生存，第一步是站稳脚跟。你该从哪里开始？",
+            "buttons": [
+                {
+                    "label": "如何寻找家园？",
+                    "id": "btn_rtp",
+                    "action": "SHOW_DIALOG:start_rtp"
+                },
+                {
+                    "label": "我的任务是什么？",
+                    "id": "btn_quests",
+                    "action": "SHOW_DIALOG:start_quests"
+                },
+                {
+                    "label": "找不到合成表？",
+                    "id": "btn_rei",
+                    "action": "SHOW_DIALOG:start_rei"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:main"
+                }
+            ]
+        },
+        "start_rtp": {
+            "greeting": "使用 `/rtp` 指令可以让你随机传送。建议找一个远离出生点、有水源的地方。一旦选定，别忘了查看领地保护指南。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_start"
+                }
+            ]
+        },
+        "start_quests": {
+            "greeting": "按 'H' 或 'U' 键可以打开 FTB Quests 任务界面。完成任务不仅能获得物资，还能帮你快速熟悉各个模组的功能。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_start"
+                }
+            ]
+        },
+        "start_rei": {
+            "greeting": "如果你不知道某个物品怎么合成，在背包界面的右侧可以看到物品列表（REI）。点击物品图标查看『合成方法』，按 'U' 查看其『用途』。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_start"
+                }
+            ]
+        },
+        "guide_tacz": {
+            "greeting": "TACZ 为这个世界带来了致命的枪械。如果你想在夜晚生存下来，你需要更强大的火力和更专业的技巧。",
+            "buttons": [
+                {
+                    "label": "如何修改配件？",
+                    "id": "btn_attach",
+                    "action": "SHOW_DIALOG:tacz_attachments"
+                },
+                {
+                    "label": "如何制作弹药？",
+                    "id": "btn_ammo",
+                    "action": "SHOW_DIALOG:tacz_ammo"
+                },
+                {
+                    "label": "射击与装弹技巧",
+                    "id": "btn_skills",
+                    "action": "SHOW_DIALOG:tacz_skills"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:main"
+                }
+            ]
+        },
+        "tacz_attachments": {
+            "greeting": "手持枪械时，按下 'Z' 键可以进入配件改装界面。在这里，你可以安装瞄准镜、消音器、握把等配件，大幅提升作战性能。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_tacz"
+                }
+            ]
+        },
+        "tacz_ammo": {
+            "greeting": "你需要在『枪械工作台』制作子弹和枪械。不同的枪支需要对应的弹药筒，记得在 REI 检查具体的材料要求。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_tacz"
+                }
+            ]
+        },
+        "tacz_skills": {
+            "greeting": "- 装弹：'R' 键。\n- 切换射击模式（单发/连发）：'V' 键。\n- 检查枪膛：'Shift + R'。\n- 趴下以提高精准度：按 'Z' 旁的切换键。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_tacz"
+                }
+            ]
+        },
+        "guide_life": {
+            "greeting": "在这个世界，你需要食物填饱肚子，也需要金钱交换资源。你想了解哪一个？",
+            "buttons": [
+                {
+                    "label": "🍳 烹饪与农业 (农夫乐事)",
+                    "id": "btn_food",
+                    "action": "SHOW_DIALOG:guide_food"
+                },
+                {
+                    "label": "💰 财富与贸易 (经济系统)",
+                    "id": "btn_money",
+                    "action": "SHOW_DIALOG:guide_money"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:main"
+                }
+            ]
+        },
+        "guide_food": {
+            "greeting": "只吃面包可撑不了太久. 农夫乐事模组让你能成为顶级大厨。",
+            "buttons": [
+                {
+                    "label": "为什么需要小刀？",
+                    "id": "btn_knife",
+                    "action": "SHOW_DIALOG:food_knife"
+                },
+                {
+                    "label": "如何制作大餐？",
+                    "id": "btn_pot",
+                    "action": "SHOW_DIALOG:food_pot"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_life"
+                }
+            ]
+        },
+        "food_knife": {
+            "greeting": "使用『小刀』击杀怪物或动物会掉落额外的食材。同时，你可以在『案板』上使用小刀对食材进行切割加工。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_food"
+                }
+            ]
+        },
+        "food_pot": {
+            "greeting": "制作一个『烹饪锅』放在热源之上. 放入多种食材, 你就能烹饪出提供强大属性增益（Buff）的大餐！详情请查阅 REI。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_food"
+                }
+            ]
+        },
+        "guide_money": {
+            "greeting": "这个世界的贸易非常发达. 你可以通过多种方式积累你的硬币（Coins）。",
+            "buttons": [
+                {
+                    "label": "硬币长什么样？",
+                    "id": "btn_coins",
+                    "action": "SHOW_DIALOG:money_coins"
+                },
+                {
+                    "label": "如何转账给他人？",
+                    "id": "btn_pay",
+                    "action": "SHOW_DIALOG:money_pay"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_life"
+                }
+            ]
+        },
+        "money_coins": {
+            "greeting": "我们使用的是 Numismatic Overhaul 的实体硬币. 如果你在野外找到它们, 记得放入你的钱包！小心死亡掉落, 你可以制作存钱罐来保存财富。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_money"
+                }
+            ]
+        },
+        "money_pay": {
+            "greeting": "你可以使用 `/pay <玩家名> <金额>` 直接远程转账. 对于大额交易, 建议双方到场当面递交硬币实物。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_money"
+                }
+            ]
+        },
+        "guide_flan": {
+            "greeting": "不想你辛苦建好的房子被别人拆掉？你需要 Flan 领地保护。",
+            "buttons": [
+                {
+                    "label": "如何圈地？",
+                    "id": "btn_claim",
+                    "action": "SHOW_DIALOG:flan_claim"
+                },
+                {
+                    "label": "如何授权朋友？",
+                    "id": "btn_trust",
+                    "action": "SHOW_DIALOG:flan_trust"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:main"
+                }
+            ]
+        },
+        "flan_claim": {
+            "greeting": "手持『金锄』, 点击地面的两个对角线方块即可. 或者输入 `/flan claim <半径>` 以当前位置为中心圈地. 别忘了输入 `/flan blocks` 查看可用额度。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_flan"
+                }
+            ]
+        },
+        "flan_trust": {
+            "greeting": "输入 `/flan menu` 打开图形化菜单. 在这里你可以轻松管理权限、添加好友或者删除已经不需要的领地。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:guide_flan"
+                }
+            ]
+        },
+        "lore_intro": {
+            "greeting": "过去的事情就像破碎的镜子, 照出来的只有扭曲. 他们叫我『001』. 曾几何时, 我也在被称为霍金斯的地方生活过. 但我找到了进化的道路... 一个被称为『颠倒世界』的地方。",
+            "buttons": [
+                {
+                    "label": "你是怪物吗？",
+                    "id": "btn_monster",
+                    "action": "SHOW_DIALOG:lore_monster"
+                },
+                {
+                    "label": "那个地方在哪里？",
+                    "id": "btn_world",
+                    "action": "SHOW_DIALOG:lore_world"
+                },
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:main"
+                }
+            ]
+        },
+        "lore_monster": {
+            "greeting": "所谓怪物, 只是对弱小者无法理解之力量的蔑称. 在这里, 我只是一个孤独的引路人. 也许有一天, 你也会看到那个世界的真实触角。",
+            "buttons": [
+                {
+                    "label": "返回",
+                    "id": "btn_back",
+                    "action": "SHOW_DIALOG:lore_intro"
+                }
+            ]
+        },
+        "lore_world": {
+            "greeting": "它就在这片大地的阴影之下. 当你足够强大, 当你能够穿透现实的薄膜时, 你自然会找到它. 直到那时, 先在这片领域活下去吧。",
+            "buttons": [
+                {
+                    "label": "我会的。",
+                    "id": "btn_close",
+                    "action": "CLOSE_DIALOG"
+                }
+            ]
+        }
+    }
+}

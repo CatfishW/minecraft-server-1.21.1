@@ -1,0 +1,15 @@
+{
+    "id": "0ad215a3-2af0-4ab9-92f8-5c397aa69c5a",
+    "title": "失落的伙伴",
+    "description": "我是Don Hagarty，Adrian的搭档。Adrian最近在村庄附近活动，但突然失去了联系。我非常担心他的安危，可能他遇到了什么危险，我无法独自寻找他。\n\n请去村庄外找到Mike Wheeler，向他询问Adrian的下落。Mike经常在村庄周围出现，他可能知道Adrian最后去了哪里。这能帮助我们尽快找到Adrian，确保他的安全。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 473
+    }
+}

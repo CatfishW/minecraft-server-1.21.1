@@ -1,0 +1,15 @@
+{
+    "id": "49a3e108-6ef2-475d-8572-b9641e7b4f5a",
+    "title": "幽林危机",
+    "description": "警长吉姆·霍珀的声音：这个镇子最近不太平，森林深处的僵尸越来越多，它们威胁着外出村民的安全。我需要有人帮忙清理这些威胁，保护我们的家园。\n\n请前往附近的森林深处，杀死5个僵尸。为什么？因为这些怪物会袭击村民，我们必须确保道路安全，让镇民能够安心外出收集资源。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

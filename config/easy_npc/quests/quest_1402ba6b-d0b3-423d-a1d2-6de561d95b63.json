@@ -1,0 +1,15 @@
+{
+    "id": "1402ba6b-d0b3-423d-a1d2-6de561d95b63",
+    "title": "熔炉的阴影",
+    "description": "兄弟会的情报显示，附近洞穴深处潜伏着被辐射感染的僵尸群。它们在废弃矿井中集结，威胁着我们的补给线。钢铁兄弟会绝不容忍这些腐化之物玷污圣地，我们必须主动出击。\n\n请前往西北方向的洞穴，清除至少4只被感染的僵尸。记住，每消灭一个威胁，就能为兄弟会争取更多备战时间。带上你的武器，保持警惕——黑暗深处总有更多双眼睛在窥视。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 190
+    }
+}

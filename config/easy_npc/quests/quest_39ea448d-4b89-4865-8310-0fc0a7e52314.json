@@ -1,0 +1,15 @@
+{
+    "id": "39ea448d-4b89-4865-8310-0fc0a7e52314",
+    "title": "钢铁誓言",
+    "description": "兄弟会正面临严峻考验，外部掠夺者不断侵扰我们的边境，兄弟们急需强化装备以抵御入侵，铁与血的誓言必须被捍卫。\n\n前往附近的废弃矿井，收集5个铁锭。这些资源将用于锻造武器，确保兄弟会的存续与安全。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 138
+    }
+}

@@ -1,0 +1,56 @@
+{
+    "name": "§6§l新手助手 (Starter Helper)",
+    "entityType": "easy_npc:humanoid",
+    "actionPermissionLevel": 2,
+    "description": "发放新手礼包的NPC。每位玩家限领一次。",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/Steve.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.0,
+        "attackDamage": 5.0,
+        "armor": 5.0,
+        "invulnerable": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎来到这个充满挑战的世界！我是这里的向导。为了帮助你度过最初的难关，我准备了一份丰厚的新手礼包。内含武器、金币、食物以及一套基础载具零件。请注意，这是一生只有一次的机会！",
+            "buttons": [
+                {
+                    "label": "§6§l领取新手礼包 (限领一次)",
+                    "action": "COMMAND:/function noob:claim",
+                    "id": "btn_claim_kit"
+                },
+                {
+                    "label": "暂时不需要",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:chest_minecart",
+            "count": 1
+        }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
+    }
+}

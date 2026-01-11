@@ -1,0 +1,15 @@
+{
+    "id": "d04c16b9-f5ca-40ed-b61f-15e4cacaaebf",
+    "title": "铁壁的呼唤",
+    "description": "我是圣骑士丹斯，铁的兄弟会正面临严峻的考验。最近，附近的森林深处涌现出大量僵尸，它们日夜侵袭我们的巡逻队，威胁着整个兄弟会的存亡。我们必须清除这些怪物，才能确保基地的安全。\n\n你需要立即前往森林深处，消灭至少5只僵尸。这样做是为了打通补给线，让我们的兄弟能够安全运送物资。行动要快，夜晚是它们最活跃的时候。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 460
+    }
+}

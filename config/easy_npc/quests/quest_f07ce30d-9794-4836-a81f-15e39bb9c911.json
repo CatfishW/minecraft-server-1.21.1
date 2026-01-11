@@ -1,0 +1,15 @@
+{
+    "id": "f07ce30d-9794-4836-a81f-15e39bb9c911",
+    "title": "铁血肃清",
+    "description": "我是精锐武警，手持M249机关枪。最近，村庄外的森林深处出现了大量僵尸，它们不断逼近，威胁着村民的生命安全。我们必须立刻行动，不能让这些怪物得逞。\n\n请你前往森林深处，消灭10只僵尸。这样做是为了保护村庄的安宁，确保村民不再受到侵害。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 147
+    }
+}

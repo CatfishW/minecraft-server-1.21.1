@@ -1,0 +1,15 @@
+{
+    "id": "be7c9af0-e20b-48dd-a352-423ecda908c3",
+    "title": "荒野的低语",
+    "description": "我是Lucas Sinclair，一名游侠。这片森林是我们的家园，但最近怪物们从废弃矿井中蜂拥而出，尤其是僵尸，它们在夜间袭击村庄，威胁着所有人的安全。作为守护者，我必须采取行动，但需要可靠的帮手。\n\n请前往森林深处的废弃矿井入口，消灭5只僵尸。这样做可以清除威胁，确保村庄的和平与商路的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 174
+    }
+}

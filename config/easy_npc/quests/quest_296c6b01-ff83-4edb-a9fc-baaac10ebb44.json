@@ -1,0 +1,15 @@
+{
+    "id": "296c6b01-ff83-4edb-a9fc-baaac10ebb44",
+    "title": "钢铁誓言",
+    "description": "我是兄弟会骑士团的Paladin Danse。最近，我们的补给线受到僵尸群的严重威胁，这些不死生物在森林深处聚集，日夜侵扰我们的巡逻队，兄弟会的生存岌岌可危。\n\n请前往基地附近的森林，消灭5只僵尸。这将清理道路，确保物资能安全运达，维护兄弟会的荣耀。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 171
+    }
+}

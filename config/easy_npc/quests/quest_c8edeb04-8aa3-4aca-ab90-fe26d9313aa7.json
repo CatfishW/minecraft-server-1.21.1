@@ -1,0 +1,15 @@
+{
+    "id": "c8edeb04-8aa3-4aca-ab90-fe26d9313aa7",
+    "title": "铁血使命",
+    "description": "作为兄弟会的领袖，我必须严峻地宣告：附近的村庄正遭受僵尸群的疯狂侵袭。我们的兄弟在巡逻中伤亡惨重，补给线已几乎瘫痪。兄弟会的存续岌岌可危，我们必须以钢铁般的意志捍卫每一寸土地。\n\n你即刻前往村庄外的森林深处，消灭5只僵尸。这是为了保护无辜的村民，并确保兄弟会的安全通道畅通无阻。行动要迅速，不得有误。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

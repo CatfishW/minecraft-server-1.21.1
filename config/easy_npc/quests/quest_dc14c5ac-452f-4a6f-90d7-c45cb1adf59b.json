@@ -1,0 +1,15 @@
+{
+    "id": "dc14c5ac-452f-4a6f-90d7-c45cb1adf59b",
+    "title": "荒野狙击",
+    "description": "我是MacCready，一个游荡在荒野中的雇佣兵狙击手。最近，村庄外的僵尸数量激增，商队的安全受到严重威胁，我的瞄准镜已经无法覆盖所有死角。\n\n我需要你前往附近的森林深处，消灭至少5只僵尸。这能确保道路畅通，让补给线恢复安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 110
+    }
+}

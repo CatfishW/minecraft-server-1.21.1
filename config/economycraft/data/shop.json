@@ -1,1 +1,666 @@
-{"nextId":2,"listings":[],"deliveries":{}}
+{
+  "nextId": 67,
+  "listings": [
+    {
+      "id": 1,
+      "price": 960,
+      "item": "minecraft:bread",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:bread",
+        "count": 64
+      }
+    },
+    {
+      "id": 2,
+      "price": 1600,
+      "item": "minecraft:cooked_beef",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 64
+      }
+    },
+    {
+      "id": 3,
+      "price": 1600,
+      "item": "minecraft:cooked_porkchop",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:cooked_porkchop",
+        "count": 64
+      }
+    },
+    {
+      "id": 4,
+      "price": 1280,
+      "item": "minecraft:cooked_chicken",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:cooked_chicken",
+        "count": 64
+      }
+    },
+    {
+      "id": 5,
+      "price": 32000,
+      "item": "minecraft:golden_apple",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:golden_apple",
+        "count": 64
+      }
+    },
+    {
+      "id": 6,
+      "price": 5120,
+      "item": "minecraft:golden_carrot",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:golden_carrot",
+        "count": 64
+      }
+    },
+    {
+      "id": 7,
+      "price": 768,
+      "item": "minecraft:baked_potato",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:baked_potato",
+        "count": 64
+      }
+    },
+    {
+      "id": 8,
+      "price": 160,
+      "item": "minecraft:iron_pickaxe",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_pickaxe",
+        "count": 1
+      }
+    },
+    {
+      "id": 9,
+      "price": 155,
+      "item": "minecraft:iron_axe",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_axe",
+        "count": 1
+      }
+    },
+    {
+      "id": 10,
+      "price": 55,
+      "item": "minecraft:iron_shovel",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_shovel",
+        "count": 1
+      }
+    },
+    {
+      "id": 11,
+      "price": 105,
+      "item": "minecraft:iron_sword",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_sword",
+        "count": 1
+      }
+    },
+    {
+      "id": 12,
+      "price": 3100,
+      "item": "minecraft:diamond_pickaxe",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_pickaxe",
+        "count": 1
+      }
+    },
+    {
+      "id": 13,
+      "price": 3050,
+      "item": "minecraft:diamond_axe",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_axe",
+        "count": 1
+      }
+    },
+    {
+      "id": 14,
+      "price": 1050,
+      "item": "minecraft:diamond_shovel",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_shovel",
+        "count": 1
+      }
+    },
+    {
+      "id": 15,
+      "price": 2050,
+      "item": "minecraft:diamond_sword",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1
+      }
+    },
+    {
+      "id": 16,
+      "price": 100,
+      "item": "minecraft:bow",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:bow",
+        "count": 1
+      }
+    },
+    {
+      "id": 17,
+      "price": 320,
+      "item": "minecraft:arrow",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:arrow",
+        "count": 64
+      }
+    },
+    {
+      "id": 18,
+      "price": 80,
+      "item": "minecraft:fishing_rod",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:fishing_rod",
+        "count": 1
+      }
+    },
+    {
+      "id": 19,
+      "price": 60,
+      "item": "minecraft:shears",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:shears",
+        "count": 1
+      }
+    },
+    {
+      "id": 20,
+      "price": 55,
+      "item": "minecraft:flint_and_steel",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:flint_and_steel",
+        "count": 1
+      }
+    },
+    {
+      "id": 21,
+      "price": 160,
+      "item": "minecraft:shield",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:shield",
+        "count": 1
+      }
+    },
+    {
+      "id": 22,
+      "price": 260,
+      "item": "minecraft:iron_helmet",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_helmet",
+        "count": 1
+      }
+    },
+    {
+      "id": 23,
+      "price": 410,
+      "item": "minecraft:iron_chestplate",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_chestplate",
+        "count": 1
+      }
+    },
+    {
+      "id": 24,
+      "price": 360,
+      "item": "minecraft:iron_leggings",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_leggings",
+        "count": 1
+      }
+    },
+    {
+      "id": 25,
+      "price": 210,
+      "item": "minecraft:iron_boots",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:iron_boots",
+        "count": 1
+      }
+    },
+    {
+      "id": 26,
+      "price": 5050,
+      "item": "minecraft:diamond_helmet",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_helmet",
+        "count": 1
+      }
+    },
+    {
+      "id": 27,
+      "price": 8100,
+      "item": "minecraft:diamond_chestplate",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_chestplate",
+        "count": 1
+      }
+    },
+    {
+      "id": 28,
+      "price": 7080,
+      "item": "minecraft:diamond_leggings",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_leggings",
+        "count": 1
+      }
+    },
+    {
+      "id": 29,
+      "price": 4050,
+      "item": "minecraft:diamond_boots",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:diamond_boots",
+        "count": 1
+      }
+    },
+    {
+      "id": 30,
+      "price": 64,
+      "item": "minecraft:cobblestone",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:cobblestone",
+        "count": 64
+      }
+    },
+    {
+      "id": 31,
+      "price": 128,
+      "item": "minecraft:oak_planks",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:oak_planks",
+        "count": 64
+      }
+    },
+    {
+      "id": 32,
+      "price": 320,
+      "item": "minecraft:glass",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 64
+      }
+    },
+    {
+      "id": 33,
+      "price": 192,
+      "item": "minecraft:torch",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:torch",
+        "count": 64
+      }
+    },
+    {
+      "id": 34,
+      "price": 192,
+      "item": "minecraft:ladder",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:ladder",
+        "count": 64
+      }
+    },
+    {
+      "id": 35,
+      "price": 640,
+      "item": "minecraft:crafting_table",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:crafting_table",
+        "count": 64
+      }
+    },
+    {
+      "id": 36,
+      "price": 1280,
+      "item": "minecraft:furnace",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:furnace",
+        "count": 64
+      }
+    },
+    {
+      "id": 37,
+      "price": 1280,
+      "item": "minecraft:chest",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:chest",
+        "count": 64
+      }
+    },
+    {
+      "id": 38,
+      "price": 50,
+      "item": "minecraft:white_bed",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:white_bed",
+        "count": 1
+      }
+    },
+    {
+      "id": 39,
+      "price": 22400,
+      "item": "minecraft:anvil",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:anvil",
+        "count": 64
+      }
+    },
+    {
+      "id": 40,
+      "price": 3200,
+      "item": "minecraft:iron_ingot",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:iron_ingot",
+        "count": 64
+      }
+    },
+    {
+      "id": 41,
+      "price": 6400,
+      "item": "minecraft:gold_ingot",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:gold_ingot",
+        "count": 64
+      }
+    },
+    {
+      "id": 42,
+      "price": 64000,
+      "item": "minecraft:diamond",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:diamond",
+        "count": 64
+      }
+    },
+    {
+      "id": 43,
+      "price": 640,
+      "item": "minecraft:coal",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:coal",
+        "count": 64
+      }
+    },
+    {
+      "id": 44,
+      "price": 960,
+      "item": "minecraft:redstone",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 64
+      }
+    },
+    {
+      "id": 45,
+      "price": 512,
+      "item": "minecraft:string",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:string",
+        "count": 64
+      }
+    },
+    {
+      "id": 46,
+      "price": 1280,
+      "item": "minecraft:leather",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:leather",
+        "count": 64
+      }
+    },
+    {
+      "id": 47,
+      "price": 960,
+      "item": "minecraft:bone",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:bone",
+        "count": 64
+      }
+    },
+    {
+      "id": 48,
+      "price": 1600,
+      "item": "minecraft:slime_ball",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:slime_ball",
+        "count": 64
+      }
+    },
+    {
+      "id": 49,
+      "price": 75,
+      "item": "minecraft:bucket",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 1
+      }
+    },
+    {
+      "id": 50,
+      "price": 9600,
+      "item": "minecraft:ender_pearl",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 64
+      }
+    },
+    {
+      "id": 51,
+      "price": 3200,
+      "item": "minecraft:lead",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:lead",
+        "count": 64
+      }
+    },
+    {
+      "id": 52,
+      "price": 12800,
+      "item": "minecraft:name_tag",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:name_tag",
+        "count": 64
+      }
+    },
+    {
+      "id": 53,
+      "price": 150,
+      "item": "minecraft:saddle",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:saddle",
+        "count": 1
+      }
+    },
+    {
+      "id": 54,
+      "price": 5120,
+      "item": "minecraft:compass",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:compass",
+        "count": 64
+      }
+    },
+    {
+      "id": 55,
+      "price": 7680,
+      "item": "minecraft:clock",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:clock",
+        "count": 64
+      }
+    },
+    {
+      "id": 56,
+      "price": 3200,
+      "item": "minecraft:map",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:map",
+        "count": 64
+      }
+    },
+    {
+      "id": 57,
+      "price": 128,
+      "item": "minecraft:wheat_seeds",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:wheat_seeds",
+        "count": 64
+      }
+    },
+    {
+      "id": 58,
+      "price": 512,
+      "item": "minecraft:carrot",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:carrot",
+        "count": 64
+      }
+    },
+    {
+      "id": 59,
+      "price": 512,
+      "item": "minecraft:potato",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:potato",
+        "count": 64
+      }
+    },
+    {
+      "id": 60,
+      "price": 192,
+      "item": "minecraft:beetroot_seeds",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:beetroot_seeds",
+        "count": 64
+      }
+    },
+    {
+      "id": 61,
+      "price": 320,
+      "item": "minecraft:pumpkin_seeds",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:pumpkin_seeds",
+        "count": 64
+      }
+    },
+    {
+      "id": 62,
+      "price": 320,
+      "item": "minecraft:melon_seeds",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:melon_seeds",
+        "count": 64
+      }
+    },
+    {
+      "id": 63,
+      "price": 320,
+      "item": "minecraft:bone_meal",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:bone_meal",
+        "count": 64
+      }
+    },
+    {
+      "id": 64,
+      "price": 160,
+      "item": "minecraft:minecart",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:minecart",
+        "count": 1
+      }
+    },
+    {
+      "id": 65,
+      "price": 1280,
+      "item": "minecraft:rail",
+      "count": 64,
+      "stack": {
+        "id": "minecraft:rail",
+        "count": 64
+      }
+    },
+    {
+      "id": 66,
+      "price": 15,
+      "item": "minecraft:oak_boat",
+      "count": 1,
+      "stack": {
+        "id": "minecraft:oak_boat",
+        "count": 1
+      }
+    }
+  ],
+  "deliveries": {}
+}

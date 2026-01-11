@@ -297,17 +297,11 @@ public class GuardResponseHandler {
 
   private void setGuardTarget(
       ServerLevel level, de.markusbordihn.easynpc.entity.easynpc.EasyNPC<?> easyNPC, UUID targetPlayerUUID) {
-    if (easyNPC == null || targetPlayerUUID == null || level == null) {
+    if (easyNPC == null || level == null) {
       return;
     }
-    ServerPlayer targetPlayer = level.getServer().getPlayerList().getPlayer(targetPlayerUUID);
-    if (targetPlayer == null) {
-      return;
-    }
-    Entity entity = easyNPC.getEntity();
-    if (entity instanceof net.minecraft.world.entity.Mob mob) {
-      mob.setTarget(targetPlayer);
-    }
+    // Instead of setting a fixed target, we use the ATTACK_WANTED_PLAYER objective.
+    // This allows guards to target any wanted player in range, primarily the nearest one.
     ensureAttackGoal(easyNPC);
   }
 
@@ -316,11 +310,20 @@ public class GuardResponseHandler {
     if (objectiveData == null) {
       return;
     }
+    boolean updated = false;
     if (!hasAttackObjective(objectiveData)) {
       ObjectiveDataEntry attackGoal = new ObjectiveDataEntry(ObjectiveType.MELEE_ATTACK, 1);
       objectiveData.addOrUpdateCustomObjective(attackGoal);
+      updated = true;
     }
-    objectiveData.refreshCustomObjectives();
+    if (!objectiveData.hasObjective(ObjectiveType.ATTACK_WANTED_PLAYER)) {
+      ObjectiveDataEntry targetGoal = new ObjectiveDataEntry(ObjectiveType.ATTACK_WANTED_PLAYER, 1);
+      objectiveData.addOrUpdateCustomObjective(targetGoal);
+      updated = true;
+    }
+    if (updated) {
+      objectiveData.refreshCustomObjectives();
+    }
   }
 
   private boolean hasAttackObjective(ObjectiveDataCapable<?> objectiveData) {

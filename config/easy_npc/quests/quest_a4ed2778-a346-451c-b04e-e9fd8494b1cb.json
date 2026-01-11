@@ -1,0 +1,15 @@
+{
+    "id": "a4ed2778-a346-451c-b04e-e9fd8494b1cb",
+    "title": "乳源的忧思",
+    "description": "嘿，玩家，你可能听说了，Scoops Ahoy的冰淇淋生意正面临一场危机。牛奶供应商突然断供，顾客们抱怨冰淇淋品质下降，这让我这个聪明人也束手无策。讽刺的是，以前他们总夸我的冰淇淋是‘宇宙第一美味’，现在却连最基本的原料都凑不齐。\n\n我需要你立刻行动：去村庄外的平原上寻找奶牛，用空桶收集至少两桶牛奶。为什么？因为没有新鲜牛奶，我们就做不出顺滑的冰淇淋，店里的声誉会一落千丈，我的工作也可能保不住。快去快回，别让我等太久！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 500
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "865dd9bd-b6eb-43dc-9cb7-ada5f5014713",
+    "title": "麦田的守望",
+    "description": "我是Beverly Marsh，勇敢和善良是我的信念。但最近，村庄外的农田遭受了持续的暴雨，小麦大多被淹没，村民们面临食物短缺的危机。作为团队的核心，我必须尽快想办法帮助大家渡过难关。\n\n请你前往村庄外的农田，收集5个小麦。这些小麦将用于制作面包，分发给饥饿的村民。你的行动将直接缓解这场危机，保护我们的社区。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 95
+    }
+}

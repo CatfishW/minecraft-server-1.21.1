@@ -1,0 +1,15 @@
+{
+    "id": "6f907020-0ee4-485e-a532-bc667cc162f7",
+    "title": "希望之火",
+    "description": "你好，冒险者！我是Lucy MacLean，一个乐观的避难所居民。最近，附近的洞穴中僵尸异常活跃，它们在夜晚频繁袭击我们的家园，威胁着所有人的安全。\n\n请前往附近的洞穴，击杀5只僵尸。这能驱散威胁，保护避难所的安宁。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 168
+    }
+}

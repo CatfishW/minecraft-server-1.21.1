@@ -1,0 +1,15 @@
+{
+    "id": "c54d3a85-276c-4b2c-bd6e-5b2cc9c3c9f1",
+    "title": "苦痛之乳的寻觅",
+    "description": "我体内流淌着诅咒之血，每一次脉搏都带来撕裂般的疼痛。族人说，唯有仁慈之乳才能洗涤这疯狂的躁动，可我踏遍荒原也寻不到它的踪迹……这副钢铁般的身躯，难道终将被自身的烈焰焚尽？\n\n向东边的黑森林深处去，那里有被遗忘的牛群仍在游荡。用空桶收集它们的乳汁——三桶纯净的牛奶或许能暂时平息我的苦楚。记住，必须是刚挤出的新鲜乳汁，腐坏的液体只会加剧我的疯狂。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 106
+    }
+}

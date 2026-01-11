@@ -1,0 +1,15 @@
+{
+    "id": "a4492854-1a9c-458c-9256-3983ab2bc738",
+    "title": "伙伴的呼唤",
+    "description": "我是Don Hagarty，Adrian的伙伴。Adrian前几天去了村庄外的森林，说要收集一些木材，但到现在还没回来。我很担心他可能遇到了危险，森林里总是有僵尸和骷髅出没。\n\n请你去村庄附近的森林里寻找Mike Wheeler，向他打听Adrian的下落。他经常在村庄周边活动，或许知道Adrian的去向。这样做是为了确认Adrian的安全，他是我最重要的伙伴，我不能失去他。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 462
+    }
+}

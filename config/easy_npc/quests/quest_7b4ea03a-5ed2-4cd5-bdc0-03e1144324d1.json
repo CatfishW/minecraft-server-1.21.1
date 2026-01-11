@@ -1,0 +1,15 @@
+{
+    "id": "7b4ea03a-5ed2-4cd5-bdc0-03e1144324d1",
+    "title": "地狱火的召唤",
+    "description": "嘿，玩家！我是Eddie Munson，地狱火俱乐部的领袖。最近，附近的洞穴中涌出了大量僵尸，它们干扰了我们的金属排练，还差点毁掉了我们的秘密据点。\n\n请前往森林深处，杀死5只僵尸。这样我才能安心筹备下一场狂欢，让地狱火的火焰继续燃烧。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 106
+    }
+}

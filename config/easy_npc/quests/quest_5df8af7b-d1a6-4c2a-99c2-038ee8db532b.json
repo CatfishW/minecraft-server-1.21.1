@@ -1,0 +1,15 @@
+{
+    "id": "5df8af7b-d1a6-4c2a-99c2-038ee8db532b",
+    "title": "腐朽的救赎",
+    "description": "我是一个被诅咒的化身，身体不断腐烂，散发着令人作呕的气息。IT的邪恶力量侵蚀了我的存在，周围的僵尸因我而狂暴，村庄的安宁岌岌可危。我日夜承受着无尽的痛苦，急需你的援助来平息这股骚动。\n\n请前往村庄外的森林深处，杀死3只僵尸。它们的腐肉中含有抑制诅咒的成分，收集这些材料能暂时缓解我的痛苦，阻止更多的怪物被吸引而来。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 426
+    }
+}

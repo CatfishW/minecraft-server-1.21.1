@@ -1,0 +1,15 @@
+{
+    "id": "caec851d-c83c-4b29-b863-eb950e3e112b",
+    "title": "暗影森林",
+    "description": "我是镇上的守卫，最近村庄外的森林中僵尸成群出没，袭击过往的村民，连巡逻路线都变得危险起来。再这样下去，镇子的安宁将荡然无存，我们必须主动出击。\n\n请前往村庄外的森林深处，消灭5只僵尸。这样做是为了清除威胁，让村民能安全地采集资源和出行，维护镇子的秩序。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 88
+    }
+}

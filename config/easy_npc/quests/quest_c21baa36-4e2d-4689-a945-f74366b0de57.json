@@ -1,0 +1,15 @@
+{
+    "id": "c21baa36-4e2d-4689-a945-f74366b0de57",
+    "title": "荒野的獠牙",
+    "description": "我是Billy Hargrove，这个该死的世界充满了危险和混乱。那些僵尸在森林深处游荡，威胁着我的安全和计划，我必须处理掉它们，否则我会失去控制权。\n\n去森林深处，杀死5个僵尸。这样我才能确保没有东西打扰我，证明我才是这片区域的主宰。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 130
+    }
+}

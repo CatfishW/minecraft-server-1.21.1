@@ -1,0 +1,15 @@
+{
+    "id": "bc0a1a63-a8fa-41a3-855c-4a573d395bf1",
+    "title": "边境的守护",
+    "description": "我是民兵组织的普雷斯顿·加维。又一个定居点需要帮助。最近，村庄外的僵尸数量增多，威胁着我们的生存，居民们日夜不安。\n\n请前往村庄外的森林，杀死5只僵尸。这样做可以消除直接威胁，让定居点能专注于重建和防御。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 113
+    }
+}

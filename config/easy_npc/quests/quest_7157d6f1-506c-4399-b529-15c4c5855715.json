@@ -1,0 +1,15 @@
+{
+    "id": "7157d6f1-506c-4399-b529-15c4c5855715",
+    "title": "犬踪寻宝",
+    "description": "Dogmeat，那只忠诚的猎犬，最近总是焦躁不安。它不停地在营地周围嗅探，尾巴低垂，仿佛在寻找什么遗失的珍贵物品，或许是它曾经玩耍过的骨头。\n\n 请你前往附近的森林深处，帮助Dogmeat收集3根骨头。这些骨头可能是它过去在树林中留下的纪念，找回它们能让它恢复活力与快乐。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 93
+    }
+}

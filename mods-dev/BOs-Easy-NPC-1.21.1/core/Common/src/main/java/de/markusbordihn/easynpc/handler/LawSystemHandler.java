@@ -242,36 +242,42 @@ public class LawSystemHandler {
       
       if (!isDefaultFaction) continue;
       
-      // Set the NPC to target this player
-      entity.setTarget(player);
+      // Instead of setting target directly, ensure the NPC has the ATTACK_WANTED_PLAYER objective
+      // This allows the NPC to find the nearest wanted player dynamically
       if (easyNPC instanceof ObjectiveDataCapable<?> objectiveData) {
-        ensureLawAttackGoal(entity.getUUID(), objectiveData);
+        ensureLawAttackGoals(entity.getUUID(), objectiveData);
       }
-      log.debug("{} NPC {} is now targeting wanted player {}", LOG_PREFIX, 
-          entity.getName().getString(), player.getName().getString());
     }
   }
 
-  private void ensureLawAttackGoal(UUID npcUUID, ObjectiveDataCapable<?> objectiveData) {
+  private void ensureLawAttackGoals(UUID npcUUID, ObjectiveDataCapable<?> objectiveData) {
     if (objectiveData == null || npcUUID == null) {
       return;
     }
-    if (!hasAttackObjective(objectiveData)) {
+    boolean updated = false;
+    if (!hasMeleeAttackObjective(objectiveData)) {
       ObjectiveDataEntry attackGoal = new ObjectiveDataEntry(ObjectiveType.MELEE_ATTACK, 1);
       objectiveData.addOrUpdateCustomObjective(attackGoal);
       lawAttackNPCs.add(npcUUID);
+      updated = true;
     }
-    objectiveData.refreshCustomObjectives();
+    if (!objectiveData.hasObjective(ObjectiveType.ATTACK_WANTED_PLAYER)) {
+      ObjectiveDataEntry targetGoal = new ObjectiveDataEntry(ObjectiveType.ATTACK_WANTED_PLAYER, 1);
+      objectiveData.addOrUpdateCustomObjective(targetGoal);
+      updated = true;
+    }
+    if (updated) {
+      objectiveData.refreshCustomObjectives();
+    }
   }
 
-  private boolean hasAttackObjective(ObjectiveDataCapable<?> objectiveData) {
+  private boolean hasMeleeAttackObjective(ObjectiveDataCapable<?> objectiveData) {
     return objectiveData.hasObjective(ObjectiveType.MELEE_ATTACK)
         || objectiveData.hasObjective(ObjectiveType.CUSTOM_ATTACK)
         || objectiveData.hasObjective(ObjectiveType.BOW_ATTACK)
         || objectiveData.hasObjective(ObjectiveType.CROSSBOW_ATTACK)
         || objectiveData.hasObjective(ObjectiveType.GUN_ATTACK)
-        || objectiveData.hasObjective(ObjectiveType.ZOMBIE_ATTACK)
-        || objectiveData.hasObjective(ObjectiveType.ATTACK_PLAYER);
+        || objectiveData.hasObjective(ObjectiveType.ZOMBIE_ATTACK);
   }
 
   /**
@@ -665,6 +671,7 @@ public class LawSystemHandler {
           if (faction == null || faction.isEmpty() || 
               (!faction.toLowerCase().contains("bandit") && !faction.toLowerCase().contains("hostile") && !faction.toLowerCase().contains("enemy"))) {
             objectiveCapable.removeCustomObjective(de.markusbordihn.easynpc.data.objective.ObjectiveType.ATTACK_PLAYER);
+            objectiveCapable.removeCustomObjective(de.markusbordihn.easynpc.data.objective.ObjectiveType.ATTACK_WANTED_PLAYER);
           }
         }
       }

@@ -1,0 +1,15 @@
+{
+    "id": "e5e80eea-9d1d-4ea8-ab87-3f92b389bd36",
+    "title": "机械管家的危机",
+    "description": "Codsworth说：‘主人，最近村庄外的黑暗中，僵尸成群结队地出现，它们试图闯入我们的领地。我必须保护您的安全，但这些怪物数量太多，我无法独自应对。’\n\n请你前往村庄外，杀死5只僵尸，以消除对家园的威胁。这样我们才能恢复安宁，继续维护这座温馨的家园。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 126
+    }
+}

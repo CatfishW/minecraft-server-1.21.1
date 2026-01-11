@@ -1,0 +1,15 @@
+{
+    "id": "3b991660-d7af-4108-9518-2b83ed6e8f30",
+    "title": "神秘的信号",
+    "description": "哎呀，我的探测器最近捕捉到了一个异常的能量波动，就在这附近的洞穴里！这可能是某种新物理现象的线索，我需要一些样本来进行实验分析，否则我的研究就要停滞不前了。\n\n请前往最近的洞穴，收集5个铁矿石给我。这些样本将帮助我验证这个能量信号的来源，解开这个科学谜团。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 149
+    }
+}

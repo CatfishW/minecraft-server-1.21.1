@@ -1,0 +1,15 @@
+{
+    "id": "f02f9f7c-4c69-473f-8ba3-2d79c9e34bd1",
+    "title": "引擎的呼唤",
+    "description": "伙计，我的Trans Am引擎坏了，那可是我的宝贝，现在我被困在这荒郊野岭，哪儿也去不了，急需一些零件来修复它。\n\n你得帮我去附近的废弃矿井收集5个铁锭，我需要用它们来重新打造引擎的部件。没有车，我就没法运送物资了。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 118
+    }
+}

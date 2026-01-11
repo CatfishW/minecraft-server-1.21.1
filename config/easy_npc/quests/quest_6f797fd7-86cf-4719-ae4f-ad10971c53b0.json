@@ -1,0 +1,15 @@
+{
+    "id": "6f797fd7-86cf-4719-ae4f-ad10971c53b0",
+    "title": "善意之乳的追寻",
+    "description": "我是一个强大的超级变种人，但我的内心却渴望温柔。我听说森林深处藏着一种能治愈心灵的‘善意之乳’，可我总是被拒之门外，孤独缠身。\n请你前往附近的森林深处，收集3桶牛奶。牛奶可以从牛身上获得，我需要它来安抚我疲惫的灵魂。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 320
+    }
+}

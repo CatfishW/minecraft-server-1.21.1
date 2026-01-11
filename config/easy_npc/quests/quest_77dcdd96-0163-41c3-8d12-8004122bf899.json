@@ -1,0 +1,15 @@
+{
+    "id": "77dcdd96-0163-41c3-8d12-8004122bf899",
+    "title": "幽谷回声",
+    "description": "我是Publick Occurrences的记者Piper Wright。最近，村庄附近的森林深处传出异常的嘶吼声，似乎有大量僵尸在暗中聚集。我必须查明真相，为报纸提供真实的报道，以免村民陷入恐慌。\n\n请前往村庄外的废弃矿井附近，消灭至少5只僵尸，并带回它们的腐肉。这样我就能撰写一篇关于这些威胁的详细报道，帮助社区做好准备。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 140
+    }
+}

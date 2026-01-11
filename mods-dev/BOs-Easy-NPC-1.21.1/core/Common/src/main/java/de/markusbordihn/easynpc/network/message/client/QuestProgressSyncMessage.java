@@ -138,7 +138,7 @@ public record QuestProgressSyncMessage(UUID questId, String title, String descri
           minecraft.gui.setSubtitle(subTitle);
           
           // Also a task bar message for backup
-          minecraft.player.displayClientMessage(Component.literal("§6[EasyNPC] §a✔ ").append(mainTitle).append(Component.literal(": " + title)), false);
+          minecraft.player.displayClientMessage(Component.literal("§6[Warm Pixel] §a✔ ").append(mainTitle).append(Component.literal(": " + title)), false);
        }
     }
   }

@@ -2,7 +2,7 @@
   "_c0": "UUID of default/main resource pack.",
   "main_uuid": "73b17706-5c14-432c-be27-9672eabab52f",
   "_c1": "Marks resource pack as required, only effects clients and mods using api to check it",
-  "markResourcePackAsRequiredByDefault": false,
+  "markResourcePackAsRequiredByDefault": true,
   "_c2": "Force-enables offset of CustomModelData",
   "forcePackOffset": false,
   "_c3": "Value of CustomModelData offset when enabled",
@@ -13,7 +13,8 @@
   "include_mod_assets": [],
   "_c6": "Included resource packs from zips!",
   "include_zips": [
-    "world/resources.zip"
+    "resourcepacks/furnitures.zip",
+    "resourcepacks/server_resource.zip"
   ],
   "_c7": "Path used for creation of default resourcepack!",
   "resource_pack_location": "polymer/resource_pack.zip",

@@ -1,0 +1,15 @@
+{
+    "id": "ed552fba-ef39-4c83-a3b7-f5d3eb9801bd",
+    "title": "荒城守望",
+    "description": "各位，Goodneighbor最近不太平。附近的森林深处僵尸越来越多，我的人手不够，镇子的安全受到了威胁，这让我想起了过去那些艰难的日子。\n\n你需要去森林深处，杀死5只僵尸。这样我们才能确保镇子的安全。快去行动，报酬绝不会少。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 492
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "50168182-5776-40ec-a5a0-491592a6119c",
+    "title": "地狱火的试炼",
+    "description": "我是Eddie Munson，地狱火俱乐部的领袖。最近，附近的洞穴中涌入了大量僵尸，它们干扰了我们的金属仪式，威胁着俱乐部的存亡。\n\n请前往森林深处，找到并杀死5个僵尸。这是因为它们在破坏我们的地下基地，你必须清除这些威胁以保卫我们的地盘。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 458
+    }
+}

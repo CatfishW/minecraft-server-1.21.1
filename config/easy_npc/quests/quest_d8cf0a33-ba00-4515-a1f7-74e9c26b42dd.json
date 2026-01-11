@@ -1,0 +1,15 @@
+{
+    "id": "d8cf0a33-ba00-4515-a1f7-74e9c26b42dd",
+    "title": "铁血试炼",
+    "description": "我是BoS骑士团的见习骑士Maximus，我们驻地附近的森林深处怪物频繁出没，缺少动力装甲来守护家园。每次夜幕降临，僵尸和骷髅的嘶吼都让我们提心吊胆，没有足够的防护，我们很难坚守阵地。\n\n为了打造动力装甲的部件，你需要前往附近的洞穴收集5个铁锭。铁是锻造的基础材料，只有熔炉中淬炼出足够的铁，才能启动制作流程。完成后，我会奖励你一些novus硬币，帮助你更快提升实力。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 77
+    }
+}

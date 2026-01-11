@@ -5,14 +5,16 @@
     "description": "Synth detective. Noir style.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/NickValentine.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2024/04/25/nick-valentine--read-description-lol--22495969.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,14 +27,9 @@
             "greeting": "外面雨真大，不是吗？虽然我的光学传感器不需要眼泪，但这种氛围总是让我想起很多往事。我是尼克·瓦伦坦，一名私家侦探。你脸上的迷茫告诉我，你刚从那场该死的战争中醒来。这座城市吞没过无数梦想，如果你不小心点，它也会吞没你。",
             "buttons": [
                 {
-                    "label": "铁锈镇的秘密",
-                    "action": "OPEN_QUEST_DIALOG:a8f636e1-77e8-42b9-88b9-14b262d52688",
-                    "id": "btn_quest_d634d1c8"
-                },
-                {
-                    "label": "消失的磁带",
-                    "action": "OPEN_QUEST_DIALOG:4104d093-3bd0-48e7-ab64-2c82dda1399b",
-                    "id": "btn_quest_4a98fc42"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a6c8acc9-0c06-48d6-ac4b-7a514414546a,f293e1b5-2a60-4f24-9544-13bdc6b6c5b8,b7ff8f8b-fbab-41eb-b6fb-a4d0ec39ec1d,8abd04f6-079f-49c9-8c96-e6510e5225cc,30638827-1c23-4c69-911f-6d3f36cdc2a6",
+                    "id": "btn_quest_742ef2de"
                 },
                 {
                     "label": "尼克·瓦伦坦？这名字听起来很……人类。",
@@ -43,6 +40,11 @@
                     "label": "我需要一个侦探，我找不到我的家人。",
                     "action": "SHOW_DIALOG:missing",
                     "id": "btn_missing"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_f8aec776"
                 }
             ],
             "oneTimeConversation": true
@@ -184,5 +186,15 @@
             "item": "minecraft:iron_shovel",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

@@ -5,14 +5,16 @@
     "description": "Logical and skeptical. Bird watcher.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/StanleyUris.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2018/11/21/stanley-uris-12604885.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "我在数鸟。乌鸦。它们是聪明的生物，也是糟糕的预兆。通常它们成群结队，但现在它们飞走了。就像逃离火灾的蚂蚁。这让我很不安。逻辑告诉我，动物对危险的感知比人类敏锐得多。而这里的危险……不合逻辑。",
             "buttons": [
                 {
-                    "label": "寻找红尾鸟",
-                    "action": "OPEN_QUEST_DIALOG:c42b1f70-5e27-4d5a-8f36-3a8c2159d6e1",
-                    "id": "btn_quest_b80c8b8c"
-                },
-                {
-                    "label": "稀有的观察对象",
-                    "action": "OPEN_QUEST_DIALOG:d16a2b5c-b301-4adb-8ff9-b51269d05abd",
-                    "id": "btn_quest_b44dc5aa"
-                },
-                {
-                    "label": "天空的异变",
-                    "action": "OPEN_QUEST_DIALOG:52a0ae8c-1b6e-458a-b39d-5e573be82cce",
-                    "id": "btn_quest_b20ed0fb"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a65ffaae-b543-447a-95ff-6cc0538320d8,ed8f5da8-4eeb-4e60-8ba4-d10e16847547,f3ca1467-f9fb-4fea-a403-5e2b499f72e8,db263507-1661-4cd6-bfbd-1acea4b4d817,71dfe7ca-2620-4b13-abf7-a644346e337f",
+                    "id": "btn_quest_03355edc"
                 },
                 {
                     "label": "什么不合逻辑？",
@@ -48,6 +40,11 @@
                     "label": "你看起来很焦虑",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_stan_anxious"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_5699b0bd"
                 }
             ],
             "oneTimeConversation": true
@@ -194,5 +191,15 @@
             "item": "minecraft:stone_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

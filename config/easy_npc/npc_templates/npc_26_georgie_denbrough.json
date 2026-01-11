@@ -5,14 +5,16 @@
     "description": "The first victim. In a yellow raincoat.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/GeorgieDenbrough.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2021/03/14/georgie-17127677.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "我的船...我的纸船！它漂得好远啊。外面下着好大的雨，雨水把街道都淹没了，正好可以放船。你看到我的小船了吗？它可是我哥哥比尔亲手帮我做的，虽然他总是生病，但他做的东西最棒了。",
             "buttons": [
                 {
-                    "label": "纸船的邀约",
-                    "action": "OPEN_QUEST_DIALOG:a550e42b-fd05-4e9c-8531-88b2241a65a0",
-                    "id": "btn_quest_9627201e"
-                },
-                {
-                    "label": "红气球的召唤",
-                    "action": "OPEN_QUEST_DIALOG:f1b3e702-dcfa-4ba3-85f7-cc09a8c18113",
-                    "id": "btn_quest_826e625b"
-                },
-                {
-                    "label": "红色气球的呼唤",
-                    "action": "OPEN_QUEST_DIALOG:449fd574-d737-43e7-b691-2c6281b32508",
-                    "id": "btn_quest_6682e81d"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:370b59c6-3f70-4f96-b850-4d7d42f33e5c,9ad5d58f-01ef-4129-beb5-cbbe1ff55c30,0d3e7297-319a-498e-9921-8277ae00a8bd,c20d4340-f87d-48a9-ab3a-0cdd486bc9a4,6e0ffb98-88f0-4925-a897-ed21fd1d4b9d",
+                    "id": "btn_quest_34c1c397"
                 },
                 {
                     "label": "你的纸船真厉害",
@@ -48,6 +40,11 @@
                     "label": "雨下得真大",
                     "action": "SHOW_DIALOG:step_2",
                     "id": "btn_rain"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_c5022300"
                 }
             ],
             "oneTimeConversation": true
@@ -129,5 +126,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

@@ -5,14 +5,16 @@
     "description": "The babysitter. Brave with a bat.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/SteveHarrington.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2024/07/24/steve-harrington-stranger-things-22720675.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "嘿，伙计，你好。这镇子最近是不是又出什么幺蛾子了？看你的表情，你肯定也是惹上麻烦了。别担心，不管是啥，只要那该死的怪物敢露头，我就给它点颜色看看。我的球棒就在手边，上面抹了足够的沥青，够它们喝一壶的。",
             "buttons": [
                 {
-                    "label": "保卫霍金斯",
-                    "action": "OPEN_QUEST_DIALOG:4a8b2c1d-3e4f-5a6b-7c8d-9e0f1a2b3c4d",
-                    "id": "btn_quest_aab812bd"
-                },
-                {
-                    "label": "高中保镖",
-                    "action": "OPEN_QUEST_DIALOG:b0e4a93c-465c-4b9d-b6e9-a5538e81a0a6",
-                    "id": "btn_quest_1a3b12c5"
-                },
-                {
-                    "label": "挥舞的球棒",
-                    "action": "OPEN_QUEST_DIALOG:291772a5-3a10-4d0d-937b-51a2e87725a5",
-                    "id": "btn_quest_839604f8"
-                },
-                {
-                    "label": "夺命狂奔",
-                    "action": "OPEN_QUEST_DIALOG:2a9b41dc-d3b7-47c9-a3b2-9fe0254e0323",
-                    "id": "btn_quest_9e6e7f35"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:fbf3c067-7338-43e9-8e3d-033cf47b2581,4ecc999a-c1af-4eff-afef-8ce297725793,e5603422-d880-4320-be09-a602fdf7e61f,76455d12-661a-4d2f-a83b-e370e960fe84,4a9e9624-ee22-4000-8541-0bf3e6b53223",
+                    "id": "btn_quest_34743c9f"
                 },
                 {
                     "label": "你是那个球棒专家?",
@@ -53,6 +40,11 @@
                     "label": "你在保护谁?",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_protecting"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_df66431e"
                 }
             ],
             "oneTimeConversation": true
@@ -244,5 +236,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

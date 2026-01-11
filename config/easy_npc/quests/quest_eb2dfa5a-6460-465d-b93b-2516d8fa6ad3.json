@@ -1,0 +1,15 @@
+{
+    "id": "eb2dfa5a-6460-465d-b93b-2516d8fa6ad3",
+    "title": "忠犬寻骨",
+    "description": "汪汪！我是Dogmeat，一只永远忠诚的伙伴。最近我在村庄外的森林里追逐蝴蝶时，不小心弄丢了那根陪伴我多年的骨头玩具。没有它，我的尾巴都摇不起来了。\n\n请你帮我收集3根骨头。前往附近的森林深处，那里游荡着骷髅，击败它们就能找到骨头。把骨头带回来给我，我会用珍贵的宝物答谢你。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 198
+    }
+}

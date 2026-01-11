@@ -1,0 +1,15 @@
+{
+    "id": "35c24236-646a-4d06-a046-f71678a6321e",
+    "title": "地狱火的召唤",
+    "description": "我是Eddie Munson，地狱火俱乐部的领袖。我们正面临一场危机：附近的矿井中涌现了大量不死生物，玷污了我们的金属圣地。我需要你的帮助来肃清这些威胁。\n\n前往废弃矿井，杀死至少3只骷髅。为什么？因为它们的骨头可以用来强化我们的武器，这是对我们忠诚的考验。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 139
+    }
+}

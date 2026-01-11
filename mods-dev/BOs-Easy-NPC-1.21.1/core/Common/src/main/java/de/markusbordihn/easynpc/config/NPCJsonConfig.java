@@ -151,6 +151,74 @@ public class NPCJsonConfig {
       saveJsonFile(guardTemplate, guardNpc);
       log.info("{} Generated example guard.json template", LOG_PREFIX);
     }
+
+    // Generate example newbie helper template
+    File newbieHelperTemplate = configPath.resolve(TEMPLATES_FOLDER).resolve("npc_99_newbie_helper.json").toFile();
+    if (!newbieHelperTemplate.exists()) {
+      NPCTemplateData newbieHelper = createNewbieHelperExample();
+      saveJsonFile(newbieHelperTemplate, newbieHelper);
+      log.info("{} Generated example npc_99_newbie_helper.json template", LOG_PREFIX);
+    }
+  }
+
+  /**
+   * Create example Newbie Helper NPC template.
+   */
+  private static NPCTemplateData createNewbieHelperExample() {
+    NPCTemplateData template = new NPCTemplateData();
+    template.setName("§6§l新手助手 (Starter Helper)");
+    template.setEntityType("easy_npc:humanoid");
+    template.setActionPermissionLevel(2);
+    template.setDescription("发放新手礼包的NPC。每位玩家限领一次。");
+
+    // Skin config
+    NPCTemplateData.SkinConfig skin = new NPCTemplateData.SkinConfig();
+    skin.setType("URL_SKIN");
+    skin.setSkinUrl("https://minotar.net/skin/Steve.png");
+    template.setSkin(skin);
+
+    // Dialog config
+    NPCTemplateData.DialogConfig dialog = new NPCTemplateData.DialogConfig();
+    dialog.setGreeting("欢迎来到这个充满挑战的世界！我是这里的向导。为了帮助你度过最初的难关，我准备了一份丰厚的新手礼包。内含武器、金币、食物以及一套基础载具零件。请注意，这是一生只有一次的机会！");
+    dialog.setButtons(new NPCTemplateData.DialogButton[] {
+        new NPCTemplateData.DialogButton("§6§l领取新手礼包 (限领一次)", "COMMAND:/function noob:claim"),
+        new NPCTemplateData.DialogButton("暂时不需要", "CLOSE_DIALOG")
+    });
+    // Set explicit IDs for buttons
+    dialog.getButtons()[0].setId("btn_claim_kit");
+    dialog.getButtons()[1].setId("btn_close");
+
+    // Use dialogs map instead of legacy single dialog to match JSON exactly (optional but good practice)
+    Map<String, NPCTemplateData.DialogConfig> dialogs = new HashMap<>();
+    dialogs.put("main", dialog);
+    template.setDialogs(dialogs);
+    // Also set legacy dialog field for backward compatibility if needed, but template usually favors one. 
+    // The JSON provided used "dialogs": { "main": ... } structure. 
+    // NPCTemplateManager logic: if (template.getDialogs() != null ...) applyDialogs ... else if (template.getDialog() != null) ...
+    // So setting 'dialogs' map is correct for specific structure.
+    
+    // Attributes config
+    NPCTemplateData.AttributeConfig attributes = new NPCTemplateData.AttributeConfig();
+    attributes.setMaxHealth(40);
+    attributes.setMovementSpeed(0.0);
+    attributes.setAttackDamage(5.0);
+    attributes.setArmor(5.0);
+    attributes.setInvulnerable(true);
+    template.setAttributes(attributes);
+
+    // Objectives config
+    NPCTemplateData.ObjectiveConfig objectives = new NPCTemplateData.ObjectiveConfig();
+    objectives.setAttackHostileMobs(true);
+    objectives.setAttackPlayers(false);
+    objectives.setReturnToSpawn(false);
+    template.setObjectives(objectives);
+
+    // Equipment config
+    NPCTemplateData.EquipmentConfig equipment = new NPCTemplateData.EquipmentConfig();
+    equipment.setMainHand(new NPCTemplateData.ItemStack("minecraft:chest_minecart", 1));
+    template.setEquipment(equipment);
+
+    return template;
   }
   
   /**

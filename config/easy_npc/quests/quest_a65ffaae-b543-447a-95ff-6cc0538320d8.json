@@ -1,0 +1,15 @@
+{
+    "id": "a65ffaae-b543-447a-95ff-6cc0538320d8",
+    "title": "鸟影疑踪",
+    "description": "我是Stanley Uris，一个逻辑严谨的鸟类观察者。最近，森林中的鸟儿行为异常，它们不再像往常那样鸣唱，反而显得警觉而疏远，这让我怀疑有某种潜在的威胁在扰乱自然的平衡。\n\n为了揭开这个谜团，我需要你前往附近的森林深处，收集3个羽毛。这些羽毛可能隐藏着鸟类行为变化的线索，帮助我分析并确认是否存在危险。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:feather",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 77
+    }
+}

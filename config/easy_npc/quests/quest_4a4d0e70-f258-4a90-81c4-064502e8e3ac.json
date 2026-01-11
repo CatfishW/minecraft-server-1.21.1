@@ -1,0 +1,15 @@
+{
+    "id": "4a4d0e70-f258-4a90-81c4-064502e8e3ac",
+    "title": "寻子征程",
+    "description": "我是乔伊斯·拜尔斯，我的儿子在附近的森林里失踪了，那里到处都是游荡的僵尸，我每晚都担心他会遭遇不测。作为一个母亲，我绝不会放弃任何一丝希望。\n\n请你立刻前往村庄外的森林深处，杀死5只僵尸，确保那片区域的安全，这样我才能安心继续寻找我的孩子。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 54
+    }
+}

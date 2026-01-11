@@ -1,0 +1,15 @@
+{
+    "id": "9941979c-3866-460b-b9b0-92a2d20785f6",
+    "title": "红石之谜",
+    "description": "哈哈，我是Dustin！我最近在附近的洞穴里做了一个关于能量场的实验，结果不小心引发了红石能量的紊乱。如果不尽快稳定它，整个区域的设备都可能会瘫痪，这可真是个大麻烦！\n\n为了修复这个混乱，我需要你帮忙收集一些红石粉。请前往村庄外的森林深处，那里散落着丰富的红石矿。收集5个红石粉带回来，这样我就能重新校准实验装置，避免一场灾难。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 433
+    }
+}

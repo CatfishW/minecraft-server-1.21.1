@@ -1,0 +1,15 @@
+{
+    "id": "23e82a9e-e1e1-4e24-a8da-a4b9af1ea47e",
+    "title": "孤影寻踪",
+    "description": "我是Don Hagarty，Adrian的伙伴。最近Adrian在森林中探索时突然失踪了，我怀疑他被怪物困住了，现在生死未卜，我日夜难安。\n\n请你前往村庄外的森林，与Mike Wheeler交谈。他经常在村庄附近活动，可能知道Adrian的下落。只有找到他，我们才能制定救援计划，救出Adrian。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 324
+    }
+}

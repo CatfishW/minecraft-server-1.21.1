@@ -1,0 +1,15 @@
+{
+    "id": "29e458ef-486c-42ba-98f8-ab2eadc10921",
+    "title": "荒野猎影",
+    "description": "我是Cooper Howard，一个在废土中游荡的变种人赏金猎人。最近，附近的废弃矿井中僵尸肆虐，它们不断侵扰我的营地，威胁着我的生存与安宁。\n\n请前往附近的废弃矿井，杀死5只僵尸，以消除这些威胁并确保我的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 462
+    }
+}

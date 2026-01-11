@@ -1,0 +1,15 @@
+{
+    "id": "e0f63544-b7f4-454b-873f-9aaaa2ff5715",
+    "title": "血笼斗士",
+    "description": "听着，我叫Cait。以前在铁笼里，我只用拳头说话。现在这鬼地方，森林深处的亡灵生物夜夜嚎叫，吵得人心烦。它们在黑暗中游荡，像一群饥饿的野狗。我需要安宁，需要训练，不是听这些该死的哀嚎。\n\n去西边的黑森林，找到那些腐烂的行尸。拧断它们的脖子，至少干掉五个。那些僵尸的咆哮会毁了我的专注，我要它们永远闭嘴。别让我失望，小子。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 159
+    }
+}

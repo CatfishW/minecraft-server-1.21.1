@@ -1,0 +1,15 @@
+{
+    "id": "78dbc363-b75e-48e6-a249-86f554730a43",
+    "title": "滑板的呼唤",
+    "description": "我是Max，我的滑板在公园跳跃时摔坏了。现在我需要一些铁矿石来修理它，否则我就无法参加下周的滑板比赛了。\n\n请去附近的洞穴收集5个铁矿石。我需要用这些铁矿石来制作一个坚固的底座，修复我的滑板。小心洞穴里的怪物，确保安全返回。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 56
+    }
+}

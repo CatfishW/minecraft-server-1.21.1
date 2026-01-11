@@ -1,0 +1,15 @@
+{
+    "id": "669beabe-8d46-4e82-bd1e-09330750ddd3",
+    "title": "梦魇狂欢",
+    "description": "哦，可爱的小家伙，你听见了吗？阴影在洞穴中低语，恐惧像藤蔓一样缠绕着每个角落。我在这里，Pennywise，邀请你加入这场永无止境的舞蹈。但只有那些能直面黑暗的人，才配成为我的玩伴。\n\n去附近的洞穴深处，找到那些游荡的僵尸，消灭5个它们。这样，你才能证明自己不是胆小鬼，而是值得获得我的奖励。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 105
+    }
+}

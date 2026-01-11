@@ -1,0 +1,15 @@
+{
+    "id": "9eb20585-8d29-4206-a39f-90e52e4e2f46",
+    "title": "恐惧的面具",
+    "description": "哈哈，伙计！我一点都不怕黑，真的！那些在暗处沙沙响的东西？只是风在开玩笑而已……呃，好吧，其实我晚上睡不着，总觉得有什么东西在洞穴里盯着我。你能帮我去看看吗？就当是个笑话！\n\n请去附近的洞穴，击杀3只僵尸。这样我才能安心，虽然我不会承认我害怕那些家伙。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 76
+    }
+}

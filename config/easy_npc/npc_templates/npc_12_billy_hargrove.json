@@ -5,14 +5,16 @@
     "description": "Antagonist stepbrother. Wild and dangerous.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/BillyHargrove.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2023/03/17/billy-hargrove-21430544.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,34 +27,9 @@
             "greeting": "（他猛地转身，眼神充满野性，手中紧握着一把附魔钻石剑）嘿，小子，我认得你的眼神。你是想来挑战我，还是单纯想找死？别在我面前晃悠，我脾气可不好，尤其是现在。",
             "buttons": [
                 {
-                    "label": "扫除障碍",
-                    "action": "OPEN_QUEST_DIALOG:a5d801e2-4c4f-45a3-959c-222c7329e1b4",
-                    "id": "btn_quest_f9654fd7"
-                },
-                {
-                    "label": "别多管闲事",
-                    "action": "OPEN_QUEST_DIALOG:billy_hargrove_001",
-                    "id": "btn_quest_527af027"
-                },
-                {
-                    "label": "麻烦的杂草",
-                    "action": "OPEN_QUEST_DIALOG:billy_hargrove_001",
-                    "id": "btn_quest_a99cc5be"
-                },
-                {
-                    "label": "暴力是答案",
-                    "action": "OPEN_QUEST_DIALOG:9eb72032-25e0-4c36-8202-bc6c9e109e13",
-                    "id": "btn_quest_602a7400"
-                },
-                {
-                    "label": "野性的试炼",
-                    "action": "OPEN_QUEST_DIALOG:2766e4df-b61a-4c7c-820e-c6fc860ffbfd",
-                    "id": "btn_quest_33c30b88"
-                },
-                {
-                    "label": "真正的丛林霸主",
-                    "action": "OPEN_QUEST_DIALOG:b775820e-0ed1-4465-b9e5-8da9ca3165ee",
-                    "id": "btn_quest_9991579d"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4b52098a-c7e6-44ed-9c41-9c491758dacb,11cc8d0e-d1ec-4bfc-b48d-021edeb6e826,e1b2fcaa-2124-4429-bec0-e0041f52c17b,c21baa36-4e2d-4689-a945-f74366b0de57,608d057f-7a94-4461-be7d-d51414088fb4",
+                    "id": "btn_quest_916b5111"
                 },
                 {
                     "label": "你看起来很生气。",
@@ -63,6 +40,11 @@
                     "label": "不想死就滚开。",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_billy_threaten"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_16c3b82e"
                 }
             ],
             "oneTimeConversation": true
@@ -159,5 +141,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

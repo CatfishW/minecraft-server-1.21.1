@@ -1,0 +1,15 @@
+{
+    "id": "afd5b554-f335-4daf-8872-bcdb7c879663",
+    "title": "暗夜危机",
+    "description": "作为村庄的守卫，我日夜警惕着从黑暗中涌出的敌对生物。最近，僵尸和骷髅的数量剧增，从附近的洞穴和森林深处出现，村民们生活在恐惧中，家园随时可能被摧毁。\n\n我需要你的帮助。请前往村庄外的森林深处，击杀至少3只僵尸。这样可以削弱敌人的攻势，确保村庄的安全，让村民能安心生活。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 143
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "44e70262-86c3-41de-aad9-b99cb5f28848",
+    "title": "噩梦之舞",
+    "description": "我是Pennywise，舞动的小丑，恐惧是我的舞台。这个地区已被我的阴影笼罩，黑暗中的低语和笑声在森林深处回荡，玩具们等待着新的玩伴。你，是否敢踏入这场噩梦的舞蹈？\n\n前往附近的森林深处，杀死5个僵尸。只有这样，你才能打破我的把戏，证明自己不是懦弱的猎物，而是敢于直面恐怖的勇者。小心，别成为我的下一个收藏品。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 172
+    }
+}

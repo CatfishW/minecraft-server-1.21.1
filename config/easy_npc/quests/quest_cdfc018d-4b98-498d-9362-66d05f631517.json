@@ -1,0 +1,15 @@
+{
+    "id": "cdfc018d-4b98-498d-9362-66d05f631517",
+    "title": "洞穴谜题",
+    "description": "嘿，我是Dustin！作为一个科学狂人，我最近对附近的洞穴产生了浓厚兴趣，那里似乎隐藏着某种声波谜题。但我的实验设备缺少一些关键材料，让我无法深入研究，这可真是让人头疼啊！\n\n请前往'附近的洞穴'，收集5个煤炭。因为煤炭中的碳元素是我的声波传感器不可或缺的组成部分。记住，洞穴里可能有僵尸出没，务必小心行事！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 119
+    }
+}

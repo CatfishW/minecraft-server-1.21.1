@@ -1,0 +1,15 @@
+{
+    "id": "5c4dfe3d-0379-44db-9ee7-433e58d61140",
+    "title": "暗影实验",
+    "description": "我是Papa，一名科学家。我的实验正面临危机，附近的黑暗生物变得异常活跃，似乎受到某种未知能量的影响，干扰了我的设备。\n\n我需要你前往废弃矿井，杀死5只僵尸。获取它们的腐肉，以便我研究这种异常现象并保护我们的实验。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 128
+    }
+}

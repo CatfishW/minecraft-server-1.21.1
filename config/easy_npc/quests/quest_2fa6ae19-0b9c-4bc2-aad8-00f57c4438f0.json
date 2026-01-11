@@ -1,0 +1,15 @@
+{
+    "id": "2fa6ae19-0b9c-4bc2-aad8-00f57c4438f0",
+    "title": "被迫的狩猎",
+    "description": "我，Victor Criss，作为亨利那个顽固家伙的追随者，总是被派去处理这些肮脏的差事。最近，附近的洞穴里僵尸泛滥，它们日夜嘶吼着，威胁着我们最后的藏身之地，让我连片刻安宁都得不到。\n\n请你立刻前往附近的洞穴，杀死5只僵尸。只有清除了这些怪物，我们才能确保通往村庄的道路安全，亨利那家伙才会闭上他的嘴。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 330
+    }
+}

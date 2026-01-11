@@ -1,0 +1,15 @@
+{
+    "id": "ebe99af3-f001-42e7-a784-1aad9f7c6a8f",
+    "title": "不情愿的阴影",
+    "description": "我是Victor Criss，Henry的不情愿追随者。他总是把那些肮脏的差事推给我，如今村庄外的僵尸让我不得安宁，我必须想办法解决，否则Henry会责怪我。\n\n请前往村庄外的森林，消灭5只僵尸。它们在威胁我们的补给线，必须立即清除以确保安全。完成后，我会给你一些novus币作为报酬。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 67
+    }
+}

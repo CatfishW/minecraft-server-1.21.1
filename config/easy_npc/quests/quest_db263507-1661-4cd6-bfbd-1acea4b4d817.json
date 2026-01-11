@@ -1,0 +1,15 @@
+{
+    "id": "db263507-1661-4cd6-bfbd-1acea4b4d817",
+    "title": "羽踪之谜",
+    "description": "我是Stanley Uris，一个逻辑严谨的鸟类观察者。最近，我注意到森林中的鸟类行为异常：它们的羽毛散落一地，却找不到任何捕食者的踪迹。这违背了自然的逻辑，我怀疑有某种隐藏的力量在干预。\n\n为了揭开这个谜团，我需要你前往附近的森林深处，收集10个羽毛（minecraft:feather）。这些样本将帮助我分析鸟类的迁徙和生存状况。请仔细搜索林地，找到任何羽毛的痕迹。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:feather",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 90
+    }
+}

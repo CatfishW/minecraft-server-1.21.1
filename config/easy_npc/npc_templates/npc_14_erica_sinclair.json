@@ -5,14 +5,16 @@
     "description": "Sassy and smart. Can't spell America without Erica.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/EricaSinclair.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/08/03/erica-sinclair--stranger-things--13281680.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "（她正坐在一个高高的方块上，手里把玩着一颗发光的红石）哟，看看这是谁来了。一个迷路的冒险家？还是又一个被这无聊世界困住的倒霉蛋？别用那种眼神看我，我可不是什么迷路的小孩。",
             "buttons": [
                 {
-                    "label": "寻找亨利",
-                    "action": "OPEN_QUEST_DIALOG:8c8b0a2f-3f6c-4a9b-8d2e-7f1a9b8c5d4e",
-                    "id": "btn_quest_77ec0232"
-                },
-                {
-                    "label": "爱国者必须做的事",
-                    "action": "OPEN_QUEST_DIALOG:f47ac10b-58cc-4372-a567-0e02b2c3d479",
-                    "id": "btn_quest_a6340156"
-                },
-                {
-                    "label": "为国采购",
-                    "action": "OPEN_QUEST_DIALOG:2f10fe38-cbce-481e-8f75-9aba01a25bd6",
-                    "id": "btn_quest_7d090055"
-                },
-                {
-                    "label": "爱国者认证",
-                    "action": "OPEN_QUEST_DIALOG:1dfa0f46-9a71-42c3-8c66-774e0040a55b",
-                    "id": "btn_quest_d0b54431"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:139bc7bc-800f-4ed4-852f-272465cd824b,f9128f94-3082-49ef-84f0-74d20f4e9082,a45e98ac-eeb8-4a6d-9dec-95bd2f39333f,d9210757-aabf-4730-bd81-000d2bb64960,c96badba-fe3f-4cf4-9ba0-ff9da91f3540",
+                    "id": "btn_quest_e8d8203d"
                 },
                 {
                     "label": "你一个人？",
@@ -53,6 +40,11 @@
                     "label": "你很淡定啊。",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_eric_calm"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_e7b4e9cd"
                 }
             ],
             "oneTimeConversation": true
@@ -164,5 +156,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

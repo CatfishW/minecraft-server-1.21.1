@@ -1,0 +1,37 @@
+{
+    "schemaVersion": 1,
+    "id": "npcbusdriver",
+    "version": "${version}",
+    "name": "NPC Bus Driver",
+    "description": "Allows NPCs to drive buses on defined paths.",
+    "authors": [
+        "WarmPixel"
+    ],
+    "contact": {
+        "homepage": "https://fabricmc.net/",
+        "sources": "https://github.com/FabricMC/fabric-example-mod"
+    },
+    "license": "CC0-1.0",
+    "icon": "assets/npcbusdriver/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.warmpixel.npcbusdriver.NPCBusDriverMod"
+        ],
+        "client": [
+            "com.warmpixel.npcbusdriver.NPCBusDriverClient"
+        ]
+    },
+    "mixins": [
+        "npcbusdriver.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.5",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*"
+    },
+    "suggests": {
+        "another-mod": "*"
+    }
+}

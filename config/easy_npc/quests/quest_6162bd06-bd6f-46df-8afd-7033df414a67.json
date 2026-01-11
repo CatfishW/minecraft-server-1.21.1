@@ -1,0 +1,15 @@
+{
+    "id": "6162bd06-bd6f-46df-8afd-7033df414a67",
+    "title": "荒原猎影",
+    "description": "我，Cooper Howard，在这片荒原上作为赏金猎人游荡多年，早已习惯与亡灵为伴。但最近，僵尸群在附近的森林深处频繁出没，不仅干扰了我的狩猎，还威胁着我藏身的废弃矿井。\n\n为了平息这些威胁，你需要前往森林深处的废弃矿井入口，消灭至少5只僵尸。这样，我才能安心追踪下一个悬赏目标。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 456
+    }
+}

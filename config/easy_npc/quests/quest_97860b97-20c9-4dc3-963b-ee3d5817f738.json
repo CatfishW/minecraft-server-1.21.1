@@ -1,0 +1,15 @@
+{
+    "id": "97860b97-20c9-4dc3-963b-ee3d5817f738",
+    "title": "幽林之需",
+    "description": "我是一位游历四方的商人，近日在穿越森林深处时，不幸遭遇怪物袭击，货物散落一地。如今库存空虚，急需基础材料来重振生意，否则将难以为继。\n\n请你前往附近的洞穴，收集5个铁矿石给我。这些铁矿石能让我打造新工具，抵御威胁，确保商路安全无虞。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 122
+    }
+}

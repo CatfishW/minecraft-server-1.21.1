@@ -1,0 +1,15 @@
+{
+    "id": "a4fd5c30-c965-4ece-b05e-d6ed71b670cc",
+    "title": "遗迹的呼唤",
+    "description": "我是本·汉斯科姆，一名历史学家兼建筑师。我敏感的心灵被村庄外森林深处的一处古老遗迹所触动，但那里如今盘踞着亡灵，我无法安心研究。\n\n请前往那个森林深处的废弃矿井，收集3本古老的书籍。这些书籍可能记录着遗迹的建筑蓝图，对我理解过去至关重要。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:book",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

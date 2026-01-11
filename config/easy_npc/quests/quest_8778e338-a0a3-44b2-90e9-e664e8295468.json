@@ -1,0 +1,15 @@
+{
+    "id": "8778e338-a0a3-44b2-90e9-e664e8295468",
+    "title": "滑板危机",
+    "description": "我是Max，一个滑板手。我的滑板场地在村庄外，但最近僵尸出没，它们威胁着我的日常练习。我需要你的帮助。\n\n请前往村庄外，杀死3只僵尸。这样我就能安心地修复滑板，继续我的滑板生涯。为什么这么做？因为只有清除威胁，我才能安全地滑行。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 199
+    }
+}

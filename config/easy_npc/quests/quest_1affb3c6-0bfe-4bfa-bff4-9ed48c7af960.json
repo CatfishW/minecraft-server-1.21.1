@@ -1,0 +1,15 @@
+{
+    "id": "1affb3c6-0bfe-4bfa-bff4-9ed48c7af960",
+    "title": "呼吸的救赎",
+    "description": "我是Eddie Kaspbrak，我总是担心自己的健康。最近，我感觉呼吸越来越困难，吸入器似乎不起作用了。我听说森林深处的某些植物能净化空气，但我不敢去，生怕遇到什么危险。\n\n请帮我去附近的森林收集5个minecraft:poppy。这些虞美人据说能缓解呼吸问题，我需要用它们来制作一种药水，帮助我呼吸更顺畅。为什么这么做？因为我的健康状况让我无法独自冒险，只有你能帮我完成这个任务。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:poppy",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 155
+    }
+}

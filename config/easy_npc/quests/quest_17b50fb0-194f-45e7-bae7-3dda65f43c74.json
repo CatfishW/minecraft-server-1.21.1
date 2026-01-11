@@ -1,0 +1,15 @@
+{
+    "id": "17b50fb0-194f-45e7-bae7-3dda65f43c74",
+    "title": "微光中的希望",
+    "description": "我是Lucy，虽然避难所的资源日渐紧张，但我始终相信明天会更好。最近，我们的食物储备几乎耗尽，大家都饿着肚子，可我不想让任何人失去笑容。\n\n请前往森林深处收集至少5个小麦，带回避难所。只有这样，我们才能用这些麦子烤出面包，让大家重新振作起来。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 450
+    }
+}

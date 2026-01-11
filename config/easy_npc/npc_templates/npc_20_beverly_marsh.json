@@ -5,14 +5,16 @@
     "description": "Brave and kind. The heart of the group.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/BeverlyMarsh.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/10/28/beverly-marsh---it-13599501.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你也是被那股奇怪的能量吸引过来的吗？我叫贝芙莉·马什，在这群伙伴里负责后勤和联络。别担心，既然你出现在这里，说明你也是对抗‘它’的关键一环。这片区域的红石信号受到了强烈的干扰，像是某种未知的程序正在覆盖现实世界的底层逻辑。",
             "buttons": [
                 {
-                    "label": "寻找Henry",
-                    "action": "OPEN_QUEST_DIALOG:a249d362-5087-4a32-a2e2-d692f22546f8",
-                    "id": "btn_quest_d5e65e26"
-                },
-                {
-                    "label": "筹集探险资金",
-                    "action": "OPEN_QUEST_DIALOG:a5f1b2c3-d4e5-f6a7-b8c9-d0e1f2a3b4c5",
-                    "id": "btn_quest_72711523"
-                },
-                {
-                    "label": "守望相助",
-                    "action": "OPEN_QUEST_DIALOG:b8e25f36-c8c8-4a34-89ec-5f7d9c59776e",
-                    "id": "btn_quest_113c0076"
-                },
-                {
-                    "label": "迷雾森林的阴影",
-                    "action": "OPEN_QUEST_DIALOG:f1b3f40f-ed32-473f-a9f0-6c15c8b9262a",
-                    "id": "btn_quest_4622e5cc"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ec64a025-2664-4094-b44c-c2b196196c34,9cb49ec0-9ab3-4394-9f58-f3dd367422d6,00d99da9-706e-4bd3-b817-039a9f904c78,865dd9bd-b6eb-43dc-9cb7-ada5f5014713,6ca282e7-6d15-4a5e-a1fc-65988ff733bd",
+                    "id": "btn_quest_2db41580"
                 },
                 {
                     "label": "对抗‘它’？你是说那个大 clown？",
@@ -53,6 +40,11 @@
                     "label": "红石干扰？也许我能帮忙调试。",
                     "action": "SHOW_DIALOG:story_1_b",
                     "id": "btn_start_b"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_60002fb3"
                 }
             ],
             "oneTimeConversation": true
@@ -279,5 +271,15 @@
             "item": "minecraft:spyglass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

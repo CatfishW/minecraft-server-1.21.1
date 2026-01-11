@@ -1,0 +1,15 @@
+{
+    "id": "83dbce1b-1f65-4f8f-af7d-d7e81796831a",
+    "title": "记忆的回响",
+    "description": "我是Mike Hanlon，Derry的守护者。最近，村庄附近的古老遗迹被黑暗生物侵扰，那些被遗忘的历史正面临被彻底掩盖的危机。僵尸和骷髅在森林中徘徊，威胁着我世代守护的秘密。\n\n请你前往村庄外的森林深处，消灭5只僵尸。这些怪物在破坏历史遗迹的入口，只有清除它们，才能让Derry的记忆重见天日。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 165
+    }
+}

@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "嗝！Victor，你跑哪去了？哦，是个陌生人。别挡着我的路，我在找Henry。我的火辣玛琳在等我呢，但我得先帮Henry办点事。他说要去下水道抓几个小耗子，听起来挺有意思的，嗝！",
             "buttons": [
                 {
-                    "label": "肌肉男的复仇",
-                    "action": "OPEN_QUEST_DIALOG:a1b2c3d4-e5f6-7890-1234-567890abcdef",
-                    "id": "btn_quest_b344e69d"
-                },
-                {
-                    "label": "传说中的燃油",
-                    "action": "OPEN_QUEST_DIALOG:892aaa99-4317-4e06-9e60-5968ad37c7d2",
-                    "id": "btn_quest_07dc4ad8"
-                },
-                {
-                    "label": "肌肉车的轰鸣",
-                    "action": "OPEN_QUEST_DIALOG:545e0d12-f40d-4add-9d01-17082f77c42a",
-                    "id": "btn_quest_4225428a"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:74eaeb6a-32b6-4506-bf80-75dcf888b574,d707fa9d-8d61-4acf-8f5b-8d4369cdf5a7,f02f9f7c-4c69-473f-8ba3-2d79c9e34bd1,4d0b2dd2-8162-418b-9773-dd8688fb128a,8df7cd42-1382-49c0-a57d-8cc39fdd4041",
+                    "id": "btn_quest_85a1e72f"
                 },
                 {
                     "label": "你的车？",
@@ -48,6 +40,11 @@
                     "label": "下水道有什么？",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_sewer"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_fb5f9fdd"
                 }
             ],
             "oneTimeConversation": true
@@ -129,5 +126,15 @@
             "item": "minecraft:iron_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

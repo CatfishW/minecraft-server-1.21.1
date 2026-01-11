@@ -1,0 +1,15 @@
+{
+    "id": "0f43c2a3-d744-4cd7-904d-45c0c457bbe0",
+    "title": "星环冰淇淋危机",
+    "description": "听着，我在星环冰淇淋店打工快被逼疯了——老板非说森林里的蓝橡树浆果能让新品草莓冰淇淋大卖，但派去的采购员全被林子里的骷髅吓跑了。现在冷饮柜空空如也，我的工时也要泡汤。\n\n帮我个忙：去东边橡木林深处采集3份蓝橡树果（minecraft:blue_orchid），顺便清理掉那片区域的骷髅（minecraft:skeleton）。记住，先找浆果再解决骷髅，否则它们会一直骚扰采集。把东西带回来，我分你两枚硬币当报酬。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blue_orchid",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 467
+    }
+}

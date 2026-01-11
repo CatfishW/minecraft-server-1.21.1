@@ -1,0 +1,15 @@
+{
+    "id": "44fe03d6-c59d-4c9b-b650-6a9af8530856",
+    "title": "锈蚀的守望",
+    "description": "我是Overseer Hank，Vault 33的监督者。我们的避难所正被阴影笼罩——地下洞穴中传来低沉的回响，古老守卫系统已濒临崩溃。那些深埋的秘密，如锈蚀的齿轮，正一点点剥落，我必须守住它们，直到最后一刻。\n\n请前往附近的废弃矿井，收集5个minecraft:iron_ingot。这些铁锭用于修复Vault的核心门禁，防止外部生物入侵。矿井入口就在村庄西侧，为什么这么做？因为只有加固防御，才能保护我们的秘密不被黑暗吞噬。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 200
+    }
+}

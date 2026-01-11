@@ -1,0 +1,15 @@
+{
+    "id": "56aa620e-e047-4cb3-8289-3afa3a534310",
+    "title": "幽光秘密",
+    "description": "（Murray压低声音，用俄语急促地说）同志，这个村庄周围有诡异的事件发生。我在森林深处看到了不寻常的光芒，一定是那些外星势力在暗中观察我们！村民们却当我是疯子，但真相就在那里。\n\n请立即前往附近的废弃矿井，收集5个末影珍珠。这些珍珠是他们传送技术的关键证据，只有拿到它们，我才能揭露整个阴谋。小心点，别让别人跟踪你！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:ender_pearl",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 353
+    }
+}

@@ -40,7 +40,7 @@
 				id: "156AE97483D7C25F"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -60,7 +60,7 @@
 				id: "7736590D5FBBA255"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -80,7 +80,7 @@
 				id: "5A48FA782FD7604E"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -100,7 +100,7 @@
 				id: "3A5675DCC7B49D41"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -120,7 +120,7 @@
 				id: "1BF8ED8400E8EE2F"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -140,7 +140,7 @@
 				id: "69F5AE5E7F928F43"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -161,7 +161,7 @@
 					id: "481FD2EEA3F4F30E"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -188,7 +188,7 @@
 					id: "6A71C9196F5C4F33"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -215,7 +215,7 @@
 					id: "396458797A37FAC0"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -242,7 +242,7 @@
 					id: "2BACC01A7043EED5"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -269,7 +269,7 @@
 					id: "5A45603CE61A988E"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -296,7 +296,7 @@
 					id: "2AC6D9D121ACAD21"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -322,7 +322,7 @@
 					id: "632F30529CBAD282"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -349,7 +349,7 @@
 					id: "68539096B53E8DBD"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -357,7 +357,7 @@
 					id: "2ABBB371C5DEEC6D"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -384,7 +384,7 @@
 					id: "6993FC80F2073816"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -392,7 +392,7 @@
 					id: "4510E02485120E84"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -419,7 +419,7 @@
 					id: "5A84E665227EE946"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -427,7 +427,7 @@
 					id: "2D8B7A5E9F3C6D1B"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -454,7 +454,7 @@
 					id: "62A7E21F5ACE0D04"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -462,7 +462,7 @@
 					id: "1E7C4B2F5A9D8E3A"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -489,7 +489,7 @@
 					id: "204064DA89F83AC5"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -497,7 +497,7 @@
 					id: "3F9D1E6C8B5A2D7E"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -524,7 +524,7 @@
 					id: "0DC74776CB838F3F"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -532,7 +532,7 @@
 					id: "5A6B8D1C3E4F9A2B"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -559,7 +559,7 @@
 					id: "3A7028BE54803449"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -567,7 +567,7 @@
 					id: "4C5D7E8F9A1B2C3D"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -594,7 +594,7 @@
 					id: "0C331E9F959C0A62"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -602,7 +602,7 @@
 					id: "43AED903BEEDB569"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -629,7 +629,7 @@
 					id: "662AF6936DCD5940"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -637,7 +637,7 @@
 					id: "7B6C5D4E3F2A1B9D"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -664,7 +664,7 @@
 					id: "7944FE0EF8B21F22"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -672,7 +672,7 @@
 					id: "15DF3BDD278BDDBC"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -699,7 +699,7 @@
 					id: "31C3FDFCD25B446F"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -707,7 +707,7 @@
 					id: "440E0C69B1FD33C4"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -734,7 +734,7 @@
 					id: "7CA47AFC6B7691B0"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -742,7 +742,7 @@
 					id: "2BCEBD0096883FA4"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -768,7 +768,7 @@
 					id: "18E87EB4F177CC77"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -776,7 +776,7 @@
 					id: "7E5613B9E670FEA1"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -803,7 +803,7 @@
 					id: "00D7D871D386691B"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -811,7 +811,7 @@
 					id: "023EB03DCB07E2CB"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -837,7 +837,7 @@
 					id: "25EE477130559B2A"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -864,7 +864,7 @@
 					id: "4F015E0CDF781F22"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -873,7 +873,7 @@
 					id: "381F443819CB89E8"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -900,7 +900,7 @@
 					id: "2FC0BCF3C86C0AA3"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -927,7 +927,7 @@
 					id: "3FB45D7946ADF42A"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -954,7 +954,7 @@
 					id: "53A06EE64F429351"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -963,7 +963,7 @@
 					id: "62A3A4EB38EB4F31"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -990,7 +990,7 @@
 					id: "7218D114EEEEA0D1"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -998,7 +998,7 @@
 					id: "25774C2561E4E8D5"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1025,7 +1025,7 @@
 					id: "62D027F945DBA4B1"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -1033,7 +1033,7 @@
 					id: "4CA4632942F0D2D4"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1060,7 +1060,7 @@
 					id: "706C79B4E224B84E"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -1068,7 +1068,7 @@
 					id: "211E6FC865E565FB"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1095,7 +1095,7 @@
 					id: "41F66F8030D32482"
 					item: {
 						count: 1
-						id: "novus_items:bronze_novus_coin"
+						id: "numismatic-overhaul:bronze_coin"
 					}
 					type: "item"
 				}
@@ -1104,7 +1104,7 @@
 					id: "13129DDA20C883EA"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1131,7 +1131,7 @@
 					id: "4533E17E78A4DDF1"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1158,7 +1158,7 @@
 					id: "73347FBCEC47CD57"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1185,7 +1185,7 @@
 					id: "0B5B11234988CF7A"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1212,7 +1212,7 @@
 					id: "35576A9C4D3343C5"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1239,7 +1239,7 @@
 					id: "02BDF8D639445BBF"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}
@@ -1265,7 +1265,7 @@
 				id: "4EAC6A43525AB949"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1285,7 +1285,7 @@
 				id: "686098D1A6A5A94C"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1305,7 +1305,7 @@
 				id: "32AB323E347F19C7"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1325,7 +1325,7 @@
 				id: "7D6F14DE334390F4"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1345,7 +1345,7 @@
 				id: "308B7287E396CA9B"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1365,7 +1365,7 @@
 				id: "006749AD9B02032C"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1385,7 +1385,7 @@
 				id: "7F815D821D3B0AE4"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1405,7 +1405,7 @@
 				id: "365C6E302D1B6693"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1425,7 +1425,7 @@
 				id: "7D6B4A792566EA51"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1445,7 +1445,7 @@
 				id: "6ED83CBFC2DA604B"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1465,7 +1465,7 @@
 				id: "56F4476C145B38B9"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1485,7 +1485,7 @@
 				id: "69BE1DC7F906195A"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1505,7 +1505,7 @@
 				id: "2C95B61110730D03"
 				item: {
 					count: 1
-					id: "novus_items:bronze_novus_coin"
+					id: "numismatic-overhaul:bronze_coin"
 				}
 				type: "item"
 			}]
@@ -1529,7 +1529,7 @@
 					id: "4D3381A45CAF9F6C"
 					item: {
 						count: 1
-						id: "novus_items:silver_novus_coin"
+						id: "numismatic-overhaul:silver_coin"
 					}
 					type: "item"
 				}

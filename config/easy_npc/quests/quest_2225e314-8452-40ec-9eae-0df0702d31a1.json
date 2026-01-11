@@ -1,0 +1,15 @@
+{
+    "id": "2225e314-8452-40ec-9eae-0df0702d31a1",
+    "title": "废墟中的光",
+    "description": "我是Lucy，避难所的乐观居民。尽管外部环境恶劣，我始终相信光明在前方。现在，避难所的资源有些紧张，我们需要一些基础物资来维持运转。\n\n请前往附近的洞穴，收集2个煤炭。我们需要煤炭来生火和制作工具，以确保避难所的温暖和安全。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 176
+    }
+}

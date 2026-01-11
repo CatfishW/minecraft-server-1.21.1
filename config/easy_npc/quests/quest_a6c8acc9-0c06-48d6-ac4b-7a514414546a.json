@@ -1,0 +1,15 @@
+{
+    "id": "a6c8acc9-0c06-48d6-ac4b-7a514414546a",
+    "title": "幽影追猎",
+    "description": "我是Nick Valentine，一个合成体侦探。在这片方块世界中，我总感觉有些不对劲。最近，村庄外的废弃矿井附近传出低沉的嘶吼声，似乎有什么东西在黑暗中蠢蠢欲动，威胁着村民的安全。\n\n我需要你前往那个废弃矿井，消灭潜伏在其中的僵尸。找出声音的来源，并确保它们不会再骚扰这片区域。这能帮助我们揭开隐藏在矿井深处的秘密。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 128
+    }
+}

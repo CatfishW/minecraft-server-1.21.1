@@ -1,0 +1,15 @@
+{
+    "id": "f671a526-d0b5-42f7-8133-102dc19aa85b",
+    "title": "荒野急援",
+    "description": "我是Minuteman的Preston Garvey。附近的定居点正遭受怪物侵袭和资源短缺的双重危机，村民们在恐惧中挣扎，急需外部支援以避免崩溃。\n\n请前往森林深处的废弃矿井附近，收集5个minecraft:coal。这些燃料将用于加热炉灶，帮助定居点度过寒冷夜晚。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

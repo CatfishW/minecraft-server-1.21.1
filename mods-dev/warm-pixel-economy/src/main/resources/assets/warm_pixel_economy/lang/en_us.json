@@ -40,11 +40,11 @@
   "ui.warm_pixel_economy.auction.title": "Warm Pixel Auctions",
   "ui.warm_pixel_economy.auction.page": "Page %s",
   "ui.warm_pixel_economy.auction.search": "Search: %s",
-  "ui.warm_pixel_economy.auction.hint": "LMB select | RMB buyout",
-  "ui.warm_pixel_economy.auction.starting_price": "Start: %s",
-  "ui.warm_pixel_economy.auction.current_bid": "Bid: %s",
+  "ui.warm_pixel_economy.auction.hint": "LMB Buy Item",
+  "ui.warm_pixel_economy.auction.starting_price": "Price: %s",
+  "ui.warm_pixel_economy.auction.current_bid": "Current: %s",
   "ui.warm_pixel_economy.auction.buyout": "Buyout: %s",
-  "ui.warm_pixel_economy.auction.bid_hint": "Bid with /ah bid %s <amount>",
+  "ui.warm_pixel_economy.auction.bid_hint": "This feature has moved to the confirmation panel",
   "command.warm_pixel_economy.gui_disabled": "GUI disabled.",
   "command.warm_pixel_economy.hold_item_add": "Hold the item to add.",
   "command.warm_pixel_economy.hold_item_list": "Hold the item to list.",
@@ -94,5 +94,6 @@
   "message.warm_pixel_economy.shop_unavailable": "Shop unavailable.",
   "message.warm_pixel_economy.no_active_trade": "No active trade.",
   "message.warm_pixel_economy.offer_mismatch": "Offer mismatch.",
-  "message.warm_pixel_economy.shop_cleared": "Shop cleared successfully."
+  "message.warm_pixel_economy.shop_cleared": "Shop cleared successfully.",
+  "message.warm_pixel_economy.inventory_full": "Inventory full."
 }

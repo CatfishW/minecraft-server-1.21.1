@@ -1,0 +1,15 @@
+{
+    "id": "fbf3c067-7338-43e9-8e3d-033cf47b2581",
+    "title": "守护之夜",
+    "description": "我是Steve Harrington，一个保姆，习惯用球棒保护孩子们。但最近附近的森林深处出现了成群的僵尸，它们在夜晚游荡，威胁着我们的村庄安全。\n\n请前往森林深处，击杀3只僵尸。这样我们才能确保村庄的道路畅通，让孩子们可以安心玩耍。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 123
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "563133d9-84c0-4f84-9e10-338785942c0e",
+    "title": "心灵的试炼",
+    "description": "我，Eleven，能感知到万物间的能量脉动。但最近，一股阴冷的扭曲之力从附近的洞穴深处蔓延开来，它扰乱了我的心念，让我无法安宁。这股暗影若继续扩散，将吞噬这片土地的平衡。\n\n我需要你前往东北方向的废弃矿井，收集5个红石。红石的能量纯净而稳定，它能中和洞穴中的扭曲，恢复我的心灵之力。请小心，那里潜藏着危险。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 186
+    }
+}

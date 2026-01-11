@@ -1,0 +1,15 @@
+{
+    "id": "7a38016f-d188-4629-98de-7e4fd5feeb1e",
+    "title": "暗影中的希望",
+    "description": "我是Adrian Mellon，从Derry的黑暗中走来，仇恨的伤痕至今隐隐作痛。在这个陌生的世界，我仍感到那些恶意的目光，夜晚的怪物如同过去的阴影，不断侵蚀我的庇护所，让我难以安宁。\n\n请前往村庄外的森林深处，收集8个橡木木板，带回给我。这些材料将用于加固我的小屋，抵御那些在黑暗中游荡的威胁，确保我能安全地生活下去。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:oak_planks",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 369
+    }
+}

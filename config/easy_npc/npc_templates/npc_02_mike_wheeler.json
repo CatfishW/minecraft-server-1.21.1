@@ -5,14 +5,16 @@
     "description": "Leader of the party. Loyal and determined.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/MikeWheeler.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2020/08/11/mike-wheeler-stranger-things-s3-15032001.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "嘿，你看起来不像这里的人。小心点，霍金斯最近不太平。我是迈克·惠勒，保卫者小队的...呃，队长。我们经历过很多，和你在DND里打过最史诗的战役，甚至更糟。但只要我们在一起，就没什么解决不了的。",
             "buttons": [
                 {
-                    "label": "清理农场威胁",
-                    "action": "OPEN_QUEST_DIALOG:8d7a6b5e-9f2c-4d3a-8e1b-5c6f4a2d1e9b",
-                    "id": "btn_quest_9182a28d"
-                },
-                {
-                    "label": "亨利的下落",
-                    "action": "OPEN_QUEST_DIALOG:4a1e046c-2745-4f84-8850-d6f5971869f8",
-                    "id": "btn_quest_6936d66c"
-                },
-                {
-                    "label": "失落的指挥棒",
-                    "action": "OPEN_QUEST_DIALOG:2788f278-37c1-439b-a5d9-264b28beed87",
-                    "id": "btn_quest_0dff06e5"
-                },
-                {
-                    "label": "队长的试炼",
-                    "action": "OPEN_QUEST_DIALOG:64254aee-6990-4a18-a157-494701b88df1",
-                    "id": "btn_quest_4c4896db"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:de45be62-c9f9-4614-be07-f5c515fb3ff6,24a1d773-551f-444e-8588-11f6c1c9debf,90ebf2fe-db1d-4628-8c05-da5f7a4bdb2d,6b40d908-b8fe-48d9-a607-b0a7e1941470,dc589d2f-277d-4575-b569-c236ced120db",
+                    "id": "btn_quest_6d573120"
                 },
                 {
                     "label": "保卫者小队？",
@@ -53,6 +40,11 @@
                     "label": "发生了什么？",
                     "action": "SHOW_DIALOG:ask_events",
                     "id": "btn_ask_events"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_8d0bdbcb"
                 }
             ],
             "oneTimeConversation": true
@@ -184,5 +176,15 @@
             "item": "minecraft:writable_book",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

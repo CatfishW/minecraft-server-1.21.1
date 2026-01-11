@@ -1,0 +1,15 @@
+{
+    "id": "407386d6-83a1-4e89-8301-680d1a3d448a",
+    "title": "疑病之影",
+    "description": "我，Eddie Kaspbrak，总是感觉喉咙发紧、呼吸困难，仿佛四周的空气里藏着看不见的病菌。这该死的疑病症让我时刻依赖着吸入器，但恐惧依旧如影随形，我必须找到一些东西来安抚这不安的心灵。\n\n请前往村庄外的麦田，收集5个小麦。小麦是健康的基础，用它制作食物可以增强我的体质，减少我对疾病的担忧。记住，只有亲眼见到金黄的麦穗，我才能暂时放下心中的阴影。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 168
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "420a31df-840d-4643-9c08-cfdc6c2574d0",
+    "title": "历史的回响",
+    "description": "我是迪里的历史守护者，但最近村庄附近的森林深处出现了许多僵尸，它们在破坏那些承载着我们古老记忆的石碑。如果再不行动，迪里的历史将彻底湮没在遗忘之中。\n\n请前往村庄外的森林，杀死5只僵尸，以保护这些珍贵的历史记录。因为僵尸正在啃食石碑，你需要清除它们来确保历史的传承不会中断。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 317
+    }
+}

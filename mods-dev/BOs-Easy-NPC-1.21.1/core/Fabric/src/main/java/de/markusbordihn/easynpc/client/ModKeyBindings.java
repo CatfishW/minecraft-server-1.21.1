@@ -84,7 +84,7 @@ public class ModKeyBindings {
       if (client.player != null) {
         String status = enabled ? "§aEnabled" : "§cDisabled";
         client.player.displayClientMessage(
-            Component.literal("§6[EasyNPC] §7Spawn Timer Overlay: " + status), true);
+            Component.literal("§6[Warm Pixel] §7Spawn Timer Overlay: " + status), true);
       }
     }
 
@@ -93,7 +93,7 @@ public class ModKeyBindings {
       if (client.player != null) {
         String status = enabled ? "§aEnabled" : "§cDisabled";
         client.player.displayClientMessage(
-            Component.literal("§6[EasyNPC] §7Quest Overlay: " + status), true);
+            Component.literal("§6[Warm Pixel] §7Quest Overlay: " + status), true);
       }
     }
 
@@ -102,7 +102,7 @@ public class ModKeyBindings {
       if (client.player != null) {
         String status = enabled ? "§aEnabled" : "§cDisabled";
         client.player.displayClientMessage(
-            Component.literal("§6[EasyNPC] §7Quest Descriptions: " + status), true);
+            Component.literal("§6[Warm Pixel] §7Quest Descriptions: " + status), true);
       }
     }
 

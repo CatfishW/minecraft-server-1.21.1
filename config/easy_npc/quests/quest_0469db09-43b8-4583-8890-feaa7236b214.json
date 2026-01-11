@@ -1,0 +1,15 @@
+{
+    "id": "0469db09-43b8-4583-8890-feaa7236b214",
+    "title": "古卷之谜",
+    "description": "我是Mike Hanlon，迪里历史的守护者。最近，我发现一些古老的卷轴被森林中的僵尸破坏，这些卷轴记录着我们村庄的起源。如果不找回它们，我们的历史将永远消失。\n\n请前往西边的森林深处，找到并收集3本古老的书（minecraft:book）。这些书散落在废弃矿井的角落，你需要将它们带回给我，以保护迪里的历史。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:book",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 186
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "2a58e667-990f-4989-9db7-ac5b4a9f70e9",
+    "title": "铁腕守护",
+    "description": "作为镇子的警长，我受够了这些夜晚游荡的怪物。它们总是在森林深处出没，吓唬村民，甚至袭击落单的人。我这张老脸已经够 grumpy 了，不能再让任何无辜者受伤。\n\n你得去附近的森林，消灭至少5只僵尸。这样我们才能让镇子恢复安宁，确保大家能安心睡觉。别让我失望，小子。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 431
+    }
+}

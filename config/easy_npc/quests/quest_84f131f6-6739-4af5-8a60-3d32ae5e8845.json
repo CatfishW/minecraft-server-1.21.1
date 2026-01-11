@@ -1,0 +1,15 @@
+{
+    "id": "84f131f6-6739-4af5-8a60-3d32ae5e8845",
+    "title": "铁血肃清令",
+    "description": "吾乃兄弟会之首，Elder Maxson。附近的森林深处近日僵尸横行，阻断了我们的补给路线，兄弟会的荣耀正遭受威胁，此等亵渎绝不可恕。\n\n你需前往森林深处，击杀至少五只僵尸，以确保道路安全。这是对你忠诚的考验，速去执行，不得延误！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 169
+    }
+}

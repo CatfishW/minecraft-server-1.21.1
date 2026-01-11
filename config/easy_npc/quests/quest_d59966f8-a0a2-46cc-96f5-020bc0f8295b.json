@@ -1,0 +1,15 @@
+{
+    "id": "d59966f8-a0a2-46cc-96f5-020bc0f8295b",
+    "title": "黑暗中的召唤",
+    "description": "我...我...我们Losers一直躲在村庄外的废弃矿井里，但最近僵尸群袭击了我们，我的朋友Mike受伤了。那些怪物在矿井深处徘徊，我们不能再失去更多人了，否则整个藏身点都会沦陷。\n\n请前往那个废弃矿井，杀死至少5只僵尸。只有清除这些威胁，我们才能安全返回并修复庇护所，避免更多人受害。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 80
+    }
+}

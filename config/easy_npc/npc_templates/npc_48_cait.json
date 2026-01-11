@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "看什么看？想找茬是吗？我告诉你，我可是全联邦最硬的拳头。以前在那个该死的笼子里，每天都要把别人打个半死，或者被别人打个半死。如果你想挑战我，先掂量掂量自己的骨头够不够硬。",
             "buttons": [
                 {
-                    "label": "格斗家的试炼",
-                    "action": "OPEN_QUEST_DIALOG:e2456256-3e58-461d-bf15-11228e7938d4",
-                    "id": "btn_quest_556b395e"
-                },
-                {
-                    "label": "铁笼热身",
-                    "action": "OPEN_QUEST_DIALOG:5b314e0d-5d35-4b0c-b41b-bb3d982d9462",
-                    "id": "btn_quest_571919fa"
-                },
-                {
-                    "label": "铁匠的委托",
-                    "action": "OPEN_QUEST_DIALOG:25629e12-7010-41a5-89bb-91f784ba4f4b",
-                    "id": "btn_quest_5e1d9a55"
-                },
-                {
-                    "label": "地下拳场的挑战",
-                    "action": "OPEN_QUEST_DIALOG:272c3305-59ec-46fa-adb3-680f77d0270a",
-                    "id": "btn_quest_5c1866d5"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e0f63544-b7f4-454b-873f-9aaaa2ff5715,071e985f-b6a9-4632-91fa-238cfb1f2702,c6e85a52-6310-4461-85d4-530b209a7e74,47d4ea21-0240-45b4-8db1-d74bcf2c1c97,10caef35-e2f3-4520-8c0b-9d46a44e6dab",
+                    "id": "btn_quest_dca5dad1"
                 },
                 {
                     "label": "你以前是打黑拳的？",
@@ -53,6 +40,11 @@
                     "label": "我想和你比划比划",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_fight"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_df6ab612"
                 }
             ],
             "oneTimeConversation": true
@@ -124,5 +116,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

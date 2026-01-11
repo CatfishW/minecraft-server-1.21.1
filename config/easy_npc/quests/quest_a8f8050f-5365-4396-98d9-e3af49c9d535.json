@@ -1,0 +1,15 @@
+{
+    "id": "a8f8050f-5365-4396-98d9-e3af49c9d535",
+    "title": "废土的呼唤",
+    "description": "我是Goodneighbor的市长Hancock，这片废土总是充满威胁。最近，村庄外的森林深处出现了成群的僵尸，它们在夜色中游荡，袭击我们的居民，抢夺资源。我的子民们惶恐不安，我需要有人站出来。\n\n请前往村庄外的森林深处，消灭6只僵尸。这不仅是为了保护Goodneighbor的和平，也是为了给那些在黑暗中挣扎的人们一线生机。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 6
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 122
+    }
+}

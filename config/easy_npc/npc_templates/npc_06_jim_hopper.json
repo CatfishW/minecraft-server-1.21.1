@@ -5,14 +5,16 @@
     "description": "Police Chief. Grumpy but protective.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/JimHopper.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/04/26/hopper-skin-fortnite-12954643.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "孩子，这里不是你该来的地方。霍金斯最近不太平，到处都是些说不清道不明的怪事。如果你只是路过，我建议你赶紧离开；如果你有麻烦，最好现在就说清楚。这雨下得让人心烦，我也懒得跟你绕弯子。",
             "buttons": [
                 {
-                    "label": "清理下水道",
-                    "action": "OPEN_QUEST_DIALOG:5b3d2a1f-8c9e-4a7b-9d1e-3f5b8c2a1d9e",
-                    "id": "btn_quest_867448a9"
-                },
-                {
-                    "label": "清理下水道",
-                    "action": "OPEN_QUEST_DIALOG:a4f7c210-3b5e-4d8f-9c1a-2e6d8f0b1a3c",
-                    "id": "btn_quest_6ed6b593"
-                },
-                {
-                    "label": "镇长的烦恼",
-                    "action": "OPEN_QUEST_DIALOG:81493105-2f2e-4d76-af9b-de62da09544c",
-                    "id": "btn_quest_8aa01fa9"
-                },
-                {
-                    "label": "治安官的委托",
-                    "action": "OPEN_QUEST_DIALOG:5e50de30-6ca7-42ad-8e93-1a87137ce156",
-                    "id": "btn_quest_7ccbf738"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:992550f2-1375-4a6c-acce-12627c807424,dda56e72-2ed6-4edb-8319-4b14e8a0353c,49a3e108-6ef2-475d-8572-b9641e7b4f5a,d2f223dd-87de-426c-b180-074a4b75c39d,2a58e667-990f-4989-9db7-ac5b4a9f70e9",
+                    "id": "btn_quest_67b4219e"
                 },
                 {
                     "label": "询问怪事",
@@ -53,6 +40,11 @@
                     "label": "提到乔伊斯",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_mention_joyce"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_b76030d0"
                 }
             ],
             "oneTimeConversation": true
@@ -214,5 +206,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

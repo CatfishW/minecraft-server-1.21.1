@@ -1,0 +1,15 @@
+{
+    "id": "90ebf2fe-db1d-4628-8c05-da5f7a4bdb2d",
+    "title": "希望的种子",
+    "description": "我是Mike Wheeler，团队的领袖。我们的村庄正遭受旱灾，食物短缺，村民们生活艰难。作为领导者，我必须带领大家走出困境，确保每个人都能吃饱。\n\n请前往村庄外的麦田，收集10个小麦（minecraft:wheat）。这些小麦将用于制作面包，缓解食物危机。行动要快，人民在等待！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 349
+    }
+}

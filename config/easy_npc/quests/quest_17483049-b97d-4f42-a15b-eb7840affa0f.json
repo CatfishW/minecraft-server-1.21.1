@@ -1,0 +1,15 @@
+{
+    "id": "17483049-b97d-4f42-a15b-eb7840affa0f",
+    "title": "废土寻踪",
+    "description": "我是Vault的流亡者，我们的水芯片彻底损坏了，避难所的水储备正在急速枯竭。在这片荒芜的废土上，每滴水都关乎生死，我们急需找到替代方案来修复供水系统。\n\n请前往森林深处的废弃矿井，收集5个红石粉。红石是激活水净化装置的核心材料，只有修复电路，才能恢复水源，拯救整个避难所。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 455
+    }
+}

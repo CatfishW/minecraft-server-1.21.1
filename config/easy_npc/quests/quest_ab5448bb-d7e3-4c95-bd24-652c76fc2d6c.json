@@ -1,0 +1,15 @@
+{
+    "id": "ab5448bb-d7e3-4c95-bd24-652c76fc2d6c",
+    "title": "夜幕下的守护",
+    "description": "我是村庄的守卫，最近僵尸在夜晚频繁袭击，村民们都躲在屋里不敢出来，村外的农田也快被毁了。\n\n请你前往村庄外的森林深处，杀死5只僵尸，以保护我们的家园免受侵害。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 348
+    }
+}

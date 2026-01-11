@@ -5,14 +5,16 @@
     "description": "The survivor. Has a connection to the Upside Down.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/WillByers.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2018/11/25/will-stranger-things-12615072.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,14 +27,9 @@
             "greeting": "哦，你好。你是新来的吗？我叫威尔·拜尔斯。小心点，霍金斯的冬天很长，而且...有时候会很冷，不是那种普通的冷。就好像有扇门开着，冷风从一个不该存在的地方吹进来。你感觉到了吗？那种...注视感。",
             "buttons": [
                 {
-                    "label": "来自阴影的威胁",
-                    "action": "OPEN_QUEST_DIALOG:7c3b1e2a-4d5f-4a8e-9b2c-3f6d1e9a8b4c",
-                    "id": "btn_quest_3cc97987"
-                },
-                {
-                    "label": "裂隙回响",
-                    "action": "OPEN_QUEST_DIALOG:a63ccdaa-0f0d-439a-9a69-17341b690811",
-                    "id": "btn_quest_1af781cd"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:98fa3911-96cb-448b-9884-c96454ef7b0a,d5fc8be7-0952-457c-900a-3b1a92d7f00b,3cfd713a-afdc-4cf8-8c8b-ce85610dc25e,66ffb4ae-391f-4550-b9b2-5d6e385e79cb,d191ff84-407d-493d-8930-625e1f501bc0",
+                    "id": "btn_quest_7bbe3131"
                 },
                 {
                     "label": "你感觉到了什么？",
@@ -43,6 +40,11 @@
                     "label": "你经历过什么？",
                     "action": "SHOW_DIALOG:ask_past",
                     "id": "btn_ask_past"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_25c087c7"
                 }
             ],
             "oneTimeConversation": true
@@ -204,5 +206,15 @@
             "item": "minecraft:stone_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

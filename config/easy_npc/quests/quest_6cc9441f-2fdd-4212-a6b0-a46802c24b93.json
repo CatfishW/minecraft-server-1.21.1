@@ -1,0 +1,15 @@
+{
+    "id": "6cc9441f-2fdd-4212-a6b0-a46802c24b93",
+    "title": "能源的呼唤",
+    "description": "我的能源核心正在缓慢流失，作为一台精密的机器人管家，我无法在缺乏燃料的情况下继续维护这片荒野的秩序。煤炭的短缺让我陷入了困境，如果再不补充，我恐怕会陷入沉睡，永远无法履行我的职责。\n\n请前往附近的废弃矿井，收集4个煤炭（minecraft:coal），将它们带回给我。这些煤炭是维持我运作的关键，废弃矿井中散落的矿石堆是找到它们的最佳地点。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 81
+    }
+}

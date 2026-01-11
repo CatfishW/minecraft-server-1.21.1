@@ -5,14 +5,16 @@
     "description": "Possesses psychokinetic abilities. Mysterious and powerful.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/Eleven.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2021/02/19/eleven--from-stranger-things--16831566.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你来了。我能感觉到你的...思想。它们在我的脑海里像无数个微小的声音在嗡嗡作响。我叫 Eleven，但我以前也有过别的名字，那些名字现在都不重要了。重要的是现在，是这个时刻，是你为什么会站在这里，直视着我。",
             "buttons": [
                 {
-                    "label": "超感应测试",
-                    "action": "OPEN_QUEST_DIALOG:5e3a8f12-b4c5-4d0a-9c1b-6e7d8f9a0b1c",
-                    "id": "btn_quest_2c8ea0c4"
-                },
-                {
-                    "label": "未知的波动",
-                    "action": "OPEN_QUEST_DIALOG:b51a6d01-99e8-41b2-8654-653b1e039e55",
-                    "id": "btn_quest_68dbf51d"
-                },
-                {
-                    "label": "能量过载",
-                    "action": "OPEN_QUEST_DIALOG:ed5e9f8b-6651-46ee-a4d6-fbbe2c46e93a",
-                    "id": "btn_quest_34b963e9"
-                },
-                {
-                    "label": "破碎的共鸣",
-                    "action": "OPEN_QUEST_DIALOG:c869a52f-24fd-4b52-8ac3-82bcaf530113",
-                    "id": "btn_quest_aef7b3c6"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:f145347e-d962-4d21-a1d1-21ec44255a8f,563133d9-84c0-4f84-9e10-338785942c0e,7af07e24-2268-48b2-8fc6-efb9f2b14b7b,7c46987d-c0b1-440e-8209-cbb80b0a3261,a0e7b573-d114-4350-ba49-f8d67ab7e60a",
+                    "id": "btn_quest_6dfac6e8"
                 },
                 {
                     "label": "询问她的能力",
@@ -53,6 +40,11 @@
                     "label": "询问她的过去",
                     "action": "SHOW_DIALOG:ask_past",
                     "id": "btn_ask_past"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_8cabe7fe"
                 }
             ],
             "oneTimeConversation": true
@@ -199,5 +191,15 @@
             "item": "minecraft:stone_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

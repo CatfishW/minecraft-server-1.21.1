@@ -5,14 +5,16 @@
     "description": "A fierce mother. Never gives up.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/JoyceByers.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/07/joyce---hs-ver--23775307.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "你是谁？我不认识你。如果你是来找乔纳森或者威利的，他们不在家。我正忙着呢，你看这灯泡又开始不对劲了，忽明忽暗的。我得检查一下线路，这很重要，不能有任何差错，绝对不能。",
             "buttons": [
                 {
-                    "label": "为母则刚",
-                    "action": "OPEN_QUEST_DIALOG:1a2b3c4d-5e6f-7890-1234-567890abcdef",
-                    "id": "btn_quest_a3cb305c"
-                },
-                {
-                    "label": "母亲的寻子启事",
-                    "action": "OPEN_QUEST_DIALOG:f7161412-fa40-4c3b-a530-25419e28c58f",
-                    "id": "btn_quest_e4c3a172"
-                },
-                {
-                    "label": "绝望的母爱",
-                    "action": "OPEN_QUEST_DIALOG:91dda42a-ca71-4fea-9d49-3d6b4d0b0d03",
-                    "id": "btn_quest_25a78c7b"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4a4d0e70-f258-4a90-81c4-064502e8e3ac,7917f168-b96c-491b-84c9-dce1c2f9c0bf,86156073-71ff-4553-a069-59bbe05fb209,82d7b325-c41b-4d46-8528-aafa17b6f7a2,8b0e0e2f-e9ac-455f-af87-b7fb6f47f090",
+                    "id": "btn_quest_50d12078"
                 },
                 {
                     "label": "询问灯泡的事",
@@ -48,6 +40,11 @@
                     "label": "询问威利",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_ask_will"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_d00efcfc"
                 }
             ],
             "oneTimeConversation": true
@@ -224,5 +221,15 @@
             "item": "minecraft:spyglass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

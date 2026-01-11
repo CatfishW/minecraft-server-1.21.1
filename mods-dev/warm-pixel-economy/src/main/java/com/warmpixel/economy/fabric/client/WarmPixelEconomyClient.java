@@ -17,6 +17,8 @@ public class WarmPixelEconomyClient implements ClientModInitializer {
         MenuScreens.register(ShopScreenHandlers.SHOP_BROWSER, ShopBrowserScreen::new);
         MenuScreens.register(ShopScreenHandlers.SHOP_TRADE, ShopTradeScreen::new);
         MenuScreens.register(AuctionScreenHandlers.AUCTION_BROWSER, AuctionBrowserScreen::new);
+        MenuScreens.register(AuctionScreenHandlers.AUCTION_CONFIRM, AuctionConfirmScreen::new);
+
         ClientPlayNetworking.registerGlobalReceiver(ShopTradeResultPayload.TYPE, (payload, context) -> {
             context.client().execute(() -> {
                 if (context.client().screen instanceof ShopTradeScreen tradeScreen) {

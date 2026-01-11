@@ -1,0 +1,15 @@
+{
+    "id": "486b6e11-6172-4e4a-85e6-4f1d13a991e9",
+    "title": "幽林谜踪",
+    "description": "我是Publick Occurrences的记者Piper Wright。最近，附近的森林深处传来阵阵怪异的嘶吼声，村民们人心惶惶，都说是怪物在暗中作祟。我身为记者，必须揭露这背后的真相，但独自调查风险太大，急需有力证据来完成一篇震撼的报道。\n\n请前往森林深处，杀死至少3只僵尸，收集它们的腐肉作为证据。这片森林危机四伏，你的行动不仅能帮我证实怪物的存在，还能警示更多冒险者远离危险。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 72
+    }
+}

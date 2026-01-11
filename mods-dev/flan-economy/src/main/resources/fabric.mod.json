@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "flan_economy",
+  "version": "${version}",
+  "name": "Flan Economy",
+  "description": "Integrates Numismatic economy with Flan land claims - buy claim blocks and claims with money",
+  "authors": ["Flan Economy Team"],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.flaneconomy.FlanEconomyMod"
+    ],
+    "client": [
+      "com.flaneconomy.client.FlanEconomyClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric": "*",
+    "minecraft": "1.21.1"
+  },
+  "recommends": {
+    "numismaticoverhaul": "*",
+    "flan": "*"
+  }
+}

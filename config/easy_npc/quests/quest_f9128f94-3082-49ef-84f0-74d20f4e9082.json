@@ -1,0 +1,15 @@
+{
+    "id": "f9128f94-3082-49ef-84f0-74d20f4e9082",
+    "title": "无畏探索",
+    "description": "嘿，英雄！这个乱糟糟的世界需要一点美国式的秩序，而我Erica，就是来整顿它的。但我的计划需要你的帮助，别让我这个聪明人失望。\n\n请前往附近的洞穴，收集5个铁锭。我需要用它们来制作一个能激励团队的装置，这样我们才能面对更大的挑战。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 108
+    }
+}

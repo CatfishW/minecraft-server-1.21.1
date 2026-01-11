@@ -1,0 +1,15 @@
+{
+    "id": "0deeb608-4b06-4573-bd7e-02e4ac1a2a44",
+    "title": "街头的回响",
+    "description": "嘿，我是Max，我的滑板在上次穿越森林深处的冒险中彻底报废了。这破玩意儿是我唯一的代步工具，现在我只能徒步，太不酷了。我需要一些能抗住跳跃和摩擦的材料来重做一个。\n\n请去废弃矿井收集3个黑曜石，带回来给我。黑曜石在矿井深处很常见，但那里可能有敌人，所以小心点。为什么需要它？因为只有黑曜石的硬度才能配得上我的风格。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:obsidian",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 87
+    }
+}

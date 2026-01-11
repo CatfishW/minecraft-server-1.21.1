@@ -1,0 +1,15 @@
+{
+    "id": "dc5c58a0-f11e-4c78-bcd1-2e8e410fd01b",
+    "title": "烈焰的渴望",
+    "description": "我受够了这些软弱无力的火苗！它们根本无法满足我对烈焰的狂热。我需要真正的火焰，能吞噬一切、照亮黑暗的烈火！\n\n去森林深处，收集5个火药。火药能制造爆炸，点燃更猛烈的火焰，实现我的欲望。但要小心，苦力怕在森林中游荡，它们守护着火药。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gunpowder",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 98
+    }
+}

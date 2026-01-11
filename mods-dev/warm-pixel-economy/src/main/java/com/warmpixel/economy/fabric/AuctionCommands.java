@@ -33,14 +33,10 @@ public final class AuctionCommands {
                                 .then(Commands.argument("duration", IntegerArgumentType.integer(60))
                                         .executes(context -> listAuction(context, LongArgumentType.getLong(context, "buyout"), IntegerArgumentType.getInteger(context, "duration")))))));
 
-        root.then(Commands.literal("bid")
-                .then(Commands.argument("listingId", StringArgumentType.word())
-                        .then(Commands.argument("amount", LongArgumentType.longArg(1))
-                                .executes(AuctionCommands::bid))));
-
         root.then(Commands.literal("buyout")
                 .then(Commands.argument("listingId", StringArgumentType.word())
                         .executes(AuctionCommands::buyout)));
+
 
         root.then(Commands.literal("cancel")
                 .then(Commands.argument("listingId", StringArgumentType.word())
@@ -72,21 +68,6 @@ public final class AuctionCommands {
         long expiresAt = System.currentTimeMillis() + duration * 1000L;
         WarmPixelEconomyMod.getContext().auctionService().createListing(player, stack, stack.getCount(), startPrice,
                         buyoutPrice <= 0 ? null : buyoutPrice, expiresAt, WarmPixelEconomyMod.getContext().config().defaultCurrency)
-                .thenAccept(result -> {
-                    if (result.success()) {
-                        context.getSource().sendSuccess(() -> resultComponent(result), false);
-                    } else {
-                        context.getSource().sendFailure(resultComponent(result));
-                    }
-                });
-        return 1;
-    }
-
-    private static int bid(CommandContext<CommandSourceStack> context) {
-        ServerPlayer player = context.getSource().getPlayer();
-        String listingId = StringArgumentType.getString(context, "listingId");
-        long amount = LongArgumentType.getLong(context, "amount");
-        WarmPixelEconomyMod.getContext().auctionService().placeBid(player, listingId, amount, WarmPixelEconomyMod.getContext().config().defaultCurrency)
                 .thenAccept(result -> {
                     if (result.success()) {
                         context.getSource().sendSuccess(() -> resultComponent(result), false);
@@ -132,3 +113,4 @@ public final class AuctionCommands {
         return Component.translatable(result.messageKey(), result.messageArgs());
     }
 }
+

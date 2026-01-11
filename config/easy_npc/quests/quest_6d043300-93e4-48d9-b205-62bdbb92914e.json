@@ -1,0 +1,15 @@
+{
+    "id": "6d043300-93e4-48d9-b205-62bdbb92914e",
+    "title": "希望的种子",
+    "description": "我是Lucy，一个乐观的地下室居民。虽然我们的食物储备快要耗尽了，但我相信我们能找到解决办法！地下室的灯光总是那么温暖，但我们需要更多食物来维持活力。\n\n请去附近的村庄外，收集5个小麦。小麦是制作面包的基础，这样我们就能有稳定的食物来源了。记得在白天去，那里比较安全。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 67
+    }
+}

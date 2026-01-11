@@ -1,0 +1,15 @@
+{
+    "id": "d15d23e8-464b-4a8d-b0e5-ac571b4dae86",
+    "title": "仁慈的寻求",
+    "description": "我是一个超级变种人，虽然力量无穷，但内心却饱受折磨。我一直在寻找传说中的仁慈之乳，它能安抚我的灵魂，让我感受到久违的平和。\n\n请帮助我收集3个牛奶桶，你可以去附近的牧场或村庄外寻找奶牛，挤取它们的牛奶。牛奶的纯净象征着仁慈，或许能缓解我内心的痛苦。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 150
+    }
+}

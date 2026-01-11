@@ -1,0 +1,15 @@
+{
+    "id": "888a2df1-76f6-4e76-b32a-f86acb2ff4a3",
+    "title": "腐化之源",
+    "description": "我这腐烂的身躯承载着IT的恶心化身，它在我的血液中低语，像霉菌一样在附近蔓延。那些被腐化的生物从洞穴中爬出，污染了村庄的宁静，让我的痛苦永无止境。\n\n为了终结这诅咒，请前往村庄外的森林深处，消灭5只被腐化的僵尸。只有铲除这些IT的爪牙，才能暂时压制我体内的恶心力量。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 189
+    }
+}

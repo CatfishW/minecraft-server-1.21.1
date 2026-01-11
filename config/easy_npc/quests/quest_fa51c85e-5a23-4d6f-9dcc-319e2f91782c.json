@@ -1,0 +1,15 @@
+{
+    "id": "fa51c85e-5a23-4d6f-9dcc-319e2f91782c",
+    "title": "森林守护者",
+    "description": "我是Lucas Sinclair，一名游侠，常年守护着这片森林。最近，村庄外的林地深处有僵尸频繁出没，它们袭击了过往的村民，威胁着我们的安全。作为游侠，我不能坐视不管，但单凭我一人之力难以应对。\n\n请你前往村庄外的森林深处，杀死5只僵尸。这样能有效清除威胁，保护村民的安危，确保森林的宁静恢复。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 310
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "bc6f45f4-dd87-497d-bb1a-b8ca20dd2eff",
+    "title": "幽谷的证言",
+    "description": "同志，我感知到地下深处有异常的能量波动，那些阴影中的生物正在秘密集结。克格勃的遗物可能就藏在附近的废弃矿井中，我们必须揭露这个阴谋。\n\n你必须前往村庄外的废弃矿井，收集3个骷髅的骨头。这些骨头是那些不死生物的残留物，只有通过分析它们，我才能证明我的理论是正确的。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

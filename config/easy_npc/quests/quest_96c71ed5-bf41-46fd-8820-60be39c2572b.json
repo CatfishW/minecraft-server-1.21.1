@@ -1,0 +1,15 @@
+{
+    "id": "96c71ed5-bf41-46fd-8820-60be39c2572b",
+    "title": "荒原危机",
+    "description": "指挥官，我们又有一个定居点陷入了困境。最近森林深处的怪物活动越来越频繁，村民们日夜不安，资源也快耗尽了。作为Minuteman，我们不能坐视不管，必须立刻行动。\n\n请前往定居点外的森林深处，击杀5只僵尸。这些怪物威胁着村民的安全，只有清除它们，我们才能稳定局势，继续为更多人提供庇护。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 78
+    }
+}

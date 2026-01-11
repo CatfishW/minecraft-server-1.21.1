@@ -1,0 +1,15 @@
+{
+    "id": "18c54783-e36c-433d-8b36-fc2b9578a283",
+    "title": "森林的阴影",
+    "description": "我是Lucas Sinclair，一名游侠。这片森林一直是我守护的领域，但最近，森林深处的僵尸愈发猖獗，它们不仅破坏了自然的宁静，还威胁着村庄的安危。作为现实的守护者，我深知必须采取行动，否则更多无辜者将受害。\n\n请你前往森林深处，杀死5只僵尸。只有清除这些怪物，我们才能确保村庄的安全，让这片土地重归和平。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 186
+    }
+}

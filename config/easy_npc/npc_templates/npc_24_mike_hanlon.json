@@ -5,14 +5,16 @@
     "description": "The keeper of Derry's history.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/MikeHanlon.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2017/08/30/skin_20170830030659157777.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,19 +27,9 @@
             "greeting": "你来了。我一直在这里等着。Derry从不遗忘，即使人们强迫自己遗忘。作为图书管理员，我是这里的记忆守护者。我知道每一个失踪案，每一处异常的暴力。你想知道什么？关于过去的，还是关于……即将发生的？",
             "buttons": [
                 {
-                    "label": "德里的往事",
-                    "action": "OPEN_QUEST_DIALOG:9b1c3e2f-5a4d-4b8a-9c1d-7e6f2a3b5c8d",
-                    "id": "btn_quest_8d9872c8"
-                },
-                {
-                    "label": "湮灭神节的仪式",
-                    "action": "OPEN_QUEST_DIALOG:b72d42d8-145d-47a3-93d9-95291e9b72ed",
-                    "id": "btn_quest_d1469fce"
-                },
-                {
-                    "label": "遗忘的低语",
-                    "action": "OPEN_QUEST_DIALOG:3399ddd6-5f37-4461-a7f3-1a818d71abc0",
-                    "id": "btn_quest_786af44b"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:83dbce1b-1f65-4f8f-af7d-d7e81796831a,01bd951a-f9fe-473c-b2ae-4dddb0c045de,420a31df-840d-4643-9c08-cfdc6c2574d0,0469db09-43b8-4583-8890-feaa7236b214,eb6d53ed-7d3a-4cfe-8cf0-c3250cee54f0",
+                    "id": "btn_quest_1a698d13"
                 },
                 {
                     "label": "告诉我Derry的历史",
@@ -48,6 +40,11 @@
                     "label": "我们该如何面对它？",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_mike_future"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_3db62238"
                 }
             ],
             "oneTimeConversation": true
@@ -194,5 +191,15 @@
             "item": "minecraft:compass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

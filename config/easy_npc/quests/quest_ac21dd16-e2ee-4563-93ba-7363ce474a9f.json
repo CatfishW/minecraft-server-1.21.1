@@ -1,0 +1,15 @@
+{
+    "id": "ac21dd16-e2ee-4563-93ba-7363ce474a9f",
+    "title": "迷雾猎影",
+    "description": "我是南希·惠勒，一名调查记者。最近在村庄外的森林深处，我发现了一些异常的僵尸活动痕迹，它们似乎在守护着某个重要秘密，而我的相机无法捕捉到真相的核心，这让我陷入困境。\n\n请前往附近的废弃矿井，杀死5只僵尸。这些怪物身上可能携带着关键线索，这能帮助我揭露隐藏在迷雾背后的阴谋。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 364
+    }
+}

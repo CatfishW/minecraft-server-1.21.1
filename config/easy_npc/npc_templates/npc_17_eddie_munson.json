@@ -5,14 +5,16 @@
     "description": "Hellfire Club leader. Metalhead hero.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/EddieMunson.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2024/07/02/eddie-munson-22658994.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "嘿，朋友！欢迎来到地狱火俱乐部的领地。别被那些谣言吓到了，我可不是什么邪教头子，我只是个热爱摇滚和桌游的普通人。当然，在这个沉闷的霍金斯小镇，做个普通人就已经够叛逆了。",
             "buttons": [
                 {
-                    "label": "地狱火的试炼",
-                    "action": "OPEN_QUEST_DIALOG:943a3f3c-1f4a-4d28-9469-64a1069239a5",
-                    "id": "btn_quest_dffc2173"
-                },
-                {
-                    "label": "讨伐潜伏者",
-                    "action": "OPEN_QUEST_DIALOG:e2e2154f-415f-43d3-885c-414161e3c3a1",
-                    "id": "btn_quest_37315eb0"
-                },
-                {
-                    "label": "地狱火的召唤",
-                    "action": "OPEN_QUEST_DIALOG:086259f2-880a-4ccf-9952-56f187525e81",
-                    "id": "btn_quest_dd5489d9"
-                },
-                {
-                    "label": "地狱火的金属怒火",
-                    "action": "OPEN_QUEST_DIALOG:0f092b15-6370-40e5-8a65-6f0b8712e9d1",
-                    "id": "btn_quest_1c93bdb4"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:50168182-5776-40ec-a5a0-491592a6119c,11eb7a8a-e5ea-42d9-b4a8-3a20c4fa8da0,7b4ea03a-5ed2-4cd5-bdc0-03e1144324d1,88cd0001-351f-49a5-9abb-5ba9bf5a3573,35c24236-646a-4d06-a046-f71678a6321e",
+                    "id": "btn_quest_009cbed9"
                 },
                 {
                     "label": "你在玩什么游戏？",
@@ -53,6 +40,11 @@
                     "label": "听说你在散播邪教？",
                     "action": "SHOW_DIALOG:rumors",
                     "id": "btn_rumors"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_847ebe99"
                 }
             ],
             "oneTimeConversation": true
@@ -214,5 +206,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

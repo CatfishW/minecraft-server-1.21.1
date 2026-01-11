@@ -1,0 +1,15 @@
+{
+    "id": "6b40d908-b8fe-48d9-a607-b0a7e1941470",
+    "title": "守护的誓言",
+    "description": "我是Mike Wheeler，这个团队的领袖。我们的村庄正面临僵尸的侵袭，它们从废弃矿井中爬出，威胁着我们的家园和农田。作为忠诚的领导者，我必须确保每个人的安全，但我们的资源正在枯竭，迫切需要行动来扭转局势。\n\n我需要你前往村庄外的森林深处，杀死5只僵尸。这样做能减少僵尸的数量，保护营地免受进一步袭击，确保团队的生存。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 111
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "6bf8d649-b480-4137-acfd-0f18134f8ff1",
+    "title": "铁血肃清",
+    "description": "兄弟会的边境正遭受不死生物的猛烈冲击，森林深处的僵尸群日益增多，威胁着我们的补给线与日常秩序。作为领袖，我无法容忍这种混乱，必须立即采取行动以维护纪律。\n\n你必须前往附近的森林深处，清除至少5个僵尸。只有根除这些怪物，我们才能确保领地安全，恢复兄弟会的铁律。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 51
+    }
+}

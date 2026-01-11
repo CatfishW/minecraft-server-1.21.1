@@ -1,0 +1,15 @@
+{
+    "id": "00d99da9-706e-4bd3-b817-039a9f904c78",
+    "title": "守护之心",
+    "description": "我们的团队正面临着食物短缺的危机，大家饥肠辘辘，士气低落。作为团队的核心，我必须挺身而出，确保每个人都能有足够的力量继续前行，不能让任何一员掉队。\n\n请前往村庄外的森林深处收集10个小麦。我们需要这些小麦来制作面包，恢复团队的体力，让大家在冒险中保持团结和希望。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 477
+    }
+}

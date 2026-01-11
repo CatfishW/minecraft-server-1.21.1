@@ -8,7 +8,9 @@
     "/kubejs/**",
     "!/kubejs/server_scripts/**",
     "/emotes/*",
-    "/tacz/*"
+    "/tacz/*",
+    "/config/physicsmod/physics_client_config.json",
+    "/resourcepacks/*.zip"
   ],
   "allowEditsInFiles": [
     "/options.txt",

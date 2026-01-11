@@ -85,10 +85,10 @@ public class CommandActionExecutor {
       return;
     }
     int ownerPermissionLevel = actionEventData.getActionPermissionLevel();
-    if (ownerPermissionLevel > 3) {
-      ownerPermissionLevel = 3;
-    } else if (ownerPermissionLevel <= 0) {
-      ownerPermissionLevel = 1;
+    if (ownerPermissionLevel > 4) {
+      ownerPermissionLevel = 4;
+    } else if (ownerPermissionLevel < 0) {
+      ownerPermissionLevel = 2; // Default to OP level 2 if not set correctly
     }
 
     log.debug(

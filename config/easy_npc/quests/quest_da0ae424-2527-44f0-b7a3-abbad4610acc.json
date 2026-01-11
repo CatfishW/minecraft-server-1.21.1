@@ -1,0 +1,15 @@
+{
+    "id": "da0ae424-2527-44f0-b7a3-abbad4610acc",
+    "title": "铁血密林",
+    "description": "我是精锐武警，手持M249机枪，日夜守卫这片区域。但最近村庄外的森林深处涌出了大量僵尸，它们成群结队，威胁着村民的生命和村庄的安宁。我无法独自应对这波危机，需要你的支援来稳定局势。\n\n请立刻前往村庄外的森林深处，消灭至少5只僵尸。清除这些怪物能有效阻止它们继续侵扰村庄，保护无辜的村民免受伤害。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 151
+    }
+}

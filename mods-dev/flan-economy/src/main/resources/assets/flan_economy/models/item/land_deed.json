@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "flan_economy:item/land_deed"
+    }
+}

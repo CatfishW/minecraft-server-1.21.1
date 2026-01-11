@@ -1,0 +1,15 @@
+{
+    "id": "11eb7a8a-e5ea-42d9-b4a8-3a20c4fa8da0",
+    "title": "地狱火试炼",
+    "description": "嘿，朋友！我是Eddie Munson，Hellfire Club的领袖。最近，我们的金属乐排练被一群僵尸搅乱了，它们藏在附近的洞穴里，发出的噪音盖过了我们的吉他声，简直无法忍受。我们急需清理这些入侵者，保护我们的地盘。\n\n请前往村庄东边的森林深处，杀死5只僵尸。这样我们就能恢复排练，继续我们的金属狂潮。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 119
+    }
+}

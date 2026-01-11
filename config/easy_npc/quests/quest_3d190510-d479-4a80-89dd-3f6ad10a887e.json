@@ -1,0 +1,15 @@
+{
+    "id": "3d190510-d479-4a80-89dd-3f6ad10a887e",
+    "title": "暗影追踪",
+    "description": "我是Nancy Wheeler，一名调查记者。最近，村庄附近的森林中频繁出现僵尸，袭击过往行人，村民们惶恐不安。我怀疑这些怪物背后隐藏着某种线索，必须尽快查明真相，否则更多人会陷入危险。\n\n请前往村庄外的森林深处，消灭5只僵尸。这能帮助我们收集证据，揭示事件背后的秘密，并保护村庄的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 93
+    }
+}

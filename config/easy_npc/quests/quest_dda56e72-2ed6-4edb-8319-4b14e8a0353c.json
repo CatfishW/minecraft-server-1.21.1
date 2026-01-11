@@ -1,0 +1,15 @@
+{
+    "id": "dda56e72-2ed6-4edb-8319-4b14e8a0353c",
+    "title": "暗夜守护",
+    "description": "这帮怪物越来越猖獗了，夜晚的村庄外总是传来嘶吼声。我身为警察局长，不能让这些僵尸威胁到居民的安全，必须有人站出来。\n\n你去村庄外的森林深处，清除至少5只僵尸。它们频繁出没，威胁着村民的生命，必须尽快解决。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 198
+    }
+}

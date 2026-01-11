@@ -1,0 +1,15 @@
+{
+    "id": "62aadffa-1b55-4cea-b529-180373c8b670",
+    "title": "麦田的召唤",
+    "description": "你好，旅行者！我的小摊最近遇到了大麻烦，村庄周围的怪物越来越猖獗，导致供应商无法安全运来作物。我的面包和种子库存都快见底了，生意一落千丈。\n\n请你立刻前往村庄外的农田，收集10个小麦。这些小麦能让我恢复制作面包，稳定摊位的生意，我们都能从中受益。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 410
+    }
+}

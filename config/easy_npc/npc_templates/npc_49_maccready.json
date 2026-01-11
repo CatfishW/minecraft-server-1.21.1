@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你是雇主，还是路过的？如果是后者，建议你赶紧滚蛋。如果是前者，价钱好商量。我叫麦克里迪，以前是断钢的队长，现在是个自由职业者。只要给够瓶盖，哪怕是要射穿老冰棍的脑袋我也干。",
             "buttons": [
                 {
-                    "label": "清理威胁",
-                    "action": "OPEN_QUEST_DIALOG:9a8b7c6d-5e4f-3a2b-1c0d-9e8f7a6b5c4d",
-                    "id": "btn_quest_9fbd045a"
-                },
-                {
-                    "label": "清除威胁",
-                    "action": "OPEN_QUEST_DIALOG:2f41a8e3-5b2a-4f9c-8d1b-7e6a5c3d2f1a",
-                    "id": "btn_quest_6a176249"
-                },
-                {
-                    "label": "危险的实验品",
-                    "action": "OPEN_QUEST_DIALOG:da797119-3e27-499a-9559-c26fbaa46521",
-                    "id": "btn_quest_efa7d764"
-                },
-                {
-                    "label": "野兽的威胁",
-                    "action": "OPEN_QUEST_DIALOG:41edf8f7-cccb-473b-ad27-9506cfdff543",
-                    "id": "btn_quest_0db56f34"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7b45e389-69bc-4fd7-a38e-992b8a5fe8f8,dc14c5ac-452f-4a6f-90d7-c45cb1adf59b,d7ab67e8-35d6-471b-99ee-43af1d9273f3,00ea3b47-8e55-418b-b6b0-db3e61593fa9,7ac3ab04-2bd3-4ca7-9f93-3eb7e67b14c2",
+                    "id": "btn_quest_7321a8c1"
                 },
                 {
                     "label": "你以前是断钢的？",
@@ -53,6 +40,11 @@
                     "label": "我需要一个神枪手",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_sniper"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_5be42b73"
                 }
             ],
             "oneTimeConversation": true
@@ -124,5 +116,15 @@
             "item": "minecraft:compass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

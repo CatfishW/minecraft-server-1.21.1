@@ -1,0 +1,15 @@
+{
+    "id": "aed2fb0e-323c-4799-9dc7-e1c6b9cd80d5",
+    "title": "黑暗中的微光",
+    "description": "我曾是Derry仇恨犯罪的受害者，那些痛苦记忆如影随形。如今，我试图在Minecraft的世界中重建生活，但夜晚的怪物总让我回想起过去的恐惧。\n\n请前往附近的森林深处，杀死3个僵尸。这能帮助我克服心中的阴影，让我感到安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 70
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "9873581e-a6a1-4005-93d1-878b1f747b48",
+    "title": "荒野的追猎",
+    "description": "我，Cooper Howard，这片荒野的变种人猎手，最近在追踪一群危险的逃犯时，发现废弃矿井中的僵尸异常狂躁。它们不断涌出，干扰了我的行动，让我无法专心锁定目标，生存资源也日渐匮乏。\n\n请前往附近的废弃矿井，杀死5只僵尸。这能清除障碍，让我重新专注于追猎任务，确保荒野的秩序不被破坏。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 417
+    }
+}

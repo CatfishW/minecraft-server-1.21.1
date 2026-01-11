@@ -1,0 +1,15 @@
+{
+    "id": "658cde6c-ef5d-4bd0-acf8-cbaa43bf19b3",
+    "title": "噩梦狂欢",
+    "description": "我乃Pennywise，恐惧之化身。这片土地的噩梦正逐渐消散，我需要你带来腐朽的祭品，以重燃那令人战栗的恐怖。\n\n前往附近的森林深处，收集5个腐肉。腐肉是腐烂的象征，能滋养我的力量，让恐惧再次蔓延。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 184
+    }
+}

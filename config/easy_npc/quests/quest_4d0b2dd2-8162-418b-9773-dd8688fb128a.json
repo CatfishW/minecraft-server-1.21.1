@@ -1,0 +1,15 @@
+{
+    "id": "4d0b2dd2-8162-418b-9773-dd8688fb128a",
+    "title": "铁轮征途",
+    "description": "我这辆老Trans Am可经不起折腾，村外那些该死的僵尸总在游荡，差点把我的车给毁了。得有人去教训它们一顿，不然我这肌肉可没地方使。\n\n去村庄外的森林深处，击杀5只僵尸。这样我才能安心开着我的宝贝车出去兜风，不用担心路上被那些家伙堵截。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 147
+    }
+}

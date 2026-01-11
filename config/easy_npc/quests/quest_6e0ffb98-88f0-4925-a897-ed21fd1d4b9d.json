@@ -1,0 +1,15 @@
+{
+    "id": "6e0ffb98-88f0-4925-a897-ed21fd1d4b9d",
+    "title": "雨衣之谜",
+    "description": "我是Mike Wheeler，我的朋友Georgie总是穿着那件黄色雨衣，但他在森林中失踪了，我担心他遇到了危险。\n\n请前往村庄找到Mike Wheeler，与他对话，了解Georgie的失踪线索。村庄是常见的聚居地，你可以在那里找到他，这样我们才能知道发生了什么。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 405
+    }
+}

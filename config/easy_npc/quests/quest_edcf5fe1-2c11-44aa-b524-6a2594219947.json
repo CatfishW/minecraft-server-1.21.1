@@ -1,0 +1,15 @@
+{
+    "id": "edcf5fe1-2c11-44aa-b524-6a2594219947",
+    "title": "遗迹守护记",
+    "description": "我是本·汉斯科姆，一位历史学家兼建筑师。我毕生致力于研究这片土地上失落的文明，但如今，许多古老遗迹正被风雨侵蚀，逐渐消失。作为一个敏感的灵魂，我每每目睹这些历史的消逝，心中便涌起无尽的哀伤与焦虑。\n\n请前往村庄外的森林深处，收集8个苔石（minecraft:mossy_cobblestone）。这些石头是修复废弃石庙的关键材料，只有通过它们，我们才能挽救这段即将被遗忘的历史，让后世得以瞻仰先人的智慧。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:mossy_cobblestone",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 127
+    }
+}

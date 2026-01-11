@@ -1,0 +1,15 @@
+{
+    "id": "332fc258-f7af-429c-b9e2-fe8f4c7dcef5",
+    "title": "希望的种子",
+    "description": "我是Lucy，一个乐观的避难所居民。最近，避难所的食物储备越来越紧张，我希望能用积极的态度带领大家渡过难关。\n\n请去村庄外的麦田里收集5个小麦。只有这样，我们才能制作面包，确保大家不再挨饿。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

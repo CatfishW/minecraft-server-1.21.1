@@ -1,0 +1,15 @@
+{
+    "id": "7703ffbb-f30f-483c-8dce-b06ccd84cb7f",
+    "title": "暗影的召唤",
+    "description": "我是Bill Denbrough，Losers的领导者。在这个方块世界中，我们一直被来自黑暗的恐惧所困扰。最近，附近的洞穴中僵尸成群结队地出现，它们威胁着我们的安全，就像曾经的邪恶一样。\n\n你需要前往那个洞穴，杀死5只僵尸。这样做是为了保护我们的营地，防止它们入侵，确保我和我的朋友们能继续生存。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

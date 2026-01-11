@@ -1,0 +1,15 @@
+{
+    "id": "4216ae79-f869-4792-8a2c-f1edc9dc5321",
+    "title": "幽影低语",
+    "description": "孩子，你可曾感受到那股寒意？那些阴影在树梢间游荡，低语着我编织的幻梦，它们正侵蚀着这片土地的宁静，仿佛永恒的诅咒。\n\n前往村庄外的森林深处，杀死2只僵尸。只有终结它们的存在，我才能短暂地从这幻觉的纠缠中解脱。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 94
+    }
+}

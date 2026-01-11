@@ -1,0 +1,15 @@
+{
+    "id": "cab19933-868f-47fd-8f7c-683a4ef4d10a",
+    "title": "暗夜捕影",
+    "description": "我是Jonathan Byers，一个习惯在寂静中观察的摄影师。这个世界充满了隐秘的叙事，但最近，森林深处的异常动静让我无法安宁——那些亡灵生物在阴影中徘徊，威胁着记录一切的平静。\n\n我需要你前往森林深处，杀死3个僵尸。这样我才能捕捉它们在自然光下的真实瞬间，为村庄的边界提供警示，防止它们侵入我们的生活。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 378
+    }
+}

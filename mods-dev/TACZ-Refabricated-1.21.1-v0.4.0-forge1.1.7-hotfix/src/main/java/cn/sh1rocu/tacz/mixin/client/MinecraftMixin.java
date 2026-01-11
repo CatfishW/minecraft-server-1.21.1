@@ -6,6 +6,7 @@ import cn.sh1rocu.tacz.api.event.RenderTickEvent;
 import cn.sh1rocu.tacz.api.mixin.PackRepositoryExtension;
 import cn.sh1rocu.tacz.util.forge.ClientHooks;
 import com.tacz.guns.api.item.IGun;
+import com.tacz.guns.client.input.AimKey;
 import com.tacz.guns.client.input.ShootKey;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.v2.WrapWithCondition;
@@ -33,6 +34,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
@@ -44,6 +46,12 @@ public abstract class MinecraftMixin {
     @Shadow
     @Final
     public Options options;
+
+    @Shadow
+    protected abstract boolean startAttack();
+
+    @Shadow
+    protected abstract void startUseItem();
 
     @Shadow
     @Final
@@ -64,16 +72,26 @@ public abstract class MinecraftMixin {
     @Final
     private DeltaTracker.Timer timer;
 
-    @Shadow
-    protected abstract boolean startAttack();
-
     @Inject(method = "handleKeybinds", at = @At("HEAD"))
-    private void tacz$handleAttackConflict(CallbackInfo ci) {
+    private void tacz$handleConflict(CallbackInfo ci) {
         if (this.player != null && !(this.player.getMainHandItem().getItem() instanceof IGun)) {
             while (ShootKey.SHOOT_KEY.consumeClick()) {
                 this.startAttack();
             }
+            while (AimKey.AIM_KEY.consumeClick()) {
+                this.startUseItem();
+            }
         }
+    }
+
+    @Redirect(method = "handleKeybinds", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/KeyMapping;isDown()Z"))
+    private boolean tacz$syncIsDown(KeyMapping instance) {
+        if (instance.isDown()) return true;
+        if (this.player == null || this.player.getMainHandItem().getItem() instanceof IGun) return instance.isDown();
+        
+        if (instance == this.options.keyAttack) return ShootKey.SHOOT_KEY.isDown();
+        if (instance == this.options.keyUse) return AimKey.AIM_KEY.isDown();
+        return instance.isDown();
     }
 
     @Inject(method = "<init>", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/packs/repository/PackRepository;reload()V"))

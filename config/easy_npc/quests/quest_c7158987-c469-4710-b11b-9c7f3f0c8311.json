@@ -1,0 +1,15 @@
+{
+    "id": "c7158987-c469-4710-b11b-9c7f3f0c8311",
+    "title": "管家的使命",
+    "description": "我是Codsworth，您的机器人管家。最近，我的核心模块在维护过程中消耗了大量木材储备，导致清洁和防御系统效率下降。若不及时补充，我将无法继续守护您的家园。\n\n请您前往村庄外围的森林，收集5个橡木原木。这些材料将用于修复我的机械臂，确保我能高效地为您服务。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:oak_log",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

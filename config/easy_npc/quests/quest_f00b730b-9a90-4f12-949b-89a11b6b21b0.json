@@ -1,0 +1,15 @@
+{
+    "id": "f00b730b-9a90-4f12-949b-89a11b6b21b0",
+    "title": "暗夜低语",
+    "description": "最近，村庄外的废弃矿井中传来诡异的嘶吼，那些僵尸似乎被某种力量驱使，封锁了入口。作为调查记者，我必须查明这背后的真相，但我的子弹有限，需要帮手。\n\n请前往村庄外的废弃矿井深处，消灭至少5只僵尸。只有清除这些障碍，我才能安全进入矿井，搜集失踪矿工的线索。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 53
+    }
+}

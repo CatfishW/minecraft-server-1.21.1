@@ -1,0 +1,15 @@
+{
+    "id": "5d74dcaf-b6e4-464c-b78d-577331028c93",
+    "title": "狂暴怒火",
+    "description": "这个镇子上的人都太软弱了，我亨利·鲍尔斯需要点刺激来打发时间。最近那些在附近洞穴里游荡的僵尸让我很不爽，它们的吵闹声简直是对我尊严的侮辱。\n\n去附近的洞穴，杀死5只僵尸。这样我才能确保它们不会再烦我，也让这些懦夫看看什么是真正的力量。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 158
+    }
+}

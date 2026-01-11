@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "哟，陌生人。欢迎来到好邻居。我是汉考克，这里的市长……某种意义上是。看到这辐射烧焦的皮囊了吗？这让我比这废土上任何一个装模作样的人都活得更久，也看得更清。想喝一杯，还是想惹点麻烦？",
             "buttons": [
                 {
-                    "label": "清理变种人威胁",
-                    "action": "OPEN_QUEST_DIALOG:b1f4a5c2-3e19-4d8e-9a2b-5c7d8e9f0a1b",
-                    "id": "btn_quest_a7c0775b"
-                },
-                {
-                    "label": "清理下水道",
-                    "action": "OPEN_QUEST_DIALOG:a7b1e48d-3c5f-4a2e-9c8d-1f0a2b3c4d5e",
-                    "id": "btn_quest_e7f1ab40"
-                },
-                {
-                    "label": "收集辐射浆果",
-                    "action": "OPEN_QUEST_DIALOG:279dbd8c-cd52-48f7-bdc2-b069dc9f4fd8",
-                    "id": "btn_quest_9f46046d"
-                },
-                {
-                    "label": "Hancock的善意",
-                    "action": "OPEN_QUEST_DIALOG:f1ee4b28-53ae-40f4-b5d2-8d23cacffa77",
-                    "id": "btn_quest_9b0eb18d"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a8f8050f-5365-4396-98d9-e3af49c9d535,ed552fba-ef39-4c83-a3b7-f5d3eb9801bd,e7446607-dada-497b-aff0-7573866bae95,4286db53-1a5c-4456-9741-e3476c648d78,72865d29-830b-4b77-b00b-9e8317549e03",
+                    "id": "btn_quest_ecab97b1"
                 },
                 {
                     "label": "你是怎么变成这样的？",
@@ -53,6 +40,11 @@
                     "label": "我想找点乐子",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_fun"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_192888de"
                 }
             ],
             "oneTimeConversation": true
@@ -124,5 +116,15 @@
             "item": "minecraft:compass",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

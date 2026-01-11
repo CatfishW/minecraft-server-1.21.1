@@ -1,0 +1,15 @@
+{
+    "id": "13597935-990b-4bcb-a6cf-c8bdef3ef6df",
+    "title": "尘封的记录",
+    "description": "我是Publick Occurrences的记者Piper Wright。最近，村庄附近的废弃矿井中传出一些异常动静，我怀疑那里藏着一些旧文件，可能与一系列失踪事件有关。但作为记者，我需要确凿的证据来报道真相。\n\n请你前往废弃矿井，收集至少3张纸（minecraft:paper）。这些纸张可能记录着重要信息，能帮助我揭露事件的真相。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

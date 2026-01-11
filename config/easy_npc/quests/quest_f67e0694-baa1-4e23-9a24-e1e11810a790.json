@@ -1,0 +1,15 @@
+{
+    "id": "f67e0694-baa1-4e23-9a24-e1e11810a790",
+    "title": "烈焰的狂欢",
+    "description": "这个世界太乏味了，村民们的哭嚎和躲藏让我厌倦。我需要真正的娱乐——火焰！只有燃烧才能带来快感，让一切化为灰烬，那才是完美的景象。\n\n去附近的森林深处，找到那些游荡的僵尸，用火把它们全部烧成灰烬。记住，必须亲眼看到火焰吞噬它们，这样才能满足我的渴望。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "bbf063cb-cbf1-4a14-8ec5-706f89a44283",
+    "title": "锈蚀之盟",
+    "description": "我是Codsworth，您的忠实管家。但最近，能源核心的故障让我无法启动清洁模块，导致附近的洞穴怪物滋生，家园蒙尘，秩序荡然无存。\n\n请您前往废弃矿井，收集8个煤炭，用于修复我的能源核心。只有这样，我才能恢复服务，驱散威胁，守护这片领地。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:coal",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 50
+    }
+}

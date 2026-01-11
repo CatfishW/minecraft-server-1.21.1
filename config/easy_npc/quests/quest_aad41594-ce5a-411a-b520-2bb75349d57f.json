@@ -1,0 +1,15 @@
+{
+    "id": "aad41594-ce5a-411a-b520-2bb75349d57f",
+    "title": "幽林驱魔",
+    "description": "最近，村庄外的森林深处总有僵尸在游荡，夜晚它们靠近围墙，村民们都惶恐不安。作为守卫，我必须加强巡逻，确保村庄不被侵扰。\n\n请你前往村庄外的森林，杀死5只僵尸。这样能有效减少敌对生物的数量，保护村民的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 82
+    }
+}

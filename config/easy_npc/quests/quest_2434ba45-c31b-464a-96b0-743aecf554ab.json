@@ -1,0 +1,15 @@
+{
+    "id": "2434ba45-c31b-464a-96b0-743aecf554ab",
+    "title": "森林的威胁",
+    "description": "你好，旅行者！我是这个村庄的商人，靠买卖各种货物维持生计。但最近村庄外的森林深处总有僵尸出没，吓跑了所有顾客，我的摊位前空无一人，生意几乎要倒闭了。\n\n请你前往村庄外的森林深处，杀死5只僵尸，这样我就能安心营业，恢复往日的热闹。完成后我会给你一些珍贵的novus硬币作为报酬。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

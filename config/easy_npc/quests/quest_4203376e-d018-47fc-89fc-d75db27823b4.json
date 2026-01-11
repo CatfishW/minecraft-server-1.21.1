@@ -1,0 +1,15 @@
+{
+    "id": "4203376e-d018-47fc-89fc-d75db27823b4",
+    "title": "麦田危机",
+    "description": "在Scoops Ahoy的柜台后，我，Robin，正被无聊和饥饿的顾客逼疯。那些夜袭的僵尸毁了我的麦田，原料告急！没有小麦，冰淇淋生意就完蛋了。\n\n你得去村庄外的麦田收集5个小麦。只有这样，我才能继续制作新口味，安抚那些挑剔的味蕾。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 148
+    }
+}

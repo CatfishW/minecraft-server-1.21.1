@@ -1,0 +1,15 @@
+{
+    "id": "9131970f-bf13-41d8-8863-9b26d223eaeb",
+    "title": "仁慈之奶",
+    "description": "我是Strong，一个被世界遗忘的超级变种人，游荡在这无尽的方块荒原。我内心空虚，渴望一杯传说中的仁慈之奶来抚慰我的灵魂。但普通牛奶似乎无法触及那深沉的伤痛，我需要你的帮助来找到它。\n\n请前往村庄外的牧场，寻找奶牛并收集牛奶桶。牛奶是仁慈的象征，它能帮助我恢复内心的平衡。请至少收集2个牛奶桶给我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 118
+    }
+}

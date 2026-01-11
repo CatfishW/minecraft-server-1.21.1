@@ -1,0 +1,15 @@
+{
+    "id": "a1f0df05-ff80-45fc-b127-25041d023687",
+    "title": "星尘之谜",
+    "description": "我是Dustin，一个对万物充满好奇的科学家。最近，我在森林深处的废弃矿井中发现了一些神秘的紫色水晶，它们似乎蕴含着未知的能量。但矿井中充满了危险的蜘蛛，阻碍了我的研究。\n\n我需要你前往森林深处的废弃矿井，击杀5只蜘蛛。这些蜘蛛的毒液可能含有稳定水晶能量的关键成分，请务必收集它们的毒液样本回来给我分析。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:spider",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 451
+    }
+}

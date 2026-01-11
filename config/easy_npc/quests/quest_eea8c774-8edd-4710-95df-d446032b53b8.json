@@ -1,0 +1,15 @@
+{
+    "id": "eea8c774-8edd-4710-95df-d446032b53b8",
+    "title": "荒野的呼唤",
+    "description": "我是Preston Garvey，Minuteman的成员。我们的一个定居点正面临怪物的威胁，急需你的援助来保护居民的安全。\n\n请前往村庄外的森林，消灭5只僵尸。这样可以清除威胁，确保定居点的长久安定。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 162
+    }
+}

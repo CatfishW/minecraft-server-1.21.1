@@ -1,0 +1,15 @@
+{
+    "id": "dc589d2f-277d-4575-b569-c236ced120db",
+    "title": "荒野中的坚守",
+    "description": "我是Mike Wheeler，团队的领袖。在这片荒野中，我们依靠彼此的信任和决心生存。但最近，食物短缺让团队疲惫不堪，忠诚的我们必须克服这个危机。\n\n我需要你去村庄外的田野收集5个小麦。小麦是制作面包的基础，能恢复体力，确保团队继续前行。请小心潜伏的怪物。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 416
+    }
+}

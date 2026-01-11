@@ -1,0 +1,15 @@
+{
+    "id": "db74f57b-0131-4e2c-99f1-35fb701f4ca8",
+    "title": "洞穴的阴谋",
+    "description": "товарищ，我察觉到村庄附近的洞穴中潜藏着可怕的秘密。那些扭曲的僵尸和诡异的声响，绝非自然现象——一定是政府在进行某种非法的生物实验！我们必须找到证据，揭露真相，否则整个村庄都将陷入危险。\n\n请立即前往村庄外的洞穴，收集3块腐肉（minecraft:rotten_flesh）。这些腐肉可能含有实验的痕迹，能证明我的猜想。小心僵尸的袭击，你的安全至关重要。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 158
+    }
+}

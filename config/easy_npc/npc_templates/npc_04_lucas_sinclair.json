@@ -5,14 +5,16 @@
     "description": "The ranger. Realistic and brave.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/LucasSinclair.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2018/11/25/lucas-stranger-things-12615068.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,34 +27,9 @@
             "greeting": "你好，陌生人。我是卢卡斯。我猜你也是为了那些...传言而来的吧？关于镇上的怪事。听着，我不是什么神秘学家，我只是个想保护朋友的普通人。但我知道，当事情不对劲时，你必须像对待一场真实的狩猎一样对待它。",
             "buttons": [
                 {
-                    "label": "清理前哨",
-                    "action": "OPEN_QUEST_DIALOG:b6e8918d-a3c2-4b04-a0f0-8d8a5e84a338",
-                    "id": "btn_quest_820c876e"
-                },
-                {
-                    "label": "清理边境",
-                    "action": "OPEN_QUEST_DIALOG:6a7f8d3c-4b2e-4d9a-9f1c-8e5d2a3b4c7d",
-                    "id": "btn_quest_3c4e085c"
-                },
-                {
-                    "label": "荒野的威胁",
-                    "action": "OPEN_QUEST_DIALOG:8b2a4f5d-3c1e-4a7b-9d6f-8e1a0b3c5d7e",
-                    "id": "btn_quest_be7c455c"
-                },
-                {
-                    "label": "腐化晶石的采集",
-                    "action": "OPEN_QUEST_DIALOG:b5adc99b-7919-4ace-8140-2f2b0b795ba5",
-                    "id": "btn_quest_1e221635"
-                },
-                {
-                    "label": "幽影密林的威胁",
-                    "action": "OPEN_QUEST_DIALOG:6427adb8-55af-4f36-9a7d-854b8dfde6e0",
-                    "id": "btn_quest_2e7e6beb"
-                },
-                {
-                    "label": "净化林地",
-                    "action": "OPEN_QUEST_DIALOG:c8ec6814-33ae-4c74-973a-f6a278bc7602",
-                    "id": "btn_quest_0eb21063"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:be7c9af0-e20b-48dd-a352-423ecda908c3,fa51c85e-5a23-4d6f-9dcc-319e2f91782c,8a2ea07c-3757-495b-bb8c-ea7da348efa2,9ea6c57a-d75e-4103-a03d-3471cac32a9a,18c54783-e36c-433d-8b36-fc2b9578a283",
+                    "id": "btn_quest_f403a692"
                 },
                 {
                     "label": "什么传言？",
@@ -63,6 +40,11 @@
                     "label": "你是个猎人？",
                     "action": "SHOW_DIALOG:ask_hunter",
                     "id": "btn_ask_hunter"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_1257a8d8"
                 }
             ],
             "oneTimeConversation": true
@@ -209,5 +191,15 @@
             "item": "minecraft:iron_pickaxe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

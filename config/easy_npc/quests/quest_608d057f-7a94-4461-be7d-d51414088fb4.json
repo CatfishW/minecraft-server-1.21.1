@@ -1,0 +1,15 @@
+{
+    "id": "608d057f-7a94-4461-be7d-d51414088fb4",
+    "title": "荒野的余烬",
+    "description": "听着，我是Billy Hargrove，那个总在惹麻烦的混蛋。我惹上的麻烦比你知道的还多，最近在森林深处闹腾得太凶，僵尸和骷髅成群结队地冒出来，简直要把我逼疯了。\n\n你得去森林深处，解决掉至少3只僵尸。只有这样，我才能继续我的计划，不会让这些亡灵生物毁了我们的一切。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 133
+    }
+}

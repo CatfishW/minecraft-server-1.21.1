@@ -1,0 +1,15 @@
+{
+    "id": "ec03099f-e6c3-4d1f-a8cd-82a9aa67b1f8",
+    "title": "不情愿的使命",
+    "description": "作为亨利的追随者，我常常被迫执行危险的任务，内心充满不情愿。亨利最近需要一些材料，但我不愿亲自冒险，所以只能依靠你来帮忙处理这些麻烦。\n\n请前往附近的洞穴击杀5只僵尸，收集它们掉落的骨头。亨利需要用这些骨头合成工具，我们才能继续推进计划，避免更多不必要的风险。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 191
+    }
+}

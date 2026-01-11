@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你好，我是 Adrian Mellon。",
             "buttons": [
                 {
-                    "label": "伤痕与记忆",
-                    "action": "OPEN_QUEST_DIALOG:9a87c3b5-0c1a-4a21-9e3a-1e5f2c8d4a62",
-                    "id": "btn_quest_be407bf1"
-                },
-                {
-                    "label": "寻求慰藉",
-                    "action": "OPEN_QUEST_DIALOG:e3f0c6d0-1a2b-4c3d-8e4f-5a6b7c8d9e0f",
-                    "id": "btn_quest_1e23dcc6"
-                },
-                {
-                    "label": "挥之不去的噩梦",
-                    "action": "OPEN_QUEST_DIALOG:d939dda7-b9ff-41f9-bb77-71389601f80c",
-                    "id": "btn_quest_3b1ffb97"
-                },
-                {
-                    "label": "驱逐噩梦",
-                    "action": "OPEN_QUEST_DIALOG:e9d70ae3-6c89-4f5b-b1da-2a879092909d",
-                    "id": "btn_quest_1600be95"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4417ac4a-0062-4902-8ecc-c314e690bb1b,118ec724-f794-403d-a863-7cd5ce3b1300,7a38016f-d188-4629-98de-7e4fd5feeb1e,aed2fb0e-323c-4799-9dc7-e1c6b9cd80d5,b777495c-ada6-4244-b151-b29995d0c71a",
+                    "id": "btn_quest_9ad8712f"
                 },
                 {
                     "label": "再见",
@@ -59,5 +46,15 @@
             "item": "minecraft:clock",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

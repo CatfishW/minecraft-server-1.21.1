@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "站住，平民！报上名来。我是钢铁兄弟会的圣骑士丹斯。在这个混乱的世界里，只有秩序和力量才能带来安全。我们的飞艇坠毁了，但这不会阻止我们净化这片土地的使命。如果你没有恶意，那就最好，因为我的激光步枪已经饥渴难耐了。",
             "buttons": [
                 {
-                    "label": "清除变种人威胁",
-                    "action": "OPEN_QUEST_DIALOG:5b8c4d3a-7e9f-4a1c-9d2b-8f3e1a0c5d6b",
-                    "id": "btn_quest_11f5bd8d"
-                },
-                {
-                    "label": "钢铁兄弟会的肃清令",
-                    "action": "OPEN_QUEST_DIALOG:2b1f2852-05a4-4020-9818-b25107220116",
-                    "id": "btn_quest_6f16d6c2"
-                },
-                {
-                    "label": "净化污染",
-                    "action": "OPEN_QUEST_DIALOG:8c011d4b-4e1b-4a2c-a751-c54fcb79ce0f",
-                    "id": "btn_quest_4efc0b95"
-                },
-                {
-                    "label": "清除异端",
-                    "action": "OPEN_QUEST_DIALOG:5fa31fda-7c47-40ef-8d37-00498ed10ce6",
-                    "id": "btn_quest_f8c26a50"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:1402ba6b-d0b3-423d-a1d2-6de561d95b63,3b075e63-2f49-4d0d-b1da-08c455797b40,296c6b01-ff83-4edb-a9fc-baaac10ebb44,d04c16b9-f5ca-40ed-b61f-15e4cacaaebf,6ece32d3-4269-4669-8cf9-0159dbde1566",
+                    "id": "btn_quest_32e01ef4"
                 },
                 {
                     "label": "钢铁兄弟会？你们是军人吗？",
@@ -53,6 +40,11 @@
                     "label": "净化土地？这是什么意思？",
                     "action": "SHOW_DIALOG:mission",
                     "id": "btn_mission"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_996f64d1"
                 }
             ],
             "oneTimeConversation": true
@@ -219,5 +211,15 @@
             "item": "minecraft:iron_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

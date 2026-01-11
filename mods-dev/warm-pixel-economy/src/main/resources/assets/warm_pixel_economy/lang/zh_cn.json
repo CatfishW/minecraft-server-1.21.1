@@ -37,11 +37,11 @@
   "ui.warm_pixel_economy.auction.title": "Warm Pixel 拍卖行",
   "ui.warm_pixel_economy.auction.page": "第 %s 页",
   "ui.warm_pixel_economy.auction.search": "搜索：%s",
-  "ui.warm_pixel_economy.auction.hint": "左键查看 | 右键一口价",
-  "ui.warm_pixel_economy.auction.starting_price": "起拍：%s",
-  "ui.warm_pixel_economy.auction.current_bid": "当前出价：%s",
+  "ui.warm_pixel_economy.auction.hint": "左键购买项目",
+  "ui.warm_pixel_economy.auction.starting_price": "基础价格：%s",
+  "ui.warm_pixel_economy.auction.current_bid": "当前价格：%s",
   "ui.warm_pixel_economy.auction.buyout": "一口价：%s",
-  "ui.warm_pixel_economy.auction.bid_hint": "使用 /ah bid %s <金额> 出价",
+  "ui.warm_pixel_economy.auction.bid_hint": "该功能已移动至确认面板",
   "command.warm_pixel_economy.gui_disabled": "GUI 已禁用。",
   "command.warm_pixel_economy.hold_item_add": "请手持要添加的物品。",
   "command.warm_pixel_economy.hold_item_list": "请手持要上架的物品。",
@@ -90,5 +90,6 @@
   "message.warm_pixel_economy.buyout_requires_player": "一口价需要玩家上下文。",
   "message.warm_pixel_economy.shop_unavailable": "商店不可用。",
   "message.warm_pixel_economy.no_active_trade": "没有正在进行的交易。",
-  "message.warm_pixel_economy.offer_mismatch": "商品不匹配。"
+  "message.warm_pixel_economy.offer_mismatch": "商品不匹配。",
+  "message.warm_pixel_economy.inventory_full": "背包已满。"
 }

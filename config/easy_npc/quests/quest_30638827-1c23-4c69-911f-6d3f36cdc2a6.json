@@ -1,0 +1,15 @@
+{
+    "id": "30638827-1c23-4c69-911f-6d3f36cdc2a6",
+    "title": "雨夜的低语",
+    "description": "我是Nick Valentine，一个合成侦探。在这阴雨连绵的夜晚，村里接连有人失踪，我怀疑线索藏在附近的洞穴深处——那些黑暗的角落总是回荡着不为人知的秘密。\n\n我需要你前往附近的洞穴，收集至少3张纸张（minecraft:paper）。这些纸张可能记录着关键线索，能帮我们揭开失踪之谜。请务必仔细搜寻，带回给我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 115
+    }
+}

@@ -12,7 +12,9 @@
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,14 +27,9 @@
             "greeting": "听着，我...我只是跟着Henry转转。我可不想惹麻烦。你看到Belch了吗？我们刚分开没多久。这镇子最近怪事太多了，我有点想回家。Henry说我们要去把比尔那群人吓个半死，但我总觉得心里发毛。",
             "buttons": [
                 {
-                    "label": "寻找亨利",
-                    "action": "OPEN_QUEST_DIALOG:2f4b8c1a-3e7d-4f2a-9b6c-8e5d4a1f2c9b",
-                    "id": "btn_quest_ea6ed83b"
-                },
-                {
-                    "label": "违反原则的交易",
-                    "action": "OPEN_QUEST_DIALOG:ae565ed1-1d31-4477-8d78-0191570c521c",
-                    "id": "btn_quest_2d980cc4"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:0f5752cc-bb8f-462b-a864-7045ef376a5b,2fa6ae19-0b9c-4bc2-aad8-00f57c4438f0,ebe99af3-f001-42e7-a784-1aad9f7c6a8f,e561ed3a-2dfe-455e-a1c2-1935c57c5574,ec03099f-e6c3-4d1f-a8cd-82a9aa67b1f8",
+                    "id": "btn_quest_6d149a6b"
                 },
                 {
                     "label": "你觉得怪事是指什么？",
@@ -43,6 +40,11 @@
                     "label": "Henry看起来很吓人",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_henry_scary"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_453bfbf3"
                 }
             ],
             "oneTimeConversation": true
@@ -124,5 +126,15 @@
             "item": "minecraft:clock",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

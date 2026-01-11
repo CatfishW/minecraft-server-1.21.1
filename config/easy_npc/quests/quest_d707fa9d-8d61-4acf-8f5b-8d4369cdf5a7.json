@@ -1,0 +1,15 @@
+{
+    "id": "d707fa9d-8d61-4acf-8f5b-8d4369cdf5a7",
+    "title": "铁拳破晓",
+    "description": "我，Belch Huggins，是这条路上的铁拳。我的Trans Am曾穿越无数风暴，但最近村庄外的森林深处出现了成群的僵尸，威胁着我们的安全和道路的畅通。\n\n请前往村庄外的森林深处，击杀5只僵尸。只有清除这些怪物，我们才能确保道路安全，让我的Trans Am再次疾驰无阻。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 325
+    }
+}

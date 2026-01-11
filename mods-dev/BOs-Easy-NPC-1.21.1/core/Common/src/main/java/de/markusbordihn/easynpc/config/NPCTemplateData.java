@@ -38,6 +38,7 @@ public class NPCTemplateData {
   private AttributeConfig attributes;
   private ObjectiveConfig objectives;
   private ActionConfig actions;
+  private int actionPermissionLevel = 2;
   private EquipmentConfig equipment;
   private DropConfig drop;
   
@@ -81,6 +82,9 @@ public class NPCTemplateData {
   
   public ActionConfig getActions() { return actions; }
   public void setActions(ActionConfig actions) { this.actions = actions; }
+
+  public int getActionPermissionLevel() { return actionPermissionLevel; }
+  public void setActionPermissionLevel(int actionPermissionLevel) { this.actionPermissionLevel = actionPermissionLevel; }
   
   /**
    * Skin configuration.
@@ -487,11 +491,19 @@ public class NPCTemplateData {
    */
   public static class DropConfig {
     private ItemStack item;
+    private int minCount = -1;
+    private int maxCount = -1;
     private float chance = 1.0f;
     private boolean playerKillOnly = true;
 
     public ItemStack getItem() { return item; }
     public void setItem(ItemStack item) { this.item = item; }
+
+    public int getMinCount() { return minCount; }
+    public void setMinCount(int minCount) { this.minCount = minCount; }
+
+    public int getMaxCount() { return maxCount; }
+    public void setMaxCount(int maxCount) { this.maxCount = maxCount; }
 
     public float getChance() { return chance; }
     public void setChance(float chance) { this.chance = chance; }

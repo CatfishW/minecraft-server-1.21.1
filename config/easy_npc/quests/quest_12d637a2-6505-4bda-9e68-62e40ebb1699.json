@@ -1,0 +1,15 @@
+{
+    "id": "12d637a2-6505-4bda-9e68-62e40ebb1699",
+    "title": "狂怒狩猎",
+    "description": "我，亨利·鲍尔斯，是这个镇子的恶霸。最近，森林里的僵尸越来越猖狂，竟敢在我的地盘上游荡，这让我非常不爽。我需要有人去收拾它们，找回我的面子。\n\n你，立刻去森林深处，杀死5只僵尸。让我看看你的能耐，如果成功，我会给你一些值钱的玩意儿作为奖励。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 100
+    }
+}

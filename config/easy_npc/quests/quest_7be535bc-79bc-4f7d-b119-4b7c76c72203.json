@@ -1,0 +1,15 @@
+{
+    "id": "7be535bc-79bc-4f7d-b119-4b7c76c72203",
+    "title": "暗影监督者",
+    "description": "我是Vault 33的监督者汉克。最近，地下设施外围的异常活动越来越频繁，似乎有邪恶生物在暗中窥探我们的秘密。这威胁到了Vault的安全和我的隐秘计划，我需要你的帮助来化解危机。\n\n请前往森林深处的洞穴，杀死3只骷髅。这些生物可能携带着关于Vault的情报，必须彻底清除它们，以防止我们的秘密泄露。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 303
+    }
+}

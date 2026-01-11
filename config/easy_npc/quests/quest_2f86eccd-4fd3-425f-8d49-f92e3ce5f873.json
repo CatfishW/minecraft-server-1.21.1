@@ -1,0 +1,15 @@
+{
+    "id": "2f86eccd-4fd3-425f-8d49-f92e3ce5f873",
+    "title": "寻侣踪迹",
+    "description": "我是Don Hagarty，Adrian的伴侣。自从他进入村外的废弃矿井探险后，已经过去了整整三天，至今杳无音信。矿井深处传出过怪物的嘶吼，我担心他遭遇了不测。黑暗和危险笼罩着那里，我心急如焚，必须尽快找到他。\n\n请你前往那个废弃矿井，收集至少4块铁矿石。这些矿石可以用来锻造坚固的工具和武器，帮助我深入矿井救援Adrian。请尽快完成，时间紧迫。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 52
+    }
+}

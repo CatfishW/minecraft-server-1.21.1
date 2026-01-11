@@ -1,0 +1,15 @@
+{
+    "id": "ec64a025-2664-4094-b44c-c2b196196c34",
+    "title": "森林的守护",
+    "description": "我是Beverly Marsh，团队的心脏。最近，附近的森林中僵尸和骷髅频繁出没，我们的营地受到威胁，我担心伙伴们的安全，必须采取行动。\n\n请前往森林深处，消灭5只僵尸，以保护营地。这能帮助我们重建家园，确保大家不再受威胁。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 100
+    }
+}

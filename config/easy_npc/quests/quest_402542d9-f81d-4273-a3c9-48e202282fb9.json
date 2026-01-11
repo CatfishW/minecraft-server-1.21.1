@@ -1,0 +1,15 @@
+{
+    "id": "402542d9-f81d-4273-a3c9-48e202282fb9",
+    "title": "仁慈的甘露",
+    "description": "我是Strong，一个超级变种人，我的内心被无尽的痛苦所折磨，仿佛被诅咒一般。我听说有一种仁慈之奶能安抚我的灵魂，但这片荒野中却找不到它的踪迹，只有怪物的咆哮和冰冷的石头陪伴着我。\n\n请你帮我去收集一些牛奶桶，作为仁慈之奶的替代。你可以去附近的村庄外或森林深处寻找牛群，从它们身上挤取牛奶桶。我需要这些牛奶来缓解我的痛苦，也许它能为我带来一丝平静。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:milk_bucket",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 357
+    }
+}

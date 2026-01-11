@@ -1,0 +1,15 @@
+{
+    "id": "77afbb21-a19f-4919-9675-05a0abc27fd0",
+    "title": "矿坑的呼唤",
+    "description": "我是汉克，一个古老地下设施的监工。最近，附近的废弃矿井中能源核心波动剧烈，异常的生物活动频繁，我担心隐藏的秘密会被外人察觉。\n\n我需要你前往那个废弃矿井，收集5个红石粉。这些红石可以用来稳定能源系统，防止灾难发生。请务必小心，矿井深处可能潜伏着危险的怪物。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 81
+    }
+}

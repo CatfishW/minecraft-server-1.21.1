@@ -1,0 +1,15 @@
+{
+    "id": "85914fd6-930f-413a-8846-6f7404a152bd",
+    "title": "滑板修复记",
+    "description": "我是Max，滑板就是我的生命。前几天在村庄外的森林里练习新招式时，不小心把滑板摔裂了，现在连基本移动都成问题，急需一些坚固的材料来修复。\n\n请帮我收集3个铁锭。你可以去附近的废弃矿井挖掘，那里常有铁矿石分布。记得带上镐子，并小心潜伏的敌对生物！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 169
+    }
+}

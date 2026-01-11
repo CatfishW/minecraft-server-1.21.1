@@ -1,0 +1,15 @@
+{
+    "id": "24a1d773-551f-444e-8588-11f6c1c9debf",
+    "title": "忠诚的召唤",
+    "description": "我是Mike，团队的领袖。我们一直相互扶持，但最近亨利在探索废弃矿井时失联了。我担心他遇到了危险，作为团队的一员，他的安全至关重要。\n\n请前往附近的废弃矿井，寻找亨利的下落。一旦找到他，与他交谈，了解发生了什么，并带回他的消息。这能帮助我们制定下一步计划。",
+    "objective": {
+        "type": "TALK",
+        "target": "亨利 (Henry)",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 324
+    }
+}

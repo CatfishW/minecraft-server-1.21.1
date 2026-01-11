@@ -103,10 +103,22 @@ public final class EasyNPCEventHandler {
         try {
           String[] parts = tag.split("\\|");
           if (parts.length >= 5) {
-            String itemId = parts[1];
-            int count = Integer.parseInt(parts[2]);
-            float chance = Float.parseFloat(parts[3]);
-            boolean playerKillOnly = Boolean.parseBoolean(parts[4]);
+            String itemIds = parts[1];
+            int minCount = Integer.parseInt(parts[2]);
+            int maxCount = minCount;
+            float chance = 1.0f;
+            boolean playerKillOnly = true;
+
+            // Handle new format with min/max count
+            if (parts.length >= 6) {
+              maxCount = Integer.parseInt(parts[3]);
+              chance = Float.parseFloat(parts[4]);
+              playerKillOnly = Boolean.parseBoolean(parts[5]);
+            } else {
+              // Standard format: itemId|count|chance|playerKillOnly
+              chance = Float.parseFloat(parts[3]);
+              playerKillOnly = Boolean.parseBoolean(parts[4]);
+            }
             
             boolean shouldDrop = true;
             if (playerKillOnly && !(damageSource.getEntity() instanceof ServerPlayer)) {
@@ -115,11 +127,19 @@ public final class EasyNPCEventHandler {
             
             if (shouldDrop) {
               if (easyNPC.getEntity().getRandom().nextFloat() < chance) {
+                // Support multiple items separated by comma
+                String[] itemIdList = itemIds.split(",");
+                String itemId = itemIdList[easyNPC.getEntity().getRandom().nextInt(itemIdList.length)];
+                
                 net.minecraft.world.item.Item item = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(
-                    net.minecraft.resources.ResourceLocation.parse(itemId));
+                    net.minecraft.resources.ResourceLocation.parse(itemId.trim()));
                     
                 if (item != null && item != net.minecraft.world.item.Items.AIR) {
-                   easyNPC.getEntity().spawnAtLocation(new net.minecraft.world.item.ItemStack(item, count > 0 ? count : 1));
+                   int droppedCount = minCount;
+                   if (maxCount > minCount) {
+                     droppedCount = minCount + easyNPC.getEntity().getRandom().nextInt(maxCount - minCount + 1);
+                   }
+                   easyNPC.getEntity().spawnAtLocation(new net.minecraft.world.item.ItemStack(item, droppedCount > 0 ? droppedCount : 1));
                 }
               }
             }

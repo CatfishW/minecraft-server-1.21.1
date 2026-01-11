@@ -1,0 +1,15 @@
+{
+    "id": "8b62af20-cdd8-4a97-8384-324bf4ab7e8e",
+    "title": "暴怒的狩猎",
+    "description": "我受够了这些懦夫的挑衅，他们以为可以躲过我的怒火？我的耐心已经耗尽，需要鲜血来平息我的疯狂！这片土地上到处是碍眼的渣滓，我要让所有人知道反抗我的代价。\n\n去村庄外的森林深处，找到并消灭5只僵尸。它们的存在让我心烦意乱，我要用它们的骨头制作成装饰，挂在镇口作为警告，让那些软蛋看看惹怒我的下场。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 113
+    }
+}

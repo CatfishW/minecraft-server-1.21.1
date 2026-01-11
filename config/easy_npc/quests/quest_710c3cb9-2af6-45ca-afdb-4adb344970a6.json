@@ -1,0 +1,15 @@
+{
+    "id": "710c3cb9-2af6-45ca-afdb-4adb344970a6",
+    "title": "燃火暴行",
+    "description": "我是Patrick Hockstetter，我痴迷于火焰的噼啪声和灼热的快感。但最近，那些愚蠢的僵尸在附近的洞穴里游荡，打扰了我的宁静。他们需要被教训，用火烧成灰烬！\n\n去附近的洞穴里，杀死5只僵尸。为什么？因为我喜欢看他们痛苦地燃烧，而且腐烂的肉可以用来做些有趣的事。证明你不是个懦夫。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 161
+    }
+}

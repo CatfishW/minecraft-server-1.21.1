@@ -1,0 +1,15 @@
+{
+    "id": "88cd0001-351f-49a5-9abb-5ba9bf5a3573",
+    "title": "金属灵魂的重燃",
+    "description": "听着，摇滚战士！地狱火俱乐部的电吉他在上次对抗苦力怕的战斗中牺牲了，那把琴承载着我们的金属之魂。没有它，下周五的洞穴演唱会就彻底完蛋了——听众们需要震裂灵魂的嘶吼！\n\n去挖掘铁矿石吧，熔炼成铁锭带回给我。铁矿藏在山壁洞穴深处，闪耀的矿脉就是我们重燃金属之火的希望。我需要8个铁锭来修复吉他，让地狱火的咆哮再次响彻地底！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 462
+    }
+}

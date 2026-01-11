@@ -64,16 +64,12 @@ public class AuctionBrowserScreen extends AbstractContainerScreen<AuctionMenu> {
             Slot slot = menu.slots.get(i);
             int x = leftPos + slot.x + 1;
             int y = topPos + slot.y + 12;
-            long current = listing.highestBid() == null ? listing.startingPrice() : listing.highestBid();
+            long current = listing.buyoutPrice() != null ? listing.buyoutPrice() : listing.startingPrice();
             String price = String.valueOf(current);
             guiGraphics.drawString(font, price, x, y, 0xE8C37F, true);
-            if (listing.buyoutPrice() != null) {
-                guiGraphics.drawString(font, "BO", x + 10, y - 9, 0xB9E3FF, false);
-            } else {
-                guiGraphics.drawString(font, "BID", x + 6, y - 9, 0xB7C0C8, false);
-            }
         }
     }
+
 
     private void renderHoverHighlight(GuiGraphics guiGraphics, float partialTick) {
         if (hoveredSlot == null || hoveredSlot.index >= AuctionMenu.LISTING_SLOTS) {

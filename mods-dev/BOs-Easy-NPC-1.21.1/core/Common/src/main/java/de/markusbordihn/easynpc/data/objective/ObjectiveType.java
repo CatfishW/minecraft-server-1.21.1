@@ -30,6 +30,7 @@ public enum ObjectiveType {
   ATTACK_MONSTER("monster", 2),
   ATTACK_PLAYER_WITHOUT_OWNER("player_without_owner", 2),
   ATTACK_PLAYER("player", 2),
+  ATTACK_WANTED_PLAYER("wanted_player", 2),
   ATTACK_VILLAGER("villager", 2),
   AVOID_SUN("avoid_sun", 2),
   BOW_ATTACK("bow", 4),

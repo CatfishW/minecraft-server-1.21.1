@@ -21,6 +21,9 @@ public class ModItems {
     public static final Item BANKNOTE_SCROLL = registerItem("banknote_scroll",
             new Item(new Item.Properties().stacksTo(64)));
 
+    public static final Item DECORATION_EXCHANGE_VOUCHER = registerItem("decoration_exchange_voucher",
+            new Item(new Item.Properties().stacksTo(64)));
+
     // Aether Scrolls - different flight durations
     public static final Item AETHER_SCROLL_1H = registerItem("aether_scroll_1h",
             new AetherScrollItem(FlightDuration.ONE_HOUR, new Item.Properties().stacksTo(16)));
@@ -53,6 +56,7 @@ public class ModItems {
             entries.accept(SILVER_NOVUS_COIN);
             entries.accept(GOLD_NOVUS_COIN);
             entries.accept(BANKNOTE_SCROLL);
+            entries.accept(DECORATION_EXCHANGE_VOUCHER);
         });
         
         // Add Aether Scrolls to creative tab

@@ -93,13 +93,11 @@ public class AuctionMenu extends AbstractContainerMenu {
             AuctionListing listing = serverListings.get(i);
             ItemStack stack = ItemKeyFactory.stackFromSnbt(listing.itemJson(), listing.count(), serverPlayer.getServer().registryAccess());
             List<Component> lore = new ArrayList<>();
-            lore.add(Component.translatable("ui.warm_pixel_economy.auction.starting_price", listing.startingPrice()));
-            if (listing.highestBid() != null) {
-                lore.add(Component.translatable("ui.warm_pixel_economy.auction.current_bid", listing.highestBid()));
-            }
-            if (listing.buyoutPrice() != null) {
-                lore.add(Component.translatable("ui.warm_pixel_economy.auction.buyout", listing.buyoutPrice()));
-            }
+            long price = listing.buyoutPrice() != null ? listing.buyoutPrice() : listing.startingPrice();
+            lore.add(Component.translatable("ui.warm_pixel_economy.shop.offer.price", price).withStyle(s -> s.withColor(0xFFD966)));
+            lore.add(Component.literal(""));
+            lore.add(Component.translatable("ui.warm_pixel_economy.shop.offer.buy_hint").withStyle(s -> s.withColor(0x87E0A0)));
+
             stack.set(DataComponents.LORE, new ItemLore(lore));
             container.setItem(i, stack);
         }
@@ -120,10 +118,8 @@ public class AuctionMenu extends AbstractContainerMenu {
         }
         if (slotId >= 0 && slotId < LISTING_SLOTS && slotId < serverListings.size()) {
             AuctionListing listing = serverListings.get(slotId);
-            if (button == 0 && listing.buyoutPrice() != null) {
-                WarmPixelEconomyMod.getContext().auctionService().buyout(server, listing.listingId(), WarmPixelEconomyMod.getContext().config().defaultCurrency);
-            } else if (button == 1) {
-                server.sendSystemMessage(Component.translatable("ui.warm_pixel_economy.auction.bid_hint", listing.listingId()));
+            if (button == 0) {
+                AuctionConfirmGui.open(server, AuctionListingView.from(listing));
             }
             return;
         }

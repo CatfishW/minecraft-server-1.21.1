@@ -1,0 +1,15 @@
+{
+    "id": "f147d698-6d50-4206-a57d-fcc1661758bb",
+    "title": "阴影中的低语",
+    "description": "同志们，我侦测到森林深处有异常能量波动，那些僵尸的行动模式完全偏离了常规，这背后必有阴谋！我们不能再被蒙在鼓里。\n\n请立即前往森林深处的洞穴，杀死3只僵尸并带回它们的核心样本。只有这样，我才能分析出幕后黑手的证据。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 446
+    }
+}

@@ -5,14 +5,16 @@
     "description": "The dancing clown. Horror incarnate.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/Pennywise.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2018/11/18/pennywise--it-12599003.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,34 +27,9 @@
             "greeting": "Tasty, tasty little children~ 或者我该说，美味的成年人？欢迎来到下水道的深处，这里充满了惊喜。你想看气球吗？红色的，黄色的……只要你想要，我都能给你。当然，代价是很小的，只是一点……恐惧。",
             "buttons": [
                 {
-                    "label": "红气球的邀请",
-                    "action": "OPEN_QUEST_DIALOG:e6a0f5c1-7d15-4e8f-bf54-9340e6e6f9a7",
-                    "id": "btn_quest_d98b68e7"
-                },
-                {
-                    "label": "来自深渊的凝视",
-                    "action": "OPEN_QUEST_DIALOG:a56e1669-56e2-4619-a8a6-2906b7b1c307",
-                    "id": "btn_quest_6a8ceb83"
-                },
-                {
-                    "label": "来自深渊的凝视",
-                    "action": "OPEN_QUEST_DIALOG:4c8d1a2e-5f3b-4b7a-8c1d-9e0f2a4b6c5d",
-                    "id": "btn_quest_eb48bd0e"
-                },
-                {
-                    "label": "红色气球的邀约",
-                    "action": "OPEN_QUEST_DIALOG:c5e1dce4-e18b-4725-a57e-4d13da7d2dbb",
-                    "id": "btn_quest_1b4a0be9"
-                },
-                {
-                    "label": "血色气球的邀约",
-                    "action": "OPEN_QUEST_DIALOG:16e5aa2a-368b-4abe-ad0d-e2fbc81fda7f",
-                    "id": "btn_quest_7e72f151"
-                },
-                {
-                    "label": "来自深渊的微笑",
-                    "action": "OPEN_QUEST_DIALOG:cad5f6fb-6a43-4c65-a7a2-35a71cf7ac82",
-                    "id": "btn_quest_2a635917"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:669beabe-8d46-4e82-bd1e-09330750ddd3,44e70262-86c3-41de-aad9-b99cb5f28848,87323760-6cde-4950-89fb-efad97aaa862,abd2d93d-3805-4d96-b56c-d18c231ff5bf,658cde6c-ef5d-4bd0-acf8-cbaa43bf19b3",
+                    "id": "btn_quest_7de75881"
                 },
                 {
                     "label": "你是谁？",
@@ -63,6 +40,11 @@
                     "label": "我不怕你。",
                     "action": "SHOW_DIALOG:fearless",
                     "id": "btn_fearless"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_cc0c92e2"
                 }
             ],
             "oneTimeConversation": true
@@ -204,5 +186,15 @@
             "item": "minecraft:iron_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

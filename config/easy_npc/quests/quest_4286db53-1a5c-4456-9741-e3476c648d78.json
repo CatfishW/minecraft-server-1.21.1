@@ -1,0 +1,15 @@
+{
+    "id": "4286db53-1a5c-4456-9741-e3476c648d78",
+    "title": "亡灵的阴影",
+    "description": "我是Hancock，Goodneighbor的市长。最近，附近的洞穴中僵尸数量激增，它们日夜游荡在社区周围，威胁着每一位居民的安全。我们的防御工事薄弱，若再不行动，恐怕Goodneighbor将陷入万劫不复之地。\n\n请前往村庄外的森林深处，杀死5只僵尸。这不仅能清除威胁，还能为社区争取时间加强守备。记住，森林中的僵尸最为猖獗，务必小心行事。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 393
+    }
+}

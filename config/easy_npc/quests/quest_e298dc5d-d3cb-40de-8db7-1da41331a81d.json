@@ -1,0 +1,15 @@
+{
+    "id": "e298dc5d-d3cb-40de-8db7-1da41331a81d",
+    "title": "深渊呼唤",
+    "description": "我是Martin Brenner，一位父亲和科学家。实验中的能量波动越来越剧烈，如果不及时稳定，可能会引发灾难。我需要你的帮助，孩子。\n\n请前往附近的废弃矿井，收集12个铁矿石。这些材料将用于制作一个关键装置，以控制实验并保护我们。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 142
+    }
+}

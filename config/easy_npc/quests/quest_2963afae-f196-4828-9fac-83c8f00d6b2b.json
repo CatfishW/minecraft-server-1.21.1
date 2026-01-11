@@ -1,0 +1,15 @@
+{
+    "id": "2963afae-f196-4828-9fac-83c8f00d6b2b",
+    "title": "隐秘的低语",
+    "description": "我是Vault 33的监督者Hank。最近，我们的能源核心频繁出现异常波动，我怀疑有外部势力在暗中渗透。但缺乏直接证据，整个避难所都笼罩在不安之中。\n\n你必须前往附近的废弃矿井深处，收集5份红石粉（minecraft:redstone）。这些材料可能被用于制造干扰装置，找到它们我们就能追踪到源头的阴谋。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 398
+    }
+}

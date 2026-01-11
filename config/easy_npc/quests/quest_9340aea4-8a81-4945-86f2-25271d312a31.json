@@ -1,0 +1,15 @@
+{
+    "id": "9340aea4-8a81-4945-86f2-25271d312a31",
+    "title": "荒原芯片",
+    "description": "我是来自Vault的幸存者，我们的净水系统即将崩溃，唯一能修复它的水芯片在多年前遗失了。在这片荒地上，每一滴水都珍贵如金，我必须找到芯片的下落，否则整个Vault都将面临干渴的末日。\n\n请你前往附近的废弃矿井，收集3个红石尘。红石的电路特性或许能模拟水芯片的功能，帮助我们修复净水装置。矿井中可能潜伏着危险，但这是唯一的希望。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

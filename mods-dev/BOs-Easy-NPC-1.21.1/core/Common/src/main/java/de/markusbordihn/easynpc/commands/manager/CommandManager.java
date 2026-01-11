@@ -23,6 +23,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import de.markusbordihn.easynpc.Constants;
 import de.markusbordihn.easynpc.server.commands.DebugCommand;
 import de.markusbordihn.easynpc.server.commands.DeleteCommand;
+import de.markusbordihn.easynpc.server.commands.ActionCommand;
 import de.markusbordihn.easynpc.server.commands.DialogCommand;
 import de.markusbordihn.easynpc.server.commands.EquipmentCommand;
 import de.markusbordihn.easynpc.server.commands.InteractCommand;
@@ -69,6 +70,7 @@ public class CommandManager {
         Commands.literal(Constants.MOD_COMMAND)
             .then(DebugCommand.register())
             .then(DeleteCommand.register())
+            .then(ActionCommand.register())
             .then(DialogCommand.register())
             .then(EquipmentCommand.register(context))
             .then(InteractCommand.register())

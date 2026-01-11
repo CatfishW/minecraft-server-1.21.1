@@ -1,0 +1,15 @@
+{
+    "id": "7f8aacd2-cb9e-4714-8597-4b8a371f5a7c",
+    "title": "商旅之忧",
+    "description": "我是游走四方的商人，以贩卖杂货维生。近来在村庄外的森林深处采集货物时，屡遭僵尸侵扰，货物损失惨重，货架日渐空虚。\n\n请你前往附近的废弃矿井，收集7个铁矿石。铁矿石能熔炼成铁锭，用于制作耐久工具，助我补充货源。事成之后，必有酬谢。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 7
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 89
+    }
+}

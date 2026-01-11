@@ -5,14 +5,16 @@
     "description": "Disgusting manifestation of IT.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/TheLeper.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2015/03/06/skin_20150306090524119899.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "你好，我是 The Leper。",
             "buttons": [
                 {
-                    "label": "腐烂的残骸",
-                    "action": "OPEN_QUEST_DIALOG:b4a2a617-67e5-46e3-a552-6374d225629f",
-                    "id": "btn_quest_f9c5d477"
-                },
-                {
-                    "label": "腐烂的供奉",
-                    "action": "OPEN_QUEST_DIALOG:a1b2c3d4-e5f6-7890-1234-567890abcdef",
-                    "id": "btn_quest_45ff9535"
-                },
-                {
-                    "label": "腐坏的精华",
-                    "action": "OPEN_QUEST_DIALOG:c9778432-2683-442d-8f78-9fe4eb5add8f",
-                    "id": "btn_quest_0be9cfe5"
-                },
-                {
-                    "label": "腐烂的慰藉",
-                    "action": "OPEN_QUEST_DIALOG:e6156242-91be-442b-b3bb-51f5b9070a65",
-                    "id": "btn_quest_3c4d8555"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:888a2df1-76f6-4e76-b32a-f86acb2ff4a3,b1b497fb-75c3-4fa5-ad47-0b3710ee6963,5df8af7b-d1a6-4c2a-99c2-038ee8db532b,2ffe893e-0988-4bbe-a386-882330c0817a,65231bea-760c-4a96-a343-9a2cf7589d18",
+                    "id": "btn_quest_d0c8a19d"
                 },
                 {
                     "label": "再见",
@@ -59,5 +46,15 @@
             "item": "minecraft:stone_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

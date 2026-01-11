@@ -1,0 +1,15 @@
+{
+    "id": "3cfd713a-afdc-4cf8-8c8b-ce85610dc25e",
+    "title": "暗影低语",
+    "description": "我是威尔·拜尔斯，自从从那个黑暗的维度逃脱后，我始终能感受到它的注视。最近，村庄附近的洞穴中回荡着异常的嘶吼，我担心那些来自Upside Down的怪物正试图突破屏障，威胁我们的家园。\n\n请前往村庄外的森林深处，消灭5只僵尸。这样能暂时稳定裂缝，防止更多异常生物从黑暗中涌出，保护我们所有人的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 114
+    }
+}

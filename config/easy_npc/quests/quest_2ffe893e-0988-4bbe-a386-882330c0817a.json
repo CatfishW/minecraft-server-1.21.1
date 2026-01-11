@@ -1,0 +1,15 @@
+{
+    "id": "2ffe893e-0988-4bbe-a386-882330c0817a",
+    "title": "污秽的印记",
+    "description": "我是 'The Leper'，一个被那可憎的'IT'所扭曲的残骸。我的血肉不断腐烂，散发着令人作呕的恶臭，每一寸肌肤都像是活生生的诅咒。这股力量已蔓延至周遭的森林，树木枯萎，生灵变异，仿佛在低声呼唤着某种深不可测的恐怖。\n\n我需要你前往村庄外的森林深处，消灭5只被腐化的僵尸。这些僵尸是'IT'力量的直接体现，它们的存在加剧了土地的腐败。只有清除它们，才能暂时平息这片被诅咒之地的躁动。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 82
+    }
+}

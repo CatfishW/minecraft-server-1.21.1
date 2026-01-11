@@ -1,0 +1,15 @@
+{
+    "id": "abd2d93d-3805-4d96-b56c-d18c231ff5bf",
+    "title": "暗影低语",
+    "description": "哦，亲爱的朋友，你听到了吗？在寂静的夜里，那些黑暗的角落总有东西在蠕动，它们模仿着笑声，却只带来腐朽和恐惧。我的马戏团需要纯净的笑声，而不是这些亡灵的哀嚎。\n\n去村庄外的废弃矿井，杀死5只僵尸。因为它们的存在玷污了欢乐的舞台，我需要你清除这些阴影中的杂质，让恐惧远离我的表演。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 188
+    }
+}

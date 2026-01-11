@@ -1,0 +1,15 @@
+{
+    "id": "4417ac4a-0062-4902-8ecc-c314e690bb1b",
+    "title": "记忆的碎片",
+    "description": "自从在Derry的那场噩梦后，我的灵魂便被恐惧缠绕。那些充满恶意的身影，总是在夜幕降临时于森林边缘徘徊，如同不散的怨灵。我无法独自面对这一切，但我相信，找回那些遗落的痕迹，或许能拼凑出真相的轮廓。\n\n请前往村庄外的森林深处，收集3个腐肉（minecraft:rotten_flesh）。这些物品可能是那些袭击者留下的证据，它们能指引我们找到威胁的源头，让我从过去的阴影中解脱。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 59
+    }
+}

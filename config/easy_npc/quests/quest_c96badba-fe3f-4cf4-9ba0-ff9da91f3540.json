@@ -1,0 +1,15 @@
+{
+    "id": "c96badba-fe3f-4cf4-9ba0-ff9da91f3540",
+    "title": "星条之光",
+    "description": "嘿，伙计，听着！这个世界要是没有点美国精神，就太无聊了，但现在我的火药储备快见底了，没法制造那些闪亮的烟花来点亮夜空，激励那些迷茫的灵魂。这可不行，我Erica可不能让自由之火熄灭！\n\n你得帮我去附近的废弃矿井跑一趟，收集4个火药。那些僵尸在矿井里晃荡，但凭你的本事，小菜一碟。有了火药，我就能做出烟花，让天空也染上星条旗的颜色，这才是真正的美国精神！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gunpowder",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 360
+    }
+}

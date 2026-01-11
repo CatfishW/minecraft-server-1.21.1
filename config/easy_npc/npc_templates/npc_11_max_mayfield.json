@@ -5,14 +5,16 @@
     "description": "The zoomer. Tough and skateboarder.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/MaxMayfield.png"
+        "skinUrl": "https://www.skindex.pro/static/skins/max-Xq6Rt9KgRawibT5xtHY75R.png"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,14 +27,9 @@
             "greeting": "看什么看？没见过玩滑板的吗？如果你是来烦我的，最好趁我还没发火赶紧滚蛋。这鬼地方除了那些发光的蘑菇和怪物，连个像样的坡都找不到，真是受够了。",
             "buttons": [
                 {
-                    "label": "极限特技",
-                    "action": "OPEN_QUEST_DIALOG:e868b195-d1b4-4784-a30e-1b6919b35288",
-                    "id": "btn_quest_be7b4bc4"
-                },
-                {
-                    "label": "街头风格涂鸦",
-                    "action": "OPEN_QUEST_DIALOG:37002643-ea59-4305-9a24-7663815e134a",
-                    "id": "btn_quest_3ecb3449"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:d3caab74-20ec-4398-abb5-87a90e087bb4,0deeb608-4b06-4573-bd7e-02e4ac1a2a44,85914fd6-930f-413a-8846-6f7404a152bd,78dbc363-b75e-48e6-a249-86f554730a43,8778e338-a0a3-44b2-90e9-e664e8295468",
+                    "id": "btn_quest_95c641e8"
                 },
                 {
                     "label": "我看到你滑得很酷。",
@@ -43,6 +40,11 @@
                     "label": "你在躲什么人吗？",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_max_avoid"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_fe77da10"
                 }
             ],
             "oneTimeConversation": true
@@ -124,5 +126,15 @@
             "item": "minecraft:stone_sword",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

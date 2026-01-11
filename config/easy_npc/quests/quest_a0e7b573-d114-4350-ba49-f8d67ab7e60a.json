@@ -1,0 +1,15 @@
+{
+    "id": "a0e7b573-d114-4350-ba49-f8d67ab7e60a",
+    "title": "心灵回响",
+    "description": "我是Eleven，我的心感能力察觉到村庄北边的洞穴中有一种不寻常的能量波动，它似乎在干扰我的感知，并可能引来危险。\n\n请前往那个洞穴，收集3个萤石粉。萤石的光芒能帮助我稳定能量源并揭示隐藏的秘密。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:glowstone_dust",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 188
+    }
+}

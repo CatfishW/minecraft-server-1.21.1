@@ -1,0 +1,15 @@
+{
+    "id": "88b2ab82-38df-4ef6-be87-321114d0407b",
+    "title": "沉默的见证",
+    "description": "我是一个安静的摄影师，总是独自在野外探索。最近，我在森林深处看到了末影人的身影，它们神秘而美丽，我想记录下它们，但作为局外人，我无法独自面对危险。\n\n请前往森林深处，杀死3只末影人（注意：末影人在夜晚或黑暗处生成）。这将帮助我收集它们的行为数据，完成我的摄影研究。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:enderman",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 454
+    }
+}

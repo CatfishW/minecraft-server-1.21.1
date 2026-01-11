@@ -1,0 +1,15 @@
+{
+    "id": "66fa5c39-1e8f-4754-bfc6-95e6b98e7489",
+    "title": "铁臂的呼唤",
+    "description": "Codsworth说：'主人，最近附近的洞穴中僵尸肆虐，我的清洁模块和防御系统都受到了严重干扰，家园的安全岌岌可危。'\n\n请立即前往'附近的洞穴'，杀死5只僵尸，以恢复秩序并保护我们的栖身之所。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 70
+    }
+}

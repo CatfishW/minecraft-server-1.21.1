@@ -5,14 +5,16 @@
     "description": "Cooper Howard. Bounty hunter mutant.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/TheGhoul.png"
+        "skinUrl": "https://static.planetminecraft.com/files/resource_media/preview/the-ghoul-19389356-e3560-minecraft-skin.jpg"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,14 +27,9 @@
             "greeting": "别靠近我，小家伙。我的眼睛能看穿你的骨头，我的手指能比你的念头更快地扣下扳机。这片废土上的每一颗子弹都有名字，而我正在寻找一些名字，一些关于我失去的过去的名字。你看起来不像是会付我钱的人，但也许你能提供一些情报。",
             "buttons": [
                 {
-                    "label": "清理尸鬼",
-                    "action": "OPEN_QUEST_DIALOG:b44a632a-c3f9-47c1-a58a-4c9a1185573e",
-                    "id": "btn_quest_b15ae330"
-                },
-                {
-                    "label": "荒野的呼唤",
-                    "action": "OPEN_QUEST_DIALOG:c51fcd97-fc52-4ea0-b028-03bbac663fd8",
-                    "id": "btn_quest_2f3abffc"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:29e458ef-486c-42ba-98f8-ab2eadc10921,6162bd06-bd6f-46df-8afd-7033df414a67,9873581e-a6a1-4005-93d1-878b1f747b48,f0b45572-ab72-4480-8b6b-d71b74316474,a37df1ce-c08a-4830-8917-5b3305bd23e2",
+                    "id": "btn_quest_bd6fa87d"
                 },
                 {
                     "label": "询问过去",
@@ -43,6 +40,11 @@
                     "label": "寻求任务",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_ask_work"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_f178bc33"
                 }
             ],
             "oneTimeConversation": true
@@ -149,5 +151,15 @@
             "item": "minecraft:iron_shovel",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

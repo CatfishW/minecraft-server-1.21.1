@@ -5,14 +5,16 @@
     "description": "Hypochondriac. Carries an inhaler.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/EddieKaspbrak.png"
+        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/01/01/eddie-kaspbrak-12697258.png?v938"
     },
     "attributes": {
         "maxHealth": 40,
         "movementSpeed": 0.3,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -25,24 +27,9 @@
             "greeting": "离我远点！你身上有细菌吗？哦，是你啊。听着，我很紧张，所以如果你有什么想法，最好别是那种容易感染的。我的药快没了，而且这里的空气简直糟糕透顶。简直比那个充满了死老鼠的地下室还糟糕。",
             "buttons": [
                 {
-                    "label": "急需的强效药剂",
-                    "action": "OPEN_QUEST_DIALOG:e5dc7f24-6f9b-4d2a-8a8e-3e6b1c2f3f5e",
-                    "id": "btn_quest_4bc9dc53"
-                },
-                {
-                    "label": "救命的药草",
-                    "action": "OPEN_QUEST_DIALOG:a817046c-9287-436a-b923-1f819379706c",
-                    "id": "btn_quest_ee9bd702"
-                },
-                {
-                    "label": "药草寻踪",
-                    "action": "OPEN_QUEST_DIALOG:1f2fe3b3-a358-4bc6-ba6c-ec3d1b642ab1",
-                    "id": "btn_quest_9b93b52b"
-                },
-                {
-                    "label": "哮喘粉的恐惧",
-                    "action": "OPEN_QUEST_DIALOG:a03e8bd1-e309-47b4-99c1-2dedb0e0e9c4",
-                    "id": "btn_quest_c9db1c6f"
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:3bf6e3e9-72da-44ac-9995-fbc1d8ae3184,1affb3c6-0bfe-4bfa-bff4-9ed48c7af960,ba43dd46-4ff0-4925-a9a8-f2697715e477,407386d6-83a1-4e89-8301-680d1a3d448a,9c39c6f1-59d3-455a-9275-44ab95061f4d",
+                    "id": "btn_quest_1ad892d4"
                 },
                 {
                     "label": "你需要安静一下",
@@ -53,6 +40,11 @@
                     "label": "关于你的药",
                     "action": "SHOW_DIALOG:story_2",
                     "id": "btn_eddie_meds"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_2e8acb9f"
                 }
             ],
             "oneTimeConversation": true
@@ -199,5 +191,15 @@
             "item": "minecraft:iron_axe",
             "count": 1
         }
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

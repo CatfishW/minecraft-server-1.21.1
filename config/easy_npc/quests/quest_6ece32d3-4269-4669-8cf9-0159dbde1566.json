@@ -1,0 +1,15 @@
+{
+    "id": "6ece32d3-4269-4669-8cf9-0159dbde1566",
+    "title": "铁骑的呼唤",
+    "description": "作为兄弟会的圣骑士，我感受到森林深处的不安。僵尸群正在侵蚀我们的领地，威胁着我们的补给线，必须立即采取行动。\n\n请前往村庄外的废弃矿井，杀死5只僵尸。这将确保我们的探险队能安全进入，收集必要的资源。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 63
+    }
+}

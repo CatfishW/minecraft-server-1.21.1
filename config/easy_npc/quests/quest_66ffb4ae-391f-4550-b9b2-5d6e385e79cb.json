@@ -1,0 +1,15 @@
+{
+    "id": "66ffb4ae-391f-4550-b9b2-5d6e385e79cb",
+    "title": "阴影中的盟友",
+    "description": "我是Will Byers，那个从Upside Down归来的幸存者。如今，那熟悉的寒意和低语再次袭来，仿佛黑暗维度正试图撕裂现实的帷幕。我无法独自面对这一切，那些噩梦般的阴影正侵蚀着我的记忆和这个世界。\n\n我需要你前往村庄外的森林边缘，找到Mike Wheeler并告知他我的状况。他是我最信任的朋友，只有他能帮助我理解这些征兆并找到对抗的方法。这关乎我们所有人的安危。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 396
+    }
+}

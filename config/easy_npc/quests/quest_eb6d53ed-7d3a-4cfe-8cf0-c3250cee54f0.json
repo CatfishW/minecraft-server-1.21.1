@@ -1,0 +1,15 @@
+{
+    "id": "eb6d53ed-7d3a-4cfe-8cf0-c3250cee54f0",
+    "title": "历史的回声",
+    "description": "我是Mike Hanlon，Derry的历史守护者。最近，森林深处出现了一群僵尸，它们守护着我们村庄的古老纸张，这些纸张记录着被遗忘的往事。\n\n请你前往附近的森林深处，杀死僵尸并收集5张纸（minecraft:paper）。这样做是为了将这些历史碎片带回村庄，防止它们永远消失。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 177
+    }
+}

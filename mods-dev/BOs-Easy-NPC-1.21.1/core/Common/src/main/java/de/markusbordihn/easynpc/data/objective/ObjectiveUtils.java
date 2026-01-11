@@ -22,6 +22,7 @@ package de.markusbordihn.easynpc.data.objective;
 import de.markusbordihn.easynpc.Constants;
 import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
 import de.markusbordihn.easynpc.entity.easynpc.data.ConfigDataCapable;
+import de.markusbordihn.easynpc.entity.easynpc.ai.goal.AttackWantedPlayerGoal;
 import de.markusbordihn.easynpc.entity.easynpc.ai.goal.BowAttackGoal;
 import de.markusbordihn.easynpc.entity.easynpc.ai.goal.CrossbowAttackGoal;
 import de.markusbordihn.easynpc.entity.easynpc.ai.goal.CustomAttackGoal;
@@ -60,6 +61,9 @@ import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.player.Player;
+import de.markusbordihn.easynpc.handler.LawSystemHandler;
+import de.markusbordihn.easynpc.data.crime.PlayerLawState;
+import net.minecraft.server.level.ServerPlayer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -250,6 +254,12 @@ public class ObjectiveUtils {
       case ATTACK_PLAYER ->
           new NearestAttackableTargetGoal<>(
               pathfinderMob, Player.class, objectiveDataEntry.isMustSeeTarget());
+      case ATTACK_WANTED_PLAYER ->
+          new AttackWantedPlayerGoal(
+              pathfinderMob,
+              objectiveDataEntry.getInterval(),
+              objectiveDataEntry.isMustSeeTarget(),
+              objectiveDataEntry.isMustReachTarget());
       case ATTACK_PLAYER_WITHOUT_OWNER ->
           new NearestAttackableTargetGoal<>(
               pathfinderMob,

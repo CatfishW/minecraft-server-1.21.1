@@ -1,0 +1,15 @@
+{
+    "id": "d5fc8be7-0952-457c-900a-3b1a92d7f00b",
+    "title": "幽域低语",
+    "description": "自从我从那个黑暗的维度逃回来后，总感觉洞穴深处有东西在窥视着我们。那些扭曲的生物，可能还在附近徘徊，让我夜不能寐。\n\n请去附近的洞穴杀死3只僵尸，消除这些威胁，确保我们的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 137
+    }
+}

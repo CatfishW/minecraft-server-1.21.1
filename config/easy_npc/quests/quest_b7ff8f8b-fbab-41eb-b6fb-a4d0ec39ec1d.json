@@ -1,0 +1,15 @@
+{
+    "id": "b7ff8f8b-fbab-41eb-b6fb-a4d0ec39ec1d",
+    "title": "血色谜案",
+    "description": "在这个阴雨连绵的夜晚，我，Nick Valentine，又遇到了一个棘手的案子。一个村民在附近的森林深处失踪了，现场只留下了一些模糊的脚印和血迹。这让我想起了那些不愉快的往事，合成体的记忆总是充满了这样的谜团。\n\n我需要你前往那个森林深处，调查那些脚印的来源。如果遇到任何威胁，就消灭它。为什么？因为这关系到整个村庄的安危，我不能让悲剧重演，只有这样才能揭开真相的面纱。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 120
+    }
+}

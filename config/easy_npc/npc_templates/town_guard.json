@@ -1,5 +1,5 @@
 {
-    "name": "§7卫队",
+    "name": "§7武警",
     "entityType": "easy_npc:humanoid",
     "faction": "guards",
     "description": "A standard town guard armed with a Glock 17.",
@@ -43,5 +43,15 @@
                 "action": "CLOSE_DIALOG"
             }
         ]
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.35,
+        "playerKillOnly": true
     }
 }

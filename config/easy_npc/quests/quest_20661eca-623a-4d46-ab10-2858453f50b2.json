@@ -1,0 +1,15 @@
+{
+    "id": "20661eca-623a-4d46-ab10-2858453f50b2",
+    "title": "钢铁试炼",
+    "description": "我是Maximus，BoS骑士团的侍从。我日夜梦想着穿上那无坚不摧的动力装甲，但骑士们说我必须先证明自己的价值。如今，营地外的森林深处游荡着成群僵尸，它们袭击我们的斥候，阻断了物资运输，若再不遏制，整个据点都将陷入危机。\n\n请你前往森林深处，击杀5只僵尸，以削弱它们的势力。只有通过这场战斗的考验，我才能向骑士团证明我有能力驾驭动力装甲的威能，从而获得晋升的机会。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 91
+    }
+}

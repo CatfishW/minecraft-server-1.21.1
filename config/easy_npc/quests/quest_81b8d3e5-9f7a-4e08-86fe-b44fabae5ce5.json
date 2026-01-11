@@ -1,0 +1,15 @@
+{
+    "id": "81b8d3e5-9f7a-4e08-86fe-b44fabae5ce5",
+    "title": "暗夜肃清",
+    "description": "作为城镇的守卫，我每日持枪巡逻，守护着村民的安宁。但近来，村庄外的森林深处频频传出异动，僵尸成群结队地游荡，袭击过往商旅，威胁着我们的存续。\n\n请你立即前往村庄外的森林深处，击杀至少5只僵尸。只有肃清这些怪物，才能确保道路安全，让村民重获平静生活。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 67
+    }
+}

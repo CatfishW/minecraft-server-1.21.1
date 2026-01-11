@@ -1,0 +1,15 @@
+{
+    "id": "8df7cd42-1382-49c0-a57d-8cc39fdd4041",
+    "title": "幽林铁骑",
+    "description": "我的Trans Am，那辆闪耀的钢铁座驾，如今在森林深处动弹不得。它是我力量的象征，却卡在了泥沼中，引擎轰鸣却寸步难行。\n\n请你前往附近的洞穴，收集5个铁锭（minecraft:iron_ingot）。我需要用这些铁锭来制作一个坚固的零件，修复我的爱车，让我们能再次驰骋荒野。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 175
+    }
+}
