@@ -25,11 +25,12 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-
+import net.minecraft.network.chat.Component;
 import java.util.UUID;
 
-public record QuestProgressSyncMessage(UUID questId, String title, String description, int progress, int targetAmount, boolean completed) implements NetworkMessageRecord {
+public record QuestProgressSyncMessage(UUID questId, String title, String description, int progress, int targetAmount, boolean completed, int rewardXP, String rewardItemID, int rewardItemAmount) implements NetworkMessageRecord {
 
   public static final ResourceLocation MESSAGE_ID =
       ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "quest_progress_sync");
@@ -45,7 +46,10 @@ public record QuestProgressSyncMessage(UUID questId, String title, String descri
     int progress = buffer.readInt();
     int targetAmount = buffer.readInt();
     boolean completed = buffer.readBoolean();
-    return new QuestProgressSyncMessage(questId, title, description, progress, targetAmount, completed);
+    int rewardXP = buffer.readInt();
+    String rewardItemID = buffer.readUtf();
+    int rewardItemAmount = buffer.readInt();
+    return new QuestProgressSyncMessage(questId, title, description, progress, targetAmount, completed, rewardXP, rewardItemID, rewardItemAmount);
   }
 
   @Override
@@ -56,6 +60,9 @@ public record QuestProgressSyncMessage(UUID questId, String title, String descri
     buffer.writeInt(progress);
     buffer.writeInt(targetAmount);
     buffer.writeBoolean(completed);
+    buffer.writeInt(rewardXP);
+    buffer.writeUtf(rewardItemID != null ? rewardItemID : "");
+    buffer.writeInt(rewardItemAmount);
   }
 
   @Override
@@ -71,7 +78,7 @@ public record QuestProgressSyncMessage(UUID questId, String title, String descri
   @Override
   public void handleClient() {
     log.debug("Received quest progress sync for {}", title);
-    QuestProgressSyncHandler.onQuestProgressSync(questId, title, description, progress, targetAmount, completed);
+    QuestProgressSyncHandler.onQuestProgressSync(questId, title, description, progress, targetAmount, completed, rewardXP, rewardItemID, rewardItemAmount);
   }
 
   public static class QuestProgressSyncHandler {
@@ -79,18 +86,60 @@ public record QuestProgressSyncMessage(UUID questId, String title, String descri
 
     @FunctionalInterface
     public interface QuestProgressSyncConsumer {
-      void accept(UUID questId, String title, String description, int progress, int targetAmount, boolean completed);
+      void accept(UUID questId, String title, String description, int progress, int targetAmount, boolean completed, int rewardXP, String rewardItemID, int rewardItemAmount);
     }
 
     public static void setHandler(QuestProgressSyncConsumer h) {
       handler = h;
     }
 
-    public static void onQuestProgressSync(UUID questId, String title, String description, int progress, int targetAmount, boolean completed) {
-      de.markusbordihn.easynpc.client.quest.ClientQuestManager.addQuest(questId, title, description, progress, targetAmount, completed);
-      if (handler != null) {
-        handler.accept(questId, title, description, progress, targetAmount, completed);
+    public static void onQuestProgressSync(UUID questId, String title, String description, int progress, int targetAmount, boolean completed, int rewardXP, String rewardItemID, int rewardItemAmount) {
+      boolean wasCompleted = de.markusbordihn.easynpc.client.quest.ClientQuestManager.hasQuest(questId) && 
+                            de.markusbordihn.easynpc.client.quest.ClientQuestManager.getQuests().stream()
+                            .filter(q -> q.id.equals(questId))
+                            .anyMatch(q -> q.completed);
+      
+      de.markusbordihn.easynpc.client.quest.ClientQuestManager.addQuest(questId, title, description, progress, targetAmount, completed, rewardXP, rewardItemID, rewardItemAmount);
+      
+      if (completed && !wasCompleted) {
+        showQuestCompletionTitle(title, rewardXP, rewardItemID, rewardItemAmount);
       }
+
+      if (handler != null) {
+        handler.accept(questId, title, description, progress, targetAmount, completed, rewardXP, rewardItemID, rewardItemAmount);
+      }
+    }
+
+    private static void showQuestCompletionTitle(String title, int xp, String item, int amount) {
+       net.minecraft.client.Minecraft minecraft = net.minecraft.client.Minecraft.getInstance();
+       if (minecraft.player != null) {
+          // Main Title: Chinese for "Quest Completed"
+          Component mainTitle = Component.translatable("gui.easy_npc.quest.completed_title");
+          
+          // Subtitle: Title of quest and rewards
+          StringBuilder rewardStr = new StringBuilder();
+          if (xp > 0) {
+              rewardStr.append("§e+").append(xp).append(" XP ");
+          }
+          if (item != null && !item.isEmpty() && amount > 0) {
+              String name = item;
+              try {
+                  // Try to get localized item name
+                  name = BuiltInRegistries.ITEM.get(ResourceLocation.parse(item)).getDescription().getString();
+              } catch (Exception ignore) {}
+              rewardStr.append("§a+").append(amount).append(" ").append(name);
+          }
+          
+          Component subTitle = Component.literal("§6" + title + (rewardStr.length() > 0 ? " §7- " + rewardStr.toString() : ""));
+          
+          // Use Minecraft's built-in title system
+          minecraft.gui.setTimes(10, 70, 20); // fade in, stay, fade out
+          minecraft.gui.setTitle(mainTitle);
+          minecraft.gui.setSubtitle(subTitle);
+          
+          // Also a task bar message for backup
+          minecraft.player.displayClientMessage(Component.literal("§6[EasyNPC] §a✔ ").append(mainTitle).append(Component.literal(": " + title)), false);
+       }
     }
   }
 }

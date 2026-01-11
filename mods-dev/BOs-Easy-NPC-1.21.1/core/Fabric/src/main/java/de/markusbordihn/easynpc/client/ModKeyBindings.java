@@ -35,6 +35,7 @@ public class ModKeyBindings {
 
   private static KeyMapping toggleQuestOverlayKey;
   private static KeyMapping toggleQuestDescriptionKey;
+  private static KeyMapping openQuestListKey;
   private static KeyMapping toggleSpawnTimerKey;
 
   private ModKeyBindings() {}
@@ -61,6 +62,13 @@ public class ModKeyBindings {
         "key.easy_npc.toggle_quest_description",
         InputConstants.Type.KEYSYM,
         GLFW.GLFW_KEY_J,
+        "category.easy_npc.keys"
+    ));
+
+    openQuestListKey = KeyBindingHelper.registerKeyBinding(new KeyMapping(
+        "key.easy_npc.open_quest_list",
+        InputConstants.Type.KEYSYM,
+        GLFW.GLFW_KEY_L,
         "category.easy_npc.keys"
     ));
 
@@ -96,6 +104,10 @@ public class ModKeyBindings {
         client.player.displayClientMessage(
             Component.literal("§6[EasyNPC] §7Quest Descriptions: " + status), true);
       }
+    }
+
+    if (openQuestListKey.consumeClick()) {
+      client.setScreen(new de.markusbordihn.easynpc.client.screen.QuestListScreen());
     }
   }
 

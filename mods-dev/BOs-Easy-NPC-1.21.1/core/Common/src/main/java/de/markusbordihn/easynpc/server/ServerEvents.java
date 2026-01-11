@@ -48,6 +48,9 @@ public class ServerEvents {
 
     // Load quests from config directory
     de.markusbordihn.easynpc.data.quest.QuestManager.loadQuests(Constants.CONFIG_DIR.resolve(Constants.MOD_ID).resolve("quests"));
+
+    // Initialize law system config/state.
+    de.markusbordihn.easynpc.handler.LawSystemHandler.getInstance().initialize(minecraftServer);
   }
 
   public static void handleServerStarted(MinecraftServer minecraftServer) {
@@ -70,5 +73,8 @@ public class ServerEvents {
 
     // Handle delayed spawning tasks.
     de.markusbordihn.easynpc.handler.SpawningHandler.handleServerTick(minecraftServer);
+
+    // Handle law system tick.
+    de.markusbordihn.easynpc.handler.LawSystemHandler.handleServerTick(minecraftServer);
   }
 }

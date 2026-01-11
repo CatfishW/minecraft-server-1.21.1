@@ -24,13 +24,14 @@ import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
 import de.markusbordihn.easynpc.entity.easynpc.data.ActionEventDataCapable;
 import de.markusbordihn.easynpc.entity.easynpc.data.ObjectiveDataCapable;
 import de.markusbordihn.easynpc.entity.easynpc.data.TradingDataCapable;
+import de.markusbordihn.easynpc.handler.CrimeHandler;
+import de.markusbordihn.easynpc.handler.SpawningHandler;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.portal.DimensionTransition;
-import de.markusbordihn.easynpc.handler.SpawningHandler;
 
 
 
@@ -89,6 +90,12 @@ public final class EasyNPCEventHandler {
       EasyNPC<E> easyNPC, DamageSource damageSource) {
     // Notify spawning handler about death to maintain population
     SpawningHandler.onNPCDeath(easyNPC.getEntity());
+    
+    // Notify crime handler for wanted level tracking
+    ServerPlayer killerPlayer = getServerPlayerFromDamageSource(damageSource);
+    if (killerPlayer != null) {
+      CrimeHandler.getInstance().onNPCKilled(killerPlayer, easyNPC.getEntity());
+    }
     
     // Check for custom drop configuration via Tags
     for (String tag : easyNPC.getEntity().getTags()) {

@@ -30,10 +30,11 @@ public class ClientQuestManager {
   private ClientQuestManager() {}
 
   public static void addQuest(
-      UUID questId, String title, String description, int progress, int targetAmount, boolean completed) {
+      UUID questId, String title, String description, int progress, int targetAmount, boolean completed,
+      int rewardXP, String rewardItemID, int rewardItemAmount) {
     // Remove existing if any
     activeQuests.removeIf(q -> q.id.equals(questId));
-    activeQuests.add(new ClientQuestEntry(questId, title, description, progress, targetAmount, completed));
+    activeQuests.add(new ClientQuestEntry(questId, title, description, progress, targetAmount, completed, rewardXP, rewardItemID, rewardItemAmount));
   }
 
   public static void removeQuest(UUID questId) {
@@ -65,15 +66,22 @@ public class ClientQuestManager {
     public int progress;
     public int targetAmount;
     public boolean completed;
+    public int rewardXP;
+    public String rewardItemID;
+    public int rewardItemAmount;
 
     public ClientQuestEntry(
-        UUID id, String title, String description, int progress, int targetAmount, boolean completed) {
+        UUID id, String title, String description, int progress, int targetAmount, boolean completed,
+        int rewardXP, String rewardItemID, int rewardItemAmount) {
       this.id = id;
       this.title = title;
       this.description = description;
       this.progress = progress;
       this.targetAmount = targetAmount;
       this.completed = completed;
+      this.rewardXP = rewardXP;
+      this.rewardItemID = rewardItemID;
+      this.rewardItemAmount = rewardItemAmount;
     }
   }
 }

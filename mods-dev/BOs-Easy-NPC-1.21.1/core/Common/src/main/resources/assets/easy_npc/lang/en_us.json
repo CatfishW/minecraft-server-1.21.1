@@ -79,5 +79,18 @@
   "tooltip.easy_npc.spawner.group_spawner": "The Group Spawner is a spawner that allows you to spawn a group of NPCs.",
   "tooltip.easy_npc.spawner.single_spawner": "The Single Spawner is a spawner that allows you to spawn a single NPC.",
   "key.easy_npc.toggle_spawn_timer": "Toggle Spawn Timer Overlay",
-  "category.easy_npc.keys": "EasyNPC"
+  "key.easy_npc.toggle_quest_overlay": "Toggle Quest Overlay",
+  "key.easy_npc.toggle_quest_description": "Toggle Quest Descriptions",
+  "key.easy_npc.open_quest_list": "Open Quest Log",
+  "category.easy_npc.keys": "EasyNPC",
+  "gui.easy_npc.quest.adventure_log": "Adventure Log",
+  "gui.easy_npc.quest.close_log": "Close Log",
+  "gui.easy_npc.quest.accept_quest": "Accept Quest",
+  "gui.easy_npc.quest.close": "Close",
+  "gui.easy_npc.quest.progress": "Progress",
+  "gui.easy_npc.quest.no_quests": "No active quests found.",
+  "gui.easy_npc.quest.objective": "Objective",
+  "gui.easy_npc.quest.no_quest_available": "No quest available",
+  "gui.easy_npc.quest.completed_title": "Quest Completed",
+  "gui.easy_npc.quest.cancel_quest": "Cancel Quest"
 }

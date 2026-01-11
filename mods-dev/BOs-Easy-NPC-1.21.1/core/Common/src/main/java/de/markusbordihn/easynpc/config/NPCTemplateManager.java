@@ -271,6 +271,16 @@ public class NPCTemplateManager {
         log.error("{} Failed to apply equipment:", LOG_PREFIX, e);
       }
     }
+
+    // Apply trading configuration
+    if (template.getTrading() != null) {
+      log.info("{} Template has trading config, applying...", LOG_PREFIX);
+      try {
+        applyTrading(npc, template.getTrading());
+      } catch (Exception e) {
+        log.error("{} Failed to apply trading:", LOG_PREFIX, e);
+      }
+    }
     
     // Apply objectives
     if (template.getObjectives() != null) {
@@ -576,13 +586,18 @@ public class NPCTemplateManager {
       } else if (action.startsWith("OPEN_QUEST_DIALOG")) {
           buttonType = DialogButtonType.DEFAULT;
           if (action.contains(":")) {
-             String questIdStr = action.substring(action.indexOf(":") + 1).trim();
-             try {
-                 UUID questId = UUID.fromString(questIdStr);
-                 actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG, questId, ""));
-             } catch (IllegalArgumentException e) {
-                 log.warn("Invalid Quest UUID in action: {}", action);
-                 actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG));
+             String arg = action.substring(action.indexOf(":") + 1).trim();
+             if (arg.startsWith("RANDOM_POOL:")) {
+                 // Store the pool string in the command field
+                 actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG, arg));
+             } else {
+                 try {
+                     UUID questId = UUID.fromString(arg);
+                     actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG, questId, ""));
+                 } catch (IllegalArgumentException e) {
+                     log.warn("Invalid Quest UUID in action: {}", action);
+                     actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG));
+                 }
              }
           } else {
              actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG));
@@ -648,13 +663,17 @@ public class NPCTemplateManager {
       } else if (action.startsWith("OPEN_QUEST_DIALOG")) {
           buttonType = DialogButtonType.DEFAULT;
           if (action.contains(":")) {
-             String questIdStr = action.substring(action.indexOf(":") + 1).trim();
-             try {
-                 UUID questId = UUID.fromString(questIdStr);
-                 actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG, questId, ""));
-             } catch (IllegalArgumentException e) {
-                 log.warn("Invalid Quest UUID in action: {}", action);
-                 actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG));
+             String arg = action.substring(action.indexOf(":") + 1).trim();
+             if (arg.startsWith("RANDOM_POOL:")) {
+                 actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG, arg));
+             } else {
+                 try {
+                     UUID questId = UUID.fromString(arg);
+                     actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG, questId, ""));
+                 } catch (IllegalArgumentException e) {
+                     log.warn("Invalid Quest UUID in action: {}", action);
+                     actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG));
+                 }
              }
           } else {
              actionDataSet.add(new ActionDataEntry(ActionDataType.OPEN_QUEST_DIALOG));
@@ -817,6 +836,142 @@ public class NPCTemplateManager {
     setEquipmentSlot(mob, EquipmentSlot.LEGS, equipment.getLegs());
     setEquipmentSlot(mob, EquipmentSlot.FEET, equipment.getFeet());
   }
+
+  private static void applyTrading(EasyNPC<?> npc, NPCTemplateData.TradingConfig trading) {
+    if (!(npc instanceof de.markusbordihn.easynpc.entity.easynpc.data.TradingDataCapable<?> tradingCapable)) {
+      log.warn("{} NPC does not support trading data", LOG_PREFIX);
+      return;
+    }
+    if (trading == null) {
+      return;
+    }
+
+    de.markusbordihn.easynpc.data.trading.TradingDataSet tradingDataSet =
+        new de.markusbordihn.easynpc.data.trading.TradingDataSet();
+    de.markusbordihn.easynpc.data.trading.TradingType tradingType =
+        de.markusbordihn.easynpc.data.trading.TradingType.get(trading.getType());
+    tradingDataSet.setType(tradingType);
+    tradingDataSet.setMaxUses(trading.getMaxUses());
+    tradingDataSet.setRewardedXP(trading.getRewardedXP());
+    tradingDataSet.setResetsEveryMin(trading.getResetsEveryMin());
+    tradingCapable.setTradingDataSet(tradingDataSet);
+
+    net.minecraft.world.item.trading.MerchantOffers offers =
+        new net.minecraft.world.item.trading.MerchantOffers();
+
+    if (trading.isRandomizeOffers()
+        && trading.getBuyList() != null
+        && trading.getSellList() != null
+        && trading.getBuyList().length > 0
+        && trading.getSellList().length > 0) {
+      int maxPairs = Math.min(trading.getBuyList().length, trading.getSellList().length);
+      int targetCount = trading.getRandomOfferCount() > 0
+          ? Math.min(trading.getRandomOfferCount(), maxPairs)
+          : maxPairs;
+      java.util.List<Integer> indices = new java.util.ArrayList<>();
+      for (int i = 0; i < maxPairs; i++) {
+        indices.add(i);
+      }
+      java.util.Collections.shuffle(indices, new java.util.Random());
+      for (int i = 0; i < targetCount; i++) {
+        int index = indices.get(i);
+        NPCTemplateData.ItemStack buyConfig = trading.getBuyList()[index];
+        NPCTemplateData.ItemStack sellConfig = trading.getSellList()[index];
+        net.minecraft.world.item.ItemStack buy = createItemStackFromConfig(buyConfig);
+        net.minecraft.world.item.ItemStack sell = createItemStackFromConfig(sellConfig);
+        if (buy.isEmpty() || sell.isEmpty()) {
+          continue;
+        }
+        offers.add(new net.minecraft.world.item.trading.MerchantOffer(
+            new net.minecraft.world.item.trading.ItemCost(buy.getItem(), buy.getCount()),
+            java.util.Optional.empty(),
+            sell,
+            trading.getMaxUses(),
+            trading.getRewardedXP(),
+            0.0F));
+      }
+    } else if (trading.getBuyList() != null
+        && trading.getSellList() != null
+        && trading.getBuyList().length > 0
+        && trading.getSellList().length > 0) {
+      int pairCount = Math.min(trading.getBuyList().length, trading.getSellList().length);
+      for (int i = 0; i < pairCount; i++) {
+        net.minecraft.world.item.ItemStack buy = createItemStackFromConfig(trading.getBuyList()[i]);
+        net.minecraft.world.item.ItemStack sell = createItemStackFromConfig(trading.getSellList()[i]);
+        if (buy.isEmpty() || sell.isEmpty()) {
+          continue;
+        }
+        offers.add(new net.minecraft.world.item.trading.MerchantOffer(
+            new net.minecraft.world.item.trading.ItemCost(buy.getItem(), buy.getCount()),
+            java.util.Optional.empty(),
+            sell,
+            trading.getMaxUses(),
+            trading.getRewardedXP(),
+            0.0F));
+      }
+    } else if (trading.getOffers() != null) {
+      for (NPCTemplateData.TradeOffer offer : trading.getOffers()) {
+        if (offer == null) {
+          continue;
+        }
+        net.minecraft.world.item.ItemStack buy = createItemStackFromConfig(offer.getBuy());
+        net.minecraft.world.item.ItemStack buyExtra = createItemStackFromConfig(offer.getBuyExtra());
+        net.minecraft.world.item.ItemStack sell = createItemStackFromConfig(offer.getSell());
+        if (buy.isEmpty() || sell.isEmpty()) {
+          continue;
+        }
+        int maxUses = offer.getMaxUses() > 0 ? offer.getMaxUses() : trading.getMaxUses();
+        int xpReward = offer.getXpReward() > 0 ? offer.getXpReward() : trading.getRewardedXP();
+        java.util.Optional<net.minecraft.world.item.trading.ItemCost> costB =
+            buyExtra.isEmpty()
+                ? java.util.Optional.empty()
+                : java.util.Optional.of(
+                    new net.minecraft.world.item.trading.ItemCost(
+                        buyExtra.getItem(), buyExtra.getCount()));
+        offers.add(new net.minecraft.world.item.trading.MerchantOffer(
+            new net.minecraft.world.item.trading.ItemCost(buy.getItem(), buy.getCount()),
+            costB,
+            sell,
+            maxUses,
+            xpReward,
+            0.0F));
+      }
+    }
+
+    if (!offers.isEmpty()) {
+      tradingCapable.setTradingOffers(offers);
+    }
+  }
+
+  private static net.minecraft.world.item.ItemStack createItemStackFromConfig(
+      NPCTemplateData.ItemStack itemConfig) {
+    if (itemConfig == null || itemConfig.getItem() == null || itemConfig.getItem().isEmpty()) {
+      return net.minecraft.world.item.ItemStack.EMPTY;
+    }
+    try {
+      ResourceLocation location = ResourceLocation.parse(itemConfig.getItem());
+      net.minecraft.world.item.Item item = BuiltInRegistries.ITEM.get(location);
+      if (item == null || item == net.minecraft.world.item.Items.AIR) {
+        return net.minecraft.world.item.ItemStack.EMPTY;
+      }
+      net.minecraft.world.item.ItemStack itemStack =
+          new net.minecraft.world.item.ItemStack(item, itemConfig.getCount() > 0 ? itemConfig.getCount() : 1);
+      if (itemConfig.getNbt() != null && !itemConfig.getNbt().isEmpty()) {
+        try {
+          net.minecraft.nbt.CompoundTag tag = net.minecraft.nbt.TagParser.parseTag(itemConfig.getNbt());
+          itemStack.set(
+              net.minecraft.core.component.DataComponents.CUSTOM_DATA,
+              net.minecraft.world.item.component.CustomData.of(tag));
+        } catch (Exception e) {
+          log.error("{} Failed to parse/apply NBT for item {}: {}", LOG_PREFIX, itemConfig.getItem(), e.getMessage());
+        }
+      }
+      return itemStack;
+    } catch (Exception e) {
+      log.error("{} Failed to parse item {}: {}", LOG_PREFIX, itemConfig.getItem(), e.getMessage());
+      return net.minecraft.world.item.ItemStack.EMPTY;
+    }
+  }
   
   private static void setEquipmentSlot(net.minecraft.world.entity.Mob mob, EquipmentSlot slot, NPCTemplateData.ItemStack itemConfig) {
     if (itemConfig == null || itemConfig.getItem() == null || itemConfig.getItem().isEmpty()) {
@@ -922,4 +1077,3 @@ public class NPCTemplateManager {
     log.info("{} Applied drop configuration tag: {}", LOG_PREFIX, configString);
   }
 }
-

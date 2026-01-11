@@ -361,8 +361,27 @@ public interface ActionHandler<E extends PathfinderMob> extends EasyNPC<E> {
       case OPEN_QUEST_DIALOG:
         if (serverPlayer != null) {
             java.util.UUID questId = actionDataEntry.targetUUID();
-            de.markusbordihn.easynpc.data.quest.QuestDataEntry quest = null;
+            String command = actionDataEntry.command();
             
+            // Handle Random Pool if specified in command field
+            if (questId == null && command != null && command.startsWith("RANDOM_POOL:")) {
+                try {
+                    String[] pool = command.substring("RANDOM_POOL:".length()).split(",");
+                    if (pool.length > 0) {
+                        // Use NPC UUID + some salt as seed for "sticky" random choice per respawn
+                        // If we want it really random every time, use new Random()
+                        // User said "When they are respawned, select a random quest", which implies sticky per instance.
+                        long seed = this.getEntityUUID().getLeastSignificantBits() ^ this.getEntityUUID().getMostSignificantBits();
+                        int index = new java.util.Random(seed).nextInt(pool.length);
+                        questId = java.util.UUID.fromString(pool[Math.max(0, Math.min(index, pool.length - 1))].trim());
+                        log.debug("Selected random quest {} from pool for NPC {}", questId, this.getEntityUUID());
+                    }
+                } catch (Exception e) {
+                    log.error("Error picking random quest from pool: {}", e.getMessage());
+                }
+            }
+            
+            de.markusbordihn.easynpc.data.quest.QuestDataEntry quest = null;
             if (questId != null) {
                 quest = de.markusbordihn.easynpc.data.quest.QuestManager.getQuest(questId);
             }
@@ -372,7 +391,7 @@ public interface ActionHandler<E extends PathfinderMob> extends EasyNPC<E> {
                 de.markusbordihn.easynpc.network.NetworkHandlerManager.sendMessageToPlayer(
                     new de.markusbordihn.easynpc.network.message.client.OpenQuestDialogMessage(quest), 
                     serverPlayer);
-                log.info("Opening Quest Dialog '{}' ({}) for player {}", quest.getTitle(), questId, serverPlayer);
+                log.info("Opening Quest Dialog '{}' ({}) for player {}", quest.getTitle(), questId, serverPlayer.getScoreboardName());
             } else {
                 log.warn("Quest not found for ID: {} or no ID provided in action {}", questId, actionDataEntry);
                 serverPlayer.displayClientMessage(net.minecraft.network.chat.Component.literal("§cQuest not available."), true);

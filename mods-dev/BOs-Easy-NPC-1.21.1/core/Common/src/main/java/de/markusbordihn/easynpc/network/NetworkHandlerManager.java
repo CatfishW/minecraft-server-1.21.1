@@ -140,6 +140,20 @@ public class NetworkHandlerManager {
         de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage.STREAM_CODEC,
         de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage.class,
         de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage::create);
+
+    // Law system sync message
+    networkHandler.registerClientNetworkMessage(
+        de.markusbordihn.easynpc.network.message.LawStateSyncMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.LawStateSyncMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.LawStateSyncMessage.class,
+        de.markusbordihn.easynpc.network.message.LawStateSyncMessage::create);
+
+    // Law system admin data message
+    networkHandler.registerClientNetworkMessage(
+        de.markusbordihn.easynpc.network.message.LawAdminDataMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.LawAdminDataMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.LawAdminDataMessage.class,
+        de.markusbordihn.easynpc.network.message.LawAdminDataMessage::create);
   }
 
   public static void registerServerNetworkHandler() {
@@ -192,5 +206,24 @@ public class NetworkHandlerManager {
         de.markusbordihn.easynpc.network.message.server.CancelQuestMessage.STREAM_CODEC,
         de.markusbordihn.easynpc.network.message.server.CancelQuestMessage.class,
         de.markusbordihn.easynpc.network.message.server.CancelQuestMessage::create);
+
+    // Law system admin actions and config updates
+    networkHandler.registerServerNetworkMessage(
+        de.markusbordihn.easynpc.network.message.AdminActionMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.AdminActionMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.AdminActionMessage.class,
+        de.markusbordihn.easynpc.network.message.AdminActionMessage::create);
+
+    networkHandler.registerServerNetworkMessage(
+        de.markusbordihn.easynpc.network.message.LawAdminRequestMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.LawAdminRequestMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.LawAdminRequestMessage.class,
+        de.markusbordihn.easynpc.network.message.LawAdminRequestMessage::create);
+
+    networkHandler.registerServerNetworkMessage(
+        de.markusbordihn.easynpc.network.message.LawConfigUpdateMessage.PAYLOAD_TYPE,
+        de.markusbordihn.easynpc.network.message.LawConfigUpdateMessage.STREAM_CODEC,
+        de.markusbordihn.easynpc.network.message.LawConfigUpdateMessage.class,
+        de.markusbordihn.easynpc.network.message.LawConfigUpdateMessage::create);
   }
 }

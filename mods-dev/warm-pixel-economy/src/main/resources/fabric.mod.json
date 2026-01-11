@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "warm_pixel_economy",
+  "version": "${version}",
+  "name": "Warm Pixel Economy",
+  "description": "Server-side economy system with shops and auctions.",
+  "authors": ["Warm Pixel"],
+  "license": "All Rights Reserved",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.warmpixel.economy.fabric.WarmPixelEconomyMod"
+    ],
+    "client": [
+      "com.warmpixel.economy.fabric.client.WarmPixelEconomyClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric": "*",
+    "minecraft": "1.21.1"
+  }
+}

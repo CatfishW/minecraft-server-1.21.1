@@ -49,15 +49,20 @@ public class CustomAttackGoal<T extends EasyNPC<?>> extends Goal {
     this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
   }
 
+  private boolean hasHeldItem() {
+    return !this.pathfinderMob.getMainHandItem().isEmpty()
+        || !this.pathfinderMob.getOffhandItem().isEmpty();
+  }
+
   public boolean canUse() {
     return this.pathfinderMob.getTarget() != null
-        && AttackHandler.isHoldingWeapon(this.pathfinderMob);
+        && (AttackHandler.isHoldingWeapon(this.pathfinderMob) || hasHeldItem());
   }
 
   @Override
   public boolean canContinueToUse() {
     return (this.canUse() || !this.pathfinderMob.getNavigation().isDone())
-        && AttackHandler.isHoldingWeapon(this.pathfinderMob);
+        && (AttackHandler.isHoldingWeapon(this.pathfinderMob) || hasHeldItem());
   }
 
   @Override

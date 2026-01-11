@@ -21,9 +21,6 @@ public class ModItems {
     public static final Item BANKNOTE_SCROLL = registerItem("banknote_scroll",
             new Item(new Item.Properties().stacksTo(64)));
 
-    public static final Item BOUNTY_SCROLL = registerItem("bounty_scroll",
-            new com.novus.items.bounty.BountyScrollItem(new Item.Properties().stacksTo(1)));
-    
     // Aether Scrolls - different flight durations
     public static final Item AETHER_SCROLL_1H = registerItem("aether_scroll_1h",
             new AetherScrollItem(FlightDuration.ONE_HOUR, new Item.Properties().stacksTo(16)));
@@ -66,7 +63,6 @@ public class ModItems {
             entries.accept(AETHER_SCROLL_3D);
             entries.accept(AETHER_SCROLL_7D);
             entries.accept(AETHER_SCROLL_PERMANENT);
-            entries.accept(BOUNTY_SCROLL);
         });
     }
 }

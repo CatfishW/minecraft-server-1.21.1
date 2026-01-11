@@ -81,11 +81,17 @@ public class QuestObjectiveHandler {
                // Update only if changed/different. 
                int newProgress = Math.min(currentCount, requiredAmount);
                if (newProgress != entry.getValue().progress) {
+                   log.debug("Updating gather progress for quest {}: {} -> {}", quest.getId(), entry.getValue().progress, newProgress);
+                   tracker.setProgress(player.getUUID(), quest.getId(), newProgress);
+                   
                    if (currentCount >= requiredAmount) {
                      tracker.completeQuest(player.getUUID(), quest.getId());
-                     player.displayClientMessage(net.minecraft.network.chat.Component.literal("§aQuest Completed: " + quest.getTitle()), true);
+                     player.displayClientMessage(net.minecraft.network.chat.Component.translatable("gui.easy_npc.quest.completed_title").append(": ").append(quest.getTitle()), true);
                      grantReward(player, quest);
                    }
+                   
+                   // Sync changes to client
+                   QuestSyncHandler.syncQuest(player, quest.getId());
                }
           }
       }
@@ -134,7 +140,7 @@ public class QuestObjectiveHandler {
                   // Check completion
                    if (entry.getValue().progress >= quest.getObjectiveAmount()) {
                       tracker.completeQuest(player.getUUID(), quest.getId());
-                      player.displayClientMessage(net.minecraft.network.chat.Component.literal("§aQuest Completed: " + quest.getTitle()), true);
+                      player.displayClientMessage(net.minecraft.network.chat.Component.translatable("gui.easy_npc.quest.completed_title").append(": ").append(quest.getTitle()), true);
                       grantReward(player, quest);
                   }
                   QuestSyncHandler.syncQuest(player, quest.getId());

@@ -128,7 +128,10 @@ public class TemplateCommand {
    */
   private static CompletableFuture<Suggestions> suggestTemplateNames(
       CommandContext<CommandSourceStack> context, SuggestionsBuilder builder) {
-    Set<String> templates = NPCTemplateManager.getTemplateNames();
+    Set<String> templates = new java.util.LinkedHashSet<>();
+    templates.add("all");
+    templates.add("spawn_all");
+    templates.addAll(NPCTemplateManager.getTemplateNames());
     return SharedSuggestionProvider.suggest(templates, builder);
   }
   
@@ -357,9 +360,10 @@ public class TemplateCommand {
     String templateName = StringArgumentType.getString(context, "template_name");
     int maxCount = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "max_count");
     int delayTicks = com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "delay_ticks");
+    boolean spawnAll = "all".equalsIgnoreCase(templateName) || "spawn_all".equalsIgnoreCase(templateName);
 
     // Check if template exists
-    if (!NPCTemplateManager.hasTemplate(templateName)) {
+    if (!spawnAll && !NPCTemplateManager.hasTemplate(templateName)) {
       source.sendFailure(Component.literal("§cTemplate not found: " + templateName));
       return 0;
     }
@@ -390,17 +394,41 @@ public class TemplateCommand {
     }
 
     try {
-      de.markusbordihn.easynpc.handler.SpawningHandler.addSpawningTask(
-          templateName, player.serverLevel(), pos1, pos2, maxCount, delayTicks, groupSpawn);
-      
-      String modeStr = groupSpawn ? " (GROUP MODE)" : "";
-      source.sendSuccess(() -> Component.literal(
-          String.format("§aStarted spawning %d %s NPCs every %d ticks%s in area (%d,%d,%d) to (%d,%d,%d)", 
-              maxCount, templateName, delayTicks, modeStr,
-              pos1.getX(), pos1.getY(), pos1.getZ(),
-              pos2.getX(), pos2.getY(), pos2.getZ())), true);
-      log.info("{} {} started wand spawn for template '{}' (count: {}, delay: {}, group: {})", 
-          LOG_PREFIX, player.getName().getString(), templateName, maxCount, delayTicks, groupSpawn);
+      if (spawnAll) {
+        Set<String> templates = NPCTemplateManager.getTemplateNames();
+        if (templates.isEmpty()) {
+          source.sendFailure(Component.literal("§cNo templates found to spawn."));
+          return 0;
+        }
+        int spawnedTasks = 0;
+        for (String name : templates) {
+          de.markusbordihn.easynpc.handler.SpawningHandler.addSpawningTask(
+              name, player.serverLevel(), pos1, pos2, maxCount, delayTicks, groupSpawn);
+          spawnedTasks++;
+        }
+
+        String modeStr = groupSpawn ? " (GROUP MODE)" : "";
+        int finalCount = spawnedTasks;
+        source.sendSuccess(() -> Component.literal(
+            String.format("§aStarted spawning %d NPC template(s) every %d ticks%s in area (%d,%d,%d) to (%d,%d,%d)",
+                finalCount, delayTicks, modeStr,
+                pos1.getX(), pos1.getY(), pos1.getZ(),
+                pos2.getX(), pos2.getY(), pos2.getZ())), true);
+        log.info("{} {} started wand spawn for all templates (count: {}, delay: {}, group: {})",
+            LOG_PREFIX, player.getName().getString(), maxCount, delayTicks, groupSpawn);
+      } else {
+        de.markusbordihn.easynpc.handler.SpawningHandler.addSpawningTask(
+            templateName, player.serverLevel(), pos1, pos2, maxCount, delayTicks, groupSpawn);
+
+        String modeStr = groupSpawn ? " (GROUP MODE)" : "";
+        source.sendSuccess(() -> Component.literal(
+            String.format("§aStarted spawning %d %s NPCs every %d ticks%s in area (%d,%d,%d) to (%d,%d,%d)", 
+                maxCount, templateName, delayTicks, modeStr,
+                pos1.getX(), pos1.getY(), pos1.getZ(),
+                pos2.getX(), pos2.getY(), pos2.getZ())), true);
+        log.info("{} {} started wand spawn for template '{}' (count: {}, delay: {}, group: {})",
+            LOG_PREFIX, player.getName().getString(), templateName, maxCount, delayTicks, groupSpawn);
+      }
     } catch (Exception e) {
       source.sendFailure(Component.literal("§cFailed to start spawning: " + e.getMessage()));
       return 0;
@@ -467,4 +495,3 @@ public class TemplateCommand {
     return Command.SINGLE_SUCCESS;
   }
 }
-

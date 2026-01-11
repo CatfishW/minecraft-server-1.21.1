@@ -291,14 +291,7 @@ public class FlightManager {
                 onlineUuids.add(uuid);
                 FlightData data = playerFlightData.get(uuid);
                 
-                if (data == null) {
-                    // Ensure flight is disabled for players without data
-                    if (!player.isCreative() && !player.isSpectator() && player.getAbilities().mayfly) {
-                        player.getAbilities().mayfly = false;
-                        player.getAbilities().flying = false;
-                        player.onUpdateAbilities();
-                    }
-                } else {
+                if (data != null) {
                     normalizeRemainingSeconds(data, System.currentTimeMillis());
 
                     if (data.isExpired()) {

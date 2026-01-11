@@ -27,6 +27,11 @@ processResources {
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
+
+    from("src/main/resources/assets/novus_items/textures/item/bounty_board") {
+        include("wanted_board*.png")
+        into("assets/novus_items/textures/block/bounty_board")
+    }
 }
 
 tasks.withType(JavaCompile).configureEach {

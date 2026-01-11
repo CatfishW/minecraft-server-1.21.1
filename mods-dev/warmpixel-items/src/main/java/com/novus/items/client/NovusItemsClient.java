@@ -4,10 +4,10 @@ import com.novus.items.FlightManager;
 import com.novus.items.NovusItemsMod;
 import com.novus.items.bounty.BountyBoardManager;
 import com.novus.items.client.bounty.BountyBoardScreen;
+import com.novus.items.client.bounty.TaskPoolScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.client.Minecraft;
 
 public class NovusItemsClient implements ClientModInitializer {
@@ -17,21 +17,19 @@ public class NovusItemsClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        PayloadTypeRegistry.playS2C().register(BountyBoardManager.BountyBoardOpenPayload.TYPE, BountyBoardManager.BountyBoardOpenPayload.CODEC);
-        PayloadTypeRegistry.playS2C().register(BountyBoardManager.BountyBoardSyncPayload.TYPE, BountyBoardManager.BountyBoardSyncPayload.CODEC);
-        PayloadTypeRegistry.playC2S().register(BountyBoardManager.BountyBoardActionPayload.TYPE, BountyBoardManager.BountyBoardActionPayload.CODEC);
-
         ClientPlayNetworking.registerGlobalReceiver(BountyBoardManager.BountyBoardOpenPayload.TYPE, (payload, context) -> {
             context.client().execute(() -> {
                 Minecraft minecraft = Minecraft.getInstance();
-                minecraft.setScreen(new BountyBoardScreen(payload.available(), payload.review(), payload.refreshTimes(), payload.isOp()));
+                minecraft.setScreen(new BountyBoardScreen(payload.available(), payload.my(), payload.refreshTimes(), payload.isOp(), payload.systemRefreshAddCount(), payload.playerMaxActive(), payload.taskPool()));
             });
         });
 
         ClientPlayNetworking.registerGlobalReceiver(BountyBoardManager.BountyBoardSyncPayload.TYPE, (payload, context) -> {
             context.client().execute(() -> {
                 if (Minecraft.getInstance().screen instanceof BountyBoardScreen screen) {
-                    screen.updateData(payload.available(), payload.review(), payload.refreshTimes(), payload.isOp());
+                    screen.updateData(payload.available(), payload.my(), payload.refreshTimes(), payload.isOp(), payload.systemRefreshAddCount(), payload.playerMaxActive(), payload.taskPool());
+                } else if (Minecraft.getInstance().screen instanceof TaskPoolScreen screen) {
+                    screen.updatePool(payload.taskPool());
                 }
             });
         });

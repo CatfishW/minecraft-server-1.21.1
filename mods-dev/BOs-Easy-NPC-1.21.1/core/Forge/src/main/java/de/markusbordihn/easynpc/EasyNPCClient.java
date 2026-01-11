@@ -41,12 +41,37 @@ public class EasyNPCClient {
     modEventBus.addListener(ModModelLayer::registerEntityLayerDefinitions);
     modEventBus.addListener(BlockEntityRenderer::register);
     modEventBus.addListener(EntityRenderer::register);
+    modEventBus.addListener(event -> tryRegisterWantedOverlay());
     modEventBus.addListener(ClientScreens::registerScreens);
 
     // Set up networking
     NetworkMessageHandlerManager.registerServerHandler(new ServerNetworkMessageHandler());
+    de.markusbordihn.easynpc.network.message.LawStateSyncMessage.setClientHandler(
+        (wantedLevel, peaceValue, hasImmunity) ->
+            tryUpdateWantedOverlay(wantedLevel, peaceValue, hasImmunity));
 
     // Register creative tabs
     ModTabs.CREATIVE_TABS.register(modEventBus);
+  }
+
+  private void tryRegisterWantedOverlay() {
+    try {
+      Class<?> overlayClass = Class.forName("de.markusbordihn.easynpc.client.WantedLevelOverlay");
+      java.lang.reflect.Method register = overlayClass.getMethod("register");
+      register.invoke(null);
+    } catch (Exception ignored) {
+      // Overlay is optional on Forge client.
+    }
+  }
+
+  private void tryUpdateWantedOverlay(int wantedLevel, int peaceValue, boolean hasImmunity) {
+    try {
+      Class<?> overlayClass = Class.forName("de.markusbordihn.easynpc.client.WantedLevelOverlay");
+      java.lang.reflect.Method update =
+          overlayClass.getMethod("updateFromServer", int.class, int.class, boolean.class);
+      update.invoke(null, wantedLevel, peaceValue, hasImmunity);
+    } catch (Exception ignored) {
+      // Overlay is optional on Forge client.
+    }
   }
 }

@@ -250,7 +250,7 @@ public class LivingEntityManager {
 
   public static boolean hasAccess(Entity entity, ServerPlayer serverPlayer) {
     // Allow admins and creative mode
-    if (serverPlayer.isCreative()) {
+    if (serverPlayer.isCreative() || serverPlayer.hasPermissions(2)) {
       return true;
     }
 

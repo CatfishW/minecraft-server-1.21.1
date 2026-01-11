@@ -20,10 +20,12 @@
 package de.markusbordihn.easynpc.configui;
 
 import de.markusbordihn.easynpc.configui.client.screen.ClientScreens;
+import de.markusbordihn.easynpc.configui.client.screen.configuration.law.LawAdminScreen;
 import de.markusbordihn.easynpc.configui.network.NetworkHandlerManager;
 import de.markusbordihn.easynpc.configui.network.NetworkMessageHandlerManager;
 import de.markusbordihn.easynpc.configui.network.ServerNetworkMessageHandler;
 import de.markusbordihn.easynpc.configui.tabs.ModTabs;
+import de.markusbordihn.easynpc.network.message.LawAdminDataMessage;
 import de.markusbordihn.easynpc.network.NetworkHandlerManagerType;
 import net.fabricmc.api.ClientModInitializer;
 import org.apache.logging.log4j.LogManager;
@@ -43,6 +45,7 @@ public class ConfigUIClient implements ClientModInitializer {
     log.info("{} Client Network Handler ...", Constants.LOG_REGISTER_PREFIX);
     NetworkHandlerManager.registerNetworkMessages(NetworkHandlerManagerType.CLIENT);
     NetworkMessageHandlerManager.registerServerHandler(new ServerNetworkMessageHandler());
+    LawAdminDataMessage.setClientHandler(LawAdminScreen::openFromServer);
 
     log.info("{} Client Screens ...", Constants.LOG_REGISTER_PREFIX);
     ClientScreens.registerScreens();

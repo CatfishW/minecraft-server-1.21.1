@@ -71,5 +71,20 @@
   "tooltip.easy_npc.spawner.boss_spawner": "首领刷怪笼是一个特殊的刷怪笼，允许你生成首领 NPC。",
   "tooltip.easy_npc.spawner.default_spawner": "默认刷怪笼是一个刷怪笼，允许你生成默认的 NPC。",
   "tooltip.easy_npc.spawner.group_spawner": "组刷怪笼是一个刷怪笼，允许你生成一组 NPC。",
-  "tooltip.easy_npc.spawner.single_spawner": "单刷怪笼是一个刷怪笼，允许你生成单个 NPC。"
+  "tooltip.easy_npc.spawner.single_spawner": "单刷怪笼是一个刷怪笼，允许你生成单个 NPC。",
+  "key.easy_npc.toggle_spawn_timer": "切换刷怪计时器",
+  "key.easy_npc.toggle_quest_overlay": "切换任务追踪",
+  "key.easy_npc.toggle_quest_description": "切换任务描述",
+  "key.easy_npc.open_quest_list": "打开任务日志",
+  "category.easy_npc.keys": "EasyNPC",
+  "gui.easy_npc.quest.adventure_log": "冒险日志",
+  "gui.easy_npc.quest.close_log": "关闭日志",
+  "gui.easy_npc.quest.accept_quest": "接受任务",
+  "gui.easy_npc.quest.close": "关闭",
+  "gui.easy_npc.quest.progress": "进度",
+  "gui.easy_npc.quest.no_quests": "没有进行中的任务",
+  "gui.easy_npc.quest.objective": "目标",
+  "gui.easy_npc.quest.no_quest_available": "没有可用的任务",
+  "gui.easy_npc.quest.completed_title": "任务完成",
+  "gui.easy_npc.quest.cancel_quest": "放弃任务"
 }

@@ -44,8 +44,8 @@ public record CancelQuestMessage(UUID questId) implements NetworkMessageRecord {
   }
 
   @Override
-  public void write(final FriendlyByteBuf buffer) {
-    buffer.writeUUID(this.questId);
+  public void write(FriendlyByteBuf buffer) {
+    buffer.writeUUID(questId);
   }
 
   @Override
@@ -60,20 +60,16 @@ public record CancelQuestMessage(UUID questId) implements NetworkMessageRecord {
 
   @Override
   public void handleServer(ServerPlayer serverPlayer) {
-    if (serverPlayer == null || this.questId == null) {
+    if (serverPlayer == null) {
       return;
     }
-    log.info("Player {} canceled quest {}", serverPlayer.getName().getString(), this.questId);
-    
-    // Remove quest from tracker
+    log.info("Player {} canceled quest {}", serverPlayer.getName().getString(), questId);
     QuestProgressTracker tracker = QuestProgressTracker.get(serverPlayer.serverLevel());
-    if (tracker != null) {
-        tracker.removeQuest(serverPlayer.getUUID(), this.questId);
-    }
+    tracker.removeQuest(serverPlayer.getUUID(), questId);
     
-    // Send confirmation to client to remove from overlay
+    // Notify the client that the quest should be removed from its local list
     de.markusbordihn.easynpc.network.NetworkHandlerManager.sendMessageToPlayer(
-        new de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage(this.questId), 
+        new de.markusbordihn.easynpc.network.message.client.RemoveQuestMessage(questId), 
         serverPlayer);
   }
 }

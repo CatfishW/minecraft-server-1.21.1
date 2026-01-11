@@ -116,6 +116,16 @@ public class QuestProgressTracker extends SavedData {
       }
   }
 
+  public void setProgress(UUID playerUUID, UUID questUUID, int progress) {
+      if (trackingData.containsKey(playerUUID)) {
+          QuestProgressEntry entry = trackingData.get(playerUUID).get(questUUID);
+          if (entry != null && !entry.completed) {
+              entry.progress = progress;
+              setDirty();
+          }
+      }
+  }
+
   public void completeQuest(UUID playerUUID, UUID questUUID) {
       if (trackingData.containsKey(playerUUID)) {
           QuestProgressEntry entry = trackingData.get(playerUUID).get(questUUID);

@@ -37,5 +37,8 @@ public class LivingEntityMixin {
       LivingEntity livingEntity = (LivingEntity) (Object) this;
       QuestObjectiveHandler.onKill(serverPlayer, livingEntity);
     }
+    if ((Object) this instanceof ServerPlayer deadPlayer) {
+      de.markusbordihn.easynpc.handler.LawSystemHandler.getInstance().onPlayerDeath(deadPlayer);
+    }
   }
 }

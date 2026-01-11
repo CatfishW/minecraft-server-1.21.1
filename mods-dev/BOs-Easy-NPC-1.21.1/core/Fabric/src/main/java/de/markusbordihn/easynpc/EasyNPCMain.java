@@ -44,6 +44,7 @@ import de.markusbordihn.easynpc.server.ServerEvents;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
@@ -101,11 +102,16 @@ public class EasyNPCMain implements ModInitializer {
     log.info("{} Server Events ...", Constants.LOG_REGISTER_PREFIX);
     ServerLifecycleEvents.SERVER_STARTING.register(ServerEvents::handleServerStarting);
     ServerLifecycleEvents.SERVER_STARTED.register(ServerEvents::handleServerStarted);
+    ServerLifecycleEvents.SERVER_STOPPING.register(
+        server -> de.markusbordihn.easynpc.handler.LawSystemHandler.getInstance().shutdown());
     ServerTickEvents.END_SERVER_TICK.register(ServerEvents::handleServerTick);
     LivingEntityEventHandler.registerServerEntityEvents();
-    ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> 
-        de.markusbordihn.easynpc.handler.QuestSyncHandler.syncAllQuests(handler.getPlayer())
-    );
+    ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+      de.markusbordihn.easynpc.handler.QuestSyncHandler.syncAllQuests(handler.getPlayer());
+      de.markusbordihn.easynpc.handler.LawSystemHandler.getInstance().syncPlayerState(handler.getPlayer());
+    });
+    ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) ->
+        de.markusbordihn.easynpc.handler.LawSystemHandler.getInstance().resetPlayerState(newPlayer));
 
     log.info("{} Menu Handler ...", Constants.LOG_REGISTER_PREFIX);
     MenuManager.registerMenuHandler(new MenuHandler());

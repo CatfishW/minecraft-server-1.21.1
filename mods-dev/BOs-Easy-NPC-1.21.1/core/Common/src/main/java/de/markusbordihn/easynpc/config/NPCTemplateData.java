@@ -205,6 +205,10 @@ public class NPCTemplateData {
     private int rewardedXP = 0;
     private int resetsEveryMin = 0;
     private TradeOffer[] offers;
+    private ItemStack[] buyList;
+    private ItemStack[] sellList;
+    private boolean randomizeOffers = false;
+    private int randomOfferCount = 0;
     
     public String getType() { return type; }
     public void setType(String type) { this.type = type; }
@@ -220,6 +224,18 @@ public class NPCTemplateData {
     
     public TradeOffer[] getOffers() { return offers; }
     public void setOffers(TradeOffer[] offers) { this.offers = offers; }
+
+    public ItemStack[] getBuyList() { return buyList; }
+    public void setBuyList(ItemStack[] buyList) { this.buyList = buyList; }
+
+    public ItemStack[] getSellList() { return sellList; }
+    public void setSellList(ItemStack[] sellList) { this.sellList = sellList; }
+
+    public boolean isRandomizeOffers() { return randomizeOffers; }
+    public void setRandomizeOffers(boolean randomizeOffers) { this.randomizeOffers = randomizeOffers; }
+
+    public int getRandomOfferCount() { return randomOfferCount; }
+    public void setRandomOfferCount(int randomOfferCount) { this.randomOfferCount = randomOfferCount; }
   }
   
   /**

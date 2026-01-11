@@ -26,6 +26,7 @@ import de.markusbordihn.easynpc.client.renderer.BlockEntityRenderer;
 import de.markusbordihn.easynpc.client.renderer.EntityRenderer;
 import de.markusbordihn.easynpc.client.renderer.SpawnRectRenderer;
 import de.markusbordihn.easynpc.client.renderer.SpawnTimerOverlay;
+import de.markusbordihn.easynpc.client.WantedLevelOverlay;
 import de.markusbordihn.easynpc.client.screen.ClientScreens;
 import de.markusbordihn.easynpc.entity.LivingEntityEventHandler;
 import de.markusbordihn.easynpc.network.NetworkHandlerManager;
@@ -59,6 +60,7 @@ public class EasyNPCClient implements ClientModInitializer {
     EntityRenderer.register();
     SpawnRectRenderer.register();
     SpawnTimerOverlay.register();
+    WantedLevelOverlay.register();
     de.markusbordihn.easynpc.client.renderer.QuestOverlay.register();
 
     log.info("{} Keybindings ...", Constants.LOG_REGISTER_PREFIX);
@@ -76,11 +78,30 @@ public class EasyNPCClient implements ClientModInitializer {
     log.info("{} Client Network Handler ...", Constants.LOG_REGISTER_PREFIX);
     NetworkHandlerManager.registerNetworkMessages(NetworkHandlerManagerType.CLIENT);
     NetworkMessageHandlerManager.registerServerHandler(new ServerNetworkMessageHandler());
+    
+    // Register Law System network handler
+    log.info("{} Law System Network ...", Constants.LOG_REGISTER_PREFIX);
+    registerLawSystemNetwork();
 
     log.info("{} Client Screens ...", Constants.LOG_REGISTER_PREFIX);
     ClientScreens.registerScreens();
 
     log.info("{} Client Event Handler ...", Constants.LOG_REGISTER_PREFIX);
     ClientEventHandler.registerClientEvents();
+  }
+
+  /**
+   * Register law system network message handlers.
+   */
+  private void registerLawSystemNetwork() {
+    // Set the client handler for LawStateSyncMessage (registration is done in NetworkHandlerManager)
+    de.markusbordihn.easynpc.network.message.LawStateSyncMessage.setClientHandler(
+        (wantedLevel, peaceValue, hasImmunity) -> {
+          WantedLevelOverlay.updateFromServer(wantedLevel, peaceValue, hasImmunity);
+          log.debug("Law state synced: wanted={}, peace={}, immunity={}", 
+              wantedLevel, peaceValue, hasImmunity);
+        });
+    
+    log.info("{} Registered LawStateSyncMessage client handler", Constants.LOG_REGISTER_PREFIX);
   }
 }

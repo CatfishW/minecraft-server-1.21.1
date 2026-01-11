@@ -56,7 +56,7 @@ public class QuestSyncHandler {
       QuestDataEntry quest = QuestManager.getQuest(questId);
       if (quest != null) {
           NetworkHandlerManager.sendMessageToPlayer(
-              new QuestProgressSyncMessage(questId, quest.getTitle(), quest.getDescription(), entry.progress, quest.getObjectiveAmount(), entry.completed),
+              new QuestProgressSyncMessage(questId, quest.getTitle(), quest.getDescription(), entry.progress, quest.getObjectiveAmount(), entry.completed, quest.getRewardXP(), quest.getRewardItemID(), quest.getRewardItemAmount()),
               player);
       }
   }

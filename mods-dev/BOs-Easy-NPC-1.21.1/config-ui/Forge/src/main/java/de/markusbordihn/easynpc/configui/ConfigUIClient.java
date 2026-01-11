@@ -20,8 +20,10 @@
 package de.markusbordihn.easynpc.configui;
 
 import de.markusbordihn.easynpc.configui.client.screen.ClientScreens;
+import de.markusbordihn.easynpc.configui.client.screen.configuration.law.LawAdminScreen;
 import de.markusbordihn.easynpc.configui.network.NetworkMessageHandlerManager;
 import de.markusbordihn.easynpc.configui.network.ServerNetworkMessageHandler;
+import de.markusbordihn.easynpc.network.message.LawAdminDataMessage;
 import de.markusbordihn.easynpc.configui.tabs.ModTabs;
 import net.minecraftforge.eventbus.api.IEventBus;
 import org.apache.logging.log4j.LogManager;
@@ -37,5 +39,6 @@ public class ConfigUIClient {
     modEventBus.addListener(ClientScreens::registerScreens);
     modEventBus.addListener(ModTabs::handleCreativeModeTabRegister);
     NetworkMessageHandlerManager.registerServerHandler(new ServerNetworkMessageHandler());
+    LawAdminDataMessage.setClientHandler(LawAdminScreen::openFromServer);
   }
 }

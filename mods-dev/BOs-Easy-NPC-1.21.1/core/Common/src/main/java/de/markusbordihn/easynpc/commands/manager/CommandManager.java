@@ -45,6 +45,7 @@ import de.markusbordihn.easynpc.server.commands.SpawnerCommand;
 import de.markusbordihn.easynpc.server.commands.TemplateCommand;
 import de.markusbordihn.easynpc.server.commands.TestCommand;
 import de.markusbordihn.easynpc.server.commands.TradingCommand;
+import de.markusbordihn.easynpc.commands.LawCommand;
 import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
@@ -90,5 +91,8 @@ public class CommandManager {
             .then(TemplateCommand.register())
             .then(TestCommand.register())
             .then(TradingCommand.register()));
+    
+    // Register law system commands as separate /law command
+    LawCommand.register(commandDispatcher);
   }
 }
