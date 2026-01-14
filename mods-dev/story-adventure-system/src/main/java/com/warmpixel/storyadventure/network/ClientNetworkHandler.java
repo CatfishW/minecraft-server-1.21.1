@@ -45,6 +45,12 @@ public class ClientNetworkHandler {
                     for (var member : payload.members()) {
                         lobbyScreen.addMember(member.id(), member.name(), member.ready(), member.isLeader());
                     }
+                    
+                    // Handle countdown
+                    if (payload.countdown() >= 0) {
+                        lobbyScreen.startCountdown(payload.countdown());
+                    }
+
                     // Also update ready button text based on self status
                     if (context.client().player != null) {
                          var self = payload.members().stream()

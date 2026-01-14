@@ -142,4 +142,49 @@ public class PartyManager {
     public boolean isInParty(UUID playerId) {
         return playerPartyMap.containsKey(playerId);
     }
+
+    private int tickCounter = 0;
+    public void tick(net.minecraft.server.MinecraftServer server) {
+        tickCounter++;
+        if (tickCounter % 20 != 0) return; // Only tick once per second
+
+        var mod = StoryAdventureMod.getInstance();
+        var instanceManager = mod.getInstanceManager();
+
+        for (Party party : parties.values()) {
+            int cd = party.getCountdownSeconds();
+            if (cd > 0) {
+                party.setCountdownSeconds(cd - 1);
+                com.warmpixel.storyadventure.network.NetworkHandler.broadcastLobbySync(party, server);
+            } else if (cd == 0) {
+                // Countdown finished! Start adventure
+                party.setCountdownSeconds(-1); // Reset
+                
+                String storyId = party.getSelectedStoryId();
+                var story = mod.getStoryRegistry().getStory(storyId);
+                
+                if (story != null) {
+                    StoryAdventureMod.LOGGER.info("[PartyManager] Countdown finished for party {}. Starting adventure.", party.getPartyId());
+                    var instance = instanceManager.createInstance(story, party);
+                    if (instance != null) {
+                        try {
+                            instance.start(server);
+                            // Close lobby for everyone
+                            for (UUID memberId : party.getMembers()) {
+                                net.minecraft.server.level.ServerPlayer member = server.getPlayerList().getPlayer(memberId);
+                                if (member != null) member.closeContainer();
+                            }
+                        } catch (Exception e) {
+                            StoryAdventureMod.LOGGER.error("[PartyManager] Failed to start instance for party " + party.getPartyId(), e);
+                            instanceManager.cleanupInstance(instance.getInstanceId());
+                            
+                            // Notify leader
+                            var leader = server.getPlayerList().getPlayer(party.getLeaderId());
+                            if (leader != null) leader.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c冒险启动失败: " + e.getMessage()));
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

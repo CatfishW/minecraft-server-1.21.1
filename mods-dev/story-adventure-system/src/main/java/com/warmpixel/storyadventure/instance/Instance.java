@@ -117,9 +117,12 @@ public class Instance {
                     StoryAdventureMod.LOGGER.info("[Instance.start] Teleportation logic completed.");
                 } else {
                     StoryAdventureMod.LOGGER.error("[Instance.start] CRITICAL: Start dimension '{}' not found/loaded on server.", startLoc.dimension());
+                    throw new IllegalStateException("Start dimension not found: " + startLoc.dimension());
                 }
             } catch (Exception e) {
                 StoryAdventureMod.LOGGER.error("[Instance.start] Exception occurred during teleportation sequence.", e);
+                if (e instanceof IllegalStateException) throw (IllegalStateException)e;
+                throw new RuntimeException("Failed to start instance due to teleportation error", e);
             }
         } else {
             StoryAdventureMod.LOGGER.info("[Instance.start] No 'start' location defined. Players will remain at current position.");

@@ -68,6 +68,7 @@ public class StoryAdventureMod implements ModInitializer {
             for (var instance : instanceManager.getAllInstances()) {
                 instance.tick();
             }
+            partyManager.tick(server);
         });
         
         // Server lifecycle events

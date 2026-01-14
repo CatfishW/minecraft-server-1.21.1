@@ -234,26 +234,22 @@ public class StrangerLobbyScreen extends StrangerScreen {
         graphics.drawString(font, "空位 - 等待加入...", x + width / 2 - 45, y + 14, COLOR_TEXT_DIM);
     }
     
+    private int countdownSecondsLeft = -1;
+
     private void renderCountdown(GuiGraphics graphics) {
-        long elapsed = System.currentTimeMillis() - countdownStartTime;
-        int secondsLeft = Math.max(0, 5 - (int)(elapsed / 1000));
+        if (countdownSecondsLeft < 0) return;
         
-        if (secondsLeft == 0) {
-            // Start the adventure
-            onClose();
-            return;
-        }
+        long elapsedSinceLastSync = System.currentTimeMillis() - countdownStartTime;
+        // We pulse based on time, but use the seconds from server
         
         // Dark overlay
         graphics.fill(0, 0, width, height, 0xC0000000);
         
         // Countdown number
-        String countText = String.valueOf(secondsLeft);
-        float scale = 5.0f;
-        int textWidth = (int)(font.width(countText) * scale);
+        String countText = String.valueOf(countdownSecondsLeft);
         
         // Pulsing effect
-        float pulse = (float)(0.8 + 0.2 * Math.sin(elapsed / 100.0));
+        float pulse = (float)(0.8 + 0.2 * Math.sin(System.currentTimeMillis() / 100.0));
         int alpha = (int)(255 * pulse);
         int color = (alpha << 24) | (COLOR_NEON_RED & 0x00FFFFFF);
         
@@ -313,9 +309,6 @@ public class StrangerLobbyScreen extends StrangerScreen {
         // Check if enough players are ready
         long readyCount = members.stream().filter(m -> m.ready).count();
         if (readyCount >= minPlayers) {
-            countdownActive = true;
-            countdownStartTime = System.currentTimeMillis();
-            
             // Send start request
             net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking.send(
                 new com.warmpixel.storyadventure.network.StoryActionPayload(
@@ -343,9 +336,10 @@ public class StrangerLobbyScreen extends StrangerScreen {
         init();
     }
     
-    public void startCountdown() {
-        countdownActive = true;
-        countdownStartTime = System.currentTimeMillis();
+    public void startCountdown(int seconds) {
+        this.countdownActive = seconds >= 0;
+        this.countdownSecondsLeft = seconds;
+        this.countdownStartTime = System.currentTimeMillis();
     }
     
     public record PartyMember(UUID id, String name, boolean ready, boolean isLeader) {}

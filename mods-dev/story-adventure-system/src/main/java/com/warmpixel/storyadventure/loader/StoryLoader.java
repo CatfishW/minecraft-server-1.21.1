@@ -113,6 +113,17 @@ public class StoryLoader {
               "estimated_duration_minutes": 15,
               "entry_node": "start",
               
+              "locations": {
+                "start": {
+                  "dimension": "minecraft:overworld",
+                  "x": 0.0,
+                  "y": 64.0,
+                  "z": 0.0,
+                  "yaw": 0.0,
+                  "pitch": 0.0
+                }
+              },
+              
               "nodes": {
                 "start": {
                   "type": "CUTSCENE",

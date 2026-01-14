@@ -13,7 +13,7 @@ import java.util.UUID;
 /**
  * Payload to sync lobby member status to all clients in the lobby.
  */
-public record SyncLobbyPayload(List<MemberInfo> members) implements CustomPacketPayload {
+public record SyncLobbyPayload(List<MemberInfo> members, int countdown) implements CustomPacketPayload {
     
     public static final CustomPacketPayload.Type<SyncLobbyPayload> TYPE = 
         new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(StoryAdventureMod.MOD_ID, "sync_lobby"));
@@ -31,6 +31,7 @@ public record SyncLobbyPayload(List<MemberInfo> members) implements CustomPacket
             buf.writeBoolean(info.ready);
             buf.writeBoolean(info.isLeader);
         }
+        buf.writeInt(payload.countdown);
     }
     
     private static SyncLobbyPayload read(FriendlyByteBuf buf) {
@@ -39,7 +40,8 @@ public record SyncLobbyPayload(List<MemberInfo> members) implements CustomPacket
         for (int i = 0; i < size; i++) {
             members.add(new MemberInfo(buf.readUUID(), buf.readUtf(), buf.readBoolean(), buf.readBoolean()));
         }
-        return new SyncLobbyPayload(members);
+        int countdown = buf.readInt();
+        return new SyncLobbyPayload(members, countdown);
     }
     
     @Override

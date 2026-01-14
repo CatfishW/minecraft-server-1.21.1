@@ -169,23 +169,10 @@ public class NetworkHandler {
                          return;
                     }
                     
-                    // Start instance
-                    StoryAdventureMod.LOGGER.info("[NetworkHandler] Starting adventure for party {} with story {}", party.getPartyId(), storyId);
-                    var instance = instanceManager.createInstance(story, party);
-                    if (instance != null) {
-                        try {
-                            instance.start(context.server());
-                            // Close lobby for everyone and notify
-                            for (java.util.UUID memberId : party.getMembers()) {
-                                ServerPlayer member = context.server().getPlayerList().getPlayer(memberId);
-                                if (member != null) member.closeContainer();
-                            }
-                        } catch (Exception e) {
-                            StoryAdventureMod.LOGGER.error("[NetworkHandler] Exception starting instance " + instance.getInstanceId(), e);
-                        }
-                    } else {
-                        StoryAdventureMod.LOGGER.error("[NetworkHandler] Failed to create instance for story {}", storyId);
-                    }
+                    // Start countdown
+                    StoryAdventureMod.LOGGER.info("[NetworkHandler] Starting 5s countdown for party {} to play {}", party.getPartyId(), storyId);
+                    party.setCountdownSeconds(5);
+                    broadcastLobbySync(party, context.server());
                 }
                 
                 case LEAVE_PARTY -> {
@@ -244,7 +231,7 @@ public class NetworkHandler {
 
     // ... (rest of methods)
 
-    private static void broadcastLobbySync(com.warmpixel.storyadventure.instance.Party party, net.minecraft.server.MinecraftServer server) {
+    public static void broadcastLobbySync(com.warmpixel.storyadventure.instance.Party party, net.minecraft.server.MinecraftServer server) {
         java.util.List<SyncLobbyPayload.MemberInfo> infos = new java.util.ArrayList<>();
         for (java.util.UUID memberId : party.getMembers()) {
             ServerPlayer member = server.getPlayerList().getPlayer(memberId);
@@ -252,7 +239,7 @@ public class NetworkHandler {
             infos.add(new SyncLobbyPayload.MemberInfo(memberId, name, party.isReady(memberId), party.isLeader(memberId)));
         }
         
-        SyncLobbyPayload syncPayload = new SyncLobbyPayload(infos);
+        SyncLobbyPayload syncPayload = new SyncLobbyPayload(infos, party.getCountdownSeconds());
         for (java.util.UUID memberId : party.getMembers()) {
             ServerPlayer member = server.getPlayerList().getPlayer(memberId);
             if (member != null) {
@@ -269,7 +256,7 @@ public class NetworkHandler {
             infos.add(new SyncLobbyPayload.MemberInfo(memberId, name, party.isReady(memberId), party.isLeader(memberId)));
         }
         
-        ServerPlayNetworking.send(player, new SyncLobbyPayload(infos));
+        ServerPlayNetworking.send(player, new SyncLobbyPayload(infos, party.getCountdownSeconds()));
     }
     
     /**

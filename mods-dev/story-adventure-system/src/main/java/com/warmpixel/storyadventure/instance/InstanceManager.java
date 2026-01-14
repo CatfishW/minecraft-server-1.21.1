@@ -39,9 +39,17 @@ public class InstanceManager {
         
         // Check if party members are already in an instance
         for (UUID memberId : party.getMembers()) {
-            if (playerInstanceMap.containsKey(memberId)) {
-                StoryAdventureMod.LOGGER.warn("[InstanceManager] FAILED: Player {} is already in an instance", memberId);
-                return null;
+            UUID existingInstanceId = playerInstanceMap.get(memberId);
+            if (existingInstanceId != null) {
+                // Validate if the instance actually exists
+                if (instances.containsKey(existingInstanceId)) {
+                    StoryAdventureMod.LOGGER.warn("[InstanceManager] FAILED: Player {} is already in an active instance {}", memberId, existingInstanceId);
+                    return null;
+                } else {
+                    // Zombie entry in playerInstanceMap, clean it up
+                    StoryAdventureMod.LOGGER.warn("[InstanceManager] Found zombie instance mapping for player {} -> {}. Cleaning up.", memberId, existingInstanceId);
+                    playerInstanceMap.remove(memberId);
+                }
             }
         }
         

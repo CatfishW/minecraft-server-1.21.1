@@ -12,6 +12,7 @@ public class Party {
     private final Map<UUID, Boolean> readyStatus;
     private final int maxSize;
     private String selectedStoryId;
+    private int countdownSeconds = -1;
     
     public Party(UUID partyId, UUID leaderId, int maxSize) {
         this.partyId = partyId;
@@ -107,6 +108,14 @@ public class Party {
     
     public boolean isReady(UUID playerId) {
         return readyStatus.getOrDefault(playerId, false);
+    }
+
+    public int getCountdownSeconds() {
+        return countdownSeconds;
+    }
+
+    public void setCountdownSeconds(int countdownSeconds) {
+        this.countdownSeconds = countdownSeconds;
     }
     
     @Override
