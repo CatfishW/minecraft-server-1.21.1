@@ -1,0 +1,15 @@
+{
+    "id": "93850ea1-e1eb-4bb4-9dc7-bf20712dceca",
+    "title": "校刊的年终特辑",
+    "description": "Juliet正在策划校刊的年终特辑，主题是‘时代的眼泪’。她计划通过一系列深度报道，记录下那些正在消失的传统和被遗忘的人。这需要大量的资金支持，包括印刷、摄影器材和稿酬。为了实现这个宏伟的计划，她开始寻求外部赞助，而阔绰的绅士Hancock似乎对她的选题很感兴趣。\n\n请代表Juliet去拜访Hancock先生。如果能获得他的赞助，Juliet的年终特辑就能顺利出版，让更多人听到那些被埋没的声音。",
+    "objective": {
+        "type": "TALK",
+        "target": "Hancock",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

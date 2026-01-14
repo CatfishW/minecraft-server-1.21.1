@@ -1,0 +1,15 @@
+{
+    "title": "潜行的威胁",
+    "description": "我预见到苦力怕的爆炸……在它们造成破坏前解决它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 160,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    },
+    "id": "72cf57d5-1606-42f4-ae89-f26c3736eb88"
+}

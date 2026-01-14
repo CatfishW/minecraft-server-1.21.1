@@ -1,0 +1,220 @@
+{
+    "name": "§eMarco Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "The other of the silent and deadly 'Cousins'.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/92375cf14aaa6002.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（沉默地注视着你，手里把玩着一枚硬币）...",
+            "buttons": [
+                {
+                    "label": "你在做什么？",
+                    "action": "SHOW_DIALOG:coin",
+                    "id": "btn_coin"
+                },
+                {
+                    "label": "我想雇佣你们",
+                    "action": "SHOW_DIALOG:hire",
+                    "id": "btn_hire"
+                },
+                {
+                    "label": "你们是一伙的？",
+                    "action": "SHOW_DIALOG:show_brother",
+                    "id": "btn_brother"
+                }
+            ]
+        },
+        "coin": {
+            "greeting": "（硬币在指关节间灵活翻转，发出清脆的响声）...",
+            "buttons": [
+                {
+                    "label": "让我试试？",
+                    "action": "SHOW_DIALOG:try_coin",
+                    "id": "btn_try"
+                },
+                {
+                    "label": "很酷",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "try_coin": {
+            "greeting": "（突然握紧拳头，硬币消失不见。他冷冷地看着你）...",
+            "buttons": [
+                {
+                    "label": "好吧，你的了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_ok"
+                },
+                {
+                    "label": "还给我",
+                    "action": "SHOW_DIALOG:angry",
+                    "id": "btn_angry"
+                }
+            ]
+        },
+        "angry": {
+            "greeting": "（他站起来，比你想象的要高大得多，压迫感十足）...",
+            "buttons": [
+                {
+                    "label": "对不起，我开玩笑的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_sorry"
+                },
+                {
+                    "label": "想打架吗？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fight"
+                }
+            ]
+        },
+        "hire": {
+            "greeting": "（停止玩硬币，直视你的眼睛，缓缓点头）...",
+            "buttons": [
+                {
+                    "label": "去杀掉图科",
+                    "action": "SHOW_DIALOG:betrayal",
+                    "id": "btn_tuco"
+                },
+                {
+                    "label": "去杀掉警察",
+                    "action": "SHOW_DIALOG:police",
+                    "id": "btn_police"
+                }
+            ]
+        },
+        "betrayal": {
+            "greeting": "（他摇摇头，指了指Tuco的方向，做了一个割喉的动作指向你）...",
+            "buttons": [
+                {
+                    "label": "我是开玩笑的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_joke"
+                },
+                {
+                    "label": "加倍的价格",
+                    "action": "SHOW_DIALOG:double_price",
+                    "id": "btn_double"
+                }
+            ]
+        },
+        "double_price": {
+            "greeting": "（他露出一丝残忍的微笑，伸出手要钱）...",
+            "buttons": [
+                {
+                    "label": "成交（给钱）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn成交"
+                },
+                {
+                    "label": "我没那么多",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_too_much"
+                }
+            ]
+        },
+        "police": {
+            "greeting": "（他从怀里掏出一张Hank Schrader的照片，扔给你）...",
+            "buttons": [
+                {
+                    "label": "这是谁？",
+                    "action": "SHOW_DIALOG:quest_target2",
+                    "id": "btn_who_is_he"
+                },
+                {
+                    "label": "我认识他",
+                    "action": "SHOW_DIALOG:quest_accept2",
+                    "id": "btn_know_him"
+                }
+            ]
+        },
+        "quest_target2": {
+            "greeting": "（他在照片上画了一个大大的叉）...（指了指照片，又指了指你的胸口）...",
+            "buttons": [
+                {
+                    "label": "我会干掉他",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "太危险了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_scared"
+                }
+            ]
+        },
+        "quest_accept2": {
+            "greeting": "（拍拍你的肩膀，力量大得让你一晃）...",
+            "buttons": [
+                {
+                    "label": "我会让他消失",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "需要帮手",
+                    "action": "SHOW_DIALOG:brother_help",
+                    "id": "btn_help"
+                }
+            ]
+        },
+        "brother_help": {
+            "greeting": "（他指了指Leonel，又指了指自己）...",
+            "buttons": [
+                {
+                    "label": "我们一起去",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_team_up"
+                },
+                {
+                    "label": "我自己能行",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_solo"
+                }
+            ]
+        },
+        "show_brother": {
+            "greeting": "（他指向远方，那里站着Leonel）...（然后指回自己）...",
+            "buttons": [
+                {
+                    "label": "明白了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_understand"
+                },
+                {
+                    "label": "你们长得不像啊",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_look_different"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

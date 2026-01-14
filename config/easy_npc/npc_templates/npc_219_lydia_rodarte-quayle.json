@@ -1,0 +1,91 @@
+{
+    "name": "§5Lydia Rodarte-Quayle",
+    "entityType": "easy_npc:humanoid",
+    "description": "A high-level executive involved in the meth trade.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://minotar.net/skin/LydiaRodarte-Quayle.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哦，是你。我不记得把我的联系方式给了你。这里是公共区域吗？希望没人注意到我们在交谈。我非常讨厌不确定性，也不喜欢在这种不设防的地方谈正事。如果你有急事，最好快点说。我还要赶回公司处理一些……跨国业务。",
+            "buttons": [
+                {
+                    "label": "关于Mercury的物流",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_logistics"
+                },
+                {
+                    "label": "你看起来很紧张",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_nervous"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "物流？天哪，我最头疼的就是这个。那些海外的买家总是很挑剔，而且现在海关的检查力度越来越严了。我需要绝对的保密和效率。我听说你有特殊的渠道？如果是真的，我们需要建立一套加密的通讯方式。我只通过特定的茶包来传递信息，你能理解这种谨慎吗？",
+            "buttons": [
+                {
+                    "label": "茶包？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_tea"
+                },
+                {
+                    "label": "我会安排",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我不是紧张，我是有原则。我负责的是供应链的顶端，我不能容忍任何环节的疏漏。每一个错误都可能导致整个网络瘫痪，甚至让我陷入万劫不复的境地。在商场上，尤其是这个‘行业’，信任是奢侈品。我只相信数据和合同，还有……能解决问题的人。",
+            "buttons": [
+                {
+                    "label": "你是指Mike？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_mike"
+                },
+                {
+                    "label": "明白了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "（压低声音）是的，茶包。这是我测试新合作伙伴可靠性的方法。如果你连这点小事都办不好，或者不理解其中的含义，那我们就没有合作的基础。至于Mike，他是个老古董，但他可靠。可惜他总是对我有偏见，认为我只是个坐办公室的。但我才是让这一切运转起来的大脑！",
+            "buttons": [
+                {
+                    "label": "我会证明我的价值",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

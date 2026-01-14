@@ -1,0 +1,15 @@
+{
+    "id": "ecbf9a21-dc9b-47f7-adcd-09ad9438a2ec",
+    "title": "寻求真相",
+    "description": "无尽的猜测快把她逼疯了。Walter的谎言像一堵墙，而Skyler必须找到裂缝，窥见墙后的真相。她不能再被动地接受这一切，必须主动出击，寻找盟友或线索。\n\n去和Nick Valentine谈谈。他是一位见多识广的侦探，也许他能从一些蛛丝马迹中，看出Walter最近行为异常的端倪，告诉Skyler她最害怕但又必须知道的事实。",
+    "objective": {
+        "type": "TALK",
+        "target": "Nick Valentine",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "62e5e5e2-fb84-4f51-bfaf-84616c1ad126",
+    "title": "钢铁与正义",
+    "description": "这案子闹大了，朋友。我的当事人被指控盗窃了大量贵重物品，而我需要一件无法辩驳的证据来证明这些'失物'是通过合法途径获得的。我需要一些最坚固的材料来打造我的辩护论点。\n\n去帮我收集一些铁锭（minecraft:iron_ingot）。我需要整整64个，用它们来打造一块坚不可摧的'盾牌'。有了这个，我们就有了谈判的筹码。这是个大案子，搞砸了我们都得完蛋。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 64
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

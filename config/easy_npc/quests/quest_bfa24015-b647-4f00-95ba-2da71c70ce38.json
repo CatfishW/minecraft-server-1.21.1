@@ -1,0 +1,15 @@
+{
+    "id": "bfa24015-b647-4f00-95ba-2da71c70ce38",
+    "title": "无光的钻石",
+    "description": "我听说钻石矿脉深处，潜伏着被遗忘的恶灵。它们守护着财富，也散播着恐惧。家族需要最顶级的货，而钻石是最好的硬通货。\n\n深入地底，找到那些矿脉。你可能会遇到那些在黑暗中诞生的怪物，别害怕，它们只是没见过真正的危险。收集足够多的钻石原石，让家族的金库再次闪耀。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "f10b3f7c-6d85-4694-95ad-656bc21c7cfa",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给Stacey Ehrmantraut。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Stacey Ehrmantraut",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 155,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 39
+    }
+}

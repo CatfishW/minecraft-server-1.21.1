@@ -1,0 +1,15 @@
+{
+    "id": "219b5a6f-70da-4bd6-bb4c-6950307aab63",
+    "title": "深渊凝视",
+    "description": "越是接近真相，未知的恐惧就越是深沉。传说在深渊的边缘，有一位被称为 The Ghoul（食尸鬼）的存在，它知晓所有被遗忘者的名字。Unknown 需要确认自己的名字是否还存在于世间的某个角落，或者，是否已经彻底消逝。\n\n找到 The Ghoul，直视它的双眼。不要退缩，那是你获取答案的唯一途径。",
+    "objective": {
+        "type": "TALK",
+        "target": "The Ghoul",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

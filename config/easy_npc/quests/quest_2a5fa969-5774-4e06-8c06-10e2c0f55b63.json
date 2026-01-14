@@ -1,0 +1,15 @@
+{
+    "id": "2a5fa969-5774-4e06-8c06-10e2c0f55b63",
+    "title": "幽灵威胁",
+    "description": "维克多站在地面上，留下了潮湿的脚印。他语气不善地告诉你，某个湿漉漉的亡灵从他的藏身处偷走了重要物资。\n\n你需要前往地下深处，找到并消灭那些游荡的亡灵，找回遗失的物品。清理那些地方，直到你找回所有丢失的物资。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

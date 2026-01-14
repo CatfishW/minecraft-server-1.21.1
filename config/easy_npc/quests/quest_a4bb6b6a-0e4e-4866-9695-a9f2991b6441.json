@@ -1,0 +1,15 @@
+{
+    "id": "a4bb6b6a-0e4e-4866-9695-a9f2991b6441",
+    "title": "来自深渊的凝视",
+    "description": "情况变得有点棘手。有个自称是“The Leper”的怪人一直在监视我的地盘。我不希望他在这里碍事。去让他消失，做得干净点，别留下任何痕迹。这是个警告，Jesse，别让任何人知道是我们干的。",
+    "objective": {
+        "type": "TALK",
+        "target": "The Leper",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

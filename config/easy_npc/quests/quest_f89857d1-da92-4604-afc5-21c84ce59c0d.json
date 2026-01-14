@@ -1,0 +1,15 @@
+{
+    "id": "f89857d1-da92-4604-afc5-21c84ce59c0d",
+    "title": "给Jesse的礼物",
+    "description": "Jesse 最近一直在忙于建筑，Badger 想送他一份特别的礼物来表达感谢。他听说用闪亮的钻石制作的镐子最坚固，也最能体现心意。但他自己太笨拙了，总是挖不到那么深的地方。\nBadger 需要你的帮助来收集 3 颗钻石。他希望你能把这个作为惊喜礼物，由你亲手交给 Jesse，因为他怕自己会说漏嘴。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

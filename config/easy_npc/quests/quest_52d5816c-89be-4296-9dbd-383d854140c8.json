@@ -1,0 +1,15 @@
+{
+    "id": "52d5816c-89be-4296-9dbd-383d854140c8",
+    "title": "清除亡灵威胁",
+    "description": "附近出现了大量亡灵生物，威胁着居民的安全。\n\n前往附近的废墟，消灭那里的亡灵生物。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 94,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 32
+    }
+}

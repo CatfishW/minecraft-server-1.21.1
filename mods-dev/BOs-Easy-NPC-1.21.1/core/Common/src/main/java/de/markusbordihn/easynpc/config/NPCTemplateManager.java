@@ -37,6 +37,8 @@ import de.markusbordihn.easynpc.data.dialog.DialogType;
 import de.markusbordihn.easynpc.data.objective.ObjectiveDataEntry;
 import de.markusbordihn.easynpc.data.objective.ObjectiveType;
 import de.markusbordihn.easynpc.data.skin.SkinDataEntry;
+import de.markusbordihn.easynpc.data.display.DisplayAttributeType;
+import de.markusbordihn.easynpc.data.display.NameVisibilityType;
 import de.markusbordihn.easynpc.data.synched.SynchedDataIndex;
 import de.markusbordihn.easynpc.entity.easynpc.EasyNPC;
 import de.markusbordihn.easynpc.entity.easynpc.data.ConfigDataCapable;
@@ -211,8 +213,17 @@ public class NPCTemplateManager {
     // Apply name
     if (template.getName() != null && !template.getName().isEmpty()) {
       npc.getEntity().setCustomName(net.minecraft.network.chat.Component.literal(template.getName()));
-      npc.getEntity().setCustomNameVisible(true);
-      log.info("{} Applied name: {}", LOG_PREFIX, template.getName());
+      String nameVisibilityStr = template.getAttributes() != null ? template.getAttributes().getNameVisibility() : "ALWAYS";
+      npc.getEntity().setCustomNameVisible(!"NEVER".equalsIgnoreCase(nameVisibilityStr));
+
+      // Also set the EasyNPC display attribute for consistency
+      try {
+        NameVisibilityType visibilityType = NameVisibilityType.valueOf(nameVisibilityStr.toUpperCase());
+        AttributeHandler.setDisplayAttribute(npc, DisplayAttributeType.NAME_VISIBILITY, visibilityType);
+      } catch (Exception e) {
+        log.warn("{} Failed to set name visibility attribute {}: {}", LOG_PREFIX, nameVisibilityStr, e.getMessage());
+      }
+      log.info("{} Applied name: {} with visibility: {}", LOG_PREFIX, template.getName(), nameVisibilityStr);
     }
     
     // Apply faction

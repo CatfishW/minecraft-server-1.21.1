@@ -1,0 +1,15 @@
+{
+    "id": "bf1634dd-5f05-4e45-863e-9de1c20aa513",
+    "title": "村庄的密语",
+    "description": "神秘人想知道这个世界的凡人如何看待他们眼中的‘异常’。他不愿亲自踏入那些嘈杂的聚落，但他的耳目遍布四方。你需要去听听那些在茶余饭后闲聊的人们都在说些什么。\n\n找到那个叫贝琪·凯特尔曼（Betsy Kettleman）的女人，她似乎对周遭的一切都了如指掌。从她口中套出些有用的情报，或者至少让她对你的存在感到好奇。",
+    "objective": {
+        "type": "TALK",
+        "target": "Betsy Kettleman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

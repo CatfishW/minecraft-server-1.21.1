@@ -1,0 +1,15 @@
+{
+    "id": "20145234-745b-4e79-9657-79a4c04e085c",
+    "title": "雷鸣的战利品",
+    "description": "在这个维度的顶端，雷电汇聚之地，生长着一种极其危险但也极其有用的花。维克多需要这种材料来制作特殊的防护药水。\n\n你需要爬上最高的山峰，在那里寻找被雷电劈中的花。通常在雷雨天气后会出现，极其危险，但回报丰厚。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:torchflower",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

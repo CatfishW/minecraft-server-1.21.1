@@ -1,0 +1,15 @@
+{
+    "id": "f4e9d5c1-4e5d-4420-bd4d-becdeb7787ab",
+    "title": "绝望的试探",
+    "description": "孩子是Skyler的底线。当她开始怀疑Walter的所作所为会威胁到家庭时，她内心的母性压倒了一切。她需要确认，Walter是否还保有一丝人性，是否还会为了家庭而妥协。\n\n去和Steve Harrington谈谈。他曾处理过类似的家庭危机，也许能提供一些在危机中保护家人的建议，或者帮忙分析Walter当前状态的危险程度。",
+    "objective": {
+        "type": "TALK",
+        "target": "Steve Harrington",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

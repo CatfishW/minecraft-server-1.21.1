@@ -1,0 +1,15 @@
+{
+    "id": "3f35bf5b-790b-4bb3-8a92-55db65f2f7d6",
+    "title": "理论的验证",
+    "description": "沃伦最近沉迷于研究僵尸村民和普通僵尸之间的生物差异。他认为这两者之间存在某种可逆的转化关系，但这需要大量的实验数据支持。作为一名严谨的科学爱好者，他不能仅凭空想就下定论，急需一些来自战场的样本进行分析。\n\n请前往野外，收集足够的僵尸腐肉。这些样本对于沃伦的实验至关重要，他将以此来验证自己的猜想，并试图从中提取出某种特殊的生物酶。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

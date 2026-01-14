@@ -1,0 +1,15 @@
+{
+    "id": "d04670b3-6c05-432a-b4fe-0bee39f278ac",
+    "title": "哨兵的觉醒",
+    "description": "Irene Landry 意识到，单凭普通人的力量无法长久守护沙鸥渡口。她听说流浪者 Strong 拥有非凡的战斗技巧和生存经验，或许能为渡口的防御出谋划策，甚至亲自上阵。但 Strong 性格孤僻，很少与人交谈。\n\n请找到在沙鸥渡口附近徘徊的流浪者 Strong，并向他转达 Irene 的请求，希望能得到他的帮助。",
+    "objective": {
+        "type": "TALK",
+        "target": "Strong",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

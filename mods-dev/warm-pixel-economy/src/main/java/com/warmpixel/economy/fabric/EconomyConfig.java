@@ -28,6 +28,7 @@ public class EconomyConfig {
         public int importDefaultCount = 1;
         public boolean importBuyEnabled = true;
         public boolean importSellEnabled = true;
+        public double sellRatio = 0.1;
     }
 
     public static class AuctionConfig {

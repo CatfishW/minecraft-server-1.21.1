@@ -1,0 +1,15 @@
+{
+    "id": "f91d27dc-6016-4027-8d3b-1df1f785132c",
+    "title": "无名之坟",
+    "description": "在这片废土上，只有力量才值得被铭记。那些挥舞着斧头的无脑蛮族，它们的存在本身就是一种亵渎。表亲们要用绝对的暴力，为这片土地肃清出一片寂静的坟场。\n\n狩猎那些狂暴的掠夺者。不要留活口，不要有怜悯。让它们的数量在地图上彻底消失。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 160,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 95
+    }
+}

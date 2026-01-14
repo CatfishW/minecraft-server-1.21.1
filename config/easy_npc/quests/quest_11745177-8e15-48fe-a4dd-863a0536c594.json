@@ -1,0 +1,15 @@
+{
+    "id": "11745177-8e15-48fe-a4dd-863a0536c594",
+    "title": "白色幽灵",
+    "description": "Tuco 需要一些特殊的粉末来处理他的‘生意’。他听说矿洞深处有一种白色的幽灵，它们是工业的结晶。这些幽灵虽然危险，但它们的身体里蕴含着他需要的东西。Tuco 不喜欢失败者，他只想要结果。\n\n深入矿洞，找到那些白色的骷髅，从它们的骨灰中收集战利品。记住， Tuco 的交易从不接受借口。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "2c8fa6c6-cc39-4ac6-a40a-a51c6dad0168",
+    "title": "阴影中的耳目",
+    "description": "情报是交易的生命线。Gus 不允许有任何未知的风险潜伏在身边。他需要一个了解街头动态的人来确认是否有老鼠在通风报信。Jane Margolis 在地下世界中以敏锐著称。\n\n与 Jane Margolis 见面，她似乎知道一些关于竞争对手动向的内幕。听听她能提供什么情报，这可能关系到我们下个季度的安危。",
+    "objective": {
+        "type": "TALK",
+        "target": "Jane Margolis",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

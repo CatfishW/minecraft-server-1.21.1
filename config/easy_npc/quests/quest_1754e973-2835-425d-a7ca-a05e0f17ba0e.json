@@ -1,0 +1,15 @@
+{
+    "id": "1754e973-2835-425d-a7ca-a05e0f17ba0e",
+    "title": "隐秘的联络",
+    "description": "为了保证分销网络的畅通，我们需要与一位关键的中间人进行接触。Huell Babineaux 是处理这类事务的好手，他总是能完美地处理好现金和合同，确保一切都在法律的灰色地带运行。\n\n找到 Huell Babineaux 并与他交谈。他在市场区活动，确保他明白这批货物的重要性，不要让他搞砸了。",
+    "objective": {
+        "type": "TALK",
+        "target": "Huell Babineaux",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

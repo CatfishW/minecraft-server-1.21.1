@@ -1,0 +1,130 @@
+{
+    "name": "§9Clifford Main",
+    "entityType": "easy_npc:humanoid",
+    "description": "The head of the Davis & Main law firm.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7f1105cb4dbd6374.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。很高兴在公司见到你。如果你是来找Jimmy的，他目前不在，不过或许我能帮上忙？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a6b37e4a-927c-49fc-a5bf-055c29ac9a75,ab5c2d66-7524-4db1-9f7b-738c09679ecf,bcbc05b0-8816-4a23-88dc-8da9a1887b8d,c7537cab-f883-467a-b23a-3b28a349def5,84cc5fc7-8711-4c4c-86d9-6707834e7d16",
+                    "id": "btn_quest_3a274ebd"
+                },
+                {
+                    "label": "谈谈你在Davis & Main的工作吧。",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "我对贵所的法律援助项目感兴趣。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "Davis & Main致力于提供最高标准的法律服务。我们有严格的职业道德规范，一切都为了维护客户利益和公司声誉。",
+            "buttons": [
+                {
+                    "label": "听起来有些……刻板。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_1"
+                },
+                {
+                    "label": "这一定很有挑战性。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_2"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "（叹了口气）我们确实需要一定的结构和流程。这能确保所有事情都合规合法。最近我们招了一位新律师，他很有才华，但……不太适应我们的工作方式。",
+            "buttons": [
+                {
+                    "label": "你是说Jimmy McGill？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_2_1"
+                },
+                {
+                    "label": "也许他需要一点时间。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_2"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "是的，吉米。他的点子很多，但有些……出格。我担心他这种‘野路子’会给我们带来麻烦。我们需要的是一个团队成员，而不是一个独行侠。",
+            "buttons": [
+                {
+                    "label": "或许我能帮你引导他。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_2_3"
+                },
+                {
+                    "label": "我会把你的顾虑转告他的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_4"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "引导他？嗯，这倒是个想法。我们正在处理一个重要的集体诉讼案，需要大量的文件整理和归档工作。这很枯燥，但至关重要。",
+            "buttons": [
+                {
+                    "label": "我可以帮忙整理文件。",
+                    "action": "SHOW_DIALOG:quest_details",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这听起来不像是吉米会感兴趣的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_refuse"
+                }
+            ]
+        },
+        "quest_details": {
+            "greeting": "太好了。我会把相关的文件清单发给你。请务必确保每一份文件都按照我们的标准归类，这对于案件的成败至关重要。谢谢你愿意分担。",
+            "buttons": [
+                {
+                    "label": "交给我吧。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_task"
+                },
+                {
+                    "label": "我会尽力而为。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_try"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

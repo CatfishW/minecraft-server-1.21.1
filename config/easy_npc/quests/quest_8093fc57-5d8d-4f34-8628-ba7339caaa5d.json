@@ -1,0 +1,15 @@
+{
+    "id": "8093fc57-5d8d-4f34-8628-ba7339caaa5d",
+    "title": "无声的恐惧",
+    "description": "阴影中似乎总有眼睛在窥视。Skyler的直觉告诉她，来自暗处的威胁正在逼近，这种不安全感让她夜不能寐。她需要确认自己是否只是多疑，还是真的身处险境。\n\n前去清除那些在周边徘徊的minecraft:zombie（僵尸），确保没有任何东西能悄无声息地靠近她和她的孩子。她需要一个绝对安全的夜晚。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "c1fd3484-1317-4920-819a-7dfc2ef67cab",
+    "title": "心魔的终焉",
+    "description": "Jane醒了，但那个声音并没有消失，它变得愤怒而强大。它不再满足于低语，而是试图夺取Jane身体的控制权。那是她内心最黑暗面的具象化，是对快乐和痛苦的极端扭曲。Jane用仅存的理智告诉你，要彻底终结这场噩梦，必须摧毁那个寄生在她意识中的‘狂笑者’。\n\n在现实世界中，狂笑者的化身表现为一种极其罕见且邪恶的生物。只有消灭足够数量的这种怪物，才能切断它与Jane的精神链接。这是一场与时间的赛跑，也是对Jane意志的最终考验。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 500,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 5
+    }
+}

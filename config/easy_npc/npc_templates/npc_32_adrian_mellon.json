@@ -5,7 +5,7 @@
     "description": "Victim of hate crime in Derry.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/AdrianMellon.png"
+        "skinUrl": "https://s.namemc.com/i/9d7cc175203897b0.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -54,7 +55,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

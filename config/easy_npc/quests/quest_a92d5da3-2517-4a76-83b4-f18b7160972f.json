@@ -1,0 +1,15 @@
+{
+    "id": "a92d5da3-2517-4a76-83b4-f18b7160972f",
+    "title": "委托与信任",
+    "description": "我们需要了解对手的动向。去和那位名叫爱迪·卡斯布拉克的人谈谈，他在街头有些门道。听听他怎么说，也许能给我们带来一些关键信息。",
+    "objective": {
+        "type": "TALK",
+        "target": "Eddie Kaspbrak",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "06950200-cf4b-46ff-be0f-cfde3b681955",
+    "title": "必要的防御",
+    "description": "Gustavo Fring 知道，商业的繁荣需要武力的保护。他需要通过一场实战来评估我作为保镖的潜力。他不需要鲁莽的暴力，而是精准和效率。目标是那些在野外游荡、威胁运输路线的生物。\n\n去狩猎那些在夜晚成群结队的、绿皮肤的爬行者。向 Fring 先生证明你能在压力下保持冷静并完成任务。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

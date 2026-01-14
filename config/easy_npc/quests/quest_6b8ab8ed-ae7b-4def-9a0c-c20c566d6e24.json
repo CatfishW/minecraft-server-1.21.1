@@ -1,0 +1,15 @@
+{
+    "id": "6b8ab8ed-ae7b-4def-9a0c-c20c566d6e24",
+    "title": "阴影中的低语",
+    "description": "你身上的味道，像是旧书页和未熄灭的灰烬。既然你来到了这里，就证明你并非凡夫俗子。这片土地的阴影在蠕动，它们需要被安抚，或者说，被驱逐。\n\n前往荒野，找到那些死而复生的行尸（Zombie）。它们身上残留着某种不该存在的气息。将它们彻底粉碎，收集 8 个腐烂的骨骸（Bone），将它们带到我面前来证明你的力量。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

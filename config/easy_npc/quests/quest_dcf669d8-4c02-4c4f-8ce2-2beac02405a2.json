@@ -1,0 +1,15 @@
+{
+    "id": "dcf669d8-4c02-4c4f-8ce2-2beac02405a2",
+    "title": "武装安保",
+    "description": "最近我总觉得心里不踏实，后门的锁也好像被人动过。为了以防万一，我得准备点自卫的东西。光靠扫帚和菜刀可对付不了真正的威胁。我听说中央广场的军械师手艺不错，但我没空离开餐厅。\n\n帮我从镇上的军械师那里搞一件铁质武器来，比如一把铁剑 (minecraft:iron_sword)。有备无患，这钱花得值。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_sword",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

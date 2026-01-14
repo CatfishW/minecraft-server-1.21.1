@@ -1,0 +1,15 @@
+{
+    "id": "936f13a0-5a31-49ac-a0bf-dd894089593b",
+    "title": "致命的诱惑",
+    "description": "最近沙龙周围出现了一些游荡的生物，它们似乎被某种特殊的气味吸引而来。Mrs. Nguyen 担心这些生物会吓跑顾客，甚至攻击员工。她需要你去处理掉那些看起来最危险的大家伙，以绝后患。\n\n清理掉在美甲沙龙周围游荡的大型亡灵生物，确保沙龙周边的安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

@@ -5,7 +5,7 @@
     "description": "The first victim. In a yellow raincoat.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2021/03/14/georgie-17127677.png?v938"
+        "skinUrl": "https://s.namemc.com/i/79c86123cdc0f800.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -134,7 +135,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

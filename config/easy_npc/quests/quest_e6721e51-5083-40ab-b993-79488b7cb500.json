@@ -1,0 +1,15 @@
+{
+    "title": "地狱疣的采集",
+    "description": "我需要大量地狱疣来酿造药水。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:nether_wart",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    },
+    "id": "e6721e51-5083-40ab-b993-79488b7cb500"
+}

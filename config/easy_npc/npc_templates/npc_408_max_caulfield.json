@@ -1,0 +1,280 @@
+{
+    "name": "§9Max Caulfield",
+    "entityType": "easy_npc:humanoid",
+    "description": "A shy photography student at Blackwell Academy who discovers she can rewind time. Returns to her hometown of Arcadia Bay and reconnects with childhood friend Chloe Price.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/1d18ee404659740f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（一个棕发女孩正在用宝丽来相机拍摄远处的风景，注意到你后略显紧张地放下相机）\n\n§9哦，嗨。§f我是麦克斯——麦克辛·考菲尔德。不过大家都叫我麦克斯。你也是……阿卡迪亚湾的新人吗？",
+            "buttons": [
+                {
+                    "label": "§f你在拍什么？",
+                    "action": "SHOW_DIALOG:backstory_photography",
+                    "id": "btn_photo"
+                },
+                {
+                    "label": "§9阿卡迪亚湾是什么地方？",
+                    "action": "SHOW_DIALOG:current_arcadia",
+                    "id": "btn_arcadia"
+                },
+                {
+                    "label": "§2你看起来心事重重",
+                    "action": "SHOW_DIALOG:current_trouble",
+                    "id": "btn_trouble"
+                },
+                {
+                    "label": "§e有什么我能帮忙的吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "§7我得走了",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_photography": {
+            "greeting": "（她害羞地展示手中的照片）\n\n§f摄影是我的……§9灵魂。§f捕捉那些转瞬即逝的瞬间，把它们定格成永恒。杰弗森先生——我的摄影老师说，一张好照片能讲述一千个故事。\n\n§7（她低下头）虽然有时候……故事并不总是美好的。",
+            "buttons": [
+                {
+                    "label": "§f杰弗森先生是谁？",
+                    "action": "SHOW_DIALOG:backstory_jefferson",
+                    "id": "btn_jefferson"
+                },
+                {
+                    "label": "§9不美好的故事？",
+                    "action": "SHOW_DIALOG:secret_locked",
+                    "id": "btn_dark"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_jefferson": {
+            "greeting": "（她的表情变得复杂）\n\n§f马克·杰弗森……是布莱克威尔学院最有名的摄影老师。很多人梦想进入他的班级。我也不例外。\n\n§7（她犹豫了一下）§9他……很有才华。但有时候，我觉得有什么不对劲。§f可能只是我多想了吧。",
+            "buttons": [
+                {
+                    "label": "§c什么不对劲？",
+                    "action": "SHOW_DIALOG:secret_jefferson",
+                    "id": "btn_wrong"
+                },
+                {
+                    "label": "§f布莱克威尔学院",
+                    "action": "SHOW_DIALOG:current_arcadia",
+                    "id": "btn_blackwell"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:backstory_photography",
+                    "id": "btn_back2"
+                }
+            ]
+        },
+        "current_arcadia": {
+            "greeting": "（她望向远方，表情变得柔和又忧伤）\n\n§9阿卡迪亚湾……§f是我长大的地方。我小时候和最好的朋友克洛伊在这里度过了无数快乐的时光。后来我家搬去了西雅图，我们失去了联系……\n\n§f五年后，我回到这里读书。但一切都变了。§7克洛伊变了。这个镇子变了。",
+            "buttons": [
+                {
+                    "label": "§9克洛伊是谁？",
+                    "action": "SHOW_DIALOG:backstory_chloe",
+                    "id": "btn_chloe"
+                },
+                {
+                    "label": "§2什么变了？",
+                    "action": "SHOW_DIALOG:current_trouble",
+                    "id": "btn_changes"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back3"
+                }
+            ]
+        },
+        "backstory_chloe": {
+            "greeting": "（她的眼睛亮了起来，随即又黯淡下去）\n\n§b克洛伊·普莱斯。§f蓝头发、朋克风格、满嘴脏话……和我五年前认识的那个女孩完全不一样。\n\n§9她爸爸去世后，她妈妈再婚了，她恨那个继父。§f再加上我不告而别……她有太多愤怒和痛苦。\n\n§7但她仍然是我最好的朋友。",
+            "buttons": [
+                {
+                    "label": "§9你们现在关系如何？",
+                    "action": "SHOW_DIALOG:current_chloe_now",
+                    "id": "btn_now"
+                },
+                {
+                    "label": "§2关于瑞秋·安柏……",
+                    "action": "SHOW_DIALOG:secret_rachel",
+                    "id": "btn_rachel"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back4"
+                }
+            ]
+        },
+        "current_chloe_now": {
+            "greeting": "（她低声说，似乎在回忆什么）\n\n§f我们……在努力找回从前的感觉。一起寻找她失踪的朋友瑞秋。一起面对这个镇子上的秘密。\n\n§9（她握紧拳头）§f有些事情……正在发生。我能感觉到。像暴风雨来临前的宁静。",
+            "buttons": [
+                {
+                    "label": "§c暴风雨？",
+                    "action": "SHOW_DIALOG:secret_time",
+                    "id": "btn_storm"
+                },
+                {
+                    "label": "§e我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_understand"
+                }
+            ]
+        },
+        "current_trouble": {
+            "greeting": "（她环顾四周，确保没人偷听）\n\n§7这个镇子……§f表面上看起来宁静，但底下有很多黑暗的东西。学生失踪、校园霸凌、有钱人家的孩子为所欲为……\n\n§9我一直觉得有什么大事要发生。§f也许只是我太敏感了。但有时候……§7我真的能看到一些别人看不到的东西。",
+            "buttons": [
+                {
+                    "label": "§5看到什么？",
+                    "action": "SHOW_DIALOG:secret_time",
+                    "id": "btn_see"
+                },
+                {
+                    "label": "§2有什么我能帮的吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help2"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back5"
+                }
+            ]
+        },
+        "secret_locked": {
+            "greeting": "（她摇摇头，表情变得封闭）\n\n§7有些照片……我不能给你看。有些故事……我也还没准备好讲述。\n\n§f但如果你愿意帮助我和克洛伊，也许有一天……我会告诉你一切。",
+            "buttons": [
+                {
+                    "label": "§9我愿意等待",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_wait"
+                },
+                {
+                    "label": "§e我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_understand2"
+                }
+            ]
+        },
+        "secret_jefferson": {
+            "greeting": "（她压低声音，表情恐惧）\n\n§c我……发现了一些东西。§f关于杰弗森先生的。关于'暗室'的。\n\n§7（她颤抖着）我不能多说。如果他知道我知道……\n\n§9请帮帮我。帮帮瑞秋。帮帮所有那些女孩。",
+            "buttons": [
+                {
+                    "label": "§c我会帮你揭露真相",
+                    "action": "SHOW_DIALOG:quest_special",
+                    "id": "btn_expose"
+                },
+                {
+                    "label": "§7这太危险了",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_too_dangerous"
+                }
+            ]
+        },
+        "secret_rachel": {
+            "greeting": "（她的眼眶红了）\n\n§d瑞秋·安柏……§f克洛伊最好的朋友。六个月前失踪了。没有人知道她去了哪里。\n\n§9但我们找到了一些线索。§f她的日记、她的照片……还有一些……§c可怕的发现。§f\n\n§7我害怕我们会找到什么。",
+            "buttons": [
+                {
+                    "label": "§2让我帮你们找她",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_find"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:backstory_chloe",
+                    "id": "btn_back6"
+                }
+            ]
+        },
+        "secret_time": {
+            "greeting": "（她深吸一口气，做出了一个重大决定）\n\n§5好吧……我从没告诉过任何人这件事。\n\n§f我可以……§9倒转时间。§f只有几分钟，但那已经够了。\n\n§7当我第一次发现这个能力时，我救了克洛伊的命。但每次使用它……都会带来后果。§c可怕的后果。§f\n\n§9暴风雨就要来了。字面意义上的暴风雨。我不知道该怎么阻止它。",
+            "buttons": [
+                {
+                    "label": "§5……我相信你",
+                    "action": "SHOW_DIALOG:quest_special",
+                    "id": "btn_believe"
+                },
+                {
+                    "label": "§7这太不可思议了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_unbelievable"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（她用期待的眼神看着你）\n\n§f如果你真的愿意帮忙……我们需要很多东西。\n\n§9寻找瑞秋的线索、收集证据、还有……§f保护克洛伊不受那些欺负她的人伤害。\n\n§e你愿意帮我们吗？",
+            "buttons": [
+                {
+                    "label": "§2收集线索",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_clues"
+                },
+                {
+                    "label": "§c处理霸凌者",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_bullies"
+                },
+                {
+                    "label": "§e容我想想",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "quest_special": {
+            "greeting": "（她眼中闪烁着决心）\n\n§9你相信我……谢谢。§f\n\n我们需要收集足够的证据来揭露杰弗森的罪行。需要找到瑞秋。需要在暴风雨来临之前做好准备。\n\n§c时间不多了。§f你准备好了吗？",
+            "buttons": [
+                {
+                    "label": "§2我准备好了",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_ready"
+                },
+                {
+                    "label": "§7我需要更多时间",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_more_time"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "（她对你微笑，举起相机）\n\n§9谢谢你愿意听我说这些。§f在这个镇子上，愿意真正倾听的人不多。\n\n§f如果你改变主意，或者只是想聊聊……你知道在哪里能找到我。\n\n§7（她拍了一张照片）为了记住这一刻。保重。",
+            "buttons": [
+                {
+                    "label": "§9再见，麦克斯",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Life is Strange",
+        "role": "Photography Student",
+        "connections": [
+            "Chloe Price",
+            "Rachel Amber",
+            "Warren Graham",
+            "Kate Marsh"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 16:43:00"
+    }
+}

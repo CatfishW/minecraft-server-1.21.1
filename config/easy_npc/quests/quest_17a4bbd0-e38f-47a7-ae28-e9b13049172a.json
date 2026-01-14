@@ -1,0 +1,15 @@
+{
+    "id": "17a4bbd0-e38f-47a7-ae28-e9b13049172a",
+    "title": "爆破危机",
+    "description": "苦力怕数量激增，农田和建筑遭受威胁。\n\n消灭苦力怕，保护村庄设施。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 6
+    },
+    "reward": {
+        "xp": 188,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 34
+    }
+}

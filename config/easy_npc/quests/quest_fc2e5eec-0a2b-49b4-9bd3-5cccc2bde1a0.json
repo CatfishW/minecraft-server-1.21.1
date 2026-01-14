@@ -1,0 +1,15 @@
+{
+    "id": "fc2e5eec-0a2b-49b4-9bd3-5cccc2bde1a0",
+    "title": "被选中的重装",
+    "description": "Elder Maxson并不常在这一带活动，但他带来了一个关乎'净化'的重要任务。他声称发现了一片被'异端'和'变种人'污染的区域，需要彻底的清理。这不是简单的驱逐，而是彻底的净化。他代表的组织有着严格的纪律和崇高的目标，而你将有幸成为他的执行者。\n\n前往指定的区域（原版：Minecraft的特定地形，如荒地或恶地），消灭那些威胁人类生存的'变种生物'（原版：Minecraft的灾厄村民，如劫掠者）。Maxson会通过某种方式监督你的行动，完成后，你将获得配得上你贡献的报酬。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 5
+    }
+}

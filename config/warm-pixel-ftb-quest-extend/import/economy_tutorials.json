@@ -1,0 +1,214 @@
+{
+  "format_version": 1,
+  "chapter_group": {
+    "id": "economy_tutorials",
+    "title": {
+      "zh_cn": "经济系统教程",
+      "en_us": "Economy Tutorials"
+    }
+  },
+  "chapters": [
+    {
+      "id": "flan_economy",
+      "title": {
+        "zh_cn": "领地经济 (Flan Economy)",
+        "en_us": "Flan Economy"
+      },
+      "subtitle": {
+        "zh_cn": "购买领地面积与交易领地",
+        "en_us": "Buy claim blocks and trade claims"
+      },
+      "icon": "flan_economy:land_deed",
+      "order": 0,
+      "quests": [
+        {
+          "id": "flan_open_shop",
+          "title": {
+            "zh_cn": "打开领地商店",
+            "en_us": "Open the Claim Shop"
+          },
+          "description": {
+            "zh_cn": [
+              "输入 /flaneco 打开领地商店界面。",
+              "了解如何购买领地面积。"
+            ],
+            "en_us": [
+              "Run /flaneco to open the claim shop UI.",
+              "Review how to buy claim blocks."
+            ]
+          },
+          "tasks": [
+            {"type": "checkmark"}
+          ]
+        },
+        {
+          "id": "flan_buy_blocks",
+          "title": {
+            "zh_cn": "购买领地面积",
+            "en_us": "Buy Claim Blocks"
+          },
+          "description": {
+            "zh_cn": [
+              "在领地商店中购买 100 或 500 领地面积。",
+              "购买完成后手动完成此任务。"
+            ],
+            "en_us": [
+              "Buy 100 or 500 claim blocks from the shop.",
+              "Mark this quest complete afterward."
+            ]
+          },
+          "dependencies": ["flan_open_shop"],
+          "tasks": [
+            {"type": "checkmark"}
+          ]
+        },
+        {
+          "id": "flan_land_deed",
+          "title": {
+            "zh_cn": "获得地契",
+            "en_us": "Get a Land Deed"
+          },
+          "description": {
+            "zh_cn": [
+              "购买或获得一个地契 (flan_economy:land_deed)。",
+              "地契可用于领地相关功能。"
+            ],
+            "en_us": [
+              "Obtain a land deed (flan_economy:land_deed).",
+              "This item is used for claim-related features."
+            ]
+          },
+          "dependencies": ["flan_buy_blocks"],
+          "tasks": [
+            {"type": "item", "item": "flan_economy:land_deed", "count": 1}
+          ],
+          "rewards": [
+            {"type": "xp", "xp": 50}
+          ]
+        },
+        {
+          "id": "flan_market",
+          "title": {
+            "zh_cn": "浏览领地市场",
+            "en_us": "Browse the Claim Market"
+          },
+          "description": {
+            "zh_cn": [
+              "输入 /flanmarket 打开领地市场。",
+              "了解如何购买或出售领地。"
+            ],
+            "en_us": [
+              "Run /flanmarket to open the claim market.",
+              "Learn how to buy or list claims."
+            ]
+          },
+          "dependencies": ["flan_land_deed"],
+          "tasks": [
+            {"type": "checkmark"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warm_pixel_shop",
+      "title": {
+        "zh_cn": "商店系统 (Warm Pixel Economy)",
+        "en_us": "Warm Pixel Economy Shop"
+      },
+      "subtitle": {
+        "zh_cn": "购买、出售与余额查询",
+        "en_us": "Buy, sell, and check balance"
+      },
+      "icon": "minecraft:emerald",
+      "order": 1,
+      "quests": [
+        {
+          "id": "wp_shop_open",
+          "title": {
+            "zh_cn": "打开商店",
+            "en_us": "Open the Shop"
+          },
+          "description": {
+            "zh_cn": [
+              "输入 /shop 或 /shop open 打开商店界面。",
+              "浏览不同分类与商品。"
+            ],
+            "en_us": [
+              "Run /shop or /shop open to open the shop UI.",
+              "Browse categories and offers."
+            ]
+          },
+          "tasks": [
+            {"type": "checkmark"}
+          ]
+        },
+        {
+          "id": "wp_shop_buy",
+          "title": {
+            "zh_cn": "购买商品",
+            "en_us": "Buy an Item"
+          },
+          "description": {
+            "zh_cn": [
+              "在商店中购买任意商品。",
+              "购买完成后手动完成此任务。"
+            ],
+            "en_us": [
+              "Purchase any item from the shop.",
+              "Mark this quest complete afterward."
+            ]
+          },
+          "dependencies": ["wp_shop_open"],
+          "tasks": [
+            {"type": "checkmark"}
+          ]
+        },
+        {
+          "id": "wp_shop_sell",
+          "title": {
+            "zh_cn": "出售商品",
+            "en_us": "Sell an Item"
+          },
+          "description": {
+            "zh_cn": [
+              "在商店中出售任意商品。",
+              "出售完成后手动完成此任务。"
+            ],
+            "en_us": [
+              "Sell any item to the shop.",
+              "Mark this quest complete afterward."
+            ]
+          },
+          "dependencies": ["wp_shop_buy"],
+          "tasks": [
+            {"type": "checkmark"}
+          ]
+        },
+        {
+          "id": "wp_balance",
+          "title": {
+            "zh_cn": "查询余额",
+            "en_us": "Check Your Balance"
+          },
+          "description": {
+            "zh_cn": [
+              "输入 /eco balance 查看自己的余额。",
+              "确保你知道当前资产。"
+            ],
+            "en_us": [
+              "Run /eco balance to view your balance.",
+              "Make sure you know your current funds."
+            ]
+          },
+          "dependencies": ["wp_shop_sell"],
+          "tasks": [
+            {"type": "checkmark"}
+          ],
+          "rewards": [
+            {"type": "xp", "xp": 100}
+          ]
+        }
+      ]
+    }
+  ]
+}

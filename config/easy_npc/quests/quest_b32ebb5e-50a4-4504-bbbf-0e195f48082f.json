@@ -1,0 +1,15 @@
+{
+    "id": "b32ebb5e-50a4-4504-bbbf-0e195f48082f",
+    "title": "深渊的回响",
+    "description": "Todd Alquist，一个被欲望冲昏头脑的赌徒。他的贪婪让他变得不谨慎。听说他的人手在挖掘时惊扰了地下的东西。我们需要确保这些威胁不会波及到我们。去，清理掉那些来自深渊的威胁，Todd会为此付出代价的，不是今天，但总会有一天。\n\n深入地下，找到那些被惊扰的洞穴。那里充满了绿色的影子——苦力怕。消灭它们，证明我们对阴影的掌控力。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

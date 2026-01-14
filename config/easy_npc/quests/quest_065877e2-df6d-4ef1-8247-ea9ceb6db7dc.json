@@ -1,0 +1,15 @@
+{
+    "id": "065877e2-df6d-4ef1-8247-ea9ceb6db7dc",
+    "title": "虚荣的战利品",
+    "description": "维多利亚·蔡斯（Victoria Chase）的眼神总是停留在那些闪闪发光的东西上。作为‘漩涡俱乐部’的领袖，她的一举一动都必须引人注目。她听说用金子制作的物品能让那些新生成的家伙感到敬畏。现在，她需要一些闪光的金锭来点缀她的王座。\n\n去挖矿，去寻找，把那些沉睡在地底深处的金锭都给我挖出来。送到我面前来。别让我等太久，我的耐心有限。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gold_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

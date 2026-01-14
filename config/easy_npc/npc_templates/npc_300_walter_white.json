@@ -1,0 +1,110 @@
+{
+    "name": "§cWalter White",
+    "entityType": "easy_npc:humanoid",
+    "description": "A chemistry teacher turned meth kingpin.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/97b8819ea452a76f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "我不是在犯错，我是在纠正错误。你找我有什么事？是谈生意，还是只是想看看一个垂死之人最后的挣扎？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:9ff66195-fcb0-4e77-920a-fd23ccf94841,4eecf136-473e-4914-9636-2893c8ee9db3,cb085b14-a660-4fa1-89e7-16a1c90530e8,474fa4d7-1938-4564-8c87-de7bf0df03f7,e54050cc-2e0b-4541-8ddb-af4b2c20313b",
+                    "id": "btn_quest_0b953bc4"
+                },
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:identity",
+                    "id": "btn_identity"
+                },
+                {
+                    "label": "谈谈你的‘产品’",
+                    "action": "SHOW_DIALOG:business",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "我需要帮助（任务）",
+                    "action": "SHOW_DIALOG:quest_offer",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "identity": {
+            "greeting": "我是海森堡。不，我是沃尔特·怀特。我是那个为了家庭不得不做这一切的人。化学即变革，我在变革我的命运。",
+            "buttons": [
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "business": {
+            "greeting": "纯度 99.1%。这是艺术，不是毒品。每一颗晶体都是完美的。但你需要有门路，而且我不喜欢麻烦。",
+            "buttons": [
+                {
+                    "label": "关于纯度...",
+                    "action": "SHOW_DIALOG:chemistry",
+                    "id": "btn_chem"
+                },
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "chemistry": {
+            "greeting": "听着，这是碳、氢、氮、氧、硫、磷、氯... 但最重要的是，这是谓词。我说了算。你懂化学吗？",
+            "buttons": [
+                {
+                    "label": "懂了，海森堡",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:business",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_offer": {
+            "greeting": "我需要甲胺。高纯度的。我的‘合伙人’最近不太可靠。如果你能搞到一批货，我会给你一个无法拒绝的价格。",
+            "buttons": [
+                {
+                    "label": "接受任务：获取甲胺",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_quest"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

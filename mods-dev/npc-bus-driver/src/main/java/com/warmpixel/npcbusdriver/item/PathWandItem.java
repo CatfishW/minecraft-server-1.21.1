@@ -20,6 +20,8 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import com.warmpixel.npcbusdriver.BusDriverManager;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -104,7 +106,8 @@ public class PathWandItem extends Item {
              // Save "wand_temp" path
              try {
                 PathManager.savePath("wand_temp", points);
-             } catch (Exception e) {
+             } catch (Throwable e) {
+                 e.printStackTrace();
                  player.sendSystemMessage(Component.literal("§cFailed to save temp path: " + e.getMessage()));
                  return;
              }
@@ -123,40 +126,46 @@ public class PathWandItem extends Item {
              newTemplate.setEntityType(template.getEntityType());
              newTemplate.setSkin(template.getSkin());
              newTemplate.setDialog(template.getDialog());
+             newTemplate.setDialogs(template.getDialogs());
              newTemplate.setAttributes(template.getAttributes());
              newTemplate.setEquipment(template.getEquipment());
              newTemplate.setDrop(template.getDrop());
-
-             ActionConfig actions = new ActionConfig();
-             
-             // Chain commands:
-             // 1. Spawn driver (handled by EasyNPC via onSpawn? No, this IS the onSpawn config)
-             // 2. We want the driver to run code.
-             // But EasyNPC executes onSpawn commands AS the NPC or Server.
-             
-             // We need a robust way to spawn complex vehicles.
-             // If vehicleId starts with automobility:, we might need to use its specific summon command OR construct it.
-             // Natively, automobility:automobile requires NBT for parts.
-             // The specific "prefab" items like "bejeweled_motorcar" are just that: items.
-             // When placed, they spawn an entity with NBT.
-             
-             // Solution: Use the `automobility` command if available, or custom logic in setup_bus_driver.
-             // Let's rely on `setup_bus_driver` handling the complexity.
-             // We pass the RAW vehicleID string to it.
-             
-             ActionEvent spawnEvent = new ActionEvent();
-             spawnEvent.setType("COMMAND");
-             spawnEvent.setCommand("npcbusdriver setup_bus_driver wand_temp " + vehicleId);
-             spawnEvent.setPermissionLevel(2);
-             actions.setOnSpawn(new ActionEvent[]{spawnEvent});
-             
-             newTemplate.setActions(actions);
+             newTemplate.setActions(template.getActions());
+             newTemplate.setActionPermissionLevel(template.getActionPermissionLevel());
+             newTemplate.setFaction(template.getFaction());
+             newTemplate.setObjectives(template.getObjectives());
 
              BlockPos start = points.get(0);
-             if (NPCTemplateManager.spawnFromTemplate(level, newTemplate, start.getX(), start.getY(), start.getZ())) {
-                 player.sendSystemMessage(Component.literal("§a[Path Wand] §fSpawned Bus Driver with " + vehicleId));
+             boolean spawned = NPCTemplateManager.spawnFromTemplate(level, newTemplate, start.getX(), start.getY(), start.getZ());
+             
+             if (spawned) {
+                 // Try to find the NPC just spawned
+                 // Assuming it's at the start position and matches the name "Bus Driver" (from template) or just is a Mob
+                 // A tightly bounded check
+                 net.minecraft.world.phys.AABB searchBox = new net.minecraft.world.phys.AABB(start).inflate(2.0);
+                 List<net.minecraft.world.entity.LivingEntity> entities = level.getEntitiesOfClass(net.minecraft.world.entity.LivingEntity.class, searchBox, e -> {
+                     return e instanceof net.minecraft.world.entity.Mob; 
+                 });
+                 
+                 // Sort by distance to start center? Or just take nearest.
+                 entities.sort((e1, e2) -> Double.compare(e1.distanceToSqr(start.getX()+0.5, start.getY(), start.getZ()+0.5), e2.distanceToSqr(start.getX()+0.5, start.getY(), start.getZ()+0.5)));
+                 
+                 if (!entities.isEmpty()) {
+                     // We assume the closest new mob is our guy.
+                     // Ideally we check age < 5 ticks or something but that's hard.
+                     Entity npc = entities.get(0);
+                     
+                     // Run setup logic
+                     if (BusDriverManager.setupBusDriver(level, npc, "wand_temp", vehicleId) != null) {
+                        player.sendSystemMessage(Component.literal("§a[Path Wand] §fSpawned Bus Driver & Vehicle."));
+                     } else {
+                        player.sendSystemMessage(Component.literal("§c[Path Wand] §fSpawned NPC but Vehicle setup failed (check server log)."));
+                     }
+                 } else {
+                     player.sendSystemMessage(Component.literal("§c[Path Wand] §fSpawned NPC but couldn't find it to attach vehicle!"));
+                 }
              } else {
-                 player.sendSystemMessage(Component.literal("§c[Path Wand] §fFailed to spawn NPC."));
+                 player.sendSystemMessage(Component.literal("§c[Path Wand] §fFailed to spawn NPC template."));
              }
     }
     

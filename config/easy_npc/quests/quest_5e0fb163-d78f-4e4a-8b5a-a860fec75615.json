@@ -1,0 +1,15 @@
+{
+    "title": "关键证人",
+    "description": "Kim需要你找到并说服一位关键证人出庭作证。",
+    "objective": {
+        "type": "TALK",
+        "target": "Juliet Watson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    },
+    "id": "5e0fb163-d78f-4e4a-8b5a-a860fec75615"
+}

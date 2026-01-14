@@ -1,0 +1,141 @@
+{
+    "name": "§cKim Wexler",
+    "entityType": "easy_npc:humanoid",
+    "description": "A brilliant lawyer and Jimmy's close companion.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/2a281cb87af99677.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。抱歉，我通常不和陌生人闲聊，时间很宝贵。我是Kim Wexler，一名律师。如果你有正事，或者需要关于银行法律、公司合规方面的建议，我或许能帮上忙。否则，恕我失陪。",
+            "buttons": [
+                {
+                    "label": "咨询银行法律事务",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_banking"
+                },
+                {
+                    "label": "你看起来很疲惫",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_tired"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "银行法律？好的，这部分我很熟悉。规则、条款、责任，这是构建稳定体系的基石。在 Mesa Verde，我学到的最重要的一课就是细节决定成败。一个微小的疏忽，可能导致整个项目的崩盘。你遇到什么具体问题了吗？",
+            "buttons": [
+                {
+                    "label": "我需要起草一份协议",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_contract"
+                },
+                {
+                    "label": "我觉得银行在欺诈我",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_fraud"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "疲惫？也许吧。这份工作要求你时刻保持最佳状态，尤其是在你试图证明自己的时候。但我喜欢工作，它让我感到充实。有时候，埋头于文件和卷宗里，比面对现实世界要简单得多，不是吗？",
+            "buttons": [
+                {
+                    "label": "别太苛责自己",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_easy"
+                },
+                {
+                    "label": "那你觉得Jimmy怎么样？",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_jimmy"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "起草协议需要严谨的措辞和清晰的权利义务划分。我建议你先列出所有关键条款，特别是违约责任和争议解决方式。如果你需要，我可以推荐几位可靠的同事，他们擅长处理这类文书。记住，保护好自己，才能走得更远。",
+            "buttons": [
+                {
+                    "label": "明白了，谢谢你的建议",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_thanks"
+                },
+                {
+                    "label": "我希望能得到你的帮助",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "欺诈是非常严重的指控，需要确凿的证据。不要冲动，先收集好所有的交易记录和往来邮件。如果证据确凿，法律会站在你这边。但请做好心理准备，这将是一场硬仗，而且往往比想象中更漫长。",
+            "buttons": [
+                {
+                    "label": "我会去收集证据的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_evidence"
+                },
+                {
+                    "label": "听起来太难了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "谢谢。只是……有时候你会发现自己在一个‘滑坡’上，每一步都让你离最初的目标更远一点。你必须时刻提醒自己，什么是对的，什么是错的。底线很重要，一旦退让，就很难再收回来了。",
+            "buttons": [
+                {
+                    "label": "守住你的底线",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_line"
+                },
+                {
+                    "label": "听起来你有心事",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "Jimmy……他很聪明，比大多数人看到的要深邃得多。他有自己的一套行事准则，虽然有时候……不那么循规蹈矩。我们是两个世界的人，但不知为何，我们总能找到交集。这种关系很复杂，也很……危险。",
+            "buttons": [
+                {
+                    "label": "危险的关系往往最迷人",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_dangerous"
+                },
+                {
+                    "label": "祝你们好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

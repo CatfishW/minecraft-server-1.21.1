@@ -1,0 +1,15 @@
+{
+    "title": "法律与秩序",
+    "description": "法庭外出现了滋扰证人的不法分子，Kim请你清除他们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    },
+    "id": "c6d02e43-b57f-4d60-a9c0-8c57f7e49546"
+}

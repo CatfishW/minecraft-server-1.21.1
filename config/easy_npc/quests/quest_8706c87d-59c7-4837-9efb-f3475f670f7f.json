@@ -1,0 +1,15 @@
+{
+    "id": "8706c87d-59c7-4837-9efb-f3475f670f7f",
+    "title": "高纯绿钻",
+    "description": "Gus 对特殊催化剂的需求从未停止。他需要一种罕见的绿色晶体，据说只有在特定的地下深层才能找到。这种晶体不稳定，但却是提升反应效率的关键。\n\n前往矿洞深处，挖掘并收集 8 个绿宝石 (minecraft:emerald)。务必保证晶体的完整性，Gus 会亲自检查成色。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:emerald",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

@@ -1,0 +1,86 @@
+{
+    "name": "§bJane Margolis",
+    "entityType": "easy_npc:humanoid",
+    "description": "Jesse's girlfriend and recovering addict.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/e59440ff186751bf.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。你想谈谈吗？这里让人感觉很……平静，不像以前在拖车公园那样总是提心吊胆。 Jesse总说我应该多出去走走，但我更喜欢画画，或者听听音乐。你知道吗？我爸爸以前也是个瘾君子，所以我明白那种痛苦。你看起来不像那些只想要货的人，你想聊什么？",
+            "buttons": [
+                {
+                    "label": "关于Jesse",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_jesse"
+                },
+                {
+                    "label": "关于你的过去",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_past"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "Jesse……他是个好人，真的。只是内心像个孩子，很容易受伤。他现在陷入了一个他根本无法掌控的局面里，那个叫怀特先生的人……我总觉得他不仅仅是想赚钱，他想控制一切。我爱Jesse，我想带他离开这里，去一个没人认识我们的地方，重新开始，哪怕去画画也好。",
+            "buttons": [
+                {
+                    "label": "怀特先生有问题？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_walt"
+                },
+                {
+                    "label": "祝你们好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我的过去？那是一段不想回忆的日子。每天都在为了下一口而活，感觉灵魂都被抽干了。直到我遇到Jesse，他虽然笨手笨脚的，但他看我的眼神里没有鄙视。我试着戒掉，真的，但那种诱惑……就像黑洞一样。有时候我觉得，只有握着画笔的时候，我才是清醒的。",
+            "buttons": [
+                {
+                    "label": "坚持住",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "那个化学老师，他利用Jesse的单纯。他把Jesse推向危险，然后又装作是为了他好。我看得出来，他眼里只有他那个所谓的‘杰作’。如果为了钱，他连自己的家人都能出卖，更何况是Jesse？我必须保护Jesse，哪怕这意味着要对抗那个魔鬼。",
+            "buttons": [
+                {
+                    "label": "你需要小心",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

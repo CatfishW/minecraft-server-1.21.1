@@ -1,0 +1,15 @@
+{
+    "id": "bf8beda7-0c42-499b-bf23-570f7498ce9c",
+    "title": "溺亡的真相",
+    "description": "有个名叫 Kate Marsh 的女人，她以为自己把秘密藏在了湖底。但表亲们知道，秘密和尸体一样，总有浮出水面的一天。她知道的太多了，多到足以让我们的一些‘朋友’陷入麻烦。\n\n去见见 Kate Marsh。告诉她，有些真相最好永远沉在湖底，连同她自己一起。",
+    "objective": {
+        "type": "TALK",
+        "target": "Kate Marsh",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

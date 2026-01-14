@@ -1,0 +1,369 @@
+{
+    "name": "§cNether Scout Blaze",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of the few who regularly ventures into the Nether and returns alive. Maps Nether fortresses and knows safe paths through the hellish dimension.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/NetherScoutBlaze"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§6哈哈！又一个敢于直视地狱之火的灵魂！§r我是Nether Scout Blaze，这里的常客。这片焦土就是我的后院，岩浆是我的浴缸。你对我的故事感兴趣吗？",
+            "buttons": [
+                {
+                    "label": "说说你的背景故事",
+                    "action": "SHOW_DIALOG:backstory_intro",
+                    "id": "btn_backstory"
+                },
+                {
+                    "label": "最近Nether有什么新闻？",
+                    "action": "SHOW_DIALOG:current_intro",
+                    "id": "btn_current"
+                },
+                {
+                    "label": "有什么需要帮助的吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "我得走了",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_intro": {
+            "greeting": "§6背景故事？§r 我有的是！你想听哪个方面？我的第一次探险几乎要了我的命……但也让我爱上了这片燃烧的土地。",
+            "buttons": [
+                {
+                    "label": "你第一次进Nether的经历？",
+                    "action": "SHOW_DIALOG:backstory_first",
+                    "id": "btn_first"
+                },
+                {
+                    "label": "为什么对火焰这么着迷？",
+                    "action": "SHOW_DIALOG:backstory_fire",
+                    "id": "btn_fire"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_first": {
+            "greeting": "§c第一次？§r 哈哈，那时我还是个新手，穿着铁甲就跳进了传送门。一只Ghast差点把我轰成灰！§6但我发现了一个废弃的要塞，里面有个破损的酿造台……§r从那天起，我就知道这里藏着无数秘密。有些东西比钻石更珍贵，但你需要勇气去拿。",
+            "buttons": [
+                {
+                    "label": "破损的酿造台后来怎样了？",
+                    "action": "SHOW_DIALOG:backstory_brew",
+                    "id": "btn_brew"
+                },
+                {
+                    "label": "你提到勇气……",
+                    "action": "SHOW_DIALOG:backstory_courage",
+                    "id": "btn_courage"
+                },
+                {
+                    "label": "继续问背景",
+                    "action": "SHOW_DIALOG:backstory_intro",
+                    "id": "btn_more"
+                }
+            ]
+        },
+        "backstory_fire": {
+            "greeting": "§e火焰？§r 它是最纯粹的能量形式！你看，在地狱，火焰不是毁灭，而是生命。岩浆流淌，烈焰人飞舞……§6有一次，我在一个要塞废墟里找到了一块“哭泣的黑曜石”，它摸起来是温的，像心跳一样。§rForge Master Ember说我疯了，但我知道那是古老的遗物。",
+            "buttons": [
+                {
+                    "label": "Forge Master Ember是谁？",
+                    "action": "SHOW_DIALOG:backstory_ember",
+                    "id": "btn_ember"
+                },
+                {
+                    "label": "你还收集了什么奇怪的东西？",
+                    "action": "SHOW_DIALOG:backstory_artifacts",
+                    "id": "btn_artifacts"
+                },
+                {
+                    "label": "回到背景菜单",
+                    "action": "SHOW_DIALOG:backstory_intro",
+                    "id": "btn_back_backstory"
+                }
+            ]
+        },
+        "current_intro": {
+            "greeting": "§6新闻？§r 最近Nether可不太平静。要塞里的Blaze变得异常活跃，好像被什么东西激怒了。§c还有传言说，一些新的岩浆怪变种出现在偏远地区……§r我本来打算去调查，但最近被别的事情缠住了。",
+            "buttons": [
+                {
+                    "label": "被什么事情缠住了？",
+                    "action": "SHOW_DIALOG:current_problem",
+                    "id": "btn_problem"
+                },
+                {
+                    "label": "那些变种岩浆怪危险吗？",
+                    "action": "SHOW_DIALOG:current_magma",
+                    "id": "btn_magma"
+                },
+                {
+                    "label": "Blaze活跃是好事啊，你不是收集它们的棒子吗？",
+                    "action": "SHOW_DIALOG:current_blaze",
+                    "id": "btn_blaze"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "current_problem": {
+            "greeting": "§c唉……§r 说出来有点丢脸。我的一个备用传送门锚点被一群“凋零骷髅”占据了，它们好像有个首领，特别难缠。§6没有那个锚点，我就没法安全到达“熔岩钓鱼点”——那里能钓到稀有材料！§rCaptain Ironclaw总说我不该一个人行动，这次可能他说对了。",
+            "buttons": [
+                {
+                    "label": "我能帮你清理那个锚点吗？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7f2ed870-bb34-4a04-828e-78f3722dc8e6,e6721e51-5083-40ab-b993-79488b7cb500,e1f79d08-b5a7-4bc9-898f-7b38c57043b4,02aa27a8-1917-47cd-a485-161bd761e7c3,c156369b-85ca-4792-ba90-60454c4b78b7",
+                    "id": "btn_help_anchor"
+                },
+                {
+                    "label": "熔岩钓鱼？真的假的？",
+                    "action": "SHOW_DIALOG:current_fishing",
+                    "id": "btn_fishing"
+                },
+                {
+                    "label": "Captain Ironclaw又是谁？",
+                    "action": "SHOW_DIALOG:backstory_ironclaw",
+                    "id": "btn_ironclaw"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "§6帮忙？§r 你确定吗？地狱可不是野餐的地方。不过……如果你真的不怕，我这里确实有些“小麻烦”需要人手。报酬嘛，我收集的那些“小玩意儿”里，总有你感兴趣的。",
+            "buttons": [
+                {
+                    "label": "我听说你需要清理传送门锚点？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7f2ed870-bb34-4a04-828e-78f3722dc8e6,e6721e51-5083-40ab-b993-79488b7cb500,e1f79d08-b5a7-4bc9-898f-7b38c57043b4,02aa27a8-1917-47cd-a485-161bd761e7c3,c156369b-85ca-4792-ba90-60454c4b78b7",
+                    "id": "btn_quest_anchor"
+                },
+                {
+                    "label": "有其他探险任务吗？",
+                    "action": "SHOW_DIALOG:quest_exploration",
+                    "id": "btn_quest_explore"
+                },
+                {
+                    "label": "我只是随便问问",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_quest_none"
+                }
+            ]
+        },
+        "quest_exploration": {
+            "greeting": "§e探险任务！§r 对嘛，这才是冒险家该说的话！听着，要塞的Blaze异常活跃，我需要大量“Blaze Rod”来研究原因。§6但这不是简单的收集——我要“特定要塞”里，那些冒着“紫色火星”的烈焰人掉落的棒子。§r那里非常危险，但如果你能带回来……我可以分享一个宝藏地图的秘密。",
+            "buttons": [
+                {
+                    "label": "接受挑战，我需要那些棒子！",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7f2ed870-bb34-4a04-828e-78f3722dc8e6,e6721e51-5083-40ab-b993-79488b7cb500,e1f79d08-b5a7-4bc9-898f-7b38c57043b4,02aa27a8-1917-47cd-a485-161bd761e7c3,c156369b-85ca-4792-ba90-60454c4b78b7",
+                    "id": "btn_accept_blaze"
+                },
+                {
+                    "label": "宝藏地图？详细说说？",
+                    "action": "SHOW_DIALOG:secret_map",
+                    "id": "btn_secret_map"
+                },
+                {
+                    "label": "这听起来太危险了，换一个",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_change_quest"
+                }
+            ]
+        },
+        "secret_map": {
+            "greeting": "§5嘘……§r 这个秘密我很少对人说。我在地狱的深处，发现了一幅用“下界合金粒”镶嵌在“黑石”上的古老地图。§d它指向一个未被记载的堡垒遗迹，传说那里有“远古残骸”的富矿脉……§c但我需要完全信任的人才能分享位置。完成我的几个任务，证明你的实力和忠诚。",
+            "buttons": [
+                {
+                    "label": "我会证明自己的！",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_prove_it"
+                },
+                {
+                    "label": "听起来像陷阱",
+                    "action": "SHOW_DIALOG:secret_doubt",
+                    "id": "btn_doubt"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§a那么，祝你好运，地上的朋友。记住，踏入传送门前，带上抗火药水，还有……永远敬畏火焰，但不要害怕它。§6我们地狱见！",
+            "buttons": [
+                {
+                    "label": "[告别]",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "backstory_brew": {
+            "greeting": "§6那个酿造台……§r 我把它修好了，现在是我的幸运符。Ender Watcher说，能从废墟里修复旧物的人，灵魂里也有重塑的力量。我用它酿造了我的第一瓶长效抗火药水。从此，火焰伤不了我分毫。",
+            "buttons": [
+                {
+                    "label": "Ender Watcher？",
+                    "action": "SHOW_DIALOG:backstory_ender",
+                    "id": "btn_ender"
+                },
+                {
+                    "label": "回到故事",
+                    "action": "SHOW_DIALOG:backstory_first",
+                    "id": "btn_back_first"
+                }
+            ]
+        },
+        "secret_doubt": {
+            "greeting": "§c陷阱？§r 哈哈哈！谨慎是好事，但过度的怀疑会让你错过宝藏。好吧，我不强求。等你在地狱多死几次……呃，我是说，多探险几次后，再来找我吧。",
+            "buttons": [
+                {
+                    "label": "也许你是对的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main2"
+                }
+            ]
+        },
+        "current_magma": {
+            "greeting": "（Nether Scout Blaze看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_6654a097"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_8b3e5e9d"
+                }
+            ]
+        },
+        "backstory_ember": {
+            "greeting": "（Nether Scout Blaze沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_cf4def82"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_617426db"
+                }
+            ]
+        },
+        "backstory_artifacts": {
+            "greeting": "（Nether Scout Blaze沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_99367862"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_4963c56f"
+                }
+            ]
+        },
+        "backstory_courage": {
+            "greeting": "（Nether Scout Blaze沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_6ffb8d92"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_5d888a23"
+                }
+            ]
+        },
+        "current_blaze": {
+            "greeting": "（Nether Scout Blaze看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_ff19b856"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_230e1fd2"
+                }
+            ]
+        },
+        "backstory_ironclaw": {
+            "greeting": "（Nether Scout Blaze沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_2a056761"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9605da91"
+                }
+            ]
+        },
+        "current_fishing": {
+            "greeting": "（Nether Scout Blaze看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d0dd3857"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_5c2f3ca6"
+                }
+            ]
+        },
+        "backstory_ender": {
+            "greeting": "（Nether Scout Blaze沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e58813a8"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_343b8a62"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Nether Explorer",
+        "connections": [
+            "The Ender Watcher",
+            "Forge Master Ember",
+            "Captain Ironclaw"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:53:55"
+    }
+}

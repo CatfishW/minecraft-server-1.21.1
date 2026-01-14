@@ -1,0 +1,520 @@
+{
+    "name": "§5Nacho Varga",
+    "entityType": "easy_npc:humanoid",
+    "description": "A smart and capable member of the Salamanca organization who desperately wants out. His aging father runs an upholstery shop and knows nothing of his criminal life.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/13f7a765e6ae8fe6.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§eNacho Varga§r环顾四周，确认没人注意你们，低声说道：\"你看起来不像这里常见的人。想聊聊？但说话小心点，墙壁有耳朵。\"",
+            "buttons": [
+                {
+                    "label": "简单聊聊",
+                    "action": "SHOW_DIALOG:small_talk",
+                    "id": "btn_chitchat"
+                },
+                {
+                    "label": "关于你父亲",
+                    "action": "SHOW_DIALOG:backstory_father",
+                    "id": "btn_father"
+                },
+                {
+                    "label": "你怎么为萨拉曼加家做事？",
+                    "action": "SHOW_DIALOG:backstory_recruitment",
+                    "id": "btn_how_work"
+                },
+                {
+                    "label": "最近好像有事发生？",
+                    "action": "SHOW_DIALOG:current_tension",
+                    "id": "btn_current"
+                },
+                {
+                    "label": "我或许能帮忙",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "先走了，保重",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "small_talk": {
+            "greeting": "\"闲聊？\"他苦笑，\"在这里，闲聊是奢侈品。但好吧...我父亲的店最近生意不错，这算好消息。\"他的眼神柔和了一瞬，随即又变得警惕。",
+            "buttons": [
+                {
+                    "label": "你父亲知道你做什么吗？",
+                    "action": "SHOW_DIALOG:backstory_father_deep",
+                    "id": "btn_father_know"
+                },
+                {
+                    "label": "你和拉罗关系怎么样？",
+                    "action": "SHOW_DIALOG:current_lalo",
+                    "id": "btn_lalo"
+                },
+                {
+                    "label": "这么说你想脱离这行？",
+                    "action": "SHOW_DIALOG:secret_exit_desire",
+                    "id": "btn_exit"
+                },
+                {
+                    "label": "回到主话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "backstory_father": {
+            "greeting": "提到父亲，Nacho的表情放松了些。\"他经营一家室内装潢店，老实人，一辈子努力工作。他以为我在做进出口生意...我编的。\"他叹了口气，\"这是保护他。\"",
+            "buttons": [
+                {
+                    "label": "他如果知道真相会怎样？",
+                    "action": "SHOW_DIALOG:backstory_father_knows",
+                    "id": "btn_if_knew"
+                },
+                {
+                    "label": "你为什么要加入卡特尔？",
+                    "action": "SHOW_DIALOG:backstory_recruitment_deep",
+                    "id": "btn_why_join"
+                },
+                {
+                    "label": "你害怕牵连他吗？",
+                    "action": "SHOW_DIALOG:current_threats",
+                    "id": "btn_threats"
+                },
+                {
+                    "label": "我明白了，不说这个了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_recruitment": {
+            "greeting": "\"图科·萨拉曼加。\"他吐出这个名字，\"年轻时的选择，为了钱，为了地位。开始觉得是条捷径，现在发现是条单行道，只有入口，出口...很难找。\"",
+            "buttons": [
+                {
+                    "label": "后悔吗？",
+                    "action": "SHOW_DIALOG:backstory_regret",
+                    "id": "btn_regret"
+                },
+                {
+                    "label": "现在谁能帮你脱身？",
+                    "action": "SHOW_DIALOG:secret_exit_plan",
+                    "id": "btn_exit_plan"
+                },
+                {
+                    "label": "所以现在你被卡住了",
+                    "action": "SHOW_DIALOG:current_trap",
+                    "id": "btn_trapped"
+                },
+                {
+                    "label": "换个话题吧",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_change"
+                }
+            ]
+        },
+        "current_tension": {
+            "greeting": "\"你的观察力不错。\"他压低声音，\"拉罗回来了，一切都变了。他不像图科那么...冲动，他更聪明，更危险。我需要时刻保持清醒，一步都不能错。\"",
+            "buttons": [
+                {
+                    "label": "他怀疑你了吗？",
+                    "action": "SHOW_DIALOG:current_lalo_suspect",
+                    "id": "btn_suspect"
+                },
+                {
+                    "label": "古斯塔沃·福林那边呢？",
+                    "action": "SHOW_DIALOG:current_gus",
+                    "id": "btn_gus"
+                },
+                {
+                    "label": "听起来你需要一个后援",
+                    "action": "SHOW_DIALOG:quest_alliance",
+                    "id": "btn_need_backup"
+                },
+                {
+                    "label": "压力很大",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "他仔细打量着你，眼神锐利。\"帮忙？陌生人主动帮忙要么是傻子，要么有目的。你是哪种？不过...我的处境确实不允许我拒绝任何可能性。说说看。\"",
+            "buttons": [
+                {
+                    "label": "我听说你在两头下注",
+                    "action": "SHOW_DIALOG:quest_double_agent_hint",
+                    "id": "btn_double_hint"
+                },
+                {
+                    "label": "也许能帮你父亲安排个'假期'",
+                    "action": "SHOW_DIALOG:quest_father_safety",
+                    "id": "btn_father_safety"
+                },
+                {
+                    "label": "我有渠道可以扰乱某些货物",
+                    "action": "SHOW_DIALOG:quest_sabotage",
+                    "id": "btn_sabotage"
+                },
+                {
+                    "label": "算了，当我没说",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_forget_it"
+                }
+            ]
+        },
+        "quest_double_agent_hint": {
+            "greeting": "他的眼神瞬间变得极其危险，手悄悄移向腰间。\"谁告诉你的？\"停顿良久，看你没有敌意，他才稍微放松。\"...没错。我在为另一边工作。这不是游戏，会死人的。如果你想参与，需要证明你自己。\"",
+            "buttons": [
+                {
+                    "label": "【任务】窃听拉罗的下一次会面",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:aa764900-dd34-40f9-bc27-20db838258d8,2d043f43-4e87-4eb4-8bb7-8274c8a1f441,a11349f5-d9a8-435b-9f2f-ead666c5c129,ad3747eb-24cd-49eb-80e2-7d5c43482fc2,43970fab-5c9c-4f43-828e-dfbde09db2b5",
+                    "id": "btn_quest_eavesdrop"
+                },
+                {
+                    "label": "这太危险了，我收回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_too_dangerous"
+                },
+                {
+                    "label": "你需要我做什么证明？",
+                    "action": "SHOW_DIALOG:quest_proof",
+                    "id": "btn_ask_proof"
+                }
+            ]
+        },
+        "secret_exit_desire": {
+            "greeting": "这是他第一次真正直视你的眼睛。\"想？我每分每秒都想。但这不是辞职那么简单。你知道太多，他们不会让你走。除非...你找到更大的力量保护你，或者你变得毫无价值。两种都很难。\"\n§5(信任等级1/3)",
+            "buttons": [
+                {
+                    "label": "更大的力量？比如福林？",
+                    "action": "SHOW_DIALOG:secret_gus_deal",
+                    "id": "btn_gus_deal"
+                },
+                {
+                    "label": "变得毫无价值？比如假死？",
+                    "action": "SHOW_DIALOG:secret_fake_death",
+                    "id": "btn_fake_death"
+                },
+                {
+                    "label": "这听起来毫无希望",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_hopeless"
+                }
+            ]
+        },
+        "secret_gus_deal": {
+            "greeting": "\"你比看上去知道的多。\"他承认，\"是的，我在为他做事。这是场豪赌。如果拉罗发现，我和我父亲都会死得很惨。但如果成功了...也许有条出路。但这还不够，我需要一个‘保险’。\"\n§5(信任等级2/3)",
+            "buttons": [
+                {
+                    "label": "【任务】获取一份拉罗的加密通信",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:aa764900-dd34-40f9-bc27-20db838258d8,2d043f43-4e87-4eb4-8bb7-8274c8a1f441,a11349f5-d9a8-435b-9f2f-ead666c5c129,ad3747eb-24cd-49eb-80e2-7d5c43482fc2,43970fab-5c9c-4f43-828e-dfbde09db2b5",
+                    "id": "btn_quest_comms"
+                },
+                {
+                    "label": "保险？什么意思？",
+                    "action": "SHOW_DIALOG:secret_insurance",
+                    "id": "btn_insurance"
+                },
+                {
+                    "label": "你在玩火",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_playing_fire"
+                }
+            ]
+        },
+        "secret_insurance": {
+            "greeting": "\"黑料。\"他简短地说，\"足够让双方都完蛋的黑料。这样他们才会相互牵制，而不是先解决我。但我需要一个绝对安全的地方存放它，一个我死后会自动公开的地方。你...有兴趣当这个‘安全屋’吗？\"\n§d§l(信任等级3/3 - 隐藏故事线解锁)",
+            "buttons": [
+                {
+                    "label": "【任务】建立致命证据的保管链",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:aa764900-dd34-40f9-bc27-20db838258d8,2d043f43-4e87-4eb4-8bb7-8274c8a1f441,a11349f5-d9a8-435b-9f2f-ead666c5c129,ad3747eb-24cd-49eb-80e2-7d5c43482fc2,43970fab-5c9c-4f43-828e-dfbde09db2b5",
+                    "id": "btn_quest_switch"
+                },
+                {
+                    "label": "这责任太大了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_too_much"
+                },
+                {
+                    "label": "你知道这会让你更危险吗？",
+                    "action": "SHOW_DIALOG:secret_paradox",
+                    "id": "btn_paradox"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "\"该走了。记住，我们没见过面，你也不认识我。\"他顿了顿，补充道，\"如果我父亲店里收到新到的布料样品...那意味着我需要紧急联络。保重。\"",
+            "buttons": [
+                {
+                    "label": "保重，Nacho",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "backstory_father_deep": {
+            "greeting": "\"他不知道。\"Nacho坚决地说，\"永远不能知道。他会心碎，或者更糟，他会试图保护我，然后送命。我的双手已经脏了，至少让他的世界保持干净。\"",
+            "buttons": [
+                {
+                    "label": "这是很大的负担",
+                    "action": "SHOW_DIALOG:backstory_regret",
+                    "id": "btn_burden"
+                },
+                {
+                    "label": "你做得对",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_you_right"
+                }
+            ]
+        },
+        "backstory_regret": {
+            "greeting": "\"后悔？\"他笑了，但毫无笑意，\"后悔是没用的。现在只能往前看，想办法活下去，想办法让他活下去。有时候，你选了一条路，就只能走到黑，或者...想办法炸出一条岔路。\"",
+            "buttons": [
+                {
+                    "label": "你是个好儿子",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_good_son"
+                },
+                {
+                    "label": "岔路？比如现在？",
+                    "action": "SHOW_DIALOG:current_trap",
+                    "id": "btn_fork"
+                }
+            ]
+        },
+        "current_trap": {
+            "greeting": "\"卡住了？不，是困住了。一边是拉罗，如果背叛他，我和家人会死。另一边是古斯塔沃，如果不合作，我还是会死，而且可能死得更快。我的棋盘上，每一步都是将军。\"",
+            "buttons": [
+                {
+                    "label": "你需要第三步",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_third_way"
+                },
+                {
+                    "label": "听起来无解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_no_way"
+                }
+            ]
+        },
+        "current_lalo_suspect": {
+            "greeting": "\"拉罗怀疑所有人，这是他的天性。他现在还没怀疑我，但就像坐在火药桶上，一点火星就够了。他最近在查一些‘账目问题’，而有些问题...是我制造的。\"",
+            "buttons": [
+                {
+                    "label": "【任务】转移拉罗对账目的注意力",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:aa764900-dd34-40f9-bc27-20db838258d8,2d043f43-4e87-4eb4-8bb7-8274c8a1f441,a11349f5-d9a8-435b-9f2f-ead666c5c129,ad3747eb-24cd-49eb-80e2-7d5c43482fc2,43970fab-5c9c-4f43-828e-dfbde09db2b5",
+                    "id": "btn_quest_distract"
+                },
+                {
+                    "label": "你疯了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_crazy"
+                }
+            ]
+        },
+        "quest_father_safety": {
+            "greeting": "他身体前倾，声音里带着一丝恳求。\"你有办法？说具体点。必须是干净的，看起来像自然出行，旅游，探亲，什么都行。但不能联系我，他们会监控。\"",
+            "buttons": [
+                {
+                    "label": "【任务】为他父亲安排一次‘幸运抽奖’旅行",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:aa764900-dd34-40f9-bc27-20db838258d8,2d043f43-4e87-4eb4-8bb7-8274c8a1f441,a11349f5-d9a8-435b-9f2f-ead666c5c129,ad3747eb-24cd-49eb-80e2-7d5c43482fc2,43970fab-5c9c-4f43-828e-dfbde09db2b5",
+                    "id": "btn_quest_trip"
+                },
+                {
+                    "label": "我需要更多细节",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_need_details"
+                }
+            ]
+        },
+        "current_threats": {
+            "greeting": "（Nacho Varga看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_36eebc82"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_617f3059"
+                }
+            ]
+        },
+        "secret_exit_plan": {
+            "greeting": "（Nacho Varga压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_0d8fad6b"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_b8f2e26c"
+                }
+            ]
+        },
+        "quest_proof": {
+            "greeting": "（Nacho Varga思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_e92fc4d5"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_856e5a73"
+                }
+            ]
+        },
+        "quest_sabotage": {
+            "greeting": "（Nacho Varga思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2b3284b5"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_bb3a878d"
+                }
+            ]
+        },
+        "current_gus": {
+            "greeting": "（Nacho Varga看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_505e2379"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_594e82e4"
+                }
+            ]
+        },
+        "backstory_recruitment_deep": {
+            "greeting": "（Nacho Varga沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c561dce3"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3e60745a"
+                }
+            ]
+        },
+        "quest_alliance": {
+            "greeting": "（Nacho Varga思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cd4dec89"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_960649ca"
+                }
+            ]
+        },
+        "secret_fake_death": {
+            "greeting": "（Nacho Varga压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e17a70f5"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_17164fbb"
+                }
+            ]
+        },
+        "secret_paradox": {
+            "greeting": "（Nacho Varga压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_f96f4639"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_a7cb16fa"
+                }
+            ]
+        },
+        "current_lalo": {
+            "greeting": "（Nacho Varga看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_97f8c3c7"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_751470ba"
+                }
+            ]
+        },
+        "backstory_father_knows": {
+            "greeting": "（Nacho Varga沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e72a9322"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_f488490d"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Better Call Saul",
+        "role": "Cartel Lieutenant",
+        "connections": [
+            "Lalo Salamanca",
+            "Gustavo Fring",
+            "Mike Ehrmantraut",
+            "Tuco Salamanca"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:48:30"
+    }
+}

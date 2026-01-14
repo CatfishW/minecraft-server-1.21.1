@@ -1,0 +1,15 @@
+{
+    "id": "3adbd6ae-262f-4d77-863e-3f7e365dbbce",
+    "title": "铁腕的庇护",
+    "description": "凯特尔曼太太换上了一副精明的面孔。\"一个叫朱丽叶·沃森的女人，据说她很有能力，能解决很多麻烦。我需要这种人脉，需要一个能在我儿子惹出乱子时摆平一切的铁腕人物。\"\n\n去和朱丽叶·沃森建立联系。告诉她，只要她愿意为我的家族提供便利，我不会亏待她。聪明人之间应该互相帮助。",
+    "objective": {
+        "type": "TALK",
+        "target": "Juliet Watson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

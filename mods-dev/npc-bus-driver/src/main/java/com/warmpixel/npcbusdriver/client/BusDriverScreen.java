@@ -23,10 +23,11 @@ public class BusDriverScreen extends Screen {
     
     // Default sensible vehicle options
     private static final List<String> PRESETS = Arrays.asList(
-        "city_vehicles:blue_bus",
-        "city_vehicles:green_bus",
-        "city_vehicles:red_bus", 
-        "city_vehicles:yellow_bus",
+        "cityvehicles:blue_bus",
+        "cityvehicles:red_bus",
+        "cityvehicles:green_bus",
+        "cityvehicles:yellow_bus",
+        "cityvehicles:pink_bus",
         "automobility:bejeweled_motorcar",
         "automobility:copper_motorcar",
         "automobility:wooden_motorcar",

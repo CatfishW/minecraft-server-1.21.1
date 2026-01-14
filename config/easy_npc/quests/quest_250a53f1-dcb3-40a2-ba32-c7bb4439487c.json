@@ -1,0 +1,15 @@
+{
+    "id": "250a53f1-dcb3-40a2-ba32-c7bb4439487c",
+    "title": "铺张的床铺",
+    "description": "贝琪·凯特尔曼叉着腰，一脸嫌弃地打量着她那简陋的床铺。\"看看这个，简直是对身份的侮辱！我儿子怎么能睡在这种东西上？我需要最柔软的羊毛，最洁白的棉花，才能配得上他的地位。\"\n\n去野外剪几只绵羊的毛，然后把柔软的羊毛给我带回来。别让我等太久，我可没耐心。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:white_wool",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 15
+    }
+}

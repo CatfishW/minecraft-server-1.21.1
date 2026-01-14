@@ -1,0 +1,15 @@
+{
+    "id": "27ea6968-76c6-4f6e-9b2e-a061e1a2250d",
+    "title": "败者的遗物",
+    "description": "在最近的一次庭外和解中，Kim 帮助 Jimmy 赢得了一位对手的尊重，但也导致对方损失惨重。尽管赢得了胜利，Kim 的内心依然保持着律师的严谨与谨慎，她决定加固事务所的安保，以防万一。\n\n她需要一些铁锭来打造更坚固的门锁和防护栏。请去挖掘铁矿石并熔炼成锭，带回 12 个铁锭交给她。每一块铁都代表着一份安全的保障。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

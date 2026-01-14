@@ -1,0 +1,15 @@
+{
+    "id": "b130258d-939d-40e1-910a-62e0a46584d1",
+    "title": "铁锭采集",
+    "description": "工坊需要大量铁锭来锻造武器装备。\n\n收集铁锭并交给我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 168,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 34
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0830de0b-399a-49d2-ad46-c1821b4bbb67",
+    "title": "潜伏的罪证",
+    "description": "Steven Gomez: '没有证据，我们就无法给那群混核定罪。Hank一直坚持这一点，虽然现在他...情况不太好。我需要确凿的物证，一些能追溯到源头的原材料。'\nSteven Gomez: '去收集铁锭。大量的铁锭。这通常是非法军火交易的源头。把它们带回来，我会用来对比数据库里的记录。不要让任何人看见你的行动。'",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

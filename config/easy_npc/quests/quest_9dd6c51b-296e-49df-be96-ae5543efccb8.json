@@ -1,0 +1,15 @@
+{
+    "id": "9dd6c51b-296e-49df-be96-ae5543efccb8",
+    "title": "最后的活口",
+    "description": "Mike Hanlon，一个总想记录下一切的老记者。他像幽灵一样缠着过去的案件，试图拼凑出我们不愿为人所知的一面。表亲们最讨厌纠缠不休的幽灵，尤其是活的。\n\n找到 Mike Hanlon。他是最后一个能讲述那些故事的人，所以，让他成为最后一个闭嘴的人。这是最后的警告，也是最终的结局。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Hanlon",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 3
+    }
+}

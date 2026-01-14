@@ -1,0 +1,15 @@
+{
+    "id": "2576465f-fc32-49b7-91dd-a459fa841621",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给Warren Graham。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Warren Graham",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

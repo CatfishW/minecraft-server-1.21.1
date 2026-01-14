@@ -1,0 +1,15 @@
+{
+    "id": "fc056a11-fc23-4dac-a7f2-53abe20eea77",
+    "title": "白骨猎手",
+    "description": "学校的地下室通向废弃的矿井，那里现在归骷髅们所有。它们不仅仅是骨头，它们是守护者，守护着一口古老的水井。最近它们变得非常有攻击性，甚至试图爬上楼梯进入教学楼。我们不能让这种事发生。\n\n带上你的武器，进入地下室的通道。那里有三只拿着弓箭的骷髅（minecraft:skeleton），它们守在井口。消灭它们，我们才能安心。这很危险，但回报也是值得的。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

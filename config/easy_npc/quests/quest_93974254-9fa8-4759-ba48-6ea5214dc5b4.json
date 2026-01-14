@@ -1,0 +1,15 @@
+{
+    "id": "93974254-9fa8-4759-ba48-6ea5214dc5b4",
+    "title": "末影窃贼",
+    "description": "末影人神出鬼没，时常偷走Farmer Chen珍藏的稀有种子，这对他的育种计划造成了严重破坏。\n\n追踪并击杀5只末影人，夺回被盗的种子，维护农业的奥秘。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:enderman",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 3
+    }
+}

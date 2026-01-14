@@ -1,0 +1,15 @@
+{
+    "id": "ab0e4f8e-fcd7-453c-93a4-60790b6dbabe",
+    "title": "办公室的噪音",
+    "description": "我是Francesca Liddy，Jimmy和Kim的接待员。办公室最近总是有奇怪的声音，尤其是在晚上。我怀疑是那些游荡的僵尸被灯光吸引了。这让我无法专心工作，也影响了客户的印象。\n请你去处理掉办公室周围的僵尸。把它们清理干净，确保我们的环境足够安静。我会支付你一些报酬，感谢你的帮助。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

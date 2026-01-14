@@ -1,0 +1,15 @@
+{
+    "id": "9b6deb29-ad54-4627-a5dc-e70099c1e75f",
+    "title": "生锈的獠牙",
+    "description": "我们需要更多火力来保护我们的货物。Tyrus 指派你去收集一些能用的武器。听说在那些骷髅聚集的黑暗角落里，还能找到一些生前的遗物。\n\n去狩猎那些拿着弓的骷髅，从它们手中夺取那些生锈的金属箭矢。我们需要大量的弹药储备，这是为了应对未来可能发生的一切冲突。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:arrow",
+        "amount": 32
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

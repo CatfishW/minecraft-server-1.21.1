@@ -1,0 +1,400 @@
+{
+    "name": "§aLibrarian Quill",
+    "entityType": "easy_npc:humanoid",
+    "description": "The keeper of the village's vast library, containing books on every craft and enchantment. Trades knowledge for rare items and experiences.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/LibrarianQuill"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§6图书管理员Quill§r抬起头，扶了扶眼镜。\n\n“啊，一位访客。欢迎来到§b无尽书架图书馆§r。这里的每一卷书都承载着一段历史、一个配方，或是一道咒文...我能为你做什么？”",
+            "buttons": [
+                {
+                    "label": "这图书馆真了不起",
+                    "action": "SHOW_DIALOG:library_talk",
+                    "id": "btn_library"
+                },
+                {
+                    "label": "你是如何成为管理员的？",
+                    "action": "SHOW_DIALOG:backstory_origin",
+                    "id": "btn_origin"
+                },
+                {
+                    "label": "你看起来有些心事",
+                    "action": "SHOW_DIALOG:current_problem",
+                    "id": "btn_concern"
+                },
+                {
+                    "label": "我需要些指导",
+                    "action": "SHOW_DIALOG:quest_help",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "再见",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "library_talk": {
+            "greeting": "Quill环视四周，眼中闪着自豪的光芒。\n\n“§6是的...这里收藏着§d7352卷§6独立的手抄本§r。从基础的熔炉配方，到只有§5流浪附魔师§r才知晓的禁忌附魔...但知识的海洋永无止境。总会有新东西等待收录。”",
+            "buttons": [
+                {
+                    "label": "你最喜欢哪本书？",
+                    "action": "SHOW_DIALOG:favorite_book",
+                    "id": "btn_favbook"
+                },
+                {
+                    "label": "最珍贵的藏品是什么？",
+                    "action": "SHOW_DIALOG:secret_library",
+                    "id": "btn_precious",
+                    "condition": "TRUST_LEVEL >= 3"
+                },
+                {
+                    "label": "如何借阅书籍？",
+                    "action": "SHOW_DIALOG:borrow_rules",
+                    "id": "btn_borrow"
+                },
+                {
+                    "label": "回到主话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_origin": {
+            "greeting": "Quill轻抚一本古旧的皮革书封，陷入回忆。\n\n“我的前任，§e老Elara§r，在我还是个孩子时发现我在§c废弃矿井§r里试图读懂一张腐化的地图...她说‘知识不该被埋没’。她教我读写，临终前将§6图书馆钥匙§r交给了我。”",
+            "buttons": [
+                {
+                    "label": "老Elara是个怎样的人？",
+                    "action": "SHOW_DIALOG:backstory_mentor",
+                    "id": "btn_mentor"
+                },
+                {
+                    "label": "你后悔过吗？",
+                    "action": "SHOW_DIALOG:backstory_regret",
+                    "id": "btn_regret"
+                },
+                {
+                    "label": "关于那地图...",
+                    "action": "SHOW_DIALOG:backstory_map",
+                    "id": "btn_map"
+                },
+                {
+                    "label": "明白了，谢谢分享",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return"
+                }
+            ]
+        },
+        "backstory_mentor": {
+            "greeting": "“她...§b像夜间的萤火虫§r。”Quill的声音变得柔和。“她能仅凭§e羽毛笔的刮擦声§r判断抄写员的情绪。§5流浪附魔师§r年轻时曾是这里的常客，他们总在探讨‘知识是否有重量’这种问题...可惜，那些辩论的记录，在一场§c闪电引发的火灾§r中遗失了。”",
+            "buttons": [
+                {
+                    "label": "那场火灾？",
+                    "action": "SHOW_DIALOG:backstory_fire",
+                    "id": "btn_fire"
+                },
+                {
+                    "label": "你和流浪附魔师还有联系？",
+                    "action": "SHOW_DIALOG:relation_wanderer",
+                    "id": "btn_wanderer"
+                },
+                {
+                    "label": "回到你的故事",
+                    "action": "SHOW_DIALOG:backstory_origin",
+                    "id": "btn_back2"
+                }
+            ]
+        },
+        "current_problem": {
+            "greeting": "Quill叹了口气，指向一个半空的架子。\n\n“§c预算§r。§6市长Goldsworth§r认为‘书本不能当饭吃’，削减了我们的津贴。我不得不用§a个人藏品§r交换墨水与纸张...更糟的是，§d《凋灵构造考》§r的最后三页仍下落不明。没有完整的知识，就像没有四角的桌子一样危险。”",
+            "buttons": [
+                {
+                    "label": "我能帮上什么忙吗？",
+                    "action": "SHOW_DIALOG:quest_collect",
+                    "id": "btn_offerhelp"
+                },
+                {
+                    "label": "市长为什么这么想？",
+                    "action": "SHOW_DIALOG:relation_mayor",
+                    "id": "btn_mayor"
+                },
+                {
+                    "label": "《凋灵构造考》？听起来很危险",
+                    "action": "SHOW_DIALOG:book_wither",
+                    "id": "btn_witherbook"
+                },
+                {
+                    "label": "这真令人难过",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_sympathy"
+                }
+            ]
+        },
+        "quest_help": {
+            "greeting": "“指导？当然。”Quill抽出一个小笔记本。“知识的交换是公平的。你为我带来§e前所未见的文字、失落的配方、或古老的遗物§r，我会回报以§b等值的知识、附魔建议、或是...§d一些特别的交易权限§r。你目前在寻找什么？”",
+            "buttons": [
+                {
+                    "label": "寻找稀有的知识",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:8b952424-8c0a-4259-af4f-6a9c095f2171,86143e0a-adbd-4506-aefa-f5e3d81cd5e7,31baa22c-51a1-4ff5-b5c2-b08089671aa0,8329181c-ba64-46db-aaad-31b7b053bd19,083a5c94-5a7f-46e7-900d-7d77f245e654",
+                    "id": "btn_quest_knowledge"
+                },
+                {
+                    "label": "需要附魔研究帮助",
+                    "action": "SHOW_DIALOG:quest_enchant",
+                    "id": "btn_quest_enchant"
+                },
+                {
+                    "label": "想了解这个世界的历史",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:8b952424-8c0a-4259-af4f-6a9c095f2171,86143e0a-adbd-4506-aefa-f5e3d81cd5e7,31baa22c-51a1-4ff5-b5c2-b08089671aa0,8329181c-ba64-46db-aaad-31b7b053bd19,083a5c94-5a7f-46e7-900d-7d77f245e654",
+                    "id": "btn_quest_history"
+                },
+                {
+                    "label": "只是随便问问",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_quest_back"
+                }
+            ]
+        },
+        "quest_collect": {
+            "greeting": "Quill的眼睛亮了起来。\n\n“你愿意帮忙？§6太棒了§r！我有几个急需填补的空白：\n1. §a《深海守卫者生态图鉴》§r - 据说只有沉船中的密封箱子才有。\n2. §d《末地城市的建筑法则》§r - 可能藏在紫颂植株间的宝库里。\n3. §c《下界疋猪的驯化手稿》§r - 一位旅行商人曾提起过，但他再也没回来...”\n任何一样都会是§e无价之宝§r。你有兴趣追踪哪一本？”",
+            "buttons": [
+                {
+                    "label": "深海守卫者的书",
+                    "action": "OPEN_QUEST_DIALOG:QUEST_PLACEHOLDER",
+                    "id": "btn_quest_guardian"
+                },
+                {
+                    "label": "末地城市的书",
+                    "action": "OPEN_QUEST_DIALOG:QUEST_PLACEHOLDER",
+                    "id": "btn_quest_endcity"
+                },
+                {
+                    "label": "下界疋猪的书",
+                    "action": "OPEN_QUEST_DIALOG:QUEST_PLACEHOLDER",
+                    "id": "btn_quest_piglin"
+                },
+                {
+                    "label": "我需要再考虑下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_quest_think"
+                }
+            ]
+        },
+        "secret_library": {
+            "greeting": "Quill谨慎地看了看四周，压低声音。\n\n“这件事我只告诉§e真正值得信赖§r的人...在§5主阅览室第三排书架后面§r，有一个§c隐藏的杠杆§r。它通向‘§d禁书馆§r’...那里存放着老Elara认为‘过于危险而不得流通’的卷轴。§c《凋灵召唤仪式全解》§r、§5《灵魂沙的哀歌》§r...以及一本§b空白的书§r，据说写下问题，它会用古矮人语回答——但代价不明。”\n§4※ 警告：知识本身即是力量，也是诅咒。※§r",
+            "buttons": [
+                {
+                    "label": "你为什么告诉我这个？",
+                    "action": "SHOW_DIALOG:secret_trust",
+                    "id": "btn_whysecret"
+                },
+                {
+                    "label": "那本空白的书...",
+                    "action": "SHOW_DIALOG:secret_book",
+                    "id": "btn_secretbook"
+                },
+                {
+                    "label": "我会保守秘密",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_keepsecret"
+                }
+            ]
+        },
+        "secret_trust": {
+            "greeting": "“因为...”Quill摘下眼镜擦拭。“知识被锁起来，就和被毁灭没有两样。老Elara的初衷是§b保护§r，但我渐渐觉得，这是§c囚禁§r。世界在变化，§4灾厄村民§r在挖掘古老的力量，§b末影龙§r的传说不再遥不可及...我们需要理解这些危险，而不是逃避。你...似乎有种§e求知的勇气§r，不同于只想掠夺的冒险者。”",
+            "buttons": [
+                {
+                    "label": "（感动）我不会辜负这份信任",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_touched"
+                },
+                {
+                    "label": "这责任太重大了",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_overwhelmed"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "Quill轻轻点头，将目光移回手中的书卷。\n\n“愿§6知识之光§r照亮你的道路。记住，任何时候，带着新的§e见闻§r或§d疑问§r回来，这里的大门都为你敞开。§b保重，朋友。§r”",
+            "buttons": [
+                {
+                    "label": "再见，Quill",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "relation_mayor": {
+            "greeting": "（Librarian Quill沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e2d51753"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_648a1870"
+                }
+            ]
+        },
+        "quest_enchant": {
+            "greeting": "（Librarian Quill思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9cb7260f"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_b284f048"
+                }
+            ]
+        },
+        "relation_wanderer": {
+            "greeting": "（Librarian Quill沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_3768f786"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_425d887d"
+                }
+            ]
+        },
+        "favorite_book": {
+            "greeting": "（Librarian Quill沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_43db9694"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_516ef809"
+                }
+            ]
+        },
+        "borrow_rules": {
+            "greeting": "（Librarian Quill沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_9e5e07ff"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_b14203e2"
+                }
+            ]
+        },
+        "book_wither": {
+            "greeting": "（Librarian Quill沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_f29a69bb"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_f73d4950"
+                }
+            ]
+        },
+        "backstory_map": {
+            "greeting": "（Librarian Quill沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_be2c385a"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_0cff94ae"
+                }
+            ]
+        },
+        "backstory_fire": {
+            "greeting": "（Librarian Quill沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_406a0b31"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_60de6ddb"
+                }
+            ]
+        },
+        "backstory_regret": {
+            "greeting": "（Librarian Quill沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_54487b29"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_7e37813e"
+                }
+            ]
+        },
+        "secret_book": {
+            "greeting": "（Librarian Quill压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_9aa03e54"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acdc79c0"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Knowledge Keeper",
+        "connections": [
+            "The Wandering Enchanter",
+            "Mayor Goldsworth",
+            "Adventurer's Guild Master"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:57:55"
+    }
+}

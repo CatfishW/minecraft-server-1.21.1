@@ -1,0 +1,15 @@
+{
+    "id": "27eac07f-becd-4018-8a44-c3e8f846ba4d",
+    "title": "高能元素",
+    "description": "沃伦的某些精密仪器需要远超普通电池容量的能源。他将目光投向了那些由黑石构成的古老构造体——烈焰人。他认为烈焰棒中蕴含着一种极其稳定的高纯度能量，是驱动他下一步实验计划的关键材料。但这东西可不好拿，那些守护者脾气相当火爆。\n\n去下界（或烈焰人自然生成的地方）收集一些烈焰棒回来。沃伦会用它们来构建一个微型的无限能源核心，这将是一个里程碑式的突破。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blaze_rod",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "4f91f07d-a2af-4ba7-8e72-fd5681bc860d",
+    "title": "雪中送炭",
+    "description": "Bolt 总算回来了，但这小家伙看起来饿坏了，瘦得皮包骨头。Frank 很心疼，但他现在的货被条子盯得紧，手头流动资金短缺，没法去黑市买昂贵的高级狗粮。他急需一些基础物资来填饱 Bolt 的肚子，哪怕只是一两天也好。\n\nFrank 需要大量的小麦来制作临时的狗粮糊糊。去农场或者原野里收集一些成熟的小麦。如果你能弄到更多的肉食，Bolt 会更高兴，但首要任务是把小麦弄回来。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "0cb4d3c7-1e55-489b-bdcc-256d33d76ff2",
+    "title": "赤红契约",
+    "description": "Tuco 想要升级他的装备，但高质量的金属板需要特殊的手段。他需要你去‘说服’那些在地狱中游荡的生物。这些生物不仅强大，而且难以捉摸。Tuco 相信，只有力量才能换来忠诚。\n\n进入下界，找到那些穿着铁甲的猪灵，并击败它们。从它们的尸体上剥下那些珍贵的铁片。这是对忠诚的考验。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

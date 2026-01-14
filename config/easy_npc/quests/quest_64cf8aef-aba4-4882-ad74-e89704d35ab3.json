@@ -1,0 +1,15 @@
+{
+    "id": "64cf8aef-aba4-4882-ad74-e89704d35ab3",
+    "title": "赤红的暴怒",
+    "description": "地底岩浆中的生物，是纯粹恶意的具象化。它们不知疲倦，不知恐惧，只知道破坏。如果不加以遏制，它们会将地狱的火光带到这片土地。\n\n前往下界（The Nether），寻找那些在岩浆中游荡的烈焰人（Blaze）。打断它们的骨架，收集 6 根烈焰棒（Blaze Rod）。这是一场与高温和愤怒的战斗。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blaze_rod",
+        "amount": 6
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

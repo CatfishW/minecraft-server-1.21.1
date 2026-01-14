@@ -1,0 +1,15 @@
+{
+    "id": "6ccfc596-cc58-44e1-b6b5-a1635b7b018d",
+    "title": "亡命之徒的亡命财",
+    "description": "听着，我们手头紧得很，我需要一些启动资金。别问钱从哪儿来，你只需要去把那些游荡的僵尸干掉，它们身上总有几个硬币。这是最简单的买卖，也是最干净的。\n带上剑，去打猎。我不管你用什么方法，给我带回至少20枚铜币。如果干得漂亮，我还会多给你一些。别让我失望，伙计。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

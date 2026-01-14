@@ -1,0 +1,15 @@
+{
+    "id": "51fa9630-fe8a-419a-8aa8-f2b1b3907727",
+    "title": "最后的目击",
+    "description": "所有的线索都指向了商业街的某个角落，蕾切尔最后一次被人看到是和维多利亚·切斯在一起。维多利亚一直对蕾切尔怀有嫉妒，她可能是最后一个见到蕾切尔的人。她知道些什么，但她绝不会轻易开口。\n\n找到维多利亚·切斯。无论用什么方法，从她口中套出关于蕾切尔最后行踪的信息。她可能在艺术画廊或者她的豪宅里。",
+    "objective": {
+        "type": "TALK",
+        "target": "Victoria Chase",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1d284197-a00a-4074-8afd-2ea8b0b4ad2d",
+    "title": "Strong的奇怪请求",
+    "description": "Strong 正在进行一项神秘的炼金实验，他声称这种药剂能让人在黑暗中看清一切。但他缺少一种关键的催化剂——足以以假乱真的荧石粉。他认为最接近这种效果的就是下界要塞里那些飞行的小家伙掉落的颗粒。\nBadger 被派来向你传达请求，并取回至少 25 份这样的奇异粉末。Strong 警告说，如果数量不够，药剂可能会有奇怪的副作用。",
+    "objective": {
+        "type": "TALK",
+        "target": "Strong",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

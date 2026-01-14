@@ -358,10 +358,40 @@ public class AttackHandler {
     return main;
   }
 
+  public static class MuzzleFlashConfig {
+    static float scale = 0.4f;
+    static long lastLoadTime = 0;
+ 
+    public static float getScale() {
+      load();
+      return scale;
+    }
+
+    static void load() {
+      long currentTime = System.currentTimeMillis();
+      if (currentTime - lastLoadTime < 5000) return; // Cache for 5 seconds
+      lastLoadTime = currentTime;
+
+      java.io.File configFile = new java.io.File(Constants.CONFIG_DIR.toFile(), "easy_npc/muzzle_flash.json");
+      if (configFile.exists()) {
+        try (java.io.FileReader reader = new java.io.FileReader(configFile)) {
+          com.google.gson.JsonObject json = com.google.gson.JsonParser.parseReader(reader).getAsJsonObject();
+          if (json.has("muzzle_flash")) {
+            com.google.gson.JsonObject flash = json.getAsJsonObject("muzzle_flash");
+            if (flash.has("scale")) scale = flash.get("scale").getAsFloat();
+          }
+        } catch (Exception e) {
+          // Fallback to defaults
+        }
+      }
+    }
+  }
+
   private static void ensureTaczMuzzleFlash(LivingEntity livingEntity, ItemStack itemStack) {
     if (livingEntity == null || itemStack == null || livingEntity.level().isClientSide) {
       return;
     }
+    MuzzleFlashConfig.load();
     try {
       Class<?> networkHandlerClass = Class.forName("com.tacz.guns.network.NetworkHandler");
       java.lang.reflect.Method sendMethod = null;
@@ -390,37 +420,34 @@ public class AttackHandler {
     if (livingEntity.level() instanceof ServerLevel serverLevel) {
       Vec3 eyePos = livingEntity.getEyePosition();
       Vec3 look = livingEntity.getViewVector(1.0F);
-      Vec3 muzzlePos = eyePos.add(look.scale(0.35));
+      Vec3 muzzlePos = eyePos.add(look.scale(0.75)).subtract(0, 0.25, 0);
+      
+      // Using the requested FLASH particle for the initial 'pop'.
+      // Note: Vanilla FLASH cannot be scaled directly from the server side.
       serverLevel.sendParticles(
           ParticleTypes.FLASH,
           muzzlePos.x,
           muzzlePos.y,
           muzzlePos.z,
-          1,
-          0.0,
-          0.0,
-          0.0,
-          0.0);
+          1,    // count
+          0.0,  // offset x
+          0.0,  // offset y
+          0.0,  // offset z
+          0.0   // speed
+      );
+
+      // Add a single smoke particle for detail
       serverLevel.sendParticles(
           ParticleTypes.SMOKE,
           muzzlePos.x,
           muzzlePos.y,
           muzzlePos.z,
-          1,
-          0.01,
-          0.01,
-          0.01,
-          0.01);
-      serverLevel.sendParticles(
-          ParticleTypes.CRIT,
-          muzzlePos.x,
-          muzzlePos.y,
-          muzzlePos.z,
-          1,
-          0.01,
-          0.01,
-          0.01,
-          0.01);
+          1,    // count
+          0.02, // offset
+          0.02,
+          0.02,
+          0.01
+      );
     }
   }
 

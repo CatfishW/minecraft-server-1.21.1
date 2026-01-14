@@ -1,0 +1,15 @@
+{
+    "id": "9a87f1b1-dc04-4488-acd9-29ba0139ff6c",
+    "title": "骸骨暴君",
+    "description": "一个强大的凋零骷髅首领控制了下界的资源点，阻碍了Walter的领土扩张，必须被清除以展示权威。\n\n深入下界要塞，击败这只凋零骷髅首领，震慑其他竞争对手。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:wither_skeleton",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 3
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "8f53ab2f-e860-4b58-bfbc-7c9e01a0f25c",
+    "title": "回溯的罪证",
+    "description": "Max在黑板上发现了一行充满恶意的涂鸦，似乎与最近学校图书馆的破坏事件有关。尽管她试图抹去，但涂鸦者似乎很有手段，总能留下更多痕迹。她必须找出源头，在一切无法挽回之前。Max，用你的能力，回到那决定性的瞬间，找出那个隐藏在阴影中的破坏者。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 10
+    }
+}

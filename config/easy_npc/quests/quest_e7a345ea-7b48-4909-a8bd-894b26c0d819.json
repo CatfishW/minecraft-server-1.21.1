@@ -1,0 +1,15 @@
+{
+    "id": "e7a345ea-7b48-4909-a8bd-894b26c0d819",
+    "title": "亡灵的低语",
+    "description": "Steven Gomez: '这鬼地方的丧尸比毒贩还难缠。Hank在追捕Walter White的过程中曾在这里失去过线索。我怀疑那些怪物身上藏着什么秘密。'\nSteven Gomez: '我需要你深入废墟，清剿那些游荡的亡灵。从它们身上搜集一些带有腐蚀性的物质，也许是某种化学残留物。小心点，别像那些FBI探员一样把命丢在这里。'",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

@@ -64,11 +64,11 @@ public class GuardResponseHandler {
   private Map<UUID, Long> spawnCooldowns;
   private Map<UUID, Long> refreshCooldowns;
 
-  private static final int SPAWN_COOLDOWN_TICKS = 600; // 30 seconds between spawns
-  private static final int WANTED_SPAWN_MIN_RADIUS = 15;
-  private static final int WANTED_SPAWN_MAX_RADIUS = 30;
-  private static final int GUARD_DESPAWN_DISTANCE = 80;
-  private static final int GUARD_REFRESH_COOLDOWN_TICKS = 200; // 10 seconds
+  private static final int SPAWN_COOLDOWN_TICKS = 300; // 3 seconds between spawns
+  private static final int WANTED_SPAWN_MIN_RADIUS = 10;
+  private static final int WANTED_SPAWN_MAX_RADIUS = 15;
+  private static final int GUARD_DESPAWN_DISTANCE = 160;
+  private static final int GUARD_REFRESH_COOLDOWN_TICKS = 40; // 2 seconds
 
   private static final String TEMPLATE_TOWN_GUARD = "town_guard";
   private static final String TEMPLATE_ELITE_TOWN_GUARD = "elite_town_guard";
@@ -303,6 +303,16 @@ public class GuardResponseHandler {
     // Instead of setting a fixed target, we use the ATTACK_WANTED_PLAYER objective.
     // This allows guards to target any wanted player in range, primarily the nearest one.
     ensureAttackGoal(easyNPC);
+
+    // Also set the specific player as target immediately if possible
+    Entity entity = easyNPC.getEntity();
+    if (entity instanceof net.minecraft.world.entity.Mob mob) {
+      ServerPlayer player = level.getServer().getPlayerList().getPlayer(targetPlayerUUID);
+      if (player != null) {
+        mob.setTarget(player);
+        mob.setAggressive(true);
+      }
+    }
   }
 
   private void ensureAttackGoal(de.markusbordihn.easynpc.entity.easynpc.EasyNPC<?> easyNPC) {
@@ -537,19 +547,19 @@ public class GuardResponseHandler {
 
     if (level <= 1) {
       templateName = TEMPLATE_TOWN_GUARD;
-      spawnCount = 1 + RANDOM.nextInt(5);
+      spawnCount = 3 + RANDOM.nextInt(3);
     } else if (level == 2) {
       templateName = TEMPLATE_TOWN_GUARD;
-      spawnCount = 2 + RANDOM.nextInt(2);
+      spawnCount = 4 + RANDOM.nextInt(3);
     } else if (level == 3) {
       templateName = TEMPLATE_TOWN_GUARD;
-      spawnCount = 3 + RANDOM.nextInt(2);
+      spawnCount = 6 + RANDOM.nextInt(3);
     } else if (level == 4) {
       templateName = TEMPLATE_TOWN_GUARD;
-      spawnCount = 4 + RANDOM.nextInt(2);
+      spawnCount = 8 + RANDOM.nextInt(4);
     } else if (level >= 5) {
       templateName = TEMPLATE_ELITE_TOWN_GUARD;
-      spawnCount = 5;
+      spawnCount = 10 + RANDOM.nextInt(6);
     }
 
     return new SpawnConfig(templateName, WANTED_SPAWN_MIN_RADIUS, WANTED_SPAWN_MAX_RADIUS, spawnCount);

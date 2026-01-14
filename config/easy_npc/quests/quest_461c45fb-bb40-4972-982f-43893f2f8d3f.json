@@ -1,0 +1,15 @@
+{
+    "id": "461c45fb-bb40-4972-982f-43893f2f8d3f",
+    "title": "无声的警告",
+    "description": "Cousins的威严不容挑战。Overseer Hank似乎忘记了这一点，他手下的一名卫兵竟敢直视我的眼睛。必须让他明白，沉默比喧嚣更具分量。取回他卫兵的腐肉，作为他必将覆灭的预兆。\n\n前往沼泽地带，猎杀那些游荡的僵尸。它们的腐肉将作为警告的信物。不要惊动旁人，像阴影一样行动。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 15
+    }
+}

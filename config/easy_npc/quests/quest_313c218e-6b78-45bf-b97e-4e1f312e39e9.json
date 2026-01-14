@@ -1,0 +1,15 @@
+{
+    "title": "铁匠的请求",
+    "description": "我需要铁锭来锻造武器，帮助我收集一些。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    },
+    "id": "313c218e-6b78-45bf-b97e-4e1f312e39e9"
+}

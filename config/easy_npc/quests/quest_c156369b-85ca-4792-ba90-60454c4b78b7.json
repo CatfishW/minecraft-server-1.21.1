@@ -1,0 +1,15 @@
+{
+    "title": "寻找远古残骸",
+    "description": "在地狱深处寻找这种稀有矿物，这对我们很重要。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:ancient_debris",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 400,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    },
+    "id": "c156369b-85ca-4792-ba90-60454c4b78b7"
+}

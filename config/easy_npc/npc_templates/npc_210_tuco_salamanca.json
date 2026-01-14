@@ -1,0 +1,121 @@
+{
+    "name": "§aTuco Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "A high-ranking cartel enforcer, volatile and violent.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f800b8b7c3770587.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，朋友！你看起来是个精神饱满的家伙。Tuco Salamanca喜欢有活力的人，就像你一样。告诉我，你有什么好货要给我看看吗？还是说，你想为Tuco工作？",
+            "buttons": [
+                {
+                    "label": "我有你要的东西",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_offer"
+                },
+                {
+                    "label": "我只是路过",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_pass"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "哦，真的吗？这太棒了！Tuco喜欢有胆量的人。但是记住，如果你敢耍花招，我会把你的头放进搅拌机里搅碎。货在哪里？快点拿出来！",
+            "buttons": [
+                {
+                    "label": "这是样品，品质一流",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_sample"
+                },
+                {
+                    "label": "货不在我身上",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_not_here"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "路过？Tuco不相信巧合。你看起来像个条子，或者是个想偷我生意的混蛋。解释清楚，不然我就让你尝尝我的'特殊招待'！",
+            "buttons": [
+                {
+                    "label": "我真的只是迷路了",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_lie"
+                },
+                {
+                    "label": "我是新来的，想找个机会",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_newbie"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "很好！这纯度...这质量...太棒了！Tuco很满意。我们今晚就交易。带上你的货，来那个废弃的仓库。别迟到，也别带朋友来。",
+            "buttons": [
+                {
+                    "label": "成交，晚上见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deal"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "什么？你在耍我吗？Tuco最恨别人耍他！我会找到你的，我会把你的牙齿一颗颗敲下来，让你知道欺骗我的下场！滚！",
+            "buttons": [
+                {
+                    "label": "对不起，我马上去拿",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_run"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "迷路？哼，好吧，这次饶了你。但别再让Tuco看到你在这里晃悠。这片地盘是我的，懂吗？现在，滚吧！",
+            "buttons": [
+                {
+                    "label": "是，是，我这就走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "新来的？嗯...你看起来还算机灵。Tuco正好缺个跑腿的。如果你表现好，也许能赚点钱。但如果你搞砸了...你知道下场的。",
+            "buttons": [
+                {
+                    "label": "我会证明我的价值",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_prove"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "9f755569-d698-476e-a0b4-458cbea281ef",
+    "title": "深邃的黑暗",
+    "description": "阴影不仅存在于地面，也潜藏在地底深处。那个神秘人告诉你，深渊之下的某种生物窃取了不属于它们的东西——来自星辰的碎片。他需要那些碎片来追踪一个古老的存在。\n\n深入黑暗的矿洞，猎杀那些在黑暗中滋生的潜影者。将它们守护的紫色精华——也就是回响碎片——带到他面前。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:ender_pearl",
+        "amount": 2
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

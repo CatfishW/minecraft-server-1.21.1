@@ -1,0 +1,15 @@
+{
+    "id": "5bb1d0a8-4fa9-456e-8795-124a9a6e5126",
+    "title": "收获季节",
+    "description": "村庄需要粮食储备以度过冬天。\n\n收获小麦用于制作面包。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 32
+    },
+    "reward": {
+        "xp": 95,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

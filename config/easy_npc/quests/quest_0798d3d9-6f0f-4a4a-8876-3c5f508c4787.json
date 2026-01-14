@@ -1,0 +1,15 @@
+{
+    "id": "0798d3d9-6f0f-4a4a-8876-3c5f508c4787",
+    "title": "夜幕下的矿石",
+    "description": "我的一个买家，Eddie Kaspbrak，对一些稀有的矿石感兴趣。他非常谨慎，只通过熟人交易。我需要你把这些矿石带给他。他会给你一个好价钱的，当然，我的那份你得先给我。这可是个大单子，别搞砸了。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 32
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

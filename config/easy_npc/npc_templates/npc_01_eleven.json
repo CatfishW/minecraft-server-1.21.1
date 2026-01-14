@@ -5,7 +5,7 @@
     "description": "Possesses psychokinetic abilities. Mysterious and powerful.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2021/02/19/eleven--from-stranger-things--16831566.png?v938"
+        "skinUrl": "https://s.namemc.com/i/f64b2c03440bf93b.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -199,7 +200,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

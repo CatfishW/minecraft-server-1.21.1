@@ -1,0 +1,15 @@
+{
+    "id": "ffe40186-9cad-4fb6-8993-fc151f8edaac",
+    "title": "特训的考验",
+    "description": "David Madsen 教官总是对我们吹毛求疵，说我们缺乏实战意识。虽然他说话很难听，但作为啦啦队长，我有责任保护队员们的安全。我决定直面他的挑战，证明我们不仅能欢呼，也能战斗。\n\n请你找到 David Madsen 教官，告诉他我 Dana Ward 已经准备好接受考验了。只有通过对话，我们才能开始真正的特训。",
+    "objective": {
+        "type": "TALK",
+        "target": "David Madsen",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

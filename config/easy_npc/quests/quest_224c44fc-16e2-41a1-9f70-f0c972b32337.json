@@ -1,0 +1,15 @@
+{
+    "id": "224c44fc-16e2-41a1-9f70-f0c972b32337",
+    "title": "敲山震虎",
+    "description": "我们的一个竞争对手最近有点过于活跃了，他认为我的地盘无人看管。你必须去给这些不知天高地厚的家伙一个教训，让他们明白谁才是这片区域真正的主人。\n\n去击杀 10 个僵尸（zombie）。让它们明白，干扰我们生意的下场就是毁灭。别留下任何活口。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

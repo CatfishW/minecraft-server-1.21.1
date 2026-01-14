@@ -1,0 +1,190 @@
+{
+    "name": "§cMax Caulfield",
+    "entityType": "easy_npc:humanoid",
+    "description": "A high school student who can rewind time.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/1d18ee404659740f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "噢，你好。我有点... 愣神了，抱歉。刚才好像时间停顿了一下？不，那一定只是我的错觉。我是麦克斯·考菲尔德，很高兴认识你。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:8f53ab2f-e860-4b58-bfbc-7c9e01a0f25c,cb7da509-ae42-4837-926d-0b53fd2b09da,c9a63245-c506-4ffd-b3bc-4f2a5cb77bfe,1820bd40-2204-4437-b216-8e556e08bf47,ff9042c0-54f7-4927-ad31-1e7202b58bfe",
+                    "id": "btn_quest_3bfdb7a3"
+                },
+                {
+                    "label": "你看起来很困惑",
+                    "action": "SHOW_DIALOG:talk_about_power",
+                    "id": "btn_1"
+                },
+                {
+                    "label": "你是摄影社的吗？",
+                    "action": "SHOW_DIALOG:talk_photography",
+                    "id": "btn_2"
+                },
+                {
+                    "label": "我看到你在和朋友说话",
+                    "action": "SHOW_DIALOG:talk_chloe",
+                    "id": "btn_3"
+                },
+                {
+                    "label": "我需要你的帮助（关于时间）",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_about_power": {
+            "greeting": "是吗？也许吧。我最近感觉怪怪的，有时候会发生一些... 很难解释的事情。就像我能让时间倒流几秒钟。听起来是不是很疯狂？",
+            "buttons": [
+                {
+                    "label": "我相信你",
+                    "action": "SHOW_DIALOG:power_trust",
+                    "id": "btn_trust"
+                },
+                {
+                    "label": "那一定是压力太大了",
+                    "action": "SHOW_DIALOG:power_doubt",
+                    "id": "btn_doubt"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "power_trust": {
+            "greeting": "谢谢你。这感觉... 真的很孤独。好像只有我一个人被困在这些奇怪的瞬间里。但我有种预感，这能力或许不只是为了我自己。",
+            "buttons": [
+                {
+                    "label": "也许你是被选中的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "power_doubt": {
+            "greeting": "也许吧... 但有些事情无法用常理解释。比如克洛伊。我总觉得我应该能阻止一些坏事发生。如果你经历过，你就会明白那种无力感。",
+            "buttons": [
+                {
+                    "label": "你是指什么？",
+                    "action": "SHOW_DIALOG:talk_chloe",
+                    "id": "btn_chloe"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_photography": {
+            "greeting": "是的！摄影是我的一切。透过取景器看世界，感觉一切都变得清晰了。我这次来黑木学院，就是为了参加维克多·阿尔德里奇大师的摄影讲座。",
+            "buttons": [
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "我好像听说讲座出事了？",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_chloe": {
+            "greeting": "哦，你是说克洛伊·普莱斯？她是我最好的朋友，虽然我们很久没见了。她还是老样子，总是那么... 充满活力。但我总觉得她内心藏着悲伤。",
+            "buttons": [
+                {
+                    "label": "你们看起来关系很好",
+                    "action": "SHOW_DIALOG:chloe_relation",
+                    "id": "btn_relation"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "chloe_relation": {
+            "greeting": "我们是从小一起长大的。虽然我搬走了几年，但看到她的时候，感觉就像昨天一样。我只是希望这次我能做点什么，而不是像以前一样只能看着。",
+            "buttons": [
+                {
+                    "label": "你会做到的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你... 你能看到这个字条吗？这是我自己写给自己的，但我不记得写过。上面写着“阻止黑木学院的悲剧，找到失踪的女孩”。这到底是怎么回事？",
+            "buttons": [
+                {
+                    "label": "这可能和你的能力有关",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "这太诡异了，我帮不了你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cancel"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "你说得对。这一定是某种指引。我不能让悲剧发生。我需要你的帮助，我需要更冷静的头脑来分析这一切。你能帮我吗？",
+            "buttons": [
+                {
+                    "label": "我帮你（接受任务）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "我需要再想想",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

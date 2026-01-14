@@ -1,0 +1,15 @@
+{
+    "id": "bd97288e-98ba-48eb-9642-513cacfae3d4",
+    "title": "钢铁壁垒",
+    "description": "Frank 的直觉告诉他，麻烦正在升级。普通的木栅栏挡不住真正的恶徒，他需要为 Bolt 和自己的储备金打造一个真正的堡垒。这需要大量的铁质材料来加固门窗和制作陷阱。他手头没有这么多铁，但如果你能帮忙，他愿意拿出珍藏的一枚银币作为报酬。\n\n去收集铁锭。越多越好。Frank 会把这些铁全部用于加固防御工事，确保无论发生什么，Bolt 都能有一个安全的家。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

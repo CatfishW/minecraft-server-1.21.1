@@ -5,7 +5,7 @@
     "description": "Loyal dog companion. Finds items.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://static.planetminecraft.com/files/image/minecraft/mob-skin/2020/269/wolf-planetminecraft-com-13703940_iso_l.png"
+        "skinUrl": "https://s.namemc.com/i/86d7625ab28b17c3.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -208,7 +209,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

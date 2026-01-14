@@ -5,7 +5,7 @@
     "description": "Overseer of Vault 33. Has secrets.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/OverseerHank.png"
+        "skinUrl": "https://s.namemc.com/i/8eaca668229a9ece.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -249,7 +250,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

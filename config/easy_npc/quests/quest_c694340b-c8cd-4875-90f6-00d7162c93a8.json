@@ -1,0 +1,15 @@
+{
+    "id": "c694340b-c8cd-4875-90f6-00d7162c93a8",
+    "title": "商业巨头的橄榄枝",
+    "description": "我们的业务引起了“洛斯波斯斯餐厅”幕后老板格斯·弗林（Gustavo Fring）的注意。他是一位行事严谨、极度重视信誉的商业大亨。他愿意提供一笔可观的赞助，但他必须确认我们有能力处理复杂的“法律事务”和保护他的商业利益。\n\n带上足够的诚意，去和格斯·弗林（Gustavo Fring）进行一次会面。向他展示我们的专业素养，让他相信我们是他拓展业务的最佳合作伙伴。这次会面将决定我们律所的未来。",
+    "objective": {
+        "type": "TALK",
+        "target": "Gustavo Fring",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 90
+    }
+}

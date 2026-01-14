@@ -1,0 +1,15 @@
+{
+    "id": "8a266f6a-f3a2-44b9-99de-f75faa8df461",
+    "title": "旧友的线索",
+    "description": "我听说我的一个老朋友，Hayden Jones，最近在附近出现过。他欠我一些东西，但我找不到他了。去帮我找到他，问问他是不是还像以前一样到处乱跑。别表现得像条子，自然点，就像老朋友叙旧。",
+    "objective": {
+        "type": "TALK",
+        "target": "Hayden Jones",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

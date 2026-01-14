@@ -1,0 +1,15 @@
+{
+    "id": "2f29db77-270f-47cb-b482-c7f767934b4c",
+    "title": "破碎的荣耀",
+    "description": "Victoria Chase，一个活在镜子和谎言中的女人。她的虚荣是她的致命弱点。没有什么比彻底粉碎她珍视的“艺术品”更能让她感到痛苦了。去，找到她炫耀战利品的仓库，将那些闪亮的铁块化为凡铁。让她明白，真正的力量无需任何装饰。\n\n潜入她存放物资的区域。那些精炼的铁锭是她虚荣的基石。将它们全部带走，这是对Victoria最沉重的打击。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

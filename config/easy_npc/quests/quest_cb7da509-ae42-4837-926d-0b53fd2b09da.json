@@ -1,0 +1,15 @@
+{
+    "id": "cb7da509-ae42-4837-926d-0b53fd2b09da",
+    "title": "沥青的记忆",
+    "description": "沥青沼泽深处，传来一阵令人不安的婴儿哭声。当地猎人说那不是凡物，而是一种被称为‘沼泽之子’的古老生物。它们的哭声不仅是警告，更是某种力量的回响。Max必须鼓起勇气，深入最黑暗的沼泽，带回能证明你直面过恐惧的战利品，以此作为你勇气的试炼。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:slime_ball",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

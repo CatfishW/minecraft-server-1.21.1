@@ -1,0 +1,15 @@
+{
+    "title": "末影珍珠",
+    "description": "收集末影珍珠，这对我的研究至关重要。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:ender_pearl",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 220,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 55
+    },
+    "id": "02b24c83-97a9-49f5-a64f-9466fce00d94"
+}

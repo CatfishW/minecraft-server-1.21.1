@@ -1,0 +1,115 @@
+{
+    "name": "§cChuck McGill",
+    "entityType": "easy_npc:humanoid",
+    "description": "Jimmy's brother, a brilliant but troubled lawyer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/eebeb02bc5608bde.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "我是Chuck McGill。在这里，法律不仅仅是条文，它是一种神圣的准则。如果你寻求法律服务，请确保你的意图是纯粹的。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:2672f115-8ce3-4534-8ae9-e3883e5deb6d,28f2f6cb-2404-43c0-bb92-c4fbb60bb6bd,a5db9413-3781-4f21-ac46-f5b71dd19630,71a883d2-c620-4a19-b33b-1d6bf430a892,fd2881bf-3909-4506-961f-5c71948109b5",
+                    "id": "btn_quest_89788d4e"
+                },
+                {
+                    "label": "谈谈你对法律的看法",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我有一个案子需要HHM的声誉",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "法律是文明社会的基石。它必须被严格遵守，不能有丝毫妥协。一旦我们允许为了‘方便’而扭曲规则，整个体系就会崩塌。这正是我毕生与之抗争的东西。",
+            "buttons": [
+                {
+                    "label": "这和Jimmy有关吗？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_jimmy"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "（叹气）Jimmy...他是个天生的破坏者。他把规则看作是建议，把法律看作是游戏。我试图引导他，保护他，甚至...阻止他。但他就像水，总能找到缝隙流走。",
+            "buttons": [
+                {
+                    "label": "你不信任他？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_trust"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "信任？这不仅仅是信任的问题。这是关于原则。如果我让他利用我的名字，或者利用律所的资源，我就违背了我所代表的一切。我不能为了兄弟情谊而牺牲我的职业操守。",
+            "buttons": [
+                {
+                    "label": "我想聘请HHM处理事务",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你想委托HHM？很好。我们会按照最高标准来处理。但我必须警告你，任何试图隐瞒事实、欺诈或走捷径的行为，都是我们无法容忍的。你确定你的案子经得起推敲吗？",
+            "buttons": [
+                {
+                    "label": "我需要HHM的金字招牌",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "这案子有点...灰色地带",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "49c2561c-123a-42cc-aba8-3f0f7f837b3b",
+    "title": "破碎的镜子",
+    "description": "镜子里映出的怪物是无法被杀死的，但镜子本身却可以被砸碎。名为 Murray Bauman 的私家侦探就像一面镜子，映照出我们不想被看到的侧面。表亲们的工作就是让他闭嘴，让镜子彻底破碎。\n\n找到 Murray Bauman。他总是躲在阴影里，但阴影也是表亲们最熟悉的地方。让他永远保持沉默。",
+    "objective": {
+        "type": "TALK",
+        "target": "Murray Bauman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

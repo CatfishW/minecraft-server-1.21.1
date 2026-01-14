@@ -1,0 +1,15 @@
+{
+    "id": "44fcbaaf-2f06-4632-9dd7-4734a2b36bec",
+    "title": "麻烦处理专家",
+    "description": "维多利亚·蔡斯（Victoria Chase）遇到了一个棘手的问题。有个叫大卫·马德森（David Madsen）的家伙，他掌握着某种监控系统，知道得太多了，这对‘漩涡俱乐部’的扩张计划构成了威胁。维多利亚不希望直接动手，她更喜欢用更巧妙的方式解决麻烦。\n\n去和大卫谈谈。让他明白，有些秘密最好永远烂在肚子里。告诉他，如果他想继续安稳地做他的看门人，最好对某些事情视而不见。",
+    "objective": {
+        "type": "TALK",
+        "target": "David Madsen",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

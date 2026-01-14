@@ -1,0 +1,15 @@
+{
+    "id": "ee88dbfe-0dad-430d-9983-a46d48b4ed4c",
+    "title": "蒙尘的尊严",
+    "description": "内森·普雷斯顿，你这个含着金汤匙出生的少爷，如今却被困在这该死的废墟里。那些行尸走肉玷污了你高贵的身份，但你的骄傲不容许你像它们一样污秽不堪。你需要一些东西来证明，即使身处末日，你依然是那个高高在上的普雷斯顿。\n\n去，给我找些【亚麻布】来。我需要最干净的布料来擦拭我的衣物和武器。去杀掉那些挡路的僵尸，从它们身上剥下布料，直到你认为自己配得上你的姓氏为止。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 15
+    }
+}

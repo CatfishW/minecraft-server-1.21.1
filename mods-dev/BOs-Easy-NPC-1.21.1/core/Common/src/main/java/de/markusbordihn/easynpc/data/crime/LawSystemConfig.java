@@ -84,8 +84,8 @@ public class LawSystemConfig {
     this.peaceValueMin = 0;
     this.peaceValueMax = 100;
     this.peaceRegenRate = 1200; // 1 minute
-    this.wantedDecayRate = 6000; // 5 minutes
-    this.wantedDecayDelayTicks = 12000; // 10 minutes after last crime
+    this.wantedDecayRate = 12000; // 10 minutes
+    this.wantedDecayDelayTicks = 24000; // 20 minutes after last crime
     this.resetOnDeath = true;
     this.resetOnJail = true;
     this.resetOnBribe = true;

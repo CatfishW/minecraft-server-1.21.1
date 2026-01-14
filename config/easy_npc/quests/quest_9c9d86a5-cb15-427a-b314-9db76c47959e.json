@@ -1,0 +1,15 @@
+{
+    "id": "9c9d86a5-cb15-427a-b314-9db76c47959e",
+    "title": "真相的寻觅",
+    "description": "最近发生了一系列诡异的事件，我感觉背后隐藏着更大的秘密。Warren Graham 总是对这些超自然现象了如指掌，也许他知道些什么。我必须了解真相，才能更好地保护我的朋友们。\n\n请你找到 Warren Graham，和他谈谈最近发生的一切。他通常在科技实验室附近研究那些奇怪的信号。我们需要他的智慧来解开谜团。",
+    "objective": {
+        "type": "TALK",
+        "target": "Warren Graham",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

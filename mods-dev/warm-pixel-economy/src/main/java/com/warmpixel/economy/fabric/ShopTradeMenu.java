@@ -14,21 +14,23 @@ public class ShopTradeMenu extends AbstractContainerMenu {
     private final TradeMode mode;
     private final long balance;
     private final double taxRate;
+    private final double sellRatio;
     private final String category;
     private final String query;
     private final int page;
 
     public ShopTradeMenu(int syncId, Inventory playerInventory, Data data) {
-        this(syncId, data.offer(), data.mode(), data.balance(), data.taxRate(), data.category(), data.query(), data.page());
+        this(syncId, data.offer(), data.mode(), data.balance(), data.taxRate(), data.sellRatio(), data.category(), data.query(), data.page());
     }
 
-    public ShopTradeMenu(int syncId, ShopOfferView offer, TradeMode mode, long balance, double taxRate,
+    public ShopTradeMenu(int syncId, ShopOfferView offer, TradeMode mode, long balance, double taxRate, double sellRatio,
                         String category, String query, int page) {
         super(ShopScreenHandlers.SHOP_TRADE, syncId);
         this.offer = offer;
         this.mode = mode;
         this.balance = balance;
         this.taxRate = taxRate;
+        this.sellRatio = sellRatio;
         this.category = category;
         this.query = query;
         this.page = page;
@@ -60,6 +62,10 @@ public class ShopTradeMenu extends AbstractContainerMenu {
         return taxRate;
     }
 
+    public double sellRatio() {
+        return sellRatio;
+    }
+
     public String category() {
         return category;
     }
@@ -78,7 +84,7 @@ public class ShopTradeMenu extends AbstractContainerMenu {
                 : Component.translatable("ui.warm_pixel_economy.trade.title.sell");
     }
 
-    public record Data(ShopOfferView offer, TradeMode mode, long balance, double taxRate,
+    public record Data(ShopOfferView offer, TradeMode mode, long balance, double taxRate, double sellRatio,
                        String category, String query, int page) {
         public static final StreamCodec<RegistryFriendlyByteBuf, Data> STREAM_CODEC = StreamCodec.of(
                 (buf, value) -> {
@@ -86,6 +92,7 @@ public class ShopTradeMenu extends AbstractContainerMenu {
                     ByteBufCodecs.VAR_INT.encode(buf, value.mode().ordinal());
                     ByteBufCodecs.VAR_LONG.encode(buf, value.balance());
                     ByteBufCodecs.DOUBLE.encode(buf, value.taxRate());
+                    ByteBufCodecs.DOUBLE.encode(buf, value.sellRatio());
                     ByteBufCodecs.STRING_UTF8.encode(buf, value.category());
                     ByteBufCodecs.STRING_UTF8.encode(buf, value.query());
                     ByteBufCodecs.VAR_INT.encode(buf, value.page());
@@ -94,6 +101,7 @@ public class ShopTradeMenu extends AbstractContainerMenu {
                         ShopOfferView.STREAM_CODEC.decode(buf),
                         TradeMode.fromOrdinal(ByteBufCodecs.VAR_INT.decode(buf)),
                         ByteBufCodecs.VAR_LONG.decode(buf),
+                        ByteBufCodecs.DOUBLE.decode(buf),
                         ByteBufCodecs.DOUBLE.decode(buf),
                         ByteBufCodecs.STRING_UTF8.decode(buf),
                         ByteBufCodecs.STRING_UTF8.decode(buf),

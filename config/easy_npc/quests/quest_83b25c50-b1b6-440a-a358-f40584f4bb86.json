@@ -1,0 +1,15 @@
+{
+    "id": "83b25c50-b1b6-440a-a358-f40584f4bb86",
+    "title": "药剂师的烦恼",
+    "description": "Alyssa 身上的跌打损伤越来越严重，如果不及时治疗可能会化脓。镇上的药剂师 Nathan Prescott 医生表示，治疗这种伤口需要一些特殊的材料。虽然 Alyssa 不能亲自去寻找，但她知道你需要做什么来救她。\n你需要找到 Nathan Prescott 医生，向他询问治疗方案并接受任务。他通常在他的药剂店或者诊所里。",
+    "objective": {
+        "type": "TALK",
+        "target": "Nathan Prescott",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 40,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

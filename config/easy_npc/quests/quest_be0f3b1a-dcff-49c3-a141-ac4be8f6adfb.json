@@ -1,0 +1,15 @@
+{
+    "id": "be0f3b1a-dcff-49c3-a141-ac4be8f6adfb",
+    "title": "不合时宜的问候",
+    "description": "你知道吗，那个在旧城区废墟里发号施令的老头，铁英魂 Brotherhood 的 Elder Maxson，他以为自己是这片废土的救世主。哈，可笑。Chloe觉得，是时候去‘拜访’一下这位自封的‘长老’了。不是去求他帮忙，而是去给他上一课，告诉他不是所有地方都得按他的规矩来。这是一次立场鲜明的外交行动，一次敲山震虎。\n\n找到 Elder Maxson。他在旧城区废墟的 Brotherhood 隐蔽所里。走到他面前，不用卑躬屈膝，直接告诉他：Blackwell有新的规矩了，他的手别伸得太长。让他明白，Chloe Price和她的朋友们，不吃他那一套。",
+    "objective": {
+        "type": "TALK",
+        "target": "Elder Maxson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

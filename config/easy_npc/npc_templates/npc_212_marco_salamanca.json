@@ -1,0 +1,121 @@
+{
+    "name": "§9Marco Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "The other of the silent and deadly 'Cousins'.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/92375cf14aaa6002.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "...... (他静静地站在那里，像一座雕像。他的目光在你身上扫过，左手放在斧柄上，右手拿着铜铃。)",
+            "buttons": [
+                {
+                    "label": "我想见赫克托先生",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_hector"
+                },
+                {
+                    "label": "我只是好奇",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_curious"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "...... (他轻轻摇动铜铃，'叮、叮'，声音在空气中回荡。他似乎在通过铃声与某种神秘的力量沟通。)",
+            "buttons": [
+                {
+                    "label": "这对我很重要",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_important"
+                },
+                {
+                    "label": "我有他想要的东西",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_has"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "...... (他的眼神变得危险，斧头微微抬起。好奇在这里是致命的，尤其是在Salamanca家族面前。)",
+            "buttons": [
+                {
+                    "label": "我马上离开",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_leave_now"
+                },
+                {
+                    "label": "（保持不动）",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_stay"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "...... (他放下铜铃，用手指了指远处的一栋建筑。赫克托在那里，但他不保证赫克托会愿意见你。)",
+            "buttons": [
+                {
+                    "label": "谢谢，我会去那里",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_thanks"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "...... (他停顿了一下，似乎在思考。然后他转身，示意你跟上。他带你走向一个隐蔽的入口。)",
+            "buttons": [
+                {
+                    "label": "（跟随他）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_follow"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "...... (他盯着你，直到你完全消失在他的视野中。他的耐心是有限的，离开是唯一的选择。)",
+            "buttons": [
+                {
+                    "label": "（消失）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_gone"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "...... (他举起斧头，做出威胁的姿态。这是最后的警告。如果你再不动，他会毫不犹豫地行动。)",
+            "buttons": [
+                {
+                    "label": "（后退）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_retreat"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "31f4ac20-93c1-43a7-9c96-ac630398aef5",
+    "title": "最后的清算",
+    "description": "线索指向了一个危险的人物，一个自以为能掌控混乱的家伙。神秘人对这种傲慢感到厌烦。他不再需要试探，只需要结果。那个名叫比利·哈格罗夫（Billy Hargrove）的家伙必须被从这个世界上抹去，他的存在本身就是一个错误。\n\n找到比利，让他为自己的狂妄付出代价。这是你对这位无名者最后的忠诚证明。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:player",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

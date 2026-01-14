@@ -111,7 +111,7 @@ public class ShopMenu extends AbstractContainerMenu {
             
             // Price with gold coin icon - Translatable
             long buyPrice = offer.price();
-            long sellPrice = Math.max(1, (long) (buyPrice * 0.1)); // 10% of buy price
+            long sellPrice = Math.max(1, (long) (buyPrice * WarmPixelEconomyMod.getContext().config().shop.sellRatio));
             
             lore.add(Component.translatable("ui.warm_pixel_economy.shop.buy_price", buyPrice).withStyle(s -> s.withColor(0xFFD966)));
             lore.add(Component.translatable("ui.warm_pixel_economy.shop.sell_price", sellPrice).withStyle(s -> s.withColor(0x7EB8E8)));

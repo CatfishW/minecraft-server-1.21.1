@@ -1,0 +1,15 @@
+{
+    "id": "67e97a55-7a20-435a-a2ab-925cc7068c7b",
+    "title": "六分仪的请求",
+    "description": "维克多递给你一张折好的纸条，上面写着一个名字：Hayden Jones。他解释说，我们需要某种特殊的晶体制作高级炸药，而这位珠宝商是唯一的线索。\n\n前往市场找到海登·琼斯，不要声张，询问他关于透亮水晶的事。保持低调，我们不想引起不必要的注意。",
+    "objective": {
+        "type": "TALK",
+        "target": "Hayden Jones",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

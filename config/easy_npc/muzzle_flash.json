@@ -1,0 +1,6 @@
+{
+    "muzzle_flash": {
+        "texture": "tacz:flash/common_muzzle_flash",
+        "scale": 0.4
+    }
+}

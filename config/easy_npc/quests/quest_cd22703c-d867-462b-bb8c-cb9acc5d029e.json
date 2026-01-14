@@ -1,0 +1,15 @@
+{
+    "id": "cd22703c-d867-462b-bb8c-cb9acc5d029e",
+    "title": "老友重逢",
+    "description": "Mrs. Nguyen 有一段时间没见到她的老朋友 Lydia Rodarte-Quayle 了。Lydia 是一位见多识广的旅行者，Mrs. Nguyen 很想念她，想和她叙叙旧，顺便打听一下最近的流行趋势。\n\n如果你在旅途中遇到 Lydia，请务必告诉她 Mrs. Nguyen 很想念她，希望她能来店里坐坐。",
+    "objective": {
+        "type": "TALK",
+        "target": "Lydia Rodarte-Quayle",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

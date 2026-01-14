@@ -1,0 +1,15 @@
+{
+    "id": "84cc5fc7-8711-4c4c-86d9-6707834e7d16",
+    "title": "最后的防线",
+    "description": "情况有变，对方雇了一些暴徒来恐吓我们的证人。露西·麦克伦是我们的关键证人，但她现在不敢露面。我们必须清除掉那些对她构成威胁的恼人苍蝇——那些掠夺者。正义的事业需要武力来捍卫。\n\n在露西·麦克伦的住处附近，清理掉那些掠夺者。向外界展示，大卫-梅恩律所的客户是受到强力保护的。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

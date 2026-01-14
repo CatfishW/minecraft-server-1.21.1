@@ -1,0 +1,15 @@
+{
+    "title": "调查古斯",
+    "description": "Lalo怀疑古斯·福林在暗中搞鬼，他需要你搜集一些铁锭作为‘证据’。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    },
+    "id": "a8e277be-bed4-462f-809a-c9853c43aac0"
+}

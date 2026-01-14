@@ -1,0 +1,15 @@
+{
+    "id": "c7537cab-f883-467a-b23a-3b28a349def5",
+    "title": "往事的代价",
+    "description": "大卫-梅恩律所的声誉不容玷污。有些旧闻被翻了出来，我们必须找到源头。比尔·奥克利是这一带消息最灵通的人，但也最守口如瓶。想从他嘴里套出话，必须拿出点诚意。\n\n带上一些金锭去见比尔·奥克利。他会明白这是什么意思。这是为了让他回忆起一些对我们的客户有利的‘往事’。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gold_ingot",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

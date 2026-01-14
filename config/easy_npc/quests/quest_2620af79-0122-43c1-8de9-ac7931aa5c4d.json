@@ -1,0 +1,15 @@
+{
+    "id": "2620af79-0122-43c1-8de9-ac7931aa5c4d",
+    "title": "虚妄的信物",
+    "description": "你通过了初步的考验，但信任是脆弱的货币。这位神秘人声称，只有意志坚定者才能承受他接下来的秘密。他需要一种能代表坚韧与生命的物质，来制作一枚护身符。\n\n去吧，收集至少三个由村民精心培育的胡萝卜。记住，只有最饱满的根茎才能打动他。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:carrot",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

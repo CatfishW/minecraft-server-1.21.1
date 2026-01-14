@@ -1,0 +1,340 @@
+{
+    "name": "§eJesse Pinkman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former student of Walter White who was already involved in the drug trade. Despite his street-smart exterior, Jesse has a strong moral compass and genuinely cares about children and the innocent.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/867de1a3bb967097.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§eYo, man! §fYou lookin' for... uh, something? Nah, I'm just playin'. What's up?",
+            "buttons": [
+                {
+                    "label": "How's it going?",
+                    "action": "SHOW_DIALOG:backstory_start",
+                    "id": "btn_chat"
+                },
+                {
+                    "label": "You seem stressed.",
+                    "action": "SHOW_DIALOG:current_state",
+                    "id": "btn_stress"
+                },
+                {
+                    "label": "What's your story?",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "Need help with anything?",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_need_help"
+                }
+            ]
+        },
+        "backstory_start": {
+            "greeting": "§fMan... it's a long story. Grew up here, you know? Was like... a screw-up. Then I got into business with my old teacher. That was a whole... thing. §eHe's gone now.",
+            "buttons": [
+                {
+                    "label": "Your teacher? Walt?",
+                    "action": "SHOW_DIALOG:backstory_walter",
+                    "id": "btn_walt"
+                },
+                {
+                    "label": "Business? You mean cooking?",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_cook"
+                },
+                {
+                    "label": "Sounds rough. How are you holding up?",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_feelings"
+                },
+                {
+                    "label": "Never mind.",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_walter": {
+            "greeting": "§cMr. White.§f Yeah... He was... a genius, but also, like, the devil, you know? He dragged me into all this. Made me... do things. But he saved my life too. It's messed up. §eI still dream about it.",
+            "buttons": [
+                {
+                    "label": "Do you hate him?",
+                    "action": "SHOW_DIALOG:backstory_walter_hate",
+                    "id": "btn_hate"
+                },
+                {
+                    "label": "What was the worst thing?",
+                    "action": "SHOW_DIALOG:secret_combo",
+                    "id": "btn_worst"
+                },
+                {
+                    "label": "He's gone. What now?",
+                    "action": "SHOW_DIALOG:current_future",
+                    "id": "btn_future"
+                },
+                {
+                    "label": "That's heavy.",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "backstory_walter_hate": {
+            "greeting": "§fSometimes, yeah. Like, a lot. But... I dunno, man. He was like a father, sorta. A really, really messed-up one. I miss him and I hate myself for missing him. It's... complicated.",
+            "buttons": [
+                {
+                    "label": "I'm sorry.",
+                    "action": "SHOW_DIALOG:backstory_start",
+                    "id": "btn_back_start"
+                },
+                {
+                    "label": "Anyone else you miss?",
+                    "action": "SHOW_DIALOG:secret_mike",
+                    "id": "btn_mike"
+                }
+            ]
+        },
+        "secret_combo": {
+            "greeting": "§cCombo.§f My friend. He... died because of our product, man. A kid shot him over territory. I was supposed to be there. Mr. White said it wasn't our fault, but... §5it was.",
+            "buttons": [
+                {
+                    "label": "I'm so sorry...",
+                    "action": "SHOW_DIALOG:secret_combo_deep",
+                    "id": "btn_deepen"
+                },
+                {
+                    "label": "How do you live with that?",
+                    "action": "SHOW_DIALOG:current_guilt",
+                    "id": "btn_guilt"
+                }
+            ]
+        },
+        "secret_combo_deep": {
+            "greeting": "§fI don't. I just... cook. And try not to think about it. But his mom... I sent her money, anonymously. It's not enough. Nothing's ever enough. §eThanks for listening, man. Nobody ever asks.",
+            "buttons": [
+                {
+                    "label": "You're carrying a lot.",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_empathy"
+                },
+                {
+                    "label": "Is there a way out?",
+                    "action": "SHOW_DIALOG:secret_escape",
+                    "id": "btn_escape"
+                }
+            ]
+        },
+        "current_state": {
+            "greeting": "§fStressed? Nah, man, I'm cool. Totally cool. Just... you know, the usual. Cookin', movin' product, watching your back. §6The money's good, but...§f you always gotta look over your shoulder.",
+            "buttons": [
+                {
+                    "label": "That sounds dangerous.",
+                    "action": "SHOW_DIALOG:current_danger",
+                    "id": "btn_danger"
+                },
+                {
+                    "label": "Why keep doing it?",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_why"
+                },
+                {
+                    "label": "Need a partner?",
+                    "action": "SHOW_DIALOG:quest_cook_intro",
+                    "id": "btn_partner"
+                }
+            ]
+        },
+        "current_danger": {
+            "greeting": "§fYa think? It's not just the cops, man. It's the rivals, the tweakers, the... §ceverything.§f I've seen guys get popped for less. You gotta be smart. Like Mike taught me.",
+            "buttons": [
+                {
+                    "label": "Mike? Who's that?",
+                    "action": "SHOW_DIALOG:secret_mike",
+                    "id": "btn_ask_mike"
+                },
+                {
+                    "label": "So you have a plan?",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_plan"
+                }
+            ]
+        },
+        "secret_mike": {
+            "greeting": "§fMike Ehrmantraut. He was... the fixer. The pro. He tried to keep me alive. Taught me to shut up and watch. He was like a grandpa, if your grandpa was a stone-cold badass who could kill you with a library card. §9He's gone too.",
+            "buttons": [
+                {
+                    "label": "You've lost a lot of people.",
+                    "action": "SHOW_DIALOG:current_guilt",
+                    "id": "btn_lost"
+                },
+                {
+                    "label": "What did he teach you?",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_lesson"
+                }
+            ]
+        },
+        "current_guilt": {
+            "greeting": "§fYeah... I do. Every day. That's why I... there's this one thing. A kid named §dBrock.§f I almost got him killed. It was an accident, but... I can't even look at myself sometimes. §5That's the secret, man. The real one.",
+            "buttons": [
+                {
+                    "label": "Is he okay now?",
+                    "action": "SHOW_DIALOG:secret_brock",
+                    "id": "btn_brock"
+                },
+                {
+                    "label": "You can make amends.",
+                    "action": "SHOW_DIALOG:quest_protect_intro",
+                    "id": "btn_amends"
+                }
+            ]
+        },
+        "secret_brock": {
+            "greeting": "§fHe's alive. I check in, from a distance. Send stuff to his mom. But I can never talk to him. Not after what I did. §eIf you ever tell anyone about this, I'll... Ah, forget it. You seem alright.",
+            "buttons": [
+                {
+                    "label": "Your secret's safe.",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_safe"
+                },
+                {
+                    "label": "Maybe you can help other kids.",
+                    "action": "SHOW_DIALOG:quest_protect_intro",
+                    "id": "btn_help_kids"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "§fHelp? Uh... I mean, I could always use a lookout, or someone to run a package. Nothing heavy! Or... maybe you know someone who needs protection? Someone innocent caught up in this crap.",
+            "buttons": [
+                {
+                    "label": "I can help with the cook.",
+                    "action": "SHOW_DIALOG:quest_cook_intro",
+                    "id": "btn_offer_cook"
+                },
+                {
+                    "label": "I can handle a delivery.",
+                    "action": "SHOW_DIALOG:quest_deal_intro",
+                    "id": "btn_offer_delivery"
+                },
+                {
+                    "label": "Tell me about who needs protection.",
+                    "action": "SHOW_DIALOG:quest_protect_intro",
+                    "id": "btn_offer_protect"
+                },
+                {
+                    "label": "Not right now.",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_later"
+                }
+            ]
+        },
+        "quest_cook_intro": {
+            "greeting": "§fYou know your chemistry? Mr. White's recipe is... special. But we need a clean lab space, and the right materials. No junk, pure blue. §aIf you're serious, I'll show you the ropes. But no mistakes!",
+            "buttons": [
+                {
+                    "label": "I'm ready. What do we need?",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:12eba4fe-3289-4b6a-9d36-2d191df65321,b130258d-939d-40e1-910a-62e0a46584d1,db848506-1463-4984-8a70-e11b9a6e356c,c4f5cb5f-a2de-44c0-b4f9-a6a487ce5989,17a4bbd0-e38f-47a7-ae28-e9b13049172a",
+                    "id": "btn_accept_cook"
+                },
+                {
+                    "label": "I need to think about it.",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline_cook"
+                }
+            ]
+        },
+        "quest_deal_intro": {
+            "greeting": "§fCool, cool. My boys Badger and Skinny Pete usually handle it, but they're... indisposed. Need a package dropped at a specific spot. No names, no talking. Just drop and walk. It's simple, but dangerous if you're seen.",
+            "buttons": [
+                {
+                    "label": "Give me the package.",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:12eba4fe-3289-4b6a-9d36-2d191df65321,b130258d-939d-40e1-910a-62e0a46584d1,db848506-1463-4984-8a70-e11b9a6e356c,c4f5cb5f-a2de-44c0-b4f9-a6a487ce5989,17a4bbd0-e38f-47a7-ae28-e9b13049172a",
+                    "id": "btn_accept_deal"
+                },
+                {
+                    "label": "Too risky for me.",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline_deal"
+                }
+            ]
+        },
+        "quest_protect_intro": {
+            "greeting": "§fThere's this family... their dad owes money to the wrong people. Kids involved. It's not right, man. I've been sending them cash, but they need muscle. Someone to scare off the collectors. §6I can't do it myself, I'm too hot.",
+            "buttons": [
+                {
+                    "label": "I'll make sure they're safe.",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:12eba4fe-3289-4b6a-9d36-2d191df65321,b130258d-939d-40e1-910a-62e0a46584d1,db848506-1463-4984-8a70-e11b9a6e356c,c4f5cb5f-a2de-44c0-b4f9-a6a487ce5989,17a4bbd0-e38f-47a7-ae28-e9b13049172a",
+                    "id": "btn_accept_protect"
+                },
+                {
+                    "label": "I can't get involved.",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline_protect"
+                }
+            ]
+        },
+        "secret_escape": {
+            "greeting": "§fEvery damn day, man. Get a new identity, go up to Alaska or something. Fish. Forget all this. But... §eThe money's here. And I don't know how to do anything else.§f It's a cage.",
+            "buttons": [
+                {
+                    "label": "You could learn.",
+                    "action": "SHOW_DIALOG:current_future",
+                    "id": "btn_learn"
+                },
+                {
+                    "label": "Maybe I can help you get out.",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:12eba4fe-3289-4b6a-9d36-2d191df65321,b130258d-939d-40e1-910a-62e0a46584d1,db848506-1463-4984-8a70-e11b9a6e356c,c4f5cb5f-a2de-44c0-b4f9-a6a487ce5989,17a4bbd0-e38f-47a7-ae28-e9b13049172a",
+                    "id": "btn_help_escape"
+                }
+            ]
+        },
+        "current_future": {
+            "greeting": "§fLearn what? Be a fry cook? I'm a criminal, man. That's my skill set. Unless... maybe I could help people. Like, for real. Stop cooking, start protecting. §bSounds stupid when I say it out loud.",
+            "buttons": [
+                {
+                    "label": "It doesn't sound stupid.",
+                    "action": "SHOW_DIALOG:quest_protect_intro",
+                    "id": "btn_hope"
+                },
+                {
+                    "label": "You gotta start somewhere.",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_encourage"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§fAlright, man, I gotta bounce. Stay safe out there. And... uh... §9thanks for not being a total dick.§f Later.",
+            "buttons": [
+                {
+                    "label": "See you around, Jesse.",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Breaking Bad",
+        "role": "Cook / Dealer",
+        "connections": [
+            "Walter White",
+            "Mike Ehrmantraut",
+            "Badger",
+            "Skinny Pete"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:20:59"
+    }
+}

@@ -1,0 +1,121 @@
+{
+    "name": "§5Steven Gomez",
+    "entityType": "easy_npc:humanoid",
+    "description": "Hank's partner at the DEA.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/4efc3a8673080b5b.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我是Steven Gomez，DEA探员。我注意到你最近在这个区域活动频繁。希望你不是在做什么违法的事情。我们想请你配合调查。",
+            "buttons": [
+                {
+                    "label": "我愿意合作",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_cooperate"
+                },
+                {
+                    "label": "我要找律师",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_lawyer"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "很好，合作对你有好处。我们正在调查一个大型毒品网络，与Salamanca家族有关。如果你知道什么，最好现在就告诉我们。我们会保护你的安全。",
+            "buttons": [
+                {
+                    "label": "我知道他们的据点",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_info"
+                },
+                {
+                    "label": "我只是个小角色，什么都不知道",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_nothing"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "当然，你有权保持沉默，但你说的每一句话都将成为呈堂证供。不过，如果你现在配合，我们可以和检察官谈谈，争取给你宽大处理。",
+            "buttons": [
+                {
+                    "label": "好吧，我改变主意了",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_change"
+                },
+                {
+                    "label": "我坚持找律师",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_stick"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "干得好！把地址告诉我们。我们会派便衣去监视。如果你的情报准确，我们会给你证人保护。记住，不要告诉任何人我们今天的谈话。",
+            "buttons": [
+                {
+                    "label": "我明白，谢谢",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_understand"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "别跟我来这套。我们有你在监控录像里的画面。如果你现在不合作，等我们找到确凿证据，你就没有机会了。再想想。",
+            "buttons": [
+                {
+                    "label": "好吧，我想起来了...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_remember"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "明智的选择。我会联系检察官，看看能为你做什么。现在，带我们去你所知道的任何地方。别耍花样，Hank和我都在盯着你。",
+            "buttons": [
+                {
+                    "label": "跟我来",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_lead"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "好吧，这是你的权利。我们会把你带回局里，安排你见律师。但记住，时间不等人，Salamanca家族可不会等你。",
+            "buttons": [
+                {
+                    "label": "（沉默）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_silent"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "c83f7588-1ef8-4293-b599-cf06ddefa4b1",
+    "title": "钻石洗钱",
+    "description": "Walter计划通过钻石交易来洗白非法所得，将毒品利润转化为合法财富，但需要高质量的钻石作为媒介。\n\n在地下矿洞中挖掘5颗钻石，用于后续的洗钱操作和资产转移。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

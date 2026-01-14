@@ -1,0 +1,15 @@
+{
+    "id": "1994e1aa-7c66-4b39-ab57-b9ef5355f8e1",
+    "title": "清除污点",
+    "description": "Walter的制毒行动引来了敌对帮派的注意，他们操控僵尸污染了原料运输路线，威胁着生产安全。\n\n在附近的森林中寻找并消灭5只僵尸，确保道路畅通无阻。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

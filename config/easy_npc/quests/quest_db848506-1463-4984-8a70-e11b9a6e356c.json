@@ -1,0 +1,15 @@
+{
+    "id": "db848506-1463-4984-8a70-e11b9a6e356c",
+    "title": "皮革加工",
+    "description": "制革工坊缺少原材料。\n\n收集皮革用于制作护甲和书籍。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:leather",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 31
+    }
+}

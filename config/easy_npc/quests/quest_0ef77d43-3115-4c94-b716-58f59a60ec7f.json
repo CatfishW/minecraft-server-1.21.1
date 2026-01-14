@@ -1,0 +1,15 @@
+{
+    "id": "0ef77d43-3115-4c94-b716-58f59a60ec7f",
+    "title": "黄金之尘",
+    "description": "我们未来的计划需要大量资源，而我注意到你是个有能力的人。我们的一个老主顾，汉克，最近手头有点紧，他愿意用他仓库里最值钱的东西来抵债——金块。\n\n去见见汉克，他会告诉你金子在哪里。拿到金子后，立刻带回来。质量要最好的，别拿那些成色差的来糊弄我。这是你证明自己价值的第一步。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gold_ingot",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

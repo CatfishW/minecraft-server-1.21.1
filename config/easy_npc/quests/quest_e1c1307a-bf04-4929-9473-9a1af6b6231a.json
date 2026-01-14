@@ -1,0 +1,15 @@
+{
+    "id": "e1c1307a-bf04-4929-9473-9a1af6b6231a",
+    "title": "珍贵钻石",
+    "description": "钻石是最珍贵的宝石，用于制作最强装备。\n\n深入矿洞寻找钻石。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 64,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 37
+    }
+}

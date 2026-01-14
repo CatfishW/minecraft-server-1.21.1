@@ -1,0 +1,15 @@
+{
+    "id": "04de8e4d-7779-4a06-ad1b-81966fa2fabe",
+    "title": "王牌证人",
+    "description": "我接手了一个棘手的案子，我的当事人坚称自己是无辜的，而警方握有的'铁证'是一堆铁锭。这简直是荒谬！我需要一个更'可靠'的证人来推翻指控。你的任务就是找到这位能扭转乾坤的关键人物。\n\n去和**Stacey Ehrmantraut**谈谈。她了解这片街区的规矩，也许她能提供一些我们所需要的'证词'。记住，任何对她不利的言论都会被我视为诽谤。",
+    "objective": {
+        "type": "TALK",
+        "target": "Stacey Ehrmantraut",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

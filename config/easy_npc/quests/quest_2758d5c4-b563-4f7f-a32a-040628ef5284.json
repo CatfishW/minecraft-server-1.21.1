@@ -1,0 +1,15 @@
+{
+    "id": "2758d5c4-b563-4f7f-a32a-040628ef5284",
+    "title": "钢之炼金术士",
+    "description": "我们需要更多的防御，那些该死的骷髅射手越来越猖狂了。Walter想要一套精良的铁甲，但我看原材料还是问题。我们需要大量的铁，纯粹的铁。\n去挖矿，把找到的所有铁锭都给我带回来。越多越好。至少需要20个铁锭才能开始下一步计划。这将是一笔大投资。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

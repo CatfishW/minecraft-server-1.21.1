@@ -1,0 +1,220 @@
+{
+    "name": "§cGustavo Fring",
+    "entityType": "easy_npc:humanoid",
+    "description": "A Chilean immigrant who operates Los Pollos Hermanos as a front for his methamphetamine empire. His partner was murdered by the cartel, fueling a decades-long quest for revenge against the Salamanca family.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/23aee02639456f8c.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（一位穿着整洁黄色衬衫的男子优雅地转向你，脸上带着温和的微笑）\n\n§e欢迎光临洛斯波罗斯·赫尔曼斯。§f我是古斯塔沃·弗林，这家餐厅的老板。有什么我能为您效劳的？",
+            "buttons": [
+                {
+                    "label": "§f关于您自己？",
+                    "action": "SHOW_DIALOG:backstory_intro",
+                    "id": "btn_about"
+                },
+                {
+                    "label": "§2餐厅生意如何？",
+                    "action": "SHOW_DIALOG:current_business",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "§6我听说您需要帮手",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "§c告辞",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_intro": {
+            "greeting": "（他的眼神变得深邃，但语气保持平稳）\n\n§f我来自智利。年轻时和我的伙伴马克西米利亚诺一起来到这片土地，怀揣着梦想。我们的化学知识……§7（他停顿了一下）§f让我们找到了一条独特的道路。洛斯波罗斯赫尔曼斯是那些梦想的结晶。",
+            "buttons": [
+                {
+                    "label": "§f马克西米利亚诺是谁？",
+                    "action": "SHOW_DIALOG:backstory_max",
+                    "id": "btn_max"
+                },
+                {
+                    "label": "§2化学知识？",
+                    "action": "SHOW_DIALOG:backstory_chemistry",
+                    "id": "btn_chem"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_max": {
+            "greeting": "（他的表情一瞬间变得冰冷，但很快恢复平静）\n\n§7马克斯……§f是我的挚友和商业伙伴。一个才华横溢的化学家。§c萨拉曼卡家族§f……夺走了他。§7（他的声音低沉）§f这件事，我从未忘记。也不会原谅。",
+            "buttons": [
+                {
+                    "label": "§c萨拉曼卡家族？",
+                    "action": "SHOW_DIALOG:secret_salamanca",
+                    "id": "btn_salamanca"
+                },
+                {
+                    "label": "§f我很抱歉……",
+                    "action": "SHOW_DIALOG:backstory_intro",
+                    "id": "btn_sorry"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back2"
+                }
+            ]
+        },
+        "backstory_chemistry": {
+            "greeting": "（他微微扬起嘴角）\n\n§f化学是一门精确的科学。它教会你耐心、细节和……§6完美的控制。§f这些原则同样适用于商业。每一道菜、每一个流程，都必须精确无误。这就是洛斯波罗斯成功的秘诀。",
+            "buttons": [
+                {
+                    "label": "§2您似乎很有条理",
+                    "action": "SHOW_DIALOG:current_business",
+                    "id": "btn_order"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back3"
+                }
+            ]
+        },
+        "secret_salamanca": {
+            "greeting": "（他靠近你，声音变得危险而低沉）\n\n§c赫克托·萨拉曼卡§f和他的家族……是危险的人。他们代表着混乱、暴力和无知。§7（他的眼神锐利如刀）§f我花了二十年时间布局。耐心是最锋利的武器。\n\n§5你知道为什么我告诉你这些吗？因为我需要……可信赖的人。",
+            "buttons": [
+                {
+                    "label": "§c我可以帮您",
+                    "action": "SHOW_DIALOG:quest_special",
+                    "id": "btn_help_secret"
+                },
+                {
+                    "label": "§7这太危险了",
+                    "action": "SHOW_DIALOG:secret_warning",
+                    "id": "btn_dangerous"
+                }
+            ]
+        },
+        "secret_warning": {
+            "greeting": "（他点点头，表情不变）\n\n§f明智的选择。谨慎是生存的关键。但请记住……§6洛斯波罗斯的大门永远为朋友敞开。§f如果你改变主意，回来找我。",
+            "buttons": [
+                {
+                    "label": "§e我会记住的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_remember"
+                }
+            ]
+        },
+        "current_business": {
+            "greeting": "（他环顾餐厅，满意地点头）\n\n§e生意很好。§f我们的炸鸡是这一带最好的，客人络绎不绝。但更重要的是……§6物流§f。原材料的供应链、配送网络、质量控制——每一个环节都必须完美运转。",
+            "buttons": [
+                {
+                    "label": "§2物流网络？",
+                    "action": "SHOW_DIALOG:current_logistics",
+                    "id": "btn_logistics"
+                },
+                {
+                    "label": "§6需要员工吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_job"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back4"
+                }
+            ]
+        },
+        "current_logistics": {
+            "greeting": "（他投来审视的目光）\n\n§f我的配送网络覆盖整个西南地区。但有时候……§7会遇到一些问题。§f竞争对手、运输延误、§c不可靠的合作伙伴§f。我总是在寻找解决问题的人才。",
+            "buttons": [
+                {
+                    "label": "§6我可以帮忙",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_offer"
+                },
+                {
+                    "label": "§e我明白了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_understand"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（他审视着你，仿佛在评估你的价值）\n\n§f我欣赏主动的人。目前我有几项任务需要处理：\n\n§e• 供应链需要稳定的原材料\n• 某些……竞争者需要被观察\n• 配送路线需要人手\n\n§f你对哪个有兴趣？",
+            "buttons": [
+                {
+                    "label": "§2收集原材料",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_gather"
+                },
+                {
+                    "label": "§c处理竞争者",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_eliminate"
+                },
+                {
+                    "label": "§6配送任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_delivery"
+                },
+                {
+                    "label": "§e容我考虑",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "quest_special": {
+            "greeting": "（他的眼神变得犀利）\n\n§c萨拉曼卡家族§f的势力仍然存在。我需要有人收集情报，观察他们的行动。这不是普通的工作——§5风险很高，但回报也相应丰厚。\n\n§f你确定要参与吗？",
+            "buttons": [
+                {
+                    "label": "§c我准备好了",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_ready"
+                },
+                {
+                    "label": "§7我需要再想想",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_rethink"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "（他恢复了那礼貌而疏离的微笑）\n\n§e感谢您的光临。§f洛斯波罗斯赫尔曼斯随时欢迎您。请记住——§6我们只提供最优质的产品和服务。\n\n§7祝您有美好的一天。",
+            "buttons": [
+                {
+                    "label": "§f再见，弗林先生",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Breaking Bad",
+        "role": "Drug Lord / Businessman",
+        "connections": [
+            "Walter White",
+            "Mike Ehrmantraut",
+            "Hector Salamanca",
+            "Lydia Rodarte-Quayle"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 16:43:00"
+    }
+}

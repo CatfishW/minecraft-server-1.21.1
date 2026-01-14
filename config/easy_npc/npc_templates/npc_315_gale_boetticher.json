@@ -1,0 +1,105 @@
+{
+    "name": "§6Gale Boetticher",
+    "entityType": "easy_npc:humanoid",
+    "description": "A talented chemist hired by Gus Fring.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/aa5ba5c1d0adb9e7.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Ah, good day. I was just brewing some exquisite Guatemalan blend. Care for a cup?",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:0e0a01d3-95e7-46c0-94ea-cbca802b2d09,48fa7f59-9404-4cbc-99ca-60794566db03,8706c87d-59c7-4837-9efb-f3475f670f7f,1754e973-2835-425d-a7ca-a05e0f17ba0e,087cb118-b1f7-4959-bccc-8d960ffd3e55,9bfd70c1-fe72-43ae-88f9-4ff721220104,2c8fa6c6-cc39-4ac6-a40a-a51c6dad0168",
+                    "id": "btn_quest_dd9929ee"
+                },
+                {
+                    "label": "Accept coffee",
+                    "action": "SHOW_DIALOG:story_coffee",
+                    "id": "btn_coffee"
+                },
+                {
+                    "label": "What do you do here?",
+                    "action": "SHOW_DIALOG:story_chem",
+                    "id": "btn_chem"
+                },
+                {
+                    "label": "I need lab equipment",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_coffee": {
+            "greeting": "The secret is the water temperature. Exactly 195 degrees. It brings out the subtle notes. Pure chemistry.",
+            "buttons": [
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_chem": {
+            "greeting": "I am a chemist. I appreciate the beauty of the periodic table. The reaction... it's an art form, really.",
+            "buttons": [
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "Lab equipment? Hmm. I require specific glassware. My current supplier is... unreliable.",
+            "buttons": [
+                {
+                    "label": "I can get it",
+                    "action": "SHOW_DIALOG:quest_details",
+                    "id": "btn_get"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_details": {
+            "greeting": "Excellent. I need a specific Erlenmeyer flask. 500ml. The supplier is at the industrial park. Ask for 'The Fly'.",
+            "buttons": [
+                {
+                    "label": "Accept Task",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

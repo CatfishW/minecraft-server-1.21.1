@@ -1,0 +1,15 @@
+{
+    "id": "b45d1626-31c9-455e-8b2d-4f1b4c567661",
+    "title": "守夜人的注视",
+    "description": "在这片混乱的土地上，总有一些人像幽灵一样游荡，他们用沉默和子弹解决问题。我需要找到其中一个，一个见过真正绝望的男人。他知道‘未知’的轮廓。\n\n去寻找迈克·厄尔曼特劳特（Mike Ehrmantraut）。他通常在远离喧嚣的地方擦拭他的武器。只有赢得他的尊重，或者展示出足够的价值，他才会愿意开口。向他展示你的决心。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Ehrmantraut",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

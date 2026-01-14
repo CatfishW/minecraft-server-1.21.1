@@ -1,0 +1,15 @@
+{
+    "id": "01518a25-292d-4b5c-b33d-0f5713eabb01",
+    "title": "荒野的馈赠",
+    "description": "经历了连番战斗，Stacey 的补给已所剩无几。她想起在一处被遗忘的谷仓里，似乎还堆放着上个时代的遗物。那些坚固的铁锭是打造武器和工具的绝佳材料，她必须赶在其他拾荒者之前将其收集起来，为接下来的旅程做好准备。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

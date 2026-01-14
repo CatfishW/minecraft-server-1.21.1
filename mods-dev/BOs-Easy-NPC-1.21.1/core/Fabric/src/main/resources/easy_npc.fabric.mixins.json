@@ -16,7 +16,8 @@
     "renderer.EasyNPCLivingEntityRendererMixin",
     "renderer.HumanoidArmorLayerMixin",
     "renderer.SkeletonClothingLayerMixin",
-    "renderer.VillagerProfessionLayerMixin"
+    "renderer.VillagerProfessionLayerMixin",
+    "compat.tacz.MuzzleFlashMixin"
   ],
   "mixins": [
     "entity.CreeperMixin",

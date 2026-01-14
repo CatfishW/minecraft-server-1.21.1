@@ -1,0 +1,15 @@
+{
+    "id": "195c2e55-3653-4a4c-962a-a2c0d948023c",
+    "title": "最后的目击者",
+    "description": "那晚在废弃印刷厂发生的事情，不该有活口。但据情报，一位名叫 Mark Jefferson 的摄影师恰好在附近，拍下了一些不该被记录的画面。他现在把自己藏得很好，以为能逃脱。\n\n找到 Mark Jefferson，让他明白有些记忆最好永远遗忘。他是唯一的目击者，也必须是最后一个。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mark Jefferson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

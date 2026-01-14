@@ -20,7 +20,7 @@
 package de.markusbordihn.easynpc.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
-import de.markusbordihn.easynpc.client.renderer.SpawnTimerOverlay;
+import de.markusbordihn.easynpc.client.screen.SpawnTimerScreen;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.KeyMapping;
@@ -80,11 +80,12 @@ public class ModKeyBindings {
    */
   private static void onClientTick(Minecraft client) {
     if (toggleSpawnTimerKey.consumeClick()) {
-      boolean enabled = SpawnTimerOverlay.toggle();
+      boolean opening = !(client.screen instanceof SpawnTimerScreen);
+      client.setScreen(opening ? new SpawnTimerScreen() : null);
       if (client.player != null) {
-        String status = enabled ? "§aEnabled" : "§cDisabled";
+        String status = opening ? "§aOpened" : "§cClosed";
         client.player.displayClientMessage(
-            Component.literal("§6[Warm Pixel] §7Spawn Timer Overlay: " + status), true);
+            Component.literal("§6[Warm Pixel] §7Spawn Timer Panel: " + status), true);
       }
     }
 

@@ -1,0 +1,15 @@
+{
+    "id": "7040b7fb-ae77-48e5-8164-a175f31c1936",
+    "title": "化学之怒",
+    "description": "情况变了，伙计。维多利亚·蔡斯那个婊子，她想黑吃黑，抢走我的配方和地盘。她以为她能骑在我头上？她会付出代价的。\n\n我要你去给她一个无法拒绝的'教训'。去她的地盘，干掉她的保镖，让她知道惹怒化学之怒的下场。",
+    "objective": {
+        "type": "TALK",
+        "target": "Victoria Chase",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

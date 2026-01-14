@@ -1,0 +1,15 @@
+{
+    "id": "3550c45d-19f6-4178-895f-dede592cac01",
+    "title": "红石之心",
+    "description": "我们的生意需要更可靠的防御，不仅仅是简单的墙壁。维克多低声说道，我们需要特定的动力元件来升级现有的设施。\n\n去寻找并收集红石粉，我们需要大量这种材料来重新布线我们的防御系统。确保你带回来足够的量。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:redstone",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

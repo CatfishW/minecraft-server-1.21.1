@@ -1,0 +1,15 @@
+{
+    "id": "e9ba3d48-3cd5-4436-a3b2-2727cfeefe88",
+    "title": "家族的问候",
+    "description": "一位名叫塞缪尔·雷蒙德的中间人最近在为我们家族办事，但他似乎变得有点...不可靠。他可能觉得自己的价值被低估了，或者听到了些不该听的风声。\n\n去和他'谈谈'。让他明白，萨拉曼卡家族记得每一个朋友，也同样记得每一个敌人。让他回忆起我们之间的'友谊'，确保他会继续为我们卖命，而不是动什么歪脑筋。",
+    "objective": {
+        "type": "TALK",
+        "target": "Samuel Raymond",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

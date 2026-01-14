@@ -1,0 +1,15 @@
+{
+    "id": "ec9abd11-d325-4ae3-8872-19ef0d08fc34",
+    "title": "地下室的秘密",
+    "description": "维克多有一个长期的眼线，名为罗宾·巴克利，他在某个社区的地下室工作。最近联系中断了，这很不寻常。我们需要知道发生了什么，以及他是否还可靠。\n\n伪装成顾客去见罗宾，看看他是否还能继续为我们提供情报。如果他出了问题，你知道该怎么做。",
+    "objective": {
+        "type": "TALK",
+        "target": "Robin Buckley",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

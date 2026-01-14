@@ -1,0 +1,165 @@
+{
+    "name": "§cTyrus Kitt",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of Gus Fring's loyal henchmen.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/b91269d7ebbcbf92.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "......",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:6dc2c449-4741-4cc6-9993-aad9179571d8,9b6deb29-ad54-4627-a5dc-e70099c1e75f,930e72d0-e0e6-4a4b-b269-0239f6d14e1b,7f5655ba-0ffb-4463-8232-5ed77c766405,a9473042-907f-4d60-a05a-eb475b435ee3",
+                    "id": "btn_quest_d322645f"
+                },
+                {
+                    "label": "你是谁？在这里做什么？",
+                    "action": "SHOW_DIALOG:question_1",
+                    "id": "btn_who"
+                },
+                {
+                    "label": "（默默走开）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_walk_away"
+                },
+                {
+                    "label": "我有关于弗林克斯的信息",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "question_1": {
+            "greeting": "我是谁不重要。我在观察。观察那个律师。",
+            "buttons": [
+                {
+                    "label": "是关于他在沙利文家的工作吗？",
+                    "action": "SHOW_DIALOG:question_2",
+                    "id": "btn_saul"
+                },
+                {
+                    "label": "看起来你像是在监视",
+                    "action": "SHOW_DIALOG:question_3",
+                    "id": "btn_spy"
+                }
+            ]
+        },
+        "question_2": {
+            "greeting": "他在那里工作过。现在不在了。老板想知道他最近在搞什么名堂。",
+            "buttons": [
+                {
+                    "label": "老板？是古斯吗？",
+                    "action": "SHOW_DIALOG:question_4",
+                    "id": "btn_gus"
+                },
+                {
+                    "label": "他只是在做自己的生意",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_mind_your_own"
+                }
+            ]
+        },
+        "question_3": {
+            "greeting": "这不是监视。这是... 安全评估。确保他没有做出不明智的决定。",
+            "buttons": [
+                {
+                    "label": "什么样的不明智决定？",
+                    "action": "SHOW_DIALOG:question_2",
+                    "id": "btn_what_decisions"
+                }
+            ]
+        },
+        "question_4": {
+            "greeting": "......（他盯着你，眼神冰冷）",
+            "buttons": [
+                {
+                    "label": "（等待）",
+                    "action": "SHOW_DIALOG:question_5",
+                    "id": "btn_wait"
+                },
+                {
+                    "label": "我什么都没说",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deny_saying"
+                }
+            ]
+        },
+        "question_5": {
+            "greeting": "你很聪明。聪明人通常活得久一点。别多嘴。",
+            "buttons": [
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_understand"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "弗林克斯... 你在说什么？",
+            "buttons": [
+                {
+                    "label": "我在试着吓唬你",
+                    "action": "SHOW_DIALOG:quest_1",
+                    "id": "btn_bluff"
+                },
+                {
+                    "label": "我听说有人在找他",
+                    "action": "SHOW_DIALOG:quest_2",
+                    "id": "btn_info"
+                }
+            ]
+        },
+        "quest_1": {
+            "greeting": "（他轻轻笑了一声，听起来像金属摩擦）",
+            "buttons": [
+                {
+                    "label": "好吧，这招不管用",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fail"
+                }
+            ]
+        },
+        "quest_2": {
+            "greeting": "谁在找？警察？还是其他人？",
+            "buttons": [
+                {
+                    "label": "也许我能帮你找到他",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_offer_help"
+                },
+                {
+                    "label": "我不知道，我只是听说",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_dont_know"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "dba8aa24-32ab-4471-a682-6d5b954fa3cc",
+    "title": "骷髅威胁解除",
+    "description": "一位关键证人被骷髅射手盯上，危及 Saul 的法庭策略。为了保护证人并确保案件顺利进行，必须消除这些远程威胁。\n\n消灭20只骷髅射手，以证明区域安全并无任何威胁残留。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

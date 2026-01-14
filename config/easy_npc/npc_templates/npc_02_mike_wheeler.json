@@ -5,7 +5,7 @@
     "description": "Leader of the party. Loyal and determined.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2020/08/11/mike-wheeler-stranger-things-s3-15032001.png?v938"
+        "skinUrl": "https://s.namemc.com/i/b5c7493bf1360ec8.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -184,7 +185,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

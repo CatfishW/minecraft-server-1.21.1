@@ -1,0 +1,15 @@
+{
+    "id": "e88c95a8-5e0b-4e20-87b5-e3208e1c0dc9",
+    "title": "布莱恩特的遗赠",
+    "description": "著名的化学家Gale Boetticher最近下落不明，但他生前似乎留下了一些关于某种蓝色结晶物品的笔记。我的上司认为这可能与近期的非法交易有关。\n\n你必须去找到Gale Boetticher，从他口中套出关于那种蓝色晶体的任何线索。注意，他是个谨慎的人，不要表现得太有攻击性。",
+    "objective": {
+        "type": "TALK",
+        "target": "Gale Boetticher",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

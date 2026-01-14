@@ -1,0 +1,15 @@
+{
+    "id": "81ad0c91-cf93-4e3c-81de-f8caad3907fe",
+    "title": "被封锁的调查令",
+    "description": "Juliet的调查越来越深入，她发现学校似乎在掩盖某些真相，比如老旧的广播塔和地下管道系统。她的采访许可被层层驳回，常规渠道已经无法让她接触到核心证人。Juliet需要一个特殊的引荐人，一个能无视规则、掌控着信息枢纽的人。听说Hank Overseer掌握着所有禁区的通行权限。\n\n请想办法联系上Overseer Hank。他或许是Juliet突破信息封锁的唯一希望，只有他能批准这次关键的采访。",
+    "objective": {
+        "type": "TALK",
+        "target": "Overseer Hank",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

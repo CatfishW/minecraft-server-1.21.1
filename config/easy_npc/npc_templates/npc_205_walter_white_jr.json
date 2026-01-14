@@ -1,0 +1,91 @@
+{
+    "name": "§bWalter White Jr.",
+    "entityType": "easy_npc:humanoid",
+    "description": "Walter and Skyler's son.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/ca166214fe0bcdf7.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，你好。我在找一些好吃的早餐，你知道哪里有那种……那种特别棒的脆培根吗？我爸以前总给我做，但现在……家里的事情有点复杂。我得自己出来找点东西吃，顺便透透气。",
+            "buttons": [
+                {
+                    "label": "关于你父亲的事……",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk_dad"
+                },
+                {
+                    "label": "我知道一家不错的店",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_reco_place"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我爸……他变了。以前他只是个化学老师，很温和，但现在他总是神神秘秘的，还总是和我妈吵架。我不知道他在做什么，但我希望能回到以前那样，我们一家人能坐下来好好吃顿早饭，就像以前一样。",
+            "buttons": [
+                {
+                    "label": "给他点时间",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "你需要帮助吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_help"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "真的吗？那太好了！我正愁不知道去哪呢。虽然我可能不能喝咖啡，但我可以吃点松饼。谢谢你，这让我感觉好多了。有时候我只是想找个正常的人说说话，而不是那些奇怪的眼神。",
+            "buttons": [
+                {
+                    "label": "保持联系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_keep_contact"
+                },
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "谢谢，但我能处理好的。我只是个孩子，不是吗？但我会照顾好我妈妈和妹妹的。不管发生什么，我都会站在她们这边。这是我现在唯一能做的了。",
+            "buttons": [
+                {
+                    "label": "保持坚强",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

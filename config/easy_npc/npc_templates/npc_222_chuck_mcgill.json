@@ -1,0 +1,141 @@
+{
+    "name": "§aChuck McGill",
+    "entityType": "easy_npc:humanoid",
+    "description": "Jimmy's brother, a brilliant but troubled lawyer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/eebeb02bc5608bde.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。请保持距离，我不习惯与人有肢体接触。我是Chuck McGill，HHM律师事务所的合伙人。如果你是来寻求法律服务的，我很乐意为你介绍我们所里合适的律师。我们以专业和严谨著称。",
+            "buttons": [
+                {
+                    "label": "我想了解HHM的业务",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_hhm"
+                },
+                {
+                    "label": "你似乎对法律有崇高敬意",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_respect"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "HHM是新墨西哥州最顶尖的律师事务所之一。我们处理复杂的商业诉讼、并购、以及高风险的法律事务。这里的每一个人都遵守最高的职业道德标准。法律是社会秩序的基石，不是用来投机取巧的工具。",
+            "buttons": [
+                {
+                    "label": "听起来非常专业",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_pro"
+                },
+                {
+                    "label": "那Jimmy McGill呢？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_jimmy"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "法律不仅仅是职业，它是文明的象征。它需要被尊重，被严格地执行。当你看到有人践踏法律，用欺骗和诡计来谋取私利时，那是在侵蚀我们社会的根基。我一生都在捍卫法律的尊严，不容许任何形式的亵渎。",
+            "buttons": [
+                {
+                    "label": "我理解你的坚持",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_understand"
+                },
+                {
+                    "label": "但规则有时也需要变通",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_flex"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "正是如此。没有规矩，不成方圆。在HHM，我们确保每一个案件都经得起时间的检验。如果你需要值得信赖的法律代表，HHM是你的不二之选。我们追求的是正义，而不仅仅是胜利。",
+            "buttons": [
+                {
+                    "label": "我会考虑的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_consider"
+                },
+                {
+                    "label": "感谢你的介绍",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "Jimmy……他有他的路要走。他很聪明，但他的聪明才智用错了地方。他总是试图走捷径，而捷径往往是通向深渊的最快方式。我希望他能明白，真正的成功来自于脚踏实地的努力，而不是一时的投机。",
+            "buttons": [
+                {
+                    "label": "他似乎很想得到你的认可",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_approval"
+                },
+                {
+                    "label": "也许他只是想证明自己",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "坚持？不，这是原则。我曾经历过法律的背叛，也见过它被滥用。正因如此，我更明白坚守底线的重要性。任何对规则的妥协，都可能导致不可挽回的后果。我不会允许这种事在我眼前发生。",
+            "buttons": [
+                {
+                    "label": "我敬佩你的意志",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_admire"
+                },
+                {
+                    "label": "听起来你受过伤",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "变通？那是对规则的懦弱妥协。一旦你开始为‘变通’找借口，就离彻底的混乱不远了。界限必须清晰，黑白必须分明。在法律的世界里，没有中间地带，只有对与错。这是不可动摇的真理。",
+            "buttons": [
+                {
+                    "label": "我明白了你的立场",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_point"
+                },
+                {
+                    "label": "我们看法不同",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "93da0bcc-c7c4-441b-99a8-d6856950775b",
+    "title": "金属的芬芳",
+    "description": "表亲们的军火库需要补给。铁锭是硬通货，比任何承诺都可靠。他们需要大量的铁，不是为了交易，而是为了确保在下一次冲突中，他们的火力永远不会停歇。\n\n搜集散落在矿井废墟和战斗遗迹中的铁锭。让金属的重量填满你的口袋，直到再也装不下为止。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

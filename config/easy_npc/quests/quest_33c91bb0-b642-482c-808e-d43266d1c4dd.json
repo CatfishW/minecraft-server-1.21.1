@@ -1,0 +1,15 @@
+{
+    "id": "33c91bb0-b642-482c-808e-d43266d1c4dd",
+    "title": "无知是福",
+    "description": "那个叫 Nick Valentine 的侦探最近像只苍蝇一样到处乱嗅。他太聪明了，这对我们来说是个隐患。Saul 不希望他插手我们的生意，但他身边总是围着一群铁皮罐头。\n\n去铁路镇的废墟附近，找机会干掉几个在野外游荡的骷髅。这既能削弱那里的防御力量，也能给 Nick 一个『小小的警告』——让他知道有些地方是他不该去的。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 125,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

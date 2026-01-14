@@ -1,0 +1,15 @@
+{
+    "id": "9417aab0-010a-4cb0-ae8c-d744cf580135",
+    "title": "夜幕下的潜行",
+    "description": "随着调查深入，大卫发现这些学生的活动越来越频繁，尤其是在深夜。他怀疑他们在进行某种秘密集会。为了不打草惊蛇，他决定亲自在夜间进行一次秘密侦查，追踪他们的行踪。\n\n请在夜晚潜行，追踪并监视那些可疑的学生。你需要悄无声息地接近他们，不要被发现，收集足够的证据。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:phantom",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

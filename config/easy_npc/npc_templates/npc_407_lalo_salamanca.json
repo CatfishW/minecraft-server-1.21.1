@@ -1,0 +1,326 @@
+{
+    "name": "§eLalo Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "The charming and terrifying nephew of Hector Salamanca, sent to investigate Gus Fring's operations. Unlike his brutish cousins, Lalo is intelligent, personable, and utterly remorseless.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/6739e533b40286f8.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§6[Lalo 靠在墙边，露出意味深长的微笑]§r\n¡Hola! 你看起来不像这里的常客。我是Lalo。告诉我，是什么风把你吹到这一带来了？",
+            "buttons": [
+                {
+                    "label": "只是路过。你看起来很悠闲？",
+                    "action": "SHOW_DIALOG:casual_talk",
+                    "id": "btn_casual"
+                },
+                {
+                    "label": "听说萨拉曼卡家族最近很忙？",
+                    "action": "SHOW_DIALOG:family_business",
+                    "id": "btn_family"
+                },
+                {
+                    "label": "你知道一个叫Gus Fring的人吗？",
+                    "action": "SHOW_DIALOG:investigation_probe",
+                    "id": "btn_gus"
+                },
+                {
+                    "label": "我得走了。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "casual_talk": {
+            "greeting": "§a[他笑着摆摆手]§r\n悠闲？啊，我叔叔Hector常说，捕猎前总得先放松一下肌肉。我喜欢观察——人、生意、所有的一切。§e[他的眼神变得锐利]§r 生活本身就是一场有趣的游戏，你不觉得吗？",
+            "buttons": [
+                {
+                    "label": "你叔叔Hector？他是个什么样的人？",
+                    "action": "SHOW_DIALOG:backstory_hector",
+                    "id": "btn_hector"
+                },
+                {
+                    "label": "你好像很喜欢游戏？",
+                    "action": "SHOW_DIALOG:backstory_philosophy",
+                    "id": "btn_philosophy"
+                },
+                {
+                    "label": "回到刚才的话题...",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "family_business": {
+            "greeting": "§c[他的笑容收敛了一分，但依然保持礼貌]§r\n家族就是一切。忠诚、传统……还有责任。我们总是很忙。有些人在扩张地盘，有些人在巩固势力。§9[他压低声音]§r 但偶尔，一些老鼠会想从船上溜走。那就不太好了。",
+            "buttons": [
+                {
+                    "label": "扩张？你们的目标是哪里？",
+                    "action": "SHOW_DIALOG:current_expansion",
+                    "id": "btn_expansion"
+                },
+                {
+                    "label": "你提到'老鼠'？",
+                    "action": "SHOW_DIALOG:quest_traitor_hook",
+                    "id": "btn_traitor"
+                },
+                {
+                    "label": "明白了。说点别的吧。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_change"
+                }
+            ]
+        },
+        "investigation_probe": {
+            "greeting": "§6[他的身体微微前倾，兴趣被完全勾起]§r\nGus Fring……那个‘炸鸡男’？你对他了解多少？§e[他停顿了一下，观察你的反应]§r 据说他生意做得很大，非常……干净。太干净了。我叔叔不太喜欢他。",
+            "buttons": [
+                {
+                    "label": "我听说过他的餐厅。仅此而已。",
+                    "action": "SHOW_DIALOG:current_gus_suspicion",
+                    "id": "btn_gus_deny"
+                },
+                {
+                    "label": "你为什么对他这么感兴趣？",
+                    "action": "SHOW_DIALOG:current_assignment",
+                    "id": "btn_why_interest"
+                },
+                {
+                    "label": "换个话题吧。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_switch"
+                }
+            ]
+        },
+        "backstory_hector": {
+            "greeting": "§5[他模仿了一下Hector按铃的动作，然后大笑]§r\n叮！叮！叮！他是个强硬的老头。萨拉曼卡的脊柱。他教我，在生意场上，话语就像子弹，要省着用，但必要时得连发。§c[笑容渐冷]§r 我的堂兄弟们……他们更擅长用另一种子弹。有时候我觉得，他们太着急了。",
+            "buttons": [
+                {
+                    "label": "听起来你更……有策略？",
+                    "action": "SHOW_DIALOG:backstory_difference",
+                    "id": "btn_strategy"
+                },
+                {
+                    "label": "家族对你有很高的期望吧？",
+                    "action": "SHOW_DIALOG:backstory_pressure",
+                    "id": "btn_expectation"
+                },
+                {
+                    "label": "嗯。",
+                    "action": "SHOW_DIALOG:casual_talk",
+                    "id": "btn_return_casual"
+                }
+            ]
+        },
+        "backstory_difference": {
+            "greeting": "§a[他眨了眨眼]§r\n策略？我喜欢这个词。暴力是工具，但智慧才是手柄。我叔叔开始明白这一点了。§e[他环顾四周]§r 你知道吗？我曾经搞定过一个想黑吃黑的家伙。我请他吃了顿饭，聊得很开心……然后他再也没有机会吃下一顿了。§6[他露出灿烂的笑容]§r 高效，而且不浪费食物！",
+            "buttons": [
+                {
+                    "label": "……你可真让人捉摸不透。",
+                    "action": "SHOW_DIALOG:secret_vault_unlock",
+                    "condition": "TRUST>=2",
+                    "id": "btn_secret_vault"
+                },
+                {
+                    "label": "这故事让人背后发凉。",
+                    "action": "SHOW_DIALOG:casual_talk",
+                    "id": "btn_creepy"
+                }
+            ]
+        },
+        "current_assignment": {
+            "greeting": "§9[他若有所思地用手指敲着桌子]§r\n家族需要眼睛和耳朵。Gus的‘炸鸡王国’发展得太快，太顺利了。像一台完美的机器……但机器总有零件会松动，不是吗？§c[他直视着你]§r 也许你能帮个小忙？到处听听风声。这对我们双方都有好处。",
+            "buttons": [
+                {
+                    "label": "你想让我打听什么？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a8e277be-bed4-462f-809a-c9853c43aac0,ac061a82-8fb7-42f3-aad6-19efa463a37d,0bb646e0-d0a6-417d-bf22-6f9e17cc5899,a0066f2d-37ae-451f-a314-14c657e8a7ff,ef7eda10-af0f-48a2-9a8c-b9b9622019f7",
+                    "id": "btn_accept_quest"
+                },
+                {
+                    "label": "我不想卷进去。",
+                    "action": "SHOW_DIALOG:farewell_hostile",
+                    "id": "btn_refuse"
+                },
+                {
+                    "label": "我需要再考虑一下。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "quest_traitor_hook": {
+            "greeting": "§c[他叹了口气，但眼里闪着危险的光]§r\n忠诚不是天生的，是需要维护的。最近有些资金流动……不对劲。流向了一些不该去的地方。§e[他凑近]§r 如果你能帮我确认一下，一个叫Nacho的小伙子的行踪，我会非常感激。他是个好司机，但最近好像总去一些……奇怪的地方。",
+            "buttons": [
+                {
+                    "label": "我会留意他的。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a8e277be-bed4-462f-809a-c9853c43aac0,ac061a82-8fb7-42f3-aad6-19efa463a37d,0bb646e0-d0a6-417d-bf22-6f9e17cc5899,a0066f2d-37ae-451f-a314-14c657e8a7ff,ef7eda10-af0f-48a2-9a8c-b9b9622019f7",
+                    "id": "btn_quest_nacho"
+                },
+                {
+                    "label": "这是你们家族内部的事。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_not_my_business"
+                },
+                {
+                    "label": "你怀疑他？",
+                    "action": "SHOW_DIALOG:current_nacho_suspicion",
+                    "id": "btn_ask_suspect"
+                }
+            ]
+        },
+        "current_nacho_suspicion": {
+            "greeting": "§6[他耸耸肩，笑容变得冰冷]§r\n怀疑？不。我只是好奇。好奇心是健康的。但他父亲的身体最近好像突然变好了，能负担得起……昂贵的治疗。§5[他停顿]§r 在我們的生意里，意外之财通常都不是意外。你去查查，怎么样？",
+            "buttons": [
+                {
+                    "label": "好，我去看看。",
+                    "action": "OPEN_QUEST_DIALOG:FIXED:QUEST_NACHO_TRAIL",
+                    "id": "btn_accept_nacho_quest"
+                },
+                {
+                    "label": "这听起来很危险。",
+                    "action": "SHOW_DIALOG:farewell_wary",
+                    "id": "btn_dangerous"
+                },
+                {
+                    "label": "我需要点时间。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_need_time"
+                }
+            ]
+        },
+        "secret_vault_unlock": {
+            "greeting": "§d[他仔细打量了你一会儿，然后缓缓点头]§r\n你回来找我聊天了。很好。你知道吗？我叔叔Hector有一个保险库，里面不放钱，只放‘纪念品’。每一个都代表一个……商业上的教训。§4[他的声音近乎耳语]§r 其中有一个小玩具，属于一个曾经想和Gus Fring‘合作’的警察。他现在在哪儿？谁知道呢。§6[他靠回椅背]§r 这件事，Gus本人恐怕都不知道。这是我们的小秘密，嗯？",
+            "buttons": [
+                {
+                    "label": "……我会保守秘密的。",
+                    "action": "SHOW_DIALOG:farewell_respectful",
+                    "id": "btn_keep_secret"
+                },
+                {
+                    "label": "这信息太重要了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return_main_secret"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§a[他热情地挥手]§r\n¡Hasta luego! 下次再见，希望你能带来些有趣的消息。记住，朋友，好奇心不一定会害死猫……但可能会让你看到很多有趣的东西。",
+            "buttons": [
+                {
+                    "label": "再见，Lalo。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "farewell_hostile": {
+            "greeting": "§4[他的笑容瞬间消失，眼神空洞]§r\n我明白了。每个人都有自己的选择。§c[他平静地说]§r 祝你一路平安。小心点，这附近……有时候不太安全。",
+            "buttons": [
+                {
+                    "label": "(离开)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_hostile"
+                }
+            ]
+        },
+        "farewell_wary": {
+            "greeting": "§6[他理解似地点点头，但眼神深处有一丝失望]§r\n谨慎是明智的。但也意味着你会错过很多东西。下次你再来的时候，故事可能已经……翻篇了。Adiós.",
+            "buttons": [
+                {
+                    "label": "(离开)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_wary"
+                }
+            ]
+        },
+        "farewell_respectful": {
+            "greeting": "§2[他露出一个真诚、欣赏的微笑]§r\n我喜欢聪明又懂得分寸的人。你会走得很远的，我的朋友。需要‘帮忙’的时候，你知道在哪里能找到我。¡Cuídate!",
+            "buttons": [
+                {
+                    "label": "保重，Lalo。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_respect"
+                }
+            ]
+        },
+        "current_gus_suspicion": {
+            "greeting": "（Lalo Salamanca看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d95cad29"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_768dcefe"
+                }
+            ]
+        },
+        "backstory_philosophy": {
+            "greeting": "（Lalo Salamanca沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d1867556"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9da28690"
+                }
+            ]
+        },
+        "current_expansion": {
+            "greeting": "（Lalo Salamanca看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_dccbe98e"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_4ac764f3"
+                }
+            ]
+        },
+        "backstory_pressure": {
+            "greeting": "（Lalo Salamanca沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d43e1b3a"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fa643920"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Better Call Saul",
+        "role": "Cartel Heir",
+        "connections": [
+            "Hector Salamanca",
+            "Nacho Varga",
+            "Gustavo Fring",
+            "Kim Wexler"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:52:16"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "6552b976-7fd6-4007-9c9a-db1ae840ca20",
+    "title": "不良资产清理",
+    "description": "吉米沮丧地发现，几只难缠的僵尸（minecraft:zombie）闯入了他的“新办公室”——一个废弃的地下仓库。他不能在潜在客户面前展示如此糟糕的环境，这会严重影响他的专业形象。他需要一位“资产保全专家”来处理这些麻烦。\n\n拿起你的剑，解决掉仓库里徘徊的 5 只僵尸。让这个场地恢复秩序和安全，吉米才能安心地在里面布置他的新招牌。这是一次对勇气的考验，也是我们合作的基石。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

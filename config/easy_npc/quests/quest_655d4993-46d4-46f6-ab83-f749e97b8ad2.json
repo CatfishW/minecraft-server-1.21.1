@@ -1,0 +1,15 @@
+{
+    "id": "655d4993-46d4-46f6-ab83-f749e97b8ad2",
+    "title": "证人的噩梦",
+    "description": "关键证人Mrs Kersh在开庭前突然改口，拒绝出庭作证。她的住所外最近游荡着许多受惊的僵尸，可能是有人故意制造混乱来恐吓她。\n\n我必须去Mrs Kersh的家附近清理掉那些游荡的僵尸（minecraft:zombie），确保她能安全地回心转意。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

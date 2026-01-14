@@ -1,0 +1,15 @@
+{
+    "id": "dbbf8de8-b3fd-4b5a-97fe-b760afea60d3",
+    "title": "暗夜的威胁",
+    "description": "随着夜幕降临，学院的走廊里出现了成群结队的僵尸。它们在阴影中徘徊，威胁着所有晚归的学生。作为啦啦队里最勇敢的人，我不能坐视不管。我们需要主动出击，清除这些威胁。\n\n请你穿上最好的装备，前往学院的走廊区域，消灭至少 5 只僵尸。让它们知道 Blackwell 的学生可不是好惹的！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

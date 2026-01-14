@@ -1,0 +1,15 @@
+{
+    "id": "58a31cc2-d3f4-4f75-bc01-cf14e2dfa02c",
+    "title": "不可告人的秘密",
+    "description": "收起你那副天真的表情。你以为我真的是在为那些鸡毛蒜皮的小案子奔波吗？有个大人物，他在策划一件足以颠覆整个地区平衡的事情，而我，需要一些'黑料'来确保我的当事人能全身而退，甚至从中获利。\n\n你的任务是找到那个叫**Mike Wheeler**的家伙，从他嘴里撬出关于'少年团'的秘密行动情报。注意，这不是一次友好的拜访，你可能需要展示一下你的'说服技巧'，让他明白泄露秘密的后果。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a9df5a2d-c291-4c7b-8543-ec1c38352656",
+    "title": "身份伪造材料",
+    "description": "Saul 正在为一位客户伪造新身份，需要稀有材料来制作无可挑剔的证件。翡翠因其价值和光泽被选中用于贿赂官员和装饰假文件。\n\n收集5个翡翠，用于身份伪造过程，并确保文件逼真。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:emerald",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

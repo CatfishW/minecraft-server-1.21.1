@@ -1,0 +1,15 @@
+{
+    "id": "b0f00a93-a78a-47c6-a9ad-c3b4ff83a826",
+    "title": "阴影的接头人",
+    "description": "是时候进行一次会面了。委托人终于决定让你接触他在外界的代理人。这或许是信任的开始，也可能是一个更深的陷阱。无论哪种，你都必须独自前往，不能引起任何注意。\n\n在约定的时间，去寻找那位被称为【Bill Oakley】的人。他会在一个不起眼的地方等待。向他传达你的到来，并聆听他带来的消息。这是你通往未知领域的重要一步。",
+    "objective": {
+        "type": "TALK",
+        "target": "Bill Oakley",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

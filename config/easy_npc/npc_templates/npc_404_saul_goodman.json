@@ -1,0 +1,380 @@
+{
+    "name": "§9Saul Goodman",
+    "entityType": "easy_npc:humanoid",
+    "description": "Born James McGill, he reinvented himself as the flamboyant criminal defense attorney Saul Goodman. Operates from a strip mall office and connects criminals with the services they need.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/380a01df2de7aa69.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§e啊哈！新客户！欢迎来到‘Better Call Saul’法律事务所！我是Saul Goodman，阿尔伯克基最好的‘问题解决者’。是有人找你麻烦？还是税务部门让你头疼？别担心，老朋友Saul有办法！§r\n\n（他靠在豪华皮椅上，露出招牌式的狡猾微笑）",
+            "buttons": [
+                {
+                    "label": "听说你专接‘特殊’案子？",
+                    "action": "SHOW_DIALOG:special_cases",
+                    "id": "btn_special"
+                },
+                {
+                    "label": "你办公室…挺特别？",
+                    "action": "SHOW_DIALOG:office_talk",
+                    "id": "btn_office"
+                },
+                {
+                    "label": "你看起来压力很大？",
+                    "action": "SHOW_DIALOG:current_stress",
+                    "id": "btn_stress"
+                },
+                {
+                    "label": "我只是路过。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "special_cases": {
+            "greeting": "§e特殊？§r我的客户只是…需要一点创意解决方案。\n\n（他压低声音，身体前倾）§9你看，法律就像魔术——规则就在那里，但聪明人知道怎么让它§e‘消失’。§r需要新身份？现金流动有点…不自然？或者你有个‘大人物’想安安静静地打交道？这些都在我的服务范围内。",
+            "buttons": [
+                {
+                    "label": "现金流动不自然？比如洗钱？",
+                    "action": "SHOW_DIALOG:quest_laundering_intro",
+                    "id": "btn_laundering"
+                },
+                {
+                    "label": "你总是这么…浮夸吗？",
+                    "action": "SHOW_DIALOG:backstory_persona",
+                    "id": "btn_persona"
+                },
+                {
+                    "label": "所以你是罪犯的律师。",
+                    "action": "SHOW_DIALOG:philosophy",
+                    "id": "btn_philosophy"
+                }
+            ]
+        },
+        "office_talk": {
+            "greeting": "（他大笑）§e品味不错吧？§r这个脱衣舞俱乐部门店的位置是我精心挑选的——客户容易找到，邻居不多管闲事，租金便宜。而且，谁知道呢，说不定哪天真会装个保龄球道。\n\n（他指了指角落里的一张照片）看见了吗？我和Huell。好伙计。有时候，一个可靠的伙伴比一堆法律书更有用。",
+            "buttons": [
+                {
+                    "label": "Huell？他是谁？",
+                    "action": "SHOW_DIALOG:about_huell",
+                    "id": "btn_huell"
+                },
+                {
+                    "label": "这照片墙…有些面孔很眼熟。",
+                    "action": "SHOW_DIALOG:secret_clients",
+                    "condition": "TRUST>=2",
+                    "id": "btn_secret_clients"
+                },
+                {
+                    "label": "回到正题。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_stress": {
+            "greeting": "§6压力？我？§r不不不，这只是…职业热情。\n\n（他无意识地转了转戒指）好吧，FBI那些穿廉价西装的家伙最近在我办公室对面开了个甜甜圈店。太明显了！他们以为我不知道？我只是在玩一个更长远的游戏。\n\n（叹气）有时候，我真希望所有客户都像Mike那样专业。从不废话，直接付款。",
+            "buttons": [
+                {
+                    "label": "Mike？那个保安？",
+                    "action": "SHOW_DIALOG:about_mike",
+                    "id": "btn_mike"
+                },
+                {
+                    "label": "FBI在监视你？我们能帮忙吗？",
+                    "action": "SHOW_DIALOG:quest_identity_intro",
+                    "id": "btn_help_fbi"
+                },
+                {
+                    "label": "你听起来很孤独。",
+                    "action": "SHOW_DIALOG:backstory_loneliness",
+                    "condition": "TRUST>=1",
+                    "id": "btn_lonely"
+                }
+            ]
+        },
+        "backstory_persona": {
+            "greeting": "§eSaul Goodman是一个品牌，一个承诺！§rJames McGill？他…是个好人。太好的那种。\n\n（他笑容短暂消失）你知道好人在这行得到什么吗？被忽视，被压榨，被当成擦鞋垫。所以有一天我决定…§6换双鞋。§r一个更响亮的名字，一套更鲜艳的西装。人们记住的是表演，不是演员。",
+            "buttons": [
+                {
+                    "label": "所以这是伪装？",
+                    "action": "SHOW_DIALOG:backstory_deeper",
+                    "id": "btn_deeper"
+                },
+                {
+                    "label": "那你怀念James吗？",
+                    "action": "SHOW_DIALOG:backstory_regret",
+                    "condition": "TRUST>=3",
+                    "id": "btn_regret"
+                },
+                {
+                    "label": "很有道理。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "backstory_deeper": {
+            "greeting": "（他环顾四周，确保只有你们俩）§9伪装？不，这是进化。§r在法律的灰色地带，你需要成为变色龙。为客户变成他们需要的样子。\n\n但偶尔…非常偶尔，当我关上这霓虹灯招牌，我会想：如果当年那个理想主义的Jimmy坚持下去了会怎样？然后我打开电视，看到一个穿着棕色西装的人在法庭上输掉又一个案子…我就知道Saul的选择是对的。",
+            "buttons": [
+                {
+                    "label": "Jimmy？那是你的小名？",
+                    "action": "SHOW_DIALOG:backstory_jimmy",
+                    "id": "btn_jimmy"
+                },
+                {
+                    "label": "这很悲伤。",
+                    "action": "SHOW_DIALOG:backstory_loneliness",
+                    "id": "btn_sad"
+                },
+                {
+                    "label": "（保持沉默）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_silent"
+                }
+            ]
+        },
+        "backstory_loneliness": {
+            "greeting": "§b孤独？§r哈哈！我有Huell！我有…客户！我忙得很！\n\n（他的笑容变得勉强）听着，在这个行业，信任是奢侈品。你不能对客户动真情，因为他们可能明天就进监狱。同事？都是竞争对手。\n\n（声音变轻）有时候，唯一一个用真名叫我的人，是一个我再也见不到的…化学老师。讽刺吧？",
+            "buttons": [
+                {
+                    "label": "Walter White？",
+                    "action": "SHOW_DIALOG:secret_walter",
+                    "condition": "TRUST>=4",
+                    "id": "btn_walter_secret"
+                },
+                {
+                    "label": "你一定很珍惜Mike。",
+                    "action": "SHOW_DIALOG:about_mike_deep",
+                    "id": "btn_mike_deep"
+                },
+                {
+                    "label": "我很抱歉。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_sorry"
+                }
+            ]
+        },
+        "quest_laundering_intro": {
+            "greeting": "§eAh！具体需求！§r我喜欢具体。\n\n（他拿出一个白板）假设你有一笔…不那么容易解释来源的资金。我们可以把它变成‘合法’收入。方法A：通过一系列由我精心设计的慈善基金会。方法B：投资一个实体生意，比如…洗衣店。非常低调。方法C：更数字化的路线，加密货币的‘意外’收益。\n\n当然，这些都需要一点…§6启动资金§r和对我Saul Goodman的绝对信任。有兴趣吗？",
+            "buttons": [
+                {
+                    "label": "听起来很复杂，但值得一试。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:1760aeb1-6f0d-41cb-b8b2-da6ba38955b9,141971f4-7a38-447f-9894-ac4e6506464f,dba8aa24-32ab-4471-a682-6d5b954fa3cc,a9df5a2d-c291-4c7b-8543-ec1c38352656,0af95371-9dc7-4702-a465-69507c3f84bd",
+                    "id": "btn_accept_launder"
+                },
+                {
+                    "label": "费用是多少？",
+                    "action": "SHOW_DIALOG:quest_costs",
+                    "id": "btn_costs"
+                },
+                {
+                    "label": "我需要再考虑一下。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "quest_identity_intro": {
+            "greeting": "帮忙？啊，我欣赏这种精神！但这不是儿戏。\n\n（他从抽屉里拿出几本空白护照）如果你真想帮忙，我需要一些‘原材料’。干净的社保号码（当然是‘借用’的），一些可信的背景故事，还有几个愿意对‘新邻居’视而不见的偏远小镇地址。\n\n收集这些东西有风险，但报酬丰厚。而且，谁知道呢，说不定哪天你自己也需要一个‘备用身份’。干不干？",
+            "buttons": [
+                {
+                    "label": "我干。告诉我细节。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:1760aeb1-6f0d-41cb-b8b2-da6ba38955b9,141971f4-7a38-447f-9894-ac4e6506464f,dba8aa24-32ab-4471-a682-6d5b954fa3cc,a9df5a2d-c291-4c7b-8543-ec1c38352656,0af95371-9dc7-4702-a465-69507c3f84bd",
+                    "id": "btn_accept_identity"
+                },
+                {
+                    "label": "这听起来比对抗FBI还危险！",
+                    "action": "SHOW_DIALOG:current_stress",
+                    "id": "btn_dangerous"
+                },
+                {
+                    "label": "我需要准备一下。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_prepare"
+                }
+            ]
+        },
+        "secret_walter": {
+            "greeting": "§5（他的表情立刻严肃起来，起身锁上了办公室的门）§r\n\nWalt…Heisenberg。一个天才，一个疯子，一个…朋友？我不知道。\n\n（他坐下，声音低沉）我帮他建立了帝国，也看着他毁掉一切。Jesse那孩子…我本可以做得更好。到最后，Walt给了我一个新身份和一笔钱，让我消失。这是他最后的善意，还是为了确保我永远闭嘴？\n\n（他苦笑着摇头）§5现在，知道这个故事还活着的人不多了。别让我后悔告诉你。§r",
+            "buttons": [
+                {
+                    "label": "谢谢你的信任。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_thanks_trust"
+                },
+                {
+                    "label": "他会为你骄傲吗？",
+                    "action": "SHOW_DIALOG:secret_walter_legacy",
+                    "id": "btn_legacy"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "要走了？记住，无论你惹上什么麻烦——大的、小的、联邦级别的——§cBetter Call Saul!§r\n\n（他递给你一张名片，背面手写了一个号码）那是我的…‘下班后’热线。谨慎使用。保重，朋友。",
+            "buttons": [
+                {
+                    "label": "再见，Saul。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                },
+                {
+                    "label": "再见，Jimmy。",
+                    "action": "CLOSE_DIALOG",
+                    "condition": "TRUST>=3",
+                    "id": "btn_goodbye_jimmy"
+                }
+            ]
+        },
+        "about_huell": {
+            "greeting": "Huell Babineaux！我的首席‘合规顾问’。主要是确保客户…遵守我们的付款条款。\n\n（他眨眨眼）他块头大，但心很软。只要别动他的沙发。有一次他在上面睡了整整三天，就为了等一个赖账的家伙回来。忠诚是无价的，尤其是在这行。",
+            "buttons": [
+                {
+                    "label": "回到办公室的话题。",
+                    "action": "SHOW_DIALOG:office_talk",
+                    "id": "btn_back_office"
+                }
+            ]
+        },
+        "about_mike": {
+            "greeting": "Mike Ehrmantraut。前警察，现任…‘问题解决者’。他就像一部精密的瑞士手表——可靠、精准、沉默寡言。\n\n他为我做‘外勤’工作。我从不过问细节，他也不问我的法律把戏。完美的合作关系。有时候我在想，如果早点遇到他，很多事情会不会不一样…",
+            "buttons": [
+                {
+                    "label": "你们是朋友吗？",
+                    "action": "SHOW_DIALOG:about_mike_deep",
+                    "id": "btn_mike_friend"
+                },
+                {
+                    "label": "回到压力的话题。",
+                    "action": "SHOW_DIALOG:current_stress",
+                    "id": "btn_back_stress"
+                }
+            ]
+        },
+        "secret_clients": {
+            "greeting": "（Saul Goodman压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_a0eb388d"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_8ebb25c3"
+                }
+            ]
+        },
+        "quest_costs": {
+            "greeting": "（Saul Goodman思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3c2a006d"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_44c419c9"
+                }
+            ]
+        },
+        "secret_walter_legacy": {
+            "greeting": "（Saul Goodman压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_270f6fda"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c5ee2dc9"
+                }
+            ]
+        },
+        "backstory_jimmy": {
+            "greeting": "（Saul Goodman沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_3cd17db2"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_6fbdebc1"
+                }
+            ]
+        },
+        "philosophy": {
+            "greeting": "（Saul Goodman沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d97922a4"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_198ea60f"
+                }
+            ]
+        },
+        "about_mike_deep": {
+            "greeting": "（Saul Goodman沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_fc7f52d9"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3fe93a91"
+                }
+            ]
+        },
+        "backstory_regret": {
+            "greeting": "（Saul Goodman沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_2e11c954"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_8d516548"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Breaking Bad",
+        "role": "Criminal Lawyer",
+        "connections": [
+            "Walter White",
+            "Jesse Pinkman",
+            "Mike Ehrmantraut",
+            "Huell Babineaux"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:37:27"
+    }
+}

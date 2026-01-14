@@ -1,0 +1,110 @@
+{
+    "name": "§aBill Oakley",
+    "entityType": "easy_npc:humanoid",
+    "description": "An overworked assistant district attorney.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/c3f256f79a096e19.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "又一个该死的案子，又一个该死的通宵。你是谁？如果是来求情的，门在那边。如果是来提供线索的，最好是个大案子，我忙得很。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7fe07e2c-d4f7-4b58-8785-e4b55c6d22b2,655d4993-46d4-46f6-ab83-f749e97b8ad2,e88c95a8-5e0b-4e20-87b5-e3208e1c0dc9,223e5777-93b5-434d-a6b6-ad9faadd5d75,8d1752eb-fbca-4229-8e55-3aa50a35ea6f",
+                    "id": "btn_quest_ffded186"
+                },
+                {
+                    "label": "关于金·韦克斯勒的案子",
+                    "action": "SHOW_DIALOG:talk_saul",
+                    "id": "btn_saul"
+                },
+                {
+                    "label": "看起来你很累",
+                    "action": "SHOW_DIALOG:talk_work",
+                    "id": "btn_work"
+                },
+                {
+                    "label": "我想帮你",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q"
+                }
+            ]
+        },
+        "talk_saul": {
+            "greeting": "金·韦克斯勒？你是说那个专门帮罪犯脱罪的律师？她和她的搭档麦克吉尔最近简直要把我们检察官办公室搞疯了。他们总有办法钻空子，但我迟早会抓住他们的把柄。",
+            "buttons": [
+                {
+                    "label": "他们有那么厉害？",
+                    "action": "SHOW_DIALOG:talk_saul_2",
+                    "id": "btn_saul2"
+                },
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_saul_2": {
+            "greeting": "厉害？他们是无耻！金能把黑的说成白的，而麦克吉尔...那个老滑头，总是在法律边缘试探。我正在追查他们的一桩旧案，只要证据确凿，我就能把他们两个都送进去。",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_work": {
+            "greeting": "累？这词太轻了。我是被案子活埋了。每天看着这些罪犯，想着他们怎么钻法律的空子，我就恨不得把法典背下来当武器。你要是真想帮忙，就别浪费我时间。",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "帮我？有意思。我手头有个案子，关于前县财政主管克雷格·凯特尔曼的。他老婆是个难缠的角色，我需要有人去探探口风，看看能不能找到他们藏匿赃款的新线索。你敢去吗？",
+            "buttons": [
+                {
+                    "label": "接受任务：接触凯特尔曼夫妇",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "还是算了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

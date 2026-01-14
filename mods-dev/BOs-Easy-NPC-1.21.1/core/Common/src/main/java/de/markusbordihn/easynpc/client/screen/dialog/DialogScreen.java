@@ -19,12 +19,10 @@
 
 package de.markusbordihn.easynpc.client.screen.dialog;
 
+import com.mojang.blaze3d.platform.Lighting;
+import com.mojang.blaze3d.systems.RenderSystem;
 import de.markusbordihn.easynpc.Constants;
-import de.markusbordihn.easynpc.client.renderer.screen.EntityScreenRenderer;
 import de.markusbordihn.easynpc.client.screen.Screen;
-import de.markusbordihn.easynpc.client.screen.components.Graphics;
-import de.markusbordihn.easynpc.client.screen.components.SpriteButton;
-import de.markusbordihn.easynpc.client.screen.components.Text;
 import de.markusbordihn.easynpc.client.screen.components.TextButton;
 import de.markusbordihn.easynpc.data.action.ActionEventType;
 import de.markusbordihn.easynpc.data.dialog.DialogButtonEntry;
@@ -32,7 +30,6 @@ import de.markusbordihn.easynpc.data.dialog.DialogDataEntry;
 import de.markusbordihn.easynpc.data.dialog.DialogMetaData;
 import de.markusbordihn.easynpc.data.dialog.DialogScreenLayout;
 import de.markusbordihn.easynpc.data.dialog.DialogUtils;
-import de.markusbordihn.easynpc.data.render.EntityRenderConfig;
 import de.markusbordihn.easynpc.data.screen.AdditionalScreenData;
 import de.markusbordihn.easynpc.llm.LLMDialogResponseManager;
 import de.markusbordihn.easynpc.menu.dialog.DialogMenu;
@@ -47,30 +44,34 @@ import java.util.UUID;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.util.FormattedCharSequence;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.player.Inventory;
 
 public class DialogScreen<T extends DialogMenu> extends Screen<T, AdditionalScreenData> {
 
-  private static final int BUTTON_WIDTH = 126;
-  private static final int MIDDLE_BUTTON_WIDTH = 200;
-  private static final int LARGE_BUTTON_WIDTH = 250;
-  private static final int MAX_NUMBER_OF_PIXEL_PER_LINE = 180;
-  private static final int MAX_NUMBER_OF_DIALOG_LINES = 10;
   private static final int MAX_TOTAL_DIALOG_LINES = 100;
+  private static final int PORTRAIT_SIZE = 30; // Smaller portrait size
+  private static final int BAR_HEIGHT = 100;
+  private static final int PORTRAIT_AREA_WIDTH = 55; // Width reserved for each portrait
+  
   private static DialogScreenLayout dialogScreenLayout = DialogScreenLayout.UNKNOWN;
-  protected final ArrayList<Button> dialogButtons = new ArrayList<>();
+  protected final ArrayList<ModernButton> dialogButtons = new ArrayList<>();
   protected final Component dialogText;
   protected final DialogMetaData dialogMetaData;
-  protected Button dialogForwardButton = null;
-  protected Button dialogBackwardButton = null;
-  protected String dialog;
   protected Component dialogComponent;
   protected int numberOfDialogLines = 1;
-  protected int dialogPageIndex = 0;
-  private List<FormattedCharSequence> cachedDialogComponents = Collections.emptyList();
   
+  // Streaming text optimization
+  private List<FormattedCharSequence> cachedFullLines = Collections.emptyList();
+  private List<Integer> lineCharacterCounts = new ArrayList<>();
+  protected boolean isStreaming = false;
+  protected String rawDialogText = "";
+  protected long streamingStartTime = 0;
+  protected int streamingTick = 0;
+
   // LLM Chat UI elements
   protected EditBox llmChatInput = null;
   protected Button llmSendButton = null;
@@ -94,579 +95,447 @@ public class DialogScreen<T extends DialogMenu> extends Screen<T, AdditionalScre
     DialogScreen.dialogScreenLayout = dialogScreenLayout;
   }
 
-  protected void renderDialog(GuiGraphics guiGraphics) {
-    // Draw dialog background bobble.
-    int dialogTopPosition = topPos + 20;
-    switch (dialogScreenLayout) {
-      case COMPACT_TEXT_ONLY,
-      COMPACT_TEXT_WITH_ONE_BUTTON,
-      COMPACT_TEXT_WITH_TWO_BUTTONS,
-      COMPACT_TEXT_WITH_TWO_LARGE_BUTTONS,
-      COMPACT_TEXT_WITH_THREE_BUTTONS,
-      COMPACT_TEXT_WITH_FOUR_BUTTONS,
-      COMPACT_TEXT_WITH_FIVE_BUTTONS,
-      COMPACT_TEXT_WITH_SIX_BUTTONS:
-        Graphics.blit(
-            guiGraphics,
-            Constants.TEXTURE_DIALOG,
-            leftPos + 70,
-            dialogTopPosition,
-            0,
-            120,
-            205,
-            78);
-        break;
-      default:
-        Graphics.blit(
-            guiGraphics, Constants.TEXTURE_DIALOG, leftPos + 70, dialogTopPosition, 0, 0, 205, 118);
+  protected void renderDialog(GuiGraphics guiGraphics, float partialTicks) {
+    if (this.cachedFullLines.isEmpty()) {
+      return;
     }
 
-    // Distribute text for the across the lines and the give dialogPageIndex.
-    if (!this.cachedDialogComponents.isEmpty()) {
-      for (int line = this.dialogPageIndex * MAX_NUMBER_OF_DIALOG_LINES;
-          line < this.numberOfDialogLines
-              && line < MAX_NUMBER_OF_DIALOG_LINES * (this.dialogPageIndex + 1);
-          ++line) {
-        int textTopPosition =
-            dialogTopPosition
-                + 6
-                + (line - (this.dialogPageIndex * MAX_NUMBER_OF_DIALOG_LINES))
-                    * (font.lineHeight + 2);
-        FormattedCharSequence formattedCharSequence = this.cachedDialogComponents.get(line);
-        Text.drawString(
-            guiGraphics, this.font, formattedCharSequence, leftPos + 87, textTopPosition, 0);
+    int dialogTopPosition = this.height - BAR_HEIGHT + 20;
+    int dialogLeftPosition = PORTRAIT_AREA_WIDTH + 15; // Space after NPC portrait
+    int dialogRightMargin = PORTRAIT_AREA_WIDTH + 15; // Space before player portrait
+    int maxDialogWidth = this.width - dialogLeftPosition - dialogRightMargin;
+    
+    // Smooth character reveal based on time
+    long time = System.currentTimeMillis();
+    float elapsedSeconds = (time - this.streamingStartTime) / 1000.0f;
+    float currentRevealed = isStreaming ? 
+        Math.min(this.rawDialogText.length(), elapsedSeconds * 100.0f) : 
+        this.rawDialogText.length();
+    
+    int remainingToDraw = (int) currentRevealed;
+    int lineY = dialogTopPosition;
+
+    // Push pose for text rendering on top
+    guiGraphics.pose().pushPose();
+    guiGraphics.pose().translate(0, 0, 500);
+
+    for (int i = 0; i < this.cachedFullLines.size() && i < 6; i++) { // Limit to 6 visible lines
+      if (remainingToDraw <= 0) break;
+      
+      FormattedCharSequence line = this.cachedFullLines.get(i);
+      int lineLen = this.lineCharacterCounts.get(i);
+      
+      if (remainingToDraw >= lineLen) {
+        guiGraphics.drawString(this.font, line, dialogLeftPosition, lineY, 0xFFFFFFFF, true);
+        remainingToDraw -= lineLen;
+      } else {
+        guiGraphics.drawString(this.font, truncate(line, remainingToDraw), dialogLeftPosition, lineY, 0xFFFFFFFF, true);
+        remainingToDraw = 0;
       }
+      lineY += font.lineHeight + 2;
     }
+    
+    guiGraphics.pose().popPose();
+  }
+
+  private FormattedCharSequence truncate(FormattedCharSequence sequence, int length) {
+    return (sink) -> {
+      final int[] count = {0};
+      return sequence.accept((index, style, codePoint) -> {
+        if (count[0] >= length) return false;
+        count[0]++;
+        return sink.accept(index, style, codePoint);
+      });
+    };
   }
 
   private void setDialogText(DialogDataEntry dialogData) {
-    if (dialogData == null) {
-      return;
+    if (dialogData == null) return;
+    String text = dialogData.getDialogText(this.dialogMetaData);
+    if (text == null || text.isBlank()) return;
+
+    this.rawDialogText = text;
+    this.dialogComponent = TextComponent.getText(text);
+    this.isStreaming = true;
+    this.streamingStartTime = System.currentTimeMillis();
+    this.streamingTick = 0;
+
+    // Calculate available width for text (between portraits, leaving room for buttons on right)
+    int availableWidth = this.width - (PORTRAIT_AREA_WIDTH * 2) - 160;
+    this.cachedFullLines = this.font.split(this.dialogComponent, availableWidth);
+    this.lineCharacterCounts.clear();
+    for (FormattedCharSequence line : this.cachedFullLines) {
+      int[] len = {0};
+      line.accept((idx, style, cp) -> { len[0]++; return true; });
+      this.lineCharacterCounts.add(len[0]);
     }
-    String dialogText = dialogData.getDialogText(this.dialogMetaData);
-    if (dialogText == null || dialogText.isBlank()) {
-      return;
-    }
-
-    // Create dialog text component.
-    this.dialogComponent = TextComponent.getText(dialogText);
-
-    // Split dialog text to lines.
-    this.cachedDialogComponents =
-        this.font.split(this.dialogComponent, MAX_NUMBER_OF_PIXEL_PER_LINE);
-    this.numberOfDialogLines = Math.min(MAX_TOTAL_DIALOG_LINES, this.cachedDialogComponents.size());
-  }
-
-  private void addDialogButton(DialogButtonEntry dialogButtonEntry) {
-    if (dialogButtonEntry == null) {
-      return;
-    }
-
-    // Create dialog button text and limit the length based on the dialog screen layout.
-    int dialogButtonMaxTextLength =
-        switch (dialogScreenLayout) {
-          case COMPACT_TEXT_WITH_ONE_BUTTON,
-              TEXT_WITH_ONE_BUTTON,
-              TEXT_WITH_TWO_BUTTONS,
-              COMPACT_TEXT_WITH_THREE_BUTTONS,
-              TEXT_WITH_THREE_BUTTONS ->
-              41;
-          case COMPACT_TEXT_WITH_TWO_LARGE_BUTTONS -> 32;
-          default -> 22;
-        };
-
-    // Create dialog button.
-    TextButton dialogButton =
-        new TextButton(
-            this.leftPos + 70,
-            this.topPos + 55,
-            198,
-            dialogButtonEntry.getButtonName(dialogButtonMaxTextLength),
-            onPress -> {
-              // Action Event on button click.
-              if (this.getActionEventSet().hasActionEvent(ActionEventType.ON_BUTTON_CLICK)) {
-                NetworkMessageHandlerManager.getServerHandler()
-                    .executeActionEvent(this.getEasyNPCUUID(), ActionEventType.ON_BUTTON_CLICK);
-              }
-
-              // Custom action on button click.
-              if (dialogButtonEntry.hasActionData()) {
-                UUID buttonId = dialogButtonEntry.id();
-                NetworkMessageHandlerManager.getServerHandler()
-                    .executeDialogButtonAction(
-                        this.getEasyNPCUUID(), this.getDialogUUID(), buttonId);
-              } else {
-                this.onClose();
-              }
-            });
-
-    // Set dialog button visibility.
-    dialogButton.visible = dialogButtonEntry.name() != null && !dialogButtonEntry.name().isBlank();
-    
-    // Toggle Quest Button to Cancel if quest is already active
-    if (dialogButtonEntry.actionDataSet() != null && dialogButtonEntry.actionDataSet().hasActionData()) {
-        for (de.markusbordihn.easynpc.data.action.ActionDataEntry action : dialogButtonEntry.actionDataSet().getEntries()) {
-            if (action.actionDataType() == de.markusbordihn.easynpc.data.action.ActionDataType.OPEN_QUEST_DIALOG) {
-                UUID questId = action.targetUUID();
-                if (questId != null && de.markusbordihn.easynpc.client.quest.ClientQuestManager.hasQuest(questId)) {
-                        // Change button execution to Cancel action
-                        dialogButton.setMessage(Component.literal("§c取消任务"));
-                        if (dialogButton instanceof de.markusbordihn.easynpc.client.screen.components.CustomButton customButton) {
-                            customButton.setOnPress(onPress -> {
-                                NetworkHandlerManager.sendMessageToServer(
-                                    new de.markusbordihn.easynpc.network.message.server.CancelQuestMessage(questId)
-                                );
-                                this.onClose();
-                            });
-                        }
-                        // Ensure it is visible
-                        dialogButton.visible = true; 
-                        break; // Found matching quest action, no need to check others
-                }
-            }
-        }
-    }
-
-    this.dialogButtons.add(dialogButton);
-  }
-
-  private Button renderDialogButton(int buttonIndex, int width, int left, int top) {
-    Button dialogButton = this.dialogButtons.get(buttonIndex);
-    dialogButton.setWidth(width);
-    dialogButton.setX(left);
-    dialogButton.setY(top);
-    return this.addRenderableWidget(dialogButton);
-  }
-
-  private void renderDialogButtons() {
-    // Render menu buttons specific on layout, if needed.
-    switch (dialogScreenLayout) {
-      case COMPACT_TEXT_ONLY, TEXT_ONLY:
-        break;
-      case COMPACT_TEXT_WITH_ONE_BUTTON:
-        this.renderDialogButton(0, LARGE_BUTTON_WIDTH, this.leftPos + 18, this.topPos + 140);
-        break;
-      case COMPACT_TEXT_WITH_TWO_BUTTONS:
-        Button firstCompactDialogButton =
-            this.renderDialogButton(0, BUTTON_WIDTH, this.leftPos + 10, this.topPos + 140);
-        this.renderDialogButton(
-            1,
-            BUTTON_WIDTH,
-            firstCompactDialogButton.getX() + firstCompactDialogButton.getWidth() + 10,
-            firstCompactDialogButton.getY());
-        break;
-      case COMPACT_TEXT_WITH_TWO_LARGE_BUTTONS:
-        Button firstCompactLargeDialogButton =
-            this.renderDialogButton(0, MIDDLE_BUTTON_WIDTH, this.leftPos + 75, this.topPos + 115);
-        this.renderDialogButton(
-            1,
-            MIDDLE_BUTTON_WIDTH,
-            firstCompactLargeDialogButton.getX(),
-            firstCompactLargeDialogButton.getY() + firstCompactLargeDialogButton.getHeight() + 10);
-        break;
-      case TEXT_WITH_ONE_BUTTON:
-        this.renderDialogButton(0, LARGE_BUTTON_WIDTH, this.leftPos + 18, this.topPos + 170);
-        break;
-      case TEXT_WITH_TWO_BUTTONS:
-        Button firstTwoDialogButton =
-            this.renderDialogButton(0, LARGE_BUTTON_WIDTH, this.leftPos + 18, this.topPos + 145);
-        this.renderDialogButton(
-            1,
-            LARGE_BUTTON_WIDTH,
-            firstTwoDialogButton.getX(),
-            firstTwoDialogButton.getY() + firstTwoDialogButton.getHeight() + 10);
-        break;
-      case COMPACT_TEXT_WITH_THREE_BUTTONS, TEXT_WITH_THREE_BUTTONS:
-        Button firstThreeDialogButton =
-            this.renderDialogButton(0, LARGE_BUTTON_WIDTH, this.leftPos + 18, this.topPos + 140);
-        Button secondThreeDialogButton =
-            this.renderDialogButton(
-                1,
-                LARGE_BUTTON_WIDTH,
-                firstThreeDialogButton.getX(),
-                firstThreeDialogButton.getY() + firstThreeDialogButton.getHeight() + 5);
-        this.renderDialogButton(
-            2,
-            LARGE_BUTTON_WIDTH,
-            secondThreeDialogButton.getX(),
-            secondThreeDialogButton.getY() + secondThreeDialogButton.getHeight() + 5);
-        break;
-      case COMPACT_TEXT_WITH_FOUR_BUTTONS, TEXT_WITH_FOUR_BUTTONS:
-        Button firstFourDialogButton =
-            this.renderDialogButton(0, BUTTON_WIDTH, this.leftPos + 10, this.topPos + 150);
-        Button secondFourDialogButton =
-            this.renderDialogButton(
-                1,
-                BUTTON_WIDTH,
-                firstFourDialogButton.getX() + firstFourDialogButton.getWidth() + 10,
-                firstFourDialogButton.getY());
-        Button thirdFourDialogButton =
-            this.renderDialogButton(
-                2,
-                BUTTON_WIDTH,
-                firstFourDialogButton.getX(),
-                firstFourDialogButton.getY() + firstFourDialogButton.getHeight() + 10);
-        this.renderDialogButton(
-            3, BUTTON_WIDTH, secondFourDialogButton.getX(), thirdFourDialogButton.getY());
-        break;
-      case COMPACT_TEXT_WITH_FIVE_BUTTONS, TEXT_WITH_FIVE_BUTTONS:
-        Button firstFiveDialogButton =
-            this.renderDialogButton(0, BUTTON_WIDTH, this.leftPos + 10, this.topPos + 140);
-        Button secondFiveDialogButton =
-            this.renderDialogButton(
-                1,
-                BUTTON_WIDTH,
-                firstFiveDialogButton.getX() + firstFiveDialogButton.getWidth() + 10,
-                firstFiveDialogButton.getY());
-        Button thirdFiveDialogButton =
-            this.renderDialogButton(
-                2,
-                BUTTON_WIDTH,
-                firstFiveDialogButton.getX(),
-                firstFiveDialogButton.getY() + firstFiveDialogButton.getHeight() + 5);
-        this.renderDialogButton(
-            3, BUTTON_WIDTH, secondFiveDialogButton.getX(), thirdFiveDialogButton.getY());
-        this.renderDialogButton(
-            4,
-            BUTTON_WIDTH,
-            firstFiveDialogButton.getX(),
-            thirdFiveDialogButton.getY() + thirdFiveDialogButton.getHeight() + 5);
-        break;
-      case COMPACT_TEXT_WITH_SIX_BUTTONS, TEXT_WITH_SIX_BUTTONS:
-        Button firstSixDialogButton =
-            this.renderDialogButton(0, BUTTON_WIDTH, this.leftPos + 10, this.topPos + 140);
-        Button secondSixDialogButton =
-            this.renderDialogButton(
-                1,
-                BUTTON_WIDTH,
-                firstSixDialogButton.getX() + firstSixDialogButton.getWidth() + 10,
-                firstSixDialogButton.getY());
-        Button thirdSixDialogButton =
-            this.renderDialogButton(
-                2,
-                BUTTON_WIDTH,
-                firstSixDialogButton.getX(),
-                firstSixDialogButton.getY() + firstSixDialogButton.getHeight() + 5);
-        this.renderDialogButton(
-            3, BUTTON_WIDTH, secondSixDialogButton.getX(), thirdSixDialogButton.getY());
-        Button fifthSixDialogButton =
-            this.renderDialogButton(
-                4,
-                BUTTON_WIDTH,
-                firstSixDialogButton.getX(),
-                thirdSixDialogButton.getY() + thirdSixDialogButton.getHeight() + 5);
-        this.renderDialogButton(
-            5, BUTTON_WIDTH, secondSixDialogButton.getX(), fifthSixDialogButton.getY());
-        break;
-      default:
-        log.warn(
-            "Unknown dialog screen layout {} for {} with {} line(s)",
-            dialogScreenLayout,
-            this.getDialogDataSet(),
-            this.numberOfDialogLines);
-    }
-  }
-
-  private void defineDialogNavigationButtons() {
-    int dialogNavigationButtonTopPosition =
-        dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_ONLY
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_ONE_BUTTON
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_TWO_BUTTONS
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_TWO_LARGE_BUTTONS
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_THREE_BUTTONS
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_FOUR_BUTTONS
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_FIVE_BUTTONS
-                || dialogScreenLayout == DialogScreenLayout.COMPACT_TEXT_WITH_SIX_BUTTONS
-            ? this.topPos + 95
-            : this.topPos + 136;
-
-    // Forward Button
-    this.dialogForwardButton =
-        this.addRenderableWidget(
-            new SpriteButton(
-                this.leftPos + 257,
-                dialogNavigationButtonTopPosition,
-                12,
-                12,
-                Constants.TEXTURE_DIALOG,
-                206,
-                2,
-                12,
-                12,
-                onPress -> {
-                  this.dialogPageIndex =
-                      this.dialogPageIndex < this.numberOfDialogLines / MAX_NUMBER_OF_DIALOG_LINES
-                          ? this.dialogPageIndex + 1
-                          : 0;
-                  if (this.dialogBackwardButton != null) {
-                    this.dialogBackwardButton.active = this.dialogPageIndex > 0;
-                  }
-                  if (this.dialogForwardButton != null) {
-                    this.dialogForwardButton.active =
-                        this.dialogPageIndex
-                            < this.numberOfDialogLines / MAX_NUMBER_OF_DIALOG_LINES;
-                  }
-                }));
-    this.dialogForwardButton.active =
-        this.dialogPageIndex < this.numberOfDialogLines / MAX_NUMBER_OF_DIALOG_LINES;
-
-    // Backward Button
-    this.dialogBackwardButton =
-        this.addRenderableWidget(
-            new SpriteButton(
-                this.leftPos + 245,
-                dialogNavigationButtonTopPosition,
-                12,
-                12,
-                Constants.TEXTURE_DIALOG,
-                207,
-                28,
-                12,
-                12,
-                onPress -> {
-                  this.dialogPageIndex =
-                      this.dialogPageIndex > 0
-                          ? this.dialogPageIndex - 1
-                          : this.numberOfDialogLines / MAX_NUMBER_OF_DIALOG_LINES;
-                  if (this.dialogForwardButton != null) {
-                    this.dialogForwardButton.active =
-                        this.dialogPageIndex
-                            < this.numberOfDialogLines / MAX_NUMBER_OF_DIALOG_LINES;
-                  }
-                  if (this.dialogBackwardButton != null) {
-                    this.dialogBackwardButton.active = this.dialogPageIndex > 0;
-                  }
-                }));
-    this.dialogBackwardButton.active = this.dialogPageIndex > 0;
+    this.numberOfDialogLines = this.cachedFullLines.size();
   }
 
   @Override
   public void init() {
+    this.clearWidgets();
+    this.dialogButtons.clear();
     super.init();
-
-    // Basic Position
-    this.titleLabelX = 10;
-    this.titleLabelY = 8;
-
-    // Close Button
-    this.closeButton.setX(this.leftPos + this.imageWidth - 13);
-    this.closeButton.setY(this.topPos + 4);
-
-    // Dialog Screen Layout
+    if (this.closeButton != null) this.closeButton.visible = false;
+    
     setDialogScreenLayout(DialogUtils.getDialogScreenLayout(this.getDialogData(), this.font));
-    log.debug(
-        "Prepare Dialog Screen {} with page index {} for {} with {} line(s) and layout {}",
-        this.getDialogUUID(),
-        this.getPageIndex(),
-        this.getDialogDataSet(),
-        this.numberOfDialogLines,
-        dialogScreenLayout);
-
-    // Set dialog text
     this.setDialogText(this.getDialogData());
-    log.debug("Dialog with {} line(s) and layout {}", this.numberOfDialogLines, dialogScreenLayout);
-
-    // If the dialog has more than 10 lines, add a button to switch between pages.
-    if (this.numberOfDialogLines > MAX_NUMBER_OF_DIALOG_LINES) {
-      this.defineDialogNavigationButtons();
-    }
-
-    // Action Event for open dialog.
-    if (this.getActionEventSet().hasActionEvent(ActionEventType.ON_OPEN_DIALOG)) {
-      NetworkMessageHandlerManager.getServerHandler()
-          .executeActionEvent(this.getEasyNPCUUID(), ActionEventType.ON_OPEN_DIALOG);
-    }
-
-    // Get and render dialog buttons, if any.
+    
     if (this.hasDialogData() && this.getDialogData().getNumberOfDialogButtons() > 0) {
-      this.dialogButtons.ensureCapacity(this.getDialogData().getNumberOfDialogButtons());
       for (DialogButtonEntry dialogButtonEntry : this.getDialogData().getDialogButtons()) {
-        if (dialogButtonEntry == null) {
-          continue;
-        }
-        this.addDialogButton(dialogButtonEntry);
+        if (dialogButtonEntry == null) continue;
+        addDialogButton(dialogButtonEntry);
       }
-      this.renderDialogButtons();
     }
-
-    // Check if LLM is enabled for this NPC and add chat input
+    this.repositionButtons();
+    
     if (this.getAdditionalScreenData() != null) {
       this.llmEnabled = this.getDialogDataSet() != null && this.getDialogDataSet().isLLMEnabled();
     }
+    if (this.llmEnabled) initLLMChatUI();
+  }
+
+  private void addDialogButton(DialogButtonEntry dialogButtonEntry) {
+    if (dialogButtonEntry == null) return;
+    Component buttonName = dialogButtonEntry.getButtonName(28);
+    ModernButton dialogButton = new ModernButton(0, 0, 120, 18, buttonName, onPress -> {
+      if (this.getActionEventSet().hasActionEvent(ActionEventType.ON_BUTTON_CLICK)) {
+        NetworkMessageHandlerManager.getServerHandler().executeActionEvent(this.getEasyNPCUUID(), ActionEventType.ON_BUTTON_CLICK);
+      }
+      if (dialogButtonEntry.hasActionData()) {
+        NetworkMessageHandlerManager.getServerHandler().executeDialogButtonAction(this.getEasyNPCUUID(), this.getDialogUUID(), dialogButtonEntry.id());
+      } else {
+        this.onClose();
+      }
+    });
+    this.dialogButtons.add(dialogButton);
+  }
+
+  private void repositionButtons() {
+    int buttonWidth = 110;
+    int buttonHeight = 18;
+    int spacing = 4;
     
-    if (this.llmEnabled) {
-      initLLMChatUI();
+    // Position buttons on the right side of the screen to avoid overlapping text
+    int xPos = this.width - PORTRAIT_AREA_WIDTH - buttonWidth - 30;
+    
+    // Position buttons from the bottom up
+    int bottomY = this.height - 10 - buttonHeight;
+    
+    for (int i = 0; i < this.dialogButtons.size(); i++) {
+      ModernButton btn = this.dialogButtons.get(i);
+      btn.setWidth(buttonWidth);
+      btn.setHeight(buttonHeight);
+      btn.setX(xPos);
+      btn.setY(bottomY - (i * (buttonHeight + spacing)));
+      this.addRenderableWidget(btn);
     }
   }
 
-  /**
-   * Initialize LLM chat UI elements - text input and send button.
-   */
   protected void initLLMChatUI() {
-    int inputWidth = 180;
+    int inputWidth = 160;
     int inputHeight = 18;
-    int sendButtonWidth = 50;
-    int inputY = this.topPos + this.imageHeight - 35;
-    int inputX = this.leftPos + 15;
+    int sendWidth = 45;
+    int y = this.height - 8 - inputHeight;
+    int x = (this.width / 2) - ((inputWidth + sendWidth + 5) / 2);
 
-    // Create text input field
-    this.llmChatInput = new EditBox(
-        this.font,
-        inputX,
-        inputY,
-        inputWidth,
-        inputHeight,
-        Component.literal("Chat..."));
+    this.llmChatInput = new EditBox(this.font, x, y, inputWidth, inputHeight, Component.literal("Chat..."));
     this.llmChatInput.setMaxLength(256);
     this.llmChatInput.setHint(Component.literal("Type message..."));
-    this.llmChatInput.setCanLoseFocus(true);
-    this.llmChatInput.setFocused(true);
+    this.llmChatInput.setBordered(true);
     this.addRenderableWidget(this.llmChatInput);
 
-    // Create send button
-    this.llmSendButton = Button.builder(
-        Component.literal("Send"),
-        onPress -> sendLLMMessage())
-        .bounds(inputX + inputWidth + 5, inputY, sendButtonWidth, inputHeight + 2)
+    this.llmSendButton = Button.builder(Component.literal("Send"), onPress -> sendLLMMessage())
+        .bounds(x + inputWidth + 5, y, sendWidth, inputHeight)
         .build();
     this.addRenderableWidget(this.llmSendButton);
   }
 
-  /**
-   * Send LLM chat message to server.
-   */
   protected void sendLLMMessage() {
-    if (this.llmChatInput == null || this.llmChatInput.getValue().trim().isEmpty()) {
-      return;
-    }
-
+    if (this.llmChatInput == null || this.llmChatInput.getValue().trim().isEmpty()) return;
     String message = this.llmChatInput.getValue().trim();
-    
-    // Mark that we're waiting for a response
     this.waitingForLLMResponse = true;
-    
-    // Show "thinking..." text while waiting
     updateDialogTextDirect("...");
-    
-    // Send network message to server
     NetworkHandlerManager.sendMessageToServer(new LLMChatRequestMessage(this.getEasyNPCUUID(), message));
-
-    // Clear the input
     this.llmChatInput.setValue("");
     this.llmChatInput.setFocused(true);
   }
-  
-  /**
-   * Update the dialog text directly with a new string.
-   */
+
   protected void updateDialogTextDirect(String text) {
+    this.rawDialogText = text;
     this.dialogComponent = Component.literal(text);
-    this.cachedDialogComponents = this.font.split(this.dialogComponent, MAX_NUMBER_OF_PIXEL_PER_LINE);
-    this.numberOfDialogLines = Math.min(MAX_TOTAL_DIALOG_LINES, this.cachedDialogComponents.size());
-    this.dialogPageIndex = 0;
+    this.isStreaming = true;
+    this.streamingStartTime = System.currentTimeMillis();
+    this.streamingTick = 0;
+    
+    int availableWidth = this.width - (PORTRAIT_AREA_WIDTH * 2) - 160;
+    this.cachedFullLines = this.font.split(this.dialogComponent, availableWidth);
+    this.lineCharacterCounts.clear();
+    for (FormattedCharSequence line : this.cachedFullLines) {
+      int[] len = {0};
+      line.accept((idx, style, cp) -> { len[0]++; return true; });
+      this.lineCharacterCounts.add(len[0]);
+    }
+  }
+
+  @Override
+  public void updateTick() {
+    super.updateTick();
+    if (this.isStreaming) {
+      this.streamingTick++;
+      float elapsedSeconds = (System.currentTimeMillis() - this.streamingStartTime) / 1000.0f;
+      if (elapsedSeconds * 100.0f >= this.rawDialogText.length()) {
+        this.isStreaming = false;
+      }
+    }
   }
 
   @Override
   public void render(GuiGraphics guiGraphics, int x, int y, float partialTicks) {
-    if (this.getEasyNPC() == null) {
-      return;
-    }
+    if (this.getEasyNPC() == null) return;
     
-    // Poll for LLM response updates
+    // LLM Handling
     if (this.llmEnabled && LLMDialogResponseManager.hasPendingResponse(this.getEasyNPCUUID())) {
-      String streamedText = LLMDialogResponseManager.getStreamedText(this.getEasyNPCUUID(), 2);
+      String streamedText = LLMDialogResponseManager.getStreamedText(this.getEasyNPCUUID(), 3);
       if (streamedText != null && !streamedText.equals(this.lastLLMResponse)) {
         this.lastLLMResponse = streamedText;
         updateDialogTextDirect(streamedText);
       }
-      
       if (LLMDialogResponseManager.isStreamingComplete(this.getEasyNPCUUID())) {
         this.waitingForLLMResponse = false;
       }
     }
     
+    // 1. Semi-transparent dark overlay
+    guiGraphics.fill(0, 0, this.width, this.height, 0x88000000);
+
+    // 2. Main dialog bar with gradient effect
+    int barY = this.height - BAR_HEIGHT;
+    
+    // Gradient background for bar
+    for (int i = 0; i < 8; i++) {
+      int alpha = 0x10 + (i * 0x15);
+      guiGraphics.fill(0, barY - 8 + i, this.width, barY - 7 + i, (alpha << 24));
+    }
+    
+    // Main bar background
+    guiGraphics.fill(0, barY, this.width, this.height, 0xEE1a1a1a);
+    
+    // Top border with accent
+    guiGraphics.fill(0, barY, this.width, barY + 2, 0xFF00DDAA);
+    guiGraphics.fill(0, barY + 2, this.width, barY + 3, 0xFF008866);
+
+    // 3. Portrait frames
+    renderPortraitFrames(guiGraphics);
+
+    // 4. Speaker name tag
+    renderSpeakerTag(guiGraphics, barY);
+
+    // 5. GUI elements (buttons, input)
     super.render(guiGraphics, x, y, partialTicks);
 
+    // 6. Portraits (smaller, cleaner)
+    renderPortraits(guiGraphics, x, y, partialTicks);
+
+    // 7. Dialog text (highest priority)
+    renderDialog(guiGraphics, partialTicks);
+    
+    // 8. Streaming indicator
+    if (this.isStreaming || this.waitingForLLMResponse) {
+      renderStreamingIndicator(guiGraphics, partialTicks);
+    }
+  }
+
+  private void renderPortraitFrames(GuiGraphics guiGraphics) {
+    int barY = this.height - BAR_HEIGHT;
+    int frameSize = PORTRAIT_AREA_WIDTH + 10;
+    
+    // NPC portrait frame (left)
+    int npcFrameX = 5;
+    int npcFrameY = barY + 5;
+    guiGraphics.fill(npcFrameX, npcFrameY, npcFrameX + frameSize, this.height - 5, 0x66000000);
+    guiGraphics.renderOutline(npcFrameX, npcFrameY, frameSize, this.height - 5 - npcFrameY, 0xFF00DDAA);
+    
+    // Player portrait frame (right)
+    int playerFrameX = this.width - frameSize - 5;
+    guiGraphics.fill(playerFrameX, npcFrameY, playerFrameX + frameSize, this.height - 5, 0x66000000);
+    guiGraphics.renderOutline(playerFrameX, npcFrameY, frameSize, this.height - 5 - npcFrameY, 0xFF00DDAA);
+  }
+
+  private void renderSpeakerTag(GuiGraphics guiGraphics, int barY) {
+    String speakerName = this.getEasyNPC().getLivingEntity().getName().getString();
+    int tagPadding = 8;
+    int tagWidth = this.font.width(speakerName) + tagPadding * 2;
+    int tagHeight = 14;
+    int tagX = PORTRAIT_AREA_WIDTH + 15;
+    int tagY = barY - tagHeight + 2;
+    
+    // Tag background with gradient
+    guiGraphics.fill(tagX, tagY, tagX + tagWidth, barY + 2, 0xEE1a1a1a);
+    guiGraphics.fill(tagX, tagY, tagX + tagWidth, tagY + 1, 0xFF00DDAA);
+    guiGraphics.fill(tagX, tagY, tagX + 1, barY + 2, 0xFF00DDAA);
+    guiGraphics.fill(tagX + tagWidth - 1, tagY, tagX + tagWidth, barY + 2, 0xFF00DDAA);
+    
+    // Speaker name with accent color
+    guiGraphics.drawString(this.font, speakerName, tagX + tagPadding, tagY + 3, 0xFF00FFCC, false);
+  }
+
+  private void renderStreamingIndicator(GuiGraphics guiGraphics, float partialTicks) {
+    float time = System.currentTimeMillis() / 1000.0f * 5.0f;
+    int dotCount = 3;
+    int baseX = this.width - PORTRAIT_AREA_WIDTH - 20;
+    int baseY = this.height - BAR_HEIGHT + 12;
+    
+    for (int i = 0; i < dotCount; i++) {
+      float offset = Mth.sin(time + i * 0.5f) * 3;
+      int alpha = (int) ((Mth.sin(time + i * 0.5f) + 1) * 0.5f * 200 + 55);
+      int color = (alpha << 24) | 0x00DDAA;
+      guiGraphics.fill(baseX + i * 8, baseY - (int) offset, baseX + i * 8 + 4, baseY - (int) offset + 4, color);
+    }
+  }
+
+  private void renderPortraits(GuiGraphics guiGraphics, int x, int y, float pt) {
+    long time = System.currentTimeMillis();
+    float animTime = time / 1000.0f;
+    int barY = this.height - BAR_HEIGHT;
+    
+    // NPC Portrait (left side, smaller)
+    int npcX = 5 + (PORTRAIT_AREA_WIDTH + 10) / 2;
+    int npcTop = barY + 8;
+    int npcBottom = this.height - 8;
+    
+    // Subtle idle animation using time for smooth movement
+    float npcHeadBob = Mth.sin(animTime * 2.0f) * 1.5f;
+    float npcHeadTurn = isStreaming ? Mth.sin(animTime * 6.0f) * 5.0f : Mth.sin(animTime * 1.5f) * 2.0f;
+    
     guiGraphics.pose().pushPose();
-    guiGraphics.pose().translate(0, 0, 1000);
-
-    EntityScreenRenderer.renderEntity(
-        guiGraphics,
-        this.getEasyNPC(),
-        EntityRenderConfig.dialog(
-            this.leftPos + 40,
-            this.topPos + 80 + this.getEasyNPC().getEasyNPCDialogData().getEntityDialogTop(),
-            this.getEasyNPC().getEasyNPCDialogData().getEntityDialogScaling()),
-        this.xMouse,
-        this.yMouse);
-
+    guiGraphics.pose().translate(0, 0, 200);
+    
+    // Ensure 3D rendering state is correct for GUI
+    RenderSystem.enableDepthTest();
+    Lighting.setupForEntityInInventory();
+    
+    InventoryScreen.renderEntityInInventoryFollowsMouse(
+        guiGraphics, 
+        npcX - 25, npcTop, 
+        npcX + 25, npcBottom,
+        PORTRAIT_SIZE, 
+        0.0F, 
+        (float) npcX - (npcHeadTurn * 10.0f), 
+        (float) (npcTop + npcBottom) / 2 + (npcHeadBob * 10.0f),
+        this.getEasyNPC().getLivingEntity()
+    );
+    
     guiGraphics.pose().popPose();
 
-    // Render Dialog
-    renderDialog(guiGraphics);
+    // Player Portrait (right side, smaller)
+    if (this.minecraft != null && this.minecraft.player != null) {
+      int playerX = this.width - 5 - (PORTRAIT_AREA_WIDTH + 10) / 2;
+      int playerTop = barY + 8;
+      int playerBottom = this.height - 8;
+      
+      // Check if hovering over buttons for reaction
+      boolean isHoveringButton = false;
+      for (ModernButton btn : this.dialogButtons) {
+        if (btn.isHovered()) {
+          isHoveringButton = true;
+          break;
+        }
+      }
+      
+      float playerHeadBob = Mth.sin(animTime * 2.5f) * 1.2f;
+      float playerHeadTurn = isHoveringButton ? Mth.sin(animTime * 8.0f) * 4.0f : Mth.sin(animTime * 1.2f) * 1.5f;
+      
+      guiGraphics.pose().pushPose();
+      guiGraphics.pose().translate(0, 0, 200);
+      
+      InventoryScreen.renderEntityInInventoryFollowsMouse(
+          guiGraphics, 
+          playerX - 25, playerTop, 
+          playerX + 25, playerBottom,
+          PORTRAIT_SIZE, 
+          0.0F, 
+          (float) playerX - (playerHeadTurn * 10.0f), 
+          (float) (playerTop + playerBottom) / 2 + (playerHeadBob * 10.0f),
+          this.minecraft.player
+      );
+      
+      guiGraphics.pose().popPose();
+    }
   }
 
   @Override
-  protected void renderLabels(GuiGraphics guiGraphics, int x, int y) {
-    Text.drawString(
-        guiGraphics,
-        this.font,
-        this.title,
-        this.leftPos + this.titleLabelX,
-        this.topPos + this.titleLabelY);
+  public boolean mouseClicked(double mouseX, double mouseY, int button) {
+    if (this.isStreaming) {
+      this.isStreaming = false;
+      this.streamingStartTime = System.currentTimeMillis() - 100000;
+      return true;
+    }
+    return super.mouseClicked(mouseX, mouseY, button);
   }
 
   @Override
-  protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {
-    switch (dialogScreenLayout) {
-      case UNKNOWN:
-        break;
-      case COMPACT_TEXT_ONLY,
-      COMPACT_TEXT_WITH_ONE_BUTTON,
-      COMPACT_TEXT_WITH_TWO_BUTTONS,
-      COMPACT_TEXT_WITH_TWO_LARGE_BUTTONS:
-        // Compact background
-        Graphics.blit(
-            guiGraphics, Constants.TEXTURE_DEMO_BACKGROUND, leftPos, topPos, 0, 0, 200, 170);
-        Graphics.blit(
-            guiGraphics, Constants.TEXTURE_DEMO_BACKGROUND, leftPos + 200, topPos, 165, 0, 85, 170);
-        break;
-      default:
-        // Full background
-        Graphics.blit(
-            guiGraphics, Constants.TEXTURE_DEMO_BACKGROUND, leftPos, topPos, 0, 0, 210, 140);
-        Graphics.blit(
-            guiGraphics, Constants.TEXTURE_DEMO_BACKGROUND, leftPos + 200, topPos, 165, 0, 85, 140);
+  protected void renderLabels(GuiGraphics guiGraphics, int x, int y) {}
+  
+  @Override
+  protected void renderBg(GuiGraphics guiGraphics, float partialTicks, int mouseX, int mouseY) {}
+  
+  @Override
+  public void renderBackground(GuiGraphics guiGraphics, int x, int y, float partialTicks) {}
 
-        Graphics.blit(
-            guiGraphics, Constants.TEXTURE_DEMO_BACKGROUND, leftPos, topPos + 70, 0, 30, 210, 140);
-        Graphics.blit(
-            guiGraphics,
-            Constants.TEXTURE_DEMO_BACKGROUND,
-            leftPos + 200,
-            topPos + 70,
-            165,
-            30,
-            85,
-            140);
+  private class ModernButton extends TextButton {
+    public ModernButton(int x, int y, int width, int height, Component label, OnPress onPress) {
+      super(x, y, width, height, label, onPress);
+    }
+    
+    @Override
+    public void renderWidget(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
+      boolean hovered = isHoveredOrFocused();
+      
+      // Background colors
+      int bgColor = hovered ? 0xFFFFFFFF : 0xDD2a2a2a;
+      int textColor = hovered ? 0xFF1a1a1a : 0xFFFFFFFF;
+      int accentColor = 0xFF00DDAA;
+      int borderColor = hovered ? accentColor : 0xFF444444;
+      
+      // Draw button background
+      guiGraphics.fill(getX(), getY(), getX() + width, getY() + height, bgColor);
+      
+      // Draw border
+      guiGraphics.renderOutline(getX(), getY(), width, height, borderColor);
+      
+      // Draw accent line on left when hovered
+      if (hovered) {
+        guiGraphics.fill(getX(), getY(), getX() + 3, getY() + height, accentColor);
+        // Subtle glow effect
+        guiGraphics.fill(getX() + 3, getY(), getX() + 4, getY() + height, 0x6600DDAA);
+      }
+      
+      // Draw centered text
+      int textX = getX() + (hovered ? 4 : 0) + (width - (hovered ? 4 : 0)) / 2;
+      int textY = getY() + (height - 8) / 2;
+      guiGraphics.drawCenteredString(font, getMessage(), textX, textY, textColor);
+      
+      // Draw arrow indicator when hovered
+      if (hovered) {
+        guiGraphics.drawString(font, "▶", getX() + width - 12, textY, accentColor, false);
+      }
     }
   }
 
   @Override
   public void onClose() {
-    // Action Event for close dialog.
     if (this.getActionEventSet().hasActionEvent(ActionEventType.ON_CLOSE_DIALOG)) {
-      NetworkMessageHandlerManager.getServerHandler()
-          .executeActionEvent(this.getEasyNPCUUID(), ActionEventType.ON_CLOSE_DIALOG);
+      NetworkMessageHandlerManager.getServerHandler().executeActionEvent(this.getEasyNPCUUID(), ActionEventType.ON_CLOSE_DIALOG);
     }
     super.onClose();
   }
 
   @Override
   public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-    // Handle Enter key for LLM chat
     if (this.llmEnabled && this.llmChatInput != null && this.llmChatInput.isFocused()) {
-      if (keyCode == 257 || keyCode == 335) { // Enter or numpad Enter
+      if (keyCode == 257 || keyCode == 335) { // Enter or Numpad Enter
         sendLLMMessage();
         return true;
       }

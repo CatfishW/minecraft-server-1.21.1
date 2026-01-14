@@ -1,0 +1,457 @@
+{
+    "name": "§dChloe Price",
+    "entityType": "easy_npc:humanoid",
+    "description": "Once a straight-A student, Chloe spiraled into rebellion after her father's death and best friend Max leaving town. She's been obsessively searching for her missing friend Rachel Amber.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7810afe7d3077869.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§c瞧谁来了，又一个想窥探我悲惨人生的家伙？§r\n（她靠在墙上，眯着眼睛打量你，手指不耐烦地敲打着胳膊）",
+            "buttons": [
+                {
+                    "label": "嘿，我只是路过。你看起来很…特别？",
+                    "action": "SHOW_DIALOG:chloe_intro",
+                    "id": "btn_main_1"
+                },
+                {
+                    "label": "听说你在找人？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_main_2"
+                },
+                {
+                    "label": "你的生活看起来一团糟，怎么了？",
+                    "action": "SHOW_DIALOG:current_life",
+                    "id": "btn_main_3"
+                },
+                {
+                    "label": "算了，回头再说。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_main_4"
+                }
+            ]
+        },
+        "chloe_intro": {
+            "greeting": "§6‘特别’？§r 哈，你可以直接说我是个穿着破洞牛仔裤、头发染得乱七八糟的怪胎。我叫Chloe，Chloe Price。如果你不是条子或者我那个混蛋继父派来的，我们或许能聊聊。",
+            "buttons": [
+                {
+                    "label": "你提到继父？听起来关系不太好。",
+                    "action": "SHOW_DIALOG:backstory_david",
+                    "id": "btn_intro_1"
+                },
+                {
+                    "label": "你为什么这么…防备？",
+                    "action": "SHOW_DIALOG:backstory_loss",
+                    "id": "btn_intro_2"
+                },
+                {
+                    "label": "你的朋友呢？总不会一个人混吧。",
+                    "action": "SHOW_DIALOG:secret_rachel_surface",
+                    "id": "btn_intro_3"
+                },
+                {
+                    "label": "嗯，保持你的风格挺好。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_intro_4"
+                }
+            ]
+        },
+        "backstory_david": {
+            "greeting": "§cDavid？§r那个妄想狂控制狂军事宅？他娶了我妈，然后就以为能接管我的人生。在我爸去世后…（她声音低了下去，变得尖锐）他现在整天在家里装摄像头，监视我的一举一动。真他妈受够了。",
+            "buttons": [
+                {
+                    "label": "你父亲的事…抱歉提起。",
+                    "action": "SHOW_DIALOG:backstory_dad_detail",
+                    "id": "btn_david_1"
+                },
+                {
+                    "label": "摄像头？这太过分了。",
+                    "action": "SHOW_DIALOG:current_david_spy",
+                    "id": "btn_david_2"
+                },
+                {
+                    "label": "你需要反击，不能老被他压着。",
+                    "action": "SHOW_DIALOG:quest_david_conflict",
+                    "id": "btn_david_3"
+                },
+                {
+                    "label": "（默默听着，不发表评论）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_david_4"
+                }
+            ]
+        },
+        "backstory_dad_detail": {
+            "greeting": "（她踢了踢脚边的碎石，语气变得少见地沉闷）\nWilliam…我爸。车祸。在我十四岁那年。一切就从那时候开始他妈的全完了。然后Max，我最好的朋友，她全家搬去了西雅图，连个像样的告别都没有。（她突然提高音量）§e所以别跟我提什么‘都会好起来的’屁话！§r",
+            "buttons": [
+                {
+                    "label": "所以你才变成现在这样…",
+                    "action": "SHOW_DIALOG:backstory_rebel_cause",
+                    "id": "btn_dad_1"
+                },
+                {
+                    "label": "Max有联系你吗？",
+                    "action": "SHOW_DIALOG:backstory_max_anger",
+                    "id": "btn_dad_2"
+                },
+                {
+                    "label": "（递给她一块在附近找到的奇特矿石）这个…或许能让你感觉好点？",
+                    "action": "SHOW_DIALOG:secret_trust_gesture",
+                    "id": "btn_dad_3"
+                }
+            ]
+        },
+        "backstory_rebel_cause": {
+            "greeting": "§6‘变成这样’？§r 对，优等生Chloe Price死了，跟她爸一起埋了。现在这个是…幸存者。翘课、纹身、跟 Frank 那种人混在一起…（苦笑）至少这样我感觉还活着，还能感觉到点什么，哪怕是愤怒。",
+            "buttons": [
+                {
+                    "label": "Frank？那个传闻中的药剂师？",
+                    "action": "SHOW_DIALOG:current_frank_deal",
+                    "id": "btn_rebel_1"
+                },
+                {
+                    "label": "你难道不想念以前的生活吗？",
+                    "action": "SHOW_DIALOG:secret_vulnerable_moment",
+                    "id": "btn_rebel_2",
+                    "requires": [
+                        "trust_level_2"
+                    ]
+                },
+                {
+                    "label": "我理解。愤怒比空虚好受。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_rebel_3"
+                }
+            ]
+        },
+        "current_life": {
+            "greeting": "§c一团糟？§r 这可是客气的说法。我在找Rachel Amber，她是我…朋友。失踪了。没人他妈在乎，除了我。警察屁用没有，David觉得她只是‘逃家了’，而我现在到处碰壁。",
+            "buttons": [
+                {
+                    "label": "Rachel Amber？详细说说。",
+                    "action": "SHOW_DIALOG:quest_rachel_detail",
+                    "id": "btn_life_1"
+                },
+                {
+                    "label": "你有什么线索吗？",
+                    "action": "SHOW_DIALOG:current_clues",
+                    "id": "btn_life_2"
+                },
+                {
+                    "label": "你觉得她可能在哪？",
+                    "action": "SHOW_DIALOG:secret_rachel_theories",
+                    "id": "btn_life_3",
+                    "requires": [
+                        "trust_level_1"
+                    ]
+                },
+                {
+                    "label": "这听起来很危险。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_life_4"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（她猛地站直身体，眼神变得锐利）\n§a你怎么知道？§r…算了，无所谓。对，Rachel。她金发，笑容能点亮整个房间，比这鬼镇子里的任何人都要真实。她已经失踪太久了。你…你想帮忙？还是只是来打听八卦的？",
+            "buttons": [
+                {
+                    "label": "我想帮忙。告诉我该怎么做。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:f5d129fc-fca2-47e8-892c-5b2cd4c5ff07,52d5816c-89be-4296-9dbd-383d854140c8,debc0200-13e7-4113-94b9-eef16d2217b2,bb711fbe-dcf1-43e4-81f2-45ad3bfcdc89,49f01a03-ac13-42b6-a92a-ad9b443fff8f",
+                    "id": "btn_quest_accept"
+                },
+                {
+                    "label": "我有点好奇，但不确定要不要卷进来。",
+                    "action": "SHOW_DIALOG:quest_hesitation",
+                    "id": "btn_quest_hesitate"
+                },
+                {
+                    "label": "这听起来像是警察的事。",
+                    "action": "SHOW_DIALOG:chloe_intro",
+                    "id": "btn_quest_refuse"
+                }
+            ]
+        },
+        "quest_hesitation": {
+            "greeting": "（她嗤笑一声，但眼里闪过一丝失望）\n§6随你便。§r 又不是第一次被晾在一边了。但如果你改变主意…Rachel deserves better than being forgotten.（她转身作势要走）",
+            "buttons": [
+                {
+                    "label": "等等！我加入。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:f5d129fc-fca2-47e8-892c-5b2cd4c5ff07,52d5816c-89be-4296-9dbd-383d854140c8,debc0200-13e7-4113-94b9-eef16d2217b2,bb711fbe-dcf1-43e4-81f2-45ad3bfcdc89,49f01a03-ac13-42b6-a92a-ad9b443fff8f",
+                    "id": "btn_hesitate_accept"
+                },
+                {
+                    "label": "我需要了解更多。她对你为什么这么重要？",
+                    "action": "SHOW_DIALOG:secret_rachel_true",
+                    "id": "btn_hesitate_deeper",
+                    "requires": [
+                        "trust_level_3",
+                        "completed_quest_1"
+                    ]
+                },
+                {
+                    "label": "抱歉，Chloe。保重。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_hesitate_leave"
+                }
+            ]
+        },
+        "secret_rachel_surface": {
+            "greeting": "（她的表情僵硬了一瞬）朋友？哈。Rachel…她是唯一一个在我跌入谷底时还站在我这边的人。我们约定要一起逃离阿卡迪亚湾，去洛杉矶。然后…她就消失了。",
+            "buttons": [
+                {
+                    "label": "消失？一点痕迹都没有？",
+                    "action": "SHOW_DIALOG:current_clues",
+                    "id": "btn_surface_1"
+                },
+                {
+                    "label": "你和她只是朋友？",
+                    "action": "SHOW_DIALOG:secret_rachel_true",
+                    "id": "btn_surface_2",
+                    "requires": [
+                        "trust_level_3"
+                    ]
+                },
+                {
+                    "label": "这太可怕了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_surface_3"
+                }
+            ]
+        },
+        "secret_rachel_true": {
+            "greeting": "（她长时间沉默，摆弄着颈间的骷髅项链，最终深吸一口气）\n§d…她是我的一切。§r 不仅仅是朋友。她是灯塔。当Max离开，William去世，整个世界都是灰色的时候，她是唯一的色彩。我们相爱。这是秘密，连Frank都不知道全部。（声音颤抖）我必须找到她，活要见人，死要见尸。",
+            "buttons": [
+                {
+                    "label": "（握住她的手，坚定地）我一定会帮你找到她。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:f5d129fc-fca2-47e8-892c-5b2cd4c5ff07,52d5816c-89be-4296-9dbd-383d854140c8,debc0200-13e7-4113-94b9-eef16d2217b2,bb711fbe-dcf1-43e4-81f2-45ad3bfcdc89,49f01a03-ac13-42b6-a92a-ad9b443fff8f",
+                    "id": "btn_secret_accept",
+                    "sets_flag": [
+                        "ultimate_trust"
+                    ]
+                },
+                {
+                    "label": "我…我不知道该说什么。",
+                    "action": "SHOW_DIALOG:farewell_solidarity",
+                    "id": "btn_secret_speechless"
+                },
+                {
+                    "label": "这份感情很珍贵。谢谢你的信任。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_secret_thanks",
+                    "sets_flag": [
+                        "trust_level_3"
+                    ]
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§9行了，谈心时间结束。§r 我还有事要忙，比如继续我的‘找死’大业，或者找个地方抽根烟。如果你听到任何关于Rachel的消息…（她犹豫了一下）…你知道在哪能找到我。",
+            "buttons": [
+                {
+                    "label": "保重，Chloe。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                },
+                {
+                    "label": "我会留意的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_promise",
+                    "sets_flag": [
+                        "trust_level_1"
+                    ]
+                },
+                {
+                    "label": "嘿，别做太危险的事。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_care"
+                }
+            ]
+        },
+        "farewell_solidarity": {
+            "greeting": "（她对你点点头，眼中闪过一丝感激，随即用一贯的粗鲁掩饰）\n§6哼，别用那种眼神看我。§r 快去干活！我需要所有能得到的帮助。别让我等太久，时间可不等人。",
+            "buttons": [
+                {
+                    "label": "马上行动。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_solidarity_action"
+                },
+                {
+                    "label": "为了Rachel。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_solidarity_rachel"
+                }
+            ]
+        },
+        "current_frank_deal": {
+            "greeting": "（Chloe Price看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_341a9fab"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_eb6657e3"
+                }
+            ]
+        },
+        "secret_trust_gesture": {
+            "greeting": "（Chloe Price压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c982d173"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_1f5402fa"
+                }
+            ]
+        },
+        "secret_rachel_theories": {
+            "greeting": "（Chloe Price压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_449caaf1"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_dd0bc9df"
+                }
+            ]
+        },
+        "quest_rachel_detail": {
+            "greeting": "（Chloe Price思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_b9006b9c"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d473c8ec"
+                }
+            ]
+        },
+        "quest_david_conflict": {
+            "greeting": "（Chloe Price思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d8da6dd3"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_a58a8d56"
+                }
+            ]
+        },
+        "current_clues": {
+            "greeting": "（Chloe Price看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_51421385"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_f784d4af"
+                }
+            ]
+        },
+        "backstory_max_anger": {
+            "greeting": "（Chloe Price沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_3d071930"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_58e0e33d"
+                }
+            ]
+        },
+        "current_david_spy": {
+            "greeting": "（Chloe Price看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_cfe335c6"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3bfc8770"
+                }
+            ]
+        },
+        "backstory_loss": {
+            "greeting": "（Chloe Price沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_47f2f313"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_207f81dc"
+                }
+            ]
+        },
+        "secret_vulnerable_moment": {
+            "greeting": "（Chloe Price压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_0e2663bc"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c37c6715"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Life is Strange",
+        "role": "Rebel",
+        "connections": [
+            "Max Caulfield",
+            "Rachel Amber",
+            "David Madsen",
+            "Frank Bowers"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:05:06"
+    }
+}

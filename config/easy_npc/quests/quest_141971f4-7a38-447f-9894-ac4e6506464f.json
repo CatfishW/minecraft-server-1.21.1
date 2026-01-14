@@ -1,0 +1,15 @@
+{
+    "id": "141971f4-7a38-447f-9894-ac4e6506464f",
+    "title": "洗钱起步",
+    "description": "一位新客户需要清洗他的非法所得，Saul 计划用黄金作为洗钱的第一步。收集黄金锭来象征脏钱的流入，并建立信任。\n\n收集10个黄金锭，并将它们带到 Saul 的 strip mall 办公室。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gold_ingot",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

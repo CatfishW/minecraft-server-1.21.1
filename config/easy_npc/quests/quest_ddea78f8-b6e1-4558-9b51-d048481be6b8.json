@@ -1,0 +1,15 @@
+{
+    "id": "ddea78f8-b6e1-4558-9b51-d048481be6b8",
+    "title": "谈判专家",
+    "description": "Mrs. Nguyen 计划扩大沙龙规模，但这需要一大笔资金。她听说有个叫 Don Hagarty 的商人最近手头很紧，似乎在出售一些稀有的工业废料。她希望有人能去和他谈谈，用合理的价格买下那些材料。\n\n去和 Don Hagarty 磋商，争取以最低成本拿到那批材料。",
+    "objective": {
+        "type": "TALK",
+        "target": "Don Hagarty",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

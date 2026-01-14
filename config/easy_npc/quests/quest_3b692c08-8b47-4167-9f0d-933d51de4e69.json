@@ -1,0 +1,15 @@
+{
+    "id": "3b692c08-8b47-4167-9f0d-933d51de4e69",
+    "title": "尊严的证明",
+    "description": "Stacey 在一个废弃的农场里发现了一群饥肠辘辘的幸存者，他们被一群凶猛的卫道士和掠夺者围困，这些恶棍不仅霸占了食物，还羞辱着幸存者的尊严。Stacey 不会容忍这种暴行，她要让这些仗势欺人者付出血的代价。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

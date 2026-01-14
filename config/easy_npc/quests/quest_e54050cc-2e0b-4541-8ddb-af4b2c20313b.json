@@ -1,0 +1,15 @@
+{
+    "id": "e54050cc-2e0b-4541-8ddb-af4b2c20313b",
+    "title": "炼金之王的宣告",
+    "description": "秩序？法律？那些不过是弱者用来束缚强者的枷锁。在这片废土之上，唯一的真理就是力量与纯度。我不再需要躲藏，不再需要妥协。是时候让所有人，无论是盟友还是敌人，都认清一个事实：这片土地的化学未来，由我主宰。\n\n去找Marie Schrader。她总以为自己能看透一切，但她的视野太狭隘了。告诉她，旧的规则已经失效。告诉她，一个真正的国王即将登基。让她把我的话传出去，让所有人都听到。这是最后的通牒。",
+    "objective": {
+        "type": "TALK",
+        "target": "Marie Schrader",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

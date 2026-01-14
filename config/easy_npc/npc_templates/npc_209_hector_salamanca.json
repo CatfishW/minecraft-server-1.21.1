@@ -1,0 +1,101 @@
+{
+    "name": "§6Hector Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former cartel enforcer, mute and in a wheelchair.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/b519652a613d3e5e.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（赫克托坐在轮椅上，愤怒地瞪着你，手指在轮椅扶手上敲击着，发出沉闷的声响。他嘴里含糊不清地咆哮着，眼神里充满了威胁和不耐烦。他似乎在问你为什么打扰他。）",
+            "buttons": [
+                {
+                    "label": "我是来谈生意的",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "有人让我来找你",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_sent"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "（他发出一声轻蔑的哼声，用一只颤抖的手指了指自己，然后摇了摇头。他的表情似乎在说：“看看我现在的样子，生意？” 接着，他用力敲了一下轮椅的扶手，眼神变得凶狠，仿佛在警告你不要耍花样。）",
+            "buttons": [
+                {
+                    "label": "关于弗林一家",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_fring"
+                },
+                {
+                    "label": "关于你的家族",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_family"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "（他的眉毛挑了一下，露出一丝怀疑。他歪着头，用审视的目光打量着你。他用手比划着，像是在问：“谁？” 他的动作虽然迟缓，但依然带着一种不容置疑的压迫感。）",
+            "buttons": [
+                {
+                    "label": "是拉罗",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_lalo"
+                },
+                {
+                    "label": "是图库",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_tuco"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "（听到这个名字，赫克托的眼睛瞬间睁大，充满了血丝。他猛地咳嗽起来，双手紧紧抓住扶手，身体前倾，发出一连串愤怒而模糊的音节。他的整个身体都在表达着对这个名字的憎恨。）",
+            "buttons": [
+                {
+                    "label": "我会把话带到",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "（他的表情缓和了一些，但依然保持着警惕。他点了点头，然后用手指了指自己的耳朵，又摆了摆手，似乎在说：“我听到了，但我不相信你。” 最后，他闭上眼睛，不再看你，表示谈话结束。）",
+            "buttons": [
+                {
+                    "label": "（默默离开）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

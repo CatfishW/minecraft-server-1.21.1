@@ -1,0 +1,15 @@
+{
+    "id": "c244f8a3-721f-459c-9389-d0fbf6ba7ace",
+    "title": "社会关系网络",
+    "description": "我需要一封来自官方的信件来申请区域防卫资源，但申请必须有治安官的签名。我跟那位新来的 Stanley Uris 警官不熟，冒然去谈可能会被当成普通民众诉求忽略掉。我需要一个有分量的人替我去说句话，建立个良好的第一印象。\n\n请帮我联络一下冒险家 Nancy Wheeler。她人脉广，跟治安部门也有合作，请她出面跟 Stanley Uris 警官沟通一下，确保我的申请能被重视。这对镇上所有人的安全都至关重要。",
+    "objective": {
+        "type": "TALK",
+        "target": "Nancy Wheeler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

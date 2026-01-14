@@ -1,0 +1,15 @@
+{
+    "id": "48d6126a-8bd0-4384-a789-63f0341ab918",
+    "title": "来自深渊的回响",
+    "description": "我听到了来自地牢深处的回响，那是一个被困住的灵魂。有些人知道太多，却无法守护这些秘密，最终只能在永恒的徘徊中度过。也许你能从他那里得到一些关于‘未知’的信息。\n\n找到那个被遗忘在迷宫中的图书管理员（Villager），他是知识的守墓人。或者，你可以直接去问威尔·拜尔斯（Will Byers），他似乎总是能听到来自另一个维度的声音。去吧，找到线索。",
+    "objective": {
+        "type": "TALK",
+        "target": "Will Byers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

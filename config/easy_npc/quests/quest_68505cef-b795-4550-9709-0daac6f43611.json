@@ -1,0 +1,15 @@
+{
+    "id": "68505cef-b795-4550-9709-0daac6f43611",
+    "title": "美甲师的怨念",
+    "description": "Mrs. Nguyen 是 Jimmy 经常光顾的美甲沙龙老板。最近，她频繁听到阁楼传来奇怪的抓挠声，导致客人心惶惶，生意大受影响。她怀疑是老鼠在作祟，但 Jimmy 觉得那声音听起来比普通老鼠更凶猛。\n\n请前往美甲沙龙的阁楼，清除所有发出噪音的害物。确保不要打坏任何装饰品，Mrs. Nguyen 对她的装潢很挑剔。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

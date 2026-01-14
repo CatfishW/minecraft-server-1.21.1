@@ -1,0 +1,15 @@
+{
+    "id": "cb085b14-a660-4fa1-89e7-16a1c90530e8",
+    "title": "沉默的会计师",
+    "description": "生意不仅仅是化学，更是数字。我的一位……合作伙伴，在财务处理上遇到了些麻烦。他是个精明的家伙，但缺乏面对威胁的胆量。我不能亲自出面，那会引起不必要的注意。我需要一个信使，去确保我的利益得到保障，同时安抚他的情绪。\n\n找到Craig Kettleman，他躲在某个地方。让他明白，与我合作是他的荣幸，也是他唯一的选择。传递我的信息，让他保持冷静，并确保账目清晰。这是对你沟通技巧的考验。",
+    "objective": {
+        "type": "TALK",
+        "target": "Craig Kettleman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

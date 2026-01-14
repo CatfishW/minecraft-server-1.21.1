@@ -1,0 +1,125 @@
+{
+    "name": "§dIrene Landry",
+    "entityType": "easy_npc:humanoid",
+    "description": "A resident of Sandpiper Crossing.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/61baa518b290e9ee.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（一位慈祥的老人，戴着老花镜，手里拿着一本厚厚的文件）你好啊，年轻人。是沙皮普渡假村的律师吗？那些律师总是有说不完的话。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:6c46f50f-d361-4454-8191-0cb0c35c9f38,2529f0e8-0a14-43b4-8475-42be242c4714,d04670b3-6c05-432a-b4fe-0bee39f278ac,9354560b-487f-45d9-b09c-5fff7a9beb1a,e697e1ee-e3af-4f8b-a504-0fad59a9b3af",
+                    "id": "btn_quest_e3580a67"
+                },
+                {
+                    "label": "沙皮普渡假村？",
+                    "action": "SHOW_DIALOG:talk_sandpiper",
+                    "id": "btn_sandpiper"
+                },
+                {
+                    "label": "您看起来需要帮助",
+                    "action": "SHOW_DIALOG:talk_help",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "关于那个集体诉讼",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q"
+                }
+            ]
+        },
+        "talk_sandpiper": {
+            "greeting": "哦，就是我们住的养老社区。他们叫它‘沙皮普渡假村’，听起来很高级，其实就是个养老院。最近他们好像在和律师打官司，说是我们的退休金出了什么问题。",
+            "buttons": [
+                {
+                    "label": "退休金怎么了？",
+                    "action": "SHOW_DIALOG:talk_sandpiper_2",
+                    "id": "btn_sandpiper2"
+                },
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_sandpiper_2": {
+            "greeting": "我也不太清楚具体怎么回事。那些文件太复杂了，字又小。我只记得金律师（她真是个好姑娘）很耐心地给我解释，说我们可能被多收了很多钱。但我老了，记不住那么多。",
+            "buttons": [
+                {
+                    "label": "金律师？",
+                    "action": "SHOW_DIALOG:talk_kim",
+                    "id": "btn_kim"
+                },
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_kim": {
+            "greeting": "是的，金·韦克斯勒。她经常来看望我们，帮我们读信，解释那些复杂的法律文件。不像某些律师，只想着赚钱。她真的很关心我们这些老人。",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_help": {
+            "greeting": "谢谢你，孩子。我这把年纪，最需要的就是有人能耐心地听我说话。现在的年轻人总是很忙，就像刚才那个穿西装的年轻人，走得飞快，连我掉在地上的文件都没帮我捡一下。",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你是来帮我们要回钱的吗？金律师说我们需要更多老人的证词来证明沙皮普的欺诈行为。如果你能帮我收集其他住户的签名，我会非常感激的。我这里有份名单...",
+            "buttons": [
+                {
+                    "label": "接受任务：收集签名",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这太麻烦了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "title": "正义的代价",
+    "description": "Kim正在处理一桩棘手的案件，她需要你帮忙收集证据。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    },
+    "id": "ace77ac3-9cfa-49d9-a4cc-e0dc344eb82c"
+}

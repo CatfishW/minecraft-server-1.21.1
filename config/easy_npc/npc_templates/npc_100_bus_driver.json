@@ -3,10 +3,10 @@
     "entityType": "easy_npc:humanoid",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "http://textures.minecraft.net/texture/c95d732869150774a3f25d7c57457788167f1373322197305963a568b20925e0"
+        "skinUrl": "https://s.namemc.com/i/77aacdfb58335f9e.png"
     },
     "dialog": {
-        "greeting": "请上车！不要挡道。",
+        "greeting": "你好！我是你的司机Saul Goodman",
         "buttons": [
             {
                 "label": "去哪里？",
@@ -25,8 +25,26 @@
     },
     "attributes": {
         "movementSpeed": 0.0,
-        "invulnerable": true,
-        "attackableByPlayers": false,
-        "attackableByMonsters": false
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "maxHealth": 40,
+        "nameVisibility": "NEVER"
+    },
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
     }
 }

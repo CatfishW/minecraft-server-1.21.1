@@ -1,0 +1,110 @@
+{
+    "name": "§5Badger",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of Jesse's loyal but dim-witted friends.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/b01ad99ef208660a.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Yo! You looking for the Purple Planet? Or just chillin'?",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:336a09c3-b093-406d-b661-dc92e5f1e7e0,f89857d1-da92-4604-afc5-21c84ce59c0d,1d284197-a00a-4074-8afd-2ea8b0b4ad2d,eea9d53a-578b-4d2e-98db-952d01e73492,aabff2ea-1b9e-44f8-a21f-9094e2f6ba28",
+                    "id": "btn_quest_c321d97e"
+                },
+                {
+                    "label": "Purple Planet?",
+                    "action": "SHOW_DIALOG:story_sky",
+                    "id": "btn_sky"
+                },
+                {
+                    "label": "I heard you deal",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "Just leaving",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "story_sky": {
+            "greeting": "Yeah, man! You ever look at the sky? Like, really look? It's purple! Not blue!",
+            "buttons": [
+                {
+                    "label": "It's blue, man",
+                    "action": "SHOW_DIALOG:story_sky_2",
+                    "id": "btn_argue"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_sky_2": {
+            "greeting": "Nuh-uh! That's what the government wants you to think. I saw it. Purple. Pinkish.",
+            "buttons": [
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "Yo, keep it down! I ain't 'dealing'. I'm just... a freelance distributor. You need some weight?",
+            "buttons": [
+                {
+                    "label": "Yeah, I need weight",
+                    "action": "SHOW_DIALOG:quest_details",
+                    "id": "btn_weight"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_details": {
+            "greeting": "Okay, okay. But you gotta help me out first. Some skinhead jacked my stash box. It's a blue barrel.",
+            "buttons": [
+                {
+                    "label": "Accept Task",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

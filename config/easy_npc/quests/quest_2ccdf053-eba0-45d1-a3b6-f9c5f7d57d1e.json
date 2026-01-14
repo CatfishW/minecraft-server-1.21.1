@@ -1,0 +1,15 @@
+{
+    "id": "2ccdf053-eba0-45d1-a3b6-f9c5f7d57d1e",
+    "title": "旗帜的荣耀",
+    "description": "Blackwell 学院的啦啦队正面临困境，我们在最近的比赛中失去了象征荣誉的旗帜。那是我们团队精神的象征，绝不能就这样丢失。作为啦啦队的一员，我需要你帮忙找回它。\n\n根据目击者的描述，旗帜掉落到了学校北边的树林中。请你前往那片区域，找到我们丢失的旗帜。请务必小心，那里的僵尸似乎对鲜艳的颜色特别感兴趣。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:white_banner",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 15
+    }
+}

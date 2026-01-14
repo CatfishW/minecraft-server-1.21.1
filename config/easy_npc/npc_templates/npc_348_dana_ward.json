@@ -1,0 +1,120 @@
+{
+    "name": "§bDana Ward",
+    "entityType": "easy_npc:humanoid",
+    "description": "A cheerleader and student at Blackwell Academy.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7c882cf60292471d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿！看看这是谁。你是新来的学生吗？Blackwell的欢迎派对总是需要新鲜血液的。保持微笑，自信一点！",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:2ccdf053-eba0-45d1-a3b6-f9c5f7d57d1e,525e1811-7464-4862-8c73-98e62ddc01c3,ffe40186-9cad-4fb6-8993-fc151f8edaac,dbbf8de8-b3fd-4b5a-97fe-b760afea60d3,9c9d86a5-cb15-427a-b314-9db76c47959e",
+                    "id": "btn_quest_74b3955f"
+                },
+                {
+                    "label": "你是啦啦队长？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "最近有什么关于派对的消息吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "当然！Terry的龙卷风队（Terry's Tornadoes）需要有人维持士气。这不仅仅是喊口号，这是关于...影响力。你懂的，如果你想快速融入这里，这是最好的方式。",
+            "buttons": [
+                {
+                    "label": "听起来很有趣",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "我得走了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "是吧？但是最近有点奇怪。我总感觉有人在偷看我们训练，而且储物柜里的东西莫名其妙地不见了。也许是风大的原因？",
+            "buttons": [
+                {
+                    "label": "也许我可以帮你留意一下",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "别想太多了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "真的吗？你太好了！虽然我只是想让大家开心，但如果有人搞破坏，那也太扫兴了。如果你发现什么可疑的，一定要告诉我！",
+            "buttons": [
+                {
+                    "label": "我会的！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "派对？哦，你是说Vortex Club那种？其实...我还没完全搞定场地许可。宿管大妈那边卡得很严。",
+            "buttons": [
+                {
+                    "label": "我去帮你搞定宿管",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "好吧，祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "真的吗？如果你能搞定，你就是我的英雄！只要别让她看到你在抽烟或者乱扔垃圾就行。谢啦！",
+            "buttons": [
+                {
+                    "label": "交给我吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_done"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

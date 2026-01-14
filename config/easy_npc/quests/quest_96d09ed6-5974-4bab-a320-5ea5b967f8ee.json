@@ -1,0 +1,15 @@
+{
+    "id": "96d09ed6-5974-4bab-a320-5ea5b967f8ee",
+    "title": "铲除异己",
+    "description": "在汉普顿的阴影中，有些东西正在侵蚀我们的根基。那些不死的渣滓试图扰乱我们的秩序。去清理掉它们，让街道恢复应有的体面。但要小心，别被咬到了。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

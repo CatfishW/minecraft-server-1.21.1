@@ -1,0 +1,86 @@
+{
+    "name": "§cTodd Alquist",
+    "entityType": "easy_npc:humanoid",
+    "description": "An unpredictable associate of Walter and Jesse.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/89c8fef24bb3376c.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿！很高兴见到你。今天过得怎么样？这里挺不错的，井井有条。我刚帮着清理了一些东西，把一切都归置整齐是我的习惯。老白和杰西之前在那个破房车里工作，说实话，卫生状况真让人担忧。我们需要专业精神，你懂吗？这样才能把事情做大，做好。",
+            "buttons": [
+                {
+                    "label": "你看起来很勤快",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_hardworking"
+                },
+                {
+                    "label": "关于那个男孩",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_boy"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "谢谢！我觉得做事情就要有始有终。在Vamonos Pest的时候，我也是最认真的那个。不管是熏蒸杀虫，还是……其他的事情。老板们交代的任务，我都会一丝不苟地完成。有时候需要做一些艰难的决定，但只要是为了团队好，为了生意好，我就觉得是值得的。",
+            "buttons": [
+                {
+                    "label": "艰难的决定？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_decisions"
+                },
+                {
+                    "label": "继续加油",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "你是说那个目击者？那个骑摩托车的小孩？是的，我处理了那件事。当时情况很紧急，如果他把看到的说出去，我们所有人都会完蛋。我必须果断。虽然……那确实很遗憾。但我后来还去看了他的兔子，给它喂了胡萝卜。我觉得我并没有那么坏，我只是做了必须做的事。",
+            "buttons": [
+                {
+                    "label": "兔子？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "比如在沙漠里。当资源有限，而风险很大的时候，你就必须权衡利弊。有些人会犹豫，会软弱，但我不会。我看得很清楚。为了保证长期的稳定，有时候需要牺牲短期的……情感。你看，像老白那样的天才，也需要像我这样能把脏活累活干好的人。",
+            "buttons": [
+                {
+                    "label": "你很特别",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

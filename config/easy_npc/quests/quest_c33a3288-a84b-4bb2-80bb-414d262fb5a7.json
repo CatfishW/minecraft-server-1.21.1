@@ -1,0 +1,15 @@
+{
+    "id": "c33a3288-a84b-4bb2-80bb-414d262fb5a7",
+    "title": "卧榻之侧",
+    "description": "Saul Goodman 的办公室可不是谁都能进的。最近有些不长眼的小贼盯上了他那张写着客户名单的羊皮纸。作为他的保镖，你必须确保没有任何人能在他思考的时候打扰他。\n\n去主城的大门口附近巡逻，解决掉那些游荡的亡灵。只有死人才能真正保守秘密，尤其是那些穿着破烂盔甲的家伙，它们总是试图闯入安全区。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

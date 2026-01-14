@@ -1,0 +1,110 @@
+{
+    "name": "§9Jane Margolis",
+    "entityType": "easy_npc:humanoid",
+    "description": "Jesse's girlfriend and recovering addict.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/e59440ff186751bf.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Hey. It's you. Don't make a habit of this, okay? I'm trying to keep things low-key.",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:563c20b0-75c3-4589-94db-2ed193e86120,b1817e57-188e-4158-817e-b0b66471d229,2b96983e-f206-44f6-a51e-665a1832d397,52dfd59c-ad9c-4dfb-87cf-3341c8588a6c,c1fd3484-1317-4920-819a-7dfc2ef67cab",
+                    "id": "btn_quest_4d937c5a"
+                },
+                {
+                    "label": "How are you holding up?",
+                    "action": "SHOW_DIALOG:story_recovery",
+                    "id": "btn_check"
+                },
+                {
+                    "label": "Where's Jesse?",
+                    "action": "SHOW_DIALOG:story_jesse",
+                    "id": "btn_jesse"
+                },
+                {
+                    "label": "I need a favor",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_recovery": {
+            "greeting": "I'm clean. Mostly. It's a daily struggle. Jesse... he enables me. I know he loves me, but it's toxic.",
+            "buttons": [
+                {
+                    "label": "Talk about Jesse",
+                    "action": "SHOW_DIALOG:story_jesse",
+                    "id": "btn_jesse"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_jesse": {
+            "greeting": "He's a sweet guy. Lost, but sweet. He needs someone to look out for him. I worry he'll get hurt.",
+            "buttons": [
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "A favor? I don't know. I'm trying to stay out of trouble. Is it something... illegal?",
+            "buttons": [
+                {
+                    "label": "Just a delivery",
+                    "action": "SHOW_DIALOG:quest_details",
+                    "id": "btn_del"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_details": {
+            "greeting": "Fine. My dad has a stash of cash hidden in the attic of the motel office. He won't miss it for a day.",
+            "buttons": [
+                {
+                    "label": "Accept Task",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

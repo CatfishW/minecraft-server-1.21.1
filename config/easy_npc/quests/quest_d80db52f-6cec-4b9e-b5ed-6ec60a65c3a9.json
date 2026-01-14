@@ -1,0 +1,15 @@
+{
+    "id": "d80db52f-6cec-4b9e-b5ed-6ec60a65c3a9",
+    "title": "沉默的见证者",
+    "description": "Jefferson 放下相机，表情变得严肃。『有些时候，镜头无法捕捉到真相的全貌。我需要一个声音，一个了解这片土地背后交易的人。我听说一个叫 Mike Ehrmantraut 的人，他像影子一样游走在边缘，洞察一切。他不多话，但每一句话都像是一张曝光准确的照片，直击核心。』\n\n找到 Mike Ehrmantraut。不必多言，只需静静地听。他是连接光影背后那个世界的纽带，从他口中，你或许能拼凑出这幅巨大画卷的缺失部分。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Ehrmantraut",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "8be53af5-c37f-4823-aeac-0c80076d3918",
+    "title": "加固防线",
+    "description": "学校的防御设施需要加强，以应对潜在的威胁。大卫·马德森计划在校舍周围建立额外的防护栏，但他缺少必要的材料。他需要坚固的材料来确保晚上的安全，防止任何东西闯入。\n\n请为大卫·马德森收集用于加固防线的材料。他需要大量的木板来搭建临时的障碍物和加固门窗。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:oak_planks",
+        "amount": 32
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

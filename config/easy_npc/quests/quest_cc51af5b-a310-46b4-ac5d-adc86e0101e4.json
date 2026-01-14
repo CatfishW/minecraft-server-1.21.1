@@ -1,0 +1,15 @@
+{
+    "id": "cc51af5b-a310-46b4-ac5d-adc86e0101e4",
+    "title": "收集医疗证据",
+    "description": "我是Francesca Liddy，Jimmy和Kim的接待员。Kim正在处理一个复杂的案件，需要特定的医疗证据来支持她的论点。这涉及到一些医疗档案，我不能直接去拿，需要有人帮忙。\n请你找到Gale Boetticher。我们需要他手中的医疗档案。与他交谈，看看是否能获得我们需要的文件。这对我们很重要。",
+    "objective": {
+        "type": "TALK",
+        "target": "Gale Boetticher",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

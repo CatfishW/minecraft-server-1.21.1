@@ -1,0 +1,15 @@
+{
+    "id": "62e17938-1596-4372-a7c4-937b9e78f0c3",
+    "title": "体面的伪装",
+    "description": "Saul 认为，一个好的律师（或者说保镖）必须时刻保持体面。但他最近手头有点紧，买不起全套的皮革护具。你需要帮他搞点材料来做一身像样的行头，毕竟我们不能让客户觉得我们混得很惨。\n\n去收集一些生皮革。这能让我们在谈判桌上更有底气。别问我是怎么弄到的，只要把东西带回来就行。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:leather",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

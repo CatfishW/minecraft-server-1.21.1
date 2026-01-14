@@ -1,0 +1,430 @@
+{
+    "name": "§6Nathan Prescott",
+    "entityType": "easy_npc:humanoid",
+    "description": "Heir to the wealthy Prescott family that essentially owns Arcadia Bay. Mentally unstable and heavily medicated, he's caught up in something darker than anyone realizes.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f5e7b3b473ca8846.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§e嘿，你看什么看？我是Nathan Prescott，这整个镇子都是我家的。但你最好别惹我。",
+            "buttons": [
+                {
+                    "label": "§b你的家族...",
+                    "action": "SHOW_DIALOG:backstory_family",
+                    "id": "btn_family"
+                },
+                {
+                    "label": "§c你看起来不太对劲",
+                    "action": "SHOW_DIALOG:backstory_mental",
+                    "id": "btn_mental"
+                },
+                {
+                    "label": "§5我听说了一些事...",
+                    "action": "SHOW_DIALOG:current_darkroom",
+                    "id": "btn_darkroom"
+                },
+                {
+                    "label": "§a你需要帮忙吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "backstory_family": {
+            "greeting": "§6Prescott家族？哈，我们拥有Arcadia Bay。但我父亲...他从来不满意。我永远不够好。",
+            "buttons": [
+                {
+                    "label": "§e他有什么期望？",
+                    "action": "SHOW_DIALOG:backstory_family_expect",
+                    "id": "btn_expect"
+                },
+                {
+                    "label": "§c所以你压力很大",
+                    "action": "SHOW_DIALOG:backstory_family_pressure",
+                    "id": "btn_pressure"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_family_expect": {
+            "greeting": "§6期望？他要我成为完美的继承人——冷酷、精明、无情。就像他一样。但我...我做不到。",
+            "buttons": [
+                {
+                    "label": "§c这让你痛苦吗？",
+                    "action": "SHOW_DIALOG:backstory_family_pressure",
+                    "id": "btn_pain"
+                },
+                {
+                    "label": "§e你和Sean的关系",
+                    "action": "SHOW_DIALOG:backstory_family_sean",
+                    "id": "btn_sean"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_family",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_family_pressure": {
+            "greeting": "§c痛苦？当然！我每天都在吃药来应付。父亲说Prescotts不能示弱，但我觉得自己快碎了。",
+            "buttons": [
+                {
+                    "label": "§a你吃什么药？",
+                    "action": "SHOW_DIALOG:backstory_medical",
+                    "id": "btn_medical"
+                },
+                {
+                    "label": "§5所以你转向了其他事？",
+                    "action": "SHOW_DIALOG:current_darkroom",
+                    "id": "btn_turn"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_family",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_mental": {
+            "greeting": "§d不对劲？我当然不对劲！这些药片...他们让我麻木。但有时我还是控制不住，会爆发。",
+            "buttons": [
+                {
+                    "label": "§a你吃什么药？",
+                    "action": "SHOW_DIALOG:backstory_medical",
+                    "id": "btn_medical"
+                },
+                {
+                    "label": "§c控制不住什么？",
+                    "action": "SHOW_DIALOG:backstory_outburst",
+                    "id": "btn_outburst"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_medical": {
+            "greeting": "§9药？一堆镇定剂和抗抑郁药。医生说我需要它们来“稳定情绪”，但我觉得像行尸走肉。",
+            "buttons": [
+                {
+                    "label": "§e这影响你的记忆吗？",
+                    "action": "SHOW_DIALOG:secret_amnesia",
+                    "id": "btn_memory"
+                },
+                {
+                    "label": "§c你试过停药吗？",
+                    "action": "SHOW_DIALOG:backstory_outburst",
+                    "id": "btn_stop"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_mental",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_outburst": {
+            "greeting": "§c控制？哈！我打过人，砸过东西...尤其是当Victoria或其他人看不起我的时候。Jefferson说这是“艺术家的脾气”。",
+            "buttons": [
+                {
+                    "label": "§eJefferson是谁？",
+                    "action": "SHOW_DIALOG:current_jefferson",
+                    "id": "btn_jefferson"
+                },
+                {
+                    "label": "§5你和Victoria Chase？",
+                    "action": "SHOW_DIALOG:current_victoria",
+                    "id": "btn_victoria"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_mental",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_darkroom": {
+            "greeting": "§5暗房？谁告诉你的？...不，没什么。只是Jefferson老师的一个摄影项目。但别多问。",
+            "buttons": [
+                {
+                    "label": "§eJefferson是谁？",
+                    "action": "SHOW_DIALOG:current_jefferson",
+                    "id": "btn_jefferson"
+                },
+                {
+                    "label": "§c项目有什么问题？",
+                    "action": "SHOW_DIALOG:current_darkroom_secret",
+                    "id": "btn_secret"
+                },
+                {
+                    "label": "§a这听起来危险",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_danger"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_darkroom_secret": {
+            "greeting": "§5问题？...有时候，模特们会...昏迷。Jefferson说这是为了捕捉“真实”，但我开始做噩梦。",
+            "buttons": [
+                {
+                    "label": "§c比如Rachel Amber？",
+                    "action": "SHOW_DIALOG:secret_rachel",
+                    "id": "btn_rachel"
+                },
+                {
+                    "label": "§e你需要脱身吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_escape"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:current_darkroom",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_jefferson": {
+            "greeting": "§9Mark Jefferson？他是个天才摄影师。他理解我...或者说，他假装理解，让我帮他做事。",
+            "buttons": [
+                {
+                    "label": "§a他利用你吗？",
+                    "action": "SHOW_DIALOG:current_jefferson_use",
+                    "id": "btn_use"
+                },
+                {
+                    "label": "§c你和Rachel Amber的事",
+                    "action": "SHOW_DIALOG:secret_rachel",
+                    "id": "btn_rachel"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:current_darkroom",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_jefferson_use": {
+            "greeting": "§c利用？当然！他给我药，让我保持安静，还让我处理暗房的“杂活”。我就像他的傀儡。",
+            "buttons": [
+                {
+                    "label": "§e你父亲知道吗？",
+                    "action": "SHOW_DIALOG:backstory_family_sean",
+                    "id": "btn_father"
+                },
+                {
+                    "label": "§5你想反抗吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_rebel"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:current_jefferson",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "§a帮忙？或许...我需要处理一些照片，在暗房。你能帮我取回一个包裹吗？但小心点，别被Jefferson或我父亲发现。",
+            "buttons": [
+                {
+                    "label": "§a接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:1b1c4158-89b4-4795-83bb-e54e872381a7,22282a7b-2d03-4d07-91c1-689346a2525a,6892270a-ce54-4d3f-a7af-3159a62e372d,13d01055-0852-4d83-b863-ebd04aa151de,5471d151-26ba-4e51-8cf8-b88da9e7dcd9",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "§c这听起来可疑",
+                    "action": "SHOW_DIALOG:quest_suspicious",
+                    "id": "btn_suspicious"
+                },
+                {
+                    "label": "§b稍后再说",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_later"
+                }
+            ]
+        },
+        "quest_suspicious": {
+            "greeting": "§c可疑？当然可疑！但如果你不帮我，我可能...做出更糟的事。这些照片能证明一些东西。",
+            "buttons": [
+                {
+                    "label": "§a好吧，我帮你",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:1b1c4158-89b4-4795-83bb-e54e872381a7,22282a7b-2d03-4d07-91c1-689346a2525a,6892270a-ce54-4d3f-a7af-3159a62e372d,13d01055-0852-4d83-b863-ebd04aa151de,5471d151-26ba-4e51-8cf8-b88da9e7dcd9",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "§e证明什么？",
+                    "action": "SHOW_DIALOG:secret_rachel",
+                    "id": "btn_proof"
+                },
+                {
+                    "label": "§b不，我退出",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_quit"
+                }
+            ]
+        },
+        "secret_rachel": {
+            "greeting": "§5Rachel...我...我不记得了。药片让我记忆模糊。但有时我会做噩梦...她在那间房间里，一动不动。Jefferson说那是意外。",
+            "buttons": [
+                {
+                    "label": "§c你做了什么？",
+                    "action": "SHOW_DIALOG:secret_guilt",
+                    "id": "btn_guilt"
+                },
+                {
+                    "label": "§eJefferson知道真相吗？",
+                    "action": "SHOW_DIALOG:secret_jefferson_role",
+                    "id": "btn_jeff_role"
+                },
+                {
+                    "label": "§b我需要离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "secret_guilt": {
+            "greeting": "§c我...我可能给了她太多药。Jefferson让我做的。他说她会“合作”，但她...没有醒来。我恨自己。",
+            "buttons": [
+                {
+                    "label": "§a你想忏悔吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_confess"
+                },
+                {
+                    "label": "§e你父亲会保护你吗？",
+                    "action": "SHOW_DIALOG:backstory_family_sean",
+                    "id": "btn_protect"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:secret_rachel",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "secret_jefferson_role": {
+            "greeting": "§5Jefferson？他策划了一切。他利用我的不稳定和家族影响力来掩盖。我是替罪羊，如果他需要的话。",
+            "buttons": [
+                {
+                    "label": "§c你会揭发他吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_expose"
+                },
+                {
+                    "label": "§e但你需要证据",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:1b1c4158-89b4-4795-83bb-e54e872381a7,22282a7b-2d03-4d07-91c1-689346a2525a,6892270a-ce54-4d3f-a7af-3159a62e372d,13d01055-0852-4d83-b863-ebd04aa151de,5471d151-26ba-4e51-8cf8-b88da9e7dcd9",
+                    "id": "btn_evidence"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:secret_rachel",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§6走吧。别告诉任何人我们谈过。否则...你知道后果。我可能控制不住自己。",
+            "buttons": [
+                {
+                    "label": "§b再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "backstory_family_sean": {
+            "greeting": "§eSean Prescott？我父亲是个怪物。他宁愿我消失，也不愿我玷污家族名声。如果他知道暗房的事...",
+            "buttons": [
+                {
+                    "label": "§c他会惩罚你吗？",
+                    "action": "SHOW_DIALOG:backstory_family_pressure",
+                    "id": "btn_punish"
+                },
+                {
+                    "label": "§5所以你在掩盖",
+                    "action": "SHOW_DIALOG:current_darkroom_secret",
+                    "id": "btn_cover"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_family_expect",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_victoria": {
+            "greeting": "§dVictoria？她是个势利眼，但至少她不像其他人那样怕我。我们...有时候一起混，在Jefferson的派对上。",
+            "buttons": [
+                {
+                    "label": "§e她知道暗房吗？",
+                    "action": "SHOW_DIALOG:current_darkroom_secret",
+                    "id": "btn_know"
+                },
+                {
+                    "label": "§c你利用她吗？",
+                    "action": "SHOW_DIALOG:backstory_outburst",
+                    "id": "btn_use_her"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_outburst",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "secret_amnesia": {
+            "greeting": "§9记忆？药片让一切都模糊。我有片段：闪光灯、尖叫声、Rachel的眼睛...但我不确定什么是真的。",
+            "buttons": [
+                {
+                    "label": "§c你需要帮助",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "§e这很危险",
+                    "action": "SHOW_DIALOG:current_darkroom_secret",
+                    "id": "btn_danger"
+                },
+                {
+                    "label": "§b返回",
+                    "action": "SHOW_DIALOG:backstory_medical",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Life is Strange",
+        "role": "Troubled Heir",
+        "connections": [
+            "Mark Jefferson",
+            "Victoria Chase",
+            "Rachel Amber",
+            "Sean Prescott"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:16:10"
+    }
+}

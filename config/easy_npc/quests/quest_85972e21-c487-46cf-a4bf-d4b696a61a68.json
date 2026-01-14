@@ -1,0 +1,15 @@
+{
+    "id": "85972e21-c487-46cf-a4bf-d4b696a61a68",
+    "title": "森林的呼唤",
+    "description": "蕾切尔一直渴望逃离黑湾，她最常去的地方就是那片古老的森林。据说她在那里藏了一些只属于她自己的秘密。现在，森林里传出了一些奇怪的声响，仿佛有什么东西被惊醒了。\n\n深入森林，找到并消灭那些因黑暗气息而变异的僵尸。它们可能守护着蕾切尔留下的某个秘密。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

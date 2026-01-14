@@ -1,0 +1,15 @@
+{
+    "id": "ab5e9241-9757-40e4-a9b6-6008da051124",
+    "title": "商业谈判",
+    "description": "在沙漠的另一端，有一座由钢铁兄弟会（Brotherhood of Steel）把守的堡垒。他们的领袖 Elder Maxson 手里有我们需要的稀有合金配方。直接索取是愚蠢的，我们必须进行一场友好的“交易”。\n\n前去和 Elder Maxson 谈判，无论用什么代价，都要让他松口。他的堡垒固若金汤，硬闯不是明智之举。",
+    "objective": {
+        "type": "TALK",
+        "target": "Elder Maxson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

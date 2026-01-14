@@ -1,0 +1,15 @@
+{
+    "id": "cec33e20-73bd-4246-900f-c4232c7beb1d",
+    "title": "最后的筹码",
+    "description": "汉克·施拉德：\"主要头目，‘地精’，还在逍遥法外。他躲在一个被称为‘下界要塞’的古老堡垒里，认为那里固若金汤。根据我的推断，他正准备进行最后一笔交易，然后彻底消失。我们必须在他行动前截断他的后路。海登·琼斯知道一条密道，去和他谈谈，找出潜入的方法。\"",
+    "objective": {
+        "type": "TALK",
+        "target": "Hayden Jones",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "name": "§cMarie Schrader",
+    "entityType": "easy_npc:humanoid",
+    "description": "Skyler's sister, a hospital radiologic technologist.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f709974aa184e440.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哦，你好。请原谅我有点心不在焉，最近家里发生了很多事。我是一名放射技师，每天在医院里看到很多病人，这让我很能体会生命的脆弱。但最近，我感觉我姐姐Skyler和我丈夫Hank都承受着巨大的压力，而我却不知道该怎么帮他们。这让我很难受，真的。",
+            "buttons": [
+                {
+                    "label": "Skyler还好吗？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_skyler"
+                },
+                {
+                    "label": "Hank最近怎么样？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_hank"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "Skyler...她看起来很憔悴，总是心事重重的样子。我问她怎么了，她总是说没事，只是工作和家庭的压力。但我能感觉到她在撒谎，她的眼睛里藏着秘密。她说沃尔特的生意出了点问题，但我总觉得事情没那么简单。作为妹妹，我很担心她，希望她能向我倾诉。",
+            "buttons": [
+                {
+                    "label": "你觉得沃尔特怎么样？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_walter"
+                },
+                {
+                    "label": "你能帮她吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_help"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Hank他...他把工作看得太重了。自从他开始追查那个叫‘海森堡’的毒枭，他就变得很偏执。他把自己关在车库里研究那些证据，对我和他姐姐都变得很冷淡。我知道他压力大，但他不应该一个人扛着。我试着让他放松，但他总是把我推开，说这是男人的事。",
+            "buttons": [
+                {
+                    "label": "他是不是有危险？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_danger"
+                },
+                {
+                    "label": "你为他骄傲吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_proud"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "沃尔特？我一直以为他是个好人，一个温和的老师，一个好丈夫。但自从他得了癌症，一切都变了。他变得强势，神秘，而且我听说他和一些不三不四的人混在一起。我不敢妄下定论，但我真心希望他不要伤害Skyler和孩子们。如果他做了什么错事，我绝不会原谅他。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "我当然为他骄傲，他是个勇敢的探员，每天都在和最危险的罪犯打交道。但我更担心他的安全，尤其是上次...上次他在停车场遭到袭击后，我每天都提心吊胆。我只希望他能平安回家，哪怕他一辈子都抓不到那个海森堡，我也不在乎。对我来说，他比任何功劳都重要。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

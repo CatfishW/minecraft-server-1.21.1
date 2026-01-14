@@ -1,0 +1,15 @@
+{
+    "id": "8d1752eb-fbca-4229-8e55-3aa50a35ea6f",
+    "title": "绝对的忠诚",
+    "description": "随着调查深入，我意识到我被监控了。只有一个人能帮我洗脱嫌疑并反击——Walter White。他有着超越常人的逻辑和冷静，但我需要一份足够分量的‘礼物’来换取他的绝对合作。\n\n去收集5个烈焰棒（minecraft:blaze_rod）。这种危险的物品能证明你有胆量，也是Walter进行某种实验所急需的催化剂。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blaze_rod",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

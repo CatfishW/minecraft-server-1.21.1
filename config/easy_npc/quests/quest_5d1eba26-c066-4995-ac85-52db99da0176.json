@@ -1,0 +1,15 @@
+{
+    "id": "5d1eba26-c066-4995-ac85-52db99da0176",
+    "title": "净化行动",
+    "description": "Saul 接了个大单子，需要清理一片区域。但那里的怪物多得离谱，尤其是那些不知疲倦的僵尸村民。如果我们不把它们清理干净，客户是不会满意的。这可是关系到我们声誉的一仗。\n\n去指定的区域，把那些僵尸全部解决掉。一个不留。我们要向客户展示我们的效率和专业性。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

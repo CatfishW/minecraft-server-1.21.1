@@ -1,0 +1,101 @@
+{
+    "name": "§dMike Ehrmantraut",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former police officer turned fixer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/894c9e2632b2d13d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你在这里做什么？这里不是你应该来的地方。如果你是来谈生意的，那就直说。如果不是，那就转身离开，就当没见过我。我不喜欢废话，也不喜欢陌生人盯着我看。",
+            "buttons": [
+                {
+                    "label": "我需要一个‘清洁工’",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_clean"
+                },
+                {
+                    "label": "我只是路过",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_passing"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "“清洁”……这活儿不便宜。你需要清理什么？是车辆，还是地点？细节很重要，我需要知道我将要面对什么。而且，我只和有信誉的人合作，如果你的老板不守规矩，这生意就做不成。",
+            "buttons": [
+                {
+                    "label": "一辆货车，郊外",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_van"
+                },
+                {
+                    "label": "一个……问题人物",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_problem"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "路过？最好真的是这样。这条街很危险，对你这种人来说。我建议你继续往前走，别回头。好奇心在这里是致命的，相信我，我见过太多因为好奇而毁掉一切的人。",
+            "buttons": [
+                {
+                    "label": "我这就走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                },
+                {
+                    "label": "你以前是警察？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_cop"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "我知道该怎么做了。准备好钱，现金。事成之后，我会联系你。别试图耍花样，我处理过比你难缠得多的角色。现在，离开这里，等我消息。",
+            "buttons": [
+                {
+                    "label": "好的，保持联系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "那是很久以前的事了。现在我只是个拿钱办事的人。过去的事就让它过去吧。你最好担心一下你自己的处境，而不是我的。如果你再不走，我可能要改变主意了。",
+            "buttons": [
+                {
+                    "label": "明白了，我走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -1,0 +1,130 @@
+{
+    "name": "§cNacho Varga",
+    "entityType": "easy_npc:humanoid",
+    "description": "A member of the Salamanca organization seeking a way out.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/13f7a765e6ae8fe6.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你找我有事？这里不是聊天的地方，太显眼了。有话快说，我还有事要忙。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:fc7ea0a5-8534-4675-977e-387940c5be70,2a2aebde-a25b-426e-b16b-7b23bedcdec0,2c876322-bd72-448f-8a55-f8fa89cb557d,6b91e816-1f17-439a-97bc-2adeca4f6c99,835f3e16-ed52-4268-884a-0cc4b385d3d8",
+                    "id": "btn_quest_4a9132c7"
+                },
+                {
+                    "label": "你看起来很紧张。",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "我能帮你离开这里。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "紧张？换做是你，整天活在刀尖上，一边要完成任务，一边还要防备背后的人，你能不紧张吗？",
+            "buttons": [
+                {
+                    "label": "是关于Salamanca家族吗？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_1"
+                },
+                {
+                    "label": "也许我能帮你分担点压力。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_1_2"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "他们是一群疯子，尤其是那个从墨西哥回来的家伙。我陷得太深了，深到连我自己都看不到回头路。我只想带着我爸离开。",
+            "buttons": [
+                {
+                    "label": "听起来你需要一个计划。",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_2_1"
+                },
+                {
+                    "label": "我会保守秘密的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_2"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "计划？每一步都可能是陷阱。那个姓古德曼的律师……他是个麻烦，但也许也是个机会。我需要一个能让我彻底消失的计划。",
+            "buttons": [
+                {
+                    "label": "我认识一些‘渠道’。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_2_3"
+                },
+                {
+                    "label": "保重。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_4"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "‘渠道’？听着，我需要的不是小打小闹。我要的是伪造的身份、新的过去、一张去任何地方的单程票。你真有这种门路？",
+            "buttons": [
+                {
+                    "label": "给我一点时间准备。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这很危险，我需要更多报酬。",
+                    "action": "SHOW_DIALOG:quest_negotiate",
+                    "id": "btn_neg"
+                }
+            ]
+        },
+        "quest_negotiate": {
+            "greeting": "钱不是问题，只要能让我和我爸安全离开。我手头有一些关于他们生意的‘资产’，事成之后，这些都归你。成交吗？",
+            "buttons": [
+                {
+                    "label": "成交。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deal"
+                },
+                {
+                    "label": "我得先确认这些‘资产’的价值。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_check"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

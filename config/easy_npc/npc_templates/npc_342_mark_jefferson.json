@@ -1,0 +1,125 @@
+{
+    "name": "§cMark Jefferson",
+    "entityType": "easy_npc:humanoid",
+    "description": "A famous photographer and teacher at Blackwell Academy.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/cc48e4323e539253.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "啊，又一位充满潜力的灵魂。生活就像一张未曝光的胶片，充满了无限的可能性。我是马克·杰斐逊，很高兴认识你。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:24e78969-f740-41a0-b642-4366f4a85ec3,9e5a868c-8c7c-44fb-bdef-00dd1ca36be5,d80db52f-6cec-4b9e-b5ed-6ec60a65c3a9,ab70f8ea-de98-41ad-aa98-60afa0b16994,0ebb0825-b89f-42bd-9eca-36a5066dbb7c",
+                    "id": "btn_quest_7fd3c3c0"
+                },
+                {
+                    "label": "聊聊摄影",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_photo"
+                },
+                {
+                    "label": "关于学校的安全",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_security"
+                },
+                {
+                    "label": "我想成为你的学生",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q_jeff"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "摄影不仅仅是按下快门。它是关于捕捉时间的瞬间，定格那稍纵即逝的美。我正在筹备一个名为‘暗室’的项目，寻找那些能捕捉‘真实’的年轻摄影师。",
+            "buttons": [
+                {
+                    "label": "什么是‘真实’？",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_real"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "那是...一种纯粹的美。不加修饰，甚至带着一丝脆弱。就像一朵在黑暗中盛开的花朵，需要被发现，被珍藏。你懂吗？",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "学校的安全至关重要。虽然大卫·马德森的手段有些...严厉，但在这个动荡的时代，我们需要这种秩序。毕竟，天才的诞生需要一个受保护的环境。",
+            "buttons": [
+                {
+                    "label": "秩序比自由重要？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_order"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "没有安全的温床，才华也会被扼杀。想想那些早逝的艺术家，他们需要的是理解，是保护，而不是放任自流。这是为了他们好。",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "想成为我的学生？很好。我需要一些特别的东西来展示给我的赞助人看。去帮我找一些关于黑井学院‘黑暗面’的素材，那些不为人知的故事。越私密越好。",
+            "buttons": [
+                {
+                    "label": "我会去寻找的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_jeff"
+                },
+                {
+                    "label": "这不太好吧",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

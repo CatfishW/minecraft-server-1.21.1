@@ -1,0 +1,220 @@
+{
+    "name": "§6Steven Gomez",
+    "entityType": "easy_npc:humanoid",
+    "description": "Hank's partner at the DEA.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/4efc3a8673080b5b.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，我是DEA的史蒂文·戈麦斯。这里的局势很紧张，你是谁？有什么事？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e7a345ea-7b48-4909-a8bd-894b26c0d819,0830de0b-399a-49d2-ad46-c1821b4bbb67,1db6cb1f-7843-4814-a7d5-96417a7b87e5,ae529832-bce4-4ca5-944b-b9d89056c20f,25f4e07e-a4d8-426c-8689-6d5cb3130012",
+                    "id": "btn_quest_18478dbe"
+                },
+                {
+                    "label": "我是平民，路过而已",
+                    "action": "SHOW_DIALOG:civilian",
+                    "id": "btn_civilian"
+                },
+                {
+                    "label": "我有关于Salamanca家族的情报",
+                    "action": "SHOW_DIALOG:info",
+                    "id": "btn_info"
+                },
+                {
+                    "label": "我想协助调查",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "civilian": {
+            "greeting": "这里是危险区域，建议你尽快离开。不要在附近逗留，尤其是晚上。",
+            "buttons": [
+                {
+                    "label": "这就走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                },
+                {
+                    "label": "这里发生什么事了？",
+                    "action": "SHOW_DIALOG:danger",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "danger": {
+            "greeting": "我们正在追查一个极其危险的贩毒集团。他们不仅暴力，而且毫无底线。你最好别牵扯进来。",
+            "buttons": [
+                {
+                    "label": "听起来很可怕",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_afraid"
+                },
+                {
+                    "label": "我能帮上忙吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                }
+            ]
+        },
+        "info": {
+            "greeting": "情报？什么样的情报？如果你有正经线索，我们非常需要。但如果是胡编乱造，就是在浪费纳税人的钱。",
+            "buttons": [
+                {
+                    "label": "他们有新动作",
+                    "action": "SHOW_DIALOG:details",
+                    "id": "btn_details"
+                },
+                {
+                    "label": "我需要钱才说",
+                    "action": "SHOW_DIALOG:bribe",
+                    "id": "btn_bribe"
+                }
+            ]
+        },
+        "details": {
+            "greeting": "具体点。时间、地点、人员。任何细节都可能成为击溃他们的关键证据。",
+            "buttons": [
+                {
+                    "label": "他们在筹备交易",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn交易"
+                },
+                {
+                    "label": "我也只是听说",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_hearsay"
+                }
+            ]
+        },
+        "bribe": {
+            "greeting": "（脸色一沉）你在试图贿赂联邦探员吗？这是重罪。收起你的钱，好好说话，或者我带你回局里谈。",
+            "buttons": [
+                {
+                    "label": "开个玩笑，情报免费",
+                    "action": "SHOW_DIALOG:details",
+                    "id": "btn_free"
+                },
+                {
+                    "label": "别这么严肃嘛",
+                    "action": "SHOW_DIALOG:angry_gomez",
+                    "id": "btn_flirt"
+                }
+            ]
+        },
+        "angry_gomez": {
+            "greeting": "我没有时间开玩笑。最后一次机会，你到底想说什么？",
+            "buttons": [
+                {
+                    "label": "好吧，我看到可疑人物",
+                    "action": "SHOW_DIALOG:suspect",
+                    "id": "btn_suspect"
+                },
+                {
+                    "label": "没事了，我走了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "suspect": {
+            "greeting": "可疑人物？描述一下。是不是两个长相一模一样的人，还有一个咋咋呼呼的家伙？",
+            "buttons": [
+                {
+                    "label": "是的，就是他们！",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_yes"
+                },
+                {
+                    "label": "不，是其他人",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_no"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你想协助调查？很好。我们需要确切的证据来锁定他们的藏身之处。你愿意去搜集证据吗？这很危险。",
+            "buttons": [
+                {
+                    "label": "我愿意，这很重要",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "太危险了，我再考虑下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_rethink"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "听着，我们需要潜入他们的仓库，找到他们藏匿的毒品样本。这是唯一的突破口。能做到吗？",
+            "buttons": [
+                {
+                    "label": "交给我吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "如果被抓怎么办？",
+                    "action": "SHOW_DIALOG:backup",
+                    "id": "btn_backup"
+                }
+            ]
+        },
+        "backup": {
+            "greeting": "我们会在外围掩护你，但主要靠你自己。保持通讯畅通，一旦暴露，立刻撤离。",
+            "buttons": [
+                {
+                    "label": "明白，我出发了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_go"
+                },
+                {
+                    "label": "给我配把枪",
+                    "action": "SHOW_DIALOG:gun",
+                    "id": "btn_gun"
+                }
+            ]
+        },
+        "gun": {
+            "greeting": "我们不能给平民配枪，那是违法的。用你的智慧，别用蛮力。去吧，小心点。",
+            "buttons": [
+                {
+                    "label": "好吧，我会小心的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_safe"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

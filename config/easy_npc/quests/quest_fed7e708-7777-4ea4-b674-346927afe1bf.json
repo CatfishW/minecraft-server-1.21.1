@@ -1,0 +1,15 @@
+{
+    "id": "fed7e708-7777-4ea4-b674-346927afe1bf",
+    "title": "致命的药剂",
+    "description": "Marie Schrader 似乎在炼药方面颇有心得。Saul 想要一批『速效』药水，无论用来治愈还是投毒，都是极好的筹码。但他不想直接出面，以免落下把柄。\n\n找到 Marie Schrader，跟她谈谈这笔交易。如果她问起来，就说是给一个『挑剔的客户』准备的。她懂行，不需要说太多废话。",
+    "objective": {
+        "type": "TALK",
+        "target": "Marie Schrader",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

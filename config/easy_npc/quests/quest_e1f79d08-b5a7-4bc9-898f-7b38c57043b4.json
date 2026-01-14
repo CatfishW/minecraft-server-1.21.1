@@ -1,0 +1,15 @@
+{
+    "title": "向指挥官报告",
+    "description": "把我的最新地图带给Mike Hanlon。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Hanlon",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    },
+    "id": "e1f79d08-b5a7-4bc9-898f-7b38c57043b4"
+}

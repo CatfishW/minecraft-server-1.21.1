@@ -1,0 +1,15 @@
+{
+    "id": "bb711fbe-dcf1-43e4-81f2-45ad3bfcdc89",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给Craig Kettleman。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Craig Kettleman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 158,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 23
+    }
+}

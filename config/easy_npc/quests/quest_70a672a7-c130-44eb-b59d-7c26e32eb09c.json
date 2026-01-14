@@ -1,0 +1,15 @@
+{
+    "id": "70a672a7-c130-44eb-b59d-7c26e32eb09c",
+    "title": "沉默的警告",
+    "description": "表亲们在暗巷中找到了一个游手好闲的告密者。他本该守口如瓶，却把自己的舌头卖给了出价最高的人。现在，表亲们要让整个街区都记住，背叛的代价是无法偿还的血债。\n\n前往荒野中的僵尸聚集地，猎杀十只僵尸。将它们的头颅带回来，作为给那些同样多嘴之人的警示。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

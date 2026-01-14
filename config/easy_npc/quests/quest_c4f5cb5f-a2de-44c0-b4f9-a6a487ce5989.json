@@ -1,0 +1,15 @@
+{
+    "id": "c4f5cb5f-a2de-44c0-b4f9-a6a487ce5989",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给MacCready。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "MacCready",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 154,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 24
+    }
+}

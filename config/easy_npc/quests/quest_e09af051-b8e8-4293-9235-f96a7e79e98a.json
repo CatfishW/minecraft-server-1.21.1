@@ -1,0 +1,15 @@
+{
+    "id": "e09af051-b8e8-4293-9235-f96a7e79e98a",
+    "title": "红色的怨念",
+    "description": "近期事务所周边的僵尸似乎异常狂躁，它们在夜晚不断冲击着防御工事，仿佛被某种深层的愤怒所驱使。Kim 怀疑这不仅仅是自然的尸变，背后或许有更复杂的法律纠葛。\n\n为了保障客户的来访安全，Kim 决定采取强硬措施。她委托你前去清理这些受感染的生物，消灭 15 只僵尸。她不希望这些障碍物阻碍正义的实现。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

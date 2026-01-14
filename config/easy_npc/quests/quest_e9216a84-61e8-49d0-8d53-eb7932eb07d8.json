@@ -1,0 +1,15 @@
+{
+    "id": "e9216a84-61e8-49d0-8d53-eb7932eb07d8",
+    "title": "深渊凝视",
+    "description": "Tuco 最近感到不安，他需要一些情报。他听说过一个名为 ‘The Leper’ 的神秘人物，这个人在暗中掌控着某些秘密。Tuco 不喜欢未知，他需要知道这个人的底细。这是一项高风险的任务，只有最勇敢的人才能完成。\n\n找到 The Leper，并与他对话。不要试图耍花招，Tuco 会知道你是否说实话。带回你所听到的一切。",
+    "objective": {
+        "type": "TALK",
+        "target": "The Leper",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

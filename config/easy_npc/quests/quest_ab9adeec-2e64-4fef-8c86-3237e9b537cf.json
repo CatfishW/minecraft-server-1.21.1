@@ -1,0 +1,15 @@
+{
+    "id": "ab9adeec-2e64-4fef-8c86-3237e9b537cf",
+    "title": "进口光疗胶",
+    "description": "Mrs. Nguyen 坚持只使用特定品牌的光疗胶，据说是从遥远的东方运来的。不幸的是，上一批货物在运输途中遗失了。她现在急需这种胶水来完成 VIP 客户的订单，否则她的声誉将受损。\n\n根据运输记录，货箱可能掉落在附近的河流中。请潜入水中，找回失落的包裹。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:clay",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

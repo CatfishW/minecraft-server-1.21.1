@@ -1,0 +1,479 @@
+{
+    "name": "§bThe Ender Watcher",
+    "entityType": "easy_npc:humanoid",
+    "description": "Someone who ventured into the End and returned... changed. Now sees visions of Endermen and speaks of cities floating in the void.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/TheEnderWatcher"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（目光聚焦在你身后，仿佛在凝视虚空）§b欢迎...陌生人。你能感知到§5虚空§b的涌动吗？这空气中的寒意，不只是风...",
+            "buttons": [
+                {
+                    "label": "你是谁？为什么在这里？",
+                    "action": "SHOW_DIALOG:who_are_you",
+                    "id": "btn_identity"
+                },
+                {
+                    "label": "你刚才说的'虚空'和'城市'是什么意思？",
+                    "action": "SHOW_DIALOG:about_end",
+                    "id": "btn_end_lore"
+                },
+                {
+                    "label": "你还好吗？你看起来...有点恍惚。",
+                    "action": "SHOW_DIALOG:state_of_mind",
+                    "id": "btn_concern"
+                },
+                {
+                    "label": "我需要关于末地的信息。",
+                    "action": "SHOW_DIALOG:quest_info_intro",
+                    "id": "btn_quest_info"
+                }
+            ]
+        },
+        "who_are_you": {
+            "greeting": "我是§5末地守望者§b。名字？名字在那次旅程后就失去了意义...我只记得紫色的眼睛，无数的眼睛，在黑色石柱上看着我。（他颤抖了一下）我现在回不去了，或者说，我的一部分永远留在了那里。",
+            "buttons": [
+                {
+                    "label": "什么样的旅程？",
+                    "action": "SHOW_DIALOG:journey_story_1",
+                    "id": "btn_journey_ask"
+                },
+                {
+                    "label": "你说的'一部分'是什么意思？",
+                    "action": "SHOW_DIALOG:fragment_story",
+                    "id": "btn_fragment_ask"
+                },
+                {
+                    "label": "你和漫游附魔师他们是什么关系？",
+                    "action": "SHOW_DIALOG:associates",
+                    "id": "btn_associates_ask"
+                },
+                {
+                    "label": "（回到最初的话题）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "journey_story_1": {
+            "greeting": "（他的声音变得低沉而遥远）§6龙§b...我们以为击败了它就结束了。但我们错了，那只是钥匙，打开了我们不该打开的门。我们小队...我，§3水晶贤者§b，§c屠龙者艾什§b...我们穿过了返回的传送门，但有什么东西§5跟着§b我回来了。",
+            "buttons": [
+                {
+                    "label": "跟着你？什么东西？",
+                    "action": "SHOW_DIALOG:journey_story_2",
+                    "id": "btn_what_followed"
+                },
+                {
+                    "label": "其他人呢？他们怎么样了？",
+                    "action": "SHOW_DIALOG:others_fate",
+                    "id": "btn_others_fate"
+                },
+                {
+                    "label": "这太可怕了...",
+                    "action": "SHOW_DIALOG:state_of_mind",
+                    "id": "btn_sympathy"
+                }
+            ]
+        },
+        "journey_story_2": {
+            "greeting": "§5视线§b。（他突然与你对视，但眼神穿透了你）末影人的视线。它们看着我，不是在这里，而是在...§d那里§b。我能感觉到，当夜深人静，或者你看着水中倒影太久的时候...它们就在角落。虚空的城市里，有东西认识我了。",
+            "buttons": [
+                {
+                    "label": "虚空城市？你是说末地城？",
+                    "action": "SHOW_DIALOG:about_cities",
+                    "id": "btn_about_cities"
+                },
+                {
+                    "label": "你怎么处理这种感觉？",
+                    "action": "SHOW_DIALOG:coping_mechanism",
+                    "id": "btn_coping"
+                },
+                {
+                    "label": "（感到不安，换个话题）",
+                    "action": "SHOW_DIALOG:current_problems",
+                    "id": "btn_change_topic"
+                }
+            ]
+        },
+        "fragment_story": {
+            "greeting": "（他举起手，对着光观察）§d影子变长了，你不觉得吗？§b每次在末地死去——是的，死过不止一次——都会有一片灵魂被钉在那里的石头上。我的一部分记忆留在黑曜石平台，一部分恐惧留在末影船，还有...（他突然住口）",
+            "buttons": [
+                {
+                    "label": "还有什么？",
+                    "action": "SHOW_DIALOG:secret_shard_of_dread",
+                    "condition": "TRUST_LEVEL_HIGH",
+                    "id": "btn_secret_dread"
+                },
+                {
+                    "label": "死亡？在末地死亡会怎样？",
+                    "action": "SHOW_DIALOG:death_in_end",
+                    "id": "btn_death_mech"
+                },
+                {
+                    "label": "这听起来...令人担忧。",
+                    "action": "SHOW_DIALOG:state_of_mind",
+                    "id": "btn_worried_again"
+                }
+            ]
+        },
+        "current_problems": {
+            "greeting": "现在？现在我需要更多§5末影之眼§b。不是为了寻找要塞...不。是为了§d稳定视线§b。当幻象太强时，它们能帮助我锚定在这个世界。水晶贤者说这是饮鸩止渴，但他不明白...（他摇头）",
+            "buttons": [
+                {
+                    "label": "幻象？什么样的幻象？",
+                    "action": "SHOW_DIALOG:visions_detail",
+                    "id": "btn_visions"
+                },
+                {
+                    "label": "你需要多少末影之眼？也许我能帮忙。",
+                    "action": "SHOW_DIALOG:quest_pearls_intro",
+                    "id": "btn_offer_help_pearls"
+                },
+                {
+                    "label": "水晶贤者是谁？他懂什么？",
+                    "action": "SHOW_DIALOG:about_crystal_sage",
+                    "id": "btn_about_sage"
+                },
+                {
+                    "label": "我帮不上忙，抱歉。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_refuse_help"
+                }
+            ]
+        },
+        "visions_detail": {
+            "greeting": "§5紫色的走廊，无尽地延伸。§b悬浮的城池，由某种...§d哭泣的石头§b建成。还有它们，那些高瘦的身影，不是在行走，而是在§5片段之间切换§b。有时它们会指向某个方向，指向那座最大的塔...（他捂住了眼睛）",
+            "buttons": [
+                {
+                    "label": "最大的塔？那里有什么？",
+                    "action": "SHOW_DIALOG:secret_central_spire",
+                    "condition": "TRUST_LEVEL_HIGH",
+                    "id": "btn_secret_spire"
+                },
+                {
+                    "label": "这太疯狂了，你需要帮助。",
+                    "action": "SHOW_DIALOG:coping_mechanism",
+                    "id": "btn_need_help"
+                },
+                {
+                    "label": "（尝试用实际的问题打断他的幻象）你说你需要末影之眼？",
+                    "action": "SHOW_DIALOG:quest_pearls_intro",
+                    "id": "btn_practical_help"
+                }
+            ]
+        },
+        "coping_mechanism": {
+            "greeting": "帮助？§b（他苦笑）漫游附魔师给我做过护身符，艾什给我讲过战斗故事，水晶贤者调制过宁神药水。都没用。只有直面它，记录它...（他拿出一本破损的§5末地日志§b）我需要§d证据§b，证明那些城市不只是我的疯狂。也许...也许你能带来证据？",
+            "buttons": [
+                {
+                    "label": "什么样的证据？",
+                    "action": "SHOW_DIALOG:quest_elytra_intro",
+                    "id": "btn_ask_evidence"
+                },
+                {
+                    "label": "我能看看那本日志吗？",
+                    "action": "SHOW_DIALOG:ask_journal",
+                    "condition": "TRUST_LEVEL_MEDIUM",
+                    "id": "btn_ask_journal"
+                },
+                {
+                    "label": "恐怕我卷入太深了。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_back_out"
+                }
+            ]
+        },
+        "quest_pearls_intro": {
+            "greeting": "你需要§5末影珍珠§b，很多。不是普通的那种...是那种在§d末地城灯塔§b下，由年长末影人守护的珍珠。它们蕴含着更强的...连接。为我带来§612颗这样的珍珠§b，我可以给你一些我在此地学到的§9知识§b作为交换。",
+            "buttons": [
+                {
+                    "label": "我接受这个任务。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a503bd46-7ec1-4a5f-b1b2-37a0e9fbdb49,b880537d-d7d5-466d-ab44-cf9594cfd7a2,32ed0038-e564-4707-b25e-3db157003ca1,72cf57d5-1606-42f4-ae89-f26c3736eb88,02b24c83-97a9-49f5-a64f-9466fce00d94",
+                    "id": "btn_accept_pearls"
+                },
+                {
+                    "label": "年长末影人？那是什么？",
+                    "action": "SHOW_DIALOG:about_elder_enderman",
+                    "id": "btn_ask_elder"
+                },
+                {
+                    "label": "这听起来很危险，容我考虑。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline_pearls"
+                }
+            ]
+        },
+        "quest_elytra_intro": {
+            "greeting": "证据...§b一座从未被记载的§5末地城§b的§d旗帜§b。或者...（他眼神闪烁着希望与恐惧）或者一件§6完好无损的鞘翅§b，不是来自那些已知的船，而是来自更深处的塔楼。找到它，带给我，我将告诉你关于...§5中央尖塔§b的真相。",
+            "buttons": [
+                {
+                    "label": "我愿去寻找这鞘翅。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a503bd46-7ec1-4a5f-b1b2-37a0e9fbdb49,b880537d-d7d5-466d-ab44-cf9594cfd7a2,32ed0038-e564-4707-b25e-3db157003ca1,72cf57d5-1606-42f4-ae89-f26c3736eb88,02b24c83-97a9-49f5-a64f-9466fce00d94",
+                    "id": "btn_accept_elytra"
+                },
+                {
+                    "label": "更深处的塔楼？在哪里？",
+                    "action": "SHOW_DIALOG:secret_hidden_towers",
+                    "condition": "TRUST_LEVEL_HIGH",
+                    "id": "btn_secret_towers"
+                },
+                {
+                    "label": "这超出了我的能力范围。",
+                    "action": "SHOW_DIALOG:current_problems",
+                    "id": "btn_decline_elytra"
+                }
+            ]
+        },
+        "secret_shard_of_dread": {
+            "greeting": "（他警惕地环顾四周，压低声音）§5还有一片...一片纯粹的§d恐惧§5，留在了最终的那座岛上。§b不是主岛...是更远的地方。那里有一座祭坛，上面插着一把§c破损的龙息戟§b，被紫颂植株缠绕。每次我试图回忆，都只听到...§5低语§b。别说出去。",
+            "buttons": [
+                {
+                    "label": "低语？说什么？",
+                    "action": "SHOW_DIALOG:secret_whispers",
+                    "condition": "TRUST_LEVEL_MAX",
+                    "id": "btn_secret_whisper"
+                },
+                {
+                    "label": "（点头，保持沉默）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_acknowledge_secret"
+                },
+                {
+                    "label": "你需要摆脱这些记忆！",
+                    "action": "SHOW_DIALOG:coping_mechanism",
+                    "id": "btn_urge_recovery"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "你要走了吗？§b也好...影子在拉长，是时候了。（他转身望向虚空）记住，如果你要去那里...§5不要直视它们的眼睛太久，不要从高处往下看，不要相信紫颂果传来的歌声。§b安全回来...如果还能回来的话。",
+            "buttons": [
+                {
+                    "label": "保重，末地守望者。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_farewell_close"
+                },
+                {
+                    "label": "等等，我还有一个问题...",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_one_more_thing"
+                }
+            ]
+        },
+        "secret_central_spire": {
+            "greeting": "（The Ender Watcher压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_fc1393f7"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9770046a"
+                }
+            ]
+        },
+        "others_fate": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_ed106c03"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_4852e0cb"
+                }
+            ]
+        },
+        "secret_hidden_towers": {
+            "greeting": "（The Ender Watcher压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_434c1107"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3e028020"
+                }
+            ]
+        },
+        "secret_whispers": {
+            "greeting": "（The Ender Watcher压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_356722f2"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_44e78a31"
+                }
+            ]
+        },
+        "death_in_end": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_71207f32"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fc0d6b0a"
+                }
+            ]
+        },
+        "about_cities": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_29a4479d"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_27876ae9"
+                }
+            ]
+        },
+        "state_of_mind": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_64b39114"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2a315b62"
+                }
+            ]
+        },
+        "about_crystal_sage": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_5071f2ef"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2e8ba2ed"
+                }
+            ]
+        },
+        "ask_journal": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c6e3793d"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_7006e16e"
+                }
+            ]
+        },
+        "about_end": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_ccd081d5"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_0c00cc6f"
+                }
+            ]
+        },
+        "associates": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_431808db"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_0352cb06"
+                }
+            ]
+        },
+        "quest_info_intro": {
+            "greeting": "（The Ender Watcher思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cfd25bdb"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_6a673fc8"
+                }
+            ]
+        },
+        "about_elder_enderman": {
+            "greeting": "（The Ender Watcher沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_644b8d0d"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_125ae2e3"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "End Dimension Expert",
+        "connections": [
+            "The Wandering Enchanter",
+            "Crystal Sage",
+            "Dragon Slayer Ash"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:44:52"
+    }
+}

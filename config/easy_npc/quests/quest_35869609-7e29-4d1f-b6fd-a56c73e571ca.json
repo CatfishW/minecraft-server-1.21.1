@@ -1,0 +1,15 @@
+{
+    "id": "35869609-7e29-4d1f-b6fd-a56c73e571ca",
+    "title": "忠实的伙伴",
+    "description": "Frank 的眼神不再像平时那样锐利，反而透着一丝焦虑。他的那只名叫'Bolt'的狗不见了，那不仅仅是只狗，是他在世上唯一的家人。他听说有几只流浪狗在附近的荒野徘徊，可能被什么吓到了。他不敢大声声张，只能私下寻求帮助。\n\n去城镇周围的荒野寻找 'Bolt'。它是一只棕色的短毛犬，脖子上挂着一个磨损的皮革项圈。如果看到其他具有攻击性的流浪动物，请务必清除它们，但小心别伤到了 Bolt。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

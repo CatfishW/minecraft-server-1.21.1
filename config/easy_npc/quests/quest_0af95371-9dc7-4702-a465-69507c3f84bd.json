@@ -1,0 +1,15 @@
+{
+    "id": "0af95371-9dc7-4702-a465-69507c3f84bd",
+    "title": "法律迷宫",
+    "description": "Saul 面对一个看似无解的法律案件，需要他的老朋友 Mike Ehrmantraut 的帮助来导航法律漏洞。Mike 的保安经验和法律直觉可能是破局关键。\n\n找到 Mike Ehrmantraut 并与他对话，获取关于如何利用法律漏洞保护客户的建议。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mike Ehrmantraut",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

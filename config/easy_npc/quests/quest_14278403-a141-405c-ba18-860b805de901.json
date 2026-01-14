@@ -1,0 +1,15 @@
+{
+    "id": "14278403-a141-405c-ba18-860b805de901",
+    "title": "旧友的请求",
+    "description": "Frank 需要拓展他的生意网络，但他不能亲自出面，那样太显眼了。他想起了一个老熟人，Martin Brenner。这人神出鬼没，但路子很广。Frank 有一些关于安全路线的情报想要交易，希望能换取一些稀有的合成材料，用来给 Bolt 打造一个结实的防护项圈。\n\n去找到 Martin Brenner，把 Frank 的口信带给他。注意保持低调，不要让其他人注意到这次会面。这是建立信任的第一步。",
+    "objective": {
+        "type": "TALK",
+        "target": "Martin Brenner",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

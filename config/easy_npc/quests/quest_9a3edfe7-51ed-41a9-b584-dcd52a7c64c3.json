@@ -1,0 +1,15 @@
+{
+    "id": "9a3edfe7-51ed-41a9-b584-dcd52a7c64c3",
+    "title": "潜伏的威胁",
+    "description": "大卫·马德森站在学校的走廊里，神情严肃。他最近注意到一些学生行踪诡秘，似乎在策划什么。作为学校的安保主管，他必须在事情失控之前查明真相，确保学校的秩序和安全。\n\n请为大卫·马德森调查这些可疑活动。你需要找到那些行为异常的学生，这可能需要一些武力来制服他们。他怀疑这些捣乱分子可能聚集在城镇的某些阴暗角落。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

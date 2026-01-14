@@ -1,0 +1,15 @@
+{
+    "id": "fc7ea0a5-8534-4675-977e-387940c5be70",
+    "title": "枯萎的玉米",
+    "description": "萨拉曼卡家族的生意最近有些阻滞，图库不得不亲自去田间地头解决一些麻烦。他知道你渴望证明自己，渴望获得一条出路，而这正是机会。田地里的亡灵生物——那些行尸走肉，正在破坏作物，阻碍我们的运输路线。\n\n去南边的玉米地，解决掉那些徘徊的僵尸。让它们知道这片土地的主人是谁。做得干净利落点，别留下任何麻烦。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

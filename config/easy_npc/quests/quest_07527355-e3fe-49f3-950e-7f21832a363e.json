@@ -1,0 +1,15 @@
+{
+    "id": "07527355-e3fe-49f3-950e-7f21832a363e",
+    "title": "血脉的回响",
+    "description": "Stacey 身上流淌着与 Mike 相似的坚韧血液。在寻找父亲旧友的途中，她踏入了被亡灵盘踞的荒野。那些扭曲的僵尸仿佛在嘲笑生命的脆弱，但 Stacey 知道，只有清除这些障碍，才能继续前行。她必须证明自己继承了那份无畏的决心。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "db8207db-0412-4df1-b238-933cb565475a",
+    "title": "令状与冤魂",
+    "description": "事情变得诡异了，我的朋友。我的当事人声称，他被一个诡异的生物缠上了，它总是在夜深人静时出现，发出奇怪的笑声，这给我们的辩护带来了极大的'心理压力'。我需要证据来证明我的当事人精神受到了严重创伤。\n\n你去和那个'目击者'**Pennywise**聊聊，看看能不能让它签署一份'证词'。如果它不肯合作，我允许你使用'必要'的武力。把它打跑，让它别再来骚扰我的客户。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:clown",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

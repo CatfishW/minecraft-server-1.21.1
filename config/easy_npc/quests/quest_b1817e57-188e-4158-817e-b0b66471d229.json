@@ -1,0 +1,15 @@
+{
+    "id": "b1817e57-188e-4158-817e-b0b66471d229",
+    "title": "寂静的共鸣",
+    "description": "虽然草药压制了梦魇，但Jane知道逃避不是长久之计。她想起了往事，想起了那个总是默默关注着她的老师——马克·杰斐逊。她听说马克最近在废墟中徘徊，似乎在寻找某种灵感。Jane想让你带个口信，问他是否还记得那个关于‘希望’的哲学命题。\n\n找到马克·杰斐逊，并与他交谈。也许他的一句话，能让Jane明白该如何面对内心的空虚与渴望。",
+    "objective": {
+        "type": "TALK",
+        "target": "Mark Jefferson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

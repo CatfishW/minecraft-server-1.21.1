@@ -1,0 +1,91 @@
+{
+    "name": "§5Saul Goodman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A flamboyant criminal defense lawyer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/380a01df2de7aa69.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎光临！我是索尔·古德曼，你最好朋友的律师。如果你惹上了麻烦，无论是交通罚单还是更严重的问题，别担心，一切都会好起来的。俗话说，如果你身处困境，就给索尔打电话。那么，今天我能为你做些什么让你的生活重回正轨呢？",
+            "buttons": [
+                {
+                    "label": "我惹上大麻烦了",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_trouble"
+                },
+                {
+                    "label": "咨询法律问题",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_consult"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "“麻烦”只是个相对的词！在我的字典里，这叫“商业机会”。别管是什么，把它交给我。我会像变魔术一样把你的问题变没。我有最好的团队，最灵活的道德准则，保证让你全身而退，就像在阿尔伯克基的阳光下散步一样轻松。",
+            "buttons": [
+                {
+                    "label": "成交，我需要你的帮助",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_deal"
+                },
+                {
+                    "label": "我再考虑一下",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "法律咨询？当然！知识就是力量，而我就是你的力量源泉。无论是关于第五修正案的权利，还是如何处理商业合同里的陷阱，我都能给你讲得明明白白。记住，一个好的律师能帮你省下的钱，远比你付给他的要多。",
+            "buttons": [
+                {
+                    "label": "关于公司法……",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "关于个人权利……",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "太棒了！欢迎加入“索尔·古德曼客户俱乐部”。现在，忘了你来找过我，也忘了我们谈过的一切。我会处理剩下的。记住，我们是在法律的灰色地带跳舞，但只要舞步够快，没人能抓住你。去吧，享受你的生活！",
+            "buttons": [
+                {
+                    "label": "谢谢你，索尔",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

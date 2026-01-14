@@ -1,0 +1,15 @@
+{
+    "id": "021c7b26-c043-474d-b357-c57df43b7e7a",
+    "title": "纯净的原料",
+    "description": "我正在制作一种非常特殊的混合物，需要大量优质的原材料。但我没时间去农场，有些家伙在盯着我。我需要你去帮我收集一些种子，越多越好。记住，要最好的，别拿那些被污染的给我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 64
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "name": "§eFrank Bowers",
+    "entityType": "easy_npc:humanoid",
+    "description": "A local drug dealer with a soft spot for dogs.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/789b723586cbebce.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，新面孔。别靠太近，我和学校的人没什么好聊的。除非你是来买货的... 但我看你不像是那种人。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:35869609-7e29-4d1f-b6fd-a56c73e571ca,4f91f07d-a2af-4ba7-8e72-fd5681bc860d,14278403-a141-405c-ba18-860b805de901,a76b6da6-7294-4189-98eb-5068c114dd4d,bd97288e-98ba-48eb-9642-513cacfae3d4",
+                    "id": "btn_quest_6a67b9c2"
+                },
+                {
+                    "label": "你的狗很可爱",
+                    "action": "SHOW_DIALOG:talk_dog",
+                    "id": "btn_dog"
+                },
+                {
+                    "label": "听说你知道很多事",
+                    "action": "SHOW_DIALOG:talk_info",
+                    "id": "btn_info"
+                },
+                {
+                    "label": "这把刀看起来很旧",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_dog": {
+            "greeting": "你是说邦妮？她是我的一切。比这镇上的所有人都强。如果你敢动她一根毫毛，我会让你后悔出生。懂吗？",
+            "buttons": [
+                {
+                    "label": "我只是喜欢狗",
+                    "action": "SHOW_DIALOG:talk_dog_2",
+                    "id": "btn_like"
+                },
+                {
+                    "label": "明白了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_dog_2": {
+            "greeting": "哼，那还差不多。她以前是Rachel的狗... 在Rachel失踪前。她总是给邦妮带好吃的。现在我只能自己照顾它了。",
+            "buttons": [
+                {
+                    "label": "Rachel... 你很想她？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "talk_info": {
+            "greeting": "消息是有价的，小子。我可不是什么八卦专栏。但我确实有些渠道。你想知道什么？杰斐逊的真面目？还是那个总是盯着你看的维多利亚？",
+            "buttons": [
+                {
+                    "label": "关于杰斐逊",
+                    "action": "SHOW_DIALOG:talk_jefferson",
+                    "id": "btn_jefferson"
+                },
+                {
+                    "label": "没什么，我走了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "talk_jefferson": {
+            "greeting": "那家伙... 完美得不像真人。我听说他在旧金山惹过麻烦才躲到这鬼地方的。如果你要调查他，最好小心点。我虽然不是什么好人，但我讨厌恋童癖。",
+            "buttons": [
+                {
+                    "label": "你有证据吗？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "这把刀？这是我父亲留给我的。等等... 刀柄上的刻字磨损了。该死，我把它弄花了。我记得Rachel以前喜欢这种老式花纹，她帮我设计过一个。",
+            "buttons": [
+                {
+                    "label": "也许我能帮你修复",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_repair"
+                },
+                {
+                    "label": "看着挺一般的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_insult"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "你？你会这手艺？好吧，如果你能帮我恢复那个花纹，我就告诉你一个关于Vortex俱乐部的秘密。别让我失望，不然邦妮会不高兴的。",
+            "buttons": [
+                {
+                    "label": "接受任务 (修复花纹)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_complete"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,215 @@
+{
+    "name": "§dVictor",
+    "entityType": "easy_npc:humanoid",
+    "description": "Another of Gus Fring's loyal henchmen.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/1177782fb1167e32.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。你在这里有业务吗？还是只是路过？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:2a5fa969-5774-4e06-8c06-10e2c0f55b63,3550c45d-19f6-4178-895f-dede592cac01,67e97a55-7a20-435a-a2ab-925cc7068c7b,20145234-745b-4e79-9657-79a4c04e085c,ec9abd11-d325-4ae3-8872-19ef0d08fc34",
+                    "id": "btn_quest_c3f3bd58"
+                },
+                {
+                    "label": "我在找人",
+                    "action": "SHOW_DIALOG:find_1",
+                    "id": "btn_find"
+                },
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:who_1",
+                    "id": "btn_who"
+                },
+                {
+                    "label": "我想和弗林克斯先生谈谈",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "find_1": {
+            "greeting": "这里的人流量很大。你找谁？",
+            "buttons": [
+                {
+                    "label": "一个叫古斯·弗林克斯的人",
+                    "action": "SHOW_DIALOG:find_2",
+                    "id": "btn_gus_name"
+                },
+                {
+                    "label": "一个叫麦克的人",
+                    "action": "SHOW_DIALOG:find_3",
+                    "id": "btn_mike_name"
+                }
+            ]
+        },
+        "find_2": {
+            "greeting": "我不认识叫那个名字的人。你可能找错地方了。",
+            "buttons": [
+                {
+                    "label": "也许他用的是化名？",
+                    "action": "SHOW_DIALOG:find_4",
+                    "id": "btn_alias"
+                },
+                {
+                    "label": "好吧，打扰了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "find_3": {
+            "greeting": "麦克... 我不认识叫麦克的人。",
+            "buttons": [
+                {
+                    "label": "他是个高个子，看起来很严肃",
+                    "action": "SHOW_DIALOG:find_5",
+                    "id": "btn_desc_mike"
+                }
+            ]
+        },
+        "find_4": {
+            "greeting": "即使有化名，我也肯定不认识。你最好去别处问问。",
+            "buttons": [
+                {
+                    "label": "好的，谢谢",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_thanks"
+                }
+            ]
+        },
+        "find_5": {
+            "greeting": "听着，这里有很多高个子严肃的人。如果你没有预约，我建议你离开。",
+            "buttons": [
+                {
+                    "label": "明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_ok"
+                }
+            ]
+        },
+        "who_1": {
+            "greeting": "我是维克多。我负责这一片的安全。确保一切井井有条。",
+            "buttons": [
+                {
+                    "label": "看起来很有效率",
+                    "action": "SHOW_DIALOG:who_2",
+                    "id": "btn_efficient"
+                },
+                {
+                    "label": "你是说你在监视？",
+                    "action": "SHOW_DIALOG:who_3",
+                    "id": "btn_monitor"
+                }
+            ]
+        },
+        "who_2": {
+            "greeting": "效率是关键。混乱会导致错误。我们不喜欢错误。",
+            "buttons": [
+                {
+                    "label": "我会尽量不犯错",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_no_errors"
+                }
+            ]
+        },
+        "who_3": {
+            "greeting": "我只是在做我的工作。确保该留心的人被留心。",
+            "buttons": [
+                {
+                    "label": "我是该被留心的人吗？",
+                    "action": "SHOW_DIALOG:who_4",
+                    "id": "btn_me"
+                }
+            ]
+        },
+        "who_4": {
+            "greeting": "每个人都在某种程度上被留心。这取决于你是否构成威胁。",
+            "buttons": [
+                {
+                    "label": "我不构成威胁",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_no_threat"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你想和弗林克斯先生谈谈？你有预约吗？",
+            "buttons": [
+                {
+                    "label": "没有，但我有重要的事",
+                    "action": "SHOW_DIALOG:quest_1",
+                    "id": "btn_important"
+                },
+                {
+                    "label": "你能帮我安排吗？",
+                    "action": "SHOW_DIALOG:quest_2",
+                    "id": "btn_arrange"
+                }
+            ]
+        },
+        "quest_1": {
+            "greeting": "弗林克斯先生只见有预约的人。而且，他不处理‘重要的事’，除非那件事经过了适当的筛选。",
+            "buttons": [
+                {
+                    "label": "怎样才能经过筛选？",
+                    "action": "SHOW_DIALOG:quest_3",
+                    "id": "btn_screen"
+                }
+            ]
+        },
+        "quest_2": {
+            "greeting": "我只负责安保，不负责预约。那是前台的工作。而这里没有前台。",
+            "buttons": [
+                {
+                    "label": "那我该找谁？",
+                    "action": "SHOW_DIALOG:quest_3",
+                    "id": "btn_who_to_ask"
+                }
+            ]
+        },
+        "quest_3": {
+            "greeting": "如果你真的有什么有价值的信息，把它写下来。我会判断是否值得递交给上面。别耍花样。",
+            "buttons": [
+                {
+                    "label": "（提交一份报告）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_submit"
+                },
+                {
+                    "label": "我更喜欢当面谈",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_refuse"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

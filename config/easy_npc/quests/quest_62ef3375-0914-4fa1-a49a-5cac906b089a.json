@@ -1,0 +1,15 @@
+{
+    "id": "62ef3375-0914-4fa1-a49a-5cac906b089a",
+    "title": "高层的密谋",
+    "description": "所有的线索都指向了一个令人不安的真相：这不仅仅是学生的恶作剧，背后似乎有更强大的势力在操控。大卫·马德森必须找到那个躲在幕后的操纵者，揭开整个阴谋的核心。他需要和某个危险人物进行直接对话。\n\n请找到图科·萨拉曼卡，从他口中套出关于这次阴谋的真相。这是一次危险的会面，务必保持警惕。",
+    "objective": {
+        "type": "TALK",
+        "target": "Tuco Salamanca",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

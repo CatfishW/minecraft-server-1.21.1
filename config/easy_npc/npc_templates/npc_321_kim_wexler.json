@@ -1,0 +1,115 @@
+{
+    "name": "§cKim Wexler",
+    "entityType": "easy_npc:humanoid",
+    "description": "A brilliant lawyer and Jimmy's close companion.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/2a281cb87af99677.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。如果你是来咨询法律建议的，我建议你先去前台预约。我很忙，但我愿意听听你的问题。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:8fb2e1ce-2fe7-474c-aa0d-839f77922f12,27ea6968-76c6-4f6e-9b2e-a061e1a2250d,e09af051-b8e8-4293-9235-f96a7e79e98a,762678fb-2b73-460a-8341-905ae275f7d6,2f51443a-ba93-440b-b364-948f3d037520",
+                    "id": "btn_quest_1aee9e14"
+                },
+                {
+                    "label": "谈谈你在HHM的工作",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我遇到了一个棘手的法律问题",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我在HHM工作，主要负责银行法和公用事业相关的案子。这是一份很好的工作，能让我偿还法学院的贷款，并且积累经验。虽然有时候...过程比结果更重要。",
+            "buttons": [
+                {
+                    "label": "你似乎对Jimmy很了解？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_jimmy"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Jimmy...他是个矛盾体。他聪明、迷人，但同时也总是试图走捷径。我知道他想得到认可，特别是来自Chuck的。有时候我觉得我能帮他走上正轨，但有时候我怀疑自己是不是在助长他的坏习惯。",
+            "buttons": [
+                {
+                    "label": "你觉得他会成功吗？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_success"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "这取决于你如何定义‘成功’。如果是指在法律界声名显赫，那可能很难。但如果是指过上他想要的生活...他总是能找到办法。我只是希望他别把自己送进监狱。",
+            "buttons": [
+                {
+                    "label": "我需要你的专业帮助",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "好吧，让我们谈谈公事。如果你涉及了什么非法的勾当，我现在就告诉你，我不会代理。如果你只是需要有人帮你理清复杂的法律文书，或者在合规范围内争取权益，我很乐意帮忙。",
+            "buttons": [
+                {
+                    "label": "我需要一份法律咨询报告",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "这案子可能不太合法，我另寻他人",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

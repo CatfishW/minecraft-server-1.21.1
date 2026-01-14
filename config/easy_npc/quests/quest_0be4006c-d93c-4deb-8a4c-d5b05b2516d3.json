@@ -1,0 +1,15 @@
+{
+    "id": "0be4006c-d93c-4deb-8a4c-d5b05b2516d3",
+    "title": "镀金的真相",
+    "description": "克雷格·凯特尔曼从不相信任何人，尤其是在他落魄之后。他听说有一个叫达斯汀·亨德森（Dustin Henderson）的人，似乎在四处打听他的过去，这让克雷格坐立不安。他想知道这个人的底细，是记者，是追债人，还是某个更危险的角色。\n\n找到达斯汀·亨德森，并与他交谈。不要暴露你的雇主是谁，用你自己的方式去套取情报。克雷格需要知道他是否需要再次逃亡，或者，他是否能将这个潜在的威胁转化为新的棋子。",
+    "objective": {
+        "type": "TALK",
+        "target": "Dustin Henderson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

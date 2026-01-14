@@ -1,0 +1,15 @@
+{
+    "title": "清除威胁",
+    "description": "一些敌对势力派出的怪物在骚扰Kim的办公室，请解决它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:spider",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    },
+    "id": "c9eae494-3b45-472c-8af2-8c119575ed05"
+}

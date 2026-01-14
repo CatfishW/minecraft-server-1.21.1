@@ -1,0 +1,15 @@
+{
+    "title": "向铁匠传话",
+    "description": "请将这批新武器的蓝图带给铁匠。",
+    "objective": {
+        "type": "TALK",
+        "target": "Pennywise",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    },
+    "id": "b4872094-4100-4084-b929-6d7cd3ea8386"
+}

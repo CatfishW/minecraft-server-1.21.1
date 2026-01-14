@@ -1,0 +1,15 @@
+{
+    "id": "ab70f8ea-de98-41ad-aa98-60afa0b16994",
+    "title": "狂躁的色块",
+    "description": "艺术的灵感有时源于极致的混乱。Jefferson 的嘴角勾起一抹不易察觉的微笑。『我听说了一个名字，Tuco Salamanca。据说他的情绪就像失控的烟火，色彩浓烈且危险。我想捕捉这种原始的、未被驯服的能量，那种在爆发前一瞬间的张力。』\n\n去和 Tuco Salamanca 谈谈。不要试图理解他，只需要观察。他的存在本身，就是一幅充满冲击力的作品。小心点，靠得太近可能会让你自己也成为画面的一部分。",
+    "objective": {
+        "type": "TALK",
+        "target": "Tuco Salamanca",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

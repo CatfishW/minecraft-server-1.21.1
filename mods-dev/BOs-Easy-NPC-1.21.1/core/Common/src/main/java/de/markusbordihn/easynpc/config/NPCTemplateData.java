@@ -315,39 +315,43 @@ public class NPCTemplateData {
     private boolean canClimb = true;
     private boolean attackableByPlayers = false;
     private boolean attackableByMonsters = false;
-    
+    private String nameVisibility = "ALWAYS";
+
     public int getMaxHealth() { return maxHealth; }
     public void setMaxHealth(int maxHealth) { this.maxHealth = maxHealth; }
-    
+
     public double getMovementSpeed() { return movementSpeed; }
     public void setMovementSpeed(double movementSpeed) { this.movementSpeed = movementSpeed; }
-    
+
     public double getAttackDamage() { return attackDamage; }
     public void setAttackDamage(double attackDamage) { this.attackDamage = attackDamage; }
-    
+
     public double getArmor() { return armor; }
     public void setArmor(double armor) { this.armor = armor; }
-    
+
     public boolean isInvulnerable() { return invulnerable; }
     public void setInvulnerable(boolean invulnerable) { this.invulnerable = invulnerable; }
-    
+
     public boolean isCanBePushed() { return canBePushed; }
     public void setCanBePushed(boolean canBePushed) { this.canBePushed = canBePushed; }
-    
+
     public boolean isCanFloat() { return canFloat; }
     public void setCanFloat(boolean canFloat) { this.canFloat = canFloat; }
-    
+
     public boolean isCanOpenDoors() { return canOpenDoors; }
     public void setCanOpenDoors(boolean canOpenDoors) { this.canOpenDoors = canOpenDoors; }
-    
+
     public boolean isCanClimb() { return canClimb; }
     public void setCanClimb(boolean canClimb) { this.canClimb = canClimb; }
-    
+
     public boolean isAttackableByPlayers() { return attackableByPlayers; }
     public void setAttackableByPlayers(boolean attackableByPlayers) { this.attackableByPlayers = attackableByPlayers; }
-    
+
     public boolean isAttackableByMonsters() { return attackableByMonsters; }
     public void setAttackableByMonsters(boolean attackableByMonsters) { this.attackableByMonsters = attackableByMonsters; }
+
+    public String getNameVisibility() { return nameVisibility; }
+    public void setNameVisibility(String nameVisibility) { this.nameVisibility = nameVisibility; }
   }
   
   /**

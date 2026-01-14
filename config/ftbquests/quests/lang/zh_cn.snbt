@@ -1,9 +1,11 @@
 {
 	chapter.014603D984656A62.title: "时装"
+	chapter.05F75DC645DC87C8.title: "咔擦咔擦~"
 	chapter.0A339E631AC882D0.title: "田园生活"
 	chapter.0ED616B082498A8E.title: "萌新必看~"
 	chapter.2083B1A5078BECE1.title: "货币与交易"
 	chapter.253BDC430C89A71E.title: "开车车咯！"
+	chapter.28356577455F91B2.title: "画画家！"
 	chapter.314295D22AC3D6E2.title: "快速旅行！"
 	chapter.326DF02059866FB2.title: "地契"
 	chapter.5A8D3F2E1B4C6901.title: "军旅生涯"
@@ -449,6 +451,11 @@
 	quest.3FBD3719DEAD1C78.title: "欢迎来到 TACZ"
 	quest.3FF51C0534451303.quest_desc: ["番茄作为食材的一种，在后面的烹饪会用到。"]
 	quest.3FF51C0534451303.quest_subtitle: "酸酸甜甜~"
+	quest.40EC72980E654D69.quest_desc: [
+		"在WarmPixel中，添加了传送石碑进行传送。"
+		"传送石碑需要摸一下才能激活，这样下次你就可以在已激活的传送石碑里选择另一个已激活的传送石碑进行传送。"
+	]
+	quest.40EC72980E654D69.title: "传送！"
 	quest.41334BDA175365B0.quest_desc: ["在广袤的田野间，你迎来了属于自己的农场——这里是&b农夫乐事&r的世界。播下的种子，会在阳光与雨露的滋养下慢慢生长，等待你去收获。每一次耕作、每一份收获，都是田园生活的乐趣。农夫乐事不仅教会你种植和收获，更让你体验劳动的喜悦与生活的宁静，让每一片土地都充满希望与故事。"]
 	quest.41334BDA175365B0.title: "农夫乐事"
 	quest.41E967BFCD9AAD02.quest_desc: [

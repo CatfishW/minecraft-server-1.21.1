@@ -1,0 +1,15 @@
+{
+    "id": "4eecf136-473e-4914-9636-2893c8ee9db3",
+    "title": "纯度基石",
+    "description": "纯度，是一切的基石。没有合适的原料，再高超的化学技巧也是空谈。我正在配置一种前所未有的催化剂，它需要一种极其特殊的矿物来引导反应。这种矿物在自然界中储量稀少，但它的化学性质无可替代。我需要它，现在就要。\n\n去，找到那些散发着淡蓝色光芒的矿石。我需要它们的晶体核心。至少要八块，不多不少，每一块都必须是完美的样本。记住，纯度决定一切。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:lapis_lazuli",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

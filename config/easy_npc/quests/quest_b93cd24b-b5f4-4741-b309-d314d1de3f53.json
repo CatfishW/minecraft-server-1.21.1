@@ -1,0 +1,15 @@
+{
+    "id": "b93cd24b-b5f4-4741-b309-d314d1de3f53",
+    "title": "烈焰萃取",
+    "description": "为了提高冰毒的纯度和产量，Walter需要下界的烈焰棒作为关键催化剂，但获取过程充满危险。\n\n前往下界堡垒，击败烈焰人并收集10根烈焰棒，用于改进合成工艺。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blaze_rod",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "title": "清除蜘蛛",
+    "description": "地狱要塞里的洞穴蜘蛛很麻烦，清理一条通道。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:spider",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 130,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    },
+    "id": "02aa27a8-1917-47cd-a485-161bd761e7c3"
+}

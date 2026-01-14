@@ -1,0 +1,15 @@
+{
+    "id": "1820bd40-2204-4437-b216-8e556e08bf47",
+    "title": "苍白之物的低语",
+    "description": "有人说，在月光无法触及的角落，存在着靠吞噬时间为生的生物。它们被称为‘苍白之物’，它们的巢穴中堆积着无数个被遗忘的瞬间。Max，你的能力让你能窥见时间的裂隙。现在，深入裂隙，从那些偷走时间的怪物身上，找回属于这个世界的‘时间’。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

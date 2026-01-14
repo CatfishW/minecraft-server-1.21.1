@@ -1,0 +1,29 @@
+{
+    "schemaVersion": 1,
+    "id": "imagedisplayer",
+    "version": "${version}",
+    "name": "ImageDisplayer",
+    "description": "Displays custom images on screen for server information.",
+    "authors": [
+        "Warm Pixel"
+    ],
+    "contact": {
+        "homepage": "https://warmpixel.com"
+    },
+    "license": "MIT",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.warmpixel.imagedisplayer.ImageDisplayerMod"
+        ],
+        "client": [
+            "com.warmpixel.imagedisplayer.client.ImageDisplayerClient"
+        ]
+    },
+    "depends": {
+        "fabricloader": ">=0.16.0",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*"
+    }
+}

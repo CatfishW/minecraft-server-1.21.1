@@ -1,0 +1,15 @@
+{
+    "id": "7edf0655-fb1c-49bc-b4be-dd7c8ebd1315",
+    "title": "废弃车站的怪谈",
+    "description": "Juliet Watson是校刊的记者，最近校园里流传着关于废弃车站的怪谈。传闻那里深夜会有奇怪的声响，甚至有学生声称看到了幽灵般的身影。为了挖掘出惊人的独家新闻，Juliet决定亲自去调查这个闹鬼的传闻，她需要勇敢的冒险者协助收集证据。\n\n请前往废弃车站，调查那里的异常情况。根据目击者描述，那里的怪物似乎与普通的僵尸不同。请将它们驱散，为Julilet的报道提供真实的素材。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

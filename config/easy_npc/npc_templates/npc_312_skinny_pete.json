@@ -1,0 +1,135 @@
+{
+    "name": "§dSkinny Pete",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of Jesse's close friends and dealers.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/e4783a31b655e153.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Yo, what's up man? You lookin' for some product or just hangin'?",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:c2d7e5cd-aaa5-4366-a185-2adb08758da7,021c7b26-c043-474d-b357-c57df43b7e7a,8a266f6a-f3a2-44b9-99de-f75faa8df461,0798d3d9-6f0f-4a4a-8876-3c5f508c4787,a4bb6b6a-0e4e-4866-9695-a9f2991b6441,17f3a5ec-c50e-4683-ba5d-0a89e7e1967a",
+                    "id": "btn_quest_8ef149c2"
+                },
+                {
+                    "label": "Just chatting",
+                    "action": "SHOW_DIALOG:chat_1",
+                    "id": "btn_chat"
+                },
+                {
+                    "label": "You play piano?",
+                    "action": "SHOW_DIALOG:story_music",
+                    "id": "btn_music"
+                },
+                {
+                    "label": "I need product",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "chat_1": {
+            "greeting": "It's rough out here, man. The streets are crazy. But we manage, ya know?",
+            "buttons": [
+                {
+                    "label": "What about Jesse?",
+                    "action": "SHOW_DIALOG:chat_2",
+                    "id": "btn_jesse"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "chat_2": {
+            "greeting": "Jesse's my boy. We go way back. I just hope he figures things out, dude's got a big heart.",
+            "buttons": [
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_music": {
+            "greeting": "Yeah, man. I used to play classical. Bach, Beethoven. It's pure, you know? Unlike this mess.",
+            "buttons": [
+                {
+                    "label": "Play something for me",
+                    "action": "SHOW_DIALOG:story_music_2",
+                    "id": "btn_play"
+                },
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_music_2": {
+            "greeting": "Maybe later. I ain't got my keys on me. But I can still hum a mean Sonata.",
+            "buttons": [
+                {
+                    "label": "Back to main",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "Product? Look, I'm running low myself. But... I know a guy who cooks. High quality stuff.",
+            "buttons": [
+                {
+                    "label": "Who's the guy?",
+                    "action": "SHOW_DIALOG:quest_details",
+                    "id": "btn_who"
+                },
+                {
+                    "label": "Nevermind",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_details": {
+            "greeting": "It's Badger. He's... not the sharpest tool in the shed, but he moves weight. Find him near the park.",
+            "buttons": [
+                {
+                    "label": "Accept Task",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

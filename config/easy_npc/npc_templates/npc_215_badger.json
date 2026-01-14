@@ -1,0 +1,86 @@
+{
+    "name": "§dBadger",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of Jesse's loyal but dim-witted friends.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/b01ad99ef208660a.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Yo, man！你找我？我跟你说，这地方可真够酷的，像个巨大的……呃……盒子？反正比公园的长椅强多了。我刚还在跟小胖子聊那个太空猴子的事儿呢，你知道吗？就是那个能开飞船的猴子，老带劲了。你有啥好玩的事儿不？我这儿正无聊得快发疯了。",
+            "buttons": [
+                {
+                    "label": "聊聊那笔交易",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_deal"
+                },
+                {
+                    "label": "太空猴子？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_monkey"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "哦，你是说那笔‘生意’啊！嘘……小声点。老白，你知道的，那个化学老师，他简直是个天才！他搞出来的货，纯度高得吓人。我跟小胖子就是负责分发的，我们管它叫‘蓝冰’。不过说实话，有时候我觉得有点害怕，特别是那个叫古斯的家伙，他总是盯着我看，看得我心里发毛。",
+            "buttons": [
+                {
+                    "label": "古斯很可怕？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_gus"
+                },
+                {
+                    "label": "听起来很危险",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "是啊！太空猴子！我跟小胖子看了个老电影，里面有个猴子穿着宇航服，还在太空里吸大麻呢！我就在想，如果我们要逃离警察，是不是也可以搞个火箭？我们可以把货藏在火箭里，然后‘咻’的一声，我们就去月球卖冰了！哈哈，我在想什么呢，太搞笑了。",
+            "buttons": [
+                {
+                    "label": "回到现实吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "可怕？那简直是太可怕了，兄弟！你知道吗，有一次我在餐厅里，有个家伙得罪了他，结果第二天那家伙就……反正我是不敢再去了。而且那个叫麦克的老头，也是个狠角色。我只想安安静静地卖点货，赚点钱买披萨和游戏机，我可不想惹上什么大麻烦。",
+            "buttons": [
+                {
+                    "label": "保重，兄弟",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

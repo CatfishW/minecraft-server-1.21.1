@@ -1,0 +1,15 @@
+{
+    "id": "06a1d45b-a09d-402d-9857-8dfb0ac601d4",
+    "title": "重整旗鼓",
+    "description": "办公室的资源有些紧缺，为了应对即将到来的法律战，我们需要坚固的材料来维护秩序。请去收集一些铁锭，这会让我们在谈判桌上更有底气。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

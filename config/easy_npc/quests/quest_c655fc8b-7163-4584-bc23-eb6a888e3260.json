@@ -1,0 +1,15 @@
+{
+    "id": "c655fc8b-7163-4584-bc23-eb6a888e3260",
+    "title": "回响走廊",
+    "description": "孩子们放学后，走廊里总是回荡着奇怪的声音。我打扫了这么多年，知道那不是风声。那些小小的幽灵还在寻找他们丢失的午餐，它们的悲伤让拖把上的水都变得冰冷。\n\n去找到那些不安的灵魂。带上一些新鲜的苹果（minecraft:apple），放在西侧走廊最深处的储物柜里。当它们得到安慰，地面上的哭声就会停止。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:apple",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

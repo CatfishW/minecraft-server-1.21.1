@@ -1,0 +1,110 @@
+{
+    "name": "§5Skyler White",
+    "entityType": "easy_npc:humanoid",
+    "description": "Walter's wife, struggling with his secret life.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/cf17d054aa4b9f83.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "沃尔特？是你吗？家里很乱，我得洗衣服，还要记账... 你有什么事？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:0b932687-8563-40af-8a5e-3d89f6a243f4,8093fc57-5d8d-4f34-8628-ba7339caaa5d,ecbf9a21-dc9b-47f7-adcd-09ad9438a2ec,f4e9d5c1-4e5d-4420-bd4d-becdeb7787ab,23e55c96-c366-49e6-93aa-b3434bbcd03b",
+                    "id": "btn_quest_4c049629"
+                },
+                {
+                    "label": "你看起来很累",
+                    "action": "SHOW_DIALOG:stress",
+                    "id": "btn_stress"
+                },
+                {
+                    "label": "关于沃尔特的工作",
+                    "action": "SHOW_DIALOG:walt_job",
+                    "id": "btn_walt_job"
+                },
+                {
+                    "label": "我来帮忙（任务）",
+                    "action": "SHOW_DIALOG:quest_help",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "stress": {
+            "greeting": "累？我只是... 我不知道该怎么形容。沃尔特最近变了，变得我不认识了。家里全靠我一个人。",
+            "buttons": [
+                {
+                    "label": "需要聊聊吗？",
+                    "action": "SHOW_DIALOG:secret",
+                    "id": "btn_secret"
+                },
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "walt_job": {
+            "greeting": "教书？还是那个‘咨询’工作？我不想知道。我知道有些不对劲，但我不敢问，我怕答案。",
+            "buttons": [
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "secret": {
+            "greeting": "（小声）我看见了。那些钱，那辆车... 还有那个叫杰西的男孩。我该怎么办？",
+            "buttons": [
+                {
+                    "label": "保持沉默",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:stress",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_help": {
+            "greeting": "听着，沃尔特说他在做洗衣粉生意。如果你能帮我把这批‘样品’送去给客户，我会付你钱的。我实在走不开。",
+            "buttons": [
+                {
+                    "label": "接受任务：送货",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_quest"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

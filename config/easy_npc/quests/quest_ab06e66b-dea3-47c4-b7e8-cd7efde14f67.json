@@ -1,0 +1,15 @@
+{
+    "id": "ab06e66b-dea3-47c4-b7e8-cd7efde14f67",
+    "title": "金环的阴影",
+    "description": "Gustavo Fring 让我意识到，他的竞争对手不仅在贩卖商品，还在他的鸡场附近制造混乱，这影响了最终产品的品质。他语气平淡，但眼神锐利，暗示着如果不加以制止，后果会很严重。\n\n前往指定的黑暗区域，那里是亡灵生物滋生的温床。清除所有挡路的障碍，确保通往养殖场的道路绝对安全。Fring 先生不喜欢意外。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

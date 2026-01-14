@@ -75,6 +75,7 @@ public class TemplateCommand {
         .then(registerSpawnRect())
         .then(registerSpawnWand())
         .then(registerSpawnTimers())
+        .then(registerStopSpawn())
         .then(registerStopSpawnRect())
         .then(registerExport());
   }
@@ -438,6 +439,30 @@ public class TemplateCommand {
   }
 
   /**
+   * Register the stop_spawn subcommand.
+   */
+  private static ArgumentBuilder<CommandSourceStack, ?> registerStopSpawn() {
+    return Commands.literal("stop_spawn")
+        .then(Commands.argument("template_name", StringArgumentType.word())
+            .suggests(TemplateCommand::suggestTemplateNames)
+            .executes(TemplateCommand::executeStopSpawn));
+  }
+
+  /**
+   * Execute the stop_spawn command.
+   */
+  private static int executeStopSpawn(CommandContext<CommandSourceStack> context) {
+    String templateName = StringArgumentType.getString(context, "template_name");
+    int count = de.markusbordihn.easynpc.handler.SpawningHandler.stopSpawningTask(templateName);
+    if (count > 0) {
+      context.getSource().sendSuccess(() -> Component.literal("§eStopped " + count + " spawning task(s) for " + templateName + "."), true);
+    } else {
+      context.getSource().sendFailure(Component.literal("§cNo active spawning tasks found for " + templateName + "."));
+    }
+    return Command.SINGLE_SUCCESS;
+  }
+
+  /**
    * Register the stop_rect_spawn subcommand.
    */
   private static ArgumentBuilder<CommandSourceStack, ?> registerStopSpawnRect() {
@@ -459,7 +484,7 @@ public class TemplateCommand {
    */
   private static ArgumentBuilder<CommandSourceStack, ?> registerSpawnTimers() {
     return Commands.literal("spawn_timers")
-        .requires(source -> source.hasPermission(0)) // Anyone can use this
+        .requires(source -> source.hasPermission(2)) // Only admins can use this
         .executes(TemplateCommand::executeSpawnTimers);
   }
 

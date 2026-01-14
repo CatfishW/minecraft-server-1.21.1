@@ -1,0 +1,115 @@
+{
+    "name": "§9Jimmy McGill",
+    "entityType": "easy_npc:humanoid",
+    "description": "The struggling lawyer who becomes Saul Goodman.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7a6079c2def16f2f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你看起来需要一个能扭转局面的律师？我是Jimmy McGill。虽然现在有些落魄，但我的脑子可比名片上的头衔好用多了。有什么我能帮你的吗？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e531c292-931e-4aec-8cb1-8fb7e1a902bf,6552b976-7fd6-4007-9c9a-db1ae840ca20,c694340b-c8cd-4875-90f6-00d7162c93a8,5ac47e9e-981a-4144-b0d6-98fd7d4984e2,95c5f0f2-e085-4a7b-b18e-a23487b3f70f",
+                    "id": "btn_quest_2af1b925"
+                },
+                {
+                    "label": "你是怎么当上律师的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我想请你做我的代理",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "哈，说来话长。我曾经是个销售员，卖手机的。后来我意识到，真正的生意是帮人解决麻烦，而不是卖那些诺基亚。我通过了函授大学的课程，拿到了法学学位。",
+            "buttons": [
+                {
+                    "label": "听起来你和你哥哥不太一样？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_brother"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Chuck？他是麦吉尔家的天才，HHM的合伙人。他是一块纯白的画布，而我...我总是那滴不小心溅上去的墨水。他不信任我，觉得我不够‘严肃’。",
+            "buttons": [
+                {
+                    "label": "你想证明给他看吗？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_prove"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "我当然想！但我更想走我自己的路。如果在正规法庭上走不通，我就在停车场解决它。这就是生意，朋友。每个人都有价码，或者都有弱点。",
+            "buttons": [
+                {
+                    "label": "我想听听你的建议",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你想让我代理你？没问题。但我得先知道我们要面对的是什么。是交通罚单？还是更严重的指控？只要价钱合适，或者...你有个有趣的案子，我都可以接。",
+            "buttons": [
+                {
+                    "label": "我需要你帮我搞定一份合同",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "我再考虑一下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

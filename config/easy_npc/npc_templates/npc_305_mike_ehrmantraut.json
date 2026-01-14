@@ -1,0 +1,100 @@
+{
+    "name": "§aMike Ehrmantraut",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former police officer turned fixer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/894c9e2632b2d13d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "......有事说事。我很忙，没时间猜哑谜。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:3699d4fb-0543-410b-964b-4e00a0f6e322,4ea0a4d0-d575-45af-a487-2fcf9d4ca8f9,f0344bb8-4480-43b7-8bfb-69b9b4b4e0ee,ded59b0f-9936-4076-860d-2932e3b87fca,c322aee9-509f-4a84-958a-0ab9440dd01f",
+                    "id": "btn_quest_624c4d18"
+                },
+                {
+                    "label": "询问工作",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask"
+                },
+                {
+                    "label": "寻求保护",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "以前在费城当警察，见过不少事。现在？现在我是个‘修理工’。专门解决别人解决不了的问题。",
+            "buttons": [
+                {
+                    "label": "修理工？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "意思就是，如果你有东西丢了，或者有人需要被‘清理’，或者需要有人在暗处盯着。只要钱给到位，一切都能处理干净。",
+            "buttons": [
+                {
+                    "label": "我有个任务",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_to_quest"
+                },
+                {
+                    "label": "明白了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "有位大人物在盯着一个停车场。我需要有人去把那里的监控探头搞坏，但要做得像是意外。不能留下任何痕迹。你干不干？",
+            "buttons": [
+                {
+                    "label": "我接了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "我不想惹麻烦",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_dec"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

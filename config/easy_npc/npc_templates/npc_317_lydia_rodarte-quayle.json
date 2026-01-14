@@ -1,0 +1,100 @@
+{
+    "name": "§9Lydia Rodarte-Quayle",
+    "entityType": "easy_npc:humanoid",
+    "description": "A high-level executive involved in the meth trade.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/5c48b013488d7aa6.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你来干什么？我不记得我们有预约。请快点说，我这里很忙，而且这里不是谈话的地方。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:59f2e864-bba7-4cf8-864d-2167619b4103,224c44fc-16e2-41a1-9f70-f0c972b32337,3ec40e43-1cbd-4c0a-8bb2-3be03b1d5b17,ab5e9241-9757-40e4-a9b6-6008da051124,72b1f06f-1f97-4f44-8f9d-672078dcff00",
+                    "id": "btn_quest_27f43788"
+                },
+                {
+                    "label": "我只是想聊聊香料生意。",
+                    "action": "SHOW_DIALOG:business_1",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "我有麦考利的包裹。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "business_1": {
+            "greeting": "（紧张地擦拭茶匙）我不懂你在说什么。如果你指的是茶叶，我只喝‘Stevia’。其他的……其他的我一概不知。",
+            "buttons": [
+                {
+                    "label": "别装了，我知道是你在和墨西哥那边联系。",
+                    "action": "SHOW_DIALOG:business_2",
+                    "id": "btn_accuse"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "business_2": {
+            "greeting": "好吧，好吧。如果你非要说那个蓝色的……东西。但我必须确保供应链的稳定性。我不能容忍任何不确定性！质量必须达标，否则……否则后果很严重。",
+            "buttons": [
+                {
+                    "label": "你会为了保住秘密不惜一切代价吗？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_threaten"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "麦考利？那个苏格兰佬？太好了，我正需要那批货。听着，把货送到我指定的交接点。不要引起注意，不要出任何差错。我不希望再发生像在维克多·库吉诺夫那样的事。",
+            "buttons": [
+                {
+                    "label": "放心，我会处理得干干净净。",
+                    "action": "START_QUEST:Tea_Time",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "这风险太大了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

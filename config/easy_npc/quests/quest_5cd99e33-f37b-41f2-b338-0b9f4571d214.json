@@ -1,0 +1,15 @@
+{
+    "id": "5cd99e33-f37b-41f2-b338-0b9f4571d214",
+    "title": "破碎记忆",
+    "description": "Unknown 的记忆似乎缺失了一块。他时常望着远方发呆，仿佛在寻找失落的碎片。在他的感知中，某种特定的矿石似乎能与他的精神产生微弱的共鸣，或许那里面封存着他过去的某种影像。\n\n去挖掘铁矿，将那些坚硬的铁锭带回来。这不仅仅是单纯的收集，更像是一场对过去的拼凑。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

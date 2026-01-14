@@ -1,0 +1,15 @@
+{
+    "id": "3d555453-a6e4-4fd0-b43c-4b113f0fb5a8",
+    "title": "荒野的劣质货",
+    "description": "该死的，我最讨厌的就是竞争。有人在东边的废弃矿坑里提炼劣质货，还到处散播，这会毁了我的市场！我不能容忍这种事发生。\n\n你去把那些在矿井里游荡的'劣质品'给我清理干净，一个不留。让他们知道这片地盘是谁的。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

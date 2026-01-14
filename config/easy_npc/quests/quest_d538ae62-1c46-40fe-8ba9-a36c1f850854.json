@@ -1,0 +1,15 @@
+{
+    "id": "d538ae62-1c46-40fe-8ba9-a36c1f850854",
+    "title": "最后的嘱托",
+    "description": "Hank Schrader 满怀愧疚地注视着 Stacey，Mike 的牺牲一直是他心中无法抹去的伤痛。他知道 Stacey 身处险境，但他已经无法像当年那样保护她。他从怀中掏出一封推荐信，希望能为她联系上一位能提供庇护的律师，这是他唯一能做的了。",
+    "objective": {
+        "type": "TALK",
+        "target": "Hank Schrader",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

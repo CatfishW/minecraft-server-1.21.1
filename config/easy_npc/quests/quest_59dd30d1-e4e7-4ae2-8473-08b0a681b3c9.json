@@ -1,0 +1,15 @@
+{
+    "id": "59dd30d1-e4e7-4ae2-8473-08b0a681b3c9",
+    "title": "来自过去的信物",
+    "description": "Juliet在整理校史资料时，发现了一本残缺的日记，里面提到了一种长在悬崖边的蓝色花朵，据说能唤起人们最深处的记忆。为了完成这篇关于学校历史的深度报道，她需要重现日记中描述的场景，但这需要大量的原材料来制作特殊的墨水。\n\n请帮助Juliet收集这些花朵。它们生长在陡峭的崖壁上，虽然采集不易，但它们的蓝色汁液是制作复古墨水的最佳材料。请将收集到的花朵交给Juliet，这将为她的报道增添一抹神秘的色彩。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blue_orchid",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 45
+    }
+}

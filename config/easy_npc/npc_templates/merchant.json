@@ -191,7 +191,8 @@
         "canBePushed": false,
         "canFloat": true,
         "canOpenDoors": true,
-        "canClimb": true
+        "canClimb": true,
+        "nameVisibility": "NEVER"
     },
     "drop": {
         "item": {

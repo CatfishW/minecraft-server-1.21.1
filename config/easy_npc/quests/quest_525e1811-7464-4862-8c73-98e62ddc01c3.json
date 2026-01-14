@@ -1,0 +1,15 @@
+{
+    "id": "525e1811-7464-4862-8c73-98e62ddc01c3",
+    "title": "丢失的幸运星",
+    "description": "我的队友在训练时弄丢了一件非常重要的东西——那是我们战胜劲敌的幸运星挂坠。没有它，我们都觉得士气低落。虽然只是个小物件，但它承载了太多回忆。\n\n请帮我收集 16 个海晶石碎片（Prismarine Crystals），我要用它们制作一个新的幸运星挂坠来鼓舞士气。这种材料在水下遗迹中很常见，如果你愿意帮忙，我会非常感激。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:prismarine_crystals",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

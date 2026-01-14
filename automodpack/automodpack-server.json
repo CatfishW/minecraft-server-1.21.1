@@ -9,7 +9,7 @@
     "!/kubejs/server_scripts/**",
     "/emotes/*",
     "/tacz/*",
-    "/config/physicsmod/physics_client_config.json",
+    "/config/physicsmod/*.json",
     "/resourcepacks/*.zip"
   ],
   "allowEditsInFiles": [

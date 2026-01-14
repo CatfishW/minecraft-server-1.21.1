@@ -1,0 +1,15 @@
+{
+    "id": "28e5eab6-008c-4ba8-8a67-86b513e8f628",
+    "title": "猎杀幽灵",
+    "description": "Rachel Amber，一个自以为掌控一切的女人。她的信息网让她变得过于自信。我们不需要这种窥探的眼睛。让她的手下去死吧，用那些被诅咒的骨头作为她无法触及我们核心的证明。这是对她界限的温和提醒。\n\n在夜晚的荒野上游荡，寻找那些骷髅弓箭手。它们的骨骨骸是完美的警告信物。务必小心，它们的箭矢和她的言语一样致命。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 6
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

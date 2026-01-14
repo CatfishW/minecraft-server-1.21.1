@@ -2,7 +2,9 @@
     "required": true,
     "package": "com.warmpixel.npcbusdriver.mixin",
     "compatibilityLevel": "JAVA_21",
-    "mixins": [],
+    "mixins": [
+        "AutomobileEntityMixin"
+    ],
     "injectors": {
         "defaultRequire": 1
     }

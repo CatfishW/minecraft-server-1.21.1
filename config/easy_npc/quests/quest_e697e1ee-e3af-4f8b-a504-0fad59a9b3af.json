@@ -1,0 +1,15 @@
+{
+    "id": "e697e1ee-e3af-4f8b-a504-0fad59a9b3af",
+    "title": "深渊的凝视",
+    "description": "沙鸥渡口的地下传来低沉的震动，Irene Landry 担心这不仅仅是地壳的运动。有传言说，在附近的古老矿井深处，潜伏着一种令人作呕的怪物。如果不除掉这个源头，渡口将永无宁日。这是一项极度危险的任务，必须由最强的战士来执行。\n\n请前往废弃矿井的深处，击杀 5 只潜伏者（Cave Spider）。它们的剧毒不容小觑。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:cave_spider",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

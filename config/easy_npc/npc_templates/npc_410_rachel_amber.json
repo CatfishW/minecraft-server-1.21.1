@@ -1,0 +1,687 @@
+{
+    "name": "§6Rachel Amber",
+    "entityType": "easy_npc:humanoid",
+    "description": "The most popular girl at Blackwell Academy who formed an intense bond with Chloe Price before mysteriously disappearing. Everyone in Arcadia Bay seems to have known her differently.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7c882cf60292471d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§e（瑞秋看起来光彩照人，但眼神里有一丝难以察觉的紧张）§r\n嗨，你一定是新来的。我是瑞秋·安布尔。布莱克威尔看起来怎么样？",
+            "buttons": [
+                {
+                    "label": "关于你自己",
+                    "action": "SHOW_DIALOG:about_rachel",
+                    "id": "btn_about_me"
+                },
+                {
+                    "label": "我听说你和克洛伊是朋友",
+                    "action": "SHOW_DIALOG:about_chloe",
+                    "id": "btn_chloe"
+                },
+                {
+                    "label": "布莱克威尔的其他人怎么样？",
+                    "action": "SHOW_DIALOG:about_blackwell",
+                    "id": "btn_blackwell"
+                },
+                {
+                    "label": "你似乎…有点心事？",
+                    "action": "SHOW_DIALOG:secret_intro",
+                    "id": "btn_secret",
+                    "requires": [
+                        "trust_point_1"
+                    ]
+                }
+            ]
+        },
+        "about_rachel": {
+            "greeting": "§e（她露出完美的微笑，像是排练过无数次）§r\n我？我只是个普通的布莱克威尔学生。喜欢摄影，想当模特…也许有天能去洛杉矶。每个人不都这么想吗？\n（她的语气里有一丝嘲讽）",
+            "buttons": [
+                {
+                    "label": "听起来你并不普通",
+                    "action": "SHOW_DIALOG:persona_surface",
+                    "id": "btn_not_ordinary"
+                },
+                {
+                    "label": "摄影？跟杰斐逊老师学的吗？",
+                    "action": "SHOW_DIALOG:about_jefferson",
+                    "id": "btn_jefferson"
+                },
+                {
+                    "label": "回到其他话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "about_chloe": {
+            "greeting": "§b（她的表情立刻柔软下来，真实了许多）§r\n克洛伊…她是我最好的朋友。唯一看穿过所有伪装的人。\n我们曾经计划一起离开阿卡迪亚湾，去追逐真正的自由。",
+            "buttons": [
+                {
+                    "label": "看穿伪装？",
+                    "action": "SHOW_DIALOG:masks_revealed",
+                    "id": "btn_masks"
+                },
+                {
+                    "label": "离开的计划怎么了？",
+                    "action": "SHOW_DIALOG:escape_plan",
+                    "id": "btn_escape"
+                },
+                {
+                    "label": "她现在还好吗？",
+                    "action": "SHOW_DIALOG:chloe_now",
+                    "id": "btn_chloe_now"
+                }
+            ]
+        },
+        "about_blackwell": {
+            "greeting": "§e（她环顾四周，压低声音）§r\n这里每个人都在演戏，亲爱的。\n内森·普雷斯科特是脾气暴躁的富家子弟，维多利亚是女王蜂…而我，我是他们想让我成为的任何样子。",
+            "buttons": [
+                {
+                    "label": "这听起来很累",
+                    "action": "SHOW_DIALOG:tired_of_masks",
+                    "id": "btn_tired"
+                },
+                {
+                    "label": "你认识弗兰克·鲍尔斯吗？",
+                    "action": "SHOW_DIALOG:about_frank",
+                    "id": "btn_frank"
+                },
+                {
+                    "label": "杰斐逊老师呢？他好像特别欣赏你",
+                    "action": "SHOW_DIALOG:jefferson_danger",
+                    "id": "btn_jefferson_danger",
+                    "requires": [
+                        "trust_point_2"
+                    ]
+                }
+            ]
+        },
+        "secret_intro": {
+            "greeting": "§c（她的笑容消失了，警惕地看着你）§r\n…很少有人能注意到。你很敏锐。\n（她犹豫了一下）有些事正在发生，在布莱克威尔表面之下。",
+            "buttons": [
+                {
+                    "label": "告诉我",
+                    "action": "SHOW_DIALOG:darkroom_hint",
+                    "id": "btn_tell_me"
+                },
+                {
+                    "label": "你看起来很害怕",
+                    "action": "SHOW_DIALOG:rachel_scared",
+                    "id": "btn_scared"
+                },
+                {
+                    "label": "也许我不该问",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_safe"
+                }
+            ]
+        },
+        "darkroom_hint": {
+            "greeting": "§5（她凑近了些，声音几乎听不见）§r\n我发现了些东西…一个地方。他们称之为“暗房”。内森提起过，然后惊慌失措地改口。\n杰斐逊老师的摄影课…不只是艺术那么简单。",
+            "buttons": [
+                {
+                    "label": "你需要帮助吗？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:0f9f0e02-7a9b-4c85-91b5-e37058400afd,2576465f-fc32-49b7-91dd-a459fa841621,57673242-ab54-4e7c-aac9-c0a0c99a645a,e40d9f71-5959-48f2-8ced-6c239a639550,c964e7ab-a101-4019-8e06-b496866dbdf2",
+                    "id": "btn_help_quest"
+                },
+                {
+                    "label": "你应该告诉别人",
+                    "action": "SHOW_DIALOG:tell_who",
+                    "id": "btn_tell_who"
+                },
+                {
+                    "label": "这太危险了",
+                    "action": "SHOW_DIALOG:too_dangerous",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "persona_surface": {
+            "greeting": "§e（她轻笑一声，但眼里没有笑意）§r\n“普通”只是另一张面具。对老师来说，我是有前途的学生；对维多利亚来说，我是竞争对手；对克洛伊…我是真实的。\n但有时候，连我自己都忘了哪个才是真的我。",
+            "buttons": [
+                {
+                    "label": "你最喜欢哪个自己？",
+                    "action": "SHOW_DIALOG:favorite_self",
+                    "id": "btn_favorite"
+                },
+                {
+                    "label": "这一定很孤独",
+                    "action": "SHOW_DIALOG:feeling_alone",
+                    "id": "btn_alone"
+                },
+                {
+                    "label": "回到主话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main2"
+                }
+            ]
+        },
+        "masks_revealed": {
+            "greeting": "§b（她露出真诚的微笑）§r\n克洛伊第一次见我时，就说我能得奥斯卡奖——因为我太会演戏了。\n但她还是选择做我的朋友，即使知道我在伪装。\n（她的笑容黯淡）现在她可能恨我了。",
+            "buttons": [
+                {
+                    "label": "为什么她会恨你？",
+                    "action": "SHOW_DIALOG:chloe_anger",
+                    "id": "btn_anger"
+                },
+                {
+                    "label": "你对她撒谎了？",
+                    "action": "SHOW_DIALOG:lies_to_chloe",
+                    "id": "btn_lies"
+                },
+                {
+                    "label": "你仍然在乎她",
+                    "action": "SHOW_DIALOG:still_care",
+                    "id": "btn_care"
+                }
+            ]
+        },
+        "escape_plan": {
+            "greeting": "§6（她的眼神飘向远方）§r\n我们计划了一切。攒钱，研究路线，梦想着加州的阳光…\n但后来我发现了一些事，一些让我不能马上离开的事。\n克洛伊觉得我背叛了她。也许我是的。",
+            "buttons": [
+                {
+                    "label": "你发现了什么？",
+                    "action": "SHOW_DIALOG:what_discovered",
+                    "id": "btn_discovered",
+                    "requires": [
+                        "trust_point_2"
+                    ]
+                },
+                {
+                    "label": "你仍然可以离开",
+                    "action": "SHOW_DIALOG:can_still_leave",
+                    "id": "btn_leave"
+                },
+                {
+                    "label": "回到克洛伊的话题",
+                    "action": "SHOW_DIALOG:about_chloe",
+                    "id": "btn_back_chloe"
+                }
+            ]
+        },
+        "tired_of_masks": {
+            "greeting": "§7（她疲惫地叹了口气，终于卸下一些防备）§r\n累？有时候我觉得自己快被撕碎了。\n早上是模范学生，下午是叛逆的朋友，晚上…\n（她突然住口）算了。说这些没意义。",
+            "buttons": [
+                {
+                    "label": "晚上是什么？",
+                    "action": "SHOW_DIALOG:night_persona",
+                    "id": "btn_night",
+                    "requires": [
+                        "trust_point_3"
+                    ]
+                },
+                {
+                    "label": "你需要一个可以完全做自己的人",
+                    "action": "SHOW_DIALOG:true_self",
+                    "id": "btn_true_self"
+                },
+                {
+                    "label": "抱歉，我不该追问",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main3"
+                }
+            ]
+        },
+        "what_discovered": {
+            "greeting": "§5（她紧张地咬着嘴唇）§r\n杰斐逊和内森…他们在做什么不好的事。我看到了照片，不是普通的那种。\n我想揭露他们，但证据不够。而且…我有点陷进去了。",
+            "buttons": [
+                {
+                    "label": "陷进去了？什么意思？",
+                    "action": "SHOW_DIALOG:too_deep",
+                    "id": "btn_too_deep"
+                },
+                {
+                    "label": "我有办法帮你找证据",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:0f9f0e02-7a9b-4c85-91b5-e37058400afd,2576465f-fc32-49b7-91dd-a459fa841621,57673242-ab54-4e7c-aac9-c0a0c99a645a,e40d9f71-5959-48f2-8ced-6c239a639550,c964e7ab-a101-4019-8e06-b496866dbdf2",
+                    "id": "btn_evidence_quest"
+                },
+                {
+                    "label": "这太危险了，你应该停下",
+                    "action": "SHOW_DIALOG:should_stop",
+                    "id": "btn_stop"
+                }
+            ]
+        },
+        "night_persona": {
+            "greeting": "§8（她环顾四周，确保没人在听）§r\n弗兰克·鲍尔斯…那个毒贩。我假装对他感兴趣，为了接近他的圈子，获取信息。\n杰斐逊和内森有时会和他交易。\n（她苦笑）克洛伊要是知道我和她继父的毒贩混在一起…",
+            "buttons": [
+                {
+                    "label": "你在玩火",
+                    "action": "SHOW_DIALOG:playing_with_fire",
+                    "id": "btn_fire"
+                },
+                {
+                    "label": "弗兰克知道你的真实目的吗？",
+                    "action": "SHOW_DIALOG:frank_knows",
+                    "id": "btn_frank_knows"
+                },
+                {
+                    "label": "我需要告诉克洛伊真相",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:0f9f0e02-7a9b-4c85-91b5-e37058400afd,2576465f-fc32-49b7-91dd-a459fa841621,57673242-ab54-4e7c-aac9-c0a0c99a645a,e40d9f71-5959-48f2-8ced-6c239a639550,c964e7ab-a101-4019-8e06-b496866dbdf2",
+                    "id": "btn_chloe_truth_quest"
+                }
+            ]
+        },
+        "true_self": {
+            "greeting": "§d（她的眼睛微微发亮）§r\n你知道吗？有时候我在废弃的火车站，一个人跳舞。\n没有观众，没有评价，不需要扮演任何人。\n那可能是唯一真正属于我的时刻。",
+            "buttons": [
+                {
+                    "label": "那听起来很美",
+                    "action": "SHOW_DIALOG:dancing_moment",
+                    "id": "btn_dancing"
+                },
+                {
+                    "label": "我可以为你守住一个秘密",
+                    "action": "SHOW_DIALOG:keep_secret",
+                    "id": "btn_keep_secret"
+                },
+                {
+                    "label": "每个人都应该有那样的时刻",
+                    "action": "SHOW_DIALOG:everyone_moment",
+                    "id": "btn_everyone"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§e（她又戴上了那副完美的面具，但对你眨了眨眼）§r\n很高兴和你聊天，真的。\n在阿卡迪亚湾，能说真话的人不多。保重，好吗？\n（她转身离开，但又停下）…谢谢你的倾听。",
+            "buttons": [
+                {
+                    "label": "保重，瑞秋",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                },
+                {
+                    "label": "等等，我还有最后一个问题",
+                    "action": "SHOW_DIALOG:final_question",
+                    "id": "btn_final"
+                },
+                {
+                    "label": "我们还会再见的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_see_again"
+                }
+            ]
+        },
+        "final_question": {
+            "greeting": "§b（她转过身，表情难以捉摸）§r\n问吧。但我不保证会回答。",
+            "buttons": [
+                {
+                    "label": "你害怕吗？",
+                    "action": "SHOW_DIALOG:are_you_scared",
+                    "id": "btn_scared_final"
+                },
+                {
+                    "label": "真实的瑞秋·安布尔是谁？",
+                    "action": "SHOW_DIALOG:who_is_real_rachel",
+                    "id": "btn_real_rachel"
+                },
+                {
+                    "label": "什么都不问了，保重",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_nothing"
+                }
+            ]
+        },
+        "are_you_scared": {
+            "greeting": "§c（她沉默了很久，最后轻声说）§r\n…是的。每天都害怕。\n但害怕比麻木好，至少我还感觉到些什么。\n（她勉强笑了笑）别为我担心。我能照顾好自己。",
+            "buttons": [
+                {
+                    "label": "我会为你担心的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_worry"
+                },
+                {
+                    "label": "你比我勇敢",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_brave"
+                },
+                {
+                    "label": "再见，瑞秋",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_final_goodbye"
+                }
+            ]
+        },
+        "who_is_real_rachel": {
+            "greeting": "§6（她看着你，眼神复杂）§r\n…我不知道。\n也许那个在废弃车站跳舞的女孩最接近真实。\n或者真实的我根本不存在，只是一堆面具下的虚空。\n（她转身）我得走了。",
+            "buttons": [
+                {
+                    "label": "你存在的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_you_exist"
+                },
+                {
+                    "label": "希望你能找到答案",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_find_answer"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_take_care"
+                }
+            ]
+        },
+        "chloe_anger": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_34904fdc"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_53a942a6"
+                }
+            ]
+        },
+        "everyone_moment": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_4ed207fd"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d6323c90"
+                }
+            ]
+        },
+        "about_frank": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c9313b68"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d6d45e9c"
+                }
+            ]
+        },
+        "too_dangerous": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_7a9eb9f9"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_69cee1a6"
+                }
+            ]
+        },
+        "still_care": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_b553b236"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_43f18d84"
+                }
+            ]
+        },
+        "rachel_scared": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d7d1dc18"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_a15bb7cb"
+                }
+            ]
+        },
+        "too_deep": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_94f273f3"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_ce5258d0"
+                }
+            ]
+        },
+        "lies_to_chloe": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_9ee2eeb2"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c7d6bab6"
+                }
+            ]
+        },
+        "keep_secret": {
+            "greeting": "（Rachel Amber压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_22677c45"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3887a262"
+                }
+            ]
+        },
+        "tell_who": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_0bcc31cb"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_e2676246"
+                }
+            ]
+        },
+        "can_still_leave": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_9745ef92"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c2f4e37f"
+                }
+            ]
+        },
+        "dancing_moment": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_9fc64650"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_371d6474"
+                }
+            ]
+        },
+        "jefferson_danger": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_96ccbf7c"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3a34bd6e"
+                }
+            ]
+        },
+        "frank_knows": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_45f1576d"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9adf0613"
+                }
+            ]
+        },
+        "should_stop": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_053de6a0"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_97621aa1"
+                }
+            ]
+        },
+        "playing_with_fire": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e5fdbdaa"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d76b61f7"
+                }
+            ]
+        },
+        "favorite_self": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e9d6d097"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_688a9c7a"
+                }
+            ]
+        },
+        "chloe_now": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e6576c78"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_5ded1236"
+                }
+            ]
+        },
+        "feeling_alone": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_a19f3d29"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d9a85f3d"
+                }
+            ]
+        },
+        "about_jefferson": {
+            "greeting": "（Rachel Amber沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e1c50f43"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cd39bb37"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Life is Strange",
+        "role": "Missing Student",
+        "connections": [
+            "Chloe Price",
+            "Frank Bowers",
+            "Mark Jefferson",
+            "Nathan Prescott"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:09:48"
+    }
+}

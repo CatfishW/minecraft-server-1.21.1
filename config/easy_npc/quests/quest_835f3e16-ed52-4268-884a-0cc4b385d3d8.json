@@ -1,0 +1,15 @@
+{
+    "id": "835f3e16-ed52-4268-884a-0cc4b385d3d8",
+    "title": "家族的遗产",
+    "description": "我们家族的根源，那些被遗忘的仪式和荣耀，需要被重新唤醒。赫克托·萨拉曼卡，那个老战士，提起过一种古老的附魔金苹果。它不仅仅是力量的象征，更是我们血脉中不屈精神的证明。但现在，我们手头的存货已经不多了。\n\n去寻找这种传奇般的果实。这不容易，可能藏在最危险的遗迹深处，或是与强大的亡灵领主为伴。把它带回来，献给家族，证明你的忠诚和价值。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:enchanted_golden_apple",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 500,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 5
+    }
+}

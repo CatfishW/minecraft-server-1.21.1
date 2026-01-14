@@ -1,0 +1,15 @@
+{
+    "id": "ded59b0f-9936-4076-860d-2932e3b87fca",
+    "title": "旧日的幽灵",
+    "description": "有些事永远不会真正过去。一个老对手，或者说，一个老同事，又出现了。他知道太多，而且他的嘴巴不严。这威胁到了我保护的人。我本想和平解决，但他没有给我这个选择。我需要你来处理这个'幽灵'。\n\n丛林里有一种被称为'流浪者'的生物，它们无声无息，极其致命。找到它们，处理掉它们。就像处理掉我们过去的麻烦一样，要彻底，要不留痕迹。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:phantom",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

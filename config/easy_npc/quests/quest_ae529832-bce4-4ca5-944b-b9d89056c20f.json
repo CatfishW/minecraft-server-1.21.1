@@ -1,0 +1,15 @@
+{
+    "id": "ae529832-bce4-4ca5-944b-b9d89056c20f",
+    "title": "最后的目击者",
+    "description": "Steven Gomez: '我们查到Hank最后接触的人是一个叫Joyce Byers的超市收银员。她似乎看到了不该看的东西，精神状态很不稳定。'\nSteven Gomez: '你必须去见她。不要穿制服，不要表明身份。她只信任普通人。问问她那天晚上到底发生了什么。如果她不肯说，给她带点小麦面包，那是她家乡的味道。'",
+    "objective": {
+        "type": "TALK",
+        "target": "Joyce Byers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "1db6cb1f-7843-4814-a7d5-96417a7b87e5",
+    "title": "街头的交易",
+    "description": "Steven Gomez: '我们有线人说，最近有个叫Saul Goodman的律师在到处散播消息，他似乎知道Walter White的下落。但我们的人没法接近他。'\nSteven Gomez: '你需要去和他谈谈。我的一个老线人，'跛子'（The Leper），会在暗巷等你。先从他那里打探口风，看看这个律师到底想干什么。这可能是个陷阱，保持警惕。'",
+    "objective": {
+        "type": "TALK",
+        "target": "The Leper",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

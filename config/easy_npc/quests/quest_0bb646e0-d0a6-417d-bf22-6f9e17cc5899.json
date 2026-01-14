@@ -1,0 +1,15 @@
+{
+    "title": "家族联络",
+    "description": "Lalo需要你向一位可靠的家族成员传递口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Strong",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 90,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    },
+    "id": "0bb646e0-d0a6-417d-bf22-6f9e17cc5899"
+}

@@ -1,0 +1,31 @@
+{
+    "schemaVersion": 1,
+    "id": "warmpixel-performance-optimizer",
+    "version": "${version}",
+    "name": "WarmPixel Performance Optimizer",
+    "description": "Optimizes entity and gun performance and increases FPS.",
+    "authors": [
+        "WarmPixel"
+    ],
+    "contact": {
+        "homepage": "https://warmpixel.com/",
+        "sources": "https://github.com/warmpixel/performance-optimizer"
+    },
+    "license": "MIT",
+    "icon": "assets/warmpixel-performance-optimizer/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "com.warmpixel.optimizer.OptimizerMod"
+        ]
+    },
+    "mixins": [
+        "warmpixel-performance-optimizer.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.16.10",
+        "minecraft": "~1.21.1",
+        "java": ">=21",
+        "fabric-api": "*"
+    }
+}

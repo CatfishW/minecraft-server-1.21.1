@@ -1,0 +1,15 @@
+{
+    "id": "52dfd59c-ad9c-4dfb-87cf-3341c8588a6c",
+    "title": "旧日的残影",
+    "description": "服下药剂后，Jane陷入了深度昏迷。在她的潜意识深处，她被囚禁在一个由回忆构成的牢笼里，那个‘小丑’正在嘲笑她的软弱。唯一的破局之法，是找到那个曾给予她温暖的人——Jesse。哪怕只是一段记忆，Jesse的存在也能驱散她心中的阴霾。\n\n在Jane被幻象吞噬前，你必须找到乔伊斯·拜尔斯。作为Jesse的母亲，她是连接过去与现在的唯一纽带。把她带到Jane的床边，或许她能唤醒Jane迷失的灵魂。",
+    "objective": {
+        "type": "TALK",
+        "target": "Joyce Byers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 45
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a9473042-907f-4d60-a05a-eb475b435ee3",
+    "title": "旧世界的遗产",
+    "description": "这个区域充满了废墟，但也充满了机遇。我们需要为即将到来的交易准备一些硬通货，而不仅仅是货物。那些古老的遗迹里，或许还藏着旧世界的银币。Gus 对这种古老的钱币情有独钟。\n\n去搜刮那些由凋灵骷髅守卫的堡垒。它们是旧世界的守护者，身上很可能携带着我们要找的东西。将那些银币带回来，这将大大提升我们在交易中的筹码。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:numismatic-overhaul:silver_coin",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

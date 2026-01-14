@@ -1,0 +1,15 @@
+{
+    "id": "262057d7-a1f4-4e29-b468-325f21e650f0",
+    "title": "校园舆论战",
+    "description": "索尔·古德曼（Saul Goodman）最近在校园里很活跃，他那巧舌如簧的本事能轻易煽动人心。维多利亚·蔡斯（Victoria Chase）意识到，这个人如果能为己所用，将成为‘漩涡俱乐部’最强大的宣传工具。她需要有人去和索尔接触，试探他的口风。\n\n找到索尔·古德曼。别直接说我要招募他，那太蠢了。就告诉他，有个‘大客户’对他的‘法律咨询’很感兴趣，看看他是什么反应。我需要知道他的价码和底线。",
+    "objective": {
+        "type": "TALK",
+        "target": "Saul Goodman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

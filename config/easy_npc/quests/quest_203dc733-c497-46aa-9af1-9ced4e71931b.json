@@ -1,0 +1,15 @@
+{
+    "id": "203dc733-c497-46aa-9af1-9ced4e71931b",
+    "title": "校园的低语",
+    "description": "蕾切尔失踪后，黑湾学院的空气中弥漫着一种难以言喻的压抑。那个总是坐在角落里的塞缪尔·雷蒙德似乎知道些什么，他看我的眼神充满了恐惧和犹豫。\n\n找到塞缪尔·雷蒙德。他可能目睹了蕾切尔失踪前的一些不寻常的细节。他很胆小，需要温和地与他交谈，让他放下戒心。",
+    "objective": {
+        "type": "TALK",
+        "target": "Samuel Raymond",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

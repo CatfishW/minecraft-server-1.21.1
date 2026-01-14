@@ -1,0 +1,15 @@
+{
+    "id": "feae7270-582a-4e9b-a45e-c8150f07d374",
+    "title": "关于校园传说的采访",
+    "description": "Juliet撰写了一系列关于校园传说的报道，她认为这些看似无稽之谈的故事背后，往往隐藏着某种社会学或心理学的真实反映。为了验证她的理论，她需要采访一位对这些地下世界和传说有着深刻理解的人物，而传说中的Skyler White正是她名单上的首选目标。\n\n请找到Skyler White，并接受Juliet的委托进行一次深度访谈。她的直觉告诉她，Skyler掌握着解开谜题的关键信息。",
+    "objective": {
+        "type": "TALK",
+        "target": "Skyler White",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

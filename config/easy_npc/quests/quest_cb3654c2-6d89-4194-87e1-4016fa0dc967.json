@@ -1,0 +1,15 @@
+{
+    "id": "cb3654c2-6d89-4194-87e1-4016fa0dc967",
+    "title": "律政先锋的初试炼",
+    "description": "听着，朋友，在这片方块世界里，没有比洗脱罪名更棒的生意了。我是索尔·古德曼，如果你听说过Better Call Saul，你就知道我能把死的说成活的。但眼下，我需要一些启动资金，还有一些能证明我“业务能力”的东西。\n\n你去帮我弄点'证据'回来。我需要一些原版小麦（minecraft:wheat），大概32个就行。用来...嗯...构建一个完美的不在场证明。把它们交给我的助理，她会知道怎么做。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 32
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

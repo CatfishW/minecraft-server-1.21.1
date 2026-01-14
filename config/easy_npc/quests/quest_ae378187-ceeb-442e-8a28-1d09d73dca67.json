@@ -1,0 +1,15 @@
+{
+    "id": "ae378187-ceeb-442e-8a28-1d09d73dca67",
+    "title": "暗巷低语",
+    "description": "Vortex Club的狂欢过后，垃圾场里总是藏着不少好东西。那些醉醺醺的家伙们经常把值钱的小玩意儿和还没开封的酒瓶随手乱扔，这可都是钱啊。作为俱乐部的一员，你深知这种场合的价值，但黑暗中也可能潜伏着比宿醉更可怕的东西。\n\n在午夜时分前往垃圾场（原版：Minecraft村庄或类似废墟区域），寻找那些被遗弃的宝藏。你需要收集足够多的空酒瓶来向酒吧老板换取报酬，同时要小心那些在废墟中游荡的亡灵，它们对噪音非常敏感。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:glass_bottle",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

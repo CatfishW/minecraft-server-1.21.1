@@ -1,0 +1,120 @@
+{
+    "name": "§eJuliet Watson",
+    "entityType": "easy_npc:humanoid",
+    "description": "A school journalist student.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/8c4292cc4105d2d4.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。我在观察。作为《Blackwell学生报》的记者，我必须时刻保持警惕。你看起来...很有故事。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:7edf0655-fb1c-49bc-b4be-dd7c8ebd1315,59dd30d1-e4e7-4ae2-8473-08b0a681b3c9,feae7270-582a-4e9b-a45e-c8150f07d374,81ad0c91-cf93-4e3c-81de-f8caad3907fe,93850ea1-e1eb-4bb4-9dc7-bf20712dceca",
+                    "id": "btn_quest_9570fa5c"
+                },
+                {
+                    "label": "你在写什么报道？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "关于最近的怪事？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "目前主要是关于校园安全和设施维护的。虽然这听起来很无聊，但最近学校的旧水管爆裂，还有那个总是漏水的天花板...这背后肯定有问题。",
+            "buttons": [
+                {
+                    "label": "确实很可疑",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "听起来像意外",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "在这个学校，没有所谓的‘意外’。我在调查那个总是发生事故的走廊。有人说是诅咒，但我相信证据。",
+            "buttons": [
+                {
+                    "label": "需要我帮忙找证据吗？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "祝你调查顺利",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "你愿意帮忙？太好了。我在找旧的维修记录。如果你能在旧档案室找到关于那条走廊的施工图纸，那将非常有帮助。",
+            "buttons": [
+                {
+                    "label": "我会去看看",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你听说了吗？关于那个总是被东西砸到的学生，Alyssa？我觉得这不是巧合。有人在故意针对她，或者是某种...超自然现象。",
+            "buttons": [
+                {
+                    "label": "你想让我调查她？",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "她只是运气不好吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "不，不是针对她。是记录她。我需要数据。下次她倒霉的时候，拍张照片发给我。我想看看是否有规律。",
+            "buttons": [
+                {
+                    "label": "明白了，我会留意",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_done"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

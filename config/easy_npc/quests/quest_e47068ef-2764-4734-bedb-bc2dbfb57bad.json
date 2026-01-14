@@ -1,0 +1,15 @@
+{
+    "id": "e47068ef-2764-4734-bedb-bc2dbfb57bad",
+    "title": "腐烂的威胁",
+    "description": "Alyssa 不小心弄丢了她的家传怀表，那是她最重要的东西。根据她的回忆，她最后看到怀表是在村外废弃矿井附近的杂草丛中。但那里现在游荡着很多危险的僵尸，以她的身手绝不敢靠近。她请求你帮忙清理掉 5 只僵尸，确保她能安全地找回怀表。\n你需要前往废弃矿井附近，消灭 5 只游荡的僵尸（Zombies）。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

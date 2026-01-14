@@ -1,0 +1,15 @@
+{
+    "id": "0ebb0825-b89f-42bd-9eca-36a5066dbb7c",
+    "title": "面具下的阴影",
+    "description": "Jefferson 擦拭着他的镜头，声音低沉而富有磁性。『最高级的艺术是关于人性的欺骗与揭示。我需要一个完美的合作者，或者说，一个完美的『模特』。Lalo Salamanca，他是一个游走在绅士与恶棍之间的迷人混合体。他的微笑背后藏着刀锋，举止优雅却暗藏杀机。他是我一直在寻找的、关于『伪装』主题的终极诠释。』\n\n接近 Lalo Salamanca。他的每一个动作、每一句话都是一场精心编排的表演。去吧，去和这位舞台上的主角对话，看看能否在他那完美的面具上，找到一丝裂痕。",
+    "objective": {
+        "type": "TALK",
+        "target": "Lalo Salamanca",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

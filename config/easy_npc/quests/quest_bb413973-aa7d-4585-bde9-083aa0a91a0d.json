@@ -1,0 +1,15 @@
+{
+    "id": "bb413973-aa7d-4585-bde9-083aa0a91a0d",
+    "title": "深渊的契约",
+    "description": "赫克托·萨拉曼卡的眼神比最深的矿洞还要黑暗。他正在策划一次针对主要对手的重大行动，这需要从阴影中获取的特殊材料。这些材料不能通过正常途径获得，它们是为那些敢于在法律边缘行走的人准备的。\n\n黑石是地下世界中一种强力的催化剂。去深渊中开采这些不祥的矿石，它们的暗光将照亮敌人的末路。收集足够多的黑石，为赫克托的复仇计划打下坚实的基础。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blackstone",
+        "amount": 64
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

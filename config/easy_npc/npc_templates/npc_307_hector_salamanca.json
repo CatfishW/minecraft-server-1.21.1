@@ -1,0 +1,100 @@
+{
+    "name": "§dHector Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former cartel enforcer, mute and in a wheelchair.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/b519652a613d3e5e.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（坐在轮椅上，费力地喘着气，眼神凶狠地盯着你，手放在铃铛上但没摇）......",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:c41558bb-c14d-481f-8115-84b5a0f2eae5,181f029c-2192-48b7-b158-2ef28da4d434,b6dbbadd-f53b-42ff-90ab-e3d54f04038e,bb413973-aa7d-4585-bde9-083aa0a91a0d,fd276b56-a12f-4b18-a34f-fec53ccb45ff",
+                    "id": "btn_quest_7e41fbd8"
+                },
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_who"
+                },
+                {
+                    "label": "需要我做什么？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "（费力地抬起手指着自己）H... H... Hector... Salamanca... （眼神中充满了骄傲和愤怒）",
+            "buttons": [
+                {
+                    "label": "继续说",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "（猛敲轮椅扶手）D... D... Don Eladio... ... ... （比划着一个被抹脖子的动作，表情狰狞）",
+            "buttons": [
+                {
+                    "label": "复仇？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_to_quest"
+                },
+                {
+                    "label": "我懂了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（死死盯着你，然后指了指远处的仓库，做了一个爆炸的手势，嘴里发出低沉的吼声）... ... ... Ding! Ding! Ding! (疯狂地摇铃)",
+            "buttons": [
+                {
+                    "label": "我去放火",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这太疯狂了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_dec"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "e24d0585-0ee4-4240-93f3-e53c273e1d36",
+    "title": "烈焰核心",
+    "description": "为了验证某种猜想，Unknown 需要一种极其纯粹且暴躁的能量源。下界岩浆中翻滚的岩浆怪，它们的火焰核心或许能满足要求。这并非单纯的杀戮，而是为了获取某种特定的‘材料’。\n\n潜入下界，猎杀那些由岩浆构成的生物。小心它们的高温，但更要小心的是 Unknown 那冰冷的目的。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:magma_cube",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

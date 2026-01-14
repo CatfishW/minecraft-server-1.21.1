@@ -1,0 +1,15 @@
+{
+    "id": "b6dbbadd-f53b-42ff-90ab-e3d54f04038e",
+    "title": "旧日的回响",
+    "description": "即使是最冷酷的人，心中也有柔软的角落。赫克托最近时常想起他的家人，尤其是他的表弟。他想与家人叙旧，但又不愿让太多人知道他的行踪和意图。有些话，只适合在私密的场合下，与特定的人诉说。\n\n找到那位能联系上他家人的中间人。赫克托信任的人不多，沃伦·格雷厄姆（Warren Graham）是其中之一。把他带到赫克托面前，但要确保整个过程悄无声息，不能引起外人的注意。",
+    "objective": {
+        "type": "TALK",
+        "target": "Warren Graham",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

@@ -6,5 +6,24 @@
 	id: "314295D22AC3D6E2"
 	order_index: 1
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		id: "40EC72980E654D69"
+		rewards: [{
+			id: "3E086B40C5462238"
+			item: {
+				count: 1
+				id: "numismatic-overhaul:silver_coin"
+			}
+			type: "item"
+		}]
+		shape: "square"
+		size: 5.0d
+		tasks: [{
+			id: "5CF5AD128F6E0E00"
+			item: { count: 1, id: "waystones:waystone" }
+			type: "item"
+		}]
+		x: -1.5d
+		y: -0.5d
+	}]
 }

@@ -1,0 +1,120 @@
+{
+    "name": "§6Alyssa Jenkins",
+    "entityType": "easy_npc:humanoid",
+    "description": "A student who always seems to get into accidents.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/3dd38cd25630201f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "噢！小心！...呼，还好没撞到你。你没事吧？我总是差点撞到人，或者东西差点砸到我。这就是我的生活。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:deac88f2-a743-4515-a828-bd133bc8cfa9,b358c721-74e8-49a9-96c2-ffc08222e205,e47068ef-2764-4734-bedb-bc2dbfb57bad,604aa8e6-2b32-40d6-96e6-39a783d259e7,cc5bd841-c512-4f6b-bb65-3ef4ecf5b14e,83b25c50-b1b6-440a-a358-f40584f4bb86",
+                    "id": "btn_quest_5b378af8"
+                },
+                {
+                    "label": "你总是这么倒霉吗？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "也许我能帮你避开灾祸",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "是啊。就像...刚才，那个垃圾桶差点砸在我头上。还有上次，一只鸟把...呃，算了。反正就是各种各样的意外。我觉得这学校可能跟我有仇。",
+            "buttons": [
+                {
+                    "label": "这太奇怪了",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "你要小心点",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我知道！我甚至不敢去那个旧体育场后面的空地了。那里总是有东西掉下来。但我真的很想去那里拍几张照片，记录下这些‘危险’的瞬间。",
+            "buttons": [
+                {
+                    "label": "我可以替你去拍",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "那你别去了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "真的吗？你愿意？太好了！只要去那个旧体育场后面，对着那个生锈的铁架子拍一张就行。我想看看是不是真的有东西在上面摇摇欲坠。",
+            "buttons": [
+                {
+                    "label": "我去看看",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "啊！看那边！那个...那个标志牌好像松了。每次我路过它都在晃。如果它倒下来...天哪，我不敢想。",
+            "buttons": [
+                {
+                    "label": "我去把它修好",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "离它远点就好",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "真的吗？你真是个好人！请务必小心。如果需要锤子或者什么工具，我可以去借...虽然我可能会把锤子弄掉砸到自己的脚。",
+            "buttons": [
+                {
+                    "label": "放心，交给我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_done"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

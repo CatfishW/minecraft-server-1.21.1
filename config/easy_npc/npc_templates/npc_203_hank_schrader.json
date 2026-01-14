@@ -1,0 +1,101 @@
+{
+    "name": "§6Hank Schrader",
+    "entityType": "easy_npc:humanoid",
+    "description": "A DEA agent and Walter's brother-in-law.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/526f904a2639b399.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎来到我的地盘，或者说，我正在追捕的罪犯的地盘。这片土地上正发生着一些非常糟糕的事情，一种纯度高得离谱的毒品正在侵蚀我们的社区。作为DEA探员，我的工作就是把这些混蛋揪出来，不管他们藏得多深。我告诉你，这不仅仅是工作，这是我的战争。",
+            "buttons": [
+                {
+                    "label": "你最近在查什么案子？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_case"
+                },
+                {
+                    "label": "你对海森堡了解多少？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_heisenberg"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我正在追查一个代号‘海森堡’的家伙，他就像个幽灵。他制造的‘冰’纯度惊人，而且行踪诡秘。我查遍了所有线索，但每次都觉得离抓住他只有一步之遥时，他又消失了。这家伙很聪明，非常聪明，甚至让我想起了...算了，不提那个。总之，我一定会把他送进监狱。",
+            "buttons": [
+                {
+                    "label": "这案子让你头疼吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_headache"
+                },
+                {
+                    "label": "你有线索了吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_clues"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "海森堡？他是个自大狂，一个自以为是的化学家。他以为自己能凌驾于法律之上，但他错了。我见过很多毒枭，他们要么贪婪，要么愚蠢，但海森堡...他有一种傲慢，一种知识分子的傲慢。这让他犯错，而我，就在等着他犯错。我甚至收藏了他的一块样品，那是他的签名。",
+            "buttons": [
+                {
+                    "label": "你为什么这么恨他？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_hate"
+                },
+                {
+                    "label": "你家里人知道吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_family"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "头疼？这案子简直要把我逼疯！我投入了全部精力，甚至忽略了家人。每次当我以为抓到他的尾巴时，他就像变魔术一样消失了。这种挫败感...但这就是我的职责，我不会放弃。这个‘海森堡’必须被绳之以法，这是为了那些被毒品毁掉的家庭，也是为了我自己的尊严。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "恨？这是职业上的宿敌。至于家人...我不想让他们担心，尤其是我妻子Marie和我姐姐Skyler。她们不需要知道这些肮脏的细节。我只想保护她们，就像我保护这个社区一样。有时候我觉得我必须在两个世界之间切换，一个是探员Hank，一个是丈夫和姐夫。这很累，但我必须坚持下去。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

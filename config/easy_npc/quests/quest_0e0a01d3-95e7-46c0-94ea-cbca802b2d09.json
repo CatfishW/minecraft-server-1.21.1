@@ -1,0 +1,15 @@
+{
+    "id": "0e0a01d3-95e7-46c0-94ea-cbca802b2d09",
+    "title": "精密的纯度",
+    "description": "Gus Fring 对细节的追求近乎偏执，他要求我为新一批产品提炼出纯度极高的化学原料。原始的矿物原料纯度不足，需要进行初步的化学提纯。我必须谨慎行事，不能有任何杂质混入。\n\n前往地下实验室，使用反应釜将 16 个铁矿石 (minecraft:iron_ore) 提炼为高纯度的精炼铁锭 (minecraft:iron_ingot)。Gus 对效率要求很高，我必须尽快完成。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

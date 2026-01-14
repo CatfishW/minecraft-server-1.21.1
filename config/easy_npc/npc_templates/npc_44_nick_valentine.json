@@ -5,7 +5,7 @@
     "description": "Synth detective. Noir style.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2024/04/25/nick-valentine--read-description-lol--22495969.png?v938"
+        "skinUrl": "https://s.namemc.com/i/7aef81b8199344f5.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -194,7 +195,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

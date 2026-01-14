@@ -1,0 +1,125 @@
+{
+    "name": "§bVictoria Chase",
+    "entityType": "easy_npc:humanoid",
+    "description": "The leader of the 'Vortex Club' and school bully.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7fb423c4a69c29d0.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哟，看看这是谁？别挡我的光，我正忙着呢。如果你想拍照，最好有点水平，否则就别浪费我的时间。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:f5f6b85a-b1ed-4b08-bade-3f8a52ee1cd5,065877e2-df6d-4ef1-8247-ea9ceb6db7dc,44fcbaaf-2f06-4632-9dd7-4734a2b36bec,262057d7-a1f4-4e29-b468-325f21e650f0,d170324c-8457-4146-a1fa-6fbde30dbc73",
+                    "id": "btn_quest_5d2b86a7"
+                },
+                {
+                    "label": "关于Vortex Club",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_vortex"
+                },
+                {
+                    "label": "你为什么总是针对Kate？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_kate"
+                },
+                {
+                    "label": "我想帮忙",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q_vic"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "Vortex Club？那是校园里的顶层圈子。不是谁都能进的，得有品味，还得有胆量。你？还得再练练。",
+            "buttons": [
+                {
+                    "label": "听起来很排外",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_exclusive"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "哈！弱者才讲平等。强者就是要聚在一起，把那些无聊的家伙踩在脚下。这就是现实，亲爱的。",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Kate Marsh？她太容易得手了。整天穿着那身可笑的制服，一脸无辜。我只是在教她现实生活有多残酷，这是为她好，真的。",
+            "buttons": [
+                {
+                    "label": "这不叫为她好",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_defend"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "哦，天哪，别对我讲大道理。如果你觉得她可怜，那就替她出头啊？哦等等，你也不敢，对吧？",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "帮忙？哼，行啊。最近学校里有人在传关于我的流言，很低级的那种。去帮我查查源头是谁。做得好，也许我会考虑让你沾点光。",
+            "buttons": [
+                {
+                    "label": "我答应你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_vic"
+                },
+                {
+                    "label": "没兴趣",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

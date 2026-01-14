@@ -88,7 +88,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         guiGraphics.fill(titleLabelX, titleLabelY + 27, imageWidth - titleLabelX, titleLabelY + 28, 0x22000000);
 
         long unitPrice = menu.mode() == TradeMode.SELL 
-                ? Math.max(1, (long) (menu.offer().price() * 0.1)) 
+                ? Math.max(1, (long) (menu.offer().price() * menu.sellRatio())) 
                 : menu.offer().price();
         int perOffer = Math.max(1, menu.offer().count());
         long baseTotal = unitPrice * units;
@@ -372,7 +372,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
 
     private long requiredTotal() {
         long unitPrice = menu.mode() == TradeMode.SELL 
-                ? Math.max(1, (long) (menu.offer().price() * 0.1)) 
+                ? Math.max(1, (long) (menu.offer().price() * menu.sellRatio())) 
                 : menu.offer().price();
         long baseTotal = unitPrice * units;
         long tax = Math.round(baseTotal * menu.taxRate());

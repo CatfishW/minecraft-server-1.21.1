@@ -1,0 +1,205 @@
+{
+    "name": "§dLeonel Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of the silent and deadly 'Cousins'.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/98437420a7a5b586.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（沉默地注视着你，手里擦拭着一把砍刀）...",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:461c45fb-bb40-4972-982f-43893f2f8d3f,3d5616d2-6f26-4ac6-a748-7a791fe9a399,28e5eab6-008c-4ba8-8a67-86b513e8f628,b32ebb5e-50a4-4504-bbbf-0e195f48082f,2f29db77-270f-47cb-b482-c7f767934b4c",
+                    "id": "btn_quest_a414eb25"
+                },
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:who_are_you",
+                    "id": "btn_who"
+                },
+                {
+                    "label": "我想谈谈生意",
+                    "action": "SHOW_DIALOG:business",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "我需要杀手",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "who_are_you": {
+            "greeting": "（他抬起头，眼神冰冷。指了指自己，又指了指远处的Marco）...",
+            "buttons": [
+                {
+                    "label": "你们是双胞胎？",
+                    "action": "SHOW_DIALOG:twins",
+                    "id": "btn_twins"
+                },
+                {
+                    "label": "我不在乎",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "twins": {
+            "greeting": "（没有回答，只是举起刀，刀锋在灯光下闪着寒光）...",
+            "buttons": [
+                {
+                    "label": "明白了，失礼了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_respect"
+                },
+                {
+                    "label": "这把刀很锋利",
+                    "action": "SHOW_DIALOG:knife",
+                    "id": "btn_knife"
+                }
+            ]
+        },
+        "knife": {
+            "greeting": "（他突然向前一步，刀尖几乎抵住你的喉咙）...",
+            "buttons": [
+                {
+                    "label": "别冲动！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_panic"
+                },
+                {
+                    "label": "（保持不动）",
+                    "action": "SHOW_DIALOG:calm",
+                    "id": "btn_calm"
+                }
+            ]
+        },
+        "calm": {
+            "greeting": "（他收回刀，嘴角微微上扬，那是他唯一的表情）...",
+            "buttons": [
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_main"
+                }
+            ]
+        },
+        "business": {
+            "greeting": "（他伸出一只手，掌心向上，示意拿钱出来）...",
+            "buttons": [
+                {
+                    "label": "这是定金",
+                    "action": "SHOW_DIALOG:pay",
+                    "id": "btn_pay"
+                },
+                {
+                    "label": "我没带钱",
+                    "action": "SHOW_DIALOG:threat",
+                    "id": "btn_threat"
+                }
+            ]
+        },
+        "pay": {
+            "greeting": "（迅速接过钱，点了点头）...",
+            "buttons": [
+                {
+                    "label": "合作愉快",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                },
+                {
+                    "label": "这就完了？",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_more"
+                }
+            ]
+        },
+        "threat": {
+            "greeting": "（眼神瞬间变得杀气腾腾，手按在刀柄上）...",
+            "buttons": [
+                {
+                    "label": "我马上去取钱",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_escape"
+                },
+                {
+                    "label": "我是警察",
+                    "action": "SHOW_DIALOG:idiot",
+                    "id": "btn_idiot"
+                }
+            ]
+        },
+        "idiot": {
+            "greeting": "（他愣了一下，随即发出一种像干咳一样的笑声）...",
+            "buttons": [
+                {
+                    "label": "开玩笑的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_escape2"
+                },
+                {
+                    "label": "逮捕你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_death"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（他看着你，然后指了指远处的Marco，做了一个抹脖子的手势）...",
+            "buttons": [
+                {
+                    "label": "我明白了，有人要死",
+                    "action": "SHOW_DIALOG:quest_target",
+                    "id": "btn_target"
+                },
+                {
+                    "label": "不，我只是说说",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_cancel"
+                }
+            ]
+        },
+        "quest_target": {
+            "greeting": "（他拿出一张照片，上面是一个DEA探员的头像）...（无声地指向照片）...",
+            "buttons": [
+                {
+                    "label": "我会处理掉他",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_kill"
+                },
+                {
+                    "label": "这人不好惹",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_refuse"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

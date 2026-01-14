@@ -1,0 +1,15 @@
+{
+    "id": "b91f62c5-1ddf-4a6f-bf9f-ff45dd46f962",
+    "title": "黑市的订单",
+    "description": "我们的老主顾 MacCready 嗅到了商机。他急需一批上好的小麦，用来酿造某种能麻痹守卫感官的烈酒。表亲们从不讨价还价，他们只负责送货和清理路上的障碍。\n\n收集足够的小麦来满足 MacCready 的订单。每一粒麦子都代表着一份利润和一次无声的交易。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

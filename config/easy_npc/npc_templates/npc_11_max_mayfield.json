@@ -5,7 +5,7 @@
     "description": "The zoomer. Tough and skateboarder.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://www.skindex.pro/static/skins/max-Xq6Rt9KgRawibT5xtHY75R.png"
+        "skinUrl": "https://s.namemc.com/i/1d18ee404659740f.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -134,7 +135,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

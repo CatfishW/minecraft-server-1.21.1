@@ -1,0 +1,15 @@
+{
+    "title": "清除眼线",
+    "description": "古斯的手下像讨厌的蜘蛛一样四处活动，Lalo让你清理掉他们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:spider",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 110,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    },
+    "id": "ac061a82-8fb7-42f3-aad6-19efa463a37d"
+}

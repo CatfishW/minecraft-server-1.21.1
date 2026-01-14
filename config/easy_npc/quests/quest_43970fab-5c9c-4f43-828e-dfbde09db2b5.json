@@ -1,0 +1,15 @@
+{
+    "title": "最后的警告",
+    "description": "Nacho想给追踪者一个最后的警告，让他们知难而退。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 55
+    },
+    "id": "43970fab-5c9c-4f43-828e-dfbde09db2b5"
+}

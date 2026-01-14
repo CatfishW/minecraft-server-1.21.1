@@ -1,0 +1,15 @@
+{
+    "id": "4d553e58-a7a5-4511-8cc2-ee635dfc2762",
+    "title": "锈铁的交易",
+    "description": "克雷格的宝库里或许有些值钱的玩意儿，但光有金币是无法在这个世界生存的。他需要工具，需要武器，需要那些由坚固金属打造的东西。他向你描述了一幅繁荣的蓝图，而这一切都需要铁锭来奠定基础。\n\n去收集铁锭。他不在乎你用什么方法，无论是挖矿，还是从那些游荡的铁傀儡身上拆下它们的残骸，他只要结果。这是对他过去权力的一种模仿，也是对未来的一笔投资。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

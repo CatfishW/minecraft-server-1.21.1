@@ -1,0 +1,15 @@
+{
+    "id": "280c501b-7177-483e-b279-edfd2e3e719d",
+    "title": "远航智慧",
+    "description": "Farmer Chen渴望扩展对不同生物群系农业技术的了解，而Captain Ironclaw作为远航者，拥有跨越海洋的丰富见闻和种子贸易知识。\n\n寻找到Captain Ironclaw并与他对话，学习如何将远洋智慧融入本地耕作。",
+    "objective": {
+        "type": "TALK",
+        "target": "Captain Ironclaw",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 500,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "title": "烈焰人的狩猎",
+    "description": "地狱要塞的烈焰人很危险，但它们的掉落物很有用。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:blaze",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 70
+    },
+    "id": "7f2ed870-bb34-4a04-828e-78f3722dc8e6"
+}

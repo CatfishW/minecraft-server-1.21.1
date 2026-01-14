@@ -1,0 +1,15 @@
+{
+    "id": "f6ac4855-9303-4f0c-acf8-d9e4fd6adc60",
+    "title": "关于丧尸的真相",
+    "description": "这些怪物出现得越来越频繁了，简直像雨后的蘑菇。光是砍杀它们治标不治本，我得搞清楚它们到底从哪儿来，有什么规律。我听说 Max Caulfield 那孩子观察力很敏锐，经常在镇子边缘写生，或许她看到了些什么。\n\n去找摄影师 Max Caulfield 聊聊，问问她最近在镇子周围有没有发现什么异常情况，特别是关于那些怪物的。",
+    "objective": {
+        "type": "TALK",
+        "target": "Max Caulfield",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

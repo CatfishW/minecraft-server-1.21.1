@@ -1,0 +1,269 @@
+{
+    "name": "§aMike Ehrmantraut",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former Philadelphia police officer who became corrupt to protect his son, also a cop. After his son was murdered for not taking bribes, Mike moved to Albuquerque to be near his granddaughter Kaylee.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/894c9e2632b2d13d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§7（Mike正看着远处，手搭在腰间，他没有看你）我认识你吗？不。那你想干什么？",
+            "buttons": [
+                {
+                    "label": "你为什么在这儿？",
+                    "action": "SHOW_DIALOG:backstory_1",
+                    "id": "btn_ask_why"
+                },
+                {
+                    "label": "你看上去...很忙？",
+                    "action": "SHOW_DIALOG:current_1",
+                    "id": "btn_ask_busy"
+                },
+                {
+                    "label": "找你干活需要什么？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_ask_work"
+                },
+                {
+                    "label": "没事，只是路过。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_1": {
+            "greeting": "§7（他瞥了你一眼，叹了口气）为了家人。我孙女住在这附近。我尽量保证她能在一个...相对正常的环境里长大。别的就别问了。",
+            "buttons": [
+                {
+                    "label": "家人对你很重要？",
+                    "action": "SHOW_DIALOG:backstory_2",
+                    "id": "btn_family_important"
+                },
+                {
+                    "label": "你以前是做什么的？",
+                    "action": "SHOW_DIALOG:backstory_police",
+                    "id": "btn_ask_past"
+                },
+                {
+                    "label": "明白了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_2": {
+            "greeting": "§7（他沉默了一会，目光变得柔和，但很快又恢复警惕）§6是全部。但谈论这个不会改变任何事，也帮不了任何人。有些伤口不需要翻开。",
+            "buttons": [
+                {
+                    "label": "你似乎很...谨慎。",
+                    "action": "SHOW_DIALOG:backstory_3",
+                    "id": "btn_ask_cautious",
+                    "condition": "TRUST_LEVEL:2"
+                },
+                {
+                    "label": "抱歉，不该多问。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_apologize"
+                }
+            ]
+        },
+        "backstory_3": {
+            "greeting": "§7（他压低声音）在费城当警察教会我一件事：规则是给守规则的人定的。我儿子想按规则来...（他顿住，摇了摇头）现在说这些没用了。走吧。",
+            "buttons": [
+                {
+                    "label": "...发生了什么？",
+                    "action": "SHOW_DIALOG:secret_story",
+                    "id": "btn_ask_what",
+                    "condition": "TRUST_LEVEL:3"
+                },
+                {
+                    "label": "我明白了。谢谢你的坦诚。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_understood"
+                }
+            ]
+        },
+        "backstory_police": {
+            "greeting": "§7干了三十年警察。巡逻、刑警、内务部都待过。看遍了所有你能想象和不能想象的烂事。这让我对“正义”有了...更实际的看法。",
+            "buttons": [
+                {
+                    "label": "内务部？那是个麻烦的部门。",
+                    "action": "SHOW_DIALOG:backstory_3",
+                    "id": "btn_ask_ia"
+                },
+                {
+                    "label": "所以你厌倦了？",
+                    "action": "SHOW_DIALOG:current_1",
+                    "id": "btn_ask_tired"
+                }
+            ]
+        },
+        "current_1": {
+            "greeting": "§7“忙”是个温和的说法。总有人在制造麻烦，总需要有人去清理。而我...恰好擅长清理。不过最近有些事让我分心。",
+            "buttons": [
+                {
+                    "label": "什么分心事？",
+                    "action": "SHOW_DIALOG:current_2",
+                    "id": "btn_ask_distraction"
+                },
+                {
+                    "label": "我能帮上什么忙吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_offer_help"
+                },
+                {
+                    "label": "听起来压力很大。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_sympathize"
+                }
+            ]
+        },
+        "current_2": {
+            "greeting": "§7我女儿...凯莉的母亲，她的生活不太稳定。总和一些不三不四的人混在一起。我需要确保她和凯莉的安全，但我的‘工作’让我不能总在身边。",
+            "buttons": [
+                {
+                    "label": "需要有人照看她们？",
+                    "action": "SHOW_DIALOG:quest_family_protect",
+                    "id": "btn_offer_watch"
+                },
+                {
+                    "label": "这一定很煎熬。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_empathize"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "§7我接的‘活’分几种：盯梢，确认目标行踪和习惯；清理，让不该出现的东西消失；还有...一些安保工作。你看起来不像警察，也不是DEA。为什么问这个？",
+            "buttons": [
+                {
+                    "label": "我需要钱，而且不怕脏活。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:d07fb7d7-99c6-4a14-b26a-7472b111997b,34d266d2-f49e-4462-bb0c-48ceea046b54,e5a80b2f-1b90-44de-b0a0-ffa20c768557,e1c1307a-bf04-4929-9473-9a1af6b6231a,f6228ba4-d22b-4292-8f26-9891fa2daa77",
+                    "id": "btn_accept_work"
+                },
+                {
+                    "label": "也许我能帮你处理‘分心事’。",
+                    "action": "SHOW_DIALOG:quest_family_protect",
+                    "id": "btn_offer_family_help"
+                },
+                {
+                    "label": "只是好奇。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_just_curious"
+                }
+            ]
+        },
+        "quest_surveillance": {
+            "greeting": "§6有个家伙，在第七街的洗衣店进进出出。我要知道他每天的时间表，见过谁，带着什么。用眼睛看，别问话，别被发现。这是预付款。做得好，还有另一半。",
+            "buttons": [
+                {
+                    "label": "§a（接受任务：监视洗衣店）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_surveil"
+                },
+                {
+                    "label": "这太危险了。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_refuse"
+                }
+            ]
+        },
+        "quest_cleanup": {
+            "greeting": "§7东区有个仓库...出了点‘状况’。我需要你去确保那里看起来像什么都没发生过。工具在仓库后面的垃圾桶里。记住，彻底，专业，别留痕迹。",
+            "buttons": [
+                {
+                    "label": "§a（接受任务：清理仓库）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_cleanup"
+                },
+                {
+                    "label": "‘状况’是什么意思？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_ask_details"
+                }
+            ]
+        },
+        "quest_family_protect": {
+            "greeting": "§6（他递给你一张照片，上面是一个年轻女人和一个小女孩）这是她们。她们住在橡树街公寓302。我不需要你介入她们的生活，只需要偶尔确认没有可疑的人在附近晃悠，特别是我不在城里的时候。报酬周结。",
+            "buttons": [
+                {
+                    "label": "§a（接受任务：保护家人）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_family"
+                },
+                {
+                    "label": "你为什么信任我？",
+                    "action": "SHOW_DIALOG:secret_why",
+                    "id": "btn_ask_trust",
+                    "condition": "TRUST_LEVEL:4"
+                },
+                {
+                    "label": "这责任太大了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline_resp"
+                }
+            ]
+        },
+        "secret_story": {
+            "greeting": "§5（Mike盯着你看了很久，仿佛在权衡）我儿子...马特，他是个好警察。太他妈好了。他拒绝收黑钱，然后那些他本该保护的人...杀了他。我用我的方式‘处理’了那些人。然后我就再也没法回头了。这事到此为止。",
+            "buttons": [
+                {
+                    "label": "对不起。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_secret_sorry"
+                },
+                {
+                    "label": "所以你做这些是为了...？",
+                    "action": "SHOW_DIALOG:secret_why",
+                    "id": "btn_ask_motive",
+                    "condition": "TRUST_LEVEL:5"
+                }
+            ]
+        },
+        "secret_why": {
+            "greeting": "§5（他罕见地露出一丝疲惫）为了凯莉。干净的钱不够。我需要一笔能让她永远不用为生活发愁的钱，一笔能让她远离所有这一切的钱。然后我就会消失。这就是全部了。现在，如果你不介意，我想一个人待着。",
+            "buttons": [
+                {
+                    "label": "祝你好运，Mike。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_secret_wish"
+                },
+                {
+                    "label": "...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_secret_silent"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§7记住：少问，多做，管好自己的事。这样大家都能平平安安回家。",
+            "buttons": [
+                {
+                    "label": "明白了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_farewell_ok"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Breaking Bad",
+        "role": "Fixer / Enforcer",
+        "connections": [
+            "Gustavo Fring",
+            "Jesse Pinkman",
+            "Saul Goodman",
+            "Lydia Rodarte-Quayle"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:30:05"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "2a2aebde-a25b-426e-b16b-7b23bedcdec0",
+    "title": "血色交易",
+    "description": "我们的一个老主顾，声称他的货物在荒野中被劫了。这不仅仅是损失，这是对萨拉曼卡名号的侮辱。图库怀疑这背后有其他帮派的影子。我们需要你去回收那些散落的货物，顺便给那些敢于伸手的家伙一个终身难忘的教训。\n\n找到那些被遗弃的补给箱，夺回里面的铁锭。如果遇到任何抵抗，不必留情。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

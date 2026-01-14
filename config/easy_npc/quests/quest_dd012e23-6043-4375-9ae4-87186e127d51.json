@@ -1,0 +1,15 @@
+{
+    "title": "收集皮革",
+    "description": "我们需要皮革来修复和制作护甲。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:leather",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    },
+    "id": "dd012e23-6043-4375-9ae4-87186e127d51"
+}

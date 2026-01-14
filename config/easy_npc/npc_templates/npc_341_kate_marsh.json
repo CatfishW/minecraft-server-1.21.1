@@ -1,0 +1,125 @@
+{
+    "name": "§9Kate Marsh",
+    "entityType": "easy_npc:humanoid",
+    "description": "A kind and religious student struggling with bullying.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/a098f745db5414f9.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哦，你好...对不起，我刚才没看到你。今天天气真好，不是吗？希望大家都平平安安的。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:652e8129-4f2a-47e8-a25e-37c35a5c1e74,f51a4571-739f-4efa-8561-75f748ae2fcc,a3d10843-8e65-4e4a-a74b-4f0df4517300,4b34c895-a445-4c14-b671-41b9964a2516,94689710-3ebc-4817-bc14-1dbba1de486e",
+                    "id": "btn_quest_1ec68f75"
+                },
+                {
+                    "label": "你还好吗？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_ask"
+                },
+                {
+                    "label": "关于Victoria的事...",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_vic"
+                },
+                {
+                    "label": "有什么我能做的？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q_kate"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我...我很好，真的。上帝总是给予我们考验，我们必须坚强。只是有时候，这真的很难...",
+            "buttons": [
+                {
+                    "label": "你太善良了",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_nice"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "人们说善良是软弱，但我相信主的教导。忍耐和宽恕是通往光明的道路。我必须相信这一点。",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Victoria...我...我不想说她的坏话。也许她只是不快乐。我试着不去恨她，但这真的很难，尤其是当她把我的私物上传到网上时...",
+            "buttons": [
+                {
+                    "label": "那太过分了",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_outrage"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "我只是希望这一切能停止。我不想惹麻烦，我只想安安静静地学习和祈祷。有时候我真不知道还能坚持多久...",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "真的吗？谢谢你...其实，我最近总是收到一些吓人的邮件，我不知道是谁发的。我不敢告诉任何人。你能帮我查查IP地址吗？就在学校的电脑室。",
+            "buttons": [
+                {
+                    "label": "我会帮你的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_kate"
+                },
+                {
+                    "label": "这恐怕太危险了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "89e8fe0b-a303-418c-a49a-2690d997e28a",
+    "title": "无法拒绝的交易",
+    "description": "有个叫史蒂文的条子盯上我了，他以为自己很聪明。我需要有人去'说服'他，让他明白有些事不该管。我不管你怎么处理，只要让他闭嘴就行。\n\n找到警长史蒂文·戈麦斯，让他知道我们不是好惹的。有时候，暴力是唯一通用的语言。",
+    "objective": {
+        "type": "TALK",
+        "target": "Steven Gomez",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

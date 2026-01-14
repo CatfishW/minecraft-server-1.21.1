@@ -1,0 +1,190 @@
+{
+    "name": "§6Rachel Amber",
+    "entityType": "easy_npc:humanoid",
+    "description": "The most popular girl in Arcadia Bay who went missing.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7c882cf60292471d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好啊。这里的空气有点沉闷，不是吗？我是瑞秋。虽然大家都说这是场完美的讲座，但我总觉得有些东西被刻意掩盖了。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:203dc733-c497-46aa-9af1-9ced4e71931b,85972e21-c487-46cf-a4bf-d4b696a61a68,4a746b4d-dc01-49f0-be91-fc999ab0ed11,51fa9630-fe8a-419a-8aa8-f2b1b3907727,b6a595b8-1d50-495e-9ad3-caf9b65785ea,43df661d-b63a-4aa7-addf-a177f9f26272",
+                    "id": "btn_quest_cebf8824"
+                },
+                {
+                    "label": "掩盖了什么？",
+                    "action": "SHOW_DIALOG:talk_suspicion",
+                    "id": "btn_1"
+                },
+                {
+                    "label": "你看起来不像是这里的学生",
+                    "action": "SHOW_DIALOG:talk_appearance",
+                    "id": "btn_2"
+                },
+                {
+                    "label": "你认识克洛伊吗？",
+                    "action": "SHOW_DIALOG:talk_chloe",
+                    "id": "btn_3"
+                },
+                {
+                    "label": "我听说你有麻烦",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_suspicion": {
+            "greeting": "这里的每个人都有秘密。普雷斯科特家族的阴影笼罩着一切，连阿尔德里奇大师似乎都对他们毕恭毕敬。真相就藏在表面之下，只需要有人去揭开它。",
+            "buttons": [
+                {
+                    "label": "你知道些什么？",
+                    "action": "SHOW_DIALOG:know_details",
+                    "id": "btn_details"
+                },
+                {
+                    "label": "这太危险了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "know_details": {
+            "greeting": "我知道内森·普雷斯科特不像他表现得那么无害。还有维克多... 他有些把柄在别人手里。如果你想知道更多，你得自己去查。我只是个旁观者。",
+            "buttons": [
+                {
+                    "label": "你为什么不出面？",
+                    "action": "SHOW_DIALOG:why_silent",
+                    "id": "btn_why"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "why_silent": {
+            "greeting": "因为时机还没到。有时候，最好的表演就是让别人以为你什么都不知道。等待，观察，然后在最关键的时刻出手。这是我的生存之道。",
+            "buttons": [
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_appearance": {
+            "greeting": "是吗？谢谢夸奖。我觉得外表也是一种武器，能让别人放松警惕。不过，我更喜欢用头脑。毕竟，美丽是短暂的，但智慧是永恒的。",
+            "buttons": [
+                {
+                    "label": "很有哲理",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_chloe": {
+            "greeting": "克洛伊？她是... 一个特别的朋友。她像火焰一样，炙热而直接。我喜欢她的直率，她也懂我的伪装。我们是彼此的避风港。",
+            "buttons": [
+                {
+                    "label": "她在找你",
+                    "action": "SHOW_DIALOG:chloe_worry",
+                    "id": "btn_worry"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "chloe_worry": {
+            "greeting": "我知道。我真的很想见她，但现在还不是时候。如果我暴露了行踪，可能会把她也卷进来。请你... 告诉她，我很快就回去找她。一定。",
+            "buttons": [
+                {
+                    "label": "我会转告她的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你感觉到了吗？暴风雨前的宁静。我被困住了，被无形的线缠绕着。但我不能坐以待毙。我需要一双眼睛，一双不被偏见蒙蔽的眼睛，帮我看看真相。",
+            "buttons": [
+                {
+                    "label": "你想让我调查什么？",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "我恐怕无能为力",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cancel"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "去查普雷斯科特家的地下室。那里藏着他们所有的罪恶。如果你能找到什么线索，就能帮我撕开这个谎言的网。但要小心，他们什么都做得出来。",
+            "buttons": [
+                {
+                    "label": "我会去的（接受任务）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这风险太大了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

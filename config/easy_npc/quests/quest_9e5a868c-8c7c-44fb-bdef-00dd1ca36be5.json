@@ -1,0 +1,15 @@
+{
+    "id": "9e5a868c-8c7c-44fb-bdef-00dd1ca36be5",
+    "title": "自然的构图",
+    "description": "『光线是摄影的灵魂，而承载光线的材质同样重要。』Jefferson 拿出一张泛黄的草稿纸，上面画着麦田的速写。『我需要一种特殊的纹理——那种在风中摇曳、代表生命轮回的谷物。不是那种人工合成的劣质品，而是真正从土壤中生长出来的。』\n\n去田野里，收集那些饱满的小麦。每一粒麦子都是大自然的馈赠，是构成完美画面不可或缺的元素。记住，我们要的是完美的质感，不要让我失望。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

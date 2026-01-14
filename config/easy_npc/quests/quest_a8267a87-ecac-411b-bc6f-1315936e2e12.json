@@ -1,0 +1,15 @@
+{
+    "id": "a8267a87-ecac-411b-bc6f-1315936e2e12",
+    "title": "红色正义",
+    "description": "我的老朋友Dogmeat在找一种特殊的红色植物，他说这东西对他的感官有奇效。我不想深究，但他的情报对我们很重要。我们需要他保持敏锐。\n去采集一些红色的花朵，任何种类都可以。我想他看到红色的东西就会兴奋起来。至少给我带回来10个。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:red_tulip",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

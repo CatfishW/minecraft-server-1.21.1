@@ -9,6 +9,7 @@ import net.diebuddies.physics.DummyVertexConsumer;
 import net.diebuddies.physics.StarterClient;
 import net.diebuddies.physics.settings.mobs.BoundingBoxGetter;
 import net.minecraft.class_1058;
+import net.minecraft.class_290;
 import net.minecraft.class_293;
 import net.minecraft.class_296;
 import net.minecraft.class_4588;
@@ -71,7 +72,8 @@ public class Sodium {
             ParticleVertex.put(ptr += 28L, tmp1.x + currentX, tmp1.y + currentY, tmp1.z + currentZ, u1, v0, color, light);
             ParticleVertex.put(ptr += 28L, tmp2.x + currentX, tmp2.y + currentY, tmp2.z + currentZ, u0, v0, color, light);
             ParticleVertex.put(ptr += 28L, tmp3.x + currentX, tmp3.y + currentY, tmp3.z + currentZ, u0, v1, color, light);
-            writer.push(stack, buffer, 4, ParticleVertex.FORMAT);
+            // class_290 is DefaultVertexFormat, field_1584 is PARTICLE
+            writer.push(stack, buffer, 4, class_290.field_1584);
         }
     }
 }

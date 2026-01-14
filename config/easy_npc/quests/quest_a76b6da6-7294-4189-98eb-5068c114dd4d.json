@@ -1,0 +1,15 @@
+{
+    "id": "a76b6da6-7294-4189-98eb-5068c114dd4d",
+    "title": "凶兆狂吠",
+    "description": "夜晚并不安全。最近，一些不寻常的生物开始在阴影中游荡，它们对声音和活物极其敏感。Bolt 整晚都在不安地狂吠，Frank 知道这意味着威胁就在附近。为了保证他和 Bolt 的安全，以及他藏身所的隐蔽性，必须清理掉这些潜伏在黑暗中的威胁。\n\n在夜晚降临的时候，寻找并消灭那些威胁性极高的灾厄村民（Illagers）。它们手持武器，极具攻击性。必须将它们全部消灭，才能换来一夜的安宁。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

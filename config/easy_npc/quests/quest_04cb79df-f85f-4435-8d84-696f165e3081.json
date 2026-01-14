@@ -1,0 +1,15 @@
+{
+    "id": "04cb79df-f85f-4435-8d84-696f165e3081",
+    "title": "丰收初试",
+    "description": "Farmer Chen正致力于培育能在恶劣环境中生长的作物，但需要基础小麦作为参照样本，以验证他的新方法。\n\n前往农田，收集10个小麦，带回给他进行实验分析。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

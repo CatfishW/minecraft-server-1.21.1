@@ -1,0 +1,15 @@
+{
+    "title": "末影的征兆",
+    "description": "我看到了……末影人在附近出现。去消灭它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:enderman",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    },
+    "id": "a503bd46-7ec1-4a5f-b1b2-37a0e9fbdb49"
+}

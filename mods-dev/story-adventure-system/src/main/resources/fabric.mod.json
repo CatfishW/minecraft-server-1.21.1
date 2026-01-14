@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "storyadventure",
+  "version": "${version}",
+  "name": "Story Adventure System",
+  "description": "Deep story-based adventure dungeon/instance system with Stage Graph architecture for branching narratives, puzzles, combat, and rich NPC interactions.",
+  "authors": [
+    "Warm Pixel"
+  ],
+  "license": "All Rights Reserved",
+  "icon": "assets/storyadventure/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.warmpixel.storyadventure.StoryAdventureMod"
+    ],
+    "client": [
+      "com.warmpixel.storyadventure.client.StoryAdventureClient"
+    ]
+  },
+  "mixins": [
+    "storyadventure.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric": "*",
+    "minecraft": "1.21.1"
+  },
+  "suggests": {
+    "easy_npc": "*"
+  }
+}

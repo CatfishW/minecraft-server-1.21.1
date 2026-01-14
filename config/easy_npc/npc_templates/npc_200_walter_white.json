@@ -1,0 +1,101 @@
+{
+    "name": "§dWalter White",
+    "entityType": "easy_npc:humanoid",
+    "description": "A chemistry teacher turned meth kingpin.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/97b8819ea452a76f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "我看着这片荒漠，就像看着我的人生，充满了毫无价值的沙砾，直到我发现了属于我的晶体。我曾是个在学校里被学生嘲笑的化学老师，为了家庭的生计而奔波。但现在，我掌握着纯度高达99.1%的真理。你找我有什么事？是想谈谈科学，还是谈谈生意？",
+            "buttons": [
+                {
+                    "label": "谈谈你的科学",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_science"
+                },
+                {
+                    "label": "谈谈你的生意",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_business"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "科学是宇宙的语言，而我只是那个有幸读懂它的人。甲基苯丙胺的合成看似简单，但要在杂质中寻找纯净，在混乱中建立秩序，这才是真正的艺术。我不是在制造毒品，我是在进行提纯，将平庸的前体转化为完美的最终产物。每一次反应，每一个温度的控制，都是对化学法则的绝对服从。",
+            "buttons": [
+                {
+                    "label": "你是如何开始的？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_beginning"
+                },
+                {
+                    "label": "这能带来什么？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_reward"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "生意？这不仅仅是生意，这是帝国。我建立的一切都是为了我的家庭，为了确保他们在我离开后能拥有一切。我制定了规则，我控制了供应链，我甚至控制了那些自以为是的分销商。在这个行业里，要么成为制定规则的人，要么成为被规则碾碎的人。我选择站在顶端。",
+            "buttons": [
+                {
+                    "label": "你的合作伙伴可靠吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_partners"
+                },
+                {
+                    "label": "你不怕被抓吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_fear"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "我开始是因为恐惧和绝望，但坚持下来是因为我发现自己擅长这个。在这个世界上，很少有人能真正施展自己的才华，而我找到了我的领域。每一次突破，每一次创造出更纯的产品，都让我感受到一种前所未有的掌控感。这不仅仅是化学，这是我的声明，证明我不仅仅是沃尔特·怀特，我是海森堡。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "信任是奢侈品，我从不依赖它。我依赖的是利益的捆绑和对背叛的恐惧。我的合作伙伴要么是出于恐惧，要么是出于贪婪，而这两者都是强大的驱动力。至于被抓？我每时每刻都在与风险共舞。但记住，一个化学家知道，只要控制好变量，即使是爆炸也可以被引导和利用。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

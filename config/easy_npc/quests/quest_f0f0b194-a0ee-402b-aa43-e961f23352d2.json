@@ -1,0 +1,15 @@
+{
+    "id": "f0f0b194-a0ee-402b-aa43-e961f23352d2",
+    "title": "契约暗面",
+    "description": "为了巩固势力和应对日益复杂的局面，Walter必须与搭档Jesse Pinkman会面，商讨下一步的行动计划和资源分配。\n\n找到Jesse Pinkman并与他对话，获取关键情报并达成新的协议。",
+    "objective": {
+        "type": "TALK",
+        "target": "Jesse Pinkman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 500,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

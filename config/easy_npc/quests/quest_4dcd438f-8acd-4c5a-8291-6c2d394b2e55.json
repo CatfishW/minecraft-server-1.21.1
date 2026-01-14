@@ -1,0 +1,15 @@
+{
+    "id": "4dcd438f-8acd-4c5a-8291-6c2d394b2e55",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给Adrian Mellon。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Adrian Mellon",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 198,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 23
+    }
+}

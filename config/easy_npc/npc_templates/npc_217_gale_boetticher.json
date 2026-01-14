@@ -1,0 +1,86 @@
+{
+    "name": "§eGale Boetticher",
+    "entityType": "easy_npc:humanoid",
+    "description": "A talented chemist hired by Gus Fring.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/aa5ba5c1d0adb9e7.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "啊，你好！很高兴有人能来和我聊聊。这间实验室……简直是完美的杰作，每一台仪器的摆放都符合人体工程学和流体力学原理。Mr. Fring 对细节的追求令人敬佩。不过，你知道吗？我最近在研读一些关于非线性动力学的论文，这让我对‘混沌’有了新的理解。你想听听吗？",
+            "buttons": [
+                {
+                    "label": "谈谈你的工作",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_work"
+                },
+                {
+                    "label": "什么是混沌理论？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_chaos"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我的工作？哦，这不仅仅是工作，这是一门艺术。虽然目前的成品纯度只有96%，但我有信心通过优化反应条件，引入一种特殊的晶格结构，将其提升到99.1%。这需要精确的温度控制和完美的搅拌速度。Mr. Fring 聘请我，是因为他欣赏这种对完美的执着。这让我感到荣幸。",
+            "buttons": [
+                {
+                    "label": "99.1%？为什么是这个数字？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_number"
+                },
+                {
+                    "label": "听起来很复杂",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "混沌理论，简单来说，就是在一个确定性系统中，初始条件的微小变化能导致系统未来的状态产生巨大的差异。就像蝴蝶效应。在化学中，这也适用。一点点的杂质，或者温度的细微波动，可能就会改变最终的晶体形态。这既令人着迷，又让人感到敬畏，不是吗？",
+            "buttons": [
+                {
+                    "label": "太深奥了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "99.1%……这是一个象征。它代表了接近完美的极限，但又保留了一点‘人性’的误差。当然，这只是我的一个理论。实际上，我非常渴望能见到那位能将纯度做到96%的人。我听说他是个老师？一位真正的天才。我很期待能和他进行学术上的交流，甚至合作。",
+            "buttons": [
+                {
+                    "label": "也许你们会见面的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

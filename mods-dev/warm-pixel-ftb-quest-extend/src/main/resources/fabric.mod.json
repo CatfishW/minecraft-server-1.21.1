@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "warm_pixel_ftb_quest_extend",
+  "version": "${version}",
+  "name": "Warm Pixel FTB Quest Extend",
+  "description": "Imports AI-friendly JSON into FTB Quests files.",
+  "authors": ["Warm Pixel"],
+  "contact": {
+    "sources": ""
+  },
+  "license": "MIT",
+  "environment": "server",
+  "entrypoints": {
+    "main": [
+      "com.warmpixel.ftbquestextend.WarmPixelFtbQuestExtend"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.3",
+    "fabric": "*",
+    "minecraft": "1.21.1"
+  }
+}

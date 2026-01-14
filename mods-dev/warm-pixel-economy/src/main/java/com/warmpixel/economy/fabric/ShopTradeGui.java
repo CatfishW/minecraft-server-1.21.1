@@ -22,6 +22,7 @@ public final class ShopTradeGui {
         EconomyContext context = WarmPixelEconomyMod.getContext();
         ShopOfferView view = ShopOfferView.from(offer);
         ShopTradeMenu.Data data = new ShopTradeMenu.Data(view, mode, balance, context.config().taxes.shopTaxRate, 
+                context.config().shop.sellRatio,
                 category == null ? "" : category, query == null ? "" : query, page);
         player.openMenu(new ExtendedScreenHandlerFactory<ShopTradeMenu.Data>() {
             @Override
@@ -38,7 +39,8 @@ public final class ShopTradeGui {
 
             @Override
             public AbstractContainerMenu createMenu(int syncId, Inventory inventory, Player player) {
-                return new ShopTradeMenu(syncId, view, mode, balance, context.config().taxes.shopTaxRate, category, query, page);
+                return new ShopTradeMenu(syncId, view, mode, balance, context.config().taxes.shopTaxRate, 
+                        context.config().shop.sellRatio, category, query, page);
             }
         });
     }

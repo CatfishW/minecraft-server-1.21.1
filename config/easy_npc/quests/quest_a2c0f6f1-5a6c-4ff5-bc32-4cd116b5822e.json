@@ -1,0 +1,15 @@
+{
+    "id": "a2c0f6f1-5a6c-4ff5-bc32-4cd116b5822e",
+    "title": "井然有序的库存",
+    "description": "我的餐厅是镇上的门面，顾客就是上帝。最近生意好得不得了，面粉和牛肉的库存都快见底了，我可不想明天只能卖空气三明治。你看起来挺能干的，能帮我去仓库清点一下吗？\n\n帮我收集 16 个小麦 (minecraft:wheat) 和 8 个生牛肉 (minecraft:beef)。作为感谢，我会付你一些辛苦费，够你在镇上喝几杯好酒了。记得检查一下标签，别把过期的给我拿来了！",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

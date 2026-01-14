@@ -1,0 +1,15 @@
+{
+    "id": "f5f6b85a-b1ed-4b08-bade-3f8a52ee1cd5",
+    "title": "夜幕下的威胁",
+    "description": "维多利亚·蔡斯（Victoria Chase）是‘漩涡俱乐部’的领袖，也是这所学校里无人敢惹的存在。最近，她发现有些不知死活的家伙在深夜里游荡，甚至敢靠近她的地盘。她需要有人去清理这些肮脏的僵尸，以此来警告那些蠢蠢欲动的墙头草。\n\n带上你的武器，去野外猎杀那些在黑夜中游荡的僵尸。把它们的腐肉带回来，这不仅能证明你的实力，也能让那些胆小鬼知道违逆我的下场。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

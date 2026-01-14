@@ -1,0 +1,104 @@
+
+> Configure project :Fabric
+Fabric Loom: 1.9.2
+
+> Configure project :Forge
+MixinGradle is skipping eclipse integration, extension not found
+Unable to extract Minecraft version from ForgeGradle
+
+> Task :Common:createMinecraftArtifacts UP-TO-DATE
+
+> Task :Common:generateRawNPCs
+✨ Processing 32 NPC classes from /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/NPCRawTemplate.java to /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw ...
+✅ [AllayRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/AllayRaw.java
+✅ [BoggedRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/BoggedRaw.java
+✅ [CatRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/CatRaw.java
+✅ [CreeperRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/CreeperRaw.java
+✅ [ChickenRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/ChickenRaw.java
+✅ [DrownedRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/DrownedRaw.java
+✅ [EnderManRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/EnderManRaw.java
+✅ [EvokerRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/EvokerRaw.java
+✅ [FoxRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/FoxRaw.java
+✅ [HorseRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/HorseRaw.java
+✅ [IronGolemRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/IronGolemRaw.java
+✅ [IllusionerRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/IllusionerRaw.java
+✅ [PathfinderMobRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/PathfinderMobRaw.java
+✅ [HumanoidRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/HumanoidRaw.java
+✅ [HumanoidSlimRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/HumanoidSlimRaw.java
+✅ [PillagerRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/PillagerRaw.java
+✅ [PigRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/PigRaw.java
+✅ [PiglinRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/PiglinRaw.java
+✅ [PiglinBruteRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/PiglinBruteRaw.java
+✅ [ZombifiedPiglinRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/ZombifiedPiglinRaw.java
+✅ [SkeletonRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/SkeletonRaw.java
+✅ [StrayRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/StrayRaw.java
+✅ [WitherSkeletonRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/WitherSkeletonRaw.java
+✅ [SpiderRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/SpiderRaw.java
+✅ [VexRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/VexRaw.java
+✅ [VillagerRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/VillagerRaw.java
+✅ [VindicatorRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/VindicatorRaw.java
+✅ [WolfRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/WolfRaw.java
+✅ [WitchRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/WitchRaw.java
+✅ [ZombieRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/ZombieRaw.java
+✅ [HuskRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/HuskRaw.java
+✅ [ZombieVillagerRaw] Generated /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/entity/easynpc/npc/raw/ZombieVillagerRaw.java
+
+> Task :Common:compileJava UP-TO-DATE
+
+> Task :Fabric:compileJava
+/data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/gametest/GameTestHelpers.java:43: warning: [removal] makeMockServerPlayerInLevel() in GameTestHelper has been deprecated and marked for removal
+    ServerPlayer serverPlayer = helper.makeMockServerPlayerInLevel();
+                                      ^
+/data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Client/src/main/java/de/markusbordihn/easynpc/client/screen/SpawnTimerScreen.java:144: error: cannot find symbol
+      boolean hovered = Minecraft.getInstance().mouseHandler.x() * this.width / Minecraft.getInstance().getWindow().getScreenWidth() >= stopButtonX &&
+                                                            ^
+  symbol:   method x()
+  location: variable mouseHandler of type MouseHandler
+/data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Client/src/main/java/de/markusbordihn/easynpc/client/screen/SpawnTimerScreen.java:145: error: cannot find symbol
+                         Minecraft.getInstance().mouseHandler.x() * this.width / Minecraft.getInstance().getWindow().getScreenWidth() < stopButtonX + stopButtonWidth &&
+                                                             ^
+  symbol:   method x()
+  location: variable mouseHandler of type MouseHandler
+/data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Client/src/main/java/de/markusbordihn/easynpc/client/screen/SpawnTimerScreen.java:146: error: cannot find symbol
+                         Minecraft.getInstance().mouseHandler.y() * this.height / Minecraft.getInstance().getWindow().getScreenHeight() >= stopButtonY &&
+                                                             ^
+  symbol:   method y()
+  location: variable mouseHandler of type MouseHandler
+/data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Client/src/main/java/de/markusbordihn/easynpc/client/screen/SpawnTimerScreen.java:147: error: cannot find symbol
+                         Minecraft.getInstance().mouseHandler.y() * this.height / Minecraft.getInstance().getWindow().getScreenHeight() < stopButtonY + stopButtonHeight;
+                                                             ^
+  symbol:   method y()
+  location: variable mouseHandler of type MouseHandler
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+4 errors
+1 warning
+
+> Task :Fabric:compileJava FAILED
+
+[Incubating] Problems report is available at: file:///data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':Fabric:compileJava'.
+> Compilation failed; see the compiler output below.
+  /data/Yanlai/minecraft_server_fabric_1.21.1_fresh/mods-dev/BOs-Easy-NPC-1.21.1/core/Common/src/main/java/de/markusbordihn/easynpc/gametest/GameTestHelpers.java:43: warning: [removal] makeMockServerPlayerInLevel() in GameTestHelper has been deprecated and marked for removal
+      ServerPlayer serverPlayer = helper.makeMockServerPlayerInLevel();
+                                        ^
+  4 errors
+  1 warning
+
+* Try:
+> Run with --scan to get full insights.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 6s
+4 actionable tasks: 2 executed, 2 up-to-date

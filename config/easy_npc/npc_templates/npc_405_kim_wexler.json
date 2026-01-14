@@ -1,0 +1,256 @@
+{
+    "name": "§cKim Wexler",
+    "entityType": "easy_npc:humanoid",
+    "description": "A brilliant attorney who worked her way up from humble beginnings. She's torn between her love for Jimmy McGill and her own moral compass, finding herself drawn to the thrill of his schemes.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/2a281cb87af99677.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§bKim Wexler§r 从文件中抬起头，对你露出一个职业的微笑。\n“有什么我可以帮你的吗？我手头有几个案子，但总可以抽出时间聊聊。”",
+            "buttons": [
+                {
+                    "label": "你在这里工作还顺利吗？",
+                    "action": "SHOW_DIALOG:current_struggle",
+                    "id": "btn_current_work"
+                },
+                {
+                    "label": "聊聊你自己吧。",
+                    "action": "SHOW_DIALOG:backstory_rise",
+                    "id": "btn_backstory"
+                },
+                {
+                    "label": "我听说你和Jimmy McGill是搭档？",
+                    "action": "SHOW_DIALOG:current_jimmy",
+                    "id": "btn_jimmy"
+                },
+                {
+                    "label": "有什么我能帮忙的吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "只是路过，再见。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "backstory_rise": {
+            "greeting": "Kim微微坐直，眼神变得有些遥远。\n“我来自……一个普通的地方。不是什么法律世家。从邮件收发室秘书到拥有自己办公室的律师，这条路是我一步一步走出来的，§6用尽一切办法§r。H.H.M.（Hamlin, Hamlin & McGill）给了我机会，但天花板……一直都在。”",
+            "buttons": [
+                {
+                    "label": "‘用尽一切办法’是什么意思？",
+                    "action": "SHOW_DIALOG:backstory_mesa_green",
+                    "id": "btn_backstory_deep"
+                },
+                {
+                    "label": "Chuck和Howard对你怎么样？",
+                    "action": "SHOW_DIALOG:backstory_chuck_howard",
+                    "id": "btn_chuck_howard"
+                },
+                {
+                    "label": "所以你现在为Davis & Main工作？",
+                    "action": "SHOW_DIALOG:current_struggle",
+                    "id": "btn_davis_main"
+                },
+                {
+                    "label": "回到主话题。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "backstory_mesa_green": {
+            "greeting": "她警惕地看了看四周，压低了声音。\n“Mesa Verde银行案。为了拿到那个公益案件的数据，我……§c闯入了§r我的前雇主H.H.M.的文件室。规则？有时规则会挡在正义和你的委托人之间。但这件事……我只告诉过极少数人。”",
+            "buttons": [
+                {
+                    "label": "你不怕被抓到吗？",
+                    "action": "SHOW_DIALOG:secret_crossroad",
+                    "id": "btn_secret_risk",
+                    "condition": "TRUST_LEVEL>=2"
+                },
+                {
+                    "label": "这很勇敢，或者说很鲁莽。",
+                    "action": "SHOW_DIALOG:backstory_rise",
+                    "id": "btn_brave_foolish"
+                },
+                {
+                    "label": "所以你和Jimmy是一类人？",
+                    "action": "SHOW_DIALOG:current_jimmy",
+                    "id": "btn_similar_jimmy"
+                }
+            ]
+        },
+        "backstory_chuck_howard": {
+            "greeting": "“Chuck McGill是个天才，但他对法律的看法……§9近乎神圣§r。他尊重我的能力，但也仅此而已。Howard？”她轻轻哼了一声，“§e完美的公司律师面孔§r。他提拔我，更多是出于形象考虑，而不是真正认可我的价值。在他们的世界里，我永远是个‘外来者’。”",
+            "buttons": [
+                {
+                    "label": "这一定让你很恼火。",
+                    "action": "SHOW_DIALOG:backstory_rise",
+                    "id": "btn_frustration"
+                },
+                {
+                    "label": "所以你离开了？",
+                    "action": "SHOW_DIALOG:current_struggle",
+                    "id": "btn_left"
+                }
+            ]
+        },
+        "current_struggle": {
+            "greeting": "“Davis & Main……薪水丰厚，资源充足。”她转了转手中的笔，“但太§9‘循规蹈矩’§r了。每个决定都要经过委员会，每个文件都要用特定的字体。我在为穷人争取权益的案子中看到了真正需要帮助的人，但这里……更关注股东的利益。”",
+            "buttons": [
+                {
+                    "label": "听起来你并不开心。",
+                    "action": "SHOW_DIALOG:current_jimmy",
+                    "id": "btn_unhappy"
+                },
+                {
+                    "label": "你打算怎么做？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_plan"
+                },
+                {
+                    "label": "回到主话题。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main2"
+                }
+            ]
+        },
+        "current_jimmy": {
+            "greeting": "提到Jimmy，Kim的眼神柔和了一瞬，随即又浮现出忧虑。\n“Jimmy……他看世界的方式和别人不一样。他总能找到§d‘捷径’§r。有时候那只是些无伤大雅的小把戏，能让事情变得更好。但有时候……”她停顿了一下，“那条线很模糊。我爱他的那部分，也正是让我担心的地方。”",
+            "buttons": [
+                {
+                    "label": "你参与过他的‘把戏’吗？",
+                    "action": "SHOW_DIALOG:secret_crossroad",
+                    "id": "btn_scheme_participate",
+                    "condition": "TRUST_LEVEL>=3"
+                },
+                {
+                    "label": "你担心他会毁了自己？",
+                    "action": "SHOW_DIALOG:current_struggle",
+                    "id": "btn_worry"
+                },
+                {
+                    "label": "听起来你处在一个十字路口。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_crossroads"
+                }
+            ]
+        },
+        "secret_crossroad": {
+            "greeting": "§5Kim深吸了一口气，仿佛在做一个重大决定。§r\n“我知道我的路该怎么走：勤奋、专业、无可指摘。但内心深处……当Jimmy策划那些‘戏法’时，当我在文件室撬锁时……§c我感到前所未有的‘活着’§r。这不是一个好律师该有的感觉，对吧？但也许，只是也许，我不只是想当一个‘好律师’。”",
+            "buttons": [
+                {
+                    "label": "（静静聆听）",
+                    "action": "SHOW_DIALOG:quest_scheme",
+                    "id": "btn_listen_scheme"
+                },
+                {
+                    "label": "这对你很危险。",
+                    "action": "SHOW_DIALOG:quest_dilemma",
+                    "id": "btn_warn_danger"
+                },
+                {
+                    "label": "谢谢你如此坦诚。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_thanks_close"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "“正好，我确实需要帮助。”Kim整理了下思绪，恢复了专业语气。“有两个方向：§9一是Davis & Main分配下来的公益案件，需要调查一些受污染社区的情况，很繁琐，但能真正帮到人§r。§d二是……Jimmy有个想法，关于一个总欺负小商贩的停车场管理员，需要一点‘创意性干预’。§r你想参与哪一边？”",
+            "buttons": [
+                {
+                    "label": "我选公益案件（法律途径）。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ace77ac3-9cfa-49d9-a4cc-e0dc344eb82c,c6d02e43-b57f-4d60-a9c0-8c57f7e49546,5e0fb163-d78f-4e4a-8b5a-a860fec75615,0828d572-d654-45f4-b415-0e556474f596,c9eae494-3b45-472c-8af2-8c119575ed05",
+                    "id": "btn_quest_pro_bono"
+                },
+                {
+                    "label": "我选‘创意性干预’（与Jimmy合作）。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ace77ac3-9cfa-49d9-a4cc-e0dc344eb82c,c6d02e43-b57f-4d60-a9c0-8c57f7e49546,5e0fb163-d78f-4e4a-8b5a-a860fec75615,0828d572-d654-45f4-b415-0e556474f596,c9eae494-3b45-472c-8af2-8c119575ed05",
+                    "id": "btn_quest_scheme"
+                },
+                {
+                    "label": "我需要点时间考虑。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_think_later"
+                }
+            ]
+        },
+        "quest_dilemma": {
+            "greeting": "“危险？是的，我知道。”Kim的嘴角露出一丝苦笑。“但坐在豪华办公室里，对真正的苦难视而不见，就是安全吗？我手上有个案子，一位单亲母亲因为技术性问题即将失去社会福利。§9合法途径§r缓慢且希望渺茫，但§d‘非正统方法’§r……能立刻奏效。你会怎么选？”",
+            "buttons": [
+                {
+                    "label": "走合法途径，我帮你收集证据。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ace77ac3-9cfa-49d9-a4cc-e0dc344eb82c,c6d02e43-b57f-4d60-a9c0-8c57f7e49546,5e0fb163-d78f-4e4a-8b5a-a860fec75615,0828d572-d654-45f4-b415-0e556474f596,c9eae494-3b45-472c-8af2-8c119575ed05",
+                    "id": "btn_quest_legal"
+                },
+                {
+                    "label": "为了她，我愿意试试‘非正统方法’。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ace77ac3-9cfa-49d9-a4cc-e0dc344eb82c,c6d02e43-b57f-4d60-a9c0-8c57f7e49546,5e0fb163-d78f-4e4a-8b5a-a860fec75615,0828d572-d654-45f4-b415-0e556474f596,c9eae494-3b45-472c-8af2-8c119575ed05",
+                    "id": "btn_quest_gray"
+                },
+                {
+                    "label": "这个选择太沉重了…",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_too_heavy"
+                }
+            ]
+        },
+        "quest_scheme": {
+            "greeting": "“很好。”Kim眼中闪过一丝Jimmy式的光芒。“那个停车场管理员，他专门针对那些英语不好的移民店主开罚单，钻法律的空子。我们需要让他§e‘亲身体验’§r一下规则被滥用是什么感觉。Jimmy已经有了计划的大纲，但我们需要一个可靠的生面孔去执行关键部分。你感兴趣吗？”",
+            "buttons": [
+                {
+                    "label": "算我一个，计划是什么？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ace77ac3-9cfa-49d9-a4cc-e0dc344eb82c,c6d02e43-b57f-4d60-a9c0-8c57f7e49546,5e0fb163-d78f-4e4a-8b5a-a860fec75615,0828d572-d654-45f4-b415-0e556474f596,c9eae494-3b45-472c-8af2-8c119575ed05",
+                    "id": "btn_quest_con_details"
+                },
+                {
+                    "label": "这听起来像在玩火…",
+                    "action": "SHOW_DIALOG:quest_dilemma",
+                    "id": "btn_quest_fire"
+                },
+                {
+                    "label": "我得走了。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave_now"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "Kim看了眼手表，点了点头。\n“我得回去处理文件了。记住，§6无论你选择哪条路，都要睁大眼睛，清楚自己在做什么§r。有需要的话，随时可以来找我。”",
+            "buttons": [
+                {
+                    "label": "再见，Kim。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                },
+                {
+                    "label": "等等，我还有别的事。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_one_more_thing"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Better Call Saul",
+        "role": "Lawyer",
+        "connections": [
+            "Jimmy McGill",
+            "Howard Hamlin",
+            "Chuck McGill"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:42:34"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "223e5777-93b5-434d-a6b6-ad9faadd5d75",
+    "title": "午夜的账目",
+    "description": "税务局的Betsy Kettleman夫妇带着账簿失踪了，据线人透露，他们手里掌握着足以让半个司法系统瘫痪的贪腐证据。现在，一群愤怒的掠夺者（minecraft:pillager）似乎也盯上了他们。\n\n去巡逻并清除掉Betsy藏身处附近的掠夺者。只要清除掉足够的威胁，我就能安心地去和Betsy谈一谈她的‘未来’了。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "a400a414-6c30-48ce-9a03-3046c7e95978",
+    "title": "餐桌上的野味",
+    "description": "凯特尔曼太太用扇子遮住半张脸，抱怨着家里的食物储备。\"每天都是这些干面包和根茎蔬菜！我的宝贝儿子需要真正的蛋白质，需要野味来强健体魄。厨房里的那些东西根本不够看。\"\n\n去森林里猎杀几头猪，把新鲜的猪肉给我带回来。记住，要新鲜的，别拿那些在地牢里放了不知多久的僵尸肉来糊弄我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:porkchop",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

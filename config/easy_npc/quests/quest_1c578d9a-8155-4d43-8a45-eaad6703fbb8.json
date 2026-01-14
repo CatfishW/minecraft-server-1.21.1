@@ -1,0 +1,15 @@
+{
+    "id": "1c578d9a-8155-4d43-8a45-eaad6703fbb8",
+    "title": "逆熵的坚果",
+    "description": "Murray Bauman正在策划一场针对某个神秘组织的抗议活动，但他发现传统的标语和横幅在异常现象面前毫无作用。他从一些机密渠道听说，某种特殊的绿色植物（闪烁着不自然的光芒）具有干扰异常实体的效果。他认为如果能利用这种植物，就能在对抗'他们'时占据上风。\n\n去收集一些这种发光的'逆熵'植物（原版：Minecraft的下界植物，如地狱疣，或具有神秘色彩的植物），它们通常生长在阴暗潮湿的地方。Murray需要足够的量来进行实验。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:nether_wart",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

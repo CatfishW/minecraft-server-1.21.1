@@ -1,0 +1,15 @@
+{
+    "id": "5471d151-26ba-4e51-8cf8-b88da9e7dcd9",
+    "title": "黄金储备",
+    "description": "我们需要黄金来进行重要的贸易。\n\n收集金锭用于交易。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gold_ingot",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 147,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 38
+    }
+}

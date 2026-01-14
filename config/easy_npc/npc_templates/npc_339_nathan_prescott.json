@@ -1,0 +1,170 @@
+{
+    "name": "§5Nathan Prescott",
+    "entityType": "easy_npc:humanoid",
+    "description": "A troubled student from a rich and powerful family.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f5e7b3b473ca8846.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "呵，又一个想来套近乎的？离我远点。你知道我是谁吗？我是内森·普雷斯科特。在这里，我说了算。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ee88dbfe-0dad-430d-9983-a46d48b4ed4c,f93b4cf1-d18b-4583-874c-1eff4739963d,cee9aa8a-30f7-4e44-b57f-f8a696fda363,96d76047-fed0-4824-8acc-4a039307ece1,ad0cfa8a-d964-4457-8fe5-34103ae0b52d",
+                    "id": "btn_quest_6dbfeecb"
+                },
+                {
+                    "label": "你看起来很紧张",
+                    "action": "SHOW_DIALOG:talk_nervous",
+                    "id": "btn_1"
+                },
+                {
+                    "label": "为什么这么有攻击性？",
+                    "action": "SHOW_DIALOG:talk_aggressive",
+                    "id": "btn_2"
+                },
+                {
+                    "label": "谈谈瑞秋·安珀",
+                    "action": "SHOW_DIALOG:talk_rachel",
+                    "id": "btn_3"
+                },
+                {
+                    "label": "有人派我来调查你",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_nervous": {
+            "greeting": "紧张？别可笑了！我只是... 不喜欢陌生人盯着我看。尤其是像你这种不知从哪冒出来的家伙。我的父亲对我期望很高，我不能出任何差错。",
+            "buttons": [
+                {
+                    "label": "你父亲很严厉？",
+                    "action": "SHOW_DIALOG:talk_father",
+                    "id": "btn_father"
+                },
+                {
+                    "label": "你到底在怕什么？",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_father": {
+            "greeting": "他不是严厉，他是... 病态。他要求完美。如果我搞砸了，如果我让他丢脸了，后果会很严重。我必须保持完美，必须控制一切。",
+            "buttons": [
+                {
+                    "label": "没人能控制一切",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_aggressive": {
+            "greeting": "攻击性？这是自我保护！你以为这个世界很安全吗？到处都是想利用你、毁掉你的人。我必须比他们更强硬，更狠！",
+            "buttons": [
+                {
+                    "label": "比如谁？",
+                    "action": "SHOW_DIALOG:talk_targets",
+                    "id": "btn_targets"
+                },
+                {
+                    "label": "你这种心态会毁了你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "talk_targets": {
+            "greeting": "比如那些自以为是的艺术家，那些不识抬举的贱人！他们以为能挑战普雷斯科特家的权威？我会让他们付出代价的，我会拍下他们最狼狈的样子！",
+            "buttons": [
+                {
+                    "label": "你做了什么？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_rachel": {
+            "greeting": "瑞秋？那个... 那个完美的女孩。所有人都喜欢她，追捧她。但你知道吗？她也有不为人知的一面。她以为她能骗过所有人，包括我。",
+            "buttons": [
+                {
+                    "label": "你对她做了什么？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "她只是失踪了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你想知道真相？好啊，我告诉你。有些事情一旦开始就停不下来了。我需要有人帮我... 善后。我的‘作品’需要一个保管者，一个能保守秘密的人。",
+            "buttons": [
+                {
+                    "label": "什么作品？",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "这听起来像犯罪",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cancel"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "别管是什么！你到底帮不帮？如果你帮我处理掉那些‘证据’，我会给你钱，很多钱。或者... 我会让你成为下一个‘主角’。选吧。",
+            "buttons": [
+                {
+                    "label": "我帮你（接受任务）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "你真是个疯子",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

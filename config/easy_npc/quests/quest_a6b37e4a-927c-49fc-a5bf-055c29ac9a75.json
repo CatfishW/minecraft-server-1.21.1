@@ -1,0 +1,15 @@
+{
+    "id": "a6b37e4a-927c-49fc-a5bf-055c29ac9a75",
+    "title": "必要的证据",
+    "description": "我的当事人最近在挖掘现场有些麻烦。为了确保我们的法律立场坚如磐石，我需要一些确凿的物证。法律是建立在事实基础上的，而事实往往需要通过斗争来证明。\n\n前往挖掘场，清理掉那些徘徊在那里的僵尸。从它们身上收集一些腐肉，这将是证明环境恶劣、当事人受到威胁的有力证据。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

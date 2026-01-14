@@ -1,0 +1,15 @@
+{
+    "id": "867865b0-3c21-4633-a02c-94728d9d7be1",
+    "title": "亡者的低语",
+    "description": "未知的迷雾笼罩着你，这份任务来自阴影之中。委托人似乎不愿露面，只在你的行囊中留下了一张字条，上面提到了那些被遗忘者的威胁。这既是一次考验，也是一次警告。\n\n前往荒野，找到那些在黑暗中徘徊的亡者。让它们的尖啸归于沉寂，证明你并非凡俗之辈。当你斩杀 10 只僵尸后，再回来寻找下一步的线索。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

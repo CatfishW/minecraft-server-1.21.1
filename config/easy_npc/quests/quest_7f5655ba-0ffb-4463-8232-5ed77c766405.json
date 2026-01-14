@@ -1,0 +1,15 @@
+{
+    "id": "7f5655ba-0ffb-4463-8232-5ed77c766405",
+    "title": "荒野的耳目",
+    "description": "边境的流浪者有时比我们的眼线更管用。Gus 想招募一个特定的人，一个了解这片土地上所有秘密的“麻风病人”。他能为我们提供宝贵的情报，尤其是在那些我们不常涉足的区域。\n\n找到这个外号“The Leper”的流浪者。他通常在荒野中游荡。让他知道，为 Gus 工作比在野外挨饿要好得多。",
+    "objective": {
+        "type": "TALK",
+        "target": "The Leper",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

@@ -11,10 +11,15 @@ import java.util.*;
 public class PathManager {
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
     private static final Path PATH_DIR = Paths.get("config", "npcbusdriver", "paths");
+    private static final Map<String, List<BlockPos>> pathCache = new HashMap<>();
 
     public static class PathPoint {
         public int x, y, z;
         public PathPoint(int x, int y, int z) { this.x = x; this.y = y; this.z = z; }
+    }
+
+    public static void clearCache() {
+        pathCache.clear();
     }
 
     public static void savePath(String name, List<BlockPos> points) throws IOException {
@@ -27,15 +32,22 @@ public class PathManager {
         try (Writer writer = Files.newBufferedWriter(file)) {
             GSON.toJson(serializablePoints, writer);
         }
+        // Update cache
+        pathCache.put(name, new ArrayList<>(points));
     }
 
     public static List<BlockPos> loadPath(String name) {
+        if (pathCache.containsKey(name)) {
+            return pathCache.get(name);
+        }
+
         Path file = PATH_DIR.resolve(name + ".json");
         if (!Files.exists(file)) return null;
         try (Reader reader = Files.newBufferedReader(file)) {
             PathPoint[] points = GSON.fromJson(reader, PathPoint[].class);
             List<BlockPos> blockPoints = new ArrayList<>();
             for (PathPoint p : points) blockPoints.add(new BlockPos(p.x, p.y, p.z));
+            pathCache.put(name, blockPoints);
             return blockPoints;
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,3 +55,4 @@ public class PathManager {
         }
     }
 }
+

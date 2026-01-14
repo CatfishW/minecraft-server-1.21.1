@@ -1,0 +1,15 @@
+{
+    "id": "bcbc05b0-8816-4a23-88dc-8da9a1887b8d",
+    "title": "关键的证词",
+    "description": "一位名叫弗兰克·鲍尔斯的目击者似乎看到了事件的全过程。他的证词对我们的案件至关重要，但他为人谨慎，不愿与陌生人交谈。我需要你代表律所去和他建立联系，让他相信我们是为了正义。\n\n找到弗兰克·鲍尔斯，向他表明我们的来意。你的态度必须诚恳，让他放下戒心。",
+    "objective": {
+        "type": "TALK",
+        "target": "Frank Bowers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

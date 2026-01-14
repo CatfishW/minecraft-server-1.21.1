@@ -1,0 +1,15 @@
+{
+    "id": "bd67d944-4cb0-47ef-be1a-4e57b6f54924",
+    "title": "无光的深渊",
+    "description": "黑暗不仅仅是缺乏光明，它是一种实体。在最深邃的地底，那些爬行的怪物守护着某种纯粹的黑暗精华。我需要那种物质来制作反制它们的护符。\n\n深入地下，猎杀潜伏在黑暗中的苦力怕（Creeper）。小心它们的致命拥抱。收集 5 份它们逸散的体液，也就是火药（Gunpowder），任何一丝浪费都是不可饶恕的。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gunpowder",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

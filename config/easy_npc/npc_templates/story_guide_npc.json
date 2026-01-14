@@ -1,0 +1,145 @@
+{
+    "name": "§6故事向导",
+    "entityType": "easy_npc:humanoid",
+    "faction": "default",
+    "description": "引导冒险者进入故事世界的神秘向导",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://namemc.com/texture/d3beaf1fae7b7a2e.png"
+    },
+    "attributes": {
+        "maxHealth": 100,
+        "movementSpeed": 0.25,
+        "attackDamage": 0,
+        "armor": 20.0,
+        "invulnerable": true,
+        "attackableByPlayers": false,
+        "attackableByMonsters": false,
+        "nameVisibility": "ALWAYS"
+    },
+    "objectives": {
+        "attackHostileMobs": false,
+        "attackPlayers": false,
+        "returnToSpawn": true,
+        "wanderRange": 0.0
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎，冒险者！我是§6故事向导§r.\n\n我可以带你进入冒险世界，或者协助你管理队伍和进度。\n\n你想做什么？",
+            "buttons": [
+                {
+                    "label": "§e§l冒险菜单",
+                    "action": "SHOW_DIALOG:adventure_menu",
+                    "id": "btn_open_menu"
+                },
+                {
+                    "label": "§b功能演示 & 测试",
+                    "action": "SHOW_DIALOG:demo_menu",
+                    "id": "btn_open_demos"
+                },
+                {
+                    "label": "§7关于系统",
+                    "action": "SHOW_DIALOG:about",
+                    "id": "btn_about"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "adventure_menu": {
+            "greeting": "这里是冒险控制台。请选择一个操作：",
+            "buttons": [
+                {
+                    "label": "§a§l故事列表 (Stories)",
+                    "action": "COMMAND:/storyui stories",
+                    "id": "btn_stories"
+                },
+                {
+                    "label": "§6§l准备大厅 (Lobby)",
+                    "action": "COMMAND:/storyui lobby",
+                    "id": "btn_lobby"
+                },
+                {
+                    "label": "§d查看进度",
+                    "action": "COMMAND:/story progress",
+                    "id": "btn_progress"
+                },
+                {
+                    "label": "§7返回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main_1"
+                }
+            ]
+        },
+        "demo_menu": {
+            "greeting": "§e§l功能演示区§r\n\n这里可以预览系统的各种交互界面和功能。",
+            "buttons": [
+                {
+                    "label": "§e对话系统演示",
+                    "action": "COMMAND:/storyui dialogue",
+                    "id": "btn_demo_dialogue"
+                },
+                {
+                    "label": "§6解谜系统演示",
+                    "action": "COMMAND:/storyui puzzle",
+                    "id": "btn_demo_puzzle"
+                },
+                {
+                    "label": "§bHUD 控制选项",
+                    "action": "SHOW_DIALOG:hud_menu",
+                    "id": "btn_hud_menu"
+                },
+                {
+                    "label": "§c§l管理员面板",
+                    "action": "COMMAND:/storyadminui",
+                    "id": "btn_admin"
+                },
+                {
+                    "label": "§7返回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main_2"
+                }
+            ]
+        },
+        "hud_menu": {
+            "greeting": "控制 HUD (抬头显示) 的状态：",
+            "buttons": [
+                {
+                    "label": "§a显示 HUD (测试数据)",
+                    "action": "COMMAND:/storyui hud show",
+                    "id": "btn_hud_show"
+                },
+                {
+                    "label": "§c隐藏 HUD",
+                    "action": "COMMAND:/storyui hud hide",
+                    "id": "btn_hud_hide"
+                },
+                {
+                    "label": "§7返回演示菜单",
+                    "action": "SHOW_DIALOG:demo_menu",
+                    "id": "btn_back_demo"
+                }
+            ]
+        },
+        "about": {
+            "greeting": "§6§lStory Adventure System§r\n\n这是一个沉浸式的故事副本系统。\n\n§e功能：§r\n• 剧情对话\n• 组队解谜\n• 副本战斗\n• 进度存档\n\n由 Warm Pixel 开发。",
+            "buttons": [
+                {
+                    "label": "§7返回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main_3"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "equipment": {
+        "mainHand": {
+            "item": "minecraft:book",
+            "count": 1
+        }
+    }
+}

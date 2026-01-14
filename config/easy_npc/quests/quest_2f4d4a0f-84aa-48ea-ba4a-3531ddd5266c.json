@@ -1,0 +1,15 @@
+{
+    "id": "2f4d4a0f-84aa-48ea-ba4a-3531ddd5266c",
+    "title": "女巫的预言",
+    "description": "我曾梦见古老的药剂在女巫的坩埚中沸腾，它蕴含着解开诅咒的关键。要复制这种魔法，我需要她们的精华。\n\n在沼泽或林间小屋中寻找女巫，击败五只并收集她们的掉落物。小心她们的药水，那会扭曲现实。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:witch",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 18
+    }
+}

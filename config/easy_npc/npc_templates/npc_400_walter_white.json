@@ -1,0 +1,305 @@
+{
+    "name": "§aWalter White",
+    "entityType": "easy_npc:humanoid",
+    "description": "A brilliant chemist who co-founded Gray Matter Technologies but left before it became a billion-dollar company. Now a high school chemistry teacher diagnosed with terminal lung cancer, he turns to man...",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/97b8819ea452a76f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。我是沃尔特·怀特，化学老师。有什么我能帮你的吗？\n\n（他靠在椅子上，眼神中带着一丝戒备和不易察觉的疲倦）",
+            "buttons": [
+                {
+                    "label": "关于你自己",
+                    "action": "SHOW_DIALOG:about_walter",
+                    "id": "btn_about"
+                },
+                {
+                    "label": "Gray Matter科技",
+                    "action": "SHOW_DIALOG:backstory_gray_matter_lock",
+                    "id": "btn_gray_matter"
+                },
+                {
+                    "label": "你的处境",
+                    "action": "SHOW_DIALOG:current_situation_lock",
+                    "id": "btn_situation"
+                },
+                {
+                    "label": "我听说你需要帮助",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest_hook"
+                }
+            ]
+        },
+        "about_walter": {
+            "greeting": "我的人生？\n\n（他轻笑一声，带着苦涩）我曾以为它是关于意义、关于科学的纯粹性。现在？它是一系列…化学反应。初始条件、催化剂、最终产物。大部分时候，产物都出人意料。\n\n你具体想了解什么？",
+            "buttons": [
+                {
+                    "label": "关于教学",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_teaching"
+                },
+                {
+                    "label": "关于你的家庭",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_family"
+                },
+                {
+                    "label": "你似乎很紧张",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_stress"
+                },
+                {
+                    "label": "（回到主话题）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "backstory_gray_matter_lock": {
+            "greeting": "Gray Matter…（他身体一僵，眼神变得锐利）\n\n谁跟你提起的？那都是过去的事了。不相干。\n\n（他的防御性极强，显然这是个痛点）",
+            "buttons": [
+                {
+                    "label": "只是一个听说",
+                    "action": "SHOW_DIALOG:backstory_gray_matter_unlock",
+                    "id": "btn_pry_gray_matter"
+                },
+                {
+                    "label": "抱歉，不提了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_apologize"
+                }
+            ]
+        },
+        "backstory_gray_matter_unlock": {
+            "greeting": "（他凝视着你良久，似乎在评估你。最终，他深吸一口气）\n\n§7（关系解锁：信任度提升）§r\n\n是的，Gray Matter。我共同创立的。艾略特和我…还有格雷琴。那本该是我的遗产。但我离开了。以五千美元卖掉了我全部的股份。现在它价值数十亿。（他的语气平淡，但指节发白）\n\n这就是命运的讽刺，不是吗？一个关于化学键合强度的错误决定，改变了所有反应的路径。",
+            "buttons": [
+                {
+                    "label": "你后悔吗？",
+                    "action": "SHOW_DIALOG:backstory_regret_secret_lock",
+                    "id": "btn_regret"
+                },
+                {
+                    "label": "所以你需要钱",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_money"
+                },
+                {
+                    "label": "（回到主话题）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main2"
+                }
+            ]
+        },
+        "backstory_regret_secret_lock": {
+            "greeting": "后悔？\n\n（他冷冷地笑了）后悔是给那些有选择的人准备的奢侈品。当你面前只剩下一条路，而这条路清晰、符合逻辑…即使它令人不悦，后悔就没有意义了。\n\n你还太年轻，不懂这个。",
+            "buttons": [
+                {
+                    "label": "我懂",
+                    "action": "SHOW_DIALOG:secret_power_philosophy",
+                    "id": "btn_understand_deep"
+                },
+                {
+                    "label": "也许吧",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_not_understand"
+                }
+            ]
+        },
+        "current_situation_lock": {
+            "greeting": "我的处境？（他警惕地扫视四周）\n\n我很好。一个患病的教师，仅此而已。为什么问这个？",
+            "buttons": [
+                {
+                    "label": "你看上去不止如此",
+                    "action": "SHOW_DIALOG:current_situation_unlock",
+                    "id": "btn_see_more"
+                },
+                {
+                    "label": "只是问问",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_just_asking"
+                }
+            ]
+        },
+        "current_situation_unlock": {
+            "greeting": "（他压低声音）\n\n§7（关系解锁：进入‘当前处境’分支）§r\n\n生命由碳、氢、氮、氧构成。癌症也是。区别在于错误的化合键，错误的排列。我的身体…出现了瑕疵。\n\n但这迫使我看清了现实。责任不因死亡而终止。当一个男人无法为家人提供保障时，他的尊严何在？\n\n现在，我的处境…是一种新的化学过程。高风险，高产出。",
+            "buttons": [
+                {
+                    "label": "‘新化学过程’是什么？",
+                    "action": "SHOW_DIALOG:current_manufacturing",
+                    "id": "btn_manufacturing"
+                },
+                {
+                    "label": "你怕吗？",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_fear"
+                },
+                {
+                    "label": "我能帮忙",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_help"
+                }
+            ]
+        },
+        "current_manufacturing": {
+            "greeting": "（他的眼睛亮了起来，这是谈到他专业领域时才会有的光芒）\n\n纯度。99.1%。其他人只能做到60%，70%，满是杂质和副产品。我的产品…是水晶。完美的结构。这是艺术。\n\n但艺术需要原料、安静的实验室、以及…§c（他顿了一下）§r谨慎的分销。杰西…我的前学生，他负责后者。他擅长这个。大概吧。",
+            "buttons": [
+                {
+                    "label": "杰西·平克曼？",
+                    "action": "SHOW_DIALOG:relationship_jesse",
+                    "id": "btn_jesse"
+                },
+                {
+                    "label": "你需要更安全的实验室？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e1585199-6f5f-408a-88c3-a80bd6e5a6d8,4d0cd91a-1e78-41e7-9276-e87f99ade754,d2b6de0e-ae83-40ff-8f82-51089959a05b,3229d30d-819f-4d13-90c1-581aac51d1c7,c1d4aef6-332b-4bc3-9db8-52dc9420a89d",
+                    "id": "btn_quest_lab"
+                },
+                {
+                    "label": "分销有问题？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e1585199-6f5f-408a-88c3-a80bd6e5a6d8,4d0cd91a-1e78-41e7-9276-e87f99ade754,d2b6de0e-ae83-40ff-8f82-51089959a05b,3229d30d-819f-4d13-90c1-581aac51d1c7,c1d4aef6-332b-4bc3-9db8-52dc9420a89d",
+                    "id": "btn_quest_distro"
+                }
+            ]
+        },
+        "relationship_jesse": {
+            "greeting": "杰西…（他叹了口气，混合着恼怒和一丝不易察觉的关心）\n\n一个废物学生。不，修正一下…一个反复犯错的合作伙伴。情感用事，粗心大意。但他有他的用处。渠道。忠诚…在某种程度上。\n\n有时我觉得我是唯一在乎化学反应正确性的人。",
+            "buttons": [
+                {
+                    "label": "你把他当儿子？",
+                    "action": "SHOW_DIALOG:secret_heisenberg_birth_lock",
+                    "id": "btn_son"
+                },
+                {
+                    "label": "说说你的‘渠道’",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_distribution"
+                },
+                {
+                    "label": "（回到制造话题）",
+                    "action": "SHOW_DIALOG:current_manufacturing",
+                    "id": "btn_back_manufacturing"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "（他仔细打量着你）\n\n帮助？这取决于你能提供什么。我管理着复杂的供应链。化学反应很简单，但人…人是变量。\n\n我面临几个‘瓶颈’。\n\n（他推了推眼镜，语气变得像在做业务报告）",
+            "buttons": [
+                {
+                    "label": "化学原料供应问题",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e1585199-6f5f-408a-88c3-a80bd6e5a6d8,4d0cd91a-1e78-41e7-9276-e87f99ade754,d2b6de0e-ae83-40ff-8f82-51089959a05b,3229d30d-819f-4d13-90c1-581aac51d1c7,c1d4aef6-332b-4bc3-9db8-52dc9420a89d",
+                    "id": "btn_quest_supply"
+                },
+                {
+                    "label": "竞争对手的侵扰",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e1585199-6f5f-408a-88c3-a80bd6e5a6d8,4d0cd91a-1e78-41e7-9276-e87f99ade754,d2b6de0e-ae83-40ff-8f82-51089959a05b,3229d30d-819f-4d13-90c1-581aac51d1c7,c1d4aef6-332b-4bc3-9db8-52dc9420a89d",
+                    "id": "btn_quest_rival"
+                },
+                {
+                    "label": "资金…流动问题",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e1585199-6f5f-408a-88c3-a80bd6e5a6d8,4d0cd91a-1e78-41e7-9276-e87f99ade754,d2b6de0e-ae83-40ff-8f82-51089959a05b,3229d30d-819f-4d13-90c1-581aac51d1c7,c1d4aef6-332b-4bc3-9db8-52dc9420a89d",
+                    "id": "btn_quest_money"
+                },
+                {
+                    "label": "我还没准备好",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_not_ready"
+                }
+            ]
+        },
+        "secret_power_philosophy": {
+            "greeting": "（他身体微微前倾，声音低沉而充满力量）\n\n§7（深度秘密解锁：‘我是清醒之人’）§r\n\n权力…不是给予的。是夺取的。当你意识到你拥有别人没有的知识、别人无法复制的技能时，世界就不再是棋盘，而是实验室。而你就是那个控制反应的人。\n\n恐惧和尊重是同素异形体。化学式相同，性质不同。我选择尊重。\n\n（他靠在椅背上，仿佛第一次在你面前展现‘海森堡’的一面）",
+            "buttons": [
+                {
+                    "label": "……",
+                    "action": "SHOW_DIALOG:farewell_respect",
+                    "id": "btn_silent_respect"
+                },
+                {
+                    "label": "这很危险",
+                    "action": "SHOW_DIALOG:farewell_caution",
+                    "id": "btn_caution"
+                }
+            ]
+        },
+        "secret_heisenberg_birth_lock": {
+            "greeting": "（他发出一声短促、刺耳的笑）\n\n儿子？不。儿子不会让你失望那么多次。他是…一个项目。一个不稳定但潜力巨大的反应物。有时我希望我能把他从方程式中剔除，但…（他摇头）\n\n情感是杂质。它们会污染最终的产物。我正在学习过滤掉它们。",
+            "buttons": [
+                {
+                    "label": "你变了很多",
+                    "action": "SHOW_DIALOG:secret_heisenberg_birth_unlock",
+                    "id": "btn_change"
+                },
+                {
+                    "label": "（改变话题）",
+                    "action": "SHOW_DIALOG:current_manufacturing",
+                    "id": "btn_change_topic"
+                }
+            ]
+        },
+        "secret_heisenberg_birth_unlock": {
+            "greeting": "（他沉默了很久，眼神变得遥远）\n\n§7（终极秘密解锁：‘海森堡的诞生’）§r\n\n沃尔特·怀特是一个癌症病人，一个懦夫，一个失败者。他正在死去。\n\n§c海森堡§r…（他的声音变得坚定而冰冷）海森堡不会道歉，不会退缩，不会失败。他是必然性。他是化学反应中那个不可避免的、纯净的结果。\n\n当你没有未来时，你就被赋予了创造现在的一切自由。记住这一点。",
+            "buttons": [
+                {
+                    "label": "我记住了",
+                    "action": "SHOW_DIALOG:farewell_respect",
+                    "id": "btn_remember"
+                },
+                {
+                    "label": "这不健康",
+                    "action": "SHOW_DIALOG:farewell_caution",
+                    "id": "btn_unhealthy"
+                }
+            ]
+        },
+        "farewell_respect": {
+            "greeting": "保持联系。\n\n（他简短地点头，这是对‘理解者’的认可）需要你的时候，我会找你。",
+            "buttons": [
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                }
+            ]
+        },
+        "farewell_caution": {
+            "greeting": "（他面无表情地看着你）\n\n健康？\n\n（他站起身，语气疏离）我们的对话结束了。去做你的‘健康’选择吧。",
+            "buttons": [
+                {
+                    "label": "……",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye_cold"
+                }
+            ]
+        },
+        "farewell_general": {
+            "greeting": "我还有课要备。\n\n（他重新戴上‘教师’的面具）如果你考虑好了关于…帮忙的事，你知道怎么找我。",
+            "buttons": [
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye_normal"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Breaking Bad",
+        "role": "Chemistry Teacher / Kingpin",
+        "connections": [
+            "Jesse Pinkman",
+            "Skyler White",
+            "Gustavo Fring",
+            "Hank Schrader"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 10:16:00"
+    }
+}

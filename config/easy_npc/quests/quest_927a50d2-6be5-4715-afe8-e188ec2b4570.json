@@ -1,0 +1,15 @@
+{
+    "id": "927a50d2-6be5-4715-afe8-e188ec2b4570",
+    "title": "猎魔行动",
+    "description": "汉克·施拉德：\"海登的情报没错，但那条密道里全是那些受污染的变种怪物，它们比普通的僵尸更敏捷、更致命。看来‘地精’用他的‘产品’喂养了它们，作为看门狗。清理掉它们，为最终的抓捕扫清障碍。别被它们扑倒，那些东西的爪子上沾满了剧毒。\"",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:husk",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 3
+    }
+}

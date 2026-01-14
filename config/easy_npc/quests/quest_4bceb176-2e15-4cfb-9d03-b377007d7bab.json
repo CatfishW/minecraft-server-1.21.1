@@ -1,0 +1,15 @@
+{
+    "title": "清除威胁",
+    "description": "村外的骷髅弓箭手威胁着村民的安全，消灭它们。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    },
+    "id": "4bceb176-2e15-4cfb-9d03-b377007d7bab"
+}

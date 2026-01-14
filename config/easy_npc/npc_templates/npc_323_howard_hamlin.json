@@ -1,0 +1,115 @@
+{
+    "name": "§9Howard Hamlin",
+    "entityType": "easy_npc:humanoid",
+    "description": "A partner at the prestigious HHM law firm.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f388f85d00826f01.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "我是Howard Hamlin。欢迎来到HHM。我们致力于为客户提供最顶尖的法律服务。有什么我可以为你效劳的吗？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:8f80c12a-746f-4629-b615-55b6bad6b640,06a1d45b-a09d-402d-9857-8dfb0ac601d4,96d09ed6-5974-4bab-a320-5ea5b967f8ee,a92d5da3-2517-4a76-83b4-f18b7160972f,c124bffc-8b90-4a6b-b41b-552d476c129d",
+                    "id": "btn_quest_1935b4cd"
+                },
+                {
+                    "label": "聊聊律所的业务",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我想咨询一项业务",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "HHM是新墨西哥州的法律中坚力量。我们在企业法、诉讼和房地产领域都有着深厚的积累。我们的声誉建立在无数个胜诉和满意的客户之上。",
+            "buttons": [
+                {
+                    "label": "Jimmy McGill和你们有关系？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_jimmy"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "啊，Jimmy。这真是个...棘手的话题。Chuck对他弟弟的感情很复杂。我作为Chuck的合伙人，必须维护律所的利益。Jimmy的行事风格，和我们的企业文化不太兼容。",
+            "buttons": [
+                {
+                    "label": "你个人怎么看他？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_opinion"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "我个人？（整理领带）我觉得他很有才华，但缺乏方向。他有一种把简单事情复杂化的天赋。而且，说真的，他总叫我‘Hamlin头’，这让我很不爽。但我尽量表现得专业。",
+            "buttons": [
+                {
+                    "label": "我们需要HHM的专业服务",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "回到上一级",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "太好了。HHM很乐意承接你的案件。我们需要先评估一下案情的复杂程度和潜在的法律风险。如果你准备好签署委托协议，我们可以立即开始工作。",
+            "buttons": [
+                {
+                    "label": "这是预付金，请开始工作",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "我还需要考虑一下费用",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

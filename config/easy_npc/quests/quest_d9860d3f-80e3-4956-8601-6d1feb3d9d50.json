@@ -1,0 +1,15 @@
+{
+    "id": "d9860d3f-80e3-4956-8601-6d1feb3d9d50",
+    "title": "不速之客",
+    "description": "天黑之后，我的餐厅后巷就成了那些怪物的乐园。它们发出的噪音和腐烂的气味会吓跑所有客人，尤其是像 Chloe 这样的好孩子。我一个女人家处理不来这些，但你看起来身手不错。\n\n入夜后去我的餐厅后巷，清除掉 5 只徘徊的僵尸 (minecraft:zombie)。保护镇上的宁静和安全，这对大家都好。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

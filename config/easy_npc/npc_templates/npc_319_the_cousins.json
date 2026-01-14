@@ -1,0 +1,100 @@
+{
+    "name": "§eThe Cousins",
+    "entityType": "easy_npc:humanoid",
+    "description": "Silent, deadly cartel enforcers.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/c5b848029efa2d5b.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（两人沉默地站着，其中一人缓缓摩擦着银色骷髅头打火机，发出清脆的咔哒声。眼神空洞且致命。）",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:70a672a7-c130-44eb-b59d-7c26e32eb09c,b91f62c5-1ddf-4a6f-bf9f-ff45dd46f962,195c2e55-3653-4a4c-962a-a2c0d948023c,93da0bcc-c7c4-441b-99a8-d6856950775b,49c2561c-123a-42cc-aba8-3f0f7f837b3b,bf8beda7-0c42-499b-bf23-570f7498ce9c,f91d27dc-6016-4027-8d3b-1df1f785132c,9dd6c51b-296e-49df-be96-ae5543efccb8",
+                    "id": "btn_quest_0033a5cb"
+                },
+                {
+                    "label": "是埃琳娜夫人派你们来的吗？",
+                    "action": "SHOW_DIALOG:connection_1",
+                    "id": "btn_family"
+                },
+                {
+                    "label": "我有个‘清理’任务。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "connection_1": {
+            "greeting": "（持有打火机的那人停下动作，死死盯着你。另一人缓缓举起一只手，比划了一个复杂的宗教手势。）",
+            "buttons": [
+                {
+                    "label": "那个手势……是给神的，还是给死人的？",
+                    "action": "SHOW_DIALOG:connection_2",
+                    "id": "btn_ask"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "connection_2": {
+            "greeting": "（打火机猛地燃起蓝色火焰，映照着他们脸上毫无表情的面容。）La bestia debe ser alimentada. (野兽必须被喂饱。)",
+            "buttons": [
+                {
+                    "label": "看来我们没什么好谈的了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（两人对视一眼，然后同时看向你。持有打火机的那人缓缓点了点头，然后指向你的身后，仿佛在说目标就在那里，或者……死期已到。）",
+            "buttons": [
+                {
+                    "label": "就是他。让他消失。",
+                    "action": "START_QUEST:Los_Primos",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "不，我改变主意了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

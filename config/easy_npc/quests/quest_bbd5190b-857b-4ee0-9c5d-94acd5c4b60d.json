@@ -1,0 +1,15 @@
+{
+    "id": "bbd5190b-857b-4ee0-9c5d-94acd5c4b60d",
+    "title": "扭曲的摄影",
+    "description": "Vortex Club的摄影展即将开幕，但摄影师Jimmy McGill想要一些更'前卫'的素材。他认为原版的丧尸照片已经过时了，需要一些真正'生猛'的镜头，比如那些在黑暗中发光的僵尸或是具有特殊攻击性的生物。他承诺如果能提供这样的素材，会给一个不错的价钱。\n\n在夜晚狩猎那些特殊的原版僵尸，确保你的相机（或者说你的记忆）捕捉到了它们最狰狞的一面。将这些'素材'带回给Jimmy，他会很满意的。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

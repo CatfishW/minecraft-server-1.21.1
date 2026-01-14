@@ -1,0 +1,15 @@
+{
+    "id": "8f80c12a-746f-4629-b615-55b6bad6b640",
+    "title": "协议与秩序",
+    "description": "霍华德·汉姆林需要确保他办公室的文书工作万无一失。法律的基石在于细节，而一份有效的契约需要最原始的墨汁作为封印。他希望你能准备一些。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:ink_sac",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 15
+    }
+}

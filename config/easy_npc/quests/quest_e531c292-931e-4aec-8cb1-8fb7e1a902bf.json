@@ -1,0 +1,15 @@
+{
+    "id": "e531c292-931e-4aec-8cb1-8fb7e1a902bf",
+    "title": "第一桶金",
+    "description": "吉米·麦吉尔，这个穿着不合身西装的年轻律师，正面临职业生涯的第一次重大危机——他甚至付不起办公室的租金。他听闻某位矿洞领主正在寻找特定的矿物，这或许是摆脱财务困境的最快途径。\n\n你需要立刻行动。深入地下矿洞，收集 64 个原版铁锭（minecraft:iron_ingot）。不要问这些铁的来源，只要把它们交给我，我们就能换来现金，让事务所继续运转下去。记住，效率就是一切。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 64
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

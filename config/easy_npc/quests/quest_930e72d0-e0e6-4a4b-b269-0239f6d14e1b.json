@@ -1,0 +1,15 @@
+{
+    "id": "930e72d0-e0e6-4a4b-b269-0239f6d14e1b",
+    "title": "寻回失物",
+    "description": "一个重要的信使在经过边境时失踪了，他身上携带着关于下一批货物的关键信息。我们必须在他落入敌人手中之前找到他，或者找到他携带的包裹。\n\n去和镇上的Joyce谈谈，她消息灵通，或许知道信使最后的行踪。她总是能听到一些不该听到的事。从她那里获取情报，然后找到失踪的包裹。",
+    "objective": {
+        "type": "TALK",
+        "target": "Joyce Byers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

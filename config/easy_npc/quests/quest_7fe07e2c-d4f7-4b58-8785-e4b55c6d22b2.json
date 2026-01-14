@@ -1,0 +1,15 @@
+{
+    "id": "7fe07e2c-d4f7-4b58-8785-e4b55c6d22b2",
+    "title": "尘封的罪证",
+    "description": "作为District Attorney的助理，我需要快速整理一批即将过期的案件卷宗。其中一份关于农场主的案子，被告声称他的作物完全合规，但我确信他在撒谎。\n\n去农场搜集一些异常饱满的马铃薯（minecraft:potato）作为物证。哪怕只有一两个，也足以成为压垮骆驼的最后一根稻草。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:potato",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

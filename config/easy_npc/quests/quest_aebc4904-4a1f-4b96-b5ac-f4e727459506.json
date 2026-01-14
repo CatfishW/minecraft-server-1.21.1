@@ -1,0 +1,15 @@
+{
+    "id": "aebc4904-4a1f-4b96-b5ac-f4e727459506",
+    "title": "吞光之影",
+    "description": "学校的地下室不仅仅是用来存放旧桌椅的。最近，一种没有实体的黑暗在那里滋生，它吞噬了灯光，连我的萤火虫都害怕靠近。那是一种古老的东西，来自虚空的裂隙。\n\n你需要用纯粹的生命力驱散它。去向住在街角的Skyler White要一些她种的植物，任何新鲜的作物（minecraft:wheat）都可以。把这些充满生机的作物撒在地下室的五个角落。",
+    "objective": {
+        "type": "TALK",
+        "target": "Skyler White",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

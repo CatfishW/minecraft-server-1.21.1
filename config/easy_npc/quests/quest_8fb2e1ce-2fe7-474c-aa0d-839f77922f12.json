@@ -1,0 +1,15 @@
+{
+    "id": "8fb2e1ce-2fe7-474c-aa0d-839f77922f12",
+    "title": "边境的草料",
+    "description": "Kim Wexler 处理完手头的案子，意识到必须解决一些基础问题才能着手更复杂的事务。她虽然身着西装，但并不畏惧亲力亲为，即便是像农场主那样简单的劳作也能让她紧绷的神经得到片刻的放松，她需要你帮她收集一些基本的物资来维持事务所的运作。\n\n请前往田地，收获成熟的小麦。她希望你能带回至少 20 个小麦，以便厨房有足够的储备。这虽然枯燥，但正如法律条文一样，基础不容忽视。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

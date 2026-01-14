@@ -1,0 +1,15 @@
+{
+    "id": "eb9f3199-403a-43d8-8a6a-32b55534c6cf",
+    "title": "收集特殊合金",
+    "description": "我是Francesca Liddy，Jimmy和Kim的接待员。我们正在处理一个需要特殊材料的案子，Kim提到过一种特殊的金属合金，也许是指铁锭。我们需要这些材料来制作一些必要的工具或证据。\n请你收集一些铁锭。我需要至少4个铁锭来完成我们的准备工作。这对我们来说非常关键，请务必小心行事。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 4
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

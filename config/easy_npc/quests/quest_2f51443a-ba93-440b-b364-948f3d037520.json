@@ -1,0 +1,15 @@
+{
+    "id": "2f51443a-ba93-440b-b364-948f3d037520",
+    "title": "深渊的回响",
+    "description": "在处理一系列复杂的心理案件时，Kim 接触到了一位特殊的证人——Walter White Jr.。他似乎掌握着某种关键信息，关于一个自称 'Pennywise' 的连环杀手的行踪。Kim 不能直接接触嫌犯，这违反程序正义，但她必须拿到证词。\n\n去找到 Walter White Jr.，他可能在城镇的角落里惊恐万分。作为 Jimmy 的搭档，你必须安抚他并拿到关于 Pennywise 的情报。这是一项高难度的任务，不仅因为对方的心理防线，更因为你需要将这份沉重的证词带回。",
+    "objective": {
+        "type": "TALK",
+        "target": "Walter White Jr.",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 3
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "deac88f2-a743-4515-a828-bd133bc8cfa9",
+    "title": "肇事者的道歉",
+    "description": "Alyssa 非常沮丧。她刚来镇上不久，就在广场上不小心撞倒了 Clifford Main 先生的晾衣绳，不仅弄脏了他的衬衫，还把他的假牙掉进了草丛里。虽然 Clifford 先生很宽容，但 Alyssa 坚持认为必须亲自去道歉才能安心。请务必向他转达她深深的歉意。\n你需要找到 Clifford Main 先生。他通常在镇中心广场附近散步，或者在他那有些杂乱的小屋旁整理园艺。",
+    "objective": {
+        "type": "TALK",
+        "target": "Clifford Main",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 20,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

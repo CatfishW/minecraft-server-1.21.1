@@ -1,0 +1,15 @@
+{
+    "id": "e040ea21-df70-47dc-99d5-6066addaabf9",
+    "title": "纯净的原料",
+    "description": "Gustavo Fring 认为，完美的炸鸡源于最纯粹的食材。最近，他发现用于腌制的香料受到了附近苔藓的污染，这绝对无法容忍。他需要最原始的植物精华来恢复风味。\n\n去收集一些附着在岩石或泥土上的绿色苔藓。确保你的采集过程干净利落，不要夹杂任何杂物。这是制作‘极品’产品的关键一步。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft: moss",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "6f6f8c04-2a39-4654-b456-e49d4736539b",
+    "title": "最后的杂音",
+    "description": "我们遇到了一个叛徒，一个我们曾经信任的人。他的良心被狗吃了，以为能逃过我们。但萨拉曼卡家的正义从不迟到。\n\n找到汉考克，他有这个叛徒的最后情报。他会告诉你在哪里可以截住这个想跑路的家伙。处理掉他，拿回他身上属于我们的东西。别让他有机会再发出任何声音。",
+    "objective": {
+        "type": "TALK",
+        "target": "Hancock",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

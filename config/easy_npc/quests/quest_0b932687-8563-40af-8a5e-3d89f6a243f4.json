@@ -1,0 +1,15 @@
+{
+    "id": "0b932687-8563-40af-8a5e-3d89f6a243f4",
+    "title": "破碎的避风港",
+    "description": "Skyler最近心神不宁，她感觉Walter的世界正在不断侵蚀她原本平静的生活。家里的氛围变得越来越压抑，她迫切需要找到一个可以短暂逃离的地方，理清自己的思绪。\n\n请去采集一些原版物品minecraft:blue_orchid（蓝色兰花），她想要用这些花朵来装饰一下那个即将被遗忘的旧秘密基地，试图在最后的宁静时光中找回一丝安慰。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:blue_orchid",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

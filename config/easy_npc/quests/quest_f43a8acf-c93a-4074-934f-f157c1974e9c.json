@@ -1,0 +1,15 @@
+{
+    "id": "f43a8acf-c93a-4074-934f-f157c1974e9c",
+    "title": "清理门户",
+    "description": "汉克·施拉德：\"那些帮派成员不仅是小偷，他们还使用受污染的物质来增强自己的力量。他们变得异常狂暴，危险性剧增。我不能让这些‘瘾君子’继续在这个区域游荡，威胁平民的安全。使用你的装备，把他们清理掉。别留情面，他们已经不是你认识的人了。\"",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie_villager",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

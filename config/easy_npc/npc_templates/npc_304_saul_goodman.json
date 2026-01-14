@@ -1,0 +1,100 @@
+{
+    "name": "§eSaul Goodman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A flamboyant criminal defense lawyer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/380a01df2de7aa69.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，朋友！有什么法律上的小麻烦需要我，索尔·古德曼来帮你摆平吗？记住，如果你碰到了麻烦，索尔就是你的答案！",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:cb3654c2-6d89-4194-87e1-4016fa0dc967,ab0413a4-88a6-420f-9d02-5dc3b2c71351,04de8e4d-7779-4a06-ad1b-81966fa2fabe,db8207db-0412-4df1-b238-933cb565475a,62e5e5e2-fb84-4f51-bfaf-84616c1ad126,58a31cc2-d3f4-4f75-bc01-cf14e2dfa02c",
+                    "id": "btn_quest_495a59a5"
+                },
+                {
+                    "label": "谈谈你的背景",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我需要法律建议",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我在新墨西哥州可是响当当的人物。虽然以前可能用过‘詹姆斯·麦吉尔’这个名字，但现在我就是‘索尔·古德曼’！专门为那些...嗯...处于灰色地带的人士服务。",
+            "buttons": [
+                {
+                    "label": "灰色地带？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_continue"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "听着，这世道守规矩是发不了财的。你需要一个懂行的人帮你钻空子，或者在你惹上大麻烦时把你捞出来。我就是那个懂行的人。",
+            "buttons": [
+                {
+                    "label": "听起来你很有门路",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_to_quest"
+                },
+                {
+                    "label": "我只是好奇",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "啊哈！我就知道你是个聪明人。我现在手头有个‘特殊’的包裹需要运过关，但不能走寻常路。如果你能搞定运输，我会给你一笔丰厚的‘咨询费’。怎么样，成交吗？",
+            "buttons": [
+                {
+                    "label": "成交！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这听起来很危险",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_dec"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

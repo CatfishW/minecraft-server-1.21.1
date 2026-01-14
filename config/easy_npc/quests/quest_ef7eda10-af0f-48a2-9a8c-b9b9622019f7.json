@@ -1,0 +1,15 @@
+{
+    "title": "奢侈的证明",
+    "description": "为了彰显萨拉曼卡家族的权势，Lalo需要一些钻石来装饰他的新据点。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 70
+    },
+    "id": "ef7eda10-af0f-48a2-9a8c-b9b9622019f7"
+}

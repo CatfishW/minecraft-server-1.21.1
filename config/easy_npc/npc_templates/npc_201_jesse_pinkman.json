@@ -1,0 +1,101 @@
+{
+    "name": "§bJesse Pinkman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A small-time meth cook and dealer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/867de1a3bb967097.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Yo，伙计，看什么看？这身行头可不是随便穿的，这是街头的标志，懂吗？以前我只是在小巷子里卖点货，直到老白...我是说，海森堡出现。他把我拉进了这个疯狂的世界，一切都变得...更大了，也更危险了。有时候我真希望一切能回到从前，但回不去了，你知道吗？",
+            "buttons": [
+                {
+                    "label": "跟我说说老白",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_heisenberg"
+                },
+                {
+                    "label": "你现在感觉如何？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_feeling"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "老白？他是个怪人，伙计。一开始我以为他只是个懂化学的老头，想赚点快钱。但他...他变了。他聪明得吓人，冷酷得吓人。他会用那些复杂的化学术语跟我讲大道理，但我看得出来，他骨子里有股狠劲。他是我见过的最好的化学家，也是我见过最危险的人。",
+            "buttons": [
+                {
+                    "label": "他对你好吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_treatment"
+                },
+                {
+                    "label": "你们的货怎么样？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_product"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "感觉？我感觉像坐过山车，伙计。有时候我们赚了大钱，感觉拥有一切。但随之而来的是无尽的麻烦，那些疯子，那些条子，还有那些...那些我害过的人。我晚上睡不着，脑子里全是那些乱七八糟的事。我试着画画，试着忘记，但它们总是在那儿。",
+            "buttons": [
+                {
+                    "label": "你想过退出吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_quit"
+                },
+                {
+                    "label": "有什么让你坚持下去？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_stay"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "好？他教了我一切，从化学到怎么在这个该死的世界里生存。但他也利用我，把我当成棋子。他总是说‘为了家庭’，但我呢？我没有家庭可以依靠。有时候我觉得我只是他实验的一部分，一个随时可以被替换的变量。但我也是个人，我有我的底线，伙计。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "退出？我试过，真的。但这个泥潭太深了，陷进去就拔不出来。也许...也许是我自己不想停。在这个世界里，我感觉自己是个无名小卒，但和老白一起，我感觉自己是‘平克曼’，是这个巨大计划的一部分。也许我只是需要感觉自己很重要，哪怕是以这种方式。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

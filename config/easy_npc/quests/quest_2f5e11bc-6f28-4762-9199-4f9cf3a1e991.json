@@ -1,0 +1,15 @@
+{
+    "id": "2f5e11bc-6f28-4762-9199-4f9cf3a1e991",
+    "title": "血色黎明",
+    "description": "Tuco Salamanca 站在悬崖边，手中的雪茄烟雾缭绕。他需要你去处理一些不守规矩的邻居。那些亡灵生物最近变得异常活跃，它们的存在让 Tuco 的生意受到了影响。他不需要理由，只需要结果。\n\n前往荒野，找到那些游荡的僵尸并消灭它们。让它们知道谁才是这片土地的真正主人。行动要快，Tuco 的耐心有限。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

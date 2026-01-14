@@ -1,0 +1,15 @@
+{
+    "id": "037b179b-8c86-4ba1-be77-467b98c1ddca",
+    "title": "寻找证人",
+    "description": "我是Francesca Liddy，Jimmy和Kim的接待员。Kim似乎在调查某个案件，她提到过需要一个关键证人的证词。那个证人似乎是Lalo Salamanca，但我不是很确定。如果能找到他，对我们的案子会有很大帮助。\n请你去和Lalo Salamanca谈谈。我们需要确认他是否愿意为我们提供帮助。找到他并告诉我他的回应。",
+    "objective": {
+        "type": "TALK",
+        "target": "Lalo Salamanca",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

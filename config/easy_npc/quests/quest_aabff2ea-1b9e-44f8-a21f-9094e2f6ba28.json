@@ -1,0 +1,15 @@
+{
+    "id": "aabff2ea-1b9e-44f8-a21f-9094e2f6ba28",
+    "title": "最坚固的绳索",
+    "description": "Eddie Kaspbrak 想要制作一个超级结实的捕兽陷阱，用来捕捉一只迷路的咕噜。他需要大量的线来编织这个陷阱，但他自己太胆小了，不敢去蜘蛛洞穴里收集。Badger 自告奋勇地接下了这个任务，但他也需要你的帮助。\n去蜘蛛生成的黑暗洞穴里，从那些悬挂的网中收集 20 根线，然后交给 Badger 让他转交给 Eddie。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:string",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 90,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

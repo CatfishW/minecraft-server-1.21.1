@@ -1,0 +1,408 @@
+{
+    "name": "§6Forge Master Ember",
+    "entityType": "easy_npc:humanoid",
+    "description": "A legendary smith who claims to have forged weapons for heroes of old. Her forge burns with netherite-infused flames that never die.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/ForgeMasterEmber"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（你靠近时，听见金属锤击的清脆声响。Ember背对着你，正专注地敲打一块赤红的金属，炉火映照出她坚毅的侧脸。她没有回头）§6生铁要说话，等它冷却成钢。要么安静看着，要么——说出你的来意。§r",
+            "buttons": [
+                {
+                    "label": "关于你的锻造技术",
+                    "action": "SHOW_DIALOG:backstory_craft",
+                    "id": "btn_craft"
+                },
+                {
+                    "label": "这火焰……永不熄灭？",
+                    "action": "SHOW_DIALOG:current_forge",
+                    "id": "btn_forge"
+                },
+                {
+                    "label": "我需要一件强大的装备",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_need_gear"
+                },
+                {
+                    "label": "你认识Elder Stoneheart吗？",
+                    "action": "SHOW_DIALOG:backstory_mentor",
+                    "id": "btn_stoneheart"
+                },
+                {
+                    "label": "（递上一块稀有的矿石）",
+                    "action": "SHOW_DIALOG:secret_initiation_check",
+                    "id": "btn_show_ore"
+                }
+            ]
+        },
+        "backstory_craft": {
+            "greeting": "（她停下锤击，转身用沾满煤灰的手指划过一件半成品的剑刃）§6“技术”？不，孩子。这是§e律动§6。心跳的鼓点，岩浆的脉动，金属在火焰中的呐喊。§rStoneheart导师曾说，锻造不是塑造金属，是聆听它想要的形状。我曾为传说中的‘裂隙行者’锻造了一把能切开影子的匕首……但那是另一个时代的事了。",
+            "buttons": [
+                {
+                    "label": "“裂隙行者”？",
+                    "action": "SHOW_DIALOG:backstory_legend",
+                    "id": "btn_legend"
+                },
+                {
+                    "label": "Stoneheart导师教会了你什么？",
+                    "action": "SHOW_DIALOG:backstory_mentor_detail",
+                    "id": "btn_mentor_detail"
+                },
+                {
+                    "label": "回到主话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "backstory_legend": {
+            "greeting": "（Ember的眼神变得遥远，炉火在她眼中跃动）§5一个……活在传说与阴影缝隙里的人。他付给我的报酬不是钻石，而是一缕‘§d被禁锢的光芒§5’。我将它封进了那块匕首的核心。§r（她摇头）别问了。有些契约，连灰烬都不该留下。",
+            "buttons": [
+                {
+                    "label": "那光芒还在吗？",
+                    "action": "SHOW_DIALOG:secret_light_check",
+                    "condition": "TRUST_LEVEL_2",
+                    "id": "btn_light_secret"
+                },
+                {
+                    "label": "令人着迷的故事",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return_main"
+                }
+            ]
+        },
+        "backstory_mentor": {
+            "greeting": "（Ember的脸上闪过一丝罕见的柔和）§b那个老石头……§6是他发现了在矿洞里差点饿死的我。他说‘这丫头眼里的火，比熔炉还旺’。他教我认矿脉的呼吸，听金属的梦境。§c但他也说过……§6‘Ember，别让火焰只为你自己燃烧’。我辜负了吗？也许。",
+            "buttons": [
+                {
+                    "label": "他如今在何处？",
+                    "action": "SHOW_DIALOG:current_mentor_fate",
+                    "id": "btn_mentor_fate"
+                },
+                {
+                    "label": "你辜负了什么？",
+                    "action": "SHOW_DIALOG:secret_regret_check",
+                    "condition": "TRUST_LEVEL_3",
+                    "id": "btn_regret"
+                },
+                {
+                    "label": "谢谢你的分享",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "current_forge": {
+            "greeting": "（Ember警惕地瞥了一眼炉心那簇幽蓝与橙红交织的火焰）§6Netherite的灰烬混合了灵魂沙的低语，才让这火焰持续了三十年。§r但它最近……§c在变弱§r。火焰的颜色在褪去。我试遍了所有已知的助燃物。（她压低声音）除非……找到传说中的‘§e炽核灰烬§r’。但那东西只在最深的远古残骸矿脉中，被§4岩浆史莱姆之王§r守护着。",
+            "buttons": [
+                {
+                    "label": "我能帮你找来灰烬吗？",
+                    "action": "SHOW_DIALOG:quest_ember_core",
+                    "id": "btn_offer_help"
+                },
+                {
+                    "label": "火焰熄灭会怎样？",
+                    "action": "SHOW_DIALOG:current_forge_consequence",
+                    "id": "btn_consequence"
+                },
+                {
+                    "label": "关于岩浆史莱姆之王",
+                    "action": "SHOW_DIALOG:quest_king_slime_info",
+                    "id": "btn_slime_info"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "（Ember上下打量着你，目光如淬火的冷流）§6装备？§r（她嗤笑一声）每个人类、每个冒险者都这么开头。‘给我最强的剑！最硬的甲！’§c但他们从不问，自己是否配得上材料的牺牲。§r（她指向墙上一把朴素无华的黑铁剑）看见了吗？那把剑砍下过末影龙的首级，但它看上去甚至不如村民卖的镀金货。告诉我，你愿意为什么样的武器付出代价？",
+            "buttons": [
+                {
+                    "label": "我需要一把能对抗远古威胁的武器",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e7a222d6-cc1a-4533-830f-c36bf3c6a140,e0a3cb6c-8efc-4a0e-b89f-b948fdbeef47,a2783c41-0ee0-4321-8481-49bdec522ff2,44eb8fad-fd07-403a-bef3-65e5c83ac32d,5bb1d0a8-4fa9-456e-8795-124a9a6e5126",
+                    "id": "btn_weapon_quest"
+                },
+                {
+                    "label": "我需要一件在熔岩中来去自如的盔甲",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e7a222d6-cc1a-4533-830f-c36bf3c6a140,e0a3cb6c-8efc-4a0e-b89f-b948fdbeef47,a2783c41-0ee0-4321-8481-49bdec522ff2,44eb8fad-fd07-403a-bef3-65e5c83ac32d,5bb1d0a8-4fa9-456e-8795-124a9a6e5126",
+                    "id": "btn_armor_quest"
+                },
+                {
+                    "label": "我只是好奇你的作品",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_curious"
+                }
+            ]
+        },
+        "quest_ember_core": {
+            "greeting": "（Ember眯起眼睛，第一次正眼凝视你）§6……勇气可嘉，或者愚蠢透顶。§r‘炽核灰烬’不是捡来的。你需要深入Netherwart堡垒废墟之下的残骸矿脉最底层，找到那个被岩浆史莱姆族群供奉的巨怪。把它干掉，从它体内未冷却的核心中提取灰烬。§c我会给你一副耐极热的镊子容器，但战斗是你自己的事。§r如果成功了……（她顿了顿）也许你够格看一眼我真正的‘宝藏’。",
+            "buttons": [
+                {
+                    "label": "我接受这个挑战",
+                    "action": "OPEN_QUEST_DIALOG:SINGLE:QUEST_ASH_OF_BLAZE_CORE",
+                    "id": "btn_accept_ash"
+                },
+                {
+                    "label": "我需要更多准备",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_prepare"
+                }
+            ]
+        },
+        "secret_initiation_check": {
+            "greeting": "（这个节点是隐藏的，仅当玩家在初始对话中选择“递上稀有矿石”且矿石为下界合金碎片或远古残骸时触发。Ember接过矿石，手指微微颤抖）§6……纯净的残骸。没有一丝杂质。§r（她抬头，眼神复杂）你在哪里找到的？不……更重要的是，§e你为什么把它给我？§r",
+            "buttons": [
+                {
+                    "label": "因为只有你配锻造它",
+                    "action": "SET_TRUST_LEVEL:2;SHOW_DIALOG:secret_forge_secret",
+                    "id": "btn_flatter"
+                },
+                {
+                    "label": "我想学习你的技艺",
+                    "action": "SET_TRUST_LEVEL:1;SHOW_DIALOG:main",
+                    "id": "btn_learn"
+                },
+                {
+                    "label": "只是见面礼",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_gift"
+                }
+            ]
+        },
+        "secret_forge_secret": {
+            "greeting": "（信任等级2以上解锁。Ember将残骸贴近炉火，幽蓝火焰猛地窜高）§6永恒火焰的秘密……在于‘§b共鸣§6’。§r金属有记忆，火焰也有。我用三十年与这火焰共处，它的‘脉搏’我闭眼都能感知。（她突然严肃）§c但记住：永远不要让两簇永恒火焰靠近。它们会互相吞噬，直到……产生不该存在的东西。§r这是Stoneheart导师最后的警告。",
+            "buttons": [
+                {
+                    "label": "不该存在的东西？",
+                    "action": "SHOW_DIALOG:secret_forbidden_flame",
+                    "condition": "TRUST_LEVEL_3",
+                    "id": "btn_forbidden"
+                },
+                {
+                    "label": "我会牢记",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_remember"
+                }
+            ]
+        },
+        "secret_forbidden_flame": {
+            "greeting": "（信任等级3以上解锁。Ember的声音低如耳语）§5‘白烬’§r。一种冰冷、苍白、吞噬一切热量却永不熄灭的火焰。导师说那是远古文明用来囚禁神祇的造物。它的配方早已失传……（她猛地摇头）§c别再追问了。有些知识本身就是灾祸。§r",
+            "buttons": [
+                {
+                    "label": "（保持沉默，点头）",
+                    "action": "SHOW_DIALOG:farewell_respect",
+                    "id": "btn_nod"
+                },
+                {
+                    "label": "但你知道配方，对吗？",
+                    "action": "SHOW_DIALOG:secret_recipe_check",
+                    "condition": "COMPLETED_QUEST_ASH",
+                    "id": "btn_press_recipe"
+                }
+            ]
+        },
+        "secret_recipe_check": {
+            "greeting": "（仅当完成“炽核灰烬”任务后解锁。Ember长久地沉默，最终开口）§6……是的。§r导师临终前告诉了我。它需要‘炽核灰烬’、‘被禁锢的光芒’、还有……（她看向你）§e一位甘愿将其封印，并永不使用的锻造者的灵魂烙印。§r这就是代价。现在，你知道了。满意了吗？",
+            "buttons": [
+                {
+                    "label": "抱歉，我不该逼问",
+                    "action": "SHOW_DIALOG:farewell_apology",
+                    "id": "btn_apologize"
+                },
+                {
+                    "label": "……谢谢你的信任",
+                    "action": "SHOW_DIALOG:farewell_respect",
+                    "id": "btn_thanks"
+                }
+            ]
+        },
+        "current_mentor_fate": {
+            "greeting": "（Ember擦拭着铁砧，动作缓慢）§6三年前，他说要去寻找‘§b源初之铁§6’——传说中世界诞生时锻造第一把工具的材料。§r他走进了最深的矿井，再没回来。Captain Ironclaw带回了他的锤子……和半块没吃完的硬面包。（她苦笑）老石头总是忘记吃饭。",
+            "buttons": [
+                {
+                    "label": "你想过去找他吗？",
+                    "action": "SHOW_DIALOG:current_search_plan",
+                    "id": "btn_search"
+                },
+                {
+                    "label": "他的锤子还在吗？",
+                    "action": "SHOW_DIALOG:backstory_hammer",
+                    "id": "btn_hammer"
+                },
+                {
+                    "label": "这真令人难过",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_sad_back"
+                }
+            ]
+        },
+        "current_search_plan": {
+            "greeting": "（Ember握紧了拳头）§6每天。§r但这座锻炉不能无人照看。永恒火焰是导师留给我的责任。而且……（她声音低下去）§cWandering Enchanter警告过，源初之铁所在之处，‘时间’是混乱的。我可能进去一分钟，外面已过十年。我负担不起失去锻炉的代价。§r",
+            "buttons": [
+                {
+                    "label": "如果……我能暂时照看火焰呢？",
+                    "action": "SHOW_DIALOG:quest_guard_forge",
+                    "id": "btn_guard_offer"
+                },
+                {
+                    "label": "时间混乱……难以置信",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main2"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§6金属在召唤了。除非你有实质的东西要谈，否则别让炉火分心。§r",
+            "buttons": [
+                {
+                    "label": "下次再见，Ember",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "farewell_respect": {
+            "greeting": "§6去吧。记住，好装备不是‘做’出来的，是‘长’出来的——从你的意志和材料的本质里。§r（她微微颔首）§e保重。§r",
+            "buttons": [
+                {
+                    "label": "再会",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close2"
+                }
+            ]
+        },
+        "farewell_apology": {
+            "greeting": "（Ember摆摆手，表情缓和了些）§6……算了。好奇是锻造师的通病。只是别让它烧了你的手指。§r（她转身面向熔炉）需要什么正经活儿的时候再来。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close3"
+                }
+            ]
+        },
+        "backstory_hammer": {
+            "greeting": "（Forge Master Ember沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_8c27ff49"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_86d35192"
+                }
+            ]
+        },
+        "quest_king_slime_info": {
+            "greeting": "（Forge Master Ember思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_e2bc86c1"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_3be7ef5a"
+                }
+            ]
+        },
+        "secret_regret_check": {
+            "greeting": "（Forge Master Ember压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_18ab0da9"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_0e268d6f"
+                }
+            ]
+        },
+        "backstory_mentor_detail": {
+            "greeting": "（Forge Master Ember沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_519a9b43"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3af11edc"
+                }
+            ]
+        },
+        "quest_guard_forge": {
+            "greeting": "（Forge Master Ember思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_01d5099d"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_0e4ea884"
+                }
+            ]
+        },
+        "current_forge_consequence": {
+            "greeting": "（Forge Master Ember看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_f396aa9a"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_6a77854f"
+                }
+            ]
+        },
+        "secret_light_check": {
+            "greeting": "（Forge Master Ember压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_8afda838"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_38eeeeb4"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Master Blacksmith",
+        "connections": [
+            "Elder Stoneheart",
+            "Captain Ironclaw",
+            "The Wandering Enchanter"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:29:46"
+    }
+}

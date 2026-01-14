@@ -5,7 +5,7 @@
     "description": "Stuttering Bill. Leader of the Losers.",
     "skin": {
         "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/07/bill-23775492.png?v938"
+        "skinUrl": "https://s.namemc.com/i/c3f256f79a096e19.png"
     },
     "attributes": {
         "maxHealth": 40,
@@ -14,13 +14,14 @@
         "armor": 5.0,
         "invulnerable": false,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
         "returnToSpawn": false,
-        "wanderRange": 25.0
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -269,7 +270,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

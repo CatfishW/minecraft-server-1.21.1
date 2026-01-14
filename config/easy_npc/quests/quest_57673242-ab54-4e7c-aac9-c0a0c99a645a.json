@@ -1,0 +1,15 @@
+{
+    "id": "57673242-ab54-4e7c-aac9-c0a0c99a645a",
+    "title": "骷髅猎人",
+    "description": "夜晚的骷髅越来越多，它们的箭矢让人不敢出门。\n\n猎杀骷髅弓箭手，让夜晚变得安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 115,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 43
+    }
+}

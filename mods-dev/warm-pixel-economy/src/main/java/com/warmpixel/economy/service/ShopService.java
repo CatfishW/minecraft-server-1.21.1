@@ -272,7 +272,7 @@ public class ShopService {
                                     }
                                     long baseTotal;
                                     try {
-                                        long unitSellPrice = Math.max(1, (long) (offer.price() * 0.1));
+                                        long unitSellPrice = Math.max(1, (long) (offer.price() * config.shop.sellRatio));
                                         baseTotal = Math.multiplyExact(unitSellPrice, (long) offersToSell);
                                     } catch (ArithmeticException e) {
                                         inventoryAdapter.insertStack(player, ItemKeyFactory.stackFromSnbt(offer.itemJson(), sellCount, player.getServer().registryAccess()));

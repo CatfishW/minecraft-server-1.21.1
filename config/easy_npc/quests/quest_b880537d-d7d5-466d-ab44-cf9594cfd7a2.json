@@ -1,0 +1,15 @@
+{
+    "title": "末地之眼",
+    "description": "我需要紫珀块来研究我的幻觉，帮我找来。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:purpur_block",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 45
+    },
+    "id": "b880537d-d7d5-466d-ab44-cf9594cfd7a2"
+}

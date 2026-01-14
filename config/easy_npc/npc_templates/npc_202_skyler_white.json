@@ -1,0 +1,101 @@
+{
+    "name": "§6Skyler White",
+    "entityType": "easy_npc:humanoid",
+    "description": "Walter's wife, struggling with his secret life.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/cf17d054aa4b9f83.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎来到我们家，如果你愿意称之为家的话。曾经这里充满了温馨和对未来的憧憬，但现在...现在这里充满了谎言和秘密。沃尔特总是说他是为了我们，为了这个家。但当他开始对我撒谎的那一刻，他就把这个家推向了深渊。我被困在这里，为了孩子，为了这个破碎的梦。",
+            "buttons": [
+                {
+                    "label": "你知道他在做什么吗？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_know"
+                },
+                {
+                    "label": "你打算怎么办？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_plan"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "我一开始什么都不知道，只以为是他的癌症让他变得奇怪。直到我发现了那些账单，那些不对劲的数字，还有那个叫‘海森堡’的神秘人物。真相像潮水一样淹没了我，他不是什么英雄，他是个罪犯，一个毒枭。我试图划清界限，但他把我拖下了水，用他的谎言和所谓的‘为了家庭’的借口。",
+            "buttons": [
+                {
+                    "label": "你恨他吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_hate"
+                },
+                {
+                    "label": "你参与了吗？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_involved"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我能怎么办？报警？那会毁了我的儿子，毁了这个家。所以我选择了另一条路，我试图控制局面，试图把那些肮脏的钱洗干净，让生活看起来正常。我甚至...我甚至用自己的方式去对抗他，让他知道我也不是好惹的。这是一场无声的战争，在这栋房子里，在我们的卧室里。",
+            "buttons": [
+                {
+                    "label": "你觉得还有救吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_hope"
+                },
+                {
+                    "label": "你考虑过离开吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "恨？我不知道那是不是恨。更多的是失望和恐惧。我爱过那个男人，那个教书育人、温和顾家的沃尔特。但他杀了那个男人，取而代之的是一个我不认识的怪物。我无法原谅他对我所做的一切，也无法原谅自己在某种程度上的默许。我们都被困住了，被他创造的这个怪物困住了。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "希望？在这个家里，希望是一种奢侈品。我曾经想过带着孩子一走了之，但现在，事情变得太复杂了。我必须保护沃尔特·怀特遗产里仅存的一点点东西，为了小沃尔特和霍莉。也许这就是我的命运，守着这个破碎的家，看着他走向毁灭，然后独自收拾残局。",
+            "buttons": [
+                {
+                    "label": "离开",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

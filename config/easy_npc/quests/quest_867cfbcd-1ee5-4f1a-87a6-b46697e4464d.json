@@ -1,0 +1,15 @@
+{
+    "id": "867cfbcd-1ee5-4f1a-87a6-b46697e4464d",
+    "title": "无声的探寻",
+    "description": "Unknown 觉得言语是苍白的，但有时却是必要的。他想知道这个世界上是否还有像他一样被遗忘的存在，或者，是否有人见过与他相似的异象。他指向远方那个孤独的背影——那是名为 Marie Schrader 的女人，据说她知晓许多不为人知的秘密。\n\n找到 Marie Schrader，不需要太多寒暄，只要静静地站在她面前，让她感觉到你的存在即可。",
+    "objective": {
+        "type": "TALK",
+        "target": "Marie Schrader",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 15
+    }
+}

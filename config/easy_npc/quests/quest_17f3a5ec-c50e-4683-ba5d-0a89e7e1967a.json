@@ -1,0 +1,15 @@
+{
+    "id": "17f3a5ec-c50e-4683-ba5d-0a89e7e1967a",
+    "title": "巴士的秘密通道",
+    "description": "听着，有个大麻烦需要解决。Hector Salamanca，一个非常危险的人物，可能会利用公交系统运送一些不该出现的东西。我需要你去和那个公交车司机谈谈，让他最近多留意一下Hector的动向，或者干脆让他‘意外’地错过某些班次。这很重要。",
+    "objective": {
+        "type": "TALK",
+        "target": "公交车司机",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 250,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

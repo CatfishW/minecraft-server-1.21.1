@@ -1,0 +1,190 @@
+{
+    "name": "§dChloe Price",
+    "entityType": "easy_npc:humanoid",
+    "description": "Max's rebellious and loyal best friend.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7810afe7d3077869.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，新面孔。你是哪个班的？别担心，我不是来找麻烦的... 除非你惹我。我是克洛伊，克洛伊·普莱斯。你最好记住这个名字。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:e754a681-ba3c-4586-ad62-c2d17ff2a72e,e6e017aa-42b1-467b-80f2-7f98e0617e6b,627b9fe7-50e2-472f-9ff0-2a658d4dddc7,4bd4923e-0133-4827-8ac9-e6dcfcebe051,be0f3b1a-dcff-49c3-a141-ac4be8f6adfb",
+                    "id": "btn_quest_590bc868"
+                },
+                {
+                    "label": "你看起来很不爽",
+                    "action": "SHOW_DIALOG:talk_anger",
+                    "id": "btn_1"
+                },
+                {
+                    "label": "你和麦克斯是朋友？",
+                    "action": "SHOW_DIALOG:talk_max",
+                    "id": "btn_2"
+                },
+                {
+                    "label": "这所学校怎么样？",
+                    "action": "SHOW_DIALOG:talk_school",
+                    "id": "btn_3"
+                },
+                {
+                    "label": "我在调查一些事...",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_anger": {
+            "greeting": "不爽？我当然不爽。被困在这个无聊透顶的讲座里，听着那些有钱的混蛋吹嘘他们的‘艺术’。要不是为了... 算了，你不会懂的。",
+            "buttons": [
+                {
+                    "label": "为了什么？",
+                    "action": "SHOW_DIALOG:why_here",
+                    "id": "btn_why"
+                },
+                {
+                    "label": "我懂你的感受",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "why_here": {
+            "greeting": "为了找点乐子，行了吧？或者是为了找机会给那些自以为是的家伙找点不痛快。这里太压抑了，我需要发泄一下。",
+            "buttons": [
+                {
+                    "label": "别惹大麻烦",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_max": {
+            "greeting": "麦克斯？你是说麦克斯·考菲尔德？那个总是躲在相机后面的小不点。哈，我们好久没见了。她变了，变得... 沉默寡言。",
+            "buttons": [
+                {
+                    "label": "她好像很在意你",
+                    "action": "SHOW_DIALOG:max_cares",
+                    "id": "btn_cares"
+                },
+                {
+                    "label": "你们之间发生了什么？",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "max_cares": {
+            "greeting": "是吗？也许吧。她总是那样，想帮忙又不敢说。有时候真想撬开她的脑袋看看里面装了什么。不过... 如果她需要我，我会在的。一直都是。",
+            "buttons": [
+                {
+                    "label": "这很感人",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_school": {
+            "greeting": "黑木学院？表面上光鲜亮丽，实际上烂透了。充满了虚伪的精英和被宠坏的熊孩子。如果你不是其中之一，那你最好小心点。",
+            "buttons": [
+                {
+                    "label": "听起来你很了解",
+                    "action": "SHOW_DIALOG:school_details",
+                    "id": "btn_details"
+                },
+                {
+                    "label": "我会小心的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "school_details": {
+            "greeting": "我见过太多事了。那些有钱的少爷小姐们以为自己能摆平一切。但真相总会浮出水面的，对吧？我就是来找真相的。",
+            "buttons": [
+                {
+                    "label": "什么真相？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "我在找一个人。瑞秋·安珀。她是这所学校的女王，但她失踪了。警察说她离家出走，但我不信。这里的人在撒谎，我知道。",
+            "buttons": [
+                {
+                    "label": "我能帮你找吗？",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "这听起来很危险",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cancel"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "真的？你愿意帮忙？太好了。我需要有人帮我盯着那些混蛋，特别是内森·普雷斯科特那个疯子。我要把这该死的学校翻个底朝天。",
+            "buttons": [
+                {
+                    "label": "成交（接受任务）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "我再考虑一下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

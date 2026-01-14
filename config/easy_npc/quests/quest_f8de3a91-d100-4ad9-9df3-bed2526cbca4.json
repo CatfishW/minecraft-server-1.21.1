@@ -1,0 +1,15 @@
+{
+    "id": "f8de3a91-d100-4ad9-9df3-bed2526cbca4",
+    "title": "情报交易",
+    "description": "大卫·马德森意识到，光靠巡逻是不够的，他需要更深层次的情报。史蒂夫·哈灵顿在学生中消息灵通，虽然他有些不靠谱，但总能带来一些有用的信息。大卫决定和他谈谈，看看他是否知道那些可疑学生的底细。\n\n请前往指定地点与史蒂夫·哈灵顿进行交谈，了解他所掌握的情报。",
+    "objective": {
+        "type": "TALK",
+        "target": "Steve Harrington",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

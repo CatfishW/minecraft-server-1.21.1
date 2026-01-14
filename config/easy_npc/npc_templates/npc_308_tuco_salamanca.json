@@ -1,0 +1,160 @@
+{
+    "name": "§aTuco Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "A high-ranking cartel enforcer, volatile and violent.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f800b8b7c3770587.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，朋友。你在我的地盘上做什么？你看起来不像我的人。想谈生意，还是想找麻烦？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:2f5e11bc-6f28-4762-9199-4f9cf3a1e991,11745177-8e15-48fe-a4dd-863a0536c594,0cb4d3c7-1e55-489b-bdcc-256d33d76ff2,e9216a84-61e8-49d0-8d53-eb7932eb07d8,74a38735-be38-469b-a97b-1877677a0f2b",
+                    "id": "btn_quest_2d5d55a3"
+                },
+                {
+                    "label": "我想谈谈生意",
+                    "action": "SHOW_DIALOG:talk_business",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "只是路过",
+                    "action": "SHOW_DIALOG:talk_loiter",
+                    "id": "btn_loiter"
+                },
+                {
+                    "label": "我是来帮你",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_business": {
+            "greeting": "生意？哈哈！我喜欢生意！只要你给我货，我就给你钱。或者给你一顿饱拳。看心情。你有什么货？",
+            "buttons": [
+                {
+                    "label": "我有高品质的...",
+                    "action": "SHOW_DIALOG:talk_product",
+                    "id": "btn_product"
+                },
+                {
+                    "label": "我只是打听一下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_product": {
+            "greeting": "少废话。把东西拿来，或者滚蛋。别让我等太久，我的耐心就像沙漏里的沙子。",
+            "buttons": [
+                {
+                    "label": "我会准备好的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                },
+                {
+                    "label": "现在就去取",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_run"
+                }
+            ]
+        },
+        "talk_loiter": {
+            "greeting": "路过？这里没有免费的风景。只有生或者死。你选一个？",
+            "buttons": [
+                {
+                    "label": "我这就走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_safe"
+                },
+                {
+                    "label": "你吓不到我",
+                    "action": "SHOW_DIALOG:threaten",
+                    "id": "btn_threaten"
+                }
+            ]
+        },
+        "threaten": {
+            "greeting": "（Tuco 露出狰狞的笑容）TIGHTY WHITEY！你有种！但我喜欢有胆量的人。不过，有胆量通常死得快。",
+            "buttons": [
+                {
+                    "label": "我是认真的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fight"
+                },
+                {
+                    "label": "开个玩笑",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_joke"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "帮我？哼，很多人都想帮我。但他们最后都帮了我很多忙——躺在棺材里那种。你确定你能帮上忙？",
+            "buttons": [
+                {
+                    "label": "我有门路搞到设备",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "我需要再想想",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_rethink"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "设备...是的，我需要新的设备。去给我搞一套顶级的化学仪器。别让我失望，否则我就把你切片做墨西哥卷饼。",
+            "buttons": [
+                {
+                    "label": "明白，这就去办",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "为什么是我？",
+                    "action": "SHOW_DIALOG:quest_why",
+                    "id": "btn_why"
+                }
+            ]
+        },
+        "quest_why": {
+            "greeting": "因为你正好在这里，而且看起来很闲！快滚去干活！",
+            "buttons": [
+                {
+                    "label": "遵命",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave_now"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

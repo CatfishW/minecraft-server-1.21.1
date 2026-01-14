@@ -1,0 +1,15 @@
+{
+    "id": "a59a4843-7a7d-4d02-9bc4-9a40b3e015d2",
+    "title": "毁灭证据",
+    "description": "汉克·施拉德：\"干得好。贝尔奇招了，那批货藏在靠近废弃矿洞的棚屋里，但我的人发现已经有当地帮派在打它们的主意了。我不能让那些东西继续留在那儿，这会污染整个社区。去那里，把所有能找到的‘白狐’样品都给我带回来。每一个瓶子，每一个包装都不能放过。\"",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:glass_bottle",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "695c4b31-ddd6-4c91-9b75-0a2b7b0e2ec5",
+    "title": "无名者的低语",
+    "description": "一个神秘的角色在阴影中找到了你。他没有名字，也没有过去，但他似乎知道你内心深处的渴望。他低声说道，有些力量并非生来就有，而是通过血与铁的考验夺来的。\n\n前往荒野，屠戮那些游荡的亡者。将它们腐朽的骨片带回给我，以此证明你并非凡夫俗子。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

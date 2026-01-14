@@ -1,0 +1,245 @@
+{
+    "name": "§cStacey Ehrmantraut",
+    "entityType": "easy_npc:humanoid",
+    "description": "Mike's daughter-in-law.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/804af7b25cff6097.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好。你是... 麦克的朋友吗？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:07527355-e3fe-49f3-950e-7f21832a363e,d538ae62-1c46-40fe-8ba9-a36c1f850854,a808711b-ebff-44ae-811c-525fe1e9d10d,3b692c08-8b47-4167-9f0d-933d51de4e69,01518a25-292d-4b5c-b33d-0f5713eabb01",
+                    "id": "btn_quest_c937c5a3"
+                },
+                {
+                    "label": "算是吧。他好吗？",
+                    "action": "SHOW_DIALOG:ask_mike_1",
+                    "id": "btn_mike_good"
+                },
+                {
+                    "label": "我只是路过",
+                    "action": "SHOW_DIALOG:casual_1",
+                    "id": "btn_passing"
+                },
+                {
+                    "label": "我需要麦克帮个忙",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "ask_mike_1": {
+            "greeting": "他... 他挺好的。他总是很忙。工作很多。",
+            "buttons": [
+                {
+                    "label": "是关于安保工作吗？",
+                    "action": "SHOW_DIALOG:ask_mike_2",
+                    "id": "btn_security"
+                },
+                {
+                    "label": "他看起来总是很疲惫",
+                    "action": "SHOW_DIALOG:ask_mike_3",
+                    "id": "btn_tired"
+                }
+            ]
+        },
+        "ask_mike_2": {
+            "greeting": "我想是的。他从不具体说。他说为了安全起见，最好不知道。但我猜是某种私人安保。",
+            "buttons": [
+                {
+                    "label": "听起来很神秘",
+                    "action": "SHOW_DIALOG:ask_mike_4",
+                    "id": "btn_mysterious"
+                }
+            ]
+        },
+        "ask_mike_3": {
+            "greeting": "是的，他工作很辛苦。但他是个强壮的人。他做他必须做的事，为了凯耶和我。",
+            "buttons": [
+                {
+                    "label": "他很爱你们",
+                    "action": "SHOW_DIALOG:ask_mike_5",
+                    "id": "btn_love"
+                }
+            ]
+        },
+        "ask_mike_4": {
+            "greeting": "麦克就是这样。他总是把事情藏在心里。我只希望他不要承担太多。",
+            "buttons": [
+                {
+                    "label": "我会试着让他多休息",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_rest"
+                }
+            ]
+        },
+        "ask_mike_5": {
+            "greeting": "是的，他是的。虽然他不常表现出来。但他把一切都扛在自己肩上。",
+            "buttons": [
+                {
+                    "label": "（表示赞同）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_nod"
+                }
+            ]
+        },
+        "casual_1": {
+            "greeting": "哦。这附近没什么可看的。就是些普通的公寓楼。",
+            "buttons": [
+                {
+                    "label": "这里很安静",
+                    "action": "SHOW_DIALOG:casual_2",
+                    "id": "btn_quiet"
+                },
+                {
+                    "label": "你住在这里习惯吗？",
+                    "action": "SHOW_DIALOG:casual_3",
+                    "id": "btn_habit"
+                }
+            ]
+        },
+        "casual_2": {
+            "greeting": "是的，很安静。这正是我们需要的。经历了... 之前的事情之后，我们需要平静。",
+            "buttons": [
+                {
+                    "label": "之前的什么事情？",
+                    "action": "SHOW_DIALOG:casual_4",
+                    "id": "btn_what_happened"
+                },
+                {
+                    "label": "我很高兴你们找到了平静",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_peace"
+                }
+            ]
+        },
+        "casual_3": {
+            "greeting": "我正在慢慢习惯。这里比费城要干燥得多。而且麦克在这里，这很重要。",
+            "buttons": [
+                {
+                    "label": "他是个好依靠",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_good_support"
+                }
+            ]
+        },
+        "casual_4": {
+            "greeting": "没什么。只是... 一些过去的事。麦克处理好了。我不想再提了。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_understand"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你需要麦克帮忙？他在工作。我不确定他在哪里。他通常不告诉我具体地点。",
+            "buttons": [
+                {
+                    "label": "这很紧急，关于凯耶的安全",
+                    "action": "SHOW_DIALOG:quest_1",
+                    "id": "btn_urgent_kaye"
+                },
+                {
+                    "label": "你能联系到他吗？",
+                    "action": "SHOW_DIALOG:quest_2",
+                    "id": "btn_contact"
+                }
+            ]
+        },
+        "quest_1": {
+            "greeting": "凯耶的安全？（她看起来很紧张）发生什么事了？",
+            "buttons": [
+                {
+                    "label": "我可能夸大了，但我真的需要见他",
+                    "action": "SHOW_DIALOG:quest_3",
+                    "id": "btn_exaggerate"
+                },
+                {
+                    "label": "有人在打听你们，我觉得他应该知道",
+                    "action": "SHOW_DIALOG:quest_4",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "quest_2": {
+            "greeting": "我只能给他留个口信。但他不一定能马上回复。他工作的时候... 很专注。",
+            "buttons": [
+                {
+                    "label": "请告诉他 [你的名字] 找他",
+                    "action": "SHOW_DIALOG:quest_5",
+                    "id": "btn_leave_msg"
+                },
+                {
+                    "label": "好吧，我再想别的办法",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_other_way"
+                }
+            ]
+        },
+        "quest_3": {
+            "greeting": "请不要拿凯耶开玩笑。这对我来说很重要。如果你只是想找到麦克，不要利用孩子。",
+            "buttons": [
+                {
+                    "label": "对不起，我错了。我只是想见他",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_apologize"
+                }
+            ]
+        },
+        "quest_4": {
+            "greeting": "打听我们？谁？警察吗？还是... 别的什么人？",
+            "buttons": [
+                {
+                    "label": "我不确定，但我看到有奇怪的人在附近",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_report"
+                },
+                {
+                    "label": "我不能说，但请告诉麦克",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_warn"
+                }
+            ]
+        },
+        "quest_5": {
+            "greeting": "我会告诉他的。如果他联系你，你会知道的。",
+            "buttons": [
+                {
+                    "label": "谢谢你，斯泰西",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_thanks_stacey"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

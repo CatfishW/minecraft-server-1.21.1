@@ -12,12 +12,16 @@
         "movementSpeed": 0.0,
         "attackDamage": 5.0,
         "armor": 5.0,
-        "invulnerable": true
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
         "attackPlayers": false,
-        "returnToSpawn": false
+        "returnToSpawn": false,
+        "wanderRange": 50.0
     },
     "dialogs": {
         "main": {
@@ -50,7 +54,7 @@
         },
         "minCount": 15,
         "maxCount": 30,
-        "chance": 0.35,
+        "chance": 0.5,
         "playerKillOnly": true
     }
 }

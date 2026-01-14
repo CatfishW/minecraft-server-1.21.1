@@ -1,0 +1,120 @@
+{
+    "name": "§6Hayden Jones",
+    "entityType": "easy_npc:humanoid",
+    "description": "A student at Blackwell Academy and member of the Vortex Club.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/4260aaf705c8d417.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哟，新人。别挡道。如果你是来求签名的，恐怕要让你失望了。Vortex Club只欢迎真正‘酷’的人。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ae378187-ceeb-442e-8a28-1d09d73dca67,13d1378e-1598-4413-815c-ffb4e7a7704e,bbd5190b-857b-4ee0-9c5d-94acd5c4b60d,1c578d9a-8155-4d43-8a45-eaad6703fbb8,fc2e5eec-0a2b-49b4-9bd3-5cccc2bde1a0",
+                    "id": "btn_quest_5a8ad768"
+                },
+                {
+                    "label": "Vortex Club是做什么的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "我有办法让你更‘酷’",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "做什么？我们是这里的社交核心。派对，音乐，还有最新的小道消息。如果你有影响力，你就能定义这里的‘酷’。但我现在有点烦心事。",
+            "buttons": [
+                {
+                    "label": "怎么了？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "听起来很肤浅",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "肤浅？那是嫉妒。听着，我的合成器坏了。那是我做DJ的命根子。没有它，今晚的Vortex派对就只能放流行口水歌了。",
+            "buttons": [
+                {
+                    "label": "需要零件？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "真遗憾",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "没错。我听说物理实验室里有个稀有的‘量子稳定器’，那玩意儿的核心部件可以用来修复我的合成器。但那地方锁着，而且那个助教一直盯着。",
+            "buttons": [
+                {
+                    "label": "我去试试搞到手",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "想出名？行啊。帮我个忙。我在收集关于那个总是在角落里画画的文艺女生的情报。我想知道她是不是在背后说我们Vortex Club的坏话。",
+            "buttons": [
+                {
+                    "label": "我去监视她",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "我不做这种事",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "聪明的选择。去听听她在说什么，或者偷看她的速写本。如果她敢画讽刺我们的漫画...哼，你会知道后果的。",
+            "buttons": [
+                {
+                    "label": "这就去办",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_done"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

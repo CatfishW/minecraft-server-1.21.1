@@ -1,0 +1,15 @@
+{
+    "id": "f6228ba4-d22b-4292-8f26-9891fa2daa77",
+    "title": "蜘蛛巢穴",
+    "description": "矿洞深处发现了蜘蛛巢穴，阻碍了采矿工作。\n\n清理蜘蛛巢穴，确保矿工安全。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:spider",
+        "amount": 12
+    },
+    "reward": {
+        "xp": 142,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 38
+    }
+}

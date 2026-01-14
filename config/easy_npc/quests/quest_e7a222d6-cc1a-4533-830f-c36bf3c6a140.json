@@ -1,0 +1,15 @@
+{
+    "id": "e7a222d6-cc1a-4533-830f-c36bf3c6a140",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给Bill Denbrough。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "Bill Denbrough",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 136,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

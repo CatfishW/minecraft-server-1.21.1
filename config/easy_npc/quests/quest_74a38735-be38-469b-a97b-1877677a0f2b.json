@@ -1,0 +1,15 @@
+{
+    "id": "74a38735-be38-469b-a97b-1877677a0f2b",
+    "title": "最后的警告",
+    "description": "Tuco 的一个手下失踪了，他怀疑是那些被称为‘监管者’的势力所为。他需要一个强硬的回应。他听说一个叫 Martin Brenner 的人知道一些内幕。Tuco 不喜欢别人对他隐瞒事实，尤其是关于他的地盘上的事情。\n\n找到 Martin Brenner，让他明白谁才是这里的话事人。Tuco 希望这次谈话能让他永远记住。",
+    "objective": {
+        "type": "TALK",
+        "target": "Martin Brenner",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

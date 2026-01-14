@@ -1,0 +1,329 @@
+{
+    "name": "§eFarmer Chen",
+    "entityType": "easy_npc:humanoid",
+    "description": "A humble farmer who has perfected the art of growing crops in any biome. His knowledge of breeding and farming is unparalleled in all the land.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/FarmerChen"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（陈正弯腰检查着作物，听到你的脚步声后缓缓起身）§a啊，一位旅人。我是陈，一个与土地为伴的农民。在这片广袤的世界里，能遇到愿意驻足交谈的人总是件好事。",
+            "buttons": [
+                {
+                    "label": "§f关于你自己？",
+                    "action": "SHOW_DIALOG:backstory_roots",
+                    "id": "btn_about"
+                },
+                {
+                    "label": "§2你似乎在沉思什么？",
+                    "action": "SHOW_DIALOG:current_drought",
+                    "id": "btn_current"
+                },
+                {
+                    "label": "§6谈谈你的农业知识？",
+                    "action": "SHOW_DIALOG:knowledge_base",
+                    "id": "btn_knowledge"
+                },
+                {
+                    "label": "§e有什么我能帮忙的吗？",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "§b我得走了。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_roots": {
+            "greeting": "（他用粗糙的手掌抚过一片小麦叶）§a我的故事很简单。我出生在平原村庄，但一场掠夺者袭击带走了我的家和第一个小农场。我带着仅存的几颗种子流浪，在沙漠、丛林、甚至雪原……都尝试过耕种。土地教会了我一切。",
+            "buttons": [
+                {
+                    "label": "§f流浪中最艰难的挑战？",
+                    "action": "SHOW_DIALOG:backstory_hardship",
+                    "id": "btn_hardship"
+                },
+                {
+                    "label": "§2你是怎么在不同生物群系种植的？",
+                    "action": "SHOW_DIALOG:backstory_biome_secret",
+                    "id": "btn_biome"
+                },
+                {
+                    "label": "§b那些帮助你的人？",
+                    "action": "SHOW_DIALOG:backstory_friends",
+                    "id": "btn_friends"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_hardship": {
+            "greeting": "（他的眼神变得深邃）§7最艰难的是……在沼泽的第一年。作物全部腐烂，我几乎饿死。直到我观察到黏液的分泌物和某些蘑菇的特性……§a（他摇摇头）那段经历让我明白，失败不是结局，而是另一种教导。",
+            "buttons": [
+                {
+                    "label": "§f你不愿分享的秘密？",
+                    "action": "SHOW_DIALOG:secret_locked",
+                    "id": "btn_secret_probe"
+                },
+                {
+                    "label": "§2你因此变得更坚强了。",
+                    "action": "SHOW_DIALOG:backstory_roots",
+                    "id": "btn_return_compassion"
+                }
+            ]
+        },
+        "backstory_biome_secret": {
+            "greeting": "（他神秘地笑了笑）§a每种土地都有自己的脾气。沙漠需要§6仙人掌的根系§a来保存水分，雪原要用§b蓝冰粉末§a保持地温……但最核心的秘密，是关于种子本身的‘适应性’。这……我暂时还不能透露。",
+            "buttons": [
+                {
+                    "label": "§2我理解，宝贵的知识。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_understand"
+                },
+                {
+                    "label": "§6怎样才算值得信任？",
+                    "action": "SHOW_DIALOG:secret_trust_path",
+                    "id": "btn_trust_question"
+                }
+            ]
+        },
+        "backstory_friends": {
+            "greeting": "§a啊，是的。§d‘厨师罗莎妈妈’§a在我饿肚子时给过我热汤。§9‘商人戈德沃斯’§a用公平的价格收购我第一批异域作物，让我能购买更好的工具。还有§2‘动物低语者芙娜’§a，她教我如何让牲畜健康，从而提高肥料质量。他们都是好人。",
+            "buttons": [
+                {
+                    "label": "§f你们现在还有联系吗？",
+                    "action": "SHOW_DIALOG:current_friends_status",
+                    "id": "btn_friends_now"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back2"
+                }
+            ]
+        },
+        "current_drought": {
+            "greeting": "（他担忧地看着远方的天空）§7最近，东部平原的雨量少得反常。我的实验田虽然无恙，但许多自然生长的浆果丛和野生小麦正在枯萎。这不仅仅关乎我的农场……§a生态平衡的微小变化，都可能引发连锁反应。",
+            "buttons": [
+                {
+                    "label": "§2我能为此做点什么？",
+                    "action": "SHOW_DIALOG:quest_drought_solution",
+                    "id": "btn_help_drought"
+                },
+                {
+                    "label": "§f实验田里有什么特别的？",
+                    "action": "SHOW_DIALOG:knowledge_base",
+                    "id": "btn_special_crops"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back3"
+                }
+            ]
+        },
+        "current_friends_status": {
+            "greeting": "§a罗莎妈妈总是念叨着需要新的香料。戈德沃斯对稀有商品有永不满足的兴趣。芙娜……（他压低声音）她最近在为一只罕见的§d‘荧光鱿鱼’§a寻找特殊的海草饲料。我们彼此需要，这就是社区。",
+            "buttons": [
+                {
+                    "label": "§6香料？稀有商品？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_quest_pool"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back4"
+                }
+            ]
+        },
+        "knowledge_base": {
+            "greeting": "（他眼睛亮了起来）§a知识？你想了解普通作物的轮作增产，稀有作物的杂交育种（比如§c西瓜§a和§b南瓜§a），还是如何在§5下界§a或§1末地§a建立可持续农场？每个领域都深如海洋。",
+            "buttons": [
+                {
+                    "label": "§f稀有作物杂交",
+                    "action": "SHOW_DIALOG:quest_rare_crop",
+                    "id": "btn_rare_crop"
+                },
+                {
+                    "label": "§2极端环境种植",
+                    "action": "SHOW_DIALOG:knowledge_extreme",
+                    "id": "btn_extreme"
+                },
+                {
+                    "label": "§6动物与肥料的联系",
+                    "action": "SHOW_DIALOG:knowledge_animal",
+                    "id": "btn_animal"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back5"
+                }
+            ]
+        },
+        "knowledge_extreme": {
+            "greeting": "§7下界需要抗火基质，我用§4灵魂沙§7和§c岩浆膏§7调配。末地……（他停顿一下）需要利用§d歌莱植株§7那微弱的生命能量和§f紫颂植株§7的独特特性。这些技术不稳定，但证明了生命的顽强。",
+            "buttons": [
+                {
+                    "label": "§c这太神奇了！",
+                    "action": "SHOW_DIALOG:knowledge_base",
+                    "id": "btn_amazed"
+                }
+            ]
+        },
+        "knowledge_animal": {
+            "greeting": "§a健康的动物产出优质的粪肥，而优质的肥料让作物茁壮，作物残渣和特定种子又能反过来优化饲料。芙娜是这方面的专家。如果你想提升农场循环效率，也许可以和她聊聊，再带一些样本给我分析。",
+            "buttons": [
+                {
+                    "label": "§2我记下了。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_quest_animal"
+                },
+                {
+                    "label": "§e返回",
+                    "action": "SHOW_DIALOG:knowledge_base",
+                    "id": "btn_back6"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "§a帮忙？一个务农的人总是有忙不完的事。眼下，东部平原的干旱让我担心，实验田里几种新杂交作物需要测试，我还需要一些特定生物群系的土壤样本来完善我的数据库……你愿意从哪件开始？",
+            "buttons": [
+                {
+                    "label": "§2调查干旱问题",
+                    "action": "SHOW_DIALOG:quest_drought_solution",
+                    "id": "btn_q_drought"
+                },
+                {
+                    "label": "§6测试杂交作物",
+                    "action": "SHOW_DIALOG:quest_rare_crop",
+                    "id": "btn_q_crop"
+                },
+                {
+                    "label": "§a收集土壤样本",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_q_soil"
+                },
+                {
+                    "label": "§e让我再想想",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_q_later"
+                }
+            ]
+        },
+        "quest_drought_solution": {
+            "greeting": "§a感谢你。古老的传说提到，在沙漠神殿或丛林神庙中，有时能找到记载着‘平衡之雨’古老灌溉方法的§5破损书页§a。带回§b3张不同的书页§a给我，我也许能还原那种技术，帮助平原恢复生机。当然，路上小心。",
+            "buttons": [
+                {
+                    "label": "§2接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_accept_drought"
+                },
+                {
+                    "label": "§e详细说说‘平衡之雨’",
+                    "action": "SHOW_DIALOG:secret_lore_hint",
+                    "id": "btn_lore"
+                },
+                {
+                    "label": "§c稍后再说",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_later2"
+                }
+            ]
+        },
+        "quest_rare_crop": {
+            "greeting": "§a我正在尝试将§2甘蔗的快速生长§a特性与§c可可豆的耐阴性§a结合，创造出一种能在森林下层茂盛生长的高产‘影藤’。我需要§6金胡萝卜§a作为营养基，以及一些在§5繁茂洞穴§a中生长的§b发光浆果§a来提供初始光源。你能帮我找来吗？",
+            "buttons": [
+                {
+                    "label": "§2接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:04cb79df-f85f-4435-8d84-696f165e3081,afdb7535-6cfd-426f-bbcb-89cd31167459,b43b5589-bbde-4184-947d-152cd36c3a40,93974254-9fa8-4759-ba48-6ea5214dc5b4,280c501b-7177-483e-b279-edfd2e3e719d",
+                    "id": "btn_accept_crop"
+                },
+                {
+                    "label": "§e这能解决食物问题？",
+                    "action": "SHOW_DIALOG:secret_lore_hint",
+                    "id": "btn_food_solution"
+                },
+                {
+                    "label": "§c我需要准备一下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_later3"
+                }
+            ]
+        },
+        "secret_locked": {
+            "greeting": "（他温和但坚定地看着你）§7孩子，有些知识像未驯服的野马，交给没有准备好的人只会造成伤害。等你真正理解土地，并证明你用它来培育而非掠夺时，我们再来谈这个。多来看看我的农场吧。",
+            "buttons": [
+                {
+                    "label": "§2我明白了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_accept_lock"
+                }
+            ]
+        },
+        "secret_trust_path": {
+            "greeting": "§a信任……是在你归还借用的工具时，是在你分享丰收的喜悦而非仅仅索要种子时，是在你为土地付出汗水之后。多和我聊聊，帮我做些实事。时间会证明一切。",
+            "buttons": [
+                {
+                    "label": "§2我会用行动证明。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_will_prove"
+                }
+            ]
+        },
+        "secret_lore_hint": {
+            "greeting": "（他谨慎地环顾四周）§5‘平衡之雨’……传说那是一位古代园丁与自然之灵达成的契约，它并非魔法，而是一种理解——理解水、矿物质和微生物之间最细微的对话。§a（他递给你一个面包）别急，先完成眼前的事。知识会像作物一样，在合适的时候成熟。",
+            "buttons": [
+                {
+                    "label": "§2（收下面包）谢谢。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_with_bread"
+                }
+            ]
+        },
+        "secret_unlocked": {
+            "greeting": "（经过多次互动后，他在一个黄昏叫住你）§d朋友……过来。看看这个。（他摊开手掌，里面是几颗散发着微光的§c深红种子§d）这是用下界疣、烈焰粉和……一点点的‘凋灵玫瑰的绝望’培育的。它能在地表生长，吸收亡灵的气息转化为养分，在战争过后净化土地。§5这是我们之间秘密。用它来治愈，而非征服。",
+            "buttons": [
+                {
+                    "label": "§d（郑重地点头）我发誓。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_swear_secret"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "（他微笑着点点头）§a愿你的旅途总有阳光和雨水相伴。土地会记得善待它的人。饿了随时回来，我的门永远为朋友敞开。保重。",
+            "buttons": [
+                {
+                    "label": "§2再见，陈。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Master Agriculturist",
+        "connections": [
+            "Cook Mama Rosa",
+            "Animal Whisperer Fauna",
+            "Merchant Goldsworth"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:50:14"
+    }
+}

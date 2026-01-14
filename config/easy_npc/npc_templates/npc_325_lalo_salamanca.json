@@ -1,0 +1,130 @@
+{
+    "name": "§aLalo Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "A charismatic and dangerous member of the Salamanca family.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/6739e533b40286f8.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Ah, 好朋友！很高兴见到你。请坐，别客气。这里的玉米片味道很不错，尝尝看？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4a469361-6c02-4aeb-a3da-2c5d22ae0bc9,0ef77d43-3115-4c94-b716-58f59a60ec7f,e9ba3d48-3cd5-4436-a3b2-2727cfeefe88,bfa24015-b647-4f00-95ba-2da71c70ce38,6f6f8c04-2a39-4654-b456-e49d4736539b",
+                    "id": "btn_quest_81a92542"
+                },
+                {
+                    "label": "你看起来心情不错。",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "我有些情报，关于你的‘生意’。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "当然！家族的生意蒸蒸日上，有什么比这更让人开心的呢？虽然总有些苍蝇在耳边嗡嗡叫，但总有办法让他们安静下来。",
+            "buttons": [
+                {
+                    "label": "比如那个律师，古德曼？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_1"
+                },
+                {
+                    "label": "听起来你很有手段。",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_2"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "Oh, Jimmy! 一个有趣的小人物。他很聪明，也很滑头，像只受惊的小老鼠。我喜欢看他挣扎的样子，非常……迷人。",
+            "buttons": [
+                {
+                    "label": "你不怕他坏事吗？",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_2_1"
+                },
+                {
+                    "label": "你似乎很享受这个过程。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_2"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "坏事？（轻笑）一切都在我的注视之下。我需要知道是谁在背后支持他，是谁在给他出主意。我要看穿整个棋盘，确保每一步都在我的掌控中。",
+            "buttons": [
+                {
+                    "label": "我可以帮你盯着他。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_2_3"
+                },
+                {
+                    "label": "祝你好运。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_4"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你？帮我盯着他？这很有趣。我喜欢有趣的人。但你要怎么证明你不是一只随时会背叛的……小老鼠呢？",
+            "buttons": [
+                {
+                    "label": "我会给你带来有用的信息。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "我需要你的信任。",
+                    "action": "SHOW_DIALOG:quest_threat",
+                    "id": "btn_trust"
+                }
+            ]
+        },
+        "quest_threat": {
+            "greeting": "信任需要时间来建立。（他的笑容消失了，眼神变得锐利）但我不介意给你一个机会。去吧，给我带点‘礼物’回来。让我看看你的诚意。",
+            "buttons": [
+                {
+                    "label": "我会让你满意的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_agree"
+                },
+                {
+                    "label": "你不会后悔的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_promise"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

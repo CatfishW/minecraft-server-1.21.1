@@ -8,12 +8,18 @@ import de.markusbordihn.easynpc.entity.easynpc.data.ModelDataCapable;
 import net.minecraft.client.renderer.MultiBufferSource;
 
 public class EasyNPCLivingEntityRenderer {
+ 
+  public static final ThreadLocal<Boolean> IS_RENDERING_NPC = ThreadLocal.withInitial(() -> false);
 
   public static void handleRenderStart(
-      EasyNPC<?> easyNPC, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {}
+      EasyNPC<?> easyNPC, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    IS_RENDERING_NPC.set(true);
+  }
 
   public static void handleRenderEnd(
-      EasyNPC<?> easyNPC, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {}
+      EasyNPC<?> easyNPC, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    IS_RENDERING_NPC.set(false);
+  }
 
   public static void handleScale(EasyNPC<?> easyNPC, PoseStack poseStack) {
     if (easyNPC == null || poseStack == null) {

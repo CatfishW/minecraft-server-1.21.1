@@ -1,0 +1,141 @@
+{
+    "name": "§dNacho Varga",
+    "entityType": "easy_npc:humanoid",
+    "description": "A member of the Salamanca organization seeking a way out.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/13f7a765e6ae8fe6.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你是谁？我不认识你。我叫Nacho Varga。如果你是来找麻烦的，或者跟那些‘生意’有关，我劝你最好离开。我只是个想安安稳稳过日子的人，不想惹事，也不想被事找上。有什么话就快说。",
+            "buttons": [
+                {
+                    "label": "我只是路过",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_pass"
+                },
+                {
+                    "label": "你看起来心事重重",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_worried"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "路过？最好是真的只是路过。这条街不安全，尤其是对那些好奇心太重的人。有些圈子，一旦踏进去，就很难再全身而退。我见过太多人因为错误的选择，最后落得一无所有，甚至更糟。",
+            "buttons": [
+                {
+                    "label": "听起来你很有经验",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_exp"
+                },
+                {
+                    "label": "你想离开这里吗？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "心事？如果你每天都活在刀尖上，你也会有心事。有些事，你一旦做了，就回不了头了。你以为你在掌控局面，但其实你只是棋盘上的一颗棋子，随时可能被吃掉。我只想找个机会，跳出这个该死的棋盘。",
+            "buttons": [
+                {
+                    "label": "有什么我能帮忙的吗？",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_help"
+                },
+                {
+                    "label": "你得为自己打算",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_plan"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "经验？是用恐惧和失眠换来的。我见过拉罗·萨拉曼卡的疯狂，也见过古斯·弗林的冷酷。在他们之间，就像在两头猛兽之间求生存。你不能相信任何人，也不能暴露任何弱点。这就是我的‘经验’。",
+            "buttons": [
+                {
+                    "label": "这太可怕了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_terrifying"
+                },
+                {
+                    "label": "你得想办法脱身",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "离开？我做梦都想。但这比你想象的要难得多。他们不会轻易放我走，因为我看到了太多，知道的也太多。除非我能找到一个万无一失的机会，一个能让我彻底消失、重新开始的机会。否则，逃跑只是死路一条。",
+            "buttons": [
+                {
+                    "label": "你需要一个计划",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_plan2"
+                },
+                {
+                    "label": "祝你好运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "帮忙？不，没人能帮我。这不是警察能解决的问题，也不是找个律师就能摆平的麻烦。这是……私人恩怨。把你自己摘出去，离我远点，就是对我最大的帮助了。我不想连累更多人。",
+            "buttons": [
+                {
+                    "label": "小心点，Nacho",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_careful"
+                },
+                {
+                    "label": "好吧，我走了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "我当然在为自己打算。每一步，每一个选择，都是为了活下去。我需要钱，需要一个漏洞，一个能让我带着我爸安全离开的机会。我必须比他们更聪明，更快。这是一场赌博，而我必须赢。",
+            "buttons": [
+                {
+                    "label": "别玩火自焚",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fire"
+                },
+                {
+                    "label": "希望你能成功",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

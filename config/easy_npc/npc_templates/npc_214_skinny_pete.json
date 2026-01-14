@@ -1,0 +1,121 @@
+{
+    "name": "§6Skinny Pete",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of Jesse's close friends and dealers.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/e4783a31b655e153.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "Yo，兄弟！是我，Pete。看我这身行头，怎么样？是不是很酷？说真的，我最近手头有点紧，你有什么路子能搞点钱吗？或者...你带'货'了吗？",
+            "buttons": [
+                {
+                    "label": "我有点'货'",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_drugs"
+                },
+                {
+                    "label": "没货，但我想聊聊",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_chat"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "真的？太棒了兄弟！你知道我需要这个。最近那些'小混混'老缠着我，搞得我神经紧张。你的货纯吗？价格老规矩？",
+            "buttons": [
+                {
+                    "label": "纯度很高，价格不变",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_pure"
+                },
+                {
+                    "label": "这次得涨价了",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn涨价"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "哦，只是聊天？好吧...其实我最近有点倒霉。我的钢琴课老师说我进步神速，但我总觉得生活少了点什么。你懂的，那种刺激感。",
+            "buttons": [
+                {
+                    "label": "也许你需要找点乐子",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_fun"
+                },
+                {
+                    "label": "别想太多，活在当下",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_now"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "耶！你真是我的救星，兄弟！这是钱。下次有好货记得先找我。我得走了，那些'小混混'好像在那边。保持联系！",
+            "buttons": [
+                {
+                    "label": "保重，Pete",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_careful"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "涨价？兄弟，别这样...好吧好吧，这次就算了，但下不为例。我真的很需要。这是钱，快给我。希望质量对得起这个价。",
+            "buttons": [
+                {
+                    "label": "成交",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deal"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "找乐子？嗯...也许你是对的。我听说有些派对，有很多'好东西'。你想一起去吗？或者你有什么更好的主意？",
+            "buttons": [
+                {
+                    "label": "下次一定",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_next"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "活在当下...你说得对，兄弟。我应该专注于我的钢琴。也许音乐就是我需要的'刺激'。谢了，伙计，你总是能让我清醒一点。",
+            "buttons": [
+                {
+                    "label": "随时找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_anytime"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

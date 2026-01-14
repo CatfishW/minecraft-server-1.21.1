@@ -1,0 +1,15 @@
+{
+    "id": "555a1ed1-249f-4ef9-8baf-417da3041ba4",
+    "title": "证物的下落",
+    "description": "汉克·施拉德：\"情报显示，一批属于‘白狐’的违禁品刚刚流入了这片区域。这些不是街头毒品，而是高纯度的定制货。我的线人提到一个叫贝尔奇·哈金斯的家伙可能知道它的流向。他总是在酒馆里吹嘘自己的‘生意’，但这次他可能惹上了真正的麻烦。\"",
+    "objective": {
+        "type": "TALK",
+        "target": "Belch Huggins",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

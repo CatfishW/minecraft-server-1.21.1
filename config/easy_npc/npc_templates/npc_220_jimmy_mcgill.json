@@ -1,0 +1,141 @@
+{
+    "name": "§bJimmy McGill",
+    "entityType": "easy_npc:humanoid",
+    "description": "The struggling lawyer who becomes Saul Goodman.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/7a6079c2def16f2f.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，朋友！看到你真好。这法律界就像个大染缸，每天都有新的麻烦，但也有新的机会，不是吗？我叫Jimmy McGill，一名律师，随时准备为像你这样需要帮助的人伸出援手。说吧，有什么法律上的难题，或者只是想找个人聊聊？",
+            "buttons": [
+                {
+                    "label": "询问法律咨询",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_consult"
+                },
+                {
+                    "label": "聊聊你的生活",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_chat"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "法律咨询？没问题！听着，法律条文是死的，但人是活的。有时候你需要的不是最‘正确’的答案，而是最‘有效’的解决方案。无论是商业纠纷还是个人麻烦，我都能帮你找到灰色地带里的那条路，保证让你满意。",
+            "buttons": [
+                {
+                    "label": "听起来不错，具体怎么做？",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_how"
+                },
+                {
+                    "label": "这听起来有点危险",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_danger"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "生活啊，就是一场大型真人秀，充满了戏剧性和意想不到的转折。我以前在芝加哥做公设辩护人，后来回到了阿尔伯克基。这里有我的过去，也有我的未来，虽然有时候这两者会打架。但无论如何，我都得保持乐观，不是吗？",
+            "buttons": [
+                {
+                    "label": "听起来你很有故事",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_stories"
+                },
+                {
+                    "label": "你和你哥哥怎么样了？",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_brother"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "很简单。我们需要建立联系，找到对方的弱点，然后提出一个他们无法拒绝的‘提议’。记住，最好的律师不是靠书本，而是靠人脉和说服力。如果你准备好了，我们可以马上开始行动，让事情变得有趣起来。",
+            "buttons": [
+                {
+                    "label": "成交！我们开始吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deal"
+                },
+                {
+                    "label": "我再考虑一下",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "危险？生活就是危险的，朋友。问题是，你是想被动接受，还是主动出击？我提供的是一条捷径，一条能让你在不湿鞋的情况下过河的路。当然，选择权在你手里，但我告诉你，机会不等人。",
+            "buttons": [
+                {
+                    "label": "好吧，我信任你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_trust"
+                },
+                {
+                    "label": "不，这风险太大了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "故事？哦，我有一箩筐。从溜冰鞋到火烈鸟，从复印店到律师事务所，生活教会了我一件事：永远不要让别人定义你是谁。你可以被打倒，但绝不能被打败。每一次跌倒，都是为了更华丽地站起来。",
+            "buttons": [
+                {
+                    "label": "真是鼓舞人心！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_inspired"
+                },
+                {
+                    "label": "希望你能一直这么幸运",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "查克……他是个天才，一个真正的法律巨人。但有时候，巨人的影子会遮住所有的阳光。我们之间有些……复杂的事情。但我不会放弃，家人就是家人，哪怕你得用尽全力去证明你值得被爱。",
+            "buttons": [
+                {
+                    "label": "祝你好运，Jimmy",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_luck"
+                },
+                {
+                    "label": "你值得被爱",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_love"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

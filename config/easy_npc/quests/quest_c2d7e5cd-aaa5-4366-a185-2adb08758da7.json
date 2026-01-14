@@ -1,0 +1,15 @@
+{
+    "id": "c2d7e5cd-aaa5-4366-a185-2adb08758da7",
+    "title": "小麦换快乐",
+    "description": "听着，Jesse，我手头有点紧，但我有些好货。但我不能让那些流浪的僵尸靠近我的交易点，他们会吓跑客人的。如果你能帮我清理一下周边，我可以给你一些不错的报酬。这不仅仅是生意，这是为了我们的友谊，对吧？",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "2529f0e8-0a14-43b4-8475-42be242c4714",
+    "title": "原始纤维",
+    "description": "为了加固沙鸥渡口的防御工事，我们需要大量的麻绳。虽然这里靠近沙漠，但附近的绿洲边缘生长着一种坚韧的植物，非常适合用来制作绳索。Irene Landry 已经收集了一些样本，确认了这种材料的可用性。\n\n请前往沙鸥渡口附近的河流或湖泊边缘，收集 20 个麻线（String）。你可以通过猎杀蜘蛛或从特定的植物丛中获取。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:string",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

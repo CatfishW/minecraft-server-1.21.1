@@ -1,0 +1,15 @@
+{
+    "title": "威慑展示",
+    "description": "Lalo喜欢用爆炸来传递信息。去制造一些‘动静’。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 160,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    },
+    "id": "a0066f2d-37ae-451f-a314-14c657e8a7ff"
+}

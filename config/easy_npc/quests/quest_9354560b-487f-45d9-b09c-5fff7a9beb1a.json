@@ -1,0 +1,15 @@
+{
+    "id": "9354560b-487f-45d9-b09c-5fff7a9beb1a",
+    "title": "最后的储备",
+    "description": "最近的食物短缺让大家忧心忡忡，Irene Landry 决定储备一些干粮以备不时之需。她需要大量的面包来维持守卫们的体力，虽然这在沙漠中是奢侈品，但她相信只要肯付出代价，总能从过路的商人或者附近的农场主那里换到。\n\n请收集 16 个面包（Bread）交给 Irene。这将极大地鼓舞士气。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bread",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

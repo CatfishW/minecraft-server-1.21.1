@@ -1,0 +1,15 @@
+{
+    "id": "63db9112-07b9-4b64-9f7c-ca6849d596e1",
+    "title": "紧急办公耗材",
+    "description": "我是Francesca Liddy，Jimmy和Kim的接待员。办公室的纸张用完了，没有纸我很难记录预约和整理文件。这给我们的工作带来了很大的不便，我需要立即补充库存。\n请你帮我收集一些纸张。我需要至少24张纸来应付接下来的工作。找到它们并带回来给我。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 24
+    },
+    "reward": {
+        "xp": 75,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "72b1f06f-1f97-4f44-8f9d-672078dcff00",
+    "title": "最终清算",
+    "description": "我们的一个运输队在矿洞深处遭到了埋伏，是一群装备精良的卫兵干的。他们以为能吞掉我们的货，简直是在太岁头上动土。我要你亲自去处理掉他们，一个不留。\n\n击杀 20 个卫兵（Pillager）。把他们持有的弩（crossbow）作为战利品带回来。这不仅仅是生意，这是为了维护我们的声誉。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 5
+    }
+}

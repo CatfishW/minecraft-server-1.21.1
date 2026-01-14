@@ -150,6 +150,23 @@ public class SpawningHandler {
     return count;
   }
 
+  public static int stopSpawningTask(String templateName) {
+    int count = 0;
+    Iterator<SpawnTask> iterator = spawnTasks.iterator();
+    while (iterator.hasNext()) {
+      SpawnTask task = iterator.next();
+      if (task.templateName.equalsIgnoreCase(templateName)) {
+        iterator.remove();
+        count++;
+      }
+    }
+    if (count > 0) {
+      log.info("{} Stopped {} spawning tasks for template '{}'.", LOG_PREFIX, count, templateName);
+      saveTasks();
+    }
+    return count;
+  }
+
   /**
    * Get timer info for all active group spawn tasks.
    * Returns list of: [templateName, ticksRemaining, totalTicks, isGroupSpawn]
@@ -381,8 +398,21 @@ public class SpawningHandler {
       for (int i = 0; i < retries; i++) {
         double x = minX + random.nextInt(maxX - minX + 1) + 0.5;
         double z = minZ + random.nextInt(maxZ - minZ + 1) + 0.5;
+
+        // Ensure chunk is loaded before attempting to get height or spawn
+        if (!level.hasChunk((int) x >> 4, (int) z >> 4)) {
+          continue;
+        }
+
         int y =
             level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) x, (int) z);
+
+        // Validate heightMap result - if y is at or below min build height, it usually means 
+        // the chunk is not fully ready or it's an invalid spawn location.
+        if (y <= level.getMinBuildHeight()) {
+          log.debug("{} Skipping spawn at ({}, {}, {}) as it's at or below world bottom.", LOG_PREFIX, x, y, z);
+          continue;
+        }
 
         Entity spawned = NPCTemplateManager.spawnEntityFromTemplate(level, templateName, x, y, z);
         if (spawned != null) {
@@ -390,7 +420,8 @@ public class SpawningHandler {
           return true;
         }
       }
-      log.warn("{} Failed to spawn NPC after {} attempts.", LOG_PREFIX, retries);
+      log.warn("{} Failed to spawn NPC '{}' after {} attempts (likely due to unloaded chunks or invalid terrain).", 
+          LOG_PREFIX, templateName, retries);
       return false;
     }
 

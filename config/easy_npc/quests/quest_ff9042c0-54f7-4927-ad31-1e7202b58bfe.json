@@ -1,0 +1,15 @@
+{
+    "id": "ff9042c0-54f7-4927-ad31-1e7202b58bfe",
+    "title": "燃烧的赫克托",
+    "description": "复仇的火焰在赫克托·萨拉曼卡的眼中从未熄灭，只是被他残破的身躯暂时压制。现在，他决定不再等待。他需要一种极致的力量，足以将一切化为灰烬的力量，来完成他最后的‘问候’。去吧，挑战那些在高塔上监视一切的火焰恶魔，带回它们燃烧的核心。这将是一场与时间的赛跑，也是对你勇气的终极考验。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:blaze",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

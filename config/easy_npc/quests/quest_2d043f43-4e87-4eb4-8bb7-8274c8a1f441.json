@@ -1,0 +1,15 @@
+{
+    "title": "清除尾巴",
+    "description": "萨拉曼卡家族派来监视Nacho的爪牙必须被处理掉。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:skeleton",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 45
+    },
+    "id": "2d043f43-4e87-4eb4-8bb7-8274c8a1f441"
+}

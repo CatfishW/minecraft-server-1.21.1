@@ -1,0 +1,100 @@
+{
+    "name": "§9Huell Babineaux",
+    "entityType": "easy_npc:humanoid",
+    "description": "Saul's personal bodyguard and pickpocket.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/11b1d86c5f0307fa.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（站在原地，身体庞大）我在听。如果是关于索尔的事，他现在可能在忙着。如果是关于你的安全，我也可以提供……保护。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:c33a3288-a84b-4bb2-80bb-414d262fb5a7,62e17938-1596-4372-a7c4-937b9e78f0c3,ea93a1d1-3536-477b-9308-a6d6c25d16c5,33c91bb0-b642-482c-808e-d43266d1c4dd,fed7e708-7777-4ea4-b674-346927afe1bf,5d1eba26-c066-4995-ac85-52db99da0176",
+                    "id": "btn_quest_1bd49a12"
+                },
+                {
+                    "label": "你以前是做什么的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我需要有人帮我‘保管’点东西。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "以前？我在路易斯安那州，那是我第二次进监狱的时候。我在那里的地位很高。直到索尔救了我，或者说是雇佣了我。他说我需要换个环境，所以我来了新墨西哥州。",
+            "buttons": [
+                {
+                    "label": "索尔救了你？怎么回事？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_ask"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我不能透露客户的具体细节。但索尔是个好人。他给了我一份体面的工作。虽然现在我不能像以前那样……随心所欲了。但我这身肉也不是白长的。",
+            "buttons": [
+                {
+                    "label": "听起来你很感激他。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "‘保管’东西？行啊。只要你付得起价钱。把东西给我，或者把那个人指给我看。我的口袋很深，而且通常很安全。除非是像沃尔特·怀特那样的情况，那谁也没办法。",
+            "buttons": [
+                {
+                    "label": "这是定金，事成之后还有更多。",
+                    "action": "START_QUEST:Slippin_Huell",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "我得先确认你的能力。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

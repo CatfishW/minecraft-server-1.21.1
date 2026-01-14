@@ -1,0 +1,100 @@
+{
+    "name": "§aTodd Alquist",
+    "entityType": "easy_npc:humanoid",
+    "description": "An unpredictable associate of Walter and Jesse.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/89c8fef24bb3376c.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，伙计。今天天气真不错，是吧？工作上的事都安排妥当了。嗯哼，确实。有什么需要我效劳的吗？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:6ccfc596-cc58-44e1-b6b5-a1635b7b018d,a8267a87-ecac-411b-bc6f-1315936e2e12,dec35d0f-94a9-4e2d-81d9-ce40ac05e486,2758d5c4-b563-4f7f-a32a-040628ef5284,5fe05217-f17d-4b4d-8279-9ad1eba49a69",
+                    "id": "btn_quest_bb76795b"
+                },
+                {
+                    "label": "你是怎么加入这个团队的？",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_story"
+                },
+                {
+                    "label": "我需要处理掉一些东西。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "哦，那个啊。之前我在一个工地开挖掘机，然后沃尔特·怀特先生给了我一个机会。你知道的，把握机会很重要。后来……后来发生了一些事，我们不得不处理掉那个男孩。",
+            "buttons": [
+                {
+                    "label": "你对那个女孩艾丽卡做了什么？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn追问"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "我只是……我只是想和她交个朋友。给她做木头小鸟。但她看到了不该看的东西。有时候，为了大局着想，必须切断所有联系。这是生意，不是针对个人。",
+            "buttons": [
+                {
+                    "label": "你真是个冷血的家伙。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_insult"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "哦，处理东西？没问题。我们可以把它们埋在沙漠里，或者溶解在酸里。我可以借给你我的挖掘机，或者……更直接一点，我亲自去一趟。只要给个地址。",
+            "buttons": [
+                {
+                    "label": "成交。这是地址。",
+                    "action": "START_QUEST:Cleanup_Crew",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "我再考虑一下。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

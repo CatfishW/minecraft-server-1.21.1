@@ -1,0 +1,100 @@
+{
+    "name": "§5Gustavo Fring",
+    "entityType": "easy_npc:humanoid",
+    "description": "The calm and calculated owner of Los Pollos Hermanos.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/23aee02639456f8c.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎光临Los Pollos Hermanos。我是古斯塔沃·弗林。请问有什么可以帮您的？我希望不仅仅是关于炸鸡。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ab06e66b-dea3-47c4-b7e8-cd7efde14f67,e040ea21-df70-47dc-99d5-6066addaabf9,967b3e83-7902-45bc-9338-3dce8c0777e9,06950200-cf4b-46ff-be0f-cfde3b681955,d39e0337-185a-4f8e-b9c3-d527a73ef6cc",
+                    "id": "btn_quest_ebdf5d36"
+                },
+                {
+                    "label": "聊聊生意经",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "我想建立合作关系",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "做生意，最重要的是精确和秩序。每一份订单，每一个流程，都必须完美无缺。只有这样才能建立信任。",
+            "buttons": [
+                {
+                    "label": "仅此而已？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_next"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "（推了推眼镜）当然。对于那些破坏秩序的人，或者试图染指我领地的人...我也有一套不同的‘处理流程’。我容忍不了背叛。",
+            "buttons": [
+                {
+                    "label": "我想谈谈合作",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_to_quest"
+                },
+                {
+                    "label": "受教了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "我们的竞争对手最近很不老实。我需要你去把他们仓库的电源切断，持续一小时。这会给他们造成巨大的损失，而且查不出人为痕迹。你能保证绝对的精确吗？",
+            "buttons": [
+                {
+                    "label": "绝对精确",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这太冒险了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_dec"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

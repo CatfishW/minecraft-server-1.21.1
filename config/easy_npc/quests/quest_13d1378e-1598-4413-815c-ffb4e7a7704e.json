@@ -1,0 +1,15 @@
+{
+    "id": "13d1378e-1598-4413-815c-ffb4e7a7704e",
+    "title": "档案中的秘密",
+    "description": "Don Hagarty正在整理一些关于Blackwell学院过去的旧文件，但他需要确认一些流传在学生中的都市传说是否属实。他听说某些古老的地下室里回荡着奇怪的声音，这可能与学院早年的失踪事件有关。他需要一个勇敢且口风紧的人去调查。\n\n去找Don Hagarty谈谈这件事，他会告诉你一些线索。记住，不要让其他人知道你在调查什么，尤其是学院的管理层。",
+    "objective": {
+        "type": "TALK",
+        "target": "Don Hagarty",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

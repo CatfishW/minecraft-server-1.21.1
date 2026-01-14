@@ -1,0 +1,15 @@
+{
+    "id": "afdb7535-6cfd-426f-bbcb-89cd31167459",
+    "title": "守护麦田",
+    "description": "每当夜幕降临，僵尸便会入侵农田，践踏Farmer Chen精心照料的作物，威胁着他的粮食储备。\n\n在农田附近击杀5只僵尸，保护这片绿色的希望之地。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

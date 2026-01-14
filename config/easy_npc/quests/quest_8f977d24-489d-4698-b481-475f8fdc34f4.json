@@ -1,0 +1,15 @@
+{
+    "id": "8f977d24-489d-4698-b481-475f8fdc34f4",
+    "title": "化学的炼金术",
+    "description": "我在清理化学实验室时，打翻了一瓶某种蓝色的液体。它没有气味，但当我盯着它看时，我看到了星星。那个穿着衬衫、戴着帽子的新化学老师，Walter White，他对这些奇怪的液体很了解。他认为这只是失败的实验品，但我看到了其中的潜力。\n\n去和Walter White谈谈，告诉他我想要回那些被遗弃的材料。他通常在放学后还在实验室里捣鼓着什么（minecraft:glass_bottle）。拿回一些来，也许我能用它们调配出让死水复苏的药剂。",
+    "objective": {
+        "type": "TALK",
+        "target": "Walter White",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

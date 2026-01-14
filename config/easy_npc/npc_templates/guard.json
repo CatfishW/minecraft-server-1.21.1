@@ -4,8 +4,7 @@
     "description": "A guard that protects the village from hostile mobs",
     "faction": "default",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/Guard"
+        "type": "DEFAULT"
     },
     "dialog": {
         "greeting": "Halt! State your business in our village.",
@@ -49,7 +48,8 @@
         "canOpenDoors": true,
         "canClimb": true,
         "attackableByPlayers": false,
-        "attackableByMonsters": false
+        "attackableByMonsters": false,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,
@@ -63,14 +63,5 @@
         "attackRadius": 32.0,
         "attackHostileFactions": false
     },
-    "drop": {
-        "item": {
-            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
-            "count": 15
-        },
-        "minCount": 15,
-        "maxCount": 30,
-        "chance": 0.35,
-        "playerKillOnly": true
-    }
+    "actionPermissionLevel": 2
 }

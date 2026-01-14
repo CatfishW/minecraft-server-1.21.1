@@ -1,0 +1,15 @@
+{
+    "id": "4a746b4d-dc01-49f0-be91-fc999ab0ed11",
+    "title": "破碎的日记",
+    "description": "蕾切尔的行踪成谜，但她在图书馆里可能留下了一些线索。她喜欢读那些关于远方和古老传说的书，也许她会在那里留下一些暗示。听说图书管理员凯特·玛什那里有一些关于蕾切尔借阅记录的线索，但她看起来很不安。\n\n先与凯特·玛什谈谈，她似乎因为蕾切尔的失踪而备受打击。然后，你需要去图书馆的书架上，仔细寻找蕾切尔可能藏匿的日记残页。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:paper",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

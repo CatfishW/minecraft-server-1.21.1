@@ -1,0 +1,15 @@
+{
+    "title": "与学者交谈",
+    "description": "去找Nathan Prescott，告诉他我的新发现。",
+    "objective": {
+        "type": "TALK",
+        "target": "Nathan Prescott",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 90,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    },
+    "id": "32ed0038-e564-4707-b25e-3db157003ca1"
+}

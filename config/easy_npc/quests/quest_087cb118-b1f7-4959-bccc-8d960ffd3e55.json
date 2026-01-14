@@ -1,0 +1,15 @@
+{
+    "id": "087cb118-b1f7-4959-bccc-8d960ffd3e55",
+    "title": "致命的调味",
+    "description": "竞争对手开始模仿我们的配方，这不可接受。Gus 决定给予一个教训，但他更倾向于用化学的方式解决问题，而不是暴力。他需要一种特殊的炼药材料，能让人在接触后产生剧烈且无法忍受的反应。\n\n收集 5 个发酵蜘蛛眼 (minecraft:fermented_spider_eye)。这种材料将用于制造一种新型的警告剂，让那些试图染指我们领域的人知道后果。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:fermented_spider_eye",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

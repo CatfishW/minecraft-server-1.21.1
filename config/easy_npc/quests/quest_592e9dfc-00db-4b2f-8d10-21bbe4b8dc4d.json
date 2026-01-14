@@ -1,0 +1,15 @@
+{
+    "id": "592e9dfc-00db-4b2f-8d10-21bbe4b8dc4d",
+    "title": "最后的纯净",
+    "description": "听着，伙计，我们需要一些非常非常纯的东西来稳定最后的配方。不是那种粗糙的石头，我需要的是闪闪发光的、经过熔炼的铁锭。纯度决定一切。\n\n去野外搜刮，或者从那些铁傀儡身上搞到一些铁锭，越多越好。速度要快。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

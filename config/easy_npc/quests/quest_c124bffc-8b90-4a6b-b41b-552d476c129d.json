@@ -1,0 +1,15 @@
+{
+    "id": "c124bffc-8b90-4a6b-b41b-552d476c129d",
+    "title": "最后的防线",
+    "description": "形势比预想的要严峻。我们需要更强力的盟友，或者是更强大的武器。去找到钢铁兄弟会的领袖麦克斯韦长老。告诉他，HHM愿意为他的正义事业提供援助，只要他能帮我们解决眼前的麻烦。",
+    "objective": {
+        "type": "TALK",
+        "target": "Elder Maxson",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

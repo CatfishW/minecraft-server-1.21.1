@@ -32,7 +32,32 @@ public class ModCommands {
                 .then(Commands.argument("path_name", StringArgumentType.string())
                     .then(Commands.argument("bus_type", StringArgumentType.string())
                          .executes(ModCommands::setupBusDriver))))
+            .then(Commands.literal("request_stop")
+                 .then(Commands.argument("seconds", com.mojang.brigadier.arguments.IntegerArgumentType.integer(1))
+                      .executes(context -> requestStop(context, com.mojang.brigadier.arguments.IntegerArgumentType.getInteger(context, "seconds"))))
+            )
+            .then(Commands.literal("reload_paths")
+                 .executes(ModCommands::reloadPaths))
         );
+    }
+
+    private static int reloadPaths(CommandContext<CommandSourceStack> context) {
+        BusDriverManager.reloadAllPaths();
+        context.getSource().sendSuccess(() -> Component.literal("All bus paths reloaded from disk."), true);
+        return Command.SINGLE_SUCCESS;
+    }
+
+
+    private static int requestStop(CommandContext<CommandSourceStack> context, int seconds) {
+        Entity executor = context.getSource().getEntity();
+        if (executor != null) {
+            BusDriverManager.requestStopNearby(executor.position(), seconds);
+            if (executor instanceof ServerPlayer player) {
+                player.closeContainer();
+            }
+            context.getSource().sendSuccess(() -> Component.literal("Bus stopping for " + seconds + " seconds."), true);
+        }
+        return Command.SINGLE_SUCCESS;
     }
 
     private static int savePath(CommandContext<CommandSourceStack> context) {
@@ -72,70 +97,13 @@ public class ModCommands {
                 return 0;
             }
 
-            List<BlockPos> path = PathManager.loadPath(pathName);
-            if (path == null || path.isEmpty()) {
-                context.getSource().sendFailure(Component.literal("Path '" + pathName + "' not found or empty."));
-                return 0;
-            }
-
-            // Spawn Vehicle
-            Entity vehicle = null;
-            Optional<EntityType<?>> typeOpt = EntityType.byString(busTypeStr);
-            if (typeOpt.isPresent()) {
-                 vehicle = typeOpt.get().spawn(context.getSource().getLevel(), BlockPos.containing(executor.position()), MobSpawnType.COMMAND);
+            // Delegate complex spawning logic to BusDriverManager
+            if (BusDriverManager.setupBusDriver(context.getSource().getLevel(), executor, pathName, busTypeStr) != null) {
+                context.getSource().sendSuccess(() -> Component.literal("Setup bus driver on path '" + pathName + "'"), true);
             } else {
-                 // Try as Item (specifically Automobility)
-                 ResourceLocation itemId = ResourceLocation.parse(busTypeStr);
-                 if (BuiltInRegistries.ITEM.containsKey(itemId)) {
-                     net.minecraft.world.item.Item item = BuiltInRegistries.ITEM.get(itemId);
-                     // Check if it's an AutomobileItem via reflection/class check
-                     if (item.getClass().getName().equals("io.github.foundationgames.automobility.item.AutomobileItem")) {
-                          // Spawn generic automobile
-                          Optional<EntityType<?>> autoType = EntityType.byString("automobility:automobile");
-                          if (autoType.isPresent()) {
-                              vehicle = autoType.get().spawn(context.getSource().getLevel(), BlockPos.containing(executor.position()), MobSpawnType.COMMAND);
-                              if (vehicle != null) {
-                                  try {
-                                      // Reflection to set data
-                                      // AutomobileItem methods: getFrame, getWheel, getEngine
-                                      Object frame = item.getClass().getMethod("getFrame").invoke(item);
-                                      Object wheel = item.getClass().getMethod("getWheel").invoke(item);
-                                      Object engine = item.getClass().getMethod("getEngine").invoke(item);
-                                      
-                                      // AutomobileData constructor: (Frame, Wheel, Engine)
-                                      Class<?> frameClass = Class.forName("io.github.foundationgames.automobility.automobile.AutomobileFrame");
-                                      Class<?> wheelClass = Class.forName("io.github.foundationgames.automobility.automobile.AutomobileWheel");
-                                      Class<?> engineClass = Class.forName("io.github.foundationgames.automobility.automobile.AutomobileEngine");
-                                      Class<?> dataClass = Class.forName("io.github.foundationgames.automobility.automobile.AutomobileData");
-                                      
-                                      Object data = dataClass.getConstructor(frameClass, wheelClass, engineClass).newInstance(frame, wheel, engine);
-                                      
-                                      // AutomobileEntity.setData(AutomobileData)
-                                      vehicle.getClass().getMethod("setAutomobileData", dataClass).invoke(vehicle, data);
-                                  } catch (Exception ex) {
-                                      System.out.println("Failed to configure Automobility vehicle: " + ex.getMessage());
-                                      ex.printStackTrace();
-                                  }
-                              }
-                          }
-                     }
-                 }
-            }
-
-            if (vehicle == null) {
-                context.getSource().sendFailure(Component.literal("Failed to resolve or spawn vehicle: " + busTypeStr));
+                context.getSource().sendFailure(Component.literal("Failed to setup bus driver (check logs)."));
                 return 0;
             }
-
-            // Mount NPC
-            executor.startRiding(vehicle);
-            
-            // Start Driver Logic
-            // We need to attach a ticker to the vehicle or the NPC
-            // Since we can't easily modify the entity class, we can track it in a global manager in our mod
-            BusDriverManager.startDriving(vehicle, path);
-            
-            context.getSource().sendSuccess(() -> Component.literal("Setup bus driver on path '" + pathName + "'"), true);
 
         } catch (Exception e) {
             context.getSource().sendFailure(Component.literal("Error setting up bus driver: " + e.getMessage()));

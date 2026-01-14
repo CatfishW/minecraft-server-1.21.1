@@ -1,0 +1,15 @@
+{
+    "id": "4bd4923e-0133-4827-8ac9-e6dcfcebe051",
+    "title": "犬牙之困",
+    "description": "听说了吗？‘犬牙’帮派的一个成员，Patrick，据说被困在了城西的废弃工业区。Chloe虽然对帮派分子没什么好感，但Patrick那家伙…有时候还行。更重要的是，如果我们能把他救出来，或许能从他嘴里撬出些关于帮派和那个神秘组织之间联系的情报。这不仅是一次救援，更是一次情报行动，一个策反的好机会。\n\nIndustrial District西边有个破旧的仓库，据说Patrick就在那附近。你得找到他，看看他到底遇到了什么麻烦。是被丧尸围了，还是惹上了其他帮派？无论如何，把他带出来。让他知道，有时候‘条子’之外的人，也值得一交。",
+    "objective": {
+        "type": "TALK",
+        "target": "Patrick Hockstetter",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 90
+    }
+}

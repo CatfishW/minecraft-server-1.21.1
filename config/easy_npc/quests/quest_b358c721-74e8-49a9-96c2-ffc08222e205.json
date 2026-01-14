@@ -1,0 +1,15 @@
+{
+    "id": "b358c721-74e8-49a9-96c2-ffc08222e205",
+    "title": "神秘的金属残片",
+    "description": "为了研究如何修复那个古老的铁砧，Alyssa 急需一些金属材料进行实验。不幸的是，她在试图从一棵树上够下一块发光的金属碎片时，又从梯子上摔了下来，现在只能拜托你帮忙了。她需要至少 3 个铁锭来分析铁砧的材质构成，或许还需要熔炼一些铁矿石？\n你需要收集 3 个铁锭（Iron Ingots）。你可以通过在矿洞中挖掘铁矿石并将其在熔炉中熔炼获得。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 35,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

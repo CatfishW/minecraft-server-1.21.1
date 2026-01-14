@@ -1,0 +1,15 @@
+{
+    "id": "e5a80b2f-1b90-44de-b0a0-ffa20c768557",
+    "title": "末影追踪",
+    "description": "神秘的末影人在夜间出没，带走了重要物品。\n\n追踪并消灭末影人，找回失物。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:enderman",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 109,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

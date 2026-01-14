@@ -1,0 +1,15 @@
+{
+    "id": "ab5c2d66-7524-4db1-9f7b-738c09679ecf",
+    "title": "神秘的矿石",
+    "description": "我们的竞争对手似乎在使用某种掺杂了铁矿的特殊合金来加固他们的设施。我需要一份样本进行分析，以便在未来的诉讼中指出他们的材料不符合安全标准。\n\n去矿井深处，挖掘一些铁矿石。注意，我需要的是原矿，而不是冶炼后的锭，这样才能进行最原始的成分分析。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ore",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

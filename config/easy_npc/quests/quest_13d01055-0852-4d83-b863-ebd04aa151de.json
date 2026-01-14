@@ -1,0 +1,15 @@
+{
+    "id": "13d01055-0852-4d83-b863-ebd04aa151de",
+    "title": "传递情报",
+    "description": "我有重要消息需要传达给商人。\n\n找到他并传达我的口信。",
+    "objective": {
+        "type": "TALK",
+        "target": "商人",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 128,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 39
+    }
+}

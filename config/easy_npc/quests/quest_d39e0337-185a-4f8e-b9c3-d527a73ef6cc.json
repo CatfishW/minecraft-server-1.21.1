@@ -1,0 +1,15 @@
+{
+    "id": "d39e0337-185a-4f8e-b9c3-d527a73ef6cc",
+    "title": "秩序的基石",
+    "description": "Gustavo Fring 的业务需要大量铁制品来加固设施和制作工具。然而，单纯的采集效率太低。他发现了一些由古老守护者构成的威胁，它们身上有着高品质的金属材料。\n\n去收集这些战斗机器人体内的铁制零件。他会为你提供必要的工具，你需要深入它们的巢穴，精准地拆解这些敌人。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

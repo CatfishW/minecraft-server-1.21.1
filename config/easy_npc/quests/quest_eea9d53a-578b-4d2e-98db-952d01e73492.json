@@ -1,0 +1,15 @@
+{
+    "id": "eea9d53a-578b-4d2e-98db-952d01e73492",
+    "title": "腐烂的威胁",
+    "description": "村子附近墓地的僵尸越来越多了，它们在夜晚发出的嘶吼声让 Badger 根本睡不着觉。他觉得只有把这些烦人的怪物全部清理掉，大家才能睡个安稳觉。他特别讨厌那种穿着盔甲、特别耐打的僵尸，它们看起来比其他的更难对付。\nBadger 请求你穿上最好的装备，在天亮前解决掉 8 个这些难缠的铁皮僵尸，让村庄恢复宁静。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

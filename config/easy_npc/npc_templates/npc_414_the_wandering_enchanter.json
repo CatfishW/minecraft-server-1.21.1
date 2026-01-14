@@ -1,0 +1,490 @@
+{
+    "name": "§9The Wandering Enchanter",
+    "entityType": "easy_npc:humanoid",
+    "description": "A robed figure who appears at random, offering powerful enchantments in exchange for exotic items. No one knows their true face or origin.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/TheWanderingEnchanter"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§b时空如尘，行者无痕... 啊，一位访客。我是流浪的附魔师，从漩涡中汲取知识，为世界涂抹短暂的色彩。§r\n\n§7（兜帽下的阴影中，两点幽光微微闪烁）§r",
+            "buttons": [
+                {
+                    "label": "你是谁？",
+                    "action": "SHOW_DIALOG:dialog_identity",
+                    "id": "btn_identity"
+                },
+                {
+                    "label": "你在这里做什么？",
+                    "action": "SHOW_DIALOG:dialog_purpose",
+                    "id": "btn_purpose"
+                },
+                {
+                    "label": "关于附魔...",
+                    "action": "SHOW_DIALOG:dialog_enchant_intro",
+                    "id": "btn_enchant"
+                },
+                {
+                    "label": "我需要帮助（任务）",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest_main"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_farewell_main"
+                }
+            ]
+        },
+        "dialog_identity": {
+            "greeting": "§b我是谁？一个回声，一个映象。曾有名字，但它在§e无尽知识§b的洪流中被冲走了。§r\n\n§7（他袍袖上的符文轻轻脉动）§r\n有些人叫我流浪者，有些叫我窃火者... 你呢，你更愿意相信哪个故事？",
+            "buttons": [
+                {
+                    "label": "“窃火者”是什么意思？",
+                    "action": "SHOW_DIALOG:backstory_fire_thief",
+                    "id": "btn_fire_thief"
+                },
+                {
+                    "label": "你说“曾有名字”？",
+                    "action": "SHOW_DIALOG:backstory_lost_name",
+                    "id": "btn_lost_name"
+                },
+                {
+                    "label": "你和水晶贤者有关吗？",
+                    "action": "SHOW_DIALOG:backstory_crystal_sage",
+                    "id": "btn_crystal_sage",
+                    "condition": "TRUST_LEVEL_2"
+                },
+                {
+                    "label": "我不确定...",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main"
+                }
+            ]
+        },
+        "dialog_purpose": {
+            "greeting": "§b我在收集... §e“世界的残响”§b。每一次爆炸的震颤，每一次方块放置的叹息，每一次生物死亡的哀鸣... 这些瞬间蕴含的原始魔力，是§d最纯粹§b的附魔材料。§r\n\n但最近，残响变得... 稀薄了。仿佛世界本身在失去它的“声音”。",
+            "buttons": [
+                {
+                    "label": "“世界的残响”？",
+                    "action": "SHOW_DIALOG:current_resonance_crisis",
+                    "id": "btn_resonance"
+                },
+                {
+                    "label": "你需要什么特别的材料吗？",
+                    "action": "SHOW_DIALOG:quest_material_needs",
+                    "id": "btn_material_needs"
+                },
+                {
+                    "label": "这听起来很孤独。",
+                    "action": "SHOW_DIALOG:current_loneliness",
+                    "id": "btn_loneliness",
+                    "condition": "TRUST_LEVEL_1"
+                },
+                {
+                    "label": "回到其他话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return_purpose"
+                }
+            ]
+        },
+        "dialog_enchant_intro": {
+            "greeting": "§b附魔不是简单的叠加。它是§d共鸣§b，是将物品的“渴望”与世界残留的“记忆”编织在一起。我能做到许多村庄附魔师做不到的事... 但代价是独特的。§r\n\n§7（他伸出一只戴着手套的手，掌心悬浮着一枚发光的末影珍珠）§r",
+            "buttons": [
+                {
+                    "label": "你能提供什么附魔？",
+                    "action": "SHOW_DIALOG:dialog_enchant_services",
+                    "id": "btn_services"
+                },
+                {
+                    "label": "“独特的代价”指什么？",
+                    "action": "SHOW_DIALOG:dialog_enchant_cost",
+                    "id": "btn_cost"
+                },
+                {
+                    "label": "这颗末影珍珠...",
+                    "action": "SHOW_DIALOG:secret_ender_obsession",
+                    "id": "btn_ender_obsession",
+                    "condition": "TRUST_LEVEL_3"
+                },
+                {
+                    "label": "算了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_enchant"
+                }
+            ]
+        },
+        "backstory_fire_thief": {
+            "greeting": "§b很久以前，§e水晶贤者§b和他的同伴们守护着魔法的“源头之火”。他们认为知识应当被小心监管。而我... 认为它应该像风一样自由。§r\n\n§7（他的声音里带着一丝古老的骄傲）§r\n我“借”走了一簇火苗。从此，我便在世界上流浪，分享它... 也被他们追逐。贤者早已遗忘，但§6末影守望者§b... 他记得。",
+            "buttons": [
+                {
+                    "label": "末影守望者是谁？",
+                    "action": "SHOW_DIALOG:backstory_ender_watcher",
+                    "id": "btn_watcher"
+                },
+                {
+                    "label": "你后悔吗？",
+                    "action": "SHOW_DIALOG:backstory_regret",
+                    "id": "btn_regret"
+                },
+                {
+                    "label": "这故事难以置信。",
+                    "action": "SHOW_DIALOG:backstory_doubt",
+                    "id": "btn_doubt"
+                },
+                {
+                    "label": "明白了",
+                    "action": "SHOW_DIALOG:dialog_identity",
+                    "id": "btn_back_identity"
+                }
+            ]
+        },
+        "backstory_lost_name": {
+            "greeting": "§b名字是锚，将你固定在一个身份、一个地点、一段历史中。为了在知识的洪流中航行而不被冲垮，我必须... 松开那个锚。§r\n\n有时，在梦中，我还能听到它被呼唤。但当我醒来，它就像§c末影人手中的沙子§b一样滑走了。也许图书馆员奎尔的书卷里有记载... 但我已不再寻找。",
+            "buttons": [
+                {
+                    "label": "图书馆员奎尔？",
+                    "action": "SHOW_DIALOG:backstory_librarian_quill",
+                    "id": "btn_quill"
+                },
+                {
+                    "label": "这听起来很悲伤。",
+                    "action": "SHOW_DIALOG:current_loneliness",
+                    "id": "btn_loneliness_2"
+                },
+                {
+                    "label": "为什么要告诉我这些？",
+                    "action": "SHOW_DIALOG:secret_why_trust",
+                    "id": "btn_why_trust",
+                    "condition": "TRUST_LEVEL_4"
+                },
+                {
+                    "label": "谢谢你的坦诚",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main_2"
+                }
+            ]
+        },
+        "current_resonance_crisis": {
+            "greeting": "§b想象一下，世界是一面巨大的锣。每一次事件都是敲击。我的技艺依赖于倾听那逐渐消失的§a嗡鸣§b。但现在，敲击变得沉闷，嗡鸣几乎听不见了。§r\n\n§c可能的原因？§r\n也许是过度开采，也许是§9末地§b的扰动，也许是某种更古老、更深层的东西在沉睡... 或醒来。我需要更强大的“共鸣焦点”来继续聆听。",
+            "buttons": [
+                {
+                    "label": "“共鸣焦点”是什么？",
+                    "action": "SHOW_DIALOG:quest_resonance_focus",
+                    "id": "btn_focus_quest"
+                },
+                {
+                    "label": "和末地有关？",
+                    "action": "SHOW_DIALOG:quest_ender_disturbance",
+                    "id": "btn_ender_quest"
+                },
+                {
+                    "label": "更古老的东西？",
+                    "action": "SHOW_DIALOG:secret_ancient_sleep",
+                    "id": "btn_ancient_sleep",
+                    "condition": "TRUST_LEVEL_5"
+                },
+                {
+                    "label": "这问题很严重",
+                    "action": "SHOW_DIALOG:dialog_purpose",
+                    "id": "btn_back_purpose"
+                }
+            ]
+        },
+        "current_loneliness": {
+            "greeting": "§7（附魔师沉默了片刻，周围的空气似乎也凝结了）§r\n\n§b孤独... 是的。但这是选择。当你承载着不被理解的知识时，陪伴有时意味着危险，对双方都是。§r\n\n§7（他轻轻摇头）§r\n不过... 偶尔像这样交换话语，感觉... 不像是在对虚空自言自语。感谢你。",
+            "buttons": [
+                {
+                    "label": "随时可以聊聊。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main_3",
+                    "condition": "TRUST_LEVEL_1",
+                    "trust_increase": 5
+                },
+                {
+                    "label": "我会帮你寻找材料。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help_materials"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "§b啊，一位愿意伸出援手的存在。我的道路确实需要一些... 实体的辅助。世界的残响需要媒介才能被捕捉和塑造。你能为我收集一些东西吗？作为回报，我的技艺将为你服务。",
+            "buttons": [
+                {
+                    "label": "寻找特殊材料（随机）",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:9e2e7a44-a279-4192-b95a-ee364540cece,dcbc0485-74a4-4874-9d03-2449a4354b6b,5d671fbd-ccd2-4b84-ae77-270ad7657776,f10b3f7c-6d85-4694-95ad-656bc21c7cfa,e8734fd2-dd26-4dec-bd42-49ab80995cbe",
+                    "id": "btn_accept_material"
+                },
+                {
+                    "label": "调查末地异常",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:9e2e7a44-a279-4192-b95a-ee364540cece,dcbc0485-74a4-4874-9d03-2449a4354b6b,5d671fbd-ccd2-4b84-ae77-270ad7657776,f10b3f7c-6d85-4694-95ad-656bc21c7cfa,e8734fd2-dd26-4dec-bd42-49ab80995cbe",
+                    "id": "btn_accept_ender",
+                    "condition": "TRUST_LEVEL_2"
+                },
+                {
+                    "label": "寻找“共鸣焦点”",
+                    "action": "SHOW_DIALOG:quest_resonance_focus",
+                    "id": "btn_focus_detail"
+                },
+                {
+                    "label": "也许下次",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline_quest"
+                }
+            ]
+        },
+        "quest_material_needs": {
+            "greeting": "§b寻常的钻石与青金石只是颜料。我需要的是§d承载着故事的素材§b。比如，在闪电中存活下来的§e幽灵之膜§b，饱受挖掘之痛却仍未破碎的§c远古残骸之尘§b，或是... 在§9末地城§b深处，聆听过无数窃窃私语的§5回响碎片§b。",
+            "buttons": [
+                {
+                    "label": "我来找这些材料",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_accept_from_needs"
+                },
+                {
+                    "label": "这些材料有什么故事？",
+                    "action": "SHOW_DIALOG:dialog_enchant_cost",
+                    "id": "btn_stories"
+                },
+                {
+                    "label": "这太难了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_from_needs"
+                }
+            ]
+        },
+        "secret_ender_obsession": {
+            "greeting": "§7（他注视着珍珠，声音压低）§r\n\n§b末地... 不只是另一个维度。它是一个§d巨大的、破碎的共鸣腔§b。末影人是被永远困在“余韵”中的存在。末影龙... 与其说是守护者，不如说是一个§c“静音符”§b，压制着某种更深邃的回响。§r\n\n我在研究如何安全地... “调谐”它。但§6末影守望者§b阻止一切窥探。",
+            "buttons": [
+                {
+                    "label": "你想做什么？",
+                    "action": "SHOW_DIALOG:secret_ender_tuning",
+                    "id": "btn_ender_tuning",
+                    "condition": "TRUST_LEVEL_4"
+                },
+                {
+                    "label": "这很危险",
+                    "action": "SHOW_DIALOG:dialog_enchant_intro",
+                    "id": "btn_back_enchant_secret"
+                },
+                {
+                    "label": "守望者是什么？",
+                    "action": "SHOW_DIALOG:backstory_ender_watcher",
+                    "id": "btn_watcher_secret"
+                }
+            ]
+        },
+        "secret_why_trust": {
+            "greeting": "§7（附魔师发出一声类似轻笑的气音）§r\n\n§b因为时间不多了。因为“残响”的消失速度在加快。也因为... 在你身上，我看到了§a好奇§b，而非§c贪婪§b。大多数人只想得到更强的剑。你想知道剑为何强大。§r\n\n在这个时代，后者是... 罕见的。也是必需的。也许你能理解，当最后一缕残响消失时，我们将失去什么。",
+            "buttons": [
+                {
+                    "label": "我会尽力理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back_main_4",
+                    "condition": "TRUST_LEVEL_4",
+                    "trust_increase": 10
+                },
+                {
+                    "label": "时间不多了？",
+                    "action": "SHOW_DIALOG:current_resonance_crisis",
+                    "id": "btn_crisis_urgency"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§b风起了，它承载着远方的低语... 是时候离开了。记住，最强的附魔不是刻在物品上的，而是刻在§e选择§b中的。愿你的道路充满回响。§r\n\n§7（他的身形开始变得模糊，像烟雾般消散）§r\n我们... 会再见的。在知识交织的下一个节点。",
+            "buttons": [
+                {
+                    "label": "再见，附魔师。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close_farewell"
+                }
+            ]
+        },
+        "backstory_crystal_sage": {
+            "greeting": "（The Wandering Enchanter沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_97c2aad4"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_cb6f53f7"
+                }
+            ]
+        },
+        "secret_ancient_sleep": {
+            "greeting": "（The Wandering Enchanter压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_05fb74dc"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d5fe0dcf"
+                }
+            ]
+        },
+        "backstory_librarian_quill": {
+            "greeting": "（The Wandering Enchanter沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d9c37870"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_b1cc3806"
+                }
+            ]
+        },
+        "secret_ender_tuning": {
+            "greeting": "（The Wandering Enchanter压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_892a3a7d"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_a8ffe172"
+                }
+            ]
+        },
+        "backstory_doubt": {
+            "greeting": "（The Wandering Enchanter沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_254bf7d1"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c6fb6791"
+                }
+            ]
+        },
+        "dialog_enchant_cost": {
+            "greeting": "（The Wandering Enchanter沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_d90d4f5d"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_e2618fc2"
+                }
+            ]
+        },
+        "dialog_enchant_services": {
+            "greeting": "（The Wandering Enchanter沉默）\n\n……改天再谈这个吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_78efa9a1"
+                },
+                {
+                    "label": "再见",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9bf2671f"
+                }
+            ]
+        },
+        "quest_resonance_focus": {
+            "greeting": "（The Wandering Enchanter思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_40a19126"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_f09a7f0f"
+                }
+            ]
+        },
+        "quest_ender_disturbance": {
+            "greeting": "（The Wandering Enchanter思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_5b4a0cb0"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_80b3d3d3"
+                }
+            ]
+        },
+        "backstory_ender_watcher": {
+            "greeting": "（The Wandering Enchanter沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_f6ec7733"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_fa9863eb"
+                }
+            ]
+        },
+        "backstory_regret": {
+            "greeting": "（The Wandering Enchanter沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_116776ba"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_17f5767c"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Mysterious Mage",
+        "connections": [
+            "Crystal Sage",
+            "The Ender Watcher",
+            "Librarian Quill"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:35:43"
+    }
+}

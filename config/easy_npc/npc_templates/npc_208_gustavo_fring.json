@@ -1,0 +1,101 @@
+{
+    "name": "§5Gustavo Fring",
+    "entityType": "easy_npc:humanoid",
+    "description": "The calm and calculated owner of Los Pollos Hermanos.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/23aee02639456f8c.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "欢迎来到Los Pollos Hermanos。我们致力于为顾客提供最优质的餐饮体验。无论您是来享用美食，还是有其他……业务上的往来，我们都秉持着最高的专业标准。请告诉我，您需要什么帮助？",
+            "buttons": [
+                {
+                    "label": "我想谈谈合作",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_coop"
+                },
+                {
+                    "label": "你们的炸鸡真棒",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_chicken"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "合作。我喜欢这个词。它意味着互惠互利，共同发展。但我需要确保我的合作伙伴和我一样，注重细节和承诺。任何环节的疏忽都可能导致整个系统的崩溃。你，或者说你的组织，能保证这种……纪律性吗？",
+            "buttons": [
+                {
+                    "label": "我们非常有纪律",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_discipline"
+                },
+                {
+                    "label": "我们能提供分销网络",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_network"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "谢谢您的夸奖。我们的成功秘诀在于对质量的不懈追求。从鸡肉的来源到烹饪的温度，每一个步骤都经过精心设计。这种对完美的执着，也体现在我所有的商业活动中。只有最好的，才值得被呈现。",
+            "buttons": [
+                {
+                    "label": "听起来很专业",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "不仅仅是炸鸡吧？",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_more"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "很好。纪律和承诺是基石。我会安排我的人与你联系，讨论具体细节。但请记住，我投入的每一份资源，都期望得到相应的回报。任何背叛或失误，都是不可接受的。希望我们能有一个愉快且长久的合作。",
+            "buttons": [
+                {
+                    "label": "期待合作",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "（面无表情地推了推眼镜）生意就是生意，先生。Los Pollos Hermanos是我的合法企业，我为此感到自豪。但一个成功的商人，总是会寻找新的投资机会，只要它们符合我的……标准。现在，如果您没有其他问题，我还有个会议要开。",
+            "buttons": [
+                {
+                    "label": "我明白了，打扰了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "43df661d-b63a-4aa7-addf-a177f9f26272",
+    "title": "绝望的追猎",
+    "description": "亨利·鲍尔斯，那个令人作呕的恶霸，他炫耀说自己知道蕾切尔的下落，并暗示她陷入了巨大的麻烦。他认为这是一个绝佳的勒索机会，但他的描述中透露出一种不寻常的恐惧，似乎有什么东西在保护着他的秘密。\n\n找到亨利·鲍尔斯并迫使他吐露真相。他很可能在废弃的仓库或者学校的僻静角落里。为了蕾切尔，你必须让他开口，无论付出什么代价。",
+    "objective": {
+        "type": "TALK",
+        "target": "Henry Bowers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 5
+    }
+}

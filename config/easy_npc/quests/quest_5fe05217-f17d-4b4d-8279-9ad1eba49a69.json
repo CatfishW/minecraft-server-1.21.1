@@ -1,0 +1,15 @@
+{
+    "id": "5fe05217-f17d-4b4d-8279-9ad1eba49a69",
+    "title": "最后的防线",
+    "description": "Jesse搞砸了，他引来了一个真正的大家伙，一个巨大的白色恐怖。我们的据点快守不住了。我们需要一个真正的专家，一个叫Lucas Sinclair的怪物猎人。听说他专门对付这种超自然的巨物。\n立刻动身，找到Lucas Sinclair。他应该在研究那些巨型蜘蛛或者深暗之域的怪物。告诉他Todd Alquist需要他的帮助，报酬好说。这是我们唯一的机会了。",
+    "objective": {
+        "type": "TALK",
+        "target": "Lucas Sinclair",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

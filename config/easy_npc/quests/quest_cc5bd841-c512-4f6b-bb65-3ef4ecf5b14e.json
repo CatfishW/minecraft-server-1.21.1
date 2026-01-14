@@ -1,0 +1,15 @@
+{
+    "id": "cc5bd841-c512-4f6b-bb65-3ef4ecf5b14e",
+    "title": "顽皮的流浪犬",
+    "description": "Alyssa 在森林边缘散步时，被一群凶猛的狼（ Wolves）盯上了，她吓得躲在树上不敢下来。虽然她很想亲自教训这些吓坏她的家伙，但她深知自己没有那个能力。如果你能帮忙清除掉 8 只恶狼，她将感激不尽，并愿意支付一枚银币作为谢礼。\n你需要在森林中找到并消灭 8 只狼（Wolves）。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:wolf",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

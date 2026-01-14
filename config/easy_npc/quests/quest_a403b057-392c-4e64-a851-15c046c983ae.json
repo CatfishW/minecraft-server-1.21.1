@@ -1,0 +1,15 @@
+{
+    "id": "a403b057-392c-4e64-a851-15c046c983ae",
+    "title": "头顶的灾星",
+    "description": "贝琪·凯特尔曼惊恐地指着天空，声音尖锐。\"那些嗡嗡叫的蜜蜂！它们就在花园上空盘旋，万一蛰到我儿子怎么办？它们的存在本身就是一种威胁，一种不可容忍的危险！\"\n\n我命令你去清除这些威胁。去杀掉花园附近的蜜蜂，把它们的螫针给我带回来作为证据。一个母亲不能容忍任何潜在的危险。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:bee",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

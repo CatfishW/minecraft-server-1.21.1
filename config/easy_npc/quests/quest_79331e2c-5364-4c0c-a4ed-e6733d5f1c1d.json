@@ -1,0 +1,15 @@
+{
+    "id": "79331e2c-5364-4c0c-a4ed-e6733d5f1c1d",
+    "title": "蓝冰的原料",
+    "description": "听着，我需要一批质量上乘的化学品来制作我们的'特色产品'。但是我的供应商最近变得非常谨慎，他只愿意和陌生人打交道。你得去见他，告诉他我是派你来的。\n\n去东边的森林找到药剂师罗宾·巴克利，使用这个信物作为暗号。他会明白的。",
+    "objective": {
+        "type": "TALK",
+        "target": "Robin Buckley",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 50,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 10
+    }
+}

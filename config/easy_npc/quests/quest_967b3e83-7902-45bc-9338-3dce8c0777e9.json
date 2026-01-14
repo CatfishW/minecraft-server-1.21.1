@@ -1,0 +1,15 @@
+{
+    "id": "967b3e83-7902-45bc-9338-3dce8c0777e9",
+    "title": "供应链的触角",
+    "description": "Gustavo Fring 正在扩展他的商业版图，需要一位精明的联系人来处理跨区域的物流。他听说有一位名叫 Francesca Liddy 的女士，在处理复杂交易方面很有手腕。\n\n带上这份精心准备的商业计划书，找到 Francesca Liddy。务必表现出专业和诚意，Fring 先生很看重第一印象。",
+    "objective": {
+        "type": "TALK",
+        "target": "Francesca Liddy",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

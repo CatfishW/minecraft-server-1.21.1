@@ -1,0 +1,125 @@
+{
+    "name": "§bMrs. Nguyen",
+    "entityType": "easy_npc:humanoid",
+    "description": "The owner of the nail salon Jimmy uses as an office.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/cf17d054aa4b9f83.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "又是你，吉米？我跟你说过多少次了，不要在这里见你的客户。我的客人不想闻到法律纠纷的味道。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:68505cef-b795-4550-9709-0daac6f43611,ab9adeec-2e64-4fef-8c86-3237e9b537cf,ddea78f8-b6e1-4558-9b51-d048481be6b8,936f13a0-5a31-49ac-a0bf-dd894089593b,cd22703c-d867-462b-bb8c-cb9acc5d029e",
+                    "id": "btn_quest_468d8045"
+                },
+                {
+                    "label": "解释这只是暂时的",
+                    "action": "SHOW_DIALOG:excuse_1",
+                    "id": "btn_excuse"
+                },
+                {
+                    "label": "询问最近的生意",
+                    "action": "SHOW_DIALOG:business_1",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "询问是否有麻烦需要帮忙",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "excuse_1": {
+            "greeting": "暂时？你上次也是这么说的。那个穿西装的看起来像个骗子，那个穿皮衣的看起来像个杀人犯。我的顾客会吓跑的。",
+            "buttons": [
+                {
+                    "label": "他们都是好人！真的！",
+                    "action": "SHOW_DIALOG:excuse_2",
+                    "id": "btn_goodguys"
+                },
+                {
+                    "label": "好吧，我这就带他们走",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "excuse_2": {
+            "greeting": "哼，好人。就像那个在停车场卖‘古龙水’的人一样。听着，吉米，我很感激你照顾我的税务问题，但这不是律师办公室。",
+            "buttons": [
+                {
+                    "label": "我知道了，抱歉",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_apologize"
+                }
+            ]
+        },
+        "business_1": {
+            "greeting": "生意？生意就那样。如果人们能少把指甲油蹭在沙发上，生意会更好。你有什么能让指甲油瞬间干透的法律建议吗？",
+            "buttons": [
+                {
+                    "label": "我会想想办法",
+                    "action": "SHOW_DIALOG:business_2",
+                    "id": "btn_think"
+                },
+                {
+                    "label": "回到主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "business_2": {
+            "greeting": "别费心了。你还是多操心操心你自己吧。我听说你在新墨西哥州混得风生水起。别把麻烦带到我的店里来。",
+            "buttons": [
+                {
+                    "label": "放心吧",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bye"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "帮忙？除非你能帮我把那个在街角徘徊的奇怪男人赶走。他穿着西装，戴着帽子，整天盯着我的店看。他让我想起以前在西贡见过的某些人。",
+            "buttons": [
+                {
+                    "label": "我会去查查他是谁",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "听起来太危险了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_deny"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

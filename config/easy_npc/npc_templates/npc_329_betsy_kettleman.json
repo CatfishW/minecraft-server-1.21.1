@@ -1,0 +1,110 @@
+{
+    "name": "§6Betsy Kettleman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A manipulative and entitled mother.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/78fde0361cbbfe8d.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（她打量着你，眼神充满警惕）我们没什么好谈的。如果你是那个检察官派来的说客，现在就可以滚了。我们家克雷格是无辜的，是有人陷害他。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:250a53f1-dcb3-40a2-ba32-c7bb4439487c,a400a414-6c30-48ce-9a03-3046c7e95978,a403b057-392c-4e64-a851-15c046c983ae,d61e2532-0871-43a0-893f-76950ed9f749,3adbd6ae-262f-4d77-863e-3f7e365dbbce",
+                    "id": "btn_quest_0785288a"
+                },
+                {
+                    "label": "我只是路过",
+                    "action": "SHOW_dialog:talk_neighbor",
+                    "id": "btn_neighbor"
+                },
+                {
+                    "label": "关于那笔失踪的钱...",
+                    "action": "SHOW_DIALOG:talk_money",
+                    "id": "btn_money"
+                },
+                {
+                    "label": "或许我能帮你们打官司",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q"
+                }
+            ]
+        },
+        "talk_neighbor": {
+            "greeting": "路过？这穷乡僻壤有什么好路过的。听我说，我们家以前在镇上也是有头有脸的，要不是那些小人嫉妒，我们也不会落到今天这个地步。",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_money": {
+            "greeting": "钱！钱！钱！检察官就只知道钱！那是公款，我们一分都没动！那笔钱...（她突然收住）反正我们是清白的。你们这些外人根本不懂我们为了家庭付出了什么。",
+            "buttons": [
+                {
+                    "label": "继续追问",
+                    "action": "SHOW_DIALOG:talk_money_2",
+                    "id": "btn追问"
+                },
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_money_2": {
+            "greeting": "够了！我没什么好说的。克雷格，送客！（她朝屋里喊了一声，但没人回应）总之，别想从我这里套出任何话。我们有权利保持沉默。",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "你想帮我们打官司？哼，你看起来不像个律师，更像个骗子。不过...现在这时候，只要是能对付比尔·奥克利的人，我都可以考虑。你能保证把那个该死的检察官赶出我们的生活吗？",
+            "buttons": [
+                {
+                    "label": "保证",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "我尽力",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

@@ -1,0 +1,105 @@
+{
+    "name": "§9Hank Schrader",
+    "entityType": "easy_npc:humanoid",
+    "description": "A DEA agent and Walter's brother-in-law.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/526f904a2639b399.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿！是沃尔特的家人吗？还是来找我喝酒的？说吧，有什么事？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:555a1ed1-249f-4ef9-8baf-417da3041ba4,a59a4843-7a7d-4d02-9bc4-9a40b3e015d2,f43a8acf-c93a-4074-934f-f157c1974e9c,cec33e20-73bd-4246-900f-c4232c7beb1d,927a50d2-6be5-4715-afe8-e188ec2b4570",
+                    "id": "btn_quest_e1f269e2"
+                },
+                {
+                    "label": "最近工作怎么样？",
+                    "action": "SHOW_DIALOG:work",
+                    "id": "btn_work"
+                },
+                {
+                    "label": "聊聊沃尔特",
+                    "action": "SHOW_DIALOG:about_walt",
+                    "id": "btn_walt"
+                },
+                {
+                    "label": "我有线索（任务）",
+                    "action": "SHOW_DIALOG:quest_case",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "work": {
+            "greeting": "工作？到处都是那个该死的海森堡。新配方，新包装。我要把那家伙送进监狱，这是我的头号目标。",
+            "buttons": [
+                {
+                    "label": "海森堡是谁？",
+                    "action": "SHOW_DIALOG:heisenberg",
+                    "id": "btn_heisenberg"
+                },
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "about_walt": {
+            "greeting": "沃尔特是个好人，老实人。有时候我觉得他太软弱了，但他是个好老师。希望他别掺和进这些乱七八糟的事里。",
+            "buttons": [
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "heisenberg": {
+            "greeting": "没人知道他是谁。但他很嚣张。我在他的地盘上差点送了命。下次让我抓到他，我会让他尝尝我的厉害！",
+            "buttons": [
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:work",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_case": {
+            "greeting": "听着，我有个案子卡住了。我在犯罪现场找到了一辆房车的油漆碎片。如果你能帮我查查谁在用那种老式房车，我会很感激的。",
+            "buttons": [
+                {
+                    "label": "接受任务：调查房车",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_quest"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

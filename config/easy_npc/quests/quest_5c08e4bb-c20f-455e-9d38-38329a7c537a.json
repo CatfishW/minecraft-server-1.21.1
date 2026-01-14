@@ -1,0 +1,15 @@
+{
+    "id": "5c08e4bb-c20f-455e-9d38-38329a7c537a",
+    "title": "末影之泪",
+    "description": "空间在低语，末影珍珠是通往失落知识的门户。我预见到，这些泪珠能让我窥探末地的秘密，但必须亲手获取。\n\n进入末地或在下界要塞附近狩猎末影人，收集五颗末影珍珠。它们易碎，需从末影人的死亡中提取。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:ender_pearl",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

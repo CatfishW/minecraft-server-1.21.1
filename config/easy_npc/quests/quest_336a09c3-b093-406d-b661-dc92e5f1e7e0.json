@@ -1,0 +1,15 @@
+{
+    "id": "336a09c3-b093-406d-b661-dc92e5f1e7e0",
+    "title": "猪灵的恶作剧",
+    "description": "Badger 在河边玩耍时，不小心把他最喜欢的一颗玻璃弹珠掉进了下界传送门里。他不敢自己去拿，因为那里到处都是可怕的猪灵。他恳求你帮忙从那些讨厌的猪人手里拿回他的弹珠，如果可以的话，顺便教训它们一下。\n你需要进入下界，找到并击败那些偷走弹珠的猪灵，把它们的金锭作为赔罪带回来。小心点，它们可不是好惹的！",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:piglin",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}

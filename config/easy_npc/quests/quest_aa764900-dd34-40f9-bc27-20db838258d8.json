@@ -1,0 +1,15 @@
+{
+    "title": "退出计划",
+    "description": "Nacho需要一笔钱来安排他和父亲远走高飞。请收集一些钻石作为启动资金。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    },
+    "id": "aa764900-dd34-40f9-bc27-20db838258d8"
+}

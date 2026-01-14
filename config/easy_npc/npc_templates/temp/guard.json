@@ -45,7 +45,8 @@
         "canOpenDoors": true,
         "canClimb": true,
         "attackableByPlayers": true,
-        "attackableByMonsters": true
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
     },
     "objectives": {
         "attackHostileMobs": true,

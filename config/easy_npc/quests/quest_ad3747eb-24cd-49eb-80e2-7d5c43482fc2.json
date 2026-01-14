@@ -1,0 +1,15 @@
+{
+    "title": "筹备物资",
+    "description": "为了逃亡后的生活，Nacho需要一些基础的皮革来制作行装。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:leather",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    },
+    "id": "ad3747eb-24cd-49eb-80e2-7d5c43482fc2"
+}

@@ -1,901 +1,2160 @@
 [
   {
-    "templateName": "npc_37_lucy_maclean",
+    "templateName": "npc_36_the_ghoul",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5d980608-5b32-4d64-b1a7-caedc873488b"
+      "38c1aac3-d7d0-494a-b2ff-14b8abddfdcc"
     ]
   },
   {
-    "templateName": "npc_36_the_ghoul",
+    "templateName": "npc_330_craig_kettleman",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f2423573-166c-4733-8123-d711ad7e67df"
+      "9ff87836-018e-4b6e-afd0-eeff4745ee83"
     ]
   },
   {
     "templateName": "npc_10_jonathan_byers",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "741f5c2c-cbf2-4839-9a04-6d918bec36da"
+      "2ccf02f5-bdcb-4527-88fc-b731a34f91fe"
     ]
   },
   {
     "templateName": "npc_15_murray_bauman",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "c4c9bbeb-8f23-4ee0-ba62-96d3e656ae01"
+      "03bf1517-669f-4090-a456-de79055e1966"
     ]
   },
   {
     "templateName": "npc_32_adrian_mellon",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "7101f245-5350-49da-bdfa-6d8c11b69e3b"
+      "844ad092-3b8f-468b-8865-6d19b08282b1"
+    ]
+  },
+  {
+    "templateName": "npc_307_hector_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "893a37db-48aa-41a3-bc94-4107c2f7f738"
+    ]
+  },
+  {
+    "templateName": "npc_212_marco_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "d26e9934-dbab-4981-a6ab-51d1da8dcb86"
     ]
   },
   {
     "templateName": "npc_35_vault_dweller",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6122e511-1ad2-4407-be3a-c9f9712ce715"
+      "43972a15-1c23-4e2e-943d-5585d35ae73d"
+    ]
+  },
+  {
+    "templateName": "npc_322_chuck_mcgill",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "71d3173d-1260-41f2-9b6d-627e494fee69"
+    ]
+  },
+  {
+    "templateName": "npc_207_mike_ehrmantraut",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "3b7a9f9b-6d4d-447d-9143-e44c6b69a81a"
     ]
   },
   {
     "templateName": "npc_44_nick_valentine",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "673dadd8-c17d-4a08-bbf0-edea1a52059d"
+      "da0e22db-0c63-4711-8f39-2eafe1195d0d"
+    ]
+  },
+  {
+    "templateName": "npc_333_tyrus_kitt",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "4f2cd9ab-80ed-4e0d-ad3f-9088e3277d80"
     ]
   },
   {
     "templateName": "elite_town_guard",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "ce09f80c-f6ab-4d83-a8f9-634c06765829"
+      "04fb9b23-bce5-4c34-bce4-3e9d3c40bb9c"
     ]
   },
   {
     "templateName": "npc_31_mrs_kersh",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "eaa81cff-bb5f-4b14-87f1-e90dbda973f6"
+      "23bd020a-2eee-4b0e-bcdc-281f509da627"
     ]
   },
   {
     "templateName": "npc_13_robin_buckley",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "08ed825f-87c2-4ae6-8b01-841ed8fa7122"
+      "e094d9fd-460f-4a38-9a2c-bbaf48f6a464"
     ]
   },
   {
     "templateName": "npc_25_stanley_uris",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "a82a0b7b-ae22-499b-9127-945c07cabd1b"
+      "06c92782-9d3b-4230-92be-953a52c9037d"
     ]
   },
   {
-    "templateName": "npc_46_elder_maxson",
+    "templateName": "npc_218_todd_alquist",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "46d5f7d1-b716-4407-80e0-89b53b094629"
+      "b5fa26d3-361a-4789-9b31-61862e0d4cdb"
+    ]
+  },
+  {
+    "templateName": "npc_345_frank_bowers",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "34c61429-9749-47e1-985b-84eb056409e9"
     ]
   },
   {
     "templateName": "npc_03_dustin_henderson",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "62a5d9d9-45ed-4071-a779-d02eadd48212"
+      "f17976a8-1aab-40b1-9819-fe89081c0f6e"
     ]
   },
   {
-    "templateName": "npc_17_eddie_munson",
+    "templateName": "npc_219_lydia_rodarte-quayle",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5f2ac97d-a005-41f6-b3a6-0a26e83994bd"
+      "a98c769d-eca0-4a71-ac9a-d4297028f2fb"
     ]
   },
   {
-    "templateName": "npc_43_piper_wright",
+    "templateName": "npc_335_stacey_ehrmantraut",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "b543a7c4-d688-4c6f-b878-d2aac685baf2"
+      "c799eb6a-ab0e-4242-a38f-0c0960d33ecb"
     ]
   },
   {
     "templateName": "npc_16_martin_brenner",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "b3c4110d-4e22-40c7-a3a3-4eacf14d1ba1"
+      "5674ef64-523e-4596-b4b4-8af744605037"
     ]
   },
   {
-    "templateName": "npc_05_will_byers",
+    "templateName": "npc_324_nacho_varga",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": []
-  },
-  {
-    "templateName": "npc_49_maccready",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5134e2b6-bcc9-4d4b-aad8-6822c4a8ae6f"
+      "4912f108-9b0d-4c60-9995-7bb7dcb121c0"
+    ]
+  },
+  {
+    "templateName": "npc_348_dana_ward",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "6961aa40-93bb-4eab-a3b8-f5cba4fcc23f"
+    ]
+  },
+  {
+    "templateName": "npc_200_walter_white",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "efe0ec4f-34dd-4377-982b-68749f614911"
+    ]
+  },
+  {
+    "templateName": "npc_344_joyce_price",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "4bf1626e-1c3b-4658-b64f-6c090e972832"
     ]
   },
   {
     "templateName": "merchant",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "c6db4c41-1d37-4a90-b41d-40d2f1e05397"
+      "4513a124-c642-4f8c-a769-8e32e2d24d87"
     ]
   },
   {
-    "templateName": "npc_12_billy_hargrove",
+    "templateName": "npc_203_hank_schrader",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "de780191-08e1-4cd1-b374-6217d34010bf"
-    ]
-  },
-  {
-    "templateName": "npc_48_cait",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "f42b57e8-2f45-479f-ad76-7a9a137b5b13"
-    ]
-  },
-  {
-    "templateName": "npc_26_georgie_denbrough",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "87908f9a-5f1a-4386-90f9-54a1e8a7b0b6"
+      "a10167ce-2a28-483a-b86f-dac88166cd6c"
     ]
   },
   {
     "templateName": "town_guard",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "4ad11501-f22d-42db-91f9-3db869a02ccd"
+      "459dded0-8067-4266-898b-7d06d82bac2d"
     ]
   },
   {
-    "templateName": "npc_21_richie_tozier",
+    "templateName": "npc_206_saul_goodman",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "60be247f-b49a-4bb3-b2fa-857c80572d0a"
+      "abd1661d-b05e-4bd6-8a96-89bcb9f0e769"
     ]
   },
   {
-    "templateName": "npc_24_mike_hanlon",
+    "templateName": "npc_339_nathan_prescott",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "864f1ce4-46a8-4a3a-9723-8f4ef8bc8edd"
+      "540a2fb8-2c7f-4dfa-a4f9-d842a208b42b"
     ]
   },
   {
-    "templateName": "npc_09_nancy_wheeler",
+    "templateName": "npc_304_saul_goodman",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "24221c77-255b-4406-b6cf-3e2f8f8c1ec8"
+      "711d444d-15fc-4efc-9854-a62f7a172d86"
     ]
   },
   {
-    "templateName": "npc_50_strong",
+    "templateName": "npc_323_howard_hamlin",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "d8f91f23-7a72-4dd1-97e7-ed83b27ced44"
+      "92bf2a25-7e33-4a67-86b8-a25319cdfcf6"
     ]
   },
   {
-    "templateName": "npc_45_paladin_danse",
+    "templateName": "npc_341_kate_marsh",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "cf1e728a-0c06-4acc-a46b-6bacb6b494bb"
+      "8ccc9b81-3a2e-4df6-8f3c-09e3eedfde40"
     ]
   },
   {
     "templateName": "npc_19_bill_denbrough",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "ab7c658b-e336-417c-9604-5db9a4fb91a3"
-    ]
-  },
-  {
-    "templateName": "guard",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "800ab9bb-b113-446e-b6d5-1906f8bafbb3"
+      "fd327612-1e36-4aec-9fa1-1621465751a6"
     ]
   },
   {
     "templateName": "npc_07_joyce_byers",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "3cac3847-8fbb-4a74-ad81-574f17801df1"
+      "205813cc-861d-414c-82df-cd2fe96a87c0"
     ]
   },
   {
-    "templateName": "npc_04_lucas_sinclair",
+    "templateName": "npc_201_jesse_pinkman",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "c04f4f84-c869-4263-8894-6cf8807aeb3c"
+      "3ef57f54-3ee6-42f4-8327-d20945c2422a"
+    ]
+  },
+  {
+    "templateName": "npc_216_jane_margolis",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "ccb0d03e-bd59-4177-a8b6-e140c877c111"
     ]
   },
   {
     "templateName": "npc_34_the_leper",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "8b0f8e54-34d5-41cd-8417-3bb09373f0a6"
-    ]
-  },
-  {
-    "templateName": "npc_42_preston_garvey",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "afbbf970-5067-4776-aafd-dff9d303b218"
+      "ef2a4fc3-740a-4467-8099-b4156bb910ae"
     ]
   },
   {
     "templateName": "npc_23_ben_hanscom",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6316db7c-0992-4d14-b90d-8811d545d8db"
+      "aa49f66f-e409-4da7-8000-c79eb1f90753"
     ]
   },
   {
-    "templateName": "npc_40_dogmeat",
+    "templateName": "npc_210_tuco_salamanca",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "ca4cdeeb-e478-42e9-a672-01c1a77bbaad"
+      "49536083-9f3c-4234-a48c-bc0d1ae12ed3"
     ]
   },
   {
-    "templateName": "npc_39_overseer_hank",
+    "templateName": "npc_325_lalo_salamanca",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "3b8d6071-aeec-4ec1-8c8a-74298c174b91"
+      "f2e5b815-26e7-409f-87c7-1b8c61ff4c5e"
     ]
   },
   {
-    "templateName": "npc_38_maximus",
+    "templateName": "npc_213_steven_gomez",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "1e340fa4-49b0-4c93-8219-e0171e9360ed"
+      "d17f8845-52f1-4f18-9919-e3e15be21eb7"
+    ]
+  },
+  {
+    "templateName": "npc_349_juliet_watson",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "40b2a735-ead6-4442-bf86-42e4829fa56a"
     ]
   },
   {
     "templateName": "npc_30_belch_huggins",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "1a3df75c-78a7-4025-b34c-a6befede8500"
-    ]
-  },
-  {
-    "templateName": "npc_33_don_hagarty",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "a9c0b5c5-57cd-4bbd-9907-81347031c732"
+      "5d729a3c-e1ed-4389-8390-52384996ade5"
     ]
   },
   {
     "templateName": "npc_02_mike_wheeler",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "057b00ca-6761-439d-85e5-749115437111"
+      "eae10fa7-cd29-491d-8b12-5976b520660b"
     ]
   },
   {
-    "templateName": "npc_47_hancock",
+    "templateName": "npc_306_gustavo_fring",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "31d8160d-66cd-496c-adc2-0994e140fa0f"
-    ]
-  },
-  {
-    "templateName": "npc_11_max_mayfield",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "c56aa757-05db-49a7-a744-0ad3419a2deb"
-    ]
-  },
-  {
-    "templateName": "npc_29_victor_criss",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "5bd4e566-ef49-48cc-b123-24a56349180b"
+      "40bf811d-5317-4624-9611-fc534559f1c9"
     ]
   },
   {
     "templateName": "npc_14_erica_sinclair",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "11c96f68-13ab-4053-a300-cb3bbcc1a543"
+      "5aefd9a0-d302-46f3-8698-d22b2cae2a67"
+    ]
+  },
+  {
+    "templateName": "npc_320_jimmy_mcgill",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "68e8858e-9906-4edf-bc06-5abb05b451ac"
     ]
   },
   {
     "templateName": "npc_27_henry_bowers",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "225a4eb8-a4e0-40ad-bd4f-cb0eab757dc5"
+      "1c17a8be-ad50-4615-a0ed-5953a5a76783"
+    ]
+  },
+  {
+    "templateName": "npc_351_alyssa_jenkins",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": []
+  },
+  {
+    "templateName": "npc_337_chloe_price",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "3f1a7737-6828-44ee-801c-93d9324f940f"
     ]
   },
   {
     "templateName": "npc_18_pennywise",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "bae2e83f-00bc-45de-a5f3-32aaa0828a60"
+      "b12603b6-6161-4a32-a2aa-914ac0238d90"
     ]
   },
   {
     "templateName": "npc_20_beverly_marsh",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6fb885e7-7d81-4739-8eb1-1b4a68c4f3a7"
+      "910a4bba-d12d-4728-aaa9-2bd7ed77e1af"
     ]
   },
   {
-    "templateName": "npc_01_eleven",
+    "templateName": "npc_205_walter_white_jr",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "1aa3b252-13c9-439d-96e1-df65d2c86af8"
+      "bbbaceea-20c2-42a0-86ec-02d87ae79eed"
     ]
   },
   {
-    "templateName": "npc_06_jim_hopper",
+    "templateName": "npc_326_clifford_main",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": []
+  },
+  {
+    "templateName": "npc_302_skyler_white",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6adda4bf-602d-4952-9816-0d3a000f7e01"
+      "4293dfd9-ce88-4183-b495-21ad05ce6904"
     ]
   },
   {
-    "templateName": "npc_22_eddie_kaspbrak",
+    "templateName": "npc_350_hayden_jones",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "db52eb78-434b-4f28-9fab-bfa72221180b"
-    ]
-  },
-  {
-    "templateName": "npc_08_steve_harrington",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "ddbf681c-cff6-455a-97d0-68c0895604f5"
-    ]
-  },
-  {
-    "templateName": "npc_41_codsworth",
-    "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
-    "maxCount": 1,
-    "delayTicks": 20000,
-    "groupSpawn": true,
-    "tickCounter": 390,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "352f62df-325b-453b-8012-08cdbbe23a4e"
+      "aa478145-90b1-46df-989f-7dcfeddf1be6"
     ]
   },
   {
     "templateName": "npc_28_patrick_hockstetter",
     "levelName": "minecraft:overworld",
-    "minX": -146,
-    "minZ": -127,
-    "maxX": -52,
-    "maxZ": 148,
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
     "maxCount": 1,
-    "delayTicks": 20000,
+    "delayTicks": 10000,
     "groupSpawn": true,
     "tickCounter": 390,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e4503223-daca-4e0e-bb15-74d34bac9404"
+      "ff43b6a7-b71f-4975-ba71-e6a2e59e64f0"
+    ]
+  },
+  {
+    "templateName": "npc_309_leonel_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "145960bf-8479-4daa-b63a-15dff8876c9f"
+    ]
+  },
+  {
+    "templateName": "npc_202_skyler_white",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "87b3f6d0-2367-48fb-9923-8678d8957064"
+    ]
+  },
+  {
+    "templateName": "npc_221_kim_wexler",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "943624b9-4cc4-42a8-a392-54e5203babf7"
+    ]
+  },
+  {
+    "templateName": "npc_37_lucy_maclean",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "5ff66163-c72e-4143-81c7-94fefebbb24b"
+    ]
+  },
+  {
+    "templateName": "npc_223_howard_hamlin",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "14cda963-39a9-4e0b-ac8d-60342de9bc9e"
+    ]
+  },
+  {
+    "templateName": "npc_211_leonel_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "90e60fd3-7580-430a-a523-aec9726f72e2"
+    ]
+  },
+  {
+    "templateName": "npc_208_gustavo_fring",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "702c366d-9b1c-43ee-a9ad-51e6e3a6bf7f"
+    ]
+  },
+  {
+    "templateName": "npc_46_elder_maxson",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "887bd884-9c7d-4a8d-9095-08fc30cb7c05"
+    ]
+  },
+  {
+    "templateName": "npc_17_eddie_munson",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "003b0531-ca2f-4b6d-a1cf-d191e93a7291"
+    ]
+  },
+  {
+    "templateName": "npc_328_bill_oakley",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "ed4495db-58ac-4a49-bef5-beb4e678e78b"
+    ]
+  },
+  {
+    "templateName": "npc_347_samuel_raymond",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "a4c15500-9d34-400d-99f4-b65617bd6784"
+    ]
+  },
+  {
+    "templateName": "npc_317_lydia_rodarte-quayle",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "bfb86448-a3bc-4184-a47f-ff6fdcf52622"
+    ]
+  },
+  {
+    "templateName": "npc_43_piper_wright",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "9f110681-1c40-4142-b821-51145ad6ecbf"
+    ]
+  },
+  {
+    "templateName": "npc_05_will_byers",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "c8816807-ac86-4960-9e9c-42a7573716ff"
+    ]
+  },
+  {
+    "templateName": "npc_310_marco_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "b478fa96-7edd-44ba-b7b5-92d252bd11cc"
+    ]
+  },
+  {
+    "templateName": "npc_49_maccready",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "c2d383be-fe28-47ec-a2c2-2272670383b8"
+    ]
+  },
+  {
+    "templateName": "npc_215_badger",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "8b955bf6-9e66-4609-a9c2-0fa4641249cc"
+    ]
+  },
+  {
+    "templateName": "npc_346_warren_graham",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "f950b906-917c-4a4f-8b12-5b3b6f1d6368"
+    ]
+  },
+  {
+    "templateName": "npc_12_billy_hargrove",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "c64f0c4b-5a8c-4df5-8fe5-006b78fb9b89"
+    ]
+  },
+  {
+    "templateName": "npc_209_hector_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "93f74026-4e16-4705-8631-0ceb537da5db"
+    ]
+  },
+  {
+    "templateName": "npc_48_cait",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "e11bc27e-aec3-4f76-9468-60345e942692"
+    ]
+  },
+  {
+    "templateName": "npc_26_georgie_denbrough",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "ffa62d2a-847b-496a-b126-d93e1fbb44a2"
+    ]
+  },
+  {
+    "templateName": "npc_300_walter_white",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "e8979ecf-6a63-4e47-aae9-351828c93d55"
+    ]
+  },
+  {
+    "templateName": "npc_21_richie_tozier",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "bc35d102-a0c9-4f6a-baee-d7eb0d383c87"
+    ]
+  },
+  {
+    "templateName": "npc_24_mike_hanlon",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "9f0ad817-6c3a-4f9d-a47d-8a323f480f4d"
+    ]
+  },
+  {
+    "templateName": "npc_09_nancy_wheeler",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "023e5af1-a921-472f-bfeb-b819e8bdd759"
+    ]
+  },
+  {
+    "templateName": "npc_301_jesse_pinkman",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "2178c218-6bf2-4ffd-9d39-19ff6dfe8e63"
+    ]
+  },
+  {
+    "templateName": "npc_336_max_caulfield",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "19d4f7bb-de68-45fa-bdcd-e4ab8c2f2aec"
+    ]
+  },
+  {
+    "templateName": "npc_318_huell_babineaux",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "9c0d018c-8b57-4314-8230-1cfe44b3c8db"
+    ]
+  },
+  {
+    "templateName": "npc_50_strong",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "d975ce77-7a67-437d-af27-f8d7ccca3054"
+    ]
+  },
+  {
+    "templateName": "npc_332_mrs_nguyen",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "c5f80fbf-9407-4d11-ae42-4ec34cff319e"
+    ]
+  },
+  {
+    "templateName": "npc_45_paladin_danse",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "f0037341-17b2-4db0-bd21-64ae8ba58a97"
+    ]
+  },
+  {
+    "templateName": "npc_338_rachel_amber",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "d8109938-2b7d-49ca-b6e2-bb6910845758"
+    ]
+  },
+  {
+    "templateName": "npc_334_victor",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "4c1df6ce-236c-413e-b609-1e019ced3454"
+    ]
+  },
+  {
+    "templateName": "npc_340_victoria_chase",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "4254f8fa-ef41-4b08-85f3-ff331928ec40"
+    ]
+  },
+  {
+    "templateName": "npc_224_nacho_varga",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "cb086ece-61ce-440e-b4ad-d2c657a3058e"
+    ]
+  },
+  {
+    "templateName": "npc_342_mark_jefferson",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "da630a6e-9834-42ef-a8a9-9fdacaacd642"
+    ]
+  },
+  {
+    "templateName": "npc_321_kim_wexler",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "f454ccaf-8c7a-4eb3-b06b-c0c134136dd2"
+    ]
+  },
+  {
+    "templateName": "npc_04_lucas_sinclair",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "54123f3e-1449-47f9-b1bf-28889d074092"
+    ]
+  },
+  {
+    "templateName": "npc_313_badger",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "ab6551a2-0779-422c-a7dc-e7b7f92f8b58"
+    ]
+  },
+  {
+    "templateName": "npc_42_preston_garvey",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "ce7fb573-1469-4289-806e-d453986b97b0"
+    ]
+  },
+  {
+    "templateName": "npc_314_jane_margolis",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "4c656b3c-5d77-4978-b28d-95c00df64a8c"
+    ]
+  },
+  {
+    "templateName": "npc_312_skinny_pete",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "2082db25-873a-4f62-8f01-7902b26c6f74"
+    ]
+  },
+  {
+    "templateName": "npc_40_dogmeat",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "38fa64f9-ed50-4d3c-8d16-eddcb8515f0a"
+    ]
+  },
+  {
+    "templateName": "npc_39_overseer_hank",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "ede364c5-f1b5-4521-bbf2-2f9f4c0e4a88"
+    ]
+  },
+  {
+    "templateName": "npc_343_david_madsen",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "6f2b47b8-25d5-46b0-9ec5-fad48fab543b"
+    ]
+  },
+  {
+    "templateName": "npc_38_maximus",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "fa9546f3-49cf-493f-98dd-e71348958a3e"
+    ]
+  },
+  {
+    "templateName": "npc_204_marie_schrader",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "44df4577-64dd-471c-89eb-690f8c873d27"
+    ]
+  },
+  {
+    "templateName": "npc_311_steven_gomez",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "9dc6d248-73d0-4b32-9944-91fbd4231e6e"
+    ]
+  },
+  {
+    "templateName": "npc_33_don_hagarty",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "5664dcb0-126d-4f93-868c-4678cbd3146e"
+    ]
+  },
+  {
+    "templateName": "npc_47_hancock",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "a3b3d6a1-704d-41ec-8f88-1cb91e557722"
+    ]
+  },
+  {
+    "templateName": "npc_11_max_mayfield",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "713aa2b8-d25b-4efc-8dfc-ff8cfee2f693"
+    ]
+  },
+  {
+    "templateName": "npc_29_victor_criss",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "2c40b6b4-12c1-4acb-a80b-e1cec74abcdf"
+    ]
+  },
+  {
+    "templateName": "npc_99_newbie_helper",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "f5749434-04d6-4029-b2ed-2395ec03a7ef"
+    ]
+  },
+  {
+    "templateName": "npc_316_todd_alquist",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "038b0fb4-ee5e-465b-b89d-a5fc6663b69b"
+    ]
+  },
+  {
+    "templateName": "npc_217_gale_boetticher",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "df266fc3-e3f9-4e71-97e1-82aa35f9a934"
+    ]
+  },
+  {
+    "templateName": "npc_319_the_cousins",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "5bb1c295-5e6e-4561-ae31-18b020f3bdc6"
+    ]
+  },
+  {
+    "templateName": "npc_303_hank_schrader",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "6b988540-c5e4-4a2e-983b-e8e2d47076e4"
+    ]
+  },
+  {
+    "templateName": "npc_222_chuck_mcgill",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "9e9a011b-8661-4554-ac69-c25ba41dd0fc"
+    ]
+  },
+  {
+    "templateName": "npc_100_bus_driver",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "adaec5b9-2294-4478-8ae5-b489dcbb1ccb"
+    ]
+  },
+  {
+    "templateName": "npc_01_eleven",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "3f2890d5-1b1a-4a46-b6a5-d05caf33307a"
+    ]
+  },
+  {
+    "templateName": "npc_315_gale_boetticher",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "c8bd0f6d-3eb6-4bd2-87c3-6375d4fd9a66"
+    ]
+  },
+  {
+    "templateName": "npc_06_jim_hopper",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "4732e665-5bc3-40c8-a8a6-ebbd5693c4b9"
+    ]
+  },
+  {
+    "templateName": "npc_327_francesca_liddy",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "59c7e627-78a3-4664-921d-b4b3ac757577"
+    ]
+  },
+  {
+    "templateName": "npc_308_tuco_salamanca",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "513a2be4-1a95-48c5-b95a-929884e94546"
+    ]
+  },
+  {
+    "templateName": "npc_220_jimmy_mcgill",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "077d02bb-1eb7-4a60-b511-00fa99f6fdc5"
+    ]
+  },
+  {
+    "templateName": "npc_305_mike_ehrmantraut",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "846166c4-5fd4-4174-9de4-5cb21524eb1b"
+    ]
+  },
+  {
+    "templateName": "npc_22_eddie_kaspbrak",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "323aada5-30ea-439c-be0c-ec3428a7efc0"
+    ]
+  },
+  {
+    "templateName": "npc_331_irene_landry",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "b25bc8e9-001b-41f3-b7a4-e358a8051a2e"
+    ]
+  },
+  {
+    "templateName": "npc_08_steve_harrington",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "d9ec6135-7216-49c9-a139-3e3407f7549f"
+    ]
+  },
+  {
+    "templateName": "npc_329_betsy_kettleman",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": []
+  },
+  {
+    "templateName": "npc_41_codsworth",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "74523287-352b-42c5-989f-d95f60ef12b9"
+    ]
+  },
+  {
+    "templateName": "npc_214_skinny_pete",
+    "levelName": "minecraft:overworld",
+    "minX": -141,
+    "minZ": -96,
+    "maxX": -58,
+    "maxZ": 169,
+    "maxCount": 1,
+    "delayTicks": 10000,
+    "groupSpawn": true,
+    "tickCounter": 390,
+    "initialSpawnDone": true,
+    "activeEntityUUIDs": [
+      "d4cdeadd-bac3-4cfa-838e-0387403a551d"
     ]
   },
   {
     "templateName": "bandit",
     "levelName": "minecraft:overworld",
-    "minX": 209,
-    "minZ": -565,
-    "maxX": 256,
-    "maxZ": -473,
+    "minX": 196,
+    "minZ": -561,
+    "maxX": 243,
+    "maxZ": -484,
     "maxCount": 100,
-    "delayTicks": 600000,
+    "delayTicks": 20000,
     "groupSpawn": true,
-    "tickCounter": 482759,
+    "tickCounter": 3436,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f2f60edb-6616-4561-b363-cc62b91a7641",
-      "118b7d5e-9f0d-4029-b97b-44e0d3076e2d",
-      "94081064-cede-443c-b90f-25bb5324660f",
-      "3947752c-f19f-47b6-b08c-192ebf649ad5",
-      "6477bb64-32eb-4db6-a3be-bd7dd6988fa7",
-      "222a9d48-da71-46be-a0be-65ef9090e8f9",
-      "134db8eb-8554-42d7-a295-68dae0fead48",
-      "5a9966ce-ffdf-401f-b192-6fa1b8eed8b5"
+      "fc567d24-5548-40d9-b2e5-64d01ff6e3e5",
+      "4a3d2160-d67c-4c4e-8d8c-c5ff91c6cb5d",
+      "b63dc4c7-3bb4-4074-996d-71bf14dbd6ba",
+      "dedfd45a-f392-4260-87b7-5656a7aba436",
+      "b16bcb08-0deb-4a66-9e56-09b2e03555b1",
+      "7675e2b9-5317-4f50-ac35-cb868d64ef53",
+      "fa1673eb-e10f-46f8-875d-5ce9b6d031a1",
+      "26e39cd0-c333-4f58-9e6c-f260718db848",
+      "63eb039d-a1b1-4514-938a-d5b9d4ca36fe",
+      "46b960d1-e124-4f5f-9930-0e90d21e69f8",
+      "a5cf3f95-1e39-4d09-8665-57909af4e53d",
+      "4c06370f-0810-4567-9670-4da0449735af",
+      "f5d85a2c-7e81-4336-bfca-73802f23b670",
+      "067d0740-6dea-4319-9837-2dff0e9f4185",
+      "8ce1149c-20ad-45e0-abdd-930a8515492c",
+      "062f70d4-b1b7-4eaf-bafb-7f1e8c1fa506",
+      "951f161e-3f74-4c8c-af23-ec207bc4f19c",
+      "418bb8a0-0b74-4729-9395-63426ab775f4",
+      "4adfe9e0-a4f1-41c8-b4ec-dfd217bb2060",
+      "6eb51001-aaa0-4cf7-aa35-eb030bdf40ae",
+      "435d3a6b-d264-45e3-abff-a0626afe6636",
+      "4a0bcb94-91b2-4fd1-b7c1-1f8563f16eac",
+      "d2925678-ac9e-45ab-9b70-f4f638883eb7",
+      "3979a17a-9045-4a84-bbd4-bf9ff7ef3901",
+      "32f2ce4b-f46c-40cb-ae23-7a136c62d02b",
+      "9d3cfabe-ca51-4f3f-9091-56c362769ba1",
+      "1ad38949-a48e-4ae7-8f43-91f7a09b7336",
+      "f4e5387a-b34e-47e0-8027-af24546d3074",
+      "f0a603ff-d621-4693-9db3-9635927cc7bc",
+      "4ed6464d-46e7-474b-ba4a-40b9d4455eaf",
+      "7cb2c3f1-76e3-4451-ac39-854986d77ca6",
+      "1847a68f-a546-4a94-a6b7-25b6270735ef",
+      "d6d6704f-ab4c-47ad-a037-439792cdb521",
+      "c5cd9dc2-7c43-4db4-9fcf-99ff4bab4d55",
+      "5d09627c-fc68-4ed8-98e7-3731ab4fde6b",
+      "1b86da64-fb2a-40da-a842-89539b3a7143",
+      "471c5aa5-c389-450e-82bd-f32f65f711e4"
     ]
-  },
-  {
-    "templateName": "bandit_boss",
-    "levelName": "minecraft:overworld",
-    "minX": 223,
-    "minZ": -560,
-    "maxX": 234,
-    "maxZ": -552,
-    "maxCount": 1,
-    "delayTicks": 600000,
-    "groupSpawn": true,
-    "tickCounter": 481508,
-    "initialSpawnDone": true,
-    "activeEntityUUIDs": []
   }
 ]

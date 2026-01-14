@@ -1,0 +1,121 @@
+{
+    "name": "§eLeonel Salamanca",
+    "entityType": "easy_npc:humanoid",
+    "description": "One of the silent and deadly 'Cousins'.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/98437420a7a5b586.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "...... (他只是冷冷地盯着你，右手放在斧柄上，左手拿着一个铜铃。他的沉默比任何话语都更具压迫感。)",
+            "buttons": [
+                {
+                    "label": "我是来谈生意的",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "打扰了，我这就走",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "...... (他轻轻摇晃了一下铜铃，发出清脆的'叮'声。他的眼神变得更加锐利，似乎在评估你是否构成威胁。)",
+            "buttons": [
+                {
+                    "label": "是关于'蓝冰'的事",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_blue"
+                },
+                {
+                    "label": "是赫克托先生让我来的",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_hector"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "...... (他向前迈了一步，斧头微微提起。他的动作流畅而致命，像是在警告你不要轻举妄动。)",
+            "buttons": [
+                {
+                    "label": "（慢慢后退）",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_back"
+                },
+                {
+                    "label": "（举起双手表示无害）",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_surrender"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "...... (他点了点头，收起斧头，转身示意你跟他走。看来他对这个话题感兴趣，但别指望他会说一句话。)",
+            "buttons": [
+                {
+                    "label": "（跟随他）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_follow"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "...... (听到赫克托的名字，他的表情稍微缓和了一些。他放下铜铃，指了指旁边的一辆车，示意你上车。)",
+            "buttons": [
+                {
+                    "label": "（上车）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_car"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "...... (他停下脚步，冷冷地看着你离开。只要你离开他的视线，他不会再理会你。但如果你转身回来...)",
+            "buttons": [
+                {
+                    "label": "（快速离开）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_flee"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "...... (他盯着你看了几秒钟，然后发出一声低沉的鼻音，转身离开。他今天不想杀人，但你最好祈祷下次别遇到他心情不好的时候。)",
+            "buttons": [
+                {
+                    "label": "（松了一口气）",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_safe"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

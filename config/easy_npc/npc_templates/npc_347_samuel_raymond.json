@@ -1,0 +1,135 @@
+{
+    "name": "§eSamuel Raymond",
+    "entityType": "easy_npc:humanoid",
+    "description": "The school janitor with a mystical perspective.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/628818aa2d4a59a3.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘘... 你听到了吗？走廊里的回声。它们在讲述过去的故事。你是来寻找答案的，还是只是来打扰沉睡的灵魂？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:c655fc8b-7163-4584-bc23-eb6a888e3260,aebc4904-4a1f-4b96-b5ac-f4e727459506,91cd19dd-2cf5-4909-abfc-5dc42b7bff45,8f977d24-489d-4698-b481-475f8fdc34f4,fc056a11-fc23-4dac-a7f2-53abe20eea77",
+                    "id": "btn_quest_3b86bcdb"
+                },
+                {
+                    "label": "我只是路过",
+                    "action": "SHOW_DIALOG:talk_alone",
+                    "id": "btn路过"
+                },
+                {
+                    "label": "你在收集什么？",
+                    "action": "SHOW_DIALOG:talk_collect",
+                    "id": "btn_collect"
+                },
+                {
+                    "label": "学校里有奇怪的事吗？",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "talk_alone": {
+            "greeting": "路过... 是啊，我们都在路过。但这所学校不仅仅是砖块和灰泥。它有呼吸。如果你感觉到了寒意，那是湖底的叹息。",
+            "buttons": [
+                {
+                    "label": "湖底？",
+                    "action": "SHOW_DIALOG:talk_alone_2",
+                    "id": "btn_lake"
+                },
+                {
+                    "label": "你真奇怪",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "talk_alone_2": {
+            "greeting": "黑木湖。它隐藏了很多秘密。就像那个失踪的女孩Rachel。她的灵魂并没有离开，她在水里游荡，寻找着什么。",
+            "buttons": [
+                {
+                    "label": "我相信你",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "talk_collect": {
+            "greeting": "记忆。我收集被遗忘的记忆。学生们丢弃的笔记，旧照片，破碎的耳机... 它们都承载着情感。你看这个，是一个女孩画的蝴蝶。",
+            "buttons": [
+                {
+                    "label": "那是Max的笔迹？",
+                    "action": "SHOW_DIALOG:talk_collect_2",
+                    "id": "btn_max"
+                },
+                {
+                    "label": "我得走了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_collect_2": {
+            "greeting": "也许是，也许不是。时间不是一条直线。有时候，现在的记忆属于未来的某个人。你感觉到了吗？那种既视感。",
+            "buttons": [
+                {
+                    "label": "感觉到了...",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "奇怪的事？到处都是。但最让我不安的是钟楼的声音。它每天都在倒计时，但没人知道它在倒计时什么。我在地下室的旧档案里发现了一把奇怪的钥匙，它不属于任何门。",
+            "buttons": [
+                {
+                    "label": "钥匙在哪？",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_key"
+                },
+                {
+                    "label": "只是钟坏了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "我把它藏在了‘天使之泪’雕像的底座下。那里是能量汇聚的中心。如果你拿走了它，可能会打破某种平衡。你准备好面对后果了吗，时间旅行者？",
+            "buttons": [
+                {
+                    "label": "接受任务 (寻找钥匙)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_complete"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

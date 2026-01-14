@@ -30,6 +30,7 @@ import de.markusbordihn.easynpc.network.message.server.ExecuteDialogButtonAction
 import de.markusbordihn.easynpc.network.message.server.LLMChatRequestMessage;
 import de.markusbordihn.easynpc.network.message.server.OpenMenuMessage;
 import de.markusbordihn.easynpc.network.message.server.RequestDataSyncMessage;
+import de.markusbordihn.easynpc.network.message.server.StopSpawnTaskMessage;
 import net.minecraft.server.level.ServerPlayer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -188,6 +189,12 @@ public class NetworkHandlerManager {
         RequestDataSyncMessage.STREAM_CODEC,
         RequestDataSyncMessage.class,
         RequestDataSyncMessage::create);
+
+    networkHandler.registerServerNetworkMessage(
+        StopSpawnTaskMessage.PAYLOAD_TYPE,
+        StopSpawnTaskMessage.STREAM_CODEC,
+        StopSpawnTaskMessage.class,
+        StopSpawnTaskMessage::create);
 
     networkHandler.registerServerNetworkMessage(
         de.markusbordihn.easynpc.network.message.server.AcceptQuestMessage.PAYLOAD_TYPE,

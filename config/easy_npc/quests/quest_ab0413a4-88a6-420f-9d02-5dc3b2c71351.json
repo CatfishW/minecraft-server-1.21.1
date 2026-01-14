@@ -1,0 +1,15 @@
+{
+    "id": "ab0413a4-88a6-420f-9d02-5dc3b2c71351",
+    "title": "清扫障碍",
+    "description": "古德曼律师事务所从不拖欠债务，同样，也绝不容忍竞争对手。有个叫'尸潮'的团伙最近在城里游荡，严重影响了我客户的'商业活动'。我们不能容忍这种恶性竞争，这简直是对自由贸易的公然挑衅。\n\n你去处理一下。把那些游荡的'僵尸'（minecraft:zombie）清理掉，告诉它们这里的律师费有多昂贵。干掉20个，让市场恢复秩序。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

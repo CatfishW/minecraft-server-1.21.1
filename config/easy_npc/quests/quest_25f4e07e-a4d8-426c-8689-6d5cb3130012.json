@@ -1,0 +1,15 @@
+{
+    "id": "25f4e07e-a4d8-426c-8689-6d5cb3130012",
+    "title": "边境的军火商",
+    "description": "Steven Gomez: '情报显示，一个代号'Dana Ward'的军火贩子正在边境集结。她手里的武器足以武装一个连队，而且她和那个化学师有联系。'\nSteven Gomez: '这是危险的任务。我要你伪装成买家去和她接触。不要动手，除非万不得已。我需要知道她的交易网络和货源。活下来，带回情报。如果你能做到，这枚银币就是你的。'",
+    "objective": {
+        "type": "TALK",
+        "target": "Dana Ward",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 400,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

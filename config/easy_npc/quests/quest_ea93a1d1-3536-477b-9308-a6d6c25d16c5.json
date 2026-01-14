@@ -1,0 +1,15 @@
+{
+    "id": "ea93a1d1-3536-477b-9308-a6d6c25d16c5",
+    "title": "来自波士顿的麻烦",
+    "description": "Saul 听说有个叫 Joyce Byers 的女人在找人修收音机。她的消息灵通，而且据说她儿子以前在那个颠倒的世界里见过不少东西。我们需要她手里的那份关于异常现象的目击报告。\n\n找到 Joyce Byers，保持礼貌。她是那种如果你表现得像个混蛋就会直接关门的人。我们需要她的合作，而不是敌意。",
+    "objective": {
+        "type": "TALK",
+        "target": "Joyce Byers",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

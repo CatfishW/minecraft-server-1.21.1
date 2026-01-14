@@ -1,0 +1,15 @@
+{
+    "id": "762678fb-2b73-460a-8341-905ae275f7d6",
+    "title": "破碎的信条",
+    "description": "Kim 一直坚持着自己严格的职业道德，但在与 Howard Hamlin 的对峙中，她感到一种前所未有的疲惫和迷茫。Howard 是她曾经敬重的前辈，也是现在的对手，她需要再次确认对方的立场，以此作为自己下一步行动的基准。\n\n去找到 Howard Hamlin，与他进行一次对话。了解他现在的想法，看看他是否还坚持着过去的那一套原则，还是已经彻底沦为利益的奴隶。Kim 需要你的汇报来做决定。",
+    "objective": {
+        "type": "TALK",
+        "target": "Howard Hamlin",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

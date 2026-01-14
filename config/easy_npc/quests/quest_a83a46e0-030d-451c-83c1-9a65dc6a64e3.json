@@ -1,0 +1,15 @@
+{
+    "id": "a83a46e0-030d-451c-83c1-9a65dc6a64e3",
+    "title": "萨拉曼卡的谜题",
+    "description": "预言指引我找到拉洛·萨拉曼卡，一个据说知晓古代附魔卷轴下落的人。他的话语中隐藏着魔法知识的碎片，我必须亲自聆听。\n\n寻访拉洛·萨拉曼卡，与他对话一次。他行踪诡秘，可能在村庄或荒野中出现，耐心是关键。",
+    "objective": {
+        "type": "TALK",
+        "target": "Lalo Salamanca",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 500,
+        "itemId": "numismatic-overhaul:gold_coin",
+        "amount": 1
+    }
+}

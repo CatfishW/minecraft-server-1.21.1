@@ -1,0 +1,15 @@
+{
+    "id": "dec35d0f-94a9-4e2d-81d9-ce40ac05e486",
+    "title": "终极武器：羊毛",
+    "description": "我们被一种无名的恐惧包围着，那些白色的幽灵……它们怕光，但更怕某种特定的声音。一个自称Pennywise的家伙，他似乎知道些什么，而且他喜欢用诡异的交易来换取信息。\n去找Pennywise，他可能在某个废弃的游乐场附近。带上一些羊毛，他似乎对这种柔软的东西有特别的偏好。问问他关于那些幽灵的弱点，然后回来报告。但小心，别被他的笑话骗了。",
+    "objective": {
+        "type": "TALK",
+        "target": "Pennywise",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

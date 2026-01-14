@@ -1,0 +1,105 @@
+{
+    "name": "§cJesse Pinkman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A small-time meth cook and dealer.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/867de1a3bb967097.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，老兄！有什么事吗？想找点乐子，还是...你知道的，生意？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:79331e2c-5364-4c0c-a4ed-e6733d5f1c1d,3d555453-a6e4-4fd0-b43c-4b113f0fb5a8,592e9dfc-00db-4b2f-8d10-21bbe4b8dc4d,89e8fe0b-a303-418c-a49a-2690d997e28a,7040b7fb-ae77-48e5-8164-a175f31c1936",
+                    "id": "btn_quest_6a769030"
+                },
+                {
+                    "label": "你是做什么的？",
+                    "action": "SHOW_DIALOG:business",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "那个‘老师’怎么样？",
+                    "action": "SHOW_DIALOG:about_walt",
+                    "id": "btn_walt"
+                },
+                {
+                    "label": "我丢了东西（任务）",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "business": {
+            "greeting": "我做... 颜料。对，就是颜料。虽然这行当有点危险，但老兄，这可是化学！",
+            "buttons": [
+                {
+                    "label": "听起来很酷？",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "about_walt": {
+            "greeting": "你是说海森堡？哦，天哪，那家伙简直是个疯子。但他是个天才，真的。虽然有时候我真想...",
+            "buttons": [
+                {
+                    "label": "想什么？",
+                    "action": "SHOW_DIALOG:complaint",
+                    "id": "btn_complaint"
+                },
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "complaint": {
+            "greeting": "没什么。听着，有些事不能乱说。但我真的需要离开这里，去个新的地方，比如阿拉斯加之类的。这行当太苦了，Bitch！",
+            "buttons": [
+                {
+                    "label": "回到之前",
+                    "action": "SHOW_DIALOG:about_walt",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "该死，我好像把我的背包弄丢了。里面有... 嗯，里面有我的‘私人物品’。老兄，能不能帮我去废弃仓库找找？",
+            "buttons": [
+                {
+                    "label": "接受任务：寻找背包",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_quest"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

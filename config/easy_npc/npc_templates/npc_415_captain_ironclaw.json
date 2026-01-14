@@ -1,0 +1,305 @@
+{
+    "name": "§eCaptain Ironclaw",
+    "entityType": "easy_npc:humanoid",
+    "description": "A veteran warrior who has defended this village from countless raids. Bears scars from battles with pillagers, zombies, and even a Wither.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/CaptainIronclaw"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§6[Captain Ironclaw严肃地打量着你]§r 我是铁爪，这片村庄的守卫队长。村民们能安然入睡，是因为我们这些老兵还握着剑。你有什么事？",
+            "buttons": [
+                {
+                    "label": "你身上的伤疤...",
+                    "action": "SHOW_DIALOG:backstory_battles",
+                    "id": "btn_scars"
+                },
+                {
+                    "label": "村庄现在安全吗？",
+                    "action": "SHOW_DIALOG:current_threat",
+                    "id": "btn_safety"
+                },
+                {
+                    "label": "你看起来经历过很多。",
+                    "action": "SHOW_DIALOG:backstory_trust",
+                    "id": "btn_experience"
+                },
+                {
+                    "label": "我得走了。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_battles": {
+            "greeting": "§c[他轻触脸颊一道深深的爪痕]§r 这道？来自一个发狂的劫掠兽...那畜生撞塌了半座哨塔。§6[指向肩甲下的裂痕]§r 而这，是一支凋零之箭留下的...我们付出了三条好汉的性命才干掉那个女巫。\n\n战斗不会留下美好的回忆，只有提醒你为何而战的印记。",
+            "buttons": [
+                {
+                    "label": "凋零？你们遇到过凋零？！",
+                    "action": "SHOW_DIALOG:backstory_scar",
+                    "id": "btn_wither"
+                },
+                {
+                    "label": "你们一直这么孤军奋战？",
+                    "action": "SHOW_DIALOG:backstory_allies",
+                    "id": "btn_allies"
+                },
+                {
+                    "label": "（回到其他话题）",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return"
+                }
+            ]
+        },
+        "backstory_scar": {
+            "greeting": "§5[他的眼神变得遥远而阴沉]§r 那是...五年前的事了。一个愚蠢的学徒在旧墓地摆弄了不该碰的东西。§8[他握紧了剑柄]§r 我们听到那三颗头颅的尖啸时，就知道今晚有人回不了家。\n\n铁匠埃博锻造的纯铁盾牌在它面前像玻璃一样碎掉...我们用坍塌的钟楼埋葬了它。市长从来不敢把这事写进村庄日志。",
+            "buttons": [
+                {
+                    "label": "那个学徒呢？",
+                    "action": "SHOW_DIALOG:backstory_whisper",
+                    "id": "btn_apprentice",
+                    "unlock_after": [
+                        "btn_wither",
+                        "btn_allies"
+                    ]
+                },
+                {
+                    "label": "...愿逝者安息。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_rest"
+                },
+                {
+                    "label": "你们需要更多帮助。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_help"
+                }
+            ]
+        },
+        "backstory_trust": {
+            "greeting": "§e[他哼了一声，表情略微松动]§r 岁月会把每个人变成老兵，孩子。区别在于，有人变成了酒馆里吹牛的老糊涂，而有人...§6[他望向城墙]§r 变成了守夜人眼里永不熄灭的火把。\n\n我见过太多新兵在第一场箭雨下就丢掉了勇气。所以，告诉我——你为何而来？为了赏金，还是为了守护点什么？",
+            "buttons": [
+                {
+                    "label": "为了守护。",
+                    "action": "SHOW_DIALOG:backstory_honor",
+                    "id": "btn_protect"
+                },
+                {
+                    "label": "为了生存和财富。",
+                    "action": "SHOW_DIALOG:backstory_pragmatic",
+                    "id": "btn_survive"
+                },
+                {
+                    "label": "我...还不确定。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_unsure"
+                }
+            ]
+        },
+        "backstory_honor": {
+            "greeting": "§a[他第一次露出了近乎微笑的表情]§r 好答案。勇气不是无所畏惧...而是在双腿颤抖时，依然选择站在城墙缺口上。\n\n§6[他压低声音]§r 听着。东边的森林最近不太平。侦察兵影步报告说，劫掠者的哨站数量在增加...但他们似乎在害怕什么别的东西，某种连他们都避之不及的东西。",
+            "buttons": [
+                {
+                    "label": "你想让我去调查？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_investigate"
+                },
+                {
+                    "label": "连劫掠者都害怕？",
+                    "action": "SHOW_DIALOG:current_mystery",
+                    "id": "btn_fear"
+                },
+                {
+                    "label": "我会记住你的话。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_remember"
+                }
+            ]
+        },
+        "current_threat": {
+            "greeting": "§c[他扫视着远方]§r 安全？这片土地从未真正安全过。西边的哨塔每天都能看到劫掠者的巡逻队。北边的矿井深处，僵尸的呻吟声越来越近...而最让我不安的，是夜晚的持续时间在变长。\n\n我们在为最坏的情况做准备。铁匠在日夜赶工，但我们的箭矢库存只够应对一次中等规模的围攻。",
+            "buttons": [
+                {
+                    "label": "我能帮忙收集材料。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_supplies"
+                },
+                {
+                    "label": "夜晚变长是什么意思？",
+                    "action": "SHOW_DIALOG:current_mystery",
+                    "id": "btn_night"
+                },
+                {
+                    "label": "你们的防御计划是？",
+                    "action": "SHOW_DIALOG:current_defense",
+                    "id": "btn_defense"
+                }
+            ]
+        },
+        "current_mystery": {
+            "greeting": "§8[他警惕地看了看周围]§r 影步说...他在月光下看到了“移动的阴影”，比末影人更沉默，比灾厄村民更扭曲。它们避开火光，只在绝对黑暗中行动。\n\n§5[他向前倾身]§r 这事我只对市长和铁匠说过：三晚前，南边农场的一整圈火把...在同一瞬间熄灭了。不是风。没有任何声音。",
+            "buttons": [
+                {
+                    "label": "我需要去看看。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4bceb176-2e15-4cfb-9d03-b377007d7bab,313c218e-6b78-45bf-b97e-4e1f312e39e9,c0c4dc60-74fe-4530-934b-efc54ebb05db,b4872094-4100-4084-b929-6d7cd3ea8386,dd012e23-6043-4375-9ae4-87186e127d51",
+                    "id": "btn_investigate_dark"
+                },
+                {
+                    "label": "这听起来像是...",
+                    "action": "SHOW_DIALOG:backstory_whisper",
+                    "id": "btn_suspect",
+                    "unlock_after": [
+                        "btn_apprentice"
+                    ]
+                },
+                {
+                    "label": "我会保持警惕。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_alert"
+                }
+            ]
+        },
+        "backstory_whisper": {
+            "greeting": "§4[他的声音降至耳语]§r 那个学徒...名叫科林。他没有在那场灾难中死去。§8[他的指节发白]§r 我们找到他时，他蜷缩在祭坛废墟里，不停喃喃自语...说的不是我们的语言。\n\n他被送去了北方一座修道院。但上周，我收到了那里的信...§5信上说，他在月圆之夜消失了，墙上用煤灰写着：‘它从未离开’。\n\n§c[他直视你]§r 这件事，不要对村民提起。恐慌比怪物更能摧毁一个村庄。",
+            "buttons": [
+                {
+                    "label": "我会保守秘密。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_secret"
+                },
+                {
+                    "label": "“它”是什么？",
+                    "action": "SHOW_DIALOG:secret_entity",
+                    "id": "btn_it",
+                    "unlock_after": [
+                        "btn_suspect",
+                        "btn_secret"
+                    ]
+                },
+                {
+                    "label": "我需要了解更多。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4bceb176-2e15-4cfb-9d03-b377007d7bab,313c218e-6b78-45bf-b97e-4e1f312e39e9,c0c4dc60-74fe-4530-934b-efc54ebb05db,b4872094-4100-4084-b929-6d7cd3ea8386,dd012e23-6043-4375-9ae4-87186e127d51",
+                    "id": "btn_deeper"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "§6[他摊开一张磨损的羊皮地图]§r 那么，你想为这片城墙贡献一份力量？很好。现在有几个紧要事项：\n\n1) 西边矿洞需要清理，确保我们的铁矿石供应。\n2) 北边森林需要设置绊线陷阱，延缓劫掠者的推进。\n3) 最重要的是...调查南边农场的“黑暗异常”。这事我只能托付给最可靠的人。",
+            "buttons": [
+                {
+                    "label": "我去处理矿洞。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4bceb176-2e15-4cfb-9d03-b377007d7bab,313c218e-6b78-45bf-b97e-4e1f312e39e9,c0c4dc60-74fe-4530-934b-efc54ebb05db,b4872094-4100-4084-b929-6d7cd3ea8386,dd012e23-6043-4375-9ae4-87186e127d51",
+                    "id": "btn_quest_mine"
+                },
+                {
+                    "label": "我去设置陷阱。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:4bceb176-2e15-4cfb-9d03-b377007d7bab,313c218e-6b78-45bf-b97e-4e1f312e39e9,c0c4dc60-74fe-4530-934b-efc54ebb05db,b4872094-4100-4084-b929-6d7cd3ea8386,dd012e23-6043-4375-9ae4-87186e127d51",
+                    "id": "btn_quest_trap"
+                },
+                {
+                    "label": "我去调查黑暗。",
+                    "action": "SHOW_DIALOG:current_mystery",
+                    "id": "btn_quest_dark"
+                },
+                {
+                    "label": "让我再考虑下。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_think"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§6[他向你点头致意]§r 保持剑刃锋利，保持警惕。记住：城墙保护村庄，但真正守护它的是站在城墙上的人。\n\n需要我的话，我通常在南边的瞭望塔。",
+            "buttons": [
+                {
+                    "label": "保重，队长。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                },
+                {
+                    "label": "我还有个问题...",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_another"
+                }
+            ]
+        },
+        "backstory_allies": {
+            "greeting": "（Captain Ironclaw沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c5e18113"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_de7cdab3"
+                }
+            ]
+        },
+        "secret_entity": {
+            "greeting": "（Captain Ironclaw压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_7b695203"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_4f19e9d1"
+                }
+            ]
+        },
+        "current_defense": {
+            "greeting": "（Captain Ironclaw看了看四周）\n\n现在不是谈这个的好时机。等过一阵子再说吧。",
+            "buttons": [
+                {
+                    "label": "好的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_23de37a5"
+                },
+                {
+                    "label": "保重",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_3cca3710"
+                }
+            ]
+        },
+        "backstory_pragmatic": {
+            "greeting": "（Captain Ironclaw沉默了一会儿）\n\n有些事情…不是那么容易说出口的。也许改天吧。",
+            "buttons": [
+                {
+                    "label": "我理解",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_7d8653ae"
+                },
+                {
+                    "label": "没关系",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2eb16d1b"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Village Guard Captain",
+        "connections": [
+            "Forge Master Ember",
+            "Mayor Goldsworth",
+            "Scout Shadowstep"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:39:57"
+    }
+}

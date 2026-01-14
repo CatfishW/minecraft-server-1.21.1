@@ -2,9 +2,9 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "014603D984656A62"
-	group: "5F9ABE3ACEA913EF"
+	group: "4E5AA64291FA4369"
 	id: "014603D984656A62"
-	order_index: 4
+	order_index: 1
 	quest_links: [ ]
 	quests: [ ]
 }

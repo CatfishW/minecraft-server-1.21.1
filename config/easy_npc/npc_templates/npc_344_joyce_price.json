@@ -1,0 +1,135 @@
+{
+    "name": "§5Joyce Price",
+    "entityType": "easy_npc:humanoid",
+    "description": "Chloe's mother and owner of the local diner.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/cff1ed5c783cb9cf.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "哦，你好啊。今天的特餐是肉汁肉饼，刚出炉的。需要点什么吗？还是只是想找个地方躲躲雨？",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:a2c0f6f1-5a6c-4ff5-bc32-4cd116b5822e,d9860d3f-80e3-4956-8601-6d1feb3d9d50,f6ac4855-9303-4f0c-acf8-d9e4fd6adc60,dcf669d8-4c02-4c4f-8ce2-2beac02405a2,c244f8a3-721f-459c-9389-d0fbf6ba7ace",
+                    "id": "btn_quest_bedbd7bb"
+                },
+                {
+                    "label": "询问 Chloe 的近况",
+                    "action": "SHOW_DIALOG:ask_chloe",
+                    "id": "btn_ask_chloe"
+                },
+                {
+                    "label": "询问店里的生意",
+                    "action": "SHOW_DIALOG:ask_diner",
+                    "id": "btn_ask_diner"
+                },
+                {
+                    "label": "我看到有份寻猫启事...",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "ask_chloe": {
+            "greeting": "唉，那孩子... 我真希望她能多来帮帮忙，而不是整天和那个叫Rachel的女孩混在一起。或者现在是和那个叫Max的女孩？她最近总是很晚回家。",
+            "buttons": [
+                {
+                    "label": "她看起来很有主见",
+                    "action": "SHOW_DIALOG:ask_chloe_2",
+                    "id": "btn_defend"
+                },
+                {
+                    "label": "回到刚才的话题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "ask_chloe_2": {
+            "greeting": "主见？她是固执！但我爱她。只是... 这个小镇对她来说太小了，我怕她惹上麻烦。如果你见到她，帮我劝劝她早点回家，好吗？",
+            "buttons": [
+                {
+                    "label": "我会留意的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "ask_diner": {
+            "greeting": "生意？还凑合吧。杰斐逊老师的摄影展给这里带来了一些游客，但黑木湖的水怪传说可能更吸引人，哈哈。你是新来的学生吗？",
+            "buttons": [
+                {
+                    "label": "是的，刚转来",
+                    "action": "SHOW_DIALOG:ask_diner_2",
+                    "id": "btn_yes"
+                },
+                {
+                    "label": "只是路过",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_no"
+                }
+            ]
+        },
+        "ask_diner_2": {
+            "greeting": "欢迎来到布莱克威尔。这里虽然有时候沉闷，但也算是个家。记住，如果有人欺负你，尽管告诉我，我虽然是个服务员，但嗓门可不小。",
+            "buttons": [
+                {
+                    "label": "谢谢，我会的",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_thanks"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "寻猫启事？你是说那只叫‘暴风雪’的猫吗？天哪，它昨天还在这里偷吃了客人的香肠。我看到它往火车站那边跑了，但我得看着店，走不开。",
+            "buttons": [
+                {
+                    "label": "我去找找看",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_accept"
+                },
+                {
+                    "label": "也许它自己会回来",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_ignore"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "真的吗？你真是个好人！如果找到了，我请你喝咖啡，不，一整块蓝莓派！一定要小心，别吓着它了。",
+            "buttons": [
+                {
+                    "label": "接受任务 (寻找暴风雪)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_complete"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

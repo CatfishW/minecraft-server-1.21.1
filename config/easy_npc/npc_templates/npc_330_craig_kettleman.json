@@ -1,0 +1,110 @@
+{
+    "name": "§dCraig Kettleman",
+    "entityType": "easy_npc:humanoid",
+    "description": "A former county treasurer involved in embezzlement.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/462f6aba09832168.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "（他紧张地四处张望，压低声音）你是谁？是比尔·奥克利的人吗？我没什么可说的，我已经把所有事情都告诉我律师了。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:b00eac24-a940-43a8-8221-044d5c26a261,8be8404e-737f-417a-bbf9-df903ae097ce,4d553e58-a7a5-4511-8cc2-ee635dfc2762,0be4006c-d93c-4deb-8a4c-d5b05b2516d3,8035ec2a-3449-4b08-930e-57e48ac776f6",
+                    "id": "btn_quest_a482df3b"
+                },
+                {
+                    "label": "放松点，我不是警察",
+                    "action": "SHOW_DIALOG:talk_calm",
+                    "id": "btn_calm"
+                },
+                {
+                    "label": "那笔钱在哪？",
+                    "action": "SHOW_DIALOG:talk_where",
+                    "id": "btn_where"
+                },
+                {
+                    "label": "也许我能帮你脱罪",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q"
+                }
+            ]
+        },
+        "talk_calm": {
+            "greeting": "（他擦了擦额头的汗）不是警察就好...不是警察就好。你是不知道，那个比尔·奥克利就像个疯狗一样咬着我不放。我只是个小小的财务，我怎么会贪污那么多钱呢？",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_where": {
+            "greeting": "钱？我怎么知道钱在哪！（声音突然变大，然后又缩了回去）我是说...那笔钱从一开始就不在我手上。肯定是有人在转移视线，陷害我这个老实人。",
+            "buttons": [
+                {
+                    "label": "老实人？",
+                    "action": "SHOW_DIALOG:talk_liar",
+                    "id": "btn_liar"
+                },
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_liar": {
+            "greeting": "（眼神躲闪）我只是...我只是想给家里好一点的生活。克劳迪娅，我的律师，她说只要我不松口，他们就定不了我的罪。但每天晚上我都睡不着觉...",
+            "buttons": [
+                {
+                    "label": "回主菜单",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "帮我脱罪？真的吗？如果你能让我免于牢狱之灾，我...我什么都愿意做！虽然我不能给你钱（钱真的不在我这），但我可以给你一些...信息，关于其他人的信息。",
+            "buttons": [
+                {
+                    "label": "成交",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "再考虑一下",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

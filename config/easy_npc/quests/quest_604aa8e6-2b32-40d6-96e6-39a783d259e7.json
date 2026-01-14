@@ -1,0 +1,15 @@
+{
+    "id": "604aa8e6-2b32-40d6-96e6-39a783d259e7",
+    "title": "农夫的柴火堆",
+    "description": "Alyssa 又惹麻烦了。这次她在 Bill Oakley 的农场帮忙时，不小心打翻了柴火堆，还烧毁了几捆珍贵的干草。Bill 先生虽然没生气，但他的牲畜过冬的饲料储备告急。Alyssa 觉得非常愧疚，希望你能帮她收集足够的材料来弥补损失。\n你需要收集 16 捆干草（Wheat），Bill 先生的农庄就在镇子的西边。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 16
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

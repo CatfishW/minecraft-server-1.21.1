@@ -1,0 +1,130 @@
+{
+    "name": "§bFrancesca Liddy",
+    "entityType": "easy_npc:humanoid",
+    "description": "The receptionist for Jimmy and Kim.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/07e85b2280bd733c.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "你好，这里是McGill & Wexler办公室。请问您有预约吗？如果没有，恐怕他现在很忙。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:ab0e4f8e-fcd7-453c-93a4-60790b6dbabe,63db9112-07b9-4b64-9f7c-ca6849d596e1,037b179b-8c86-4ba1-be77-467b98c1ddca,cc51af5b-a310-46b4-ac5d-adc86e0101e4,eb9f3199-403a-43d8-8a6a-32b55534c6cf",
+                    "id": "btn_quest_923c4730"
+                },
+                {
+                    "label": "只是想问几个问题。",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_talk"
+                },
+                {
+                    "label": "我需要处理一些税务问题。",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "听着，每天都有无数人想见他。从要打离婚官司的，到想告隔壁邻居的狗太吵的。我得按规矩办事，不然这里会乱成一锅粥。",
+            "buttons": [
+                {
+                    "label": "吉米……我是说McGill律师，他怎么样？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_1"
+                },
+                {
+                    "label": "Kim Wexler律师呢？",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_1_2"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "他们俩都忙得脚不沾地。吉米律师总有些……出人意料的客户。而Kim律师，则是这里的顶梁柱，什么事都处理得井井有条。",
+            "buttons": [
+                {
+                    "label": "听起来你对他们很了解。",
+                    "action": "SHOW_DIALOG:story_3",
+                    "id": "btn_2_1"
+                },
+                {
+                    "label": "工作一定很辛苦吧。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_2"
+                }
+            ]
+        },
+        "story_3": {
+            "greeting": "我只是做好我的本职工作。接电话，安排日程，收发传真。有时候，我看到的比他们想象的要多。比如那些奇怪的电话，或者账单上的问题。",
+            "buttons": [
+                {
+                    "label": "账单？有什么问题吗？",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_2_3"
+                },
+                {
+                    "label": "你是个很好的观察者。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_2_4"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "我只是说说而已。但最近确实有一些账目看起来不太对劲，需要核对。我一个人忙不过来，如果你懂一些财务知识，也许能帮我看看。",
+            "buttons": [
+                {
+                    "label": "我很乐意帮忙。",
+                    "action": "SHOW_DIALOG:quest_details",
+                    "id": "btn_acc"
+                },
+                {
+                    "label": "这不太好吧，万一被发现……",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_refuse"
+                }
+            ]
+        },
+        "quest_details": {
+            "greeting": "只是核对一下，不会有什么问题的。我把那些有问题的账单和原始记录放在一个文件夹里了，晚点你过来拿？别声张，悄悄的。",
+            "buttons": [
+                {
+                    "label": "好的，我晚点来。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_task"
+                },
+                {
+                    "label": "我会小心的。",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_careful"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

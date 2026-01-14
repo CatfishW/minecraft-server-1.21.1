@@ -1,0 +1,141 @@
+{
+    "name": "§6Howard Hamlin",
+    "entityType": "easy_npc:humanoid",
+    "description": "A partner at the prestigious HHM law firm.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/f388f85d00826f01.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "movementSpeed": 0.3,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "objectives": {
+        "wanderRange": 50.0,
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "returnToSpawn": false
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "下午好。欢迎来到HHM。我是Howard Hamlin，管理合伙人。每一天都是一个新的挑战，也是一个展示我们专业能力的机会。我们致力于为客户提供最顶级的法律服务，维护他们的权益。有什么我可以为你效劳的吗？",
+            "buttons": [
+                {
+                    "label": "我想谈谈业务合作",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_business"
+                },
+                {
+                    "label": "你看起来总是精力充沛",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_energy"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "业务合作是公司发展的动力。在HHM，我们积极参与各种商业法律事务，从初创公司的融资到大型企业的并购重组。我们相信，成功的合作建立在信任和共同目标之上。你有什么具体的项目或想法吗？",
+            "buttons": [
+                {
+                    "label": "我有一个并购项目",
+                    "action": "SHOW_DIALOG:conclusion_1",
+                    "id": "btn_merger"
+                },
+                {
+                    "label": "我需要知识产权保护",
+                    "action": "SHOW_DIALOG:conclusion_2",
+                    "id": "btn_ip"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "精力？这是一种生活态度。无论遇到什么困难，保持积极的心态和专业的形象都是至关重要的。作为HHM的掌舵人，我必须为所有人树立榜样。当然，这背后也有不为人知的压力和……个人牺牲。",
+            "buttons": [
+                {
+                    "label": "听起来不容易",
+                    "action": "SHOW_DIALOG:conclusion_3",
+                    "id": "btn_hard"
+                },
+                {
+                    "label": "关于Chuck，你有什么看法？",
+                    "action": "SHOW_DIALOG:conclusion_4",
+                    "id": "btn_chuck"
+                }
+            ]
+        },
+        "conclusion_1": {
+            "greeting": "并购项目？非常好。这类项目需要精密的尽职调查和高超的谈判技巧。我们的团队在这方面经验丰富。我会安排专人与你对接，确保每一步都合法合规，为你争取到最大的利益。请把相关资料发到我的办公室。",
+            "buttons": [
+                {
+                    "label": "太好了，就这么办",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_proceed"
+                },
+                {
+                    "label": "我需要再想想",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_2": {
+            "greeting": "知识产权是现代企业的核心资产。保护它，就是保护企业的未来。我们需要详细了解你的技术或品牌，制定全面的保护策略，包括专利申请、商标注册和侵权应对。请相信HHM的专业能力。",
+            "buttons": [
+                {
+                    "label": "我相信你们",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_trust"
+                },
+                {
+                    "label": "费用大概是多少？",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_3": {
+            "greeting": "确实不容易。有时候，你需要戴上微笑的面具，即使内心正在经历风暴。但这就是责任。你不能让个人情绪影响到公司的运作和客户的信任。保持坚强，直到问题解决，这是领导者必须具备的素质。",
+            "buttons": [
+                {
+                    "label": "你是个真正的职业人士",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_pro2"
+                },
+                {
+                    "label": "别太累了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "conclusion_4": {
+            "greeting": "Chuck是我非常敬重的伙伴和朋友。他的法律才华是毋庸置疑的。HHM能有今天，离不开他的贡献。无论发生什么，我都会尽力支持他，维护他的尊严。这份情谊，不会因为任何事情而改变。",
+            "buttons": [
+                {
+                    "label": "有你这样的朋友真好",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_friend"
+                },
+                {
+                    "label": "希望他能好起来",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

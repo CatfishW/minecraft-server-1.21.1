@@ -1,0 +1,15 @@
+{
+    "id": "c9a63245-c506-4ffd-b3bc-4f2a5cb77bfe",
+    "title": "风暴前的宁静",
+    "description": "在废弃酒吧的角落，一个看似残废的老人总是在擦拭着他的手铃。他叫Hector Salamanca，眼神中却藏着与外表不符的锐利。他似乎在寻找一些特殊的货物，一些能让他在这场游戏中重新占据上风的东西。找到他，听听他那沙哑的声音里，到底藏着怎样的交易。",
+    "objective": {
+        "type": "TALK",
+        "target": "Hector Salamanca",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

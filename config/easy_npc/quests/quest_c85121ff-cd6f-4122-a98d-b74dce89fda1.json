@@ -1,0 +1,15 @@
+{
+    "id": "c85121ff-cd6f-4122-a98d-b74dce89fda1",
+    "title": "直面潜伏者",
+    "description": "你的能力引起了某些存在的注意。潜伏在暗处的眼睛对你的成果似乎并不满意，他希望你去挑战更具威胁的目标。在那些潮湿、黑暗的角落里，潜伏着比僵尸更敏捷、更致命的威胁。\n\n他指定了目标——那些在阴影中疾行的怪物。你需要猎杀 5 只潜伏者（苦力怕），以此证明你有足够的资格继续与他合作。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:creeper",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 1
+    }
+}

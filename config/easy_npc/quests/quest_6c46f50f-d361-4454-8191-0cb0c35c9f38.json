@@ -1,0 +1,15 @@
+{
+    "id": "6c46f50f-d361-4454-8191-0cb0c35c9f38",
+    "title": "流沙潜行者",
+    "description": "沙鸥渡口的宁静被打破了。最近，沙丘中的僵尸似乎变得异常活跃，它们成群结队地在夜间游荡，威胁着旅人的安全。Irene Landry 目睹了这些亡灵生物的行进方向，似乎有什么东西在吸引它们。\n\n请前往沙鸥渡口周边的沙漠地带，清除 15 只僵尸。保持警惕，不要被它们包围了。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 25
+    }
+}

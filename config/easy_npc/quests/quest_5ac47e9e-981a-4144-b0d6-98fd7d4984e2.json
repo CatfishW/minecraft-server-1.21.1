@@ -1,0 +1,15 @@
+{
+    "id": "5ac47e9e-981a-4144-b0d6-98fd7d4984e2",
+    "title": "关键证人保护",
+    "description": "霍普警长（Jim Hopper）手头有一桩棘手的案子，他急需一位律师来帮助他的一位关键证人。这案子水很深，牵扯到多方利益，但也是我们打响名声的绝佳机会。吉米相信，只要能处理好这次委托，他们的“好人律师”形象就能深入人心。\n\n立即前往霍普警长（Jim Hopper）的办公室。他正在那里等你，你需要从他那里了解证人的详细情况并正式接下这个案子。展现你的诚意和专业，别让他失望。",
+    "objective": {
+        "type": "TALK",
+        "target": "Jim Hopper",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

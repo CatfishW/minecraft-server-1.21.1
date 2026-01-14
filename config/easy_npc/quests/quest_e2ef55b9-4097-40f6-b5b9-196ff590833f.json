@@ -1,0 +1,15 @@
+{
+    "id": "e2ef55b9-4097-40f6-b5b9-196ff590833f",
+    "title": "失落的文献",
+    "description": "委托人需要一些信息，一些被遗忘的知识。他相信这些碎片散落在那些古老的废墟之中，由亡灵守护着。这些文献或许记载着关于 \"Unknown\" 的过往，或是通往更深层秘密的钥匙。\n\n前往古老的遗迹，寻找那些由白衣亡灵守护的纸张。收集 3 份腐烂的书页（腐肉），它们虽然破败不堪，但委托人声称能从中解读出有用的情报。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:rotten_flesh",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 180,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

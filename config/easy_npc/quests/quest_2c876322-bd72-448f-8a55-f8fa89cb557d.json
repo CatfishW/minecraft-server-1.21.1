@@ -1,0 +1,15 @@
+{
+    "id": "2c876322-bd72-448f-8a55-f8fa89cb557d",
+    "title": "无声的耳语",
+    "description": "道上的消息比黄金更值钱，但也更烫手。我们听说一个叫索尔·古德曼的律师最近在城里活动，他像只狐狸一样，嗅觉灵敏，知道很多不该知道的事。图库想知道他究竟站在哪一边，或者，他是否愿意成为我们的 \"朋友\"。\n\n去找到这个索尔·古德曼。对他礼貌点，但要让他明白我们不是在开玩笑。听听他有什么要对我们说的。",
+    "objective": {
+        "type": "TALK",
+        "target": "Saul Goodman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "d8225407-e304-4153-b598-9e4b9d36ae22",
+    "title": "烈焰之心",
+    "description": "下界的烈焰燃烧着古老的魔法，烈焰人的核心是附魔的绝佳材料。我的预言显示，没有这些燃烧的灵魂，我的研究将停滞。\n\n前往下界堡垒，击败二十只烈焰人，收集他们的烈焰棒。小心火焰，那会吞噬一切。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:blaze",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

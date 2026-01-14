@@ -1,0 +1,15 @@
+{
+    "id": "3ec40e43-1cbd-4c0a-8bb2-3be03b1d5b17",
+    "title": "寻求外部支援",
+    "description": "我们的安保系统需要升级，但内部的人手脚不干净。我需要一个外部的、绝对专业的合作者来处理这件事。听说联邦调查局（FBI）那边有个叫Dana Ward的探员，她欠了我们一些人情，或许可以利用。\n\n找到她，告诉她我的计划。注意言辞，我们是合作伙伴，不是她的下属。",
+    "objective": {
+        "type": "TALK",
+        "target": "Dana Ward",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 100
+    }
+}

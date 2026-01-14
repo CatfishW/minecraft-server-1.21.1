@@ -1,0 +1,15 @@
+{
+    "id": "07b10935-a36d-4478-90c7-103ea7f731c8",
+    "title": "无光的余烬",
+    "description": "影子中的委托人对你的表现不置可否。他要求你收集一种在绝对黑暗中才会显现的物质——这种物质常在深渊的缝隙中，或是亡者聚集之地被发现。这并非普通的煤炭，而是被绝望浸染的产物。\n\n深入地下，或前往阴森的洞穴，收集 8 个骷髅掉落的骨头。据说，这些骨骼中残留着对光明的怨恨，正是委托人所需要的材料。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:bone",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 120,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 35
+    }
+}

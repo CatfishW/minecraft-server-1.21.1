@@ -1,0 +1,15 @@
+{
+    "id": "1801617b-fa5b-4480-a70c-5d0dd263d7d9",
+    "title": "钻石的诅咒",
+    "description": "钻石并非永恒，但它的光芒曾记录过一个失落的文明。我痴迷于这种矿物中蕴含的古老能量，需要三颗来巩固我的魔法。\n\n深入地下矿洞，挖掘或交易获取三颗钻石。记住，贪婪会招来灾祸，保持警惕。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:diamond",
+        "amount": 3
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 3
+    }
+}

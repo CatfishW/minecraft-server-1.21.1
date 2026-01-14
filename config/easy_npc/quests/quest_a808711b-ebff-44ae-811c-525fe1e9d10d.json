@@ -1,0 +1,15 @@
+{
+    "id": "a808711b-ebff-44ae-811c-525fe1e9d10d",
+    "title": "代价与交易",
+    "description": "Saul Goodman 的办公室里烟雾缭绕，他那标志性的油滑笑容下藏着精明的算计。他告诉 Stacey，在这个混乱的世界里，法律的解释权可以很灵活，前提是你的口袋足够深。他愿意提供情报和保护，但需要预付一笔‘咨询费’。",
+    "objective": {
+        "type": "TALK",
+        "target": "Saul Goodman",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 60
+    }
+}

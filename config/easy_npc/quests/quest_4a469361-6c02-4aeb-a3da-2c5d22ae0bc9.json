@@ -1,0 +1,15 @@
+{
+    "id": "4a469361-6c02-4aeb-a3da-2c5d22ae0bc9",
+    "title": "响尾蛇的獠牙",
+    "description": "小子，这片废土上有些家伙以为我们家族的信誉是可以随便践踏的。一条名为'响尾蛇'的帮派，偷走了我们的一批货。他们就像沙漠里的毒蛇，必须被铲除。\n\n去找到他们的藏身处，把那些背叛者全清理掉。记住，一个活口都不要留，我要让所有人都知道，萨拉曼卡家的债，必须用血来还。这不仅是生意，更是荣誉。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 15
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 80
+    }
+}

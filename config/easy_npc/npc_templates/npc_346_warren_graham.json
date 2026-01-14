@@ -1,0 +1,140 @@
+{
+    "name": "§bWarren Graham",
+    "entityType": "easy_npc:humanoid",
+    "description": "A science geek and friend to Max.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/bea90147fd461cbc.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "嘿，Max！... 哦，抱歉，我认错人了。你是新来的转学生吧？我是Warren，物理课坐后排的那个。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:3f35bf5b-790b-4bb3-8a92-55db65f2f7d6,38dd928f-d6c0-4f3d-9639-e9418e1b1f8a,27eac07f-becd-4018-8a44-c3e8f846ba4d,20ab1fde-8c94-4d2d-9460-ec7be196e6fa,d4159048-26a0-4c3e-9fc4-5acada7717b5",
+                    "id": "btn_quest_62cf9fe5"
+                },
+                {
+                    "label": "你好，我是...",
+                    "action": "SHOW_DIALOG:intro",
+                    "id": "btn_intro"
+                },
+                {
+                    "label": "你在看什么？",
+                    "action": "SHOW_DIALOG:talk_tech",
+                    "id": "btn_tech"
+                },
+                {
+                    "label": "能帮我做个实验吗？",
+                    "action": "SHOW_DIALOG:quest_hook",
+                    "id": "btn_quest"
+                }
+            ]
+        },
+        "intro": {
+            "greeting": "很高兴认识你！布莱克威尔有时候挺压抑的，不过如果你喜欢科幻或者科学，我们可以聊聊。我最近在研究时间旅行的理论，虽然听起来很疯狂。",
+            "buttons": [
+                {
+                    "label": "时间旅行？",
+                    "action": "SHOW_DIALOG:talk_time",
+                    "id": "btn_time"
+                },
+                {
+                    "label": "听起来很酷",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_time": {
+            "greeting": "是啊！你看，广义相对论说引力可以弯曲时空。如果你能制造一个足够大的引力场，理论上你可以... 算了，我是不是太 Geek 了？",
+            "buttons": [
+                {
+                    "label": "不，继续说",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                },
+                {
+                    "label": "确实有点",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_stop"
+                }
+            ]
+        },
+        "talk_tech": {
+            "greeting": "哦，这个？是我的新发明，‘Graham 动态感应器’。用来检测微小的震动。我怀疑学校地下室有结构问题，或者... 更神秘的东西。",
+            "buttons": [
+                {
+                    "label": "比如什么？",
+                    "action": "SHOW_DIALOG:talk_tech_2",
+                    "id": "btn_what"
+                },
+                {
+                    "label": "没兴趣",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "talk_tech_2": {
+            "greeting": "比如... 地下室的旧矿井通道。这镇子建立在旧矿坑上。有时候我会想，会不会有平行宇宙的裂缝就在这里打开？就像某种量子纠缠。",
+            "buttons": [
+                {
+                    "label": "这想法太疯狂了",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_close"
+                }
+            ]
+        },
+        "quest_hook": {
+            "greeting": "做个实验？当然！我需要一个高精度的陀螺仪来测试我的‘时间回溯’模拟模型。学校的物理实验室有一个，但锁起来了。我被罚禁止入内，因为上次我把投影仪弄炸了...",
+            "buttons": [
+                {
+                    "label": "我去帮你拿",
+                    "action": "SHOW_DIALOG:quest_accept",
+                    "id": "btn_steal"
+                },
+                {
+                    "label": "你真能惹麻烦",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_laugh"
+                }
+            ]
+        },
+        "quest_accept": {
+            "greeting": "太棒了！你简直是救星！钥匙在清洁工Samuel那里，他有时候会把备用钥匙忘在窗台上。如果被抓住，千万别提我的名字，就说你在研究‘离心力’！",
+            "buttons": [
+                {
+                    "label": "接受任务 (获取陀螺仪)",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_complete"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

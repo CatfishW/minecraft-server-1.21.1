@@ -1,0 +1,15 @@
+{
+    "title": "父亲的新身份",
+    "description": "Nacho需要联系伪造专家为父亲制作新证件。",
+    "objective": {
+        "type": "TALK",
+        "target": "Don Hagarty",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    },
+    "id": "a11349f5-d9a8-435b-9f2f-ead666c5c129"
+}

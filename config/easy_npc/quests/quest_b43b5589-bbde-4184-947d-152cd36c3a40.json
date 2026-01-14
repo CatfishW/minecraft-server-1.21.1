@@ -1,0 +1,15 @@
+{
+    "id": "b43b5589-bbde-4184-947d-152cd36c3a40",
+    "title": "雨林秘宝",
+    "description": "Farmer Chen听说可可豆蕴含的特殊能量能增强作物的抗病性，但丛林中的采集充满未知危险，他需要冒险者的帮助。\n\n深入丛林生物群系，收集5个可可豆，带回给他研究其农业应用。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:cocoa_beans",
+        "amount": 5
+    },
+    "reward": {
+        "xp": 150,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 75
+    }
+}

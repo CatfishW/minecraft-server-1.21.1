@@ -1,0 +1,125 @@
+{
+    "name": "§9David Madsen",
+    "entityType": "easy_npc:humanoid",
+    "description": "Chloe's stepfather and head of security at school.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://s.namemc.com/i/8ffa2e087c983824.png"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": true,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "站住。你是谁？在这里做什么？报上名来。这里不欢迎闲逛的人。",
+            "buttons": [
+                {
+                    "label": "§6§l接受任务",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:9a3edfe7-51ed-41a9-b584-dcd52a7c64c3,8be53af5-c37f-4823-aeac-0c80076d3918,f8de3a91-d100-4ad9-9df3-bed2526cbca4,9417aab0-010a-4cb0-ae8c-d744cf580135,62ef3375-0914-4fa1-a49a-5cac906b089a",
+                    "id": "btn_quest_d112ac1d"
+                },
+                {
+                    "label": "我只是个学生",
+                    "action": "SHOW_DIALOG:story_1",
+                    "id": "btn_student"
+                },
+                {
+                    "label": "聊聊学校安保",
+                    "action": "SHOW_DIALOG:story_2",
+                    "id": "btn_sec"
+                },
+                {
+                    "label": "我有情况要报告",
+                    "action": "SHOW_DIALOG:quest_intro",
+                    "id": "btn_q_dave"
+                }
+            ]
+        },
+        "story_1": {
+            "greeting": "学生？现在的学生都不懂规矩。以前当兵的时候，一声令下，没人敢动。这里也该实行军事化管理。",
+            "buttons": [
+                {
+                    "label": "这里不是军队",
+                    "action": "SHOW_DIALOG:story_1_1",
+                    "id": "btn_mil"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_1_1": {
+            "greeting": "别跟我顶嘴！纪律是生存的关键。没有纪律，就会出乱子。我在保护你们，你们却把我当敌人。不知好歹。",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2": {
+            "greeting": "安保工作？我监控着校园的每一个角落，检查所有进出的车辆。任何可疑人员都会被记录。我的摄像头比任何警察的线人都可靠。",
+            "buttons": [
+                {
+                    "label": "你不觉得这侵犯隐私吗？",
+                    "action": "SHOW_DIALOG:story_2_1",
+                    "id": "btn_privacy"
+                },
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "story_2_1": {
+            "greeting": "隐私？如果你没做错事，为什么要怕被监控？除非你心里有鬼。我是在维护公共安全，这是我的职责。",
+            "buttons": [
+                {
+                    "label": "回去了",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "quest_intro": {
+            "greeting": "报告情况？很好。我最近发现有几个学生在放学后鬼鬼祟祟的，好像在交易什么东西。去帮我盯着他们，看看他们在搞什么名堂，把细节记下来给我。",
+            "buttons": [
+                {
+                    "label": "收到，长官",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_accept_dave"
+                },
+                {
+                    "label": "我不想当间谍",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_decline"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "drop": {
+        "item": {
+            "item": "numismatic-overhaul:bronze_coin,numismatic-overhaul:silver_coin",
+            "count": 15
+        },
+        "minCount": 15,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    },
+    "objectives": {
+        "attackHostileMobs": true,
+        "attackPlayers": false,
+        "wanderRange": 50.0,
+        "returnToSpawn": false
+    }
+}

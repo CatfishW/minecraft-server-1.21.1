@@ -1,0 +1,15 @@
+{
+    "id": "4ea0a4d0-d575-45af-a487-2fcf9d4ca8f9",
+    "title": "必要的原料",
+    "description": "客户需要一些铁质零件来完成一项精密的'设备'。不是玩具，是工具。在当前这个环境下，找到高质量的材料需要门路。我认识一些人，但你也需要出一份力。质量是第一位的，我不能容忍次品。\n\n去收集一些纯净的铁锭。不要生锈的废料，要最好的。确保来源可靠。这些东西对于后续的'净化'工作至关重要。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 40
+    }
+}

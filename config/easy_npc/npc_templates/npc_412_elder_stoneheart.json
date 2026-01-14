@@ -1,0 +1,682 @@
+{
+    "name": "§6Elder Stoneheart",
+    "entityType": "easy_npc:humanoid",
+    "description": "An ancient dwarf who has mined these lands for centuries. He remembers when the first diamonds were discovered and has mapped every cave system in the region.",
+    "skin": {
+        "type": "URL_SKIN",
+        "skinUrl": "https://mc-heads.net/skin/ElderStoneheart"
+    },
+    "attributes": {
+        "maxHealth": 40,
+        "invulnerable": false,
+        "attackDamage": 4,
+        "nameVisibility": "NEVER"
+    },
+    "dialogs": {
+        "main": {
+            "greeting": "§6嗬！又一个来挖石头的。我是Elder Stoneheart，在这里挖了数不清的春秋。手指碰过的石头比你吃的面包还多。有什么事，小子？",
+            "buttons": [
+                {
+                    "label": "您在这里很久了吗？",
+                    "action": "SHOW_DIALOG:backstory_origin",
+                    "id": "btn_backstory"
+                },
+                {
+                    "label": "附近有什么值得挖的吗？",
+                    "action": "SHOW_DIALOG:current_ore_rumors",
+                    "id": "btn_ores"
+                },
+                {
+                    "label": "听说您遇到些麻烦？",
+                    "action": "SHOW_DIALOG:current_troubles",
+                    "id": "btn_troubles"
+                },
+                {
+                    "label": "能教我些老法子吗？",
+                    "action": "SHOW_DIALOG:quest_techniques",
+                    "id": "btn_techniques"
+                },
+                {
+                    "label": "我得走了。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_leave"
+                }
+            ]
+        },
+        "backstory_origin": {
+            "greeting": "§7很久？哈！那时末影龙还在蛋里呢。我看着§b第一条熔岩河§7冷却，§d第一颗紫水晶§7从黑暗中睁开眼睛。我的镐头曾与§c第一个僵尸矿工§7的骨头碰撞……那声音至今还在我耳边回响。",
+            "buttons": [
+                {
+                    "label": "第一条熔岩河？",
+                    "action": "SHOW_DIALOG:backstory_lava_tale",
+                    "id": "btn_lava"
+                },
+                {
+                    "label": "僵尸矿工？那是什么？",
+                    "action": "SHOW_DIALOG:secret_zombie_miner",
+                    "id": "btn_zombie_miner"
+                },
+                {
+                    "label": "您最怀念什么？",
+                    "action": "SHOW_DIALOG:backstory_nostalgia",
+                    "id": "btn_nostalgia"
+                },
+                {
+                    "label": "回到刚才的话题。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_return"
+                }
+            ]
+        },
+        "backstory_lava_tale": {
+            "greeting": "§6地心曾有一道奔流的火河，比现在任何一条都炙热、明亮。我和Ember的老祖宗——那时的Forge Master——看着它凝固成第一条§c赤红脉络§6。我们敲下第一块黑曜石，声音清脆得像水晶断裂。那是§e纯粹创造§6的声响。现在？只剩冰冷的石头和……回音。",
+            "buttons": [
+                {
+                    "label": "Ember是谁？",
+                    "action": "SHOW_DIALOG:relation_ember",
+                    "id": "btn_ember"
+                },
+                {
+                    "label": "回音？什么意思？",
+                    "action": "SHOW_DIALOG:secret_echoes",
+                    "id": "btn_echoes"
+                },
+                {
+                    "label": "真是个了不起的故事。",
+                    "action": "SHOW_DIALOG:backstory_origin",
+                    "id": "btn_back"
+                }
+            ]
+        },
+        "backstory_nostalgia": {
+            "greeting": "§7怀念……石头不会怀念，它们只是存在。但我确实想念§b寂静§7。现在的洞穴充满陌生生物的嚎叫，岩石因不该有的挖掘而呻吟。以前，只有镐头的节奏、呼吸声、和……§3偶尔从深处传来的低语§7。现在连那低语都变得愤怒了。",
+            "buttons": [
+                {
+                    "label": "深处的低语？",
+                    "action": "SHOW_DIALOG:secret_deep_dweller",
+                    "id": "btn_whisper"
+                },
+                {
+                    "label": "岩石在呻吟？",
+                    "action": "SHOW_DIALOG:current_troubles_detail",
+                    "id": "btn_rocks"
+                },
+                {
+                    "label": "这听起来很不安。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_worried_back"
+                }
+            ]
+        },
+        "current_ore_rumors": {
+            "greeting": "§6想找好东西？§a记住这个：'青金石流泪之处，金子在阴影中假寐，需红石之心唤醒，钻石方在梦中展颜。'§6这是我年轻时学的歌谣。如今，北边的玄武岩柱群有些……异常的§b蓝色反光§6。但我老了，骨头警告我不要靠近。",
+            "buttons": [
+                {
+                    "label": "能解释下这歌谣吗？",
+                    "action": "SHOW_DIALOG:quest_riddle_explain",
+                    "id": "btn_riddle"
+                },
+                {
+                    "label": "异常的蓝色反光？",
+                    "action": "SHOW_DIALOG:quest_blue_glow",
+                    "id": "btn_blue_glow"
+                },
+                {
+                    "label": "您的骨头警告？",
+                    "action": "SHOW_DIALOG:current_troubles_detail",
+                    "id": "btn_bones"
+                },
+                {
+                    "label": "谢谢，我记下了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_thanks_ore"
+                }
+            ]
+        },
+        "current_troubles": {
+            "greeting": "§c麻烦？§f麻烦是那些不懂尊重岩石的家伙带来的！他们用§4火药§f和§4铁傀儡§f乱炸乱挖，吵醒了不该醒的东西。现在，我从§5旧矿道§f里听到了刮擦声……不是镐头的声音。更尖锐，更……饥饿。我的地图显示那里应该只有废弃的蜘蛛网。",
+            "buttons": [
+                {
+                    "label": "刮擦声？是什么生物？",
+                    "action": "SHOW_DIALOG:quest_investigate_scratches",
+                    "id": "btn_scratches"
+                },
+                {
+                    "label": "您有地图？我能看看吗？",
+                    "action": "SHOW_DIALOG:secret_map",
+                    "id": "btn_map_request"
+                },
+                {
+                    "label": "谁在乱挖？",
+                    "action": "SHOW_DIALOG:current_vandals",
+                    "id": "btn_vandals"
+                },
+                {
+                    "label": "这真令人担忧。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_worried_main"
+                }
+            ]
+        },
+        "current_troubles_detail": {
+            "greeting": "§7岩石有自己的语言，孩子。'呻吟'是压力积累，是支撑柱腐朽的信号。南边的§4废弃传送门洞穴§7，那里的天花板在低声诉苦。我上周做的标记已经移位了半寸。至于我的骨头……老矿工能感觉到§c恶意§7。像是一种冰冷的凝视，从岩石本身透出来。",
+            "buttons": [
+                {
+                    "label": "我能去检查那个洞穴吗？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_inspect_cave"
+                },
+                {
+                    "label": "冰冷的凝视……像什么？",
+                    "action": "SHOW_DIALOG:secret_entity_gaze",
+                    "id": "btn_gaze"
+                },
+                {
+                    "label": "您应该离开那里。",
+                    "action": "SHOW_DIALOG:current_refuge",
+                    "id": "btn_leave_advice"
+                },
+                {
+                    "label": "情况比我想的还糟。",
+                    "action": "SHOW_DIALOG:current_troubles",
+                    "id": "btn_back_troubles"
+                }
+            ]
+        },
+        "current_vandals": {
+            "greeting": "§6一群穿着亮闪闪装备的冒险者，喊着'效率！'，用§cTNT§6开道。我跟Ember说过，这种蛮干会触怒深层。但她说'时代变了，老头子。'……也许她是对的。但时代变好之前，总得先变坏。我看见他们带着一种§9发光的青苔§6下去了，再没上来。",
+            "buttons": [
+                {
+                    "label": "发光的青苔？",
+                    "action": "SHOW_DIALOG:secret_luminous_moss",
+                    "id": "btn_moss"
+                },
+                {
+                    "label": "Ember现在在哪？",
+                    "action": "SHOW_DIALOG:relation_ember_current",
+                    "id": "btn_ember_now"
+                },
+                {
+                    "label": "他们可能还活着吗？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_find_miners"
+                },
+                {
+                    "label": "野蛮的方法。",
+                    "action": "SHOW_DIALOG:current_troubles",
+                    "id": "btn_back_vandals"
+                }
+            ]
+        },
+        "quest_techniques": {
+            "greeting": "§6老法子？哈！现在没人有耐心学'§e聆听岩石§6'了。不是用眼睛找矿脉，是用§b手掌感受墙壁的温度变化§6，用§b耳朵分辨挖到的是普通石头还是矿石包裹层§6。但这需要时间……和一副好镐头。我的老伙计断了，现在用的这个总不对劲。",
+            "buttons": [
+                {
+                    "label": "我能帮您修镐头吗？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_repair_pick"
+                },
+                {
+                    "label": "教我'聆听岩石'吧！",
+                    "action": "SHOW_DIALOG:quest_teaching_listen",
+                    "id": "btn_learn_listen"
+                },
+                {
+                    "label": "温度变化？具体怎么感受？",
+                    "action": "SHOW_DIALOG:secret_temperature",
+                    "id": "btn_temp"
+                },
+                {
+                    "label": "这听起来很复杂。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_too_complex"
+                }
+            ]
+        },
+        "quest_teaching_listen": {
+            "greeting": "§7首先，你得找到一块§b绝对安静§7的地方，深到连熔岩的嘶嘶声都听不见。然后，把额头贴在石壁上……闭上眼睛。不是听声音，是听§3寂静的形状§7。钻石的寂静是紧绷的弦，铁的寂静是厚重的毯子……但这事急不来。你先得证明你能§e尊重洞穴§7。",
+            "buttons": [
+                {
+                    "label": "我怎么证明？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_prove_respect"
+                },
+                {
+                    "label": "寂静的形状……真诗意。",
+                    "action": "SHOW_DIALOG:backstory_nostalgia",
+                    "id": "btn_poetic"
+                },
+                {
+                    "label": "这太玄乎了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_too_mystical"
+                }
+            ]
+        },
+        "secret_zombie_miner": {
+            "greeting": "§5……你不该问这个的，孩子。§d那是第一次'感染'之前的事。他们和我们一样挖矿，直到挖穿了某种……§5绿色的、脉动的东西§d。然后就变了。镐头嵌进肉里也不觉得疼，只是不停地挖。我们不得不封堵了那条矿道。§c地图上标着'勿近'，用血画了个叉。§d它还在那儿。",
+            "condition": "TRUST_LEVEL_HIGH",
+            "buttons": [
+                {
+                    "label": "绿色的脉动东西？",
+                    "action": "SHOW_DIALOG:secret_green_pulse",
+                    "id": "btn_green_pulse"
+                },
+                {
+                    "label": "封堵的矿道在哪？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_sealed_tunnel"
+                },
+                {
+                    "label": "……抱歉问了这些。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_sorry_secret"
+                }
+            ]
+        },
+        "secret_map": {
+            "greeting": "§3我的地图？§b它不在这，孩子。它在这里（他敲了敲自己的太阳穴）。每个裂隙，每条矿脉，每个我封上的密室……都记着。但有些地方，我画在了§d远古残页§b上，交给了Crystal Sage保管。她说那些地方'能量不纯'。如果你想看……得先得到她的认可。她住在冰原的蓝冰宫殿里。",
+            "condition": "TRUST_LEVEL_MEDIUM",
+            "buttons": [
+                {
+                    "label": "Crystal Sage？",
+                    "action": "SHOW_DIALOG:relation_crystal_sage",
+                    "id": "btn_sage"
+                },
+                {
+                    "label": "能量不纯是什么意思？",
+                    "action": "SHOW_DIALOG:secret_impure_energy",
+                    "id": "btn_impure"
+                },
+                {
+                    "label": "我会去找她的。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_find_sage"
+                },
+                {
+                    "label": "这太复杂了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_too_much"
+                }
+            ]
+        },
+        "secret_deep_dweller": {
+            "greeting": "§8The Deep Dweller……§7我们从不直呼其名。它是岩石的一部分，是寂静本身。有时它会低语矿脉的位置，作为交换……§8它要求故事§7。你经历的故事，你听到的故事。如果你在绝对黑暗中听到有人问'然后呢？'，小心回答。说真话，否则它会拿走你的声音。Ember认为我在编故事。",
+            "condition": "TRUST_LEVEL_HIGH",
+            "buttons": [
+                {
+                    "label": "您和它交换过故事吗？",
+                    "action": "SHOW_DIALOG:secret_dweller_story",
+                    "id": "btn_dweller_story"
+                },
+                {
+                    "label": "怎么安全地召唤它？",
+                    "action": "SHOW_DIALOG:secret_summon_dweller",
+                    "id": "btn_summon"
+                },
+                {
+                    "label": "这太可怕了。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_scary_back"
+                }
+            ]
+        },
+        "relation_ember": {
+            "greeting": "§6Forge Master Ember，火爆脾气配得上她的名字。她的家族世代为矿工锻造最好的镐头。但她总想创新——新合金，新附魔。我说'传统够好了！'，她说'传统不能对付新威胁。'……我们吵了几十年。但她做的镐头……§e确实顺手§6。",
+            "buttons": [
+                {
+                    "label": "她现在在哪？",
+                    "action": "SHOW_DIALOG:relation_ember_current",
+                    "id": "btn_ember_where"
+                },
+                {
+                    "label": "新威胁？",
+                    "action": "SHOW_DIALOG:current_troubles_detail",
+                    "id": "btn_new_threats"
+                },
+                {
+                    "label": "您们关系其实挺好？",
+                    "action": "SHOW_DIALOG:secret_ember_bond",
+                    "id": "btn_ember_bond"
+                },
+                {
+                    "label": "有趣的搭档。",
+                    "action": "SHOW_DIALOG:backstory_origin",
+                    "id": "btn_back_relation"
+                }
+            ]
+        },
+        "relation_ember_current": {
+            "greeting": "§7在她的锻造厂，还能在哪？但她最近心不在焉。一直在研究一种能'吸收震动'的合金，说能防止洞穴坍塌。我笑她多虑……直到上周我的标记移位。也许她感觉到了什么我没感觉到的东西。如果你去见她，告诉她……§3老头子还没服输§7。",
+            "buttons": [
+                {
+                    "label": "吸收震动的合金？",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_alloy"
+                },
+                {
+                    "label": "我会转告她的。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_deliver_msg"
+                },
+                {
+                    "label": "你们真是好朋友。",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_good_friends"
+                }
+            ]
+        },
+        "relation_crystal_sage": {
+            "greeting": "§bCrystal Sage……她读得懂水晶的'记忆'，说整个山脉的历史都刻在紫水晶里。她保管着最危险区域的地图残页，因为'只有纯净之心能触碰这些知识'。我觉得她有点神神叨叨……但她的预言救过我三次命。她总说'地底翡翠'要醒了……但愿她这次错了。",
+            "buttons": [
+                {
+                    "label": "地底翡翠？",
+                    "action": "SHOW_DIALOG:secret_geode_heart",
+                    "id": "btn_geode"
+                },
+                {
+                    "label": "预言救过您？",
+                    "action": "SHOW_DIALOG:secret_prophecy",
+                    "id": "btn_prophecy"
+                },
+                {
+                    "label": "纯净之心？",
+                    "action": "SHOW_DIALOG:quest_prove_respect",
+                    "id": "btn_pure_heart"
+                },
+                {
+                    "label": "我会小心接触她的。",
+                    "action": "SHOW_DIALOG:secret_map",
+                    "id": "btn_back_sage"
+                }
+            ]
+        },
+        "current_refuge": {
+            "greeting": "§7离开？§f孩子，矿工可以退休，但不能离开。我的根已经扎进这些石头里了。Ember给我在锻造厂旁边盖了间小屋，暖和，有光。但我在那里睡不着……太安静了，没有岩石的呼吸声。这里（他拍了拍洞壁）虽然危险，但是§e家§f。",
+            "buttons": [
+                {
+                    "label": "我理解这种感觉。",
+                    "action": "SHOW_DIALOG:secret_home_feeling",
+                    "id": "btn_home"
+                },
+                {
+                    "label": "至少让我帮您加固这里。",
+                    "action": "OPEN_QUEST_DIALOG:RANDOM_POOL:85862166-6157-4ec4-a6a9-57f42365c183,157ed292-ccf3-4dd5-bb56-d90b56aad630,060f1afb-4b11-40f6-b870-1b1288400709,4dcd438f-8acd-4c5a-8291-6c2d394b2e55,b6b24e60-5ef8-4e6b-b0e8-4b012889c917",
+                    "id": "btn_reinforce"
+                },
+                {
+                    "label": "请务必小心。",
+                    "action": "SHOW_DIALOG:farewell",
+                    "id": "btn_careful"
+                }
+            ]
+        },
+        "farewell": {
+            "greeting": "§6要走了？记住，镐头要稳，火把要亮，耳朵要尖。如果听到岩石说悄悄话……§a停下来听听§6。它可能在警告你，也可能在给你指路。随时回来，孩子。老头子别的不多，就是故事和忠告多。",
+            "buttons": [
+                {
+                    "label": "我会记住的。保重！",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_goodbye"
+                },
+                {
+                    "label": "等等，我还有件事……",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_one_more_thing"
+                }
+            ]
+        },
+        "secret_prophecy": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c8b13b67"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_d4b9ad51"
+                }
+            ]
+        },
+        "quest_investigate_scratches": {
+            "greeting": "（Elder Stoneheart思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bfaa1e57"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_112ce79a"
+                }
+            ]
+        },
+        "secret_temperature": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_ca3c4a78"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_8aad58e4"
+                }
+            ]
+        },
+        "secret_home_feeling": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_1f753e51"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_dcda7e02"
+                }
+            ]
+        },
+        "secret_impure_energy": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_7de89383"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c7a24107"
+                }
+            ]
+        },
+        "secret_entity_gaze": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_3fb4fe47"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_50a382b4"
+                }
+            ]
+        },
+        "quest_riddle_explain": {
+            "greeting": "（Elder Stoneheart思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_740ae2b5"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_cca93e85"
+                }
+            ]
+        },
+        "secret_geode_heart": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_89fbbb97"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_466e1cf3"
+                }
+            ]
+        },
+        "secret_summon_dweller": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_c80007c3"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_71c19c7e"
+                }
+            ]
+        },
+        "quest_prove_respect": {
+            "greeting": "（Elder Stoneheart思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_6ec53020"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_b35afb78"
+                }
+            ]
+        },
+        "secret_ember_bond": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_980291b0"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c60738d1"
+                }
+            ]
+        },
+        "secret_green_pulse": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_e07969f8"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_bea53e2d"
+                }
+            ]
+        },
+        "secret_echoes": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_b360770b"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_869c3ed7"
+                }
+            ]
+        },
+        "quest_blue_glow": {
+            "greeting": "（Elder Stoneheart思考了一下）\n\n我确实有些事情需要帮忙…但是容我再想想具体该怎么做。",
+            "buttons": [
+                {
+                    "label": "随时来找我",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_050052c8"
+                },
+                {
+                    "label": "没问题",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_7898ef7a"
+                }
+            ]
+        },
+        "secret_dweller_story": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_bc543551"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_c289afda"
+                }
+            ]
+        },
+        "secret_luminous_moss": {
+            "greeting": "（Elder Stoneheart压低声音）\n\n这件事…我还没准备好告诉别人。你需要先证明你值得信任。",
+            "buttons": [
+                {
+                    "label": "我会证明的",
+                    "action": "SHOW_DIALOG:main",
+                    "id": "btn_1d9d40b3"
+                },
+                {
+                    "label": "我明白",
+                    "action": "CLOSE_DIALOG",
+                    "id": "btn_9b17758c"
+                }
+            ]
+        }
+    },
+    "pose": "STANDING",
+    "metadata": {
+        "theme": "Minecraft Original",
+        "role": "Ancient Miner",
+        "connections": [
+            "Forge Master Ember",
+            "Crystal Sage",
+            "The Deep Dweller"
+        ],
+        "generated_by": "deepseek-v3.2",
+        "generated_at": "2026-01-13 11:23:42"
+    }
+}

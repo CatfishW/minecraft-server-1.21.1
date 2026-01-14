@@ -1,0 +1,15 @@
+{
+    "title": "案卷整理",
+    "description": "为了准备上诉材料，Kim需要大量纸张。请为她收集小麦制作纸张。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:wheat",
+        "amount": 20
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    },
+    "id": "0828d572-d654-45f4-b415-0e556474f596"
+}

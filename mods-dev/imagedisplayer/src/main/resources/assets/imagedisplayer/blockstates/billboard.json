@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=north": {
+            "model": "imagedisplayer:block/billboard"
+        },
+        "facing=south": {
+            "model": "imagedisplayer:block/billboard",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "imagedisplayer:block/billboard",
+            "y": 270
+        },
+        "facing=east": {
+            "model": "imagedisplayer:block/billboard",
+            "y": 90
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "id": "3d5616d2-6f26-4ac6-a748-7a791fe9a399",
+    "title": "镀金的尘埃",
+    "description": "Nathan Prescott的傲慢必须被惩戒。他以为金钱能买通一切，甚至是对Cousins的不敬。他最近有一批从矿山运出的矿石在运输途中遗失，那是我们的机会。夺取他的财富，让他知道有些东西是金钱无法衡量的。\n\n在黑夜的掩护下，前往矿洞深处，那些闪烁的铁矿石正是他傲慢的源头。收集它们，作为对他贪婪的惩罚。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:iron_ingot",
+        "amount": 8
+    },
+    "reward": {
+        "xp": 80,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 65
+    }
+}

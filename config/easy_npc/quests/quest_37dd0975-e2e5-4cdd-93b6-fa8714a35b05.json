@@ -1,0 +1,15 @@
+{
+    "id": "37dd0975-e2e5-4cdd-93b6-fa8714a35b05",
+    "title": "亡灵低语",
+    "description": "Unknown 的身影在迷雾中若隐若现，他似乎在寻找某种存在的证明。被亡灵复生的生物游荡在荒野，它们的身上似乎残留着某种微弱的回响，那是生前最后的执念。\n\n前往荒野，寻找那些游荡的僵尸。你需要收集它们身上残留的某种特殊气息，尽管这听起来有些不可思议。但只有这样，才能让 Unknown 更接近真相。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:zombie",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 20
+    }
+}

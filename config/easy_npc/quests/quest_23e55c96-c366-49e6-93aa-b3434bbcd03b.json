@@ -1,0 +1,15 @@
+{
+    "id": "23e55c96-c366-49e6-93aa-b3434bbcd03b",
+    "title": "最后的底线",
+    "description": "Skyler已经受够了被动和猜疑。她决定亲自下场，用自己的方式来制衡Walter，确保即使他彻底失控，自己和孩子也能有自保之力。这不仅仅是调查，更是宣告。\n\n去和Kim Wexler会面。作为一位强大的法律界人士，她或许能为Skyler提供某种协议或保障，一种在最坏情况下也能保护她们母子的武器。这将是Skyler从受害者到掌控者的转变。",
+    "objective": {
+        "type": "TALK",
+        "target": "Kim Wexler",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 200,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

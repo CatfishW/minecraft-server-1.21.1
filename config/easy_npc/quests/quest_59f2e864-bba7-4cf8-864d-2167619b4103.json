@@ -1,0 +1,15 @@
+{
+    "id": "59f2e864-bba7-4cf8-864d-2167619b4103",
+    "title": "原材料收购",
+    "description": "我们的库存正在告急，尤其是硫磺这种关键原料。你需要去清理一下仓库，为即将到来的生产旺季做准备。我不在乎你用什么手段，只要把材料弄回来就行。\n\n去收集 64 个火药（gunpowder）。你可以从苦力怕或者骷髅身上弄到，或者去那些黑暗的矿洞里找找。完成任务后，来我的办公室汇报。",
+    "objective": {
+        "type": "GATHER",
+        "target": "minecraft:gunpowder",
+        "amount": 64
+    },
+    "reward": {
+        "xp": 100,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 50
+    }
+}

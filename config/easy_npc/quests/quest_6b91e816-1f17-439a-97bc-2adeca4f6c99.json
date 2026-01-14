@@ -1,0 +1,15 @@
+{
+    "id": "6b91e816-1f17-439a-97bc-2adeca4f6c99",
+    "title": "敌人的头颅",
+    "description": "巴里奥萨那帮杂碎最近越来越嚣张了，他们以为我们不知道他们在背后搞的小动作。图库很生气，后果很严重。他需要一个警告，一个足够血腥、足够有力的警告，让那些哥伦比亚人重新学会 \"尊重\" 这个词。\n\n潜入敌人的地盘，猎杀他们的头目。把他的头颅带回来，挂在我们的地盘上，让所有人都看到背叛萨拉曼卡的下场。",
+    "objective": {
+        "type": "KILL",
+        "target": "minecraft:pillager",
+        "amount": 10
+    },
+    "reward": {
+        "xp": 300,
+        "itemId": "numismatic-overhaul:silver_coin",
+        "amount": 2
+    }
+}

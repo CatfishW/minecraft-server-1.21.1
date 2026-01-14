@@ -1,0 +1,15 @@
+{
+    "id": "20ab1fde-8c94-4d2d-9460-ec7be196e6fa",
+    "title": "市场情报搜集",
+    "description": "沃伦最近在尝试复刻一种他在旧笔记本上找到的稀有合金配方，但这需要一种特殊的矿石，而他自己又没时间去矿洞深处挖掘。他知道有些专业的商人可能私下里会囤积这类稀有资源，或者至少知道哪里能找到。他想到了那个总是在市场转悠的斯泰西。\n\n去和斯泰西·埃尔曼特劳特（Stacey Ehrmantraut）谈谈。她消息灵通，或许能为沃伦提供关于稀有矿石的线索，或者直接进行交易。这是获取关键材料的第一步。",
+    "objective": {
+        "type": "TALK",
+        "target": "Stacey Ehrmantraut",
+        "amount": 1
+    },
+    "reward": {
+        "xp": 60,
+        "itemId": "numismatic-overhaul:bronze_coin",
+        "amount": 30
+    }
+}
