@@ -91,6 +91,24 @@ public class StoryLoader {
     }
     
     /**
+     * Save a story to disk.
+     */
+    public boolean saveStory(StageGraph graph) {
+        Path storyPath = storiesPath.resolve(graph.getStoryId() + ".json");
+        try {
+            JsonObject json = graph.toJson();
+            String content = GSON.toJson(json);
+            Files.writeString(storyPath, content);
+            StoryAdventureMod.LOGGER.info("[StoryLoader] Saved story '{}' to {}", graph.getStoryId(), storyPath);
+            return true;
+        } catch (Exception e) {
+            StoryAdventureMod.LOGGER.error("[StoryLoader] Failed to save story '{}' to {}: {}", 
+                graph.getStoryId(), storyPath, e.getMessage());
+            return false;
+        }
+    }
+
+    /**
      * Reload all stories.
      */
     public void reload() {

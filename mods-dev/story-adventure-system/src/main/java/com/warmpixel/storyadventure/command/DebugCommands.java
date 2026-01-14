@@ -226,6 +226,9 @@ public class DebugCommands {
                             StageGraph.StoryLocation loc = new StageGraph.StoryLocation(dim, x, y, z, yaw, pitch);
                             graph.setSpecialLocation("spawn", loc);
                             
+                            // Save to disk
+                            com.warmpixel.storyadventure.StoryAdventureMod.getInstance().getStoryLoader().saveStory(graph);
+                            
                             ctx.getSource().sendSuccess(() -> Component.literal(
                                 "§a已设置故事 '" + storyId + "' 的出生点：\n" +
                                 "§7维度: §f" + dim + "\n" +
@@ -261,6 +264,9 @@ public class DebugCommands {
                             // Store the location
                             StageGraph.StoryLocation loc = new StageGraph.StoryLocation(dim, x, y, z, yaw, pitch);
                             graph.setSpecialLocation("return", loc);
+                            
+                            // Save to disk
+                            com.warmpixel.storyadventure.StoryAdventureMod.getInstance().getStoryLoader().saveStory(graph);
                             
                             ctx.getSource().sendSuccess(() -> Component.literal(
                                 "§a已设置故事 '" + storyId + "' 的返回点：\n" +

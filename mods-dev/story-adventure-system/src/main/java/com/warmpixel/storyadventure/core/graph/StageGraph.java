@@ -97,6 +97,94 @@ public class StageGraph {
         return specialLocations.get(id);
     }
     
+    public JsonObject toJson() {
+        JsonObject json = new JsonObject();
+        json.addProperty("id", storyId);
+        json.addProperty("name", name);
+        json.addProperty("description", description);
+        json.addProperty("version", version);
+        json.addProperty("min_players", minPlayers);
+        json.addProperty("max_players", maxPlayers);
+        json.addProperty("estimated_duration_minutes", estimatedDurationMinutes);
+        json.addProperty("entry_node", entryNodeId);
+        
+        // Locations
+        if (!specialLocations.isEmpty()) {
+            JsonObject locationsJson = new JsonObject();
+            for (Map.Entry<String, StoryLocation> entry : specialLocations.entrySet()) {
+                StoryLocation loc = entry.getValue();
+                JsonObject locJson = new JsonObject();
+                locJson.addProperty("dimension", loc.dimension());
+                locJson.addProperty("x", loc.x());
+                locJson.addProperty("y", loc.y());
+                locJson.addProperty("z", loc.z());
+                locJson.addProperty("yaw", loc.yaw());
+                locJson.addProperty("pitch", loc.pitch());
+                locationsJson.add(entry.getKey(), locJson);
+            }
+            json.add("locations", locationsJson);
+        }
+        
+        // Nodes
+        JsonObject nodesJson = new JsonObject();
+        for (StageNode node : nodes.values()) {
+            JsonObject nodeJson = new JsonObject();
+            nodeJson.addProperty("type", node.getType().getId());
+            nodeJson.add("data", node.getData()); // data is already a JsonObject
+            
+            // Edges
+            if (!node.getEdges().isEmpty()) {
+                JsonArray edgesJson = new JsonArray();
+                for (StageEdge edge : node.getEdges()) {
+                    JsonObject edgeJson = new JsonObject();
+                    edgeJson.addProperty("target", edge.getTargetNodeId());
+                    if (edge.getPriority() != 0) {
+                        edgeJson.addProperty("priority", edge.getPriority());
+                    }
+                    
+                    if (!edge.getConditions().isEmpty()) {
+                        JsonArray conditionsJson = new JsonArray();
+                        for (EdgeCondition cond : edge.getConditions()) {
+                            conditionsJson.add(cond.serialize());
+                        }
+                        edgeJson.add("conditions", conditionsJson);
+                    }
+                    edgesJson.add(edgeJson);
+                }
+                nodeJson.add("edges", edgesJson);
+            }
+            nodesJson.add(node.getId(), nodeJson);
+        }
+        json.add("nodes", nodesJson);
+        
+        // Clues
+        if (!clues.isEmpty()) {
+            JsonObject cluesJson = new JsonObject();
+            for (ClueDefinition clue : clues.values()) {
+                JsonObject clueJson = new JsonObject();
+                clueJson.addProperty("name", clue.name());
+                clueJson.addProperty("description", clue.description());
+                clueJson.addProperty("item_icon", clue.itemIcon());
+                cluesJson.add(clue.id(), clueJson);
+            }
+            json.add("clues", cluesJson);
+        }
+        
+        // Flags
+        if (!flags.isEmpty()) {
+            JsonObject flagsJson = new JsonObject();
+            for (FlagDefinition flag : flags.values()) {
+                JsonObject flagJson = new JsonObject();
+                flagJson.addProperty("default", flag.defaultValue());
+                flagJson.addProperty("persistent", flag.persistent());
+                flagsJson.add(flag.id(), flagJson);
+            }
+            json.add("flags", flagsJson);
+        }
+        
+        return json;
+    }
+    
     /**
      * Parse a StageGraph from a JSON object.
      */

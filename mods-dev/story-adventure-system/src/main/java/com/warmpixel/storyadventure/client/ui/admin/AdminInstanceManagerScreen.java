@@ -87,6 +87,9 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
             Component.literal("关闭"), this::onClose);
         
         updateButtonStates();
+        
+        // Auto-refresh list on open
+        refreshList();
     }
     
     @Override
