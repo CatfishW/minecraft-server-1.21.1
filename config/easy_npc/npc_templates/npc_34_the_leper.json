@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Disgusting manifestation of IT.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c5b848029efa2d5b.png"
+        "type": "CUSTOM",
+        "textureId": "The_Cousins_4d2432fe"
     },
     "attributes": {
         "maxHealth": 40,

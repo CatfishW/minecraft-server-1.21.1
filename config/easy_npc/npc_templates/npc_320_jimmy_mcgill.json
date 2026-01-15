@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The struggling lawyer who becomes Saul Goodman.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7a6079c2def16f2f.png"
+        "type": "CUSTOM",
+        "textureId": "Jimmy_McGill_f998e992"
     },
     "attributes": {
         "maxHealth": 40,

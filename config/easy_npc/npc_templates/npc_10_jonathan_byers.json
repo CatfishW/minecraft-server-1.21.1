@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Quiet photographer. Courageous outsider.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f604dc4a0df7ca92.png"
+        "type": "CUSTOM",
+        "textureId": "Jonathan_Byers_94493ba3"
     },
     "attributes": {
         "maxHealth": 40,

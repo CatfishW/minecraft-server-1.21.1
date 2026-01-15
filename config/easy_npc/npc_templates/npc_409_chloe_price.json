@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Once a straight-A student, Chloe spiraled into rebellion after her father's death and best friend Max leaving town. She's been obsessively searching for her missing friend Rachel Amber.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7810afe7d3077869.png"
+        "type": "CUSTOM",
+        "textureId": "Chloe_Price_a57d0e00"
     },
     "attributes": {
         "maxHealth": 40,

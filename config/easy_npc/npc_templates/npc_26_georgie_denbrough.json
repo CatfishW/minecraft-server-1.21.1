@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The first victim. In a yellow raincoat.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/79c86123cdc0f800.png"
+        "type": "CUSTOM",
+        "textureId": "Georgie_Denbrough_00bf582a"
     },
     "attributes": {
         "maxHealth": 40,

@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The head of the Davis & Main law firm.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7f1105cb4dbd6374.png"
+        "type": "CUSTOM",
+        "textureId": "Clifford_Main_f0ac4f17"
     },
     "attributes": {
         "maxHealth": 40,

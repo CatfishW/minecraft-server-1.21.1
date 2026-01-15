@@ -4,8 +4,8 @@
     "faction": "bandits",
     "description": "一个手持 AK47 的敌对土匪。",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2020/09/12/namemc-bandit-1-15266483.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Bandit_1c6ebf9d"
     },
     "attributes": {
         "maxHealth": 35,

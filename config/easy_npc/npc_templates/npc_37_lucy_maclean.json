@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Optimistic vault dweller. Okey dokey.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://static.planetminecraft.com/files/image/minecraft/skin/2024/937/skinseedskin-1717541921683-17887845_iso_l.png"
+        "type": "CUSTOM",
+        "textureId": "Lucy_MacLean_ed2fe3b8"
     },
     "attributes": {
         "maxHealth": 40,

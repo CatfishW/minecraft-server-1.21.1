@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Papa. The scientist behind the experiments.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/bfdbf760aabeb725.png"
+        "type": "CUSTOM",
+        "textureId": "Martin_Brenner_b8320e51"
     },
     "attributes": {
         "maxHealth": 40,

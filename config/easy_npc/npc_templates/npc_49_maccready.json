@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Mercenary sharpshooter.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/74a241cff2ecf0fa.png"
+        "type": "CUSTOM",
+        "textureId": "MacCready_5b099247"
     },
     "attributes": {
         "maxHealth": 40,

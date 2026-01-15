@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The scientific genius. Curious and funny.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/e6813a9117d8c79c.png"
+        "type": "CUSTOM",
+        "textureId": "Dustin_Henderson_a14b589d"
     },
     "attributes": {
         "maxHealth": 40,

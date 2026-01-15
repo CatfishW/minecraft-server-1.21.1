@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A high-ranking cartel enforcer, volatile and violent.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f800b8b7c3770587.png"
+        "type": "CUSTOM",
+        "textureId": "Tuco_Salamanca_39fb1585"
     },
     "attributes": {
         "maxHealth": 40,

@@ -1,5 +1,6 @@
 {
     "item.storyadventure.admin_wand": "Admin Wand",
+    "item.storyadventure.camera_wand": "Camera Recording Wand",
     "item.storyadventure.admin_wand.tooltip.title": "Story Adventure System Admin Tool",
     "item.storyadventure.admin_wand.tooltip.right_click": "Right-click to open Admin Dashboard (Sync Triggers)",
     "item.storyadventure.admin_wand.tooltip.shift_right_click": "Shift + Right-click to create trigger zone",

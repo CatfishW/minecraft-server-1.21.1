@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Someone who ventured into the End and returned... changed. Now sees visions of Endermen and speaks of cities floating in the void.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/TheEnderWatcher"
+        "type": "CUSTOM",
+        "textureId": "The_Ender_Watcher_2044b5a3"
     },
     "attributes": {
         "maxHealth": 40,

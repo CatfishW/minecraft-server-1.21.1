@@ -10,7 +10,9 @@
     "/emotes/*",
     "/tacz/*",
     "/config/physicsmod/*.json",
-    "/resourcepacks/*.zip"
+    "/resourcepacks/*.zip",
+    "/config/easy_npc/skin/**",
+    "/config/storyadventure/voiceovers/**"
   ],
   "allowEditsInFiles": [
     "/options.txt",

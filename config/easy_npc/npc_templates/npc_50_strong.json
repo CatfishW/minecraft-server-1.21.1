@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Super Mutant. Looking for milk of kindness.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/4947325ae8f599a5.png"
+        "type": "CUSTOM",
+        "textureId": "Strong_7fa6bbc5"
     },
     "attributes": {
         "maxHealth": 40,

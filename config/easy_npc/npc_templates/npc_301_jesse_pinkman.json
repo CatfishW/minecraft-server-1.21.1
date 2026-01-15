@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A small-time meth cook and dealer.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/867de1a3bb967097.png"
+        "type": "CUSTOM",
+        "textureId": "Jesse_Pinkman_b5e10a33"
     },
     "attributes": {
         "maxHealth": 40,

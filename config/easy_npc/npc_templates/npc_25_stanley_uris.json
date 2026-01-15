@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Logical and skeptical. Bird watcher.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/cb7dfea4512d39e6.png"
+        "type": "CUSTOM",
+        "textureId": "Stanley_Uris_30b12fdc"
     },
     "attributes": {
         "maxHealth": 40,

@@ -4,8 +4,8 @@
     "faction": "guards",
     "description": "A standard town guard armed with a Glock 17.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/06/phase-2-soldier-23772931.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Armed_Police_ac34813e"
     },
     "attributes": {
         "maxHealth": 40,

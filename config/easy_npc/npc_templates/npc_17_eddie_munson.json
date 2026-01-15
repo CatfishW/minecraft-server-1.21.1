@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Hellfire Club leader. Metalhead hero.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/012aaec229f9968c.png"
+        "type": "CUSTOM",
+        "textureId": "Eddie_Munson_b6d74424"
     },
     "attributes": {
         "maxHealth": 40,

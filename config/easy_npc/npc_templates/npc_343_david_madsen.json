@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Chloe's stepfather and head of security at school.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/8ffa2e087c983824.png"
+        "type": "CUSTOM",
+        "textureId": "David_Madsen_269d62fd"
     },
     "attributes": {
         "maxHealth": 40,

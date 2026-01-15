@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Trashmouth. Jokes to hide fear.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f79d51534bf3a348.png"
+        "type": "CUSTOM",
+        "textureId": "Richie_Tozier_c795c7d0"
     },
     "attributes": {
         "maxHealth": 40,

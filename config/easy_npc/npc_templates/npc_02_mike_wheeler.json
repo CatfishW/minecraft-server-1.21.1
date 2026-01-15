@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Leader of the party. Loyal and determined.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/b5c7493bf1360ec8.png"
+        "type": "CUSTOM",
+        "textureId": "Mike_Wheeler_0b7979ec"
     },
     "attributes": {
         "maxHealth": 40,

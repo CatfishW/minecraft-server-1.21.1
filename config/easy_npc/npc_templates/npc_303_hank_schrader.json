@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A DEA agent and Walter's brother-in-law.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/526f904a2639b399.png"
+        "type": "CUSTOM",
+        "textureId": "Hank_Schrader_e3b88358"
     },
     "attributes": {
         "maxHealth": 40,

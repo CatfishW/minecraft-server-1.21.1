@@ -6,12 +6,12 @@
   "hordeMobs": [
     {
       "mobId": "undeadnights:elite_zombie",
-      "spawnChance": "3",
+      "spawnChance": "0",
       "extraSpawnInfo": "none"
     },
     {
       "mobId": "undeadnights:demolition_zombie",
-      "spawnChance": "6",
+      "spawnChance": "0",
       "extraSpawnInfo": "tnt:5"
     }
   ],

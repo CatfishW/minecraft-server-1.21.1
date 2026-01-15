@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Synth detective. Noir style.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7aef81b8199344f5.png"
+        "type": "CUSTOM",
+        "textureId": "Nick_Valentine_33a8e0e8"
     },
     "attributes": {
         "maxHealth": 40,

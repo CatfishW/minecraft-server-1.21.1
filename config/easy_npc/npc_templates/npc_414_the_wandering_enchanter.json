@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A robed figure who appears at random, offering powerful enchantments in exchange for exotic items. No one knows their true face or origin.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/TheWanderingEnchanter"
+        "type": "CUSTOM",
+        "textureId": "The_Wandering_Enchanter_fc0301bd"
     },
     "attributes": {
         "maxHealth": 40,

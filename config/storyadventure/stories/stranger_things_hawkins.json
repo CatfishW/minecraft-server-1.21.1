@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "min_players": 1,
   "max_players": 4,
-  "estimated_duration_minutes": 45,
-  "entry_node": "player_spawn",
+  "estimated_duration_minutes": 25,
+  "entry_node": "intro_cutscene",
   "locations": {
     "start": {
       "dimension": "minecraft:overworld",
@@ -26,36 +26,107 @@
     }
   },
   "nodes": {
+    "intro_cutscene": {
+      "type": "cutscene",
+      "data": {
+        "duration_ticks": 120,
+        "skippable": false,
+        "letterbox": true,
+        "fade_in_ticks": 20,
+        "fade_out_ticks": 20,
+        "on_enter": [
+          {
+            "type": "COMMAND",
+            "command": "storyui hud hide",
+            "as_op": true
+          }
+        ],
+        "camera_path": {
+          "keyframes": [
+            {
+              "position": [
+                947.77,
+                472.68,
+                -962.19
+              ],
+              "rotation": [
+                -296.0,
+                -15.9,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 0,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                946.18,
+                457.78,
+                -981.64
+              ],
+              "rotation": [
+                -218.6,
+                30.6,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                978.18,
+                412.54,
+                -1012.64
+              ],
+              "rotation": [
+                -180.0,
+                2.4,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            }
+          ]
+        }
+      },
+      "edges": [
+        {
+          "target": "player_spawn"
+        }
+      ]
+    },
     "player_spawn": {
       "type": "checkpoint",
       "data": {
         "rewind_anchor": true,
         "save_inventory": true,
-        "message": "欢迎来到霍金斯镇"
+        "message": "欢迎来到霍金斯镇",
+        "on_enter": [
+          {
+            "type": "TELEPORT",
+            "dimension": "minecraft:overworld",
+            "x": 979.903,
+            "y": 409.0,
+            "z": -1017.127
+          },
+          {
+            "type": "TITLE",
+            "title": "怪奇物语",
+            "subtitle": "寻找乔伊斯·拜尔斯"
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§e[任务] §f前往标记位置寻找乔伊斯·拜尔斯"
+          },
+          {
+            "type": "COMMAND",
+            "command": "storyui hud show",
+            "as_op": true
+          }
+        ]
       },
-      "on_enter": [
-        {
-          "type": "TELEPORT",
-          "dimension": "minecraft:overworld",
-          "x": 979.903,
-          "y": 409.0,
-          "z": -1017.127
-        },
-        {
-          "type": "TITLE",
-          "title": "怪奇物语",
-          "subtitle": "寻找乔伊斯·拜尔斯"
-        },
-        {
-          "type": "MESSAGE",
-          "text": "§e[任务] §f前往标记位置寻找乔伊斯·拜尔斯"
-        },
-        {
-          "type": "COMMAND",
-          "command": "storyui hud show",
-          "as_op": true
-        }
-      ],
       "edges": [
         {
           "target": "find_the_boys"
@@ -96,7 +167,8 @@
             "onEnter": [
               {
                 "type": "MESSAGE",
-                "text": "§7[旁白] §f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。"
+                "text": "§7[旁白] §f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
+                "voiceover": "stranger_things_hawkins/bg_story_1_msg_0"
               }
             ]
           }
@@ -104,38 +176,9 @@
       },
       "on_enter": [
         {
-          "type": "SPAWN_NPC",
-          "npc_template": "npc_02_mike_wheeler",
-          "dimension": "minecraft:overworld",
-          "x": 985.0,
-          "y": 409.0,
-          "z": -1045.0,
-          "yaw": 0.0,
-          "pitch": 0.0
-        },
-        {
-          "type": "SPAWN_NPC",
-          "npc_template": "npc_03_dustin_henderson",
-          "dimension": "minecraft:overworld",
-          "x": 986.0,
-          "y": 409.0,
-          "z": -1045.5,
-          "yaw": 45.0,
-          "pitch": 0.0
-        },
-        {
-          "type": "SPAWN_NPC",
-          "npc_template": "npc_04_lucas_sinclair",
-          "dimension": "minecraft:overworld",
-          "x": 984.0,
-          "y": 409.0,
-          "z": -1045.5,
-          "yaw": -45.0,
-          "pitch": 0.0
-        },
-        {
           "type": "MESSAGE",
-          "text": "§e[任务] §f前往地下室和伙伴们商量搜寻威尔的计划"
+          "text": "§e[任务] §f前往地下室和伙伴们商量搜寻威尔的计划",
+          "voiceover": "stranger_things_hawkins/find_the_boys_enter_msg_0"
         }
       ],
       "edges": [
@@ -165,7 +208,8 @@
             "id": "go_to_police",
             "text": "好，我们去警局找霍珀。"
           }
-        ]
+        ],
+        "voiceover": "stranger_things_hawkins/meet_the_boys_voice"
       },
       "edges": [
         {
@@ -213,7 +257,8 @@
             "onEnter": [
               {
                 "type": "MESSAGE",
-                "text": "§7[旁白] §f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。"
+                "text": "§7[旁白] §f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
+                "voiceover": "stranger_things_hawkins/bg_story_2_msg_0"
               }
             ]
           }
@@ -221,18 +266,9 @@
       },
       "on_enter": [
         {
-          "type": "SPAWN_NPC",
-          "npc_template": "npc_06_jim_hopper",
-          "dimension": "minecraft:overworld",
-          "x": 1005.0,
-          "y": 409.0,
-          "z": -1080.0,
-          "yaw": 90.0,
-          "pitch": 0.0
-        },
-        {
           "type": "MESSAGE",
-          "text": "§e[任务] §f询问霍珀警长关于搜索的进展"
+          "text": "§e[任务] §f询问霍珀警长关于搜索的进展",
+          "voiceover": "stranger_things_hawkins/find_hopper_enter_msg_0"
         }
       ],
       "edges": [
@@ -262,7 +298,8 @@
             "id": "go_to_joyce",
             "text": "明白了，我们这就去乔伊斯家。"
           }
-        ]
+        ],
+        "voiceover": "stranger_things_hawkins/meet_hopper_voice"
       },
       "edges": [
         {
@@ -310,24 +347,14 @@
             "onEnter": [
               {
                 "type": "MESSAGE",
-                "text": "§7[旁白] §f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生..."
+                "text": "§7[旁白] §f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
+                "voiceover": "stranger_things_hawkins/bg_story_3_msg_0"
               }
             ]
           }
         ]
       },
-      "on_enter": [
-        {
-          "type": "SPAWN_NPC",
-          "npc_template": "npc_07_joyce_byers",
-          "dimension": "minecraft:overworld",
-          "x": 1029.863,
-          "y": 409.0,
-          "z": -1116.588,
-          "yaw": 180.0,
-          "pitch": 0.0
-        }
-      ],
+      "on_enter": [],
       "edges": [
         {
           "target": "meet_joyce_new",
@@ -365,7 +392,8 @@
             "id": "where",
             "text": "我应该去哪里找线索？"
           }
-        ]
+        ],
+        "voiceover": "stranger_things_hawkins/meet_joyce_new_voice"
       },
       "edges": [
         {
@@ -397,18 +425,18 @@
         "waypoint": {
           "id": "clue_location",
           "label": "线索位置",
-          "x": 1023.965,
-          "y": 412.0,
-          "z": -1132.124,
+          "x": 988.194,
+          "y": 409.0,
+          "z": -1123.3,
           "icon": "clue",
           "color": "0xFF44CCFF"
         },
         "objectives": [
           {
             "type": "REACH_LOCATION",
-            "target_x": 1023.965,
-            "target_y": 412.0,
-            "target_z": -1132.124,
+            "target_x": 988.194,
+            "target_y": 409.0,
+            "target_z": -1123.3,
             "radius": 5.0,
             "description": "检查可疑区域"
           }
@@ -440,15 +468,15 @@
         "enemies": [
           {
             "type": "minecraft:zombie",
-            "count": 4,
-            "spawn_radius": 5
+            "count": 30,
+            "spawn_radius": 10
           }
         ],
         "arena_bounds": {
           "center": {
-            "x": 1023.965,
+            "x": 988.194,
             "y": 409.0,
-            "z": -1132.124
+            "z": -1123.3
           },
           "radius": 30
         }
@@ -456,16 +484,249 @@
       "on_enter": [
         {
           "type": "MESSAGE",
-          "text": "§c§l[警告] §4魔怪大军出现了！准备战斗！"
+          "text": "§c§l[警告] §4魔怪大军出现了！准备战斗！",
+          "voiceover": "stranger_things_hawkins/demogorgon_horde_enter_msg_0"
         },
         {
           "type": "PLAY_SOUND",
           "sound": "minecraft:entity.wither.spawn"
-        },
+        }
+      ],
+      "edges": [
         {
-          "type": "COMMAND",
-          "command": "tellraw @a {\"text\":\"[怪奇物语] \",\"color\":\"red\",\"extra\":[{\"text\":\"魔怪从颠倒世界涌出！消灭它们！\",\"color\":\"white\"}]}",
-          "as_op": true
+          "target": "investigate_residue",
+          "conditions": [
+            {
+              "type": "COMBAT_WON"
+            }
+          ]
+        }
+      ]
+    },
+    "investigate_residue": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "追踪踪迹",
+        "description": "虽然击退了第一波进攻，但更多的怪物似乎正从森林深处涌出。顺着黑色黏液寻找源头。",
+        "waypoint": {
+          "id": "slime_trail",
+          "label": "黑色黏液",
+          "x": 1040.9,
+          "y": 409.0,
+          "z": -1158.3,
+          "icon": "clue",
+          "color": "0xFF00FF00"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": 1040.9,
+            "target_y": 409.0,
+            "target_z": -1158.3,
+            "radius": 5.0,
+            "description": "追踪黏液"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "mirkwood_portal",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "mirkwood_portal": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "幽暗密林深处",
+        "description": "在这里，现实与虚幻的边界变得模糊。寻找那个被称为“门”的地方。",
+        "waypoint": {
+          "id": "the_gate",
+          "label": "时空裂缝",
+          "x": 1046.8,
+          "y": 409.0,
+          "z": -1173.0,
+          "icon": "danger",
+          "color": "0xFFFF0000"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": 1046.8,
+            "target_y": 409.0,
+            "target_z": -1173.0,
+            "radius": 5.0,
+            "description": "接触裂缝"
+          }
+        ]
+      },
+      "on_enter": [
+        {
+          "type": "MESSAGE",
+          "text": "§7[旁白] §f空气变得凝重，你能听到来自另一个世界的低语...",
+          "voiceover": "stranger_things_hawkins/mirkwood_portal_enter_msg_0"
+        }
+      ],
+      "edges": [
+        {
+          "target": "enter_upside_down",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "enter_upside_down": {
+      "type": "checkpoint",
+      "data": {
+        "rewind_anchor": true,
+        "message": "跨越边界",
+        "on_enter": [
+          {
+            "type": "TITLE",
+            "title": "§8颠倒世界",
+            "subtitle": "寻找威尔"
+          },
+          {
+            "type": "TELEPORT",
+            "dimension": "minecraft:overworld",
+            "x": 692.423,
+            "y": 409.0,
+            "z": -914.14
+          },
+          {
+            "type": "COMMAND",
+            "command": "effect give @a minecraft:blindness 2 1",
+            "as_op": true
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§8[提示] §7你进入了颠倒世界。这里充满了危险，快找到威尔！"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "search_castle_byers"
+        }
+      ]
+    },
+    "search_castle_byers": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "拜尔斯城堡",
+        "description": "威尔一定躲在他最熟悉的避难所。在充满藤蔓的丛林中寻找那座小木屋。",
+        "waypoint": {
+          "id": "castle_byers",
+          "label": "拜尔斯城堡",
+          "x": 722.4,
+          "y": 409.0,
+          "z": -944.1,
+          "icon": "clue",
+          "color": "0xFF33CCFF"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": 722.4,
+            "target_y": 409.0,
+            "target_z": -944.1,
+            "radius": 5.0,
+            "description": "寻找木屋"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "meet_will_and_eleven",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "meet_will_and_eleven": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_05_will_byers",
+        "dialog_set": "main",
+        "npc_name": "威尔·拜尔斯",
+        "lines": [
+          "你们终于来了...它一直就在我身后...",
+          "那是...那是大魔王！"
+        ],
+        "choices": [
+          {
+            "id": "protect",
+            "text": "别怕，我们会保护你的！"
+          }
+        ],
+        "voiceover": "stranger_things_hawkins/meet_will_and_eleven_voice"
+      },
+      "on_enter": [
+        {
+          "type": "SPAWN_NPC",
+          "npc_template": "npc_01_eleven",
+          "x": 724.4,
+          "y": 409.0,
+          "z": -946.1
+        }
+      ],
+      "edges": [
+        {
+          "target": "final_boss_demogorgon",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "protect"
+            }
+          ]
+        }
+      ]
+    },
+    "final_boss_demogorgon": {
+      "type": "combat",
+      "data": {
+        "combat_type": "BOSS",
+        "title": "最终之战：大祭司魔怪",
+        "description": "真正的魔怪现身了！为了救出威尔，必须彻底消灭它！",
+        "enemies": [
+          {
+            "type": "minecraft:wither",
+            "count": 10,
+            "spawn_radius": 5
+          },
+          {
+            "type": "minecraft:phantom",
+            "count": 10,
+            "spawn_radius": 3
+          }
+        ],
+        "arena_bounds": {
+          "center": {
+            "x": 722.4,
+            "y": 409.0,
+            "z": -944.1
+          },
+          "radius": 50
+        }
+      },
+      "on_enter": [
+        {
+          "type": "TITLE",
+          "title": "§4魔王降临",
+          "subtitle": "决死一战"
         }
       ],
       "edges": [
@@ -483,29 +744,40 @@
       "type": "cutscene",
       "data": {
         "duration_ticks": 200,
-        "message": "你成功击退了魔怪大军！\\n\\n霍金斯镇暂时安全了...\\n\\n恭喜完成任务！",
+        "message": "你成功救出了威尔，并将魔怪赶回了阴影！\\n\\n霍金斯终于恢复了平静...暂时。\\n\\n恭喜完成任务！",
         "is_ending": true,
         "ending_type": "success",
         "rewards": [
           {
             "type": "EXPERIENCE",
-            "amount": 500000
+            "amount": 10000
           },
           {
             "type": "COIN",
-            "amount": 5
+            "amount": 4
+          },
+          {
+            "type": "ITEM",
+            "item": "minecraft:netherite_ingot",
+            "amount": 1
           }
-        ]
+        ],
+        "voiceover": "stranger_things_hawkins/instance_complete_voice"
       },
       "on_enter": [
         {
           "type": "TITLE",
-          "title": "§a任务完成！",
-          "subtitle": "霍金斯镇已获救"
+          "title": "§6传奇终结",
+          "subtitle": "霍金斯英雄"
         },
         {
           "type": "PLAY_SOUND",
           "sound": "minecraft:ui.toast.challenge_complete"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§e[成就] §f你已救出了威尔·拜尔斯！",
+          "voiceover": "stranger_things_hawkins/instance_complete_enter_msg_2"
         }
       ]
     }

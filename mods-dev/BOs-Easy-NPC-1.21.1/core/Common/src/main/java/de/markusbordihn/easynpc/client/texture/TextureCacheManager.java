@@ -144,7 +144,7 @@ public class TextureCacheManager {
     try {
       return UUID.fromString(fileName.substring(0, fileName.indexOf('.')));
     } catch (IllegalArgumentException e) {
-      return UUID.nameUUIDFromBytes(fileName.getBytes());
+      return UUID.nameUUIDFromBytes(fileName.getBytes(java.nio.charset.StandardCharsets.UTF_8));
     }
   }
 }

@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Mike's daughter-in-law.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/804af7b25cff6097.png"
+        "type": "CUSTOM",
+        "textureId": "Stacey_Ehrmantraut_e6a51676"
     },
     "attributes": {
         "maxHealth": 40,

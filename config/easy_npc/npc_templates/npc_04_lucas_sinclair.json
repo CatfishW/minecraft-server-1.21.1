@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The ranger. Realistic and brave.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/06ec69590fcbcca1.png"
+        "type": "CUSTOM",
+        "textureId": "Lucas_Sinclair_eb0ffea3"
     },
     "attributes": {
         "maxHealth": 40,

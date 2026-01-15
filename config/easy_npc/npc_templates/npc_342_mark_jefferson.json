@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A famous photographer and teacher at Blackwell Academy.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/cc48e4323e539253.png"
+        "type": "CUSTOM",
+        "textureId": "Mark_Jefferson_4dbb75d0"
     },
     "attributes": {
         "maxHealth": 40,

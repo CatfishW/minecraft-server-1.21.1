@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "掌握时空传送技艺的神秘行者，可以帮助旅行者到达不同的地点。",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/06/black-hole-23773740.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Space_Walker_15299f2b"
     },
     "attributes": {
         "maxHealth": 100,

@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A partner at the prestigious HHM law firm.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f388f85d00826f01.png"
+        "type": "CUSTOM",
+        "textureId": "Howard_Hamlin_83325c3e"
     },
     "attributes": {
         "maxHealth": 40,

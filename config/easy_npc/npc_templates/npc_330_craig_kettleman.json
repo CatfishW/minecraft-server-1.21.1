@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A former county treasurer involved in embezzlement.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/462f6aba09832168.png"
+        "type": "CUSTOM",
+        "textureId": "Craig_Kettleman_1e9b8dfb"
     },
     "attributes": {
         "maxHealth": 40,

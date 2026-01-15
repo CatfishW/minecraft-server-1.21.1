@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Leader of the brotherhood. Strict.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/27cb48254b27d960.png"
+        "type": "CUSTOM",
+        "textureId": "Elder_Maxson_ecbd4dc1"
     },
     "attributes": {
         "maxHealth": 40,

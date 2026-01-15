@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Novus 领域的资深向导，似乎有着不为人知的过去。",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2022/12/03/001-21108673.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Henry_357c46ac"
     },
     "attributes": {
         "maxHealth": 100,

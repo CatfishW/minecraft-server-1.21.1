@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Ghoul mayor of Goodneighbor.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/69cbe298a7f1f67e.png"
+        "type": "CUSTOM",
+        "textureId": "Hancock_86e9f0fa"
     },
     "attributes": {
         "maxHealth": 40,

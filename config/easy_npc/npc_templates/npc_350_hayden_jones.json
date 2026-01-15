@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A student at Blackwell Academy and member of the Vortex Club.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/4260aaf705c8d417.png"
+        "type": "CUSTOM",
+        "textureId": "Hayden_Jones_94efe616"
     },
     "attributes": {
         "maxHealth": 40,

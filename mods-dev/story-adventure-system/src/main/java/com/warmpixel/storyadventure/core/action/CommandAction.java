@@ -3,6 +3,8 @@ package com.warmpixel.storyadventure.core.action;
 import com.google.gson.JsonObject;
 import net.minecraft.server.level.ServerPlayer;
 
+import net.minecraft.commands.CommandSourceStack;
+import java.util.UUID;
 import java.util.List;
 
 /**
@@ -27,6 +29,12 @@ public class CommandAction implements NodeAction {
         return "COMMAND";
     }
     
+    private UUID instanceId;
+
+    public void setInstanceId(UUID instanceId) {
+        this.instanceId = instanceId;
+    }
+    
     @Override
     public void execute(List<ServerPlayer> players) {
         if (players.isEmpty()) return;
@@ -41,11 +49,20 @@ public class CommandAction implements NodeAction {
                 .replace("{x}", String.format("%.2f", player.getX()))
                 .replace("{y}", String.format("%.2f", player.getY()))
                 .replace("{z}", String.format("%.2f", player.getZ()));
+                
+            if (instanceId != null) {
+                processedCmd = processedCmd.replace("{instance_id}", instanceId.toString());
+            }
             
-            server.getCommands().performPrefixedCommand(
-                asOp ? server.createCommandSourceStack() : player.createCommandSourceStack(),
-                processedCmd
-            );
+            CommandSourceStack source = asOp ? server.createCommandSourceStack() : player.createCommandSourceStack();
+            // Suppress output to prevent chat spam
+            source = source.withSuppressedOutput();
+            // Ensure permission level if OP
+            if (asOp) {
+                source = source.withPermission(2);
+            }
+            
+            server.getCommands().performPrefixedCommand(source, processedCmd);
         }
     }
     

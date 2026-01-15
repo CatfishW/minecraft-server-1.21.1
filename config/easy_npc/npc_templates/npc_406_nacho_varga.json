@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A smart and capable member of the Salamanca organization who desperately wants out. His aging father runs an upholstery shop and knows nothing of his criminal life.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/13f7a765e6ae8fe6.png"
+        "type": "CUSTOM",
+        "textureId": "Nacho_Varga_68995da5"
     },
     "attributes": {
         "maxHealth": 40,

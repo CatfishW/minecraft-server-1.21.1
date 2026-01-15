@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "One of the silent and deadly 'Cousins'.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/98437420a7a5b586.png"
+        "type": "CUSTOM",
+        "textureId": "Leonel_Salamanca_35d134f7"
     },
     "attributes": {
         "maxHealth": 40,

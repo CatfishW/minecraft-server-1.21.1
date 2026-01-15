@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "A friendly merchant selling various goods",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/08/fancy-merchant-minecraft-23778573.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Merchant_a9e19d90"
     },
     "dialog": {
         "greeting": "欢迎光临，旅人！需要什么帮助？",

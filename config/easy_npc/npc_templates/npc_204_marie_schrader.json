@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Skyler's sister, a hospital radiologic technologist.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f709974aa184e440.png"
+        "type": "CUSTOM",
+        "textureId": "Marie_Schrader_c2bab051"
     },
     "attributes": {
         "maxHealth": 40,

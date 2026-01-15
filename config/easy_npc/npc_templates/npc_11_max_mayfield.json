@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The zoomer. Tough and skateboarder.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/1d18ee404659740f.png"
+        "type": "CUSTOM",
+        "textureId": "Max_Mayfield_08b5eae4"
     },
     "attributes": {
         "maxHealth": 40,

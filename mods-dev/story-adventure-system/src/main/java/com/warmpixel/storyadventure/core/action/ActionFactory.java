@@ -19,6 +19,7 @@ public class ActionFactory {
         register("MESSAGE", MessageAction::fromJson);
         register("TITLE", TitleAction::fromJson);
         register("PLAY_SOUND", PlaySoundAction::fromJson);
+        register("PLAY_VOICEOVER", PlayVoiceoverAction::fromJson);
         register("SET_FLAG", SetFlagAction::fromJson);
         register("TELEPORT", TeleportAction::fromJson);
         register("GIVE_ITEM", GiveItemAction::fromJson);
@@ -63,6 +64,7 @@ public class ActionFactory {
             case "MESSAGE" -> "发送消息";
             case "TITLE" -> "显示标题";
             case "PLAY_SOUND" -> "播放音效";
+            case "PLAY_VOICEOVER" -> "播放语音";
             case "SET_FLAG" -> "设置标记";
             case "TELEPORT" -> "传送玩家";
             case "SPAWN_NPC" -> "生成NPC";
@@ -88,6 +90,10 @@ public class ActionFactory {
                 obj.addProperty("subtitle", "副标题");
             }
             case "PLAY_SOUND" -> obj.addProperty("sound", "minecraft:entity.experience_orb.pickup");
+            case "PLAY_VOICEOVER" -> {
+                obj.addProperty("sound", "story_id/character/line_001");
+                obj.addProperty("character", "narrator");
+            }
             case "SET_FLAG" -> {
                 obj.addProperty("flag", "flag_name");
                 obj.addProperty("value", true);

@@ -103,7 +103,11 @@ public class TemplateCommand {
     return Commands.literal("spawn")
         .then(Commands.argument("template_name", StringArgumentType.word())
             .suggests(TemplateCommand::suggestTemplateNames)
-            .executes(TemplateCommand::executeSpawn));
+            .executes(TemplateCommand::executeSpawn)
+            .then(Commands.argument("pos", net.minecraft.commands.arguments.coordinates.Vec3Argument.vec3())
+                .executes(ctx -> executeSpawnAtPos(ctx, null))
+                .then(Commands.argument("nbt", net.minecraft.commands.arguments.CompoundTagArgument.compoundTag())
+                    .executes(ctx -> executeSpawnAtPos(ctx, net.minecraft.commands.arguments.CompoundTagArgument.getCompoundTag(ctx, "nbt"))))));
   }
 
   /**
@@ -517,6 +521,45 @@ public class TemplateCommand {
     }
     
     source.sendSuccess(() -> Component.literal("§7Tip: Use client key N to toggle HUD overlay"), false);
+    return Command.SINGLE_SUCCESS;
+  }
+  /**
+   * Execute the spawn command at a specific position with optional NBT.
+   */
+  private static int executeSpawnAtPos(CommandContext<CommandSourceStack> context, net.minecraft.nbt.CompoundTag nbt) throws CommandSyntaxException {
+    CommandSourceStack source = context.getSource();
+    String templateName = StringArgumentType.getString(context, "template_name");
+    net.minecraft.world.phys.Vec3 pos = net.minecraft.commands.arguments.coordinates.Vec3Argument.getVec3(context, "pos");
+    
+    // Check if template exists
+    if (!NPCTemplateManager.hasTemplate(templateName)) {
+      source.sendFailure(Component.literal("§cTemplate not found: " + templateName));
+      source.sendFailure(Component.literal("§7Use /easy_npc template list to see available templates."));
+      return 0;
+    }
+    
+    // Spawn NPC entity
+    Entity entity = NPCTemplateManager.spawnEntityFromTemplate(source.getLevel(), templateName, pos.x, pos.y, pos.z);
+    
+    if (entity != null) {
+      // Apply NBT if provided
+      if (nbt != null) {
+        net.minecraft.nbt.CompoundTag entityData = new net.minecraft.nbt.CompoundTag();
+        entity.saveWithoutId(entityData);
+        entityData.merge(nbt);
+        entity.load(entityData);
+      }
+      
+      source.sendSuccess(() -> Component.literal(
+          String.format("§aSpawned NPC from template: §f%s§a at %.1f, %.1f, %.1f", 
+          templateName, pos.x, pos.y, pos.z)), true);
+      log.info("{} {} spawned NPC from template '{}' at {} with nbt {}", 
+          LOG_PREFIX, source.getTextName(), templateName, pos, nbt);
+    } else {
+      source.sendFailure(Component.literal("§cFailed to spawn NPC from template: " + templateName));
+      return 0;
+    }
+    
     return Command.SINGLE_SUCCESS;
   }
 }

@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The leader of the 'Vortex Club' and school bully.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7fb423c4a69c29d0.png"
+        "type": "CUSTOM",
+        "textureId": "Victoria_Chase_2343fd54"
     },
     "attributes": {
         "maxHealth": 40,

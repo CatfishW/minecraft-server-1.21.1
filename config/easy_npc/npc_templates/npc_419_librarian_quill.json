@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The keeper of the village's vast library, containing books on every craft and enchantment. Trades knowledge for rare items and experiences.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/LibrarianQuill"
+        "type": "CUSTOM",
+        "textureId": "Librarian_Quill_8a487422"
     },
     "attributes": {
         "maxHealth": 40,

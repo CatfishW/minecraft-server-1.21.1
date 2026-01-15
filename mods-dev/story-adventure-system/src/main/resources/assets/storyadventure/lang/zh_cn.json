@@ -1,5 +1,6 @@
 {
     "item.storyadventure.admin_wand": "管理员法杖",
+    "item.storyadventure.camera_wand": "摄像机录制魔杖",
     "item.storyadventure.admin_wand.tooltip.title": "故事冒险系统管理工具",
     "item.storyadventure.admin_wand.tooltip.right_click": "右键打开管理员控制台 (同步触发器)",
     "item.storyadventure.admin_wand.tooltip.shift_right_click": "Shift+右键创建触发器区域",

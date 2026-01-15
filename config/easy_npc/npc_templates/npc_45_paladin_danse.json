@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Brotherhood of Steel Paladin.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/629b21cd5ec72322.png"
+        "type": "CUSTOM",
+        "textureId": "Paladin_Danse_60d700d1"
     },
     "attributes": {
         "maxHealth": 40,

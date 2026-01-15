@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A manipulative and entitled mother.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/78fde0361cbbfe8d.png"
+        "type": "CUSTOM",
+        "textureId": "Betsy_Kettleman_220a6d05"
     },
     "attributes": {
         "maxHealth": 40,

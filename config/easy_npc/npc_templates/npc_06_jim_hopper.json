@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Police Chief. Grumpy but protective.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2019/04/26/hopper-skin-fortnite-12954643.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Jim_Hopper_420d1d50"
     },
     "attributes": {
         "maxHealth": 40,

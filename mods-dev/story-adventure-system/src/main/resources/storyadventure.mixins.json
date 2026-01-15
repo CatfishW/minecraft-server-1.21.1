@@ -4,7 +4,14 @@
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
     "client": [
-        "GameRendererAccessor"
+        "GameRendererAccessor",
+        "CinematicGameRendererMixin",
+        "CinematicCameraMixin",
+        "CinematicInputMixin",
+        "CinematicMinecraftMixin",
+        "CinematicGuiMixin",
+        "CinematicItemInHandRendererMixin",
+        "SoundBufferLibraryMixin"
     ],
     "server": [],
     "injectors": {

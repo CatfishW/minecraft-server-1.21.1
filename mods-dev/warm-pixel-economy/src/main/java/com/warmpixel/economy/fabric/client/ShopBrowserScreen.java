@@ -59,13 +59,16 @@ public class ShopBrowserScreen extends AbstractContainerScreen<ShopMenu> {
         guiGraphics.fill(pageX - 3, titleLabelY - 1, imageWidth - 9, titleLabelY + 9, 0x22FFFFFF);
         guiGraphics.drawString(font, pageText, pageX, titleLabelY, 0x7EB8E8, false);
         
+        // Render category and search labels in the gap row (Row 4)
+        int labelY = 95; // Row 4 starts at 90
         if (!menu.category().isBlank()) {
             Component categoryLabel = Component.literal("§7[§b" + menu.category() + "§7]");
-            guiGraphics.drawString(font, categoryLabel, titleLabelX, titleLabelY + 12, 0xB7C0C8, false);
+            guiGraphics.drawString(font, categoryLabel, titleLabelX, labelY, 0xB7C0C8, false);
         }
         if (!menu.query().isBlank()) {
             Component searchLabel = Component.literal("§7🔍 §f" + menu.query());
-            guiGraphics.drawString(font, searchLabel, titleLabelX, titleLabelY + 22, 0xB7C0C8, false);
+            int searchX = imageWidth - font.width(searchLabel) - 12;
+            guiGraphics.drawString(font, searchLabel, searchX, labelY, 0xB7C0C8, false);
         }
         
         // Styled hint at bottom
@@ -82,10 +85,11 @@ public class ShopBrowserScreen extends AbstractContainerScreen<ShopMenu> {
 
     private void renderOfferOverlays(GuiGraphics guiGraphics) {
         List<ShopOfferView> offers = menu.offerViews();
-        int count = Math.min(offers.size(), ShopMenu.OFFER_SLOTS);
+        int[] offerSlots = menu.getOfferSlotMap();
+        int count = Math.min(offers.size(), offerSlots.length);
         for (int i = 0; i < count; i++) {
             ShopOfferView offer = offers.get(i);
-            Slot slot = menu.slots.get(i);
+            Slot slot = menu.slots.get(offerSlots[i]);
             int x = leftPos + slot.x;
             int y = topPos + slot.y;
             
@@ -109,7 +113,19 @@ public class ShopBrowserScreen extends AbstractContainerScreen<ShopMenu> {
     }
 
     private void renderHoverHighlight(GuiGraphics guiGraphics, float partialTick) {
-        if (hoveredSlot == null || hoveredSlot.index >= ShopMenu.OFFER_SLOTS) {
+        if (hoveredSlot == null) {
+            return;
+        }
+        
+        boolean isOfferSlot = false;
+        for (int slotId : menu.getOfferSlotMap()) {
+            if (slotId == hoveredSlot.index) {
+                isOfferSlot = true;
+                break;
+            }
+        }
+        
+        if (!isOfferSlot) {
             return;
         }
         // Warm golden pulse effect instead of gray

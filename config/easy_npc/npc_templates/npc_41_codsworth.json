@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Mr Handy robot butler.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/6b3680af9c116aec.png"
+        "type": "CUSTOM",
+        "textureId": "Codsworth_f5e57f34"
     },
     "attributes": {
         "maxHealth": 40,

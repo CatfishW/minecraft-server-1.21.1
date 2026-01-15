@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Victim of hate crime in Derry.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/9d7cc175203897b0.png"
+        "type": "CUSTOM",
+        "textureId": "Adrian_Mellon_3390e9c4"
     },
     "attributes": {
         "maxHealth": 40,

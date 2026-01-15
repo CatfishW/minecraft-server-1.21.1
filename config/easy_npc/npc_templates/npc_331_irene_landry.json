@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A resident of Sandpiper Crossing.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/61baa518b290e9ee.png"
+        "type": "CUSTOM",
+        "textureId": "Irene_Landry_4f2fc496"
     },
     "attributes": {
         "maxHealth": 40,

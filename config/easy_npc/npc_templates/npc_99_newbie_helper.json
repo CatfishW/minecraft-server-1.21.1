@@ -4,8 +4,8 @@
     "actionPermissionLevel": 2,
     "description": "发放新手礼包的NPC。每位玩家限领一次。",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://minotar.net/skin/Steve.png"
+        "type": "CUSTOM",
+        "textureId": "Starter_Helper_a0f64e13"
     },
     "attributes": {
         "maxHealth": 40,

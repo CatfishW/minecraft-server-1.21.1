@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The babysitter. Brave with a bat.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/cc92196b34b678c5.png"
+        "type": "CUSTOM",
+        "textureId": "Steve_Harrington_85451418"
     },
     "attributes": {
         "maxHealth": 40,

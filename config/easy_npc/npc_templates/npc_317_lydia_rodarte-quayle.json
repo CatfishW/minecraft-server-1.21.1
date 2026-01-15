@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A high-level executive involved in the meth trade.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/5c48b013488d7aa6.png"
+        "type": "CUSTOM",
+        "textureId": "Lydia_RodarteQuayle_e02cd3fa"
     },
     "attributes": {
         "maxHealth": 40,

@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A former student of Walter White who was already involved in the drug trade. Despite his street-smart exterior, Jesse has a strong moral compass and genuinely cares about children and the innocent.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/867de1a3bb967097.png"
+        "type": "CUSTOM",
+        "textureId": "Jesse_Pinkman_b5e10a33"
     },
     "attributes": {
         "maxHealth": 40,

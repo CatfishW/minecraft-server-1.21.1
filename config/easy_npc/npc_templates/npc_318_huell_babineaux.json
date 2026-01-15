@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Saul's personal bodyguard and pickpocket.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/11b1d86c5f0307fa.png"
+        "type": "CUSTOM",
+        "textureId": "Huell_Babineaux_a11bc599"
     },
     "attributes": {
         "maxHealth": 40,

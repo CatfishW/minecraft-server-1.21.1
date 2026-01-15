@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Possesses psychokinetic abilities. Mysterious and powerful.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f64b2c03440bf93b.png"
+        "type": "CUSTOM",
+        "textureId": "Eleven_1846a3f3"
     },
     "attributes": {
         "maxHealth": 40,

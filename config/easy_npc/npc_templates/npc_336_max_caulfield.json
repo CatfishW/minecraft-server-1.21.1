@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A high school student who can rewind time.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/1d18ee404659740f.png"
+        "type": "CUSTOM",
+        "textureId": "Max_Mayfield_08b5eae4"
     },
     "attributes": {
         "maxHealth": 40,

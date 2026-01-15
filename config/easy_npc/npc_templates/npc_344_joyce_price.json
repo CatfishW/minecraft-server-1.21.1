@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Chloe's mother and owner of the local diner.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/cff1ed5c783cb9cf.png"
+        "type": "CUSTOM",
+        "textureId": "Joyce_Byers_03fb962b"
     },
     "attributes": {
         "maxHealth": 40,

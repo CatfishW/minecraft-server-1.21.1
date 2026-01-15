@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A troubled student from a rich and powerful family.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f5e7b3b473ca8846.png"
+        "type": "CUSTOM",
+        "textureId": "Nathan_Prescott_5e04acf5"
     },
     "attributes": {
         "maxHealth": 40,

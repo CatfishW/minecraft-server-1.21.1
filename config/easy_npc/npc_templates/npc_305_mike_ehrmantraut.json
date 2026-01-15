@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A former police officer turned fixer.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/894c9e2632b2d13d.png"
+        "type": "CUSTOM",
+        "textureId": "Mike_Ehrmantraut_53c2c1d5"
     },
     "attributes": {
         "maxHealth": 40,

@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Adrian's partner.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c7dc91092f79bce1.png"
+        "type": "CUSTOM",
+        "textureId": "Don_Hagarty_1a583a97"
     },
     "attributes": {
         "maxHealth": 40,

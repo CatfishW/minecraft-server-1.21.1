@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Minuteman. Another settlement needs help.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c5f9d97bab1a0ff0.png"
+        "type": "CUSTOM",
+        "textureId": "Preston_Garvey_7c934b1c"
     },
     "attributes": {
         "maxHealth": 40,

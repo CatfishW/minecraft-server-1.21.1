@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The school janitor with a mystical perspective.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/628818aa2d4a59a3.png"
+        "type": "CUSTOM",
+        "textureId": "Samuel_Raymond_2157cfea"
     },
     "attributes": {
         "maxHealth": 40,

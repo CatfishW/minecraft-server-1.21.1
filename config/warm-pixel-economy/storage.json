@@ -1,7 +1,7 @@
 {
   "shopOffers": {
-    "df079431-7349-4e6f-b0c7-27a2bd7523d2": {
-      "offerId": "df079431-7349-4e6f-b0c7-27a2bd7523d2",
+    "96a01682-0ef0-4d58-957d-df095be2d6c0": {
+      "offerId": "96a01682-0ef0-4d58-957d-df095be2d6c0",
       "shopId": "admin",
       "registryId": "minecraft:cobblestone",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -15,8 +15,8 @@
       "category": "Building",
       "version": 0
     },
-    "e78ef1fe-a53f-4833-b07c-2c065e46aef7": {
-      "offerId": "e78ef1fe-a53f-4833-b07c-2c065e46aef7",
+    "46a2ca74-dbb5-452a-83d4-b05df3cfed9d": {
+      "offerId": "46a2ca74-dbb5-452a-83d4-b05df3cfed9d",
       "shopId": "admin",
       "registryId": "minecraft:stone",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -30,8 +30,8 @@
       "category": "Building",
       "version": 0
     },
-    "76a517a4-7c2d-4a87-bd42-34633b615bbc": {
-      "offerId": "76a517a4-7c2d-4a87-bd42-34633b615bbc",
+    "84e413c7-71aa-4140-8db9-961031fe1a1f": {
+      "offerId": "84e413c7-71aa-4140-8db9-961031fe1a1f",
       "shopId": "admin",
       "registryId": "minecraft:stone_bricks",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -45,8 +45,53 @@
       "category": "Building",
       "version": 0
     },
-    "a552365d-0922-424d-8576-68de787ff384": {
-      "offerId": "a552365d-0922-424d-8576-68de787ff384",
+    "0876e3eb-b7e7-4f11-b209-7896a3845cd5": {
+      "offerId": "0876e3eb-b7e7-4f11-b209-7896a3845cd5",
+      "shopId": "admin",
+      "registryId": "minecraft:mossy_cobblestone",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:mossy_cobblestone\"}",
+      "count": 1,
+      "price": 15,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "33b965b4-4cd5-4abe-a774-d9a5c3a5124c": {
+      "offerId": "33b965b4-4cd5-4abe-a774-d9a5c3a5124c",
+      "shopId": "admin",
+      "registryId": "minecraft:mossy_stone_bricks",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:mossy_stone_bricks\"}",
+      "count": 1,
+      "price": 18,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "d9923255-e8ec-4164-8d9e-5203415c0293": {
+      "offerId": "d9923255-e8ec-4164-8d9e-5203415c0293",
+      "shopId": "admin",
+      "registryId": "minecraft:cracked_stone_bricks",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:cracked_stone_bricks\"}",
+      "count": 1,
+      "price": 15,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "3fb9914d-3b3e-48a8-9562-705b231e9a28": {
+      "offerId": "3fb9914d-3b3e-48a8-9562-705b231e9a28",
       "shopId": "admin",
       "registryId": "minecraft:dirt",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -60,8 +105,8 @@
       "category": "Building",
       "version": 0
     },
-    "926189ab-a3c9-4e40-9b0a-03153a532120": {
-      "offerId": "926189ab-a3c9-4e40-9b0a-03153a532120",
+    "b7f69584-2aae-423d-8cb1-a74816d6ac41": {
+      "offerId": "b7f69584-2aae-423d-8cb1-a74816d6ac41",
       "shopId": "admin",
       "registryId": "minecraft:grass_block",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -75,8 +120,8 @@
       "category": "Building",
       "version": 0
     },
-    "5aa2a8fd-a32e-472f-8bfc-edeb8490d98e": {
-      "offerId": "5aa2a8fd-a32e-472f-8bfc-edeb8490d98e",
+    "c13a8253-e7e4-403c-938f-1cc853070dab": {
+      "offerId": "c13a8253-e7e4-403c-938f-1cc853070dab",
       "shopId": "admin",
       "registryId": "minecraft:sand",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -90,8 +135,23 @@
       "category": "Building",
       "version": 0
     },
-    "e8db7979-667e-456d-af9b-0be74809af7e": {
-      "offerId": "e8db7979-667e-456d-af9b-0be74809af7e",
+    "e9a1580e-31a7-46b6-88fe-e3b4da7d914b": {
+      "offerId": "e9a1580e-31a7-46b6-88fe-e3b4da7d914b",
+      "shopId": "admin",
+      "registryId": "minecraft:red_sand",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:red_sand\"}",
+      "count": 1,
+      "price": 8,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "7855780d-5890-4b5e-8a1b-5fd44851bbdc": {
+      "offerId": "7855780d-5890-4b5e-8a1b-5fd44851bbdc",
       "shopId": "admin",
       "registryId": "minecraft:gravel",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -105,8 +165,8 @@
       "category": "Building",
       "version": 0
     },
-    "f9e4128d-f11c-4b63-99a2-a88ea5b76024": {
-      "offerId": "f9e4128d-f11c-4b63-99a2-a88ea5b76024",
+    "70a801f2-52cc-47fb-96e3-ab63e742559e": {
+      "offerId": "70a801f2-52cc-47fb-96e3-ab63e742559e",
       "shopId": "admin",
       "registryId": "minecraft:glass",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -120,8 +180,8 @@
       "category": "Building",
       "version": 0
     },
-    "bea08a78-706c-4bc1-a683-f4562572a648": {
-      "offerId": "bea08a78-706c-4bc1-a683-f4562572a648",
+    "c3abbabd-bbd8-415a-9eea-b60ca9f2a81c": {
+      "offerId": "c3abbabd-bbd8-415a-9eea-b60ca9f2a81c",
       "shopId": "admin",
       "registryId": "minecraft:oak_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -135,8 +195,8 @@
       "category": "Building",
       "version": 0
     },
-    "340a7e0d-506f-4737-b12f-b42c9e7944e1": {
-      "offerId": "340a7e0d-506f-4737-b12f-b42c9e7944e1",
+    "771dc6c0-ee80-4818-a261-b71d1e7f1f32": {
+      "offerId": "771dc6c0-ee80-4818-a261-b71d1e7f1f32",
       "shopId": "admin",
       "registryId": "minecraft:spruce_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -150,8 +210,8 @@
       "category": "Building",
       "version": 0
     },
-    "ed18b4f5-0f7c-4df0-bfdd-d7c35957a21b": {
-      "offerId": "ed18b4f5-0f7c-4df0-bfdd-d7c35957a21b",
+    "6841ee5b-baab-4d2b-993e-d19520c250b9": {
+      "offerId": "6841ee5b-baab-4d2b-993e-d19520c250b9",
       "shopId": "admin",
       "registryId": "minecraft:birch_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -165,8 +225,8 @@
       "category": "Building",
       "version": 0
     },
-    "ed616174-653f-43a4-a559-731761091336": {
-      "offerId": "ed616174-653f-43a4-a559-731761091336",
+    "9dfdf622-2e6d-4969-9cdd-a40ed123793b": {
+      "offerId": "9dfdf622-2e6d-4969-9cdd-a40ed123793b",
       "shopId": "admin",
       "registryId": "minecraft:jungle_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -180,8 +240,8 @@
       "category": "Building",
       "version": 0
     },
-    "a48aa1f6-c471-4c56-b377-97eef22e5b41": {
-      "offerId": "a48aa1f6-c471-4c56-b377-97eef22e5b41",
+    "c3e1a92a-7aaa-44e6-b23c-81e110fba072": {
+      "offerId": "c3e1a92a-7aaa-44e6-b23c-81e110fba072",
       "shopId": "admin",
       "registryId": "minecraft:acacia_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -195,8 +255,8 @@
       "category": "Building",
       "version": 0
     },
-    "de1753ab-fe52-410a-9d90-a5b70e8588d3": {
-      "offerId": "de1753ab-fe52-410a-9d90-a5b70e8588d3",
+    "b26875a2-52d8-4d7b-a34c-7e389f96dadc": {
+      "offerId": "b26875a2-52d8-4d7b-a34c-7e389f96dadc",
       "shopId": "admin",
       "registryId": "minecraft:dark_oak_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -210,8 +270,8 @@
       "category": "Building",
       "version": 0
     },
-    "6c1f5b66-2214-4ed1-ab5f-e14f4caddba7": {
-      "offerId": "6c1f5b66-2214-4ed1-ab5f-e14f4caddba7",
+    "de218429-d894-4246-a73b-32a5954f3682": {
+      "offerId": "de218429-d894-4246-a73b-32a5954f3682",
       "shopId": "admin",
       "registryId": "minecraft:mangrove_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -225,8 +285,8 @@
       "category": "Building",
       "version": 0
     },
-    "58fe63ec-d3aa-45dc-afbd-8708dbd42dbc": {
-      "offerId": "58fe63ec-d3aa-45dc-afbd-8708dbd42dbc",
+    "d449a1aa-dad3-412f-bf6e-4bad84093ffb": {
+      "offerId": "d449a1aa-dad3-412f-bf6e-4bad84093ffb",
       "shopId": "admin",
       "registryId": "minecraft:cherry_log",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -240,8 +300,8 @@
       "category": "Building",
       "version": 0
     },
-    "bd4d7bad-9f54-4ca3-9e51-128b45d2e3c7": {
-      "offerId": "bd4d7bad-9f54-4ca3-9e51-128b45d2e3c7",
+    "38a32ec0-cb63-48f6-9525-395ad612e670": {
+      "offerId": "38a32ec0-cb63-48f6-9525-395ad612e670",
       "shopId": "admin",
       "registryId": "minecraft:oak_planks",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -255,8 +315,8 @@
       "category": "Building",
       "version": 0
     },
-    "f3ab25b7-0b5e-4d61-8196-61e3918d06e8": {
-      "offerId": "f3ab25b7-0b5e-4d61-8196-61e3918d06e8",
+    "44d7b313-d2ee-406a-b11b-101f92b6de20": {
+      "offerId": "44d7b313-d2ee-406a-b11b-101f92b6de20",
       "shopId": "admin",
       "registryId": "minecraft:deepslate",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -270,8 +330,38 @@
       "category": "Building",
       "version": 0
     },
-    "22cf0f3f-6d4e-4713-b4dd-87ee9592add1": {
-      "offerId": "22cf0f3f-6d4e-4713-b4dd-87ee9592add1",
+    "e03da0fe-76f8-470c-aa8d-b0a61c6cbd06": {
+      "offerId": "e03da0fe-76f8-470c-aa8d-b0a61c6cbd06",
+      "shopId": "admin",
+      "registryId": "minecraft:polished_deepslate",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:polished_deepslate\"}",
+      "count": 1,
+      "price": 18,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "47e250e3-4f16-4a54-816e-e8be81b7374e": {
+      "offerId": "47e250e3-4f16-4a54-816e-e8be81b7374e",
+      "shopId": "admin",
+      "registryId": "minecraft:deepslate_bricks",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:deepslate_bricks\"}",
+      "count": 1,
+      "price": 20,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "031b0b02-41e0-4068-8cdc-8bcb30d28916": {
+      "offerId": "031b0b02-41e0-4068-8cdc-8bcb30d28916",
       "shopId": "admin",
       "registryId": "minecraft:white_wool",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -285,8 +375,233 @@
       "category": "Building",
       "version": 0
     },
-    "f9cb4772-d820-4059-8a9a-fc016e34cd74": {
-      "offerId": "f9cb4772-d820-4059-8a9a-fc016e34cd74",
+    "9b917361-7e5b-406b-a3b0-8f71ae29e21c": {
+      "offerId": "9b917361-7e5b-406b-a3b0-8f71ae29e21c",
+      "shopId": "admin",
+      "registryId": "minecraft:granite",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:granite\"}",
+      "count": 1,
+      "price": 8,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "2c4f9399-ac42-49e0-a22f-7908e47b8ed9": {
+      "offerId": "2c4f9399-ac42-49e0-a22f-7908e47b8ed9",
+      "shopId": "admin",
+      "registryId": "minecraft:polished_granite",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:polished_granite\"}",
+      "count": 1,
+      "price": 12,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "270a8b47-90b6-4e1d-8eb0-4ce9ecc83eaf": {
+      "offerId": "270a8b47-90b6-4e1d-8eb0-4ce9ecc83eaf",
+      "shopId": "admin",
+      "registryId": "minecraft:diorite",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:diorite\"}",
+      "count": 1,
+      "price": 8,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "327d5a92-559a-4402-b6ff-dcc6259aaab8": {
+      "offerId": "327d5a92-559a-4402-b6ff-dcc6259aaab8",
+      "shopId": "admin",
+      "registryId": "minecraft:polished_diorite",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:polished_diorite\"}",
+      "count": 1,
+      "price": 12,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "f16778a8-44ab-49d0-97bb-b6898b28ca21": {
+      "offerId": "f16778a8-44ab-49d0-97bb-b6898b28ca21",
+      "shopId": "admin",
+      "registryId": "minecraft:andesite",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:andesite\"}",
+      "count": 1,
+      "price": 8,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "ff6fe850-ec35-434e-bc89-decd38992c08": {
+      "offerId": "ff6fe850-ec35-434e-bc89-decd38992c08",
+      "shopId": "admin",
+      "registryId": "minecraft:polished_andesite",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:polished_andesite\"}",
+      "count": 1,
+      "price": 12,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "115d1693-a758-497e-b366-f3f224128567": {
+      "offerId": "115d1693-a758-497e-b366-f3f224128567",
+      "shopId": "admin",
+      "registryId": "minecraft:sandstone",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:sandstone\"}",
+      "count": 1,
+      "price": 10,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "c11fa6b5-58d1-41c8-a3b8-d733e0643ae3": {
+      "offerId": "c11fa6b5-58d1-41c8-a3b8-d733e0643ae3",
+      "shopId": "admin",
+      "registryId": "minecraft:red_sandstone",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:red_sandstone\"}",
+      "count": 1,
+      "price": 12,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "c92c1c79-837a-4c5f-90c2-042fd0268995": {
+      "offerId": "c92c1c79-837a-4c5f-90c2-042fd0268995",
+      "shopId": "admin",
+      "registryId": "minecraft:quartz_block",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:quartz_block\"}",
+      "count": 1,
+      "price": 160,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "19ddeddd-5d04-4099-b765-a2fb96a11f88": {
+      "offerId": "19ddeddd-5d04-4099-b765-a2fb96a11f88",
+      "shopId": "admin",
+      "registryId": "minecraft:smooth_quartz",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:smooth_quartz\"}",
+      "count": 1,
+      "price": 180,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "8926a3af-382d-4d08-860a-3010d58e89a6": {
+      "offerId": "8926a3af-382d-4d08-860a-3010d58e89a6",
+      "shopId": "admin",
+      "registryId": "minecraft:white_concrete",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:white_concrete\"}",
+      "count": 1,
+      "price": 25,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "3978d924-20df-47a2-80b0-3d553589d88d": {
+      "offerId": "3978d924-20df-47a2-80b0-3d553589d88d",
+      "shopId": "admin",
+      "registryId": "minecraft:black_concrete",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:black_concrete\"}",
+      "count": 1,
+      "price": 25,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "cd41310b-fd33-403f-a966-5a647cf07978": {
+      "offerId": "cd41310b-fd33-403f-a966-5a647cf07978",
+      "shopId": "admin",
+      "registryId": "minecraft:white_terracotta",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:white_terracotta\"}",
+      "count": 1,
+      "price": 20,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "84e11b81-f273-48ef-aaac-bca67122a1fa": {
+      "offerId": "84e11b81-f273-48ef-aaac-bca67122a1fa",
+      "shopId": "admin",
+      "registryId": "minecraft:sea_lantern",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:sea_lantern\"}",
+      "count": 1,
+      "price": 400,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "8f4d1835-25a1-48b1-8419-35debc76aa06": {
+      "offerId": "8f4d1835-25a1-48b1-8419-35debc76aa06",
+      "shopId": "admin",
+      "registryId": "minecraft:glowstone",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:glowstone\"}",
+      "count": 1,
+      "price": 150,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Building",
+      "version": 0
+    },
+    "ca72d4e4-a157-4449-9adb-164a34ffae5d": {
+      "offerId": "ca72d4e4-a157-4449-9adb-164a34ffae5d",
       "shopId": "admin",
       "registryId": "minecraft:iron_ingot",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -300,8 +615,23 @@
       "category": "Materials",
       "version": 0
     },
-    "01179c6b-616e-457b-ab05-b043616ef259": {
-      "offerId": "01179c6b-616e-457b-ab05-b043616ef259",
+    "53fceaeb-63f8-44a0-aab2-6a457f31f10a": {
+      "offerId": "53fceaeb-63f8-44a0-aab2-6a457f31f10a",
+      "shopId": "admin",
+      "registryId": "minecraft:raw_iron",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:raw_iron\"}",
+      "count": 1,
+      "price": 80,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Materials",
+      "version": 0
+    },
+    "aedfca96-2878-4e0e-9f2c-cab127f76fac": {
+      "offerId": "aedfca96-2878-4e0e-9f2c-cab127f76fac",
       "shopId": "admin",
       "registryId": "minecraft:copper_ingot",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -315,8 +645,8 @@
       "category": "Materials",
       "version": 0
     },
-    "b5000046-fd3b-4f48-a828-8f02262f33a2": {
-      "offerId": "b5000046-fd3b-4f48-a828-8f02262f33a2",
+    "06fe02d7-6fa7-4d92-9f2e-d286c31edb17": {
+      "offerId": "06fe02d7-6fa7-4d92-9f2e-d286c31edb17",
       "shopId": "admin",
       "registryId": "minecraft:gold_ingot",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -330,8 +660,8 @@
       "category": "Materials",
       "version": 0
     },
-    "9172e154-59c4-4d2e-bb67-d2abbe2930e9": {
-      "offerId": "9172e154-59c4-4d2e-bb67-d2abbe2930e9",
+    "a8a7abeb-a8d4-47f8-b532-0afe7e15c768": {
+      "offerId": "a8a7abeb-a8d4-47f8-b532-0afe7e15c768",
       "shopId": "admin",
       "registryId": "minecraft:diamond",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -345,8 +675,8 @@
       "category": "Materials",
       "version": 0
     },
-    "4f39f62c-a870-4e80-922b-12776cd08dcb": {
-      "offerId": "4f39f62c-a870-4e80-922b-12776cd08dcb",
+    "1f624faf-9bff-42ea-94aa-8d54e5e6aaea": {
+      "offerId": "1f624faf-9bff-42ea-94aa-8d54e5e6aaea",
       "shopId": "admin",
       "registryId": "minecraft:emerald",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -360,8 +690,8 @@
       "category": "Materials",
       "version": 0
     },
-    "ff16bb8b-2742-4c90-8ac2-9717e2aaec01": {
-      "offerId": "ff16bb8b-2742-4c90-8ac2-9717e2aaec01",
+    "c3b8ee9a-161a-4602-8cac-7b7f34fa25da": {
+      "offerId": "c3b8ee9a-161a-4602-8cac-7b7f34fa25da",
       "shopId": "admin",
       "registryId": "minecraft:netherite_ingot",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -375,8 +705,8 @@
       "category": "Materials",
       "version": 0
     },
-    "8945cb5e-3913-4ae5-b4de-419ec2d2a934": {
-      "offerId": "8945cb5e-3913-4ae5-b4de-419ec2d2a934",
+    "29abdf33-60fe-438d-b85c-8afe5ccb6b12": {
+      "offerId": "29abdf33-60fe-438d-b85c-8afe5ccb6b12",
       "shopId": "admin",
       "registryId": "minecraft:coal",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -390,8 +720,23 @@
       "category": "Materials",
       "version": 0
     },
-    "b2b2bc80-3b38-479e-9338-2233aed55b99": {
-      "offerId": "b2b2bc80-3b38-479e-9338-2233aed55b99",
+    "5f691310-c9ea-450c-9b1f-d7f1efb01c8f": {
+      "offerId": "5f691310-c9ea-450c-9b1f-d7f1efb01c8f",
+      "shopId": "admin",
+      "registryId": "minecraft:charcoal",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:charcoal\"}",
+      "count": 1,
+      "price": 15,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Materials",
+      "version": 0
+    },
+    "a098b857-fedb-4c69-afbd-95958c2419aa": {
+      "offerId": "a098b857-fedb-4c69-afbd-95958c2419aa",
       "shopId": "admin",
       "registryId": "minecraft:quartz",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -405,8 +750,8 @@
       "category": "Materials",
       "version": 0
     },
-    "5eb54219-14c0-48f7-abc4-aef76056e2df": {
-      "offerId": "5eb54219-14c0-48f7-abc4-aef76056e2df",
+    "ba1cca34-c705-4145-960d-404912e7659b": {
+      "offerId": "ba1cca34-c705-4145-960d-404912e7659b",
       "shopId": "admin",
       "registryId": "minecraft:amethyst_shard",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -420,8 +765,8 @@
       "category": "Materials",
       "version": 0
     },
-    "bf5dae61-d9be-4882-b307-7230cf1828b8": {
-      "offerId": "bf5dae61-d9be-4882-b307-7230cf1828b8",
+    "b175f304-bfe9-4510-8fe8-b53010fb4b41": {
+      "offerId": "b175f304-bfe9-4510-8fe8-b53010fb4b41",
       "shopId": "admin",
       "registryId": "minecraft:lapis_lazuli",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -435,8 +780,23 @@
       "category": "Materials",
       "version": 0
     },
-    "afd99a8a-fa6f-448c-8315-8293811aa6f6": {
-      "offerId": "afd99a8a-fa6f-448c-8315-8293811aa6f6",
+    "df87a280-09a4-44e2-a44f-497a50109eb6": {
+      "offerId": "df87a280-09a4-44e2-a44f-497a50109eb6",
+      "shopId": "admin",
+      "registryId": "minecraft:redstone",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:redstone\"}",
+      "count": 1,
+      "price": 30,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Materials",
+      "version": 0
+    },
+    "dd8fe4c6-4e6d-46d0-b5b0-f63ab03e0762": {
+      "offerId": "dd8fe4c6-4e6d-46d0-b5b0-f63ab03e0762",
       "shopId": "admin",
       "registryId": "minecraft:apple",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -450,8 +810,8 @@
       "category": "Food",
       "version": 0
     },
-    "1bb8a9e7-5d69-4c1d-b25a-390d3df64cd9": {
-      "offerId": "1bb8a9e7-5d69-4c1d-b25a-390d3df64cd9",
+    "4546616a-de48-4282-9670-07f0b72f943d": {
+      "offerId": "4546616a-de48-4282-9670-07f0b72f943d",
       "shopId": "admin",
       "registryId": "minecraft:bread",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -465,8 +825,8 @@
       "category": "Food",
       "version": 0
     },
-    "8279d8da-c2a3-4c48-bc46-9604049c0a2d": {
-      "offerId": "8279d8da-c2a3-4c48-bc46-9604049c0a2d",
+    "074f121b-78c6-40d3-8a91-dcab42377a69": {
+      "offerId": "074f121b-78c6-40d3-8a91-dcab42377a69",
       "shopId": "admin",
       "registryId": "minecraft:cooked_beef",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -480,8 +840,8 @@
       "category": "Food",
       "version": 0
     },
-    "d91fe57f-e9f4-4b08-9e74-08d9aa9e8e84": {
-      "offerId": "d91fe57f-e9f4-4b08-9e74-08d9aa9e8e84",
+    "648aced9-9dd7-4006-97f9-8852efaa2fc4": {
+      "offerId": "648aced9-9dd7-4006-97f9-8852efaa2fc4",
       "shopId": "admin",
       "registryId": "minecraft:cooked_porkchop",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -495,8 +855,8 @@
       "category": "Food",
       "version": 0
     },
-    "e56b71d3-4271-48f4-b56e-822afc78808f": {
-      "offerId": "e56b71d3-4271-48f4-b56e-822afc78808f",
+    "73b311b5-4e4a-482f-967c-985799602d26": {
+      "offerId": "73b311b5-4e4a-482f-967c-985799602d26",
       "shopId": "admin",
       "registryId": "minecraft:cooked_chicken",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -510,8 +870,38 @@
       "category": "Food",
       "version": 0
     },
-    "e3435bcc-2226-4124-ba08-e777f0ac197b": {
-      "offerId": "e3435bcc-2226-4124-ba08-e777f0ac197b",
+    "bdd62841-df87-4fb7-86f5-b2f7eb829ceb": {
+      "offerId": "bdd62841-df87-4fb7-86f5-b2f7eb829ceb",
+      "shopId": "admin",
+      "registryId": "minecraft:cooked_salmon",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:cooked_salmon\"}",
+      "count": 1,
+      "price": 50,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Food",
+      "version": 0
+    },
+    "c71a4bcd-dd0e-4fb7-82e8-ace4743e0b64": {
+      "offerId": "c71a4bcd-dd0e-4fb7-82e8-ace4743e0b64",
+      "shopId": "admin",
+      "registryId": "minecraft:cooked_cod",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:cooked_cod\"}",
+      "count": 1,
+      "price": 45,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Food",
+      "version": 0
+    },
+    "054bc8e8-c17e-486e-8c64-03c7f39a689a": {
+      "offerId": "054bc8e8-c17e-486e-8c64-03c7f39a689a",
       "shopId": "admin",
       "registryId": "minecraft:golden_apple",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -525,8 +915,23 @@
       "category": "Food",
       "version": 0
     },
-    "1fc400e6-43c0-4055-9594-cb2c1b6b44a7": {
-      "offerId": "1fc400e6-43c0-4055-9594-cb2c1b6b44a7",
+    "1741eb07-6d9f-4b14-82cc-f0a64657fb9f": {
+      "offerId": "1741eb07-6d9f-4b14-82cc-f0a64657fb9f",
+      "shopId": "admin",
+      "registryId": "minecraft:golden_carrot",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:golden_carrot\"}",
+      "count": 1,
+      "price": 150,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Food",
+      "version": 0
+    },
+    "9933b3d0-57e5-441a-b3ee-b4a99869e309": {
+      "offerId": "9933b3d0-57e5-441a-b3ee-b4a99869e309",
       "shopId": "admin",
       "registryId": "minecraft:enchanted_golden_apple",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -540,8 +945,8 @@
       "category": "Food",
       "version": 0
     },
-    "b704558f-4147-4ba9-86cb-291de2afad82": {
-      "offerId": "b704558f-4147-4ba9-86cb-291de2afad82",
+    "3e61981d-31af-428e-9edc-f977f42bfd21": {
+      "offerId": "3e61981d-31af-428e-9edc-f977f42bfd21",
       "shopId": "admin",
       "registryId": "minecraft:potato",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -555,8 +960,8 @@
       "category": "Food",
       "version": 0
     },
-    "625a4709-e069-44af-b2d8-467df5cb62d6": {
-      "offerId": "625a4709-e069-44af-b2d8-467df5cb62d6",
+    "bc6091f3-4242-4d85-b751-b5ddc241d159": {
+      "offerId": "bc6091f3-4242-4d85-b751-b5ddc241d159",
       "shopId": "admin",
       "registryId": "minecraft:carrot",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -570,8 +975,8 @@
       "category": "Food",
       "version": 0
     },
-    "56b1ac68-b759-4e7d-8100-cb034d92d5ce": {
-      "offerId": "56b1ac68-b759-4e7d-8100-cb034d92d5ce",
+    "8f4611a1-05a6-4d53-a500-3ba7d759efde": {
+      "offerId": "8f4611a1-05a6-4d53-a500-3ba7d759efde",
       "shopId": "admin",
       "registryId": "minecraft:melon_slice",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -585,8 +990,23 @@
       "category": "Food",
       "version": 0
     },
-    "043ac22b-fee6-4bae-81a7-b6b4354f68e3": {
-      "offerId": "043ac22b-fee6-4bae-81a7-b6b4354f68e3",
+    "c3033b6a-070b-43cb-b2c5-5fcbe9611703": {
+      "offerId": "c3033b6a-070b-43cb-b2c5-5fcbe9611703",
+      "shopId": "admin",
+      "registryId": "minecraft:pumpkin_pie",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:pumpkin_pie\"}",
+      "count": 1,
+      "price": 40,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Food",
+      "version": 0
+    },
+    "4222bb33-9da4-4083-99a4-ef3650b171b9": {
+      "offerId": "4222bb33-9da4-4083-99a4-ef3650b171b9",
       "shopId": "admin",
       "registryId": "minecraft:rotten_flesh",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -600,8 +1020,8 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "739249a8-1603-41f4-99fe-5e51d80dfa8d": {
-      "offerId": "739249a8-1603-41f4-99fe-5e51d80dfa8d",
+    "f119628c-04bf-4ae2-bff5-8a1eb27d2f7e": {
+      "offerId": "f119628c-04bf-4ae2-bff5-8a1eb27d2f7e",
       "shopId": "admin",
       "registryId": "minecraft:bone",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -615,8 +1035,8 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "b411ed8a-c2d7-4c88-a56b-106b0b25a11f": {
-      "offerId": "b411ed8a-c2d7-4c88-a56b-106b0b25a11f",
+    "a076c5b5-7982-4aa4-ae5b-164381c8cf87": {
+      "offerId": "a076c5b5-7982-4aa4-ae5b-164381c8cf87",
       "shopId": "admin",
       "registryId": "minecraft:gunpowder",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -630,8 +1050,8 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "bf83782b-2200-4c28-a1ae-dcc57eae97cf": {
-      "offerId": "bf83782b-2200-4c28-a1ae-dcc57eae97cf",
+    "a574a9f3-8257-45df-bb0b-e732fd3d2126": {
+      "offerId": "a574a9f3-8257-45df-bb0b-e732fd3d2126",
       "shopId": "admin",
       "registryId": "minecraft:string",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -645,68 +1065,8 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "6e0c835c-a6c9-446d-a277-46604bfc6aaf": {
-      "offerId": "6e0c835c-a6c9-446d-a277-46604bfc6aaf",
-      "shopId": "admin",
-      "registryId": "minecraft:ender_pearl",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:ender_pearl\"}",
-      "count": 1,
-      "price": 250,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Mob Drops",
-      "version": 0
-    },
-    "00dd460d-50f7-4406-9975-09c89e0797cc": {
-      "offerId": "00dd460d-50f7-4406-9975-09c89e0797cc",
-      "shopId": "admin",
-      "registryId": "minecraft:blaze_rod",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:blaze_rod\"}",
-      "count": 1,
-      "price": 400,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Mob Drops",
-      "version": 0
-    },
-    "2952d441-4c43-4e1a-ad2c-8b59606a5553": {
-      "offerId": "2952d441-4c43-4e1a-ad2c-8b59606a5553",
-      "shopId": "admin",
-      "registryId": "minecraft:ghast_tear",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:ghast_tear\"}",
-      "count": 1,
-      "price": 1500,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Mob Drops",
-      "version": 0
-    },
-    "e308a721-85d0-42ff-a1a7-ac9c9d80bdb7": {
-      "offerId": "e308a721-85d0-42ff-a1a7-ac9c9d80bdb7",
-      "shopId": "admin",
-      "registryId": "minecraft:slime_ball",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:slime_ball\"}",
-      "count": 1,
-      "price": 300,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Mob Drops",
-      "version": 0
-    },
-    "c4ac7522-40b3-47c8-b67a-d88b0b5461f4": {
-      "offerId": "c4ac7522-40b3-47c8-b67a-d88b0b5461f4",
+    "7e558457-4383-420b-ab64-7abc0f2b468d": {
+      "offerId": "7e558457-4383-420b-ab64-7abc0f2b468d",
       "shopId": "admin",
       "registryId": "minecraft:spider_eye",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -720,8 +1080,68 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "a2390c3e-678e-43a2-90d3-25e6bea75641": {
-      "offerId": "a2390c3e-678e-43a2-90d3-25e6bea75641",
+    "a41c5fed-71cc-4b80-adb9-e48beed78d48": {
+      "offerId": "a41c5fed-71cc-4b80-adb9-e48beed78d48",
+      "shopId": "admin",
+      "registryId": "minecraft:ender_pearl",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:ender_pearl\"}",
+      "count": 1,
+      "price": 250,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Mob Drops",
+      "version": 0
+    },
+    "ce228f37-01e5-41c2-9d05-5cd9832383d8": {
+      "offerId": "ce228f37-01e5-41c2-9d05-5cd9832383d8",
+      "shopId": "admin",
+      "registryId": "minecraft:blaze_rod",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:blaze_rod\"}",
+      "count": 1,
+      "price": 400,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Mob Drops",
+      "version": 0
+    },
+    "95ed5cd5-8a90-4a96-8de1-a0c2703edff3": {
+      "offerId": "95ed5cd5-8a90-4a96-8de1-a0c2703edff3",
+      "shopId": "admin",
+      "registryId": "minecraft:ghast_tear",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:ghast_tear\"}",
+      "count": 1,
+      "price": 1500,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Mob Drops",
+      "version": 0
+    },
+    "8d427b16-6677-4657-b1ce-c359ec3b2ef3": {
+      "offerId": "8d427b16-6677-4657-b1ce-c359ec3b2ef3",
+      "shopId": "admin",
+      "registryId": "minecraft:slime_ball",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:slime_ball\"}",
+      "count": 1,
+      "price": 300,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Mob Drops",
+      "version": 0
+    },
+    "1b29e9d5-1356-478d-a9c0-bc07f550cd30": {
+      "offerId": "1b29e9d5-1356-478d-a9c0-bc07f550cd30",
       "shopId": "admin",
       "registryId": "minecraft:leather",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -735,8 +1155,8 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "2219a59b-a2d8-4120-b05e-98c830b28a77": {
-      "offerId": "2219a59b-a2d8-4120-b05e-98c830b28a77",
+    "09cc66b8-6648-499b-827f-bf38ed4bae66": {
+      "offerId": "09cc66b8-6648-499b-827f-bf38ed4bae66",
       "shopId": "admin",
       "registryId": "minecraft:feather",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -750,8 +1170,38 @@
       "category": "Mob Drops",
       "version": 0
     },
-    "15f3f548-6235-474d-827c-6c675b63123c": {
-      "offerId": "15f3f548-6235-474d-827c-6c675b63123c",
+    "5fbb47ab-00f8-4b15-aa8c-bb5093c97bfb": {
+      "offerId": "5fbb47ab-00f8-4b15-aa8c-bb5093c97bfb",
+      "shopId": "admin",
+      "registryId": "minecraft:magma_cream",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:magma_cream\"}",
+      "count": 1,
+      "price": 350,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Mob Drops",
+      "version": 0
+    },
+    "dcca2dff-1d46-4b81-bcb7-8b73a7495173": {
+      "offerId": "dcca2dff-1d46-4b81-bcb7-8b73a7495173",
+      "shopId": "admin",
+      "registryId": "minecraft:phantom_membrane",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:phantom_membrane\"}",
+      "count": 1,
+      "price": 800,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Mob Drops",
+      "version": 0
+    },
+    "9cc47d76-b442-434f-b98a-0af19d0b4c03": {
+      "offerId": "9cc47d76-b442-434f-b98a-0af19d0b4c03",
       "shopId": "admin",
       "registryId": "minecraft:torch",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -765,8 +1215,38 @@
       "category": "Utility",
       "version": 0
     },
-    "6aa1ee8a-2cff-409c-bc71-18e30398c249": {
-      "offerId": "6aa1ee8a-2cff-409c-bc71-18e30398c249",
+    "7de27061-8b03-409a-a357-b59583f793a1": {
+      "offerId": "7de27061-8b03-409a-a357-b59583f793a1",
+      "shopId": "admin",
+      "registryId": "minecraft:soul_torch",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:soul_torch\"}",
+      "count": 1,
+      "price": 10,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "0f88aaa9-b609-4118-966d-a54082f19990": {
+      "offerId": "0f88aaa9-b609-4118-966d-a54082f19990",
+      "shopId": "admin",
+      "registryId": "minecraft:lantern",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:lantern\"}",
+      "count": 1,
+      "price": 120,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "aeb89617-d3f4-470f-a7d3-06063bde6484": {
+      "offerId": "aeb89617-d3f4-470f-a7d3-06063bde6484",
       "shopId": "admin",
       "registryId": "minecraft:crafting_table",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -780,8 +1260,8 @@
       "category": "Utility",
       "version": 0
     },
-    "9f14f1a4-d314-4c7c-b15e-f62023c22440": {
-      "offerId": "9f14f1a4-d314-4c7c-b15e-f62023c22440",
+    "b6390c89-60eb-4d54-ad37-9bbf9801fe1c": {
+      "offerId": "b6390c89-60eb-4d54-ad37-9bbf9801fe1c",
       "shopId": "admin",
       "registryId": "minecraft:furnace",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -795,8 +1275,8 @@
       "category": "Utility",
       "version": 0
     },
-    "7d9a4b5d-a2f0-425a-8d95-034ee966a79c": {
-      "offerId": "7d9a4b5d-a2f0-425a-8d95-034ee966a79c",
+    "32518f1c-6d5f-4f4f-b300-8c4ea59b14e6": {
+      "offerId": "32518f1c-6d5f-4f4f-b300-8c4ea59b14e6",
       "shopId": "admin",
       "registryId": "minecraft:chest",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -810,14 +1290,14 @@
       "category": "Utility",
       "version": 0
     },
-    "41c0e817-42ab-49c8-8337-b4dec3fe789d": {
-      "offerId": "41c0e817-42ab-49c8-8337-b4dec3fe789d",
+    "ca3a54d7-cb26-4e0e-91b0-78f92a4b37db": {
+      "offerId": "ca3a54d7-cb26-4e0e-91b0-78f92a4b37db",
       "shopId": "admin",
-      "registryId": "minecraft:iron_pickaxe",
+      "registryId": "minecraft:barrel",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:iron_pickaxe\"}",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:barrel\"}",
       "count": 1,
-      "price": 350,
+      "price": 40,
       "stock": 0,
       "infiniteStock": true,
       "buyEnabled": true,
@@ -825,68 +1305,8 @@
       "category": "Utility",
       "version": 0
     },
-    "c4cd8bfd-e9b7-4a09-aa39-e8fb38835f85": {
-      "offerId": "c4cd8bfd-e9b7-4a09-aa39-e8fb38835f85",
-      "shopId": "admin",
-      "registryId": "minecraft:diamond_pickaxe",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:diamond_pickaxe\"}",
-      "count": 1,
-      "price": 6500,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Utility",
-      "version": 0
-    },
-    "0104bca7-9e78-438f-a09e-b53a7d08f0c1": {
-      "offerId": "0104bca7-9e78-438f-a09e-b53a7d08f0c1",
-      "shopId": "admin",
-      "registryId": "minecraft:water_bucket",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:water_bucket\"}",
-      "count": 1,
-      "price": 350,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Utility",
-      "version": 0
-    },
-    "e2697314-e946-477e-aff5-fafd0265c7b1": {
-      "offerId": "e2697314-e946-477e-aff5-fafd0265c7b1",
-      "shopId": "admin",
-      "registryId": "minecraft:lava_bucket",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:lava_bucket\"}",
-      "count": 1,
-      "price": 500,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Utility",
-      "version": 0
-    },
-    "4e613d8d-9484-4538-9e48-f427a764b84d": {
-      "offerId": "4e613d8d-9484-4538-9e48-f427a764b84d",
-      "shopId": "admin",
-      "registryId": "minecraft:ender_chest",
-      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
-      "itemJson": "{\"count\":1,\"id\":\"minecraft:ender_chest\"}",
-      "count": 1,
-      "price": 5000,
-      "stock": 0,
-      "infiniteStock": true,
-      "buyEnabled": true,
-      "sellEnabled": true,
-      "category": "Utility",
-      "version": 0
-    },
-    "b045cbfe-4b68-47f9-a2e2-37dbbaaea084": {
-      "offerId": "b045cbfe-4b68-47f9-a2e2-37dbbaaea084",
+    "0225f130-48ce-4e6f-b29b-dcdc9f2dee3e": {
+      "offerId": "0225f130-48ce-4e6f-b29b-dcdc9f2dee3e",
       "shopId": "admin",
       "registryId": "minecraft:white_bed",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -900,8 +1320,173 @@
       "category": "Utility",
       "version": 0
     },
-    "95d27042-36ca-4641-8201-d76678547e9b": {
-      "offerId": "95d27042-36ca-4641-8201-d76678547e9b",
+    "a9a9e453-b299-4428-8773-8945c46ecc76": {
+      "offerId": "a9a9e453-b299-4428-8773-8945c46ecc76",
+      "shopId": "admin",
+      "registryId": "minecraft:iron_pickaxe",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:iron_pickaxe\"}",
+      "count": 1,
+      "price": 350,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "b6db3206-7a1f-41b6-960f-5c336662d108": {
+      "offerId": "b6db3206-7a1f-41b6-960f-5c336662d108",
+      "shopId": "admin",
+      "registryId": "minecraft:iron_axe",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:iron_axe\"}",
+      "count": 1,
+      "price": 350,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "38236cf3-6ce9-4f22-a945-8c63cc42ee00": {
+      "offerId": "38236cf3-6ce9-4f22-a945-8c63cc42ee00",
+      "shopId": "admin",
+      "registryId": "minecraft:iron_sword",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:iron_sword\"}",
+      "count": 1,
+      "price": 250,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "f43e204c-86fc-41aa-8ea3-66624bb73c36": {
+      "offerId": "f43e204c-86fc-41aa-8ea3-66624bb73c36",
+      "shopId": "admin",
+      "registryId": "minecraft:iron_shovel",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:iron_shovel\"}",
+      "count": 1,
+      "price": 150,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "586e41e4-ec32-46eb-b131-27b1dc3161c3": {
+      "offerId": "586e41e4-ec32-46eb-b131-27b1dc3161c3",
+      "shopId": "admin",
+      "registryId": "minecraft:diamond_pickaxe",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:diamond_pickaxe\"}",
+      "count": 1,
+      "price": 6500,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "39f5f291-1bdb-44f6-913a-24eaba926cbf": {
+      "offerId": "39f5f291-1bdb-44f6-913a-24eaba926cbf",
+      "shopId": "admin",
+      "registryId": "minecraft:diamond_axe",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:diamond_axe\"}",
+      "count": 1,
+      "price": 6500,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "6a23541a-d96d-4253-9834-d3751da1738c": {
+      "offerId": "6a23541a-d96d-4253-9834-d3751da1738c",
+      "shopId": "admin",
+      "registryId": "minecraft:diamond_sword",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:diamond_sword\"}",
+      "count": 1,
+      "price": 4500,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "31d18ecb-0d24-44a6-a369-95f9676491ea": {
+      "offerId": "31d18ecb-0d24-44a6-a369-95f9676491ea",
+      "shopId": "admin",
+      "registryId": "minecraft:water_bucket",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:water_bucket\"}",
+      "count": 1,
+      "price": 350,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "bc66e280-905d-4884-a999-0d7cb4220e08": {
+      "offerId": "bc66e280-905d-4884-a999-0d7cb4220e08",
+      "shopId": "admin",
+      "registryId": "minecraft:lava_bucket",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:lava_bucket\"}",
+      "count": 1,
+      "price": 500,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "db09dfa3-feba-43bc-9082-823a3483b183": {
+      "offerId": "db09dfa3-feba-43bc-9082-823a3483b183",
+      "shopId": "admin",
+      "registryId": "minecraft:shield",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:shield\"}",
+      "count": 1,
+      "price": 500,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "7699b875-206f-43e9-a959-1db6a48122d3": {
+      "offerId": "7699b875-206f-43e9-a959-1db6a48122d3",
+      "shopId": "admin",
+      "registryId": "minecraft:ender_chest",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:ender_chest\"}",
+      "count": 1,
+      "price": 10000,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "29fe899e-f62c-4456-b1a6-f33664382886": {
+      "offerId": "29fe899e-f62c-4456-b1a6-f33664382886",
       "shopId": "admin",
       "registryId": "minecraft:shulker_box",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -915,8 +1500,8 @@
       "category": "Utility",
       "version": 0
     },
-    "eff7f03a-7936-41f7-963b-d64438056454": {
-      "offerId": "eff7f03a-7936-41f7-963b-d64438056454",
+    "8e8f60af-ec4d-4cee-8144-6ec0728d3110": {
+      "offerId": "8e8f60af-ec4d-4cee-8144-6ec0728d3110",
       "shopId": "admin",
       "registryId": "minecraft:totem_of_undying",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -930,8 +1515,38 @@
       "category": "Utility",
       "version": 0
     },
-    "e90185d5-36e3-40e5-8bc8-e98ede38d77a": {
-      "offerId": "e90185d5-36e3-40e5-8bc8-e98ede38d77a",
+    "1b3c817c-29d0-48f5-9e99-36bc34478c57": {
+      "offerId": "1b3c817c-29d0-48f5-9e99-36bc34478c57",
+      "shopId": "admin",
+      "registryId": "minecraft:campfire",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:campfire\"}",
+      "count": 1,
+      "price": 50,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "183f39e4-069f-458f-b6ea-53e5677f8c16": {
+      "offerId": "183f39e4-069f-458f-b6ea-53e5677f8c16",
+      "shopId": "admin",
+      "registryId": "minecraft:shears",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:shears\"}",
+      "count": 1,
+      "price": 250,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Utility",
+      "version": 0
+    },
+    "76d86c4d-e66c-446d-9bc1-1aed80a95066": {
+      "offerId": "76d86c4d-e66c-446d-9bc1-1aed80a95066",
       "shopId": "admin",
       "registryId": "minecraft:oak_sapling",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -945,8 +1560,38 @@
       "category": "Nature",
       "version": 0
     },
-    "d0cfac4c-e6e0-4a1d-89ab-09b266f5fb2d": {
-      "offerId": "d0cfac4c-e6e0-4a1d-89ab-09b266f5fb2d",
+    "7a79e5a0-7c67-4366-a864-d6db73d85bb6": {
+      "offerId": "7a79e5a0-7c67-4366-a864-d6db73d85bb6",
+      "shopId": "admin",
+      "registryId": "minecraft:spruce_sapling",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:spruce_sapling\"}",
+      "count": 1,
+      "price": 40,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Nature",
+      "version": 0
+    },
+    "55ffdc4e-4c61-4df7-b9ad-64289c934912": {
+      "offerId": "55ffdc4e-4c61-4df7-b9ad-64289c934912",
+      "shopId": "admin",
+      "registryId": "minecraft:birch_sapling",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:birch_sapling\"}",
+      "count": 1,
+      "price": 40,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Nature",
+      "version": 0
+    },
+    "7f86d9fb-e0d4-4a41-85dc-159f310d07cd": {
+      "offerId": "7f86d9fb-e0d4-4a41-85dc-159f310d07cd",
       "shopId": "admin",
       "registryId": "minecraft:sugar_cane",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -960,8 +1605,8 @@
       "category": "Nature",
       "version": 0
     },
-    "cd1f504b-271f-44b6-9f1b-3eacdfee1208": {
-      "offerId": "cd1f504b-271f-44b6-9f1b-3eacdfee1208",
+    "7d8d7783-1fe5-4f22-9d3e-99032a7f662b": {
+      "offerId": "7d8d7783-1fe5-4f22-9d3e-99032a7f662b",
       "shopId": "admin",
       "registryId": "minecraft:wheat_seeds",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -975,8 +1620,8 @@
       "category": "Nature",
       "version": 0
     },
-    "fb6dc601-63d4-49df-8ee9-36a44497d746": {
-      "offerId": "fb6dc601-63d4-49df-8ee9-36a44497d746",
+    "a1296dfd-09bc-4676-b643-c96659df586d": {
+      "offerId": "a1296dfd-09bc-4676-b643-c96659df586d",
       "shopId": "admin",
       "registryId": "minecraft:pumpkin_seeds",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -990,8 +1635,8 @@
       "category": "Nature",
       "version": 0
     },
-    "a4e3e359-3cf6-4e7c-a41b-13fd34e8c0ec": {
-      "offerId": "a4e3e359-3cf6-4e7c-a41b-13fd34e8c0ec",
+    "a5b20568-dea0-476f-93df-ccfb4a6363af": {
+      "offerId": "a5b20568-dea0-476f-93df-ccfb4a6363af",
       "shopId": "admin",
       "registryId": "minecraft:melon_seeds",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -1005,8 +1650,8 @@
       "category": "Nature",
       "version": 0
     },
-    "e786b8b5-9541-4f4f-8612-420ee9ce5d5a": {
-      "offerId": "e786b8b5-9541-4f4f-8612-420ee9ce5d5a",
+    "5aeda278-7b5f-4259-af6b-24ba389b226e": {
+      "offerId": "5aeda278-7b5f-4259-af6b-24ba389b226e",
       "shopId": "admin",
       "registryId": "minecraft:bamboo",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
@@ -1020,14 +1665,44 @@
       "category": "Nature",
       "version": 0
     },
-    "16699b4d-ec10-4995-8d98-cde1ab29a41a": {
-      "offerId": "16699b4d-ec10-4995-8d98-cde1ab29a41a",
+    "ccb74f95-3d0e-4751-ad11-3247adf4331b": {
+      "offerId": "ccb74f95-3d0e-4751-ad11-3247adf4331b",
       "shopId": "admin",
       "registryId": "minecraft:pink_petals",
       "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
       "itemJson": "{\"count\":1,\"id\":\"minecraft:pink_petals\"}",
       "count": 1,
       "price": 50,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Nature",
+      "version": 0
+    },
+    "cc418eaf-b53d-49c5-90db-d2133a169df6": {
+      "offerId": "cc418eaf-b53d-49c5-90db-d2133a169df6",
+      "shopId": "admin",
+      "registryId": "minecraft:oak_leaves",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:oak_leaves\"}",
+      "count": 1,
+      "price": 5,
+      "stock": 0,
+      "infiniteStock": true,
+      "buyEnabled": true,
+      "sellEnabled": true,
+      "category": "Nature",
+      "version": 0
+    },
+    "b7c92c99-c17b-42b7-99f8-7cf87a8229b9": {
+      "offerId": "b7c92c99-c17b-42b7-99f8-7cf87a8229b9",
+      "shopId": "admin",
+      "registryId": "minecraft:lily_pad",
+      "itemHash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "itemJson": "{\"count\":1,\"id\":\"minecraft:lily_pad\"}",
+      "count": 1,
+      "price": 80,
       "stock": 0,
       "infiniteStock": true,
       "buyEnabled": true,
@@ -1064,6 +1739,20 @@
       "expiresAt": 1768409289349,
       "status": "EXPIRED",
       "version": 1
+    },
+    "766e05dd-fac8-4e2e-b543-b37e7f7880e3": {
+      "listingId": "766e05dd-fac8-4e2e-b543-b37e7f7880e3",
+      "sellerAccount": "aa24840b-eb03-3e8b-bbba-ab6f36abe6d5",
+      "registryId": "tacz:modern_kinetic_gun",
+      "itemHash": "cdf2d6654a5d64a2afddffd29da19cc283603c56cfc5d0bf80fa49f060d0f351",
+      "itemJson": "{\"components\":{\"minecraft:custom_data\":{\"GunCurrentAmmoCount\":9,\"GunFireMode\":\"SEMI\",\"GunId\":\"tacz:deagle_golden\",\"HasBulletInBarrel\":1b}},\"count\":1,\"id\":\"tacz:modern_kinetic_gun\"}",
+      "count": 1,
+      "startingPrice": 90000,
+      "bidIncrement": 1,
+      "createdAt": 1768456904186,
+      "expiresAt": 1768543304182,
+      "status": "OPEN",
+      "version": 0
     }
   },
   "deliveries": {

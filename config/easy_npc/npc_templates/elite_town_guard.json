@@ -4,8 +4,8 @@
     "faction": "guards",
     "description": "A special forces soldier armed with an M249 Machine Gun.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://www.minecraftskins.com/uploads/skins/2026/01/03/assault--wellspring----fireteam-vedmak--pax-armata--battlefield-6-23767275.png?v938"
+        "type": "CUSTOM",
+        "textureId": "Elite_Armed_Police_38273aaf"
     },
     "attributes": {
         "maxHealth": 80,

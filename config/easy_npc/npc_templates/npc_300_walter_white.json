@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A chemistry teacher turned meth kingpin.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/97b8819ea452a76f.png"
+        "type": "CUSTOM",
+        "textureId": "Walter_White_d487ea88"
     },
     "attributes": {
         "maxHealth": 40,

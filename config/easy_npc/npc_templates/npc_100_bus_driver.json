@@ -2,8 +2,8 @@
     "name": "公交车司机",
     "entityType": "easy_npc:humanoid",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/77aacdfb58335f9e.png"
+        "type": "CUSTOM",
+        "textureId": "Bus_Driver_70eea669"
     },
     "dialog": {
         "greeting": "你好！我是你的司机Saul Goodman",

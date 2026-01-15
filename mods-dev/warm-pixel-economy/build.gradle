@@ -46,6 +46,13 @@ jar {
     }
 }
 
+task copyJarToMods(type: Copy) {
+    dependsOn remapJar
+    from remapJar
+    into "../../mods"
+    rename { "warm-pixel-economy-1.0.0.jar" }
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {

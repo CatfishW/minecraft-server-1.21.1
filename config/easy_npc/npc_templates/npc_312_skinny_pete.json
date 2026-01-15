@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "One of Jesse's close friends and dealers.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/e4783a31b655e153.png"
+        "type": "CUSTOM",
+        "textureId": "Skinny_Pete_ad8b918a"
     },
     "attributes": {
         "maxHealth": 40,

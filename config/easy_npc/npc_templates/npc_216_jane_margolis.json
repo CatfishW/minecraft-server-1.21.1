@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Jesse's girlfriend and recovering addict.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/e59440ff186751bf.png"
+        "type": "CUSTOM",
+        "textureId": "Jane_Margolis_0f7a2155"
     },
     "attributes": {
         "maxHealth": 40,

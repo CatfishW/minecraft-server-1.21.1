@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Brave and kind. The heart of the group.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/015b8af09770d2d7.png"
+        "type": "CUSTOM",
+        "textureId": "Beverly_Marsh_48221ecd"
     },
     "attributes": {
         "maxHealth": 40,

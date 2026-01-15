@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Walter and Skyler's son.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/ca166214fe0bcdf7.png"
+        "type": "CUSTOM",
+        "textureId": "Walter_White_Jr_c069889d"
     },
     "attributes": {
         "maxHealth": 40,

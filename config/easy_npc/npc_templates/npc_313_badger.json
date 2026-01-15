@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "One of Jesse's loyal but dim-witted friends.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/b01ad99ef208660a.png"
+        "type": "CUSTOM",
+        "textureId": "Badger_53764bbb"
     },
     "attributes": {
         "maxHealth": 40,

@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "BoS Squire. Wants power armor.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c40689c21affa72f.png"
+        "type": "CUSTOM",
+        "textureId": "Maximus_766eedf8"
     },
     "attributes": {
         "maxHealth": 40,

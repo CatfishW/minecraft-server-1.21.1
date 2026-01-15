@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A brilliant chemist who co-founded Gray Matter Technologies but left before it became a billion-dollar company. Now a high school chemistry teacher diagnosed with terminal lung cancer, he turns to man...",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/97b8819ea452a76f.png"
+        "type": "CUSTOM",
+        "textureId": "Walter_White_d487ea88"
     },
     "attributes": {
         "maxHealth": 40,

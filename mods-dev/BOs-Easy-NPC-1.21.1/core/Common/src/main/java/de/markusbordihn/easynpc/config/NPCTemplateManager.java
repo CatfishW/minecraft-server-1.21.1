@@ -741,8 +741,14 @@ public class NPCTemplateManager {
       log.info("{} Applying URL skin: {}", LOG_PREFIX, skinConfig.getSkinUrl());
       skinCapable.setSkinDataEntry(SkinDataEntry.createRemoteSkin(skinConfig.getSkinUrl()));
     } else if ("CUSTOM".equalsIgnoreCase(type) && skinConfig.getTextureId() != null) {
-      log.info("{} Applying custom texture: {}", LOG_PREFIX, skinConfig.getTextureId());
-      skinCapable.setSkinDataEntry(SkinDataEntry.createCustomSkin(UUID.nameUUIDFromBytes(skinConfig.getTextureId().getBytes()), false));
+      // The textureId should be the filename (with or without .png extension)
+      // The TextureCacheManager generates UUID from filename.getBytes() where filename INCLUDES .png
+      String textureFilename = skinConfig.getTextureId();
+      if (!textureFilename.endsWith(".png")) {
+        textureFilename = textureFilename + ".png";
+      }
+      log.info("{} Applying custom texture: {} (filename: {})", LOG_PREFIX, skinConfig.getTextureId(), textureFilename);
+      skinCapable.setSkinDataEntry(new SkinDataEntry(textureFilename, "", UUID.nameUUIDFromBytes(textureFilename.getBytes(java.nio.charset.StandardCharsets.UTF_8)), SkinType.CUSTOM));
     } else {
       log.warn("{} Unknown or incomplete skin type: {}", LOG_PREFIX, type);
     }

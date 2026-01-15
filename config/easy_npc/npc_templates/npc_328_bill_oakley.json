@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "An overworked assistant district attorney.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c3f256f79a096e19.png"
+        "type": "CUSTOM",
+        "textureId": "Bill_Denbrough_7e00e06c"
     },
     "attributes": {
         "maxHealth": 40,

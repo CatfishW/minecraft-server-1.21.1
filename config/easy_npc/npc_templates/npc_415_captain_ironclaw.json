@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A veteran warrior who has defended this village from countless raids. Bears scars from battles with pillagers, zombies, and even a Wither.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/CaptainIronclaw"
+        "type": "CUSTOM",
+        "textureId": "Captain_Ironclaw_1308dc9a"
     },
     "attributes": {
         "maxHealth": 40,

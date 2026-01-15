@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Town bully. Violent and crazy.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/932a58a068360eb2.png"
+        "type": "CUSTOM",
+        "textureId": "Henry_Bowers_e34297e4"
     },
     "attributes": {
         "maxHealth": 40,

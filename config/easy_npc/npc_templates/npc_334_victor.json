@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Another of Gus Fring's loyal henchmen.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/1177782fb1167e32.png"
+        "type": "CUSTOM",
+        "textureId": "Victor_Criss_30b5d5ad"
     },
     "attributes": {
         "maxHealth": 40,

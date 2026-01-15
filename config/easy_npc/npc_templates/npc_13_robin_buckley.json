@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Smarts and sarcasm. Works at Scoops Ahoy.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/fc5e0245e7471286.png"
+        "type": "CUSTOM",
+        "textureId": "Robin_Buckley_48230e8d"
     },
     "attributes": {
         "maxHealth": 40,

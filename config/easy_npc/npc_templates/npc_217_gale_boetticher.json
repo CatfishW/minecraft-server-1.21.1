@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A talented chemist hired by Gus Fring.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/aa5ba5c1d0adb9e7.png"
+        "type": "CUSTOM",
+        "textureId": "Gale_Boetticher_ad42ea3b"
     },
     "attributes": {
         "maxHealth": 40,

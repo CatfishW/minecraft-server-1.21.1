@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A school journalist student.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/8c4292cc4105d2d4.png"
+        "type": "CUSTOM",
+        "textureId": "Juliet_Watson_689ebdea"
     },
     "attributes": {
         "maxHealth": 40,

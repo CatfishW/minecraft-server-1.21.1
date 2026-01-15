@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A former cartel enforcer, mute and in a wheelchair.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/b519652a613d3e5e.png"
+        "type": "CUSTOM",
+        "textureId": "Hector_Salamanca_c11f1c0d"
     },
     "attributes": {
         "maxHealth": 40,

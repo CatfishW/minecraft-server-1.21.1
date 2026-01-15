@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "An ancient dwarf who has mined these lands for centuries. He remembers when the first diamonds were discovered and has mapped every cave system in the region.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/ElderStoneheart"
+        "type": "CUSTOM",
+        "textureId": "Elder_Stoneheart_4e55bc5a"
     },
     "attributes": {
         "maxHealth": 40,

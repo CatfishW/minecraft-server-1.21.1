@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A former Philadelphia police officer who became corrupt to protect his son, also a cop. After his son was murdered for not taking bribes, Mike moved to Albuquerque to be near his granddaughter Kaylee.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/894c9e2632b2d13d.png"
+        "type": "CUSTOM",
+        "textureId": "Mike_Ehrmantraut_53c2c1d5"
     },
     "attributes": {
         "maxHealth": 40,

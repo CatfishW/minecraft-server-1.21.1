@@ -24,7 +24,7 @@ import java.util.List;
 public class ShopMenu extends AbstractContainerMenu {
     public static final int ROWS = 6;
     public static final int SIZE = ROWS * 9;
-    public static final int OFFER_SLOTS = 45;
+    public static final int OFFER_SLOTS = 28; // 4 rows of 7 slots (centered)
     public static final int PREV_SLOT = 45;
     public static final int NEXT_SLOT = 53;
     public static final int CAT_ALL_SLOT = 46;
@@ -34,6 +34,14 @@ public class ShopMenu extends AbstractContainerMenu {
     public static final int CAT_MOB_DROPS_SLOT = 50;
     public static final int CAT_UTILITY_SLOT = 51;
     public static final int CAT_NATURE_SLOT = 52;
+    
+    private static final int[] OFFER_SLOT_MAP = {
+            1, 2, 3, 4, 5, 6, 7,        // Row 0 (Columns 1-7)
+            10, 11, 12, 13, 14, 15, 16, // Row 1 (Columns 1-7)
+            19, 20, 21, 22, 23, 24, 25, // Row 2 (Columns 1-7)
+            28, 29, 30, 31, 32, 33, 34  // Row 3 (Columns 1-7)
+            // Row 4 is left empty as a gap
+    };
 
     private final ServerPlayer serverPlayer;
     private final List<ShopOffer> serverOffers;
@@ -99,7 +107,17 @@ public class ShopMenu extends AbstractContainerMenu {
     }
 
     private void populate() {
-        for (int i = 0; i < serverOffers.size() && i < OFFER_SLOTS; i++) {
+        // Fill background slots with filler item to create a border
+        ItemStack filler = new ItemStack(Items.LIGHT_GRAY_STAINED_GLASS_PANE);
+        filler.set(DataComponents.CUSTOM_NAME, Component.empty());
+        
+        // 1. Fill everything with filler first
+        for (int i = 0; i < SIZE; i++) {
+            container.setItem(i, filler);
+        }
+
+        // 2. Put offers in their mapped slots
+        for (int i = 0; i < serverOffers.size() && i < OFFER_SLOT_MAP.length; i++) {
             ShopOffer offer = serverOffers.get(i);
             ItemStack stack = ItemKeyFactory.stackFromSnbt(offer.itemJson(), offer.count(), serverPlayer.getServer().registryAccess());
             List<Component> lore = new ArrayList<>();
@@ -130,7 +148,7 @@ public class ShopMenu extends AbstractContainerMenu {
             lore.add(Component.translatable("ui.warm_pixel_economy.shop.offer.sell_hint").withStyle(s -> s.withColor(0x87E0A0)));
             
             stack.set(DataComponents.LORE, new ItemLore(lore));
-            container.setItem(i, stack);
+            container.setItem(OFFER_SLOT_MAP[i], stack);
         }
 
         // Category Filters
@@ -165,8 +183,17 @@ public class ShopMenu extends AbstractContainerMenu {
         if (!(player instanceof ServerPlayer server)) {
             return;
         }
-        if (slotId >= 0 && slotId < OFFER_SLOTS && slotId < serverOffers.size()) {
-            ShopOffer offer = serverOffers.get(slotId);
+
+        int offerIndex = -1;
+        for (int i = 0; i < OFFER_SLOT_MAP.length; i++) {
+            if (OFFER_SLOT_MAP[i] == slotId) {
+                offerIndex = i;
+                break;
+            }
+        }
+
+        if (offerIndex >= 0 && offerIndex < serverOffers.size()) {
+            ShopOffer offer = serverOffers.get(offerIndex);
             TradeMode mode = button == 1 ? TradeMode.SELL : TradeMode.BUY;
             if (mode == TradeMode.BUY && !offer.buyEnabled()) {
                 server.displayClientMessage(Component.translatable("ui.warm_pixel_economy.shop.offer.buy_disabled"), true);
@@ -226,6 +253,10 @@ public class ShopMenu extends AbstractContainerMenu {
 
     public int page() {
         return page;
+    }
+
+    public int[] getOfferSlotMap() {
+        return OFFER_SLOT_MAP;
     }
 
     public record Data(List<ShopOfferView> offers, String category, String query, int page) {

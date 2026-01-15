@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A humble farmer who has perfected the art of growing crops in any biome. His knowledge of breeding and farming is unparalleled in all the land.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/FarmerChen"
+        "type": "CUSTOM",
+        "textureId": "Farmer_Chen_144014d4"
     },
     "attributes": {
         "maxHealth": 40,

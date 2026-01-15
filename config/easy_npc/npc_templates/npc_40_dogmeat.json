@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Loyal dog companion. Finds items.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/86d7625ab28b17c3.png"
+        "type": "CUSTOM",
+        "textureId": "Dogmeat_c2c46330"
     },
     "attributes": {
         "maxHealth": 40,

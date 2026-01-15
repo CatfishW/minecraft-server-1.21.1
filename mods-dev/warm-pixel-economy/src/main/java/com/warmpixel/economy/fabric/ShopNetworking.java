@@ -40,7 +40,7 @@ public final class ShopNetworking {
                 sendResult(player, EconomyResult.fail("message.warm_pixel_economy.offer_mismatch"), economyContext);
                 return;
             }
-            int units = Math.max(1, payload.units());
+            int units = Math.max(0, payload.units());
             CompletableFuture<EconomyResult> resultFuture;
             if (payload.mode() == TradeMode.SELL) {
                 resultFuture = economyContext.shopService().sellToShop(player, payload.offerId(), economyContext.config().defaultCurrency, units);

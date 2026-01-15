@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Born James McGill, he reinvented himself as the flamboyant criminal defense attorney Saul Goodman. Operates from a strip mall office and connects criminals with the services they need.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/380a01df2de7aa69.png"
+        "type": "CUSTOM",
+        "textureId": "Saul_Goodman_e6e8fc55"
     },
     "attributes": {
         "maxHealth": 40,

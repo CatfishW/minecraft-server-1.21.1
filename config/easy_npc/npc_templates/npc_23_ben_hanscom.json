@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Historian. Architect. Sensitive soul.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/fa0707a4e9d92da3.png"
+        "type": "CUSTOM",
+        "textureId": "Ben_Hanscom_95d4a498"
     },
     "attributes": {
         "maxHealth": 40,

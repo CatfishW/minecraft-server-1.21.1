@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The survivor. Has a connection to the Upside Down.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/14d818b79cde8c1a.png"
+        "type": "CUSTOM",
+        "textureId": "Will_Byers_1fbd73dd"
     },
     "attributes": {
         "maxHealth": 40,

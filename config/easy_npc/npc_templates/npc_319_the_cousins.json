@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Silent, deadly cartel enforcers.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c5b848029efa2d5b.png"
+        "type": "CUSTOM",
+        "textureId": "The_Cousins_4d2432fe"
     },
     "attributes": {
         "maxHealth": 40,

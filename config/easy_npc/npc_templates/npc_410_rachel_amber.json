@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The most popular girl at Blackwell Academy who formed an intense bond with Chloe Price before mysteriously disappearing. Everyone in Arcadia Bay seems to have known her differently.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7c882cf60292471d.png"
+        "type": "CUSTOM",
+        "textureId": "Rachel_Amber_adf7764a"
     },
     "attributes": {
         "maxHealth": 40,

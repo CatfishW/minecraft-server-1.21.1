@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "引导冒险者进入故事世界的神秘向导",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://namemc.com/texture/d3beaf1fae7b7a2e.png"
+        "type": "CUSTOM",
+        "textureId": "Story_Guide_1891d28b"
     },
     "attributes": {
         "maxHealth": 100,

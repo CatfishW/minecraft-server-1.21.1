@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The calm and calculated owner of Los Pollos Hermanos.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/23aee02639456f8c.png"
+        "type": "CUSTOM",
+        "textureId": "Gustavo_Fring_c51e0ae4"
     },
     "attributes": {
         "maxHealth": 40,

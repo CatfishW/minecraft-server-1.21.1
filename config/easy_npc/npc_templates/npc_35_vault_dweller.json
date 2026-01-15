@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Survivor from a Vault. Seeking water chip.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/78fde0361cbbfe8d.png"
+        "type": "CUSTOM",
+        "textureId": "Betsy_Kettleman_220a6d05"
     },
     "attributes": {
         "maxHealth": 40,

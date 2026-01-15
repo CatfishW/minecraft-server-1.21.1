@@ -17,6 +17,7 @@ public class ModItems {
     private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     
     public static final Item ADMIN_WAND = register("admin_wand", new AdminWandItem());
+    public static final Item CAMERA_WAND = register("camera_wand", new CameraWandItem());
     
     private static Item register(String name, Item item) {
         return Registry.register(

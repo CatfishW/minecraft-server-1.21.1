@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A brilliant lawyer and Jimmy's close companion.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/2a281cb87af99677.png"
+        "type": "CUSTOM",
+        "textureId": "Kim_Wexler_32e54163"
     },
     "attributes": {
         "maxHealth": 40,

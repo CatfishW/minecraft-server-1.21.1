@@ -268,6 +268,9 @@ public class Instance {
         StoryAdventureMod.LOGGER.info("Instance {} completed successfully in {}ms",
             instanceId, elapsedMs);
         
+        // Clean up entities
+        cleanupEntities();
+        
         // Send victory screen to all party members
         if (server != null) {
             // Build victory data JSON
@@ -403,6 +406,41 @@ public class Instance {
         status = InstanceStatus.FAILED;
         StoryAdventureMod.LOGGER.info("Instance {} failed after {}ms",
             instanceId, getElapsedMillis());
+            
+        // Clean up entities
+        cleanupEntities();
+    }
+    
+    /**
+     * Clean up any entities spawned by this instance (tagged with instance_ID).
+     */
+    private void cleanupEntities() {
+        if (server == null) return;
+        
+        String instanceTag = "instance_" + instanceId.toString();
+        StoryAdventureMod.LOGGER.info("[Instance] Cleaning up entities for instance {} (tag: {})", instanceId, instanceTag);
+        
+        for (ServerLevel level : server.getAllLevels()) {
+            java.util.List<net.minecraft.world.entity.Entity> entitiesToRemove = new java.util.ArrayList<>();
+            // Iterable<Entity> getAllEntities()
+            for (net.minecraft.world.entity.Entity entity : level.getAllEntities()) {
+                if (entity.getTags().contains(instanceTag)) {
+                    entitiesToRemove.add(entity);
+                }
+            }
+            
+            for (net.minecraft.world.entity.Entity entity : entitiesToRemove) {
+                try {
+                    entity.discard(); // remove without death events
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.warn("[Instance] Failed to discard entity {}: {}", entity, e.getMessage());
+                }
+            }
+            
+            if (!entitiesToRemove.isEmpty()) {
+                StoryAdventureMod.LOGGER.info("[Instance] Removed {} entities from {}", entitiesToRemove.size(), level.dimension().location());
+            }
+        }
     }
     
     /**
@@ -565,6 +603,12 @@ public class Instance {
                     var action = com.warmpixel.storyadventure.core.action.ActionFactory.fromJson(actionJson);
                     if (action != null) {
                         try {
+                            if (action instanceof com.warmpixel.storyadventure.core.action.SpawnNPCAction spawnAction) {
+                                spawnAction.setInstanceId(instanceId);
+                            } else if (action instanceof com.warmpixel.storyadventure.core.action.CommandAction cmdAction) {
+                                cmdAction.setInstanceId(instanceId);
+                            }
+                            
                             action.execute(onlinePlayers);
                             StoryAdventureMod.LOGGER.debug("[Instance.enterNode] Executed action: {} for {} players", 
                                 actionJson.get("type").getAsString(), onlinePlayers.size());

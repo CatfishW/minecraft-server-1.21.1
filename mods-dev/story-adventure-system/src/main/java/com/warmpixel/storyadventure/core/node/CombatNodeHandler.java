@@ -77,12 +77,22 @@ public class CombatNodeHandler implements NodeHandler {
                     int groundY = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, (int)spawnX, (int)spawnZ);
                     double spawnY = Math.max(centerY - 5, Math.min(centerY + 5, groundY)); 
                     
-                    String summonCmd = String.format("summon %s %.2f %.2f %.2f {Tags:[\"story_enemy\",\"instance_%s\"]}", 
-                        entityType, spawnX, spawnY, spawnZ, instance.getInstanceId().toString());
+                    String cmd;
+                    // If type has a colon (e.g. minecraft:zombie), assume it's a standard entity.
+                    // If it's a template name (no colon or starts with easy_npc prefix), use the new command.
+                    if (entityType.contains(":") && !entityType.toLowerCase().startsWith("easy_npc:")) {
+                         cmd = String.format("summon %s %.2f %.2f %.2f {Tags:[\"story_enemy\",\"instance_%s\"]}", 
+                            entityType, spawnX, spawnY, spawnZ, instance.getInstanceId().toString());
+                    } else {
+                         // Assume it's an NPC template
+                         String nbt = String.format("{Tags:[\"story_enemy\",\"instance_%s\"]}", instance.getInstanceId().toString());
+                         cmd = String.format("easy_npc template spawn %s %.2f %.2f %.2f %s", 
+                            entityType, spawnX, spawnY, spawnZ, nbt);
+                    }
                     
                     instance.getServer().getCommands().performPrefixedCommand(
                         instance.getServer().createCommandSourceStack().withSuppressedOutput(),
-                        summonCmd
+                        cmd
                     );
                     
                     totalToSpawn++;

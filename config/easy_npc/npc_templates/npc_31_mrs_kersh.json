@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Creepy old lady. An illusion of IT.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/bd19cf2c2d7a851f.png"
+        "type": "CUSTOM",
+        "textureId": "Mrs_Kersh_3975c12f"
     },
     "attributes": {
         "maxHealth": 40,

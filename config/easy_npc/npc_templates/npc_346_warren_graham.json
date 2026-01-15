@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A science geek and friend to Max.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/bea90147fd461cbc.png"
+        "type": "CUSTOM",
+        "textureId": "Warren_Graham_0b85195a"
     },
     "attributes": {
         "maxHealth": 40,

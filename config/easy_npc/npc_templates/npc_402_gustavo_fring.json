@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A Chilean immigrant who operates Los Pollos Hermanos as a front for his methamphetamine empire. His partner was murdered by the cartel, fueling a decades-long quest for revenge against the Salamanca family.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/23aee02639456f8c.png"
+        "type": "CUSTOM",
+        "textureId": "Gustavo_Fring_c51e0ae4"
     },
     "attributes": {
         "maxHealth": 40,

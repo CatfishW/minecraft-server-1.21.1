@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "The dancing clown. Horror incarnate.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/91d3620ad681f3f4.png"
+        "type": "CUSTOM",
+        "textureId": "Pennywise_876d04fd"
     },
     "attributes": {
         "maxHealth": 40,

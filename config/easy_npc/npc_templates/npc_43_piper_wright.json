@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Reporter for Publick Occurrences.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/95981a3c6e4d053e.png"
+        "type": "CUSTOM",
+        "textureId": "Piper_Wright_80b00b31"
     },
     "attributes": {
         "maxHealth": 40,

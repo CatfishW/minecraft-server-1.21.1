@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The charming and terrifying nephew of Hector Salamanca, sent to investigate Gus Fring's operations. Unlike his brutish cousins, Lalo is intelligent, personable, and utterly remorseless.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/6739e533b40286f8.png"
+        "type": "CUSTOM",
+        "textureId": "Lalo_Salamanca_faf8fdff"
     },
     "attributes": {
         "maxHealth": 40,

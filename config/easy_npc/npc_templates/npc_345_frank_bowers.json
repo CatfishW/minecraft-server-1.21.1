@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A local drug dealer with a soft spot for dogs.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/789b723586cbebce.png"
+        "type": "CUSTOM",
+        "textureId": "Frank_Bowers_024879d0"
     },
     "attributes": {
         "maxHealth": 40,

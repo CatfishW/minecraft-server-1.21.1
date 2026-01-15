@@ -116,16 +116,24 @@ public class ShopService {
                     failed++;
                     continue;
                 }
-                if (storage.hasOffer(shopId, entry.registryId(), entry.category())) {
-                    skipped++;
-                    continue;
+                ItemStack stack;
+                if (entry.itemSnbt() != null && !entry.itemSnbt().isBlank()) {
+                    stack = ItemKeyFactory.stackFromSnbt(entry.itemSnbt(), entry.count(), registryAccess);
+                } else {
+                    stack = new ItemStack(BuiltInRegistries.ITEM.get(id), entry.count());
                 }
-                ItemStack stack = new ItemStack(BuiltInRegistries.ITEM.get(id), entry.count());
+
                 if (stack.isEmpty() || stack.getItem() == Items.AIR) {
                     failed++;
                     continue;
                 }
                 ItemSnapshot snapshot = ItemKeyFactory.snapshot(stack, 0, registryAccess);
+
+                if (storage.hasOffer(shopId, entry.registryId(), snapshot.key().itemHash(), entry.category())) {
+                    skipped++;
+                    continue;
+                }
+
                 ShopOffer offer = new ShopOffer(
                         UUID.randomUUID().toString(),
                         shopId,
@@ -153,7 +161,10 @@ public class ShopService {
     }
 
     public CompletableFuture<EconomyResult> buyOffer(ServerPlayer player, String offerId, String currencyId, int units) {
-        int safeUnits = Math.max(1, units);
+        int safeUnits = Math.max(0, units);
+        if (safeUnits == 0) {
+            return CompletableFuture.completedFuture(EconomyResult.ok("message.warm_pixel_economy.sell_complete"));
+        }
         return CompletableFuture.supplyAsync(() -> storage.getOffer(offerId).orElse(null), executor)
                 .thenCompose(offer -> {
                     if (offer == null) {
@@ -233,7 +244,10 @@ public class ShopService {
     }
 
     public CompletableFuture<EconomyResult> sellToShop(ServerPlayer player, String offerId, String currencyId, int units) {
-        int safeUnits = Math.max(1, units);
+        int safeUnits = Math.max(0, units);
+        if (safeUnits == 0) {
+            return CompletableFuture.completedFuture(EconomyResult.ok("message.warm_pixel_economy.sell_complete"));
+        }
         return CompletableFuture.supplyAsync(() -> storage.getOffer(offerId).orElse(null), executor)
                 .thenCompose(offer -> {
                     if (offer == null) {
@@ -255,10 +269,11 @@ public class ShopService {
                     ItemKey offerKey = ItemKeyFactory.snapshot(offerStack, 0, player.getServer().registryAccess()).key();
                     return inventoryAdapter.countMatching(player, offerKey).thenCompose(available -> {
                         int offersAvailable = available / offer.count();
-                        if (offersAvailable <= 0) {
+                        if (offersAvailable < safeUnits) {
+                            System.out.println("[Economy] Sell validation failed: available=" + available + ", requested=" + (offer.count() * safeUnits));
                             return CompletableFuture.completedFuture(EconomyResult.fail("message.warm_pixel_economy.missing_items"));
                         }
-                        int offersToSell = Math.min(safeUnits, offersAvailable);
+                        int offersToSell = safeUnits;
                         int sellCount;
                         try {
                             sellCount = Math.multiplyExact(offer.count(), offersToSell);
@@ -268,6 +283,7 @@ public class ShopService {
                         return inventoryAdapter.removeMatching(player, offerKey, sellCount)
                                 .thenCompose(removed -> {
                                     if (!removed) {
+                                        System.out.println("[Economy] Item removal failed despite validation");
                                         return CompletableFuture.completedFuture(EconomyResult.fail("message.warm_pixel_economy.missing_items"));
                                     }
                                     long baseTotal;

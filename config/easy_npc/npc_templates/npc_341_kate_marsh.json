@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A kind and religious student struggling with bullying.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/a098f745db5414f9.png"
+        "type": "CUSTOM",
+        "textureId": "Kate_Marsh_ef402ba5"
     },
     "attributes": {
         "maxHealth": 40,

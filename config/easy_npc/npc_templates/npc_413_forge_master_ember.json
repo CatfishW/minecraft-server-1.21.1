@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A legendary smith who claims to have forged weapons for heroes of old. Her forge burns with netherite-infused flames that never die.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/ForgeMasterEmber"
+        "type": "CUSTOM",
+        "textureId": "Forge_Master_Ember_1371dced"
     },
     "attributes": {
         "maxHealth": 40,

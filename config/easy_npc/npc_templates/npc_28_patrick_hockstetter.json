@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Psychopathic bully. Likes fire.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/d46d1710476dd5ab.png"
+        "type": "CUSTOM",
+        "textureId": "Patrick_Hockstetter_22ffdabf"
     },
     "attributes": {
         "maxHealth": 40,

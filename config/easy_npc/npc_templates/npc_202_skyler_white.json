@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Walter's wife, struggling with his secret life.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/cf17d054aa4b9f83.png"
+        "type": "CUSTOM",
+        "textureId": "Skyler_White_4ad73caf"
     },
     "attributes": {
         "maxHealth": 40,

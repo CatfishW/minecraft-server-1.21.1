@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "One of the few who regularly ventures into the Nether and returns alive. Maps Nether fortresses and knows safe paths through the hellish dimension.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://mc-heads.net/skin/NetherScoutBlaze"
+        "type": "CUSTOM",
+        "textureId": "Nether_Scout_Blaze_a9be6ed9"
     },
     "attributes": {
         "maxHealth": 40,

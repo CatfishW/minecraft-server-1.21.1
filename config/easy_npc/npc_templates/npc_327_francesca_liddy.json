@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The receptionist for Jimmy and Kim.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/07e85b2280bd733c.png"
+        "type": "CUSTOM",
+        "textureId": "Francesca_Liddy_fa65b3d3"
     },
     "attributes": {
         "maxHealth": 40,

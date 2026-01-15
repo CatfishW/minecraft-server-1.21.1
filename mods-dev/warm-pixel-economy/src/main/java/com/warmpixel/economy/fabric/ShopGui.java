@@ -16,7 +16,7 @@ public final class ShopGui {
     }
 
     public static void open(ServerPlayer player, String category, String query, int page) {
-        int pageSize = WarmPixelEconomyMod.getContext().config().shop.pageSize;
+        int pageSize = 28; // Use 28 to match our new layout
         WarmPixelEconomyMod.getContext().shopService()
                 .listOffers(WarmPixelEconomyMod.getContext().config().shop.adminShopId, category, query, page, pageSize)
                 .thenAccept(offers -> player.server.execute(() -> openMenu(player, offers, category, query, page)));

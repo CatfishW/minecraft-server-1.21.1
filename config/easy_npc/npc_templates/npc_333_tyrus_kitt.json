@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "One of Gus Fring's loyal henchmen.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/b91269d7ebbcbf92.png"
+        "type": "CUSTOM",
+        "textureId": "Tyrus_Kitt_d2e3b0d1"
     },
     "attributes": {
         "maxHealth": 40,

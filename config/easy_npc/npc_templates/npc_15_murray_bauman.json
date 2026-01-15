@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Conspiracy theorist. Speaks Russian.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/d27513980f6da2d5.png"
+        "type": "CUSTOM",
+        "textureId": "Murray_Bauman_87daed88"
     },
     "attributes": {
         "maxHealth": 40,

@@ -16,7 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -75,18 +75,21 @@ public class EconomyStorage {
             }
             offers.add(offer);
         }
-        offers.sort(Comparator.comparing(ShopOffer::registryId));
+        // No sorting, use insertion order (LinkedHashMap) to allow manual grouping
         int from = Math.min(offset, offers.size());
         int to = Math.min(from + limit, offers.size());
         return offers.subList(from, to);
     }
 
-    public synchronized boolean hasOffer(String shopId, String registryId, String category) {
+    public synchronized boolean hasOffer(String shopId, String registryId, String itemHash, String category) {
         for (ShopOffer offer : data.shopOffers.values()) {
             if (!Objects.equals(offer.shopId(), shopId)) {
                 continue;
             }
             if (!Objects.equals(offer.registryId(), registryId)) {
+                continue;
+            }
+            if (itemHash != null && !Objects.equals(offer.itemHash(), itemHash)) {
                 continue;
             }
             if (category != null && !category.isBlank() && !Objects.equals(offer.category(), category)) {
@@ -299,8 +302,8 @@ public class EconomyStorage {
     }
 
     private static class Data {
-        private Map<String, ShopOffer> shopOffers = new HashMap<>();
-        private Map<String, AuctionListing> auctionListings = new HashMap<>();
-        private Map<String, Delivery> deliveries = new HashMap<>();
+        private Map<String, ShopOffer> shopOffers = new LinkedHashMap<>();
+        private Map<String, AuctionListing> auctionListings = new LinkedHashMap<>();
+        private Map<String, Delivery> deliveries = new LinkedHashMap<>();
     }
 }

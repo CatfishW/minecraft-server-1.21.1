@@ -49,6 +49,12 @@ public class NetworkHandler {
         // Victory confirmation payload
         PayloadTypeRegistry.playC2S().register(VictoryConfirmPayload.TYPE, VictoryConfirmPayload.STREAM_CODEC);
         
+        // Cutscene payload (server to client)
+        PayloadTypeRegistry.playS2C().register(CutscenePayload.TYPE, CutscenePayload.CODEC);
+        
+        // Voiceover payload (server to client)
+        PayloadTypeRegistry.playS2C().register(VoiceoverPayload.TYPE, VoiceoverPayload.STREAM_CODEC);
+        
         StoryAdventureMod.LOGGER.info("Registered network payload types");
     }
     
@@ -368,6 +374,65 @@ public class NetworkHandler {
                 player.getName().getString(), screenType, extraData);
         }
     }
+    
+    /**
+     * Send a cutscene start command to a player.
+     */
+    public static void sendCutsceneStart(ServerPlayer player, com.google.gson.JsonObject cameraPath, 
+                                          boolean skippable, boolean letterbox, 
+                                          int fadeInTicks, int fadeOutTicks, String instanceId) {
+        if (player != null && player.connection != null) {
+            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks);
+            ServerPlayNetworking.send(player, payload);
+            StoryAdventureMod.LOGGER.info("Sent cutscene START to {}", player.getName().getString());
+        }
+    }
+    
+    /**
+     * Send a cutscene stop command to a player.
+     */
+    public static void sendCutsceneStop(ServerPlayer player, String instanceId) {
+        if (player != null && player.connection != null) {
+            CutscenePayload payload = CutscenePayload.stop(instanceId);
+            ServerPlayNetworking.send(player, payload);
+            StoryAdventureMod.LOGGER.debug("Sent cutscene STOP to {}", player.getName().getString());
+        }
+    }
+    
+    /**
+     * Send a voiceover to a player.
+     */
+    public static void sendVoiceover(ServerPlayer player, String instanceId, String soundPath, String characterId) {
+        sendVoiceover(player, instanceId, soundPath, 1.0f, 1.0f, characterId);
+    }
+    
+    /**
+     * Send a voiceover to a player with custom volume and pitch.
+     */
+    public static void sendVoiceover(ServerPlayer player, String instanceId, String soundPath, 
+                                      float volume, float pitch, String characterId) {
+        if (player != null && player.connection != null) {
+            VoiceoverPayload payload = VoiceoverPayload.custom(instanceId, soundPath, volume, pitch, characterId);
+            ServerPlayNetworking.send(player, payload);
+            StoryAdventureMod.LOGGER.debug("Sent voiceover {} to {}", soundPath, player.getName().getString());
+        }
+    }
+    
+    /**
+     * Send a voiceover to all party members of an instance.
+     */
+    public static void sendVoiceoverToParty(com.warmpixel.storyadventure.instance.Instance instance, 
+                                             String soundPath, String characterId) {
+        if (instance == null) return;
+        
+        for (java.util.UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                sendVoiceover(player, instance.getInstanceId().toString(), soundPath, characterId);
+            }
+        }
+    }
+
     
     /**
      * Sync the list of active instances to an administrative player.

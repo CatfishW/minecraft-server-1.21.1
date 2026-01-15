@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Hank's partner at the DEA.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/4efc3a8673080b5b.png"
+        "type": "CUSTOM",
+        "textureId": "Steven_Gomez_11f60b8e"
     },
     "attributes": {
         "maxHealth": 40,

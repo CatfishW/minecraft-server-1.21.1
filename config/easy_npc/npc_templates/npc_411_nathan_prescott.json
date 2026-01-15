@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "Heir to the wealthy Prescott family that essentially owns Arcadia Bay. Mentally unstable and heavily medicated, he's caught up in something darker than anyone realizes.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/f5e7b3b473ca8846.png"
+        "type": "CUSTOM",
+        "textureId": "Nathan_Prescott_5e04acf5"
     },
     "attributes": {
         "maxHealth": 40,

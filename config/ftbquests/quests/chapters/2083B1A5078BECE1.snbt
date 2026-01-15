@@ -6,5 +6,58 @@
 	id: "2083B1A5078BECE1"
 	order_index: 2
 	quest_links: [ ]
-	quests: [ ]
+	quests: [
+		{
+			icon: {
+				id: "numismatic-overhaul:piggy_bank"
+			}
+			id: "0A663C32EF85D560"
+			rewards: [{
+				id: "1F833151FCE5D5B0"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:silver_coin"
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 2.0d
+			tasks: [{
+				id: "63DA7ADF119E6660"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0A663C32EF85D560"]
+			id: "0B6998A89B5F77DE"
+			rewards: [{
+				count: 50
+				id: "146869ADB6F88B4E"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "2461A49B70036675"
+				item: { count: 1, id: "numismatic-overhaul:silver_coin" }
+				type: "item"
+			}]
+			x: -3.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0A663C32EF85D560"]
+			id: "2A65ADF0BEBA5574"
+			tasks: [{
+				id: "0DE6B51B8CCF6817"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 3.0d
+		}
+	]
 }

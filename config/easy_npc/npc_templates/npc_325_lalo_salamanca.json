@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A charismatic and dangerous member of the Salamanca family.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/6739e533b40286f8.png"
+        "type": "CUSTOM",
+        "textureId": "Lalo_Salamanca_faf8fdff"
     },
     "attributes": {
         "maxHealth": 40,

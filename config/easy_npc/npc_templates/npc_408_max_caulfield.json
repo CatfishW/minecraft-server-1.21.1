@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "A shy photography student at Blackwell Academy who discovers she can rewind time. Returns to her hometown of Arcadia Bay and reconnects with childhood friend Chloe Price.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/1d18ee404659740f.png"
+        "type": "CUSTOM",
+        "textureId": "Max_Mayfield_08b5eae4"
     },
     "attributes": {
         "maxHealth": 40,

@@ -4,8 +4,8 @@
     "faction": "default",
     "description": "Antagonist stepbrother. Wild and dangerous.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/c390fe8e178ebac5.png"
+        "type": "CUSTOM",
+        "textureId": "Billy_Hargrove_2ed3f775"
     },
     "attributes": {
         "maxHealth": 40,

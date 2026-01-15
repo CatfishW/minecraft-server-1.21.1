@@ -1,6 +1,8 @@
 package com.warmpixel.storyadventure.network;
 
 import com.warmpixel.storyadventure.StoryAdventureMod;
+import com.warmpixel.storyadventure.client.cinematic.CameraPath;
+import com.warmpixel.storyadventure.client.cinematic.CinematicCameraController;
 import com.warmpixel.storyadventure.client.ui.*;
 import com.warmpixel.storyadventure.client.ui.admin.*;
 import com.warmpixel.storyadventure.client.ui.hud.StrangerHudRenderer;
@@ -152,6 +154,16 @@ public class ClientNetworkHandler {
             });
         });
         
+        // Cutscene payload - handle camera control from server
+        ClientPlayNetworking.registerGlobalReceiver(CutscenePayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> handleCutscenePayload(payload));
+        });
+        
+        // Voiceover payload - handle voiceover audio from server
+        ClientPlayNetworking.registerGlobalReceiver(VoiceoverPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> handleVoiceoverPayload(payload));
+        });
+        
         StoryAdventureMod.LOGGER.info("Registered client network receivers");
     }
     
@@ -191,6 +203,7 @@ public class ClientNetworkHandler {
                 String npcName = "NPC";
                 StringBuilder dialogueText = new StringBuilder();
                 java.util.List<String[]> choicesList = new java.util.ArrayList<>();
+                String voiceoverPath = null; // Optional voiceover
                 
                 // Parse extraData JSON if present
                 if (extraData != null && !extraData.isEmpty()) {
@@ -201,11 +214,26 @@ public class ClientNetworkHandler {
                             npcName = json.get("npcName").getAsString();
                         }
                         
+                        // Parse voiceover if present
+                        if (json.has("voiceover")) {
+                            voiceoverPath = json.get("voiceover").getAsString();
+                        }
+                        
                         if (json.has("lines") && json.get("lines").isJsonArray()) {
                             var lines = json.getAsJsonArray("lines");
                             for (int i = 0; i < lines.size(); i++) {
                                 if (i > 0) dialogueText.append("\n\n");
-                                dialogueText.append(lines.get(i).getAsString());
+                                // Lines can be strings or objects with text and voiceover
+                                if (lines.get(i).isJsonPrimitive()) {
+                                    dialogueText.append(lines.get(i).getAsString());
+                                } else if (lines.get(i).isJsonObject()) {
+                                    var lineObj = lines.get(i).getAsJsonObject();
+                                    dialogueText.append(lineObj.has("text") ? lineObj.get("text").getAsString() : "");
+                                    // If this is the first line and has voiceover, use it
+                                    if (i == 0 && lineObj.has("voiceover") && voiceoverPath == null) {
+                                        voiceoverPath = lineObj.get("voiceover").getAsString();
+                                    }
+                                }
                             }
                         }
                         
@@ -228,11 +256,19 @@ public class ClientNetworkHandler {
                     dialogueText.append("...");
                 }
                 
+                // Play voiceover if present
+                if (voiceoverPath != null && !voiceoverPath.isEmpty()) {
+                    var voiceoverManager = com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance();
+                    voiceoverManager.playVoiceover(voiceoverPath, npcName);
+                }
+                
                 StrangerDialogueScreen screen = new StrangerDialogueScreen(npcName, dialogueText.toString());
                 
                 // Add choices from JSON
                 for (String[] choice : choicesList) {
                     screen.addChoice(choice[0], choice[1], () -> {
+                        // Stop voiceover when making a choice
+                        com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance().stopCurrentVoiceover();
                         mc.setScreen(null); // Close dialogue after selection
                     });
                 }
@@ -240,12 +276,14 @@ public class ClientNetworkHandler {
                 // Add default choice if none defined
                 if (choicesList.isEmpty()) {
                     screen.addChoice("continue", "继续", () -> {
+                        com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance().stopCurrentVoiceover();
                         mc.setScreen(null);
                     });
                 }
                 
                 mc.setScreen(screen);
             }
+
             
             case OpenUIPayload.SCREEN_PUZZLE -> {
                 StrangerPuzzleScreen screen = new StrangerPuzzleScreen(
@@ -375,5 +413,50 @@ public class ClientNetworkHandler {
 
     public static java.util.List<SyncInstancesPayload.InstanceInfo> getLastSyncedInstances() {
         return lastSyncedInstances;
+    }
+    
+    /**
+     * Handle cutscene payload from server.
+     */
+    private static void handleCutscenePayload(CutscenePayload payload) {
+        CinematicCameraController controller = CinematicCameraController.getInstance();
+        
+        switch (payload.action().toUpperCase()) {
+            case "START" -> {
+                // Parse camera path from JSON
+                com.google.gson.JsonObject pathJson = payload.getCameraPathAsJson();
+                CameraPath path = CameraPath.fromJson(pathJson);
+                
+                // Configure cutscene
+                CinematicCameraController.CutsceneConfig config = new CinematicCameraController.CutsceneConfig()
+                    .setSkippable(payload.skippable())
+                    .setLetterboxEnabled(payload.letterbox())
+                    .setFadeInTicks(payload.fadeInTicks())
+                    .setFadeOutTicks(payload.fadeOutTicks());
+                
+                // Start the cutscene
+                controller.startCutscene(path, config);
+                StoryAdventureMod.LOGGER.info("Started cutscene for instance {}", payload.instanceId());
+            }
+            case "STOP" -> {
+                controller.stopCutscene();
+                StoryAdventureMod.LOGGER.info("Stopped cutscene for instance {}", payload.instanceId());
+            }
+            case "SKIP" -> {
+                controller.skipCutscene();
+                StoryAdventureMod.LOGGER.info("Skipped cutscene for instance {}", payload.instanceId());
+            }
+            default -> StoryAdventureMod.LOGGER.warn("Unknown cutscene action: {}", payload.action());
+        }
+    }
+    
+    /**
+     * Handle voiceover payload from server.
+     * Plays the voiceover audio using VoiceoverManager.
+     */
+    private static void handleVoiceoverPayload(VoiceoverPayload payload) {
+        var voiceoverManager = com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance();
+        voiceoverManager.playVoiceover(payload.soundPath(), payload.volume(), payload.pitch(), payload.characterId());
+        StoryAdventureMod.LOGGER.debug("Playing voiceover: {} (character: {})", payload.soundPath(), payload.characterId());
     }
 }

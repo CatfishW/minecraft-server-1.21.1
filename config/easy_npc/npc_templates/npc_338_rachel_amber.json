@@ -3,8 +3,8 @@
     "entityType": "easy_npc:humanoid",
     "description": "The most popular girl in Arcadia Bay who went missing.",
     "skin": {
-        "type": "URL_SKIN",
-        "skinUrl": "https://s.namemc.com/i/7c882cf60292471d.png"
+        "type": "CUSTOM",
+        "textureId": "Rachel_Amber_adf7764a"
     },
     "attributes": {
         "maxHealth": 40,

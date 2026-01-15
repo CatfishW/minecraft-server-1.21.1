@@ -1,0 +1,12 @@
+{
+    "voiceover.narrator": {
+        "category": "voice",
+        "subtitle": "Narrator",
+        "sounds": []
+    },
+    "voiceover.character": {
+        "category": "voice",
+        "subtitle": "Character",
+        "sounds": []
+    }
+}
