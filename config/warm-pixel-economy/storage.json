@@ -1062,8 +1062,8 @@
       "bidIncrement": 1,
       "createdAt": 1768322889354,
       "expiresAt": 1768409289349,
-      "status": "OPEN",
-      "version": 0
+      "status": "EXPIRED",
+      "version": 1
     }
   },
   "deliveries": {
@@ -1258,6 +1258,18 @@
       "status": "PENDING",
       "createdAt": 1768250919365,
       "lastAttempt": 0
+    },
+    "24a26cba-37fb-43cc-ad0d-fcaa2f590b19": {
+      "deliveryId": "24a26cba-37fb-43cc-ad0d-fcaa2f590b19",
+      "ownerAccount": "aa24840b-eb03-3e8b-bbba-ab6f36abe6d5",
+      "type": "ITEM",
+      "itemHash": "ac6b2cb2be96d541a504de8f10430542bf47ac6a2ad142d896d788f3d6c91eb5",
+      "itemJson": "{\"components\":{\"minecraft:custom_data\":{\"GunCurrentAmmoCount\":1,\"GunFireMode\":\"SEMI\",\"GunId\":\"pgpre:z750\",\"HasBulletInBarrel\":1b}},\"count\":1,\"id\":\"tacz:modern_kinetic_gun\"}",
+      "count": 1,
+      "amount": 0,
+      "status": "CLAIMED",
+      "createdAt": 1768409301426,
+      "lastAttempt": 1768423142360
     }
   }
 }

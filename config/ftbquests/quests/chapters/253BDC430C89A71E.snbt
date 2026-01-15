@@ -5,6 +5,15 @@
 	filename: "253BDC430C89A71E"
 	group: "6A83FBBB746164FB"
 	icon: {
+		components: {
+			"automobility:automobile_data": {
+				engine: "automobility:stone"
+				frame: "automobility:shopping_cart"
+				prefab_id: "automobility:shopping_cart"
+				wheels: "automobility:steel"
+			}
+			"minecraft:item_name": "{\"translate\":\"prefab.automobility.shopping_cart\"}"
+		}
 		id: "automobility:automobile"
 	}
 	id: "253BDC430C89A71E"

@@ -91,6 +91,14 @@ public class StoryLoader {
     }
     
     /**
+     * Reload all stories.
+     */
+    public void reload() {
+        StoryAdventureMod.LOGGER.info("[StoryLoader] Reloading all stories...");
+        loadAllStories();
+    }
+    
+    /**
      * Save a story to disk.
      */
     public boolean saveStory(StageGraph graph) {
@@ -106,14 +114,6 @@ public class StoryLoader {
                 graph.getStoryId(), storyPath, e.getMessage());
             return false;
         }
-    }
-
-    /**
-     * Reload all stories.
-     */
-    public void reload() {
-        StoryAdventureMod.LOGGER.info("[StoryLoader] Reloading all stories...");
-        loadAllStories();
     }
     
     /**

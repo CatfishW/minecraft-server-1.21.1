@@ -1,0 +1,21 @@
+{
+  "boxes": [
+    {
+      "label": "New Trigger",
+      "min": [
+        -54.4,
+        77.0,
+        -15.2
+      ],
+      "max": [
+        -49.4,
+        77.0,
+        -13.0
+      ],
+      "oneShot": false,
+      "onEnter": [],
+      "onExit": [],
+      "id": "trigger_62180"
+    }
+  ]
+}

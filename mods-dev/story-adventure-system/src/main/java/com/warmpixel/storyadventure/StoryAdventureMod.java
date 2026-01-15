@@ -76,6 +76,18 @@ public class StoryAdventureMod implements ModInitializer {
             LOGGER.info("Loading story definitions...");
             storyLoader.loadAllStories();
             LOGGER.info("Loaded {} stories", storyRegistry.getStoryCount());
+            
+            // Initialize trigger box manager
+            var triggerManager = new com.warmpixel.storyadventure.core.waypoint.TriggerBoxManager(
+                FabricLoader.getInstance().getConfigDir().resolve("storyadventure"));
+            triggerManager.load();
+            LOGGER.info("Loaded {} global trigger boxes", triggerManager.getBoxCount());
+            
+            // Initialize waypoint manager
+            var waypointManager = new com.warmpixel.storyadventure.core.waypoint.WaypointManager(
+                FabricLoader.getInstance().getConfigDir().resolve("storyadventure"));
+            waypointManager.load();
+            LOGGER.info("Loaded {} global waypoints", waypointManager.getWaypointCount());
         });
         
         ServerLifecycleEvents.SERVER_STOPPING.register(server -> {

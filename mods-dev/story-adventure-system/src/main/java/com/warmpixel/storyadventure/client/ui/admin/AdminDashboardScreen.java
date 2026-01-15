@@ -12,7 +12,7 @@ import net.minecraft.network.chat.Component;
 public class AdminDashboardScreen extends StrangerScreen {
     
     public AdminDashboardScreen() {
-        super(Component.literal("管理员控制台"));
+        super(Component.translatable("gui.storyadventure.admin.dashboard.title"));
     }
     
     @Override
@@ -22,28 +22,32 @@ public class AdminDashboardScreen extends StrangerScreen {
         int buttonWidth = 200;
         int buttonHeight = 32;
         int centerX = width / 2 - buttonWidth / 2;
-        int startY = height / 2 - 80;
-        int gap = 10;
+        int startY = height / 2 - 100;
+        int gap = 8;
         
         // Instance Manager
         addStrangerButton(centerX, startY, buttonWidth, buttonHeight,
-            Component.literal("📋 实例管理"), this::openInstanceManager);
+            Component.translatable("gui.storyadventure.admin.dashboard.instances"), this::openInstanceManager);
         
         // Story Manager
         addStrangerButton(centerX, startY + buttonHeight + gap, buttonWidth, buttonHeight,
-            Component.literal("📚 故事管理"), this::openStoryManager);
+            Component.translatable("gui.storyadventure.admin.dashboard.stories"), this::openStoryManager);
         
-        // Player Manager (placeholder)
+        // Trigger Manager
         addStrangerButton(centerX, startY + (buttonHeight + gap) * 2, buttonWidth, buttonHeight,
-            Component.literal("👥 玩家管理"), this::openPlayerManager);
+            Component.translatable("gui.storyadventure.admin.dashboard.triggers"), this::openTriggerManager);
         
-        // System Stats (placeholder)
+        // Player Manager
         addStrangerButton(centerX, startY + (buttonHeight + gap) * 3, buttonWidth, buttonHeight,
-            Component.literal("📊 系统状态"), this::openSystemStats);
+            Component.translatable("gui.storyadventure.admin.dashboard.players"), this::openPlayerManager);
+        
+        // System Stats
+        addStrangerButton(centerX, startY + (buttonHeight + gap) * 4, buttonWidth, buttonHeight,
+            Component.translatable("gui.storyadventure.admin.dashboard.stats"), this::openSystemStats);
         
         // Close
         addStrangerButton(width / 2 - 60, height - 50, 120, 28,
-            Component.literal("关闭"), this::onClose);
+            Component.translatable("gui.storyadventure.admin.dashboard.close"), this::onClose);
     }
     
     @Override
@@ -57,24 +61,25 @@ public class AdminDashboardScreen extends StrangerScreen {
         graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0080808);
         drawPanelBorder(graphics, panelX, panelY, panelWidth, panelHeight);
         
-        graphics.drawString(font, "快速统计", panelX + 10, panelY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.quick_stats"), panelX + 10, panelY + 8, COLOR_NEON_RED);
         graphics.fill(panelX + 5, panelY + 20, panelX + panelWidth - 5, panelY + 21, COLOR_BORDER);
         
         // Placeholder stats
-        graphics.drawString(font, "活动实例: 0", panelX + 10, panelY + 28, COLOR_TEXT_BODY);
-        graphics.drawString(font, "在线玩家: 0", panelX + 10, panelY + 42, COLOR_TEXT_BODY);
-        graphics.drawString(font, "加载故事: 1", panelX + 10, panelY + 56, COLOR_TEXT_BODY);
-        graphics.drawString(font, "服务器: 正常", panelX + 10, panelY + 70, 0xFF44FF44);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.active_instances", 0), panelX + 10, panelY + 28, COLOR_TEXT_BODY);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.online_players", 0), panelX + 10, panelY + 42, COLOR_TEXT_BODY);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.loaded_stories", 1), panelX + 10, panelY + 56, COLOR_TEXT_BODY);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.server_status", 
+            Component.translatable("gui.storyadventure.admin.dashboard.status_ok").getString()), panelX + 10, panelY + 70, 0xFF44FF44);
         
         // Right panel - recent activity
         int rightPanelX = width - 180;
         graphics.fill(rightPanelX, panelY, rightPanelX + panelWidth, panelY + panelHeight, 0xE0080808);
         drawPanelBorder(graphics, rightPanelX, panelY, panelWidth, panelHeight);
         
-        graphics.drawString(font, "最近活动", rightPanelX + 10, panelY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.recent_activity"), rightPanelX + 10, panelY + 8, COLOR_NEON_RED);
         graphics.fill(rightPanelX + 5, panelY + 20, rightPanelX + panelWidth - 5, panelY + 21, COLOR_BORDER);
         
-        graphics.drawString(font, "暂无活动", rightPanelX + 10, panelY + 35, COLOR_TEXT_DIM);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.no_activity"), rightPanelX + 10, panelY + 35, COLOR_TEXT_DIM);
     }
     
     private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {
@@ -91,30 +96,35 @@ public class AdminDashboardScreen extends StrangerScreen {
     }
     
     private void openInstanceManager() {
-        AdminInstanceManagerScreen screen = new AdminInstanceManagerScreen();
-        for (var info : com.warmpixel.storyadventure.network.ClientNetworkHandler.getLastSyncedInstances()) {
-            screen.addInstance(info.id(), info.storyName(), info.node(), info.status(), info.playerCount(), info.elapsed());
-        }
-        Minecraft.getInstance().setScreen(screen);
+        sendCommand("storyadminui instances");
     }
     
     private void openStoryManager() {
-        AdminStoryManagerScreen screen = new AdminStoryManagerScreen();
-        screen.addStory("stranger_things_hawkins", "怪奇物语：霍金斯事件", 20, "1.0.0", true, "");
-        screen.addStory("example_story", "示例故事", 5, "1.0.0", true, "");
-        Minecraft.getInstance().setScreen(screen);
+        sendCommand("storyadminui stories");
     }
     
     private void openPlayerManager() {
-        if (Minecraft.getInstance().player != null) {
-            Minecraft.getInstance().player.sendSystemMessage(Component.literal("§e玩家管理界面正在开发中..."));
-        }
+        // We'll keep this one for now if there's no server command yet, or add it
+        AdminPlayerManagerScreen screen = new AdminPlayerManagerScreen();
+        // Populate with some placeholder data - in real implementation this comes from network sync
+        screen.addPlayer(java.util.UUID.randomUUID(), "测试玩家1", "stranger_things_hawkins", "meet_joyce", true);
+        screen.addPlayer(java.util.UUID.randomUUID(), "测试玩家2", "stranger_things_hawkins", "meet_joyce", false);
+        Minecraft.getInstance().setScreen(screen);
     }
     
     private void openSystemStats() {
-        if (Minecraft.getInstance().player != null) {
-            Minecraft.getInstance().player.sendSystemMessage(Component.literal("§6=== 系统状态 ===\n§7内存: §f正常\n§7TPS: §a20.0\n§7活动实例: §f" + 
-                com.warmpixel.storyadventure.network.ClientNetworkHandler.getLastSyncedInstances().size()));
+        AdminSystemStatsScreen screen = new AdminSystemStatsScreen();
+        Minecraft.getInstance().setScreen(screen);
+    }
+    
+    private void openTriggerManager() {
+        Minecraft.getInstance().setScreen(new TriggerBoxManagerScreen());
+    }
+
+    private void sendCommand(String command) {
+        var mc = net.minecraft.client.Minecraft.getInstance();
+        if (mc.player != null) {
+            mc.player.connection.sendCommand(command.startsWith("/") ? command.substring(1) : command);
         }
     }
 }

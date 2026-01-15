@@ -20,17 +20,17 @@ public class ServerUICommands {
         
         // Main storyui command - server-side version that sends packets to client
         dispatcher.register(Commands.literal("storyui")
-            // Story list screen
+            // Story list screen - no instance required
             .then(Commands.literal("stories")
                 .executes(ctx -> {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_STORIES);
                     NetworkHandler.syncStoryList(player, com.warmpixel.storyadventure.StoryAdventureMod.getInstance().getStoryRegistry());
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开故事列表..."), false);
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.stories.opening"), false);
                     return 1;
                 }))
             
-            // Lobby/ready screen
+            // Lobby/ready screen - no instance required, creates party if needed
             .then(Commands.literal("lobby")
                 .executes(ctx -> {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
@@ -45,33 +45,57 @@ public class ServerUICommands {
                     NetworkHandler.syncLobby(player, party, ctx.getSource().getServer());
                     
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_LOBBY);
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开准备大厅..."), false);
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.lobby.opening"), false);
                     return 1;
                 }))
             
-            // Dialogue screen demo
+            // Dialogue screen - requires active instance
             .then(Commands.literal("dialogue")
                 .executes(ctx -> {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
+                    
+                    // Check if player is in an active instance
+                    var instance = instanceManager.getPlayerInstance(player.getUUID());
+                    if (instance == null) {
+                        ctx.getSource().sendFailure(Component.translatable("command.storyadventure.error.no_instance"));
+                        return 0;
+                    }
+                    
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_DIALOGUE);
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开对话演示..."), false);
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.dialogue.opening"), false);
                     return 1;
                 }))
             
-            // Puzzle screen demo
+            // Puzzle screen - requires active instance
             .then(Commands.literal("puzzle")
                 .executes(ctx -> {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
+                    
+                    // Check if player is in an active instance
+                    var instance = instanceManager.getPlayerInstance(player.getUUID());
+                    if (instance == null) {
+                        ctx.getSource().sendFailure(Component.translatable("command.storyadventure.error.no_instance"));
+                        return 0;
+                    }
+                    
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_PUZZLE);
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开解谜演示..."), false);
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.puzzle.opening"), false);
                     return 1;
                 }))
             
-            // Toggle HUD
+            // Toggle HUD - requires active instance
             .then(Commands.literal("hud")
                 .then(Commands.literal("show")
                     .executes(ctx -> {
                         ServerPlayer player = ctx.getSource().getPlayerOrException();
+                        
+                        // Check if player is in an active instance
+                        var instance = instanceManager.getPlayerInstance(player.getUUID());
+                        if (instance == null) {
+                            ctx.getSource().sendFailure(Component.translatable("command.storyadventure.error.no_instance_hud"));
+                            return 0;
+                        }
+                        
                         NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_HUD_SHOW);
                         return 1;
                     }))
@@ -84,13 +108,13 @@ public class ServerUICommands {
             
             // Help
             .executes(ctx -> {
-                ctx.getSource().sendSuccess(() -> Component.literal("§6=== 故事UI命令 ==="), false);
-                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui stories §7- 打开故事列表"), false);
-                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui lobby §7- 打开准备大厅"), false);
-                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui dialogue §7- 演示对话界面"), false);
-                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui puzzle §7- 演示解谜界面"), false);
-                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui hud show/hide §7- 显示/隐藏HUD"), false);
-                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadminui §7- 管理员控制台"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§6=== Story UI Commands ==="), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui stories §7- Open story list"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui lobby §7- Open lobby"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui dialogue §7- Dialogue screen"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui puzzle §7- Puzzle screen"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyui hud show/hide §7- Show/Hide HUD"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadminui §7- Admin Dashboard"), false);
                 return 1;
             })
         );
@@ -104,7 +128,7 @@ public class ServerUICommands {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
                     NetworkHandler.syncInstances(player, instanceManager);
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_ADMIN_DASHBOARD);
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开管理员控制台..."), false);
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.admin.dashboard.opening"), false);
                     return 1;
                 }))
             
@@ -115,7 +139,7 @@ public class ServerUICommands {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
                     NetworkHandler.syncInstances(player, instanceManager);
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_ADMIN_INSTANCES);
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开实例管理器..."), false);
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.admin.instances.opening"), false);
                     return 1;
                 }))
             
@@ -125,7 +149,25 @@ public class ServerUICommands {
                 .executes(ctx -> {
                     ServerPlayer player = ctx.getSource().getPlayerOrException();
                     NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_ADMIN_STORIES);
-                    ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开故事管理器..."), false);
+                    NetworkHandler.syncAdminStories(player, com.warmpixel.storyadventure.StoryAdventureMod.getInstance().getStoryRegistry());
+                    ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.admin.stories.opening"), false);
+                    return 1;
+                }))
+            
+            // Sync only versions - does not open UI
+            .then(Commands.literal("sync_stories")
+                .requires(source -> source.hasPermission(2))
+                .executes(ctx -> {
+                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                    NetworkHandler.syncAdminStories(player, com.warmpixel.storyadventure.StoryAdventureMod.getInstance().getStoryRegistry());
+                    return 1;
+                }))
+            
+            .then(Commands.literal("sync_instances")
+                .requires(source -> source.hasPermission(2))
+                .executes(ctx -> {
+                    ServerPlayer player = ctx.getSource().getPlayerOrException();
+                    NetworkHandler.syncInstances(player, instanceManager);
                     return 1;
                 }))
             
@@ -134,7 +176,7 @@ public class ServerUICommands {
             .executes(ctx -> {
                 ServerPlayer player = ctx.getSource().getPlayerOrException();
                 NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_ADMIN_DASHBOARD);
-                ctx.getSource().sendSuccess(() -> Component.literal("§a正在打开管理员控制台..."), false);
+                ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.admin.dashboard.opening"), false);
                 return 1;
             })
         );

@@ -2,8 +2,12 @@ package com.warmpixel.storyadventure.client.ui.admin;
 
 import com.warmpixel.storyadventure.client.ui.StrangerButton;
 import com.warmpixel.storyadventure.client.ui.StrangerScreen;
+import com.warmpixel.storyadventure.client.ui.admin.panels.ConfirmationPanel;
+import com.warmpixel.storyadventure.client.ui.admin.panels.NodeSelectorPanel;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import com.warmpixel.storyadventure.network.AdminInstanceActionPayload;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +33,13 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private StrangerButton forceCompleteButton;
     private StrangerButton terminateButton;
     
+    // Modal panels
+    private ConfirmationPanel terminatePanel;
+    private ConfirmationPanel forceCompletePanel;
+    private NodeSelectorPanel skipNodePanel;
+    
     public AdminInstanceManagerScreen() {
-        super(Component.literal("实例管理面板"));
+        super(Component.translatable("gui.storyadventure.admin.instances.title"));
     }
     
     public void clearInstances() {
@@ -55,36 +64,36 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         
         // Pause button
         pauseButton = addStrangerButton(sidebarX + 10, buttonY, buttonWidth, buttonHeight,
-            Component.literal("⏸ 暂停实例"), this::pauseInstance);
+            Component.translatable("gui.storyadventure.admin.instances.pause"), this::pauseInstance);
         buttonY += buttonHeight + gap;
         
         // Resume button
         resumeButton = addStrangerButton(sidebarX + 10, buttonY, buttonWidth, buttonHeight,
-            Component.literal("▶ 恢复实例"), this::resumeInstance);
+            Component.translatable("gui.storyadventure.admin.instances.resume"), this::resumeInstance);
         buttonY += buttonHeight + gap;
         
         // Skip node button
         skipNodeButton = addStrangerButton(sidebarX + 10, buttonY, buttonWidth, buttonHeight,
-            Component.literal("⏭ 跳过节点"), this::skipNode);
+            Component.translatable("gui.storyadventure.admin.instances.skip"), this::skipNode);
         buttonY += buttonHeight + gap;
         
         // Force complete button
         forceCompleteButton = addStrangerButton(sidebarX + 10, buttonY, buttonWidth, buttonHeight,
-            Component.literal("✓ 强制完成"), this::forceComplete);
+            Component.translatable("gui.storyadventure.admin.instances.complete"), this::forceComplete);
         buttonY += buttonHeight + gap;
         
         // Terminate button
         terminateButton = addStrangerButton(sidebarX + 10, buttonY, buttonWidth, buttonHeight,
-            Component.literal("✕ 终止实例"), this::terminateInstance);
+            Component.translatable("gui.storyadventure.admin.instances.terminate"), this::terminateInstance);
         buttonY += buttonHeight + gap * 3;
         
         // Refresh button
         addStrangerButton(sidebarX + 10, buttonY, buttonWidth, buttonHeight,
-            Component.literal("🔄 刷新列表"), this::refreshList);
+            Component.translatable("gui.storyadventure.admin.instances.refresh"), this::refreshList);
         
         // Close button at bottom
         addStrangerButton(width / 2 - 60, height - 45, 120, 28,
-            Component.literal("关闭"), this::onClose);
+            Component.translatable("gui.storyadventure.admin.instances.close"), this::onClose);
         
         updateButtonStates();
         
@@ -105,11 +114,11 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         drawPanelBorder(graphics, listX, listY, listWidth, listHeight);
         
         // Column headers
-        graphics.drawString(font, "故事", listX + 10, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "当前节点", listX + 150, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "状态", listX + 300, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "玩家", listX + 380, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "时长", listX + 430, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.story"), listX + 10, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.node"), listX + 150, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.status"), listX + 300, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.players"), listX + 380, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.time"), listX + 430, listY + 8, COLOR_NEON_RED);
         
         graphics.fill(listX + 5, listY + 22, listX + listWidth - 5, listY + 23, COLOR_BORDER);
         
@@ -126,7 +135,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         
         // Empty state
         if (instances.isEmpty()) {
-            graphics.drawCenteredString(font, "没有活动的实例", listX + listWidth / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
+            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.admin.instances.empty"), listX + listWidth / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
         }
         
         // Sidebar - selected instance details
@@ -134,6 +143,17 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         
         // Stats bar at bottom
         renderStatsBar(graphics);
+        
+        // Render modal panels on top
+        if (terminatePanel != null && terminatePanel.isVisible()) {
+            terminatePanel.render(graphics, mouseX, mouseY, font);
+        }
+        if (forceCompletePanel != null && forceCompletePanel.isVisible()) {
+            forceCompletePanel.render(graphics, mouseX, mouseY, font);
+        }
+        if (skipNodePanel != null && skipNodePanel.isVisible()) {
+            skipNodePanel.render(graphics, mouseX, mouseY, font);
+        }
     }
     
     private void renderInstanceEntry(GuiGraphics graphics, InstanceInfo info, 
@@ -186,7 +206,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         drawPanelBorder(graphics, sidebarX, sidebarY, SIDEBAR_WIDTH, height - 110);
         
         // Title
-        graphics.drawString(font, "管理操作", sidebarX + 10, sidebarY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.actions"), sidebarX + 10, sidebarY + 8, COLOR_NEON_RED);
         graphics.fill(sidebarX + 5, sidebarY + 22, sidebarX + SIDEBAR_WIDTH - 5, sidebarY + 23, COLOR_BORDER);
         
         // Selected instance info
@@ -194,13 +214,13 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
             InstanceInfo info = instances.get(selectedIndex);
             int y = sidebarY + 30;
             
-            graphics.drawString(font, "选中:", sidebarX + 10, y, COLOR_TEXT_DIM);
+            graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.selected"), sidebarX + 10, y, COLOR_TEXT_DIM);
             y += 12;
             graphics.drawString(font, info.storyName, sidebarX + 10, y, COLOR_TEXT_BODY);
             y += 14;
-            graphics.drawString(font, "ID: " + info.id.toString().substring(0, 8), sidebarX + 10, y, COLOR_TEXT_DIM);
+            graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.id", info.id.toString().substring(0, 8)), sidebarX + 10, y, COLOR_TEXT_DIM);
         } else {
-            graphics.drawString(font, "未选中实例", sidebarX + 10, sidebarY + 35, COLOR_TEXT_DIM);
+            graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.none_selected"), sidebarX + 10, sidebarY + 35, COLOR_TEXT_DIM);
         }
     }
     
@@ -211,9 +231,10 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         graphics.fill(30, barY, width - 30, barY + 20, 0xC0080808);
         
         // Stats
-        String stats = String.format("活动实例: %d | 总玩家: %d | 服务器负载: 正常",
+        Component stats = Component.translatable("gui.storyadventure.admin.instances.stats_bar",
             instances.size(),
-            instances.stream().mapToInt(i -> i.playerCount).sum());
+            instances.stream().mapToInt(i -> i.playerCount).sum(),
+            Component.translatable("gui.storyadventure.admin.dashboard.status_ok").getString());
         
         graphics.drawString(font, stats, 40, barY + 6, COLOR_TEXT_DIM);
     }
@@ -243,11 +264,11 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     
     private String getStatusText(String status) {
         return switch (status.toUpperCase()) {
-            case "RUNNING" -> "运行中";
-            case "PAUSED" -> "已暂停";
-            case "COMPLETED" -> "已完成";
-            case "FAILED" -> "已失败";
-            case "CREATED" -> "已创建";
+            case "RUNNING" -> Component.translatable("gui.storyadventure.admin.instances.status.running").getString();
+            case "PAUSED" -> Component.translatable("gui.storyadventure.admin.instances.status.paused").getString();
+            case "COMPLETED" -> Component.translatable("gui.storyadventure.admin.instances.status.completed").getString();
+            case "FAILED" -> Component.translatable("gui.storyadventure.admin.instances.status.failed").getString();
+            case "CREATED" -> Component.translatable("gui.storyadventure.admin.instances.status.created").getString();
             default -> status;
         };
     }
@@ -265,6 +286,17 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        // Handle modal panels first
+        if (terminatePanel != null && terminatePanel.isVisible()) {
+            return terminatePanel.mouseClicked(mouseX, mouseY, button);
+        }
+        if (forceCompletePanel != null && forceCompletePanel.isVisible()) {
+            return forceCompletePanel.mouseClicked(mouseX, mouseY, button);
+        }
+        if (skipNodePanel != null && skipNodePanel.isVisible()) {
+            return skipNodePanel.mouseClicked(mouseX, mouseY, button);
+        }
+        
         // Check for instance selection
         int listX = 30;
         int listY = 50;
@@ -287,6 +319,11 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
+        // Handle modal panel scrolling
+        if (skipNodePanel != null && skipNodePanel.isVisible()) {
+            return skipNodePanel.mouseScrolled(mouseX, mouseY, vAmount);
+        }
+        
         int visibleCount = (height - 110 - 30) / INSTANCE_ENTRY_HEIGHT;
         if (vAmount > 0 && scrollOffset > 0) {
             scrollOffset--;
@@ -296,6 +333,33 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
             return true;
         }
         return super.mouseScrolled(mouseX, mouseY, hAmount, vAmount);
+    }
+    
+    @Override
+    public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
+        // Handle modal panel key events
+        if (terminatePanel != null && terminatePanel.isVisible()) {
+            return terminatePanel.keyPressed(keyCode, scanCode, modifiers);
+        }
+        if (forceCompletePanel != null && forceCompletePanel.isVisible()) {
+            return forceCompletePanel.keyPressed(keyCode, scanCode, modifiers);
+        }
+        if (skipNodePanel != null && skipNodePanel.isVisible()) {
+            return skipNodePanel.keyPressed(keyCode, scanCode, modifiers);
+        }
+        return super.keyPressed(keyCode, scanCode, modifiers);
+    }
+    
+    @Override
+    public boolean charTyped(char chr, int modifiers) {
+        // Handle modal panel char input
+        if (terminatePanel != null && terminatePanel.isVisible()) {
+            return terminatePanel.charTyped(chr, modifiers);
+        }
+        if (forceCompletePanel != null && forceCompletePanel.isVisible()) {
+            return forceCompletePanel.charTyped(chr, modifiers);
+        }
+        return super.charTyped(chr, modifiers);
     }
     
     private void updateButtonStates() {
@@ -326,9 +390,8 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private void pauseInstance() {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
-            String shortId = info.id.toString().substring(0, 8);
-            sendCommand("storyadmin pause " + shortId);
-            showMessage("§e正在暂停实例 " + shortId + "...");
+            ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.PAUSE, info.id));
+            showMessage(Component.translatable("command.storyadventure.admin.instances.pausing", info.id.toString().substring(0, 8)).getString());
             info = new InstanceInfo(info.id, info.storyName, info.currentNode, "PAUSED", info.playerCount, info.elapsedMs);
             instances.set(selectedIndex, info);
         }
@@ -337,9 +400,8 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private void resumeInstance() {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
-            String shortId = info.id.toString().substring(0, 8);
-            sendCommand("storyadmin resume " + shortId);
-            showMessage("§a正在恢复实例 " + shortId + "...");
+            ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.RESUME, info.id));
+            showMessage(Component.translatable("command.storyadventure.admin.instances.resuming", info.id.toString().substring(0, 8)).getString());
             info = new InstanceInfo(info.id, info.storyName, info.currentNode, "RUNNING", info.playerCount, info.elapsedMs);
             instances.set(selectedIndex, info);
         }
@@ -349,9 +411,27 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
             String shortId = info.id.toString().substring(0, 8);
-            // Open a simple input dialog or show command hint
-            showMessage("§e输入命令跳转节点：§f/storyadmin skip " + shortId + " <节点ID>");
-            showMessage("§7提示：使用 /storyadmin debug " + shortId + " 查看可用节点");
+            
+            // Show node selector panel
+            skipNodePanel = new NodeSelectorPanel(Component.translatable("gui.storyadventure.admin.instances.select_target_node").getString(), 
+                nodeId -> {
+                    sendCommand("storyadmin skip " + shortId + " " + nodeId);
+                    showMessage(Component.translatable("command.storyadventure.admin.instances.skipping", nodeId).getString());
+                },
+                () -> {} // Cancel - do nothing
+            );
+            
+            // Add placeholder nodes - in real implementation these come from server
+            skipNodePanel.addNode("intro_cutscene", "CUTSCENE", "开场动画");
+            skipNodePanel.addNode("meet_joyce", "DIALOGUE", "遇见乔伊斯");
+            skipNodePanel.addNode("accept_mission", "CHECKPOINT", "接受任务");
+            skipNodePanel.addNode("investigate_house", "TASK", "调查房屋");
+            skipNodePanel.addNode("find_first_clue", "CUTSCENE", "发现线索");
+            skipNodePanel.addNode("first_demogorgon_encounter", "COMBAT", "初次遭遇");
+            skipNodePanel.addNode("lab_puzzle", "PUZZLE", "实验室密码");
+            skipNodePanel.addNode("good_ending", "CUTSCENE", "好结局");
+            
+            skipNodePanel.show(width, height);
         }
     }
     
@@ -359,8 +439,20 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
             String shortId = info.id.toString().substring(0, 8);
-            sendCommand("storyadmin complete " + shortId + " success");
-            showMessage("§a已强制完成实例 " + shortId);
+            
+            // Show completion options panel
+            forceCompletePanel = ConfirmationPanel.builder(Component.translatable("gui.storyadventure.admin.instances.confirm_complete_title").getString())
+                .description(Component.translatable("gui.storyadventure.admin.instances.confirm_complete_desc").getString())
+                .withInput(Component.translatable("gui.storyadventure.admin.instances.confirm_complete_input").getString())
+                .onConfirm(result -> {
+                    String outcome = result.isEmpty() ? "success" : result;
+                    sendCommand("storyadmin complete " + shortId + " " + outcome);
+                    showMessage(Component.translatable("command.storyadventure.admin.instances.forced_complete", shortId, outcome).getString());
+                })
+                .onCancel(() -> {})
+                .build();
+            
+            forceCompletePanel.show(width, height, font);
         }
     }
     
@@ -368,19 +460,54 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
             String shortId = info.id.toString().substring(0, 8);
-            sendCommand("storyadmin terminate " + shortId);
-            showMessage("§c已终止实例 " + shortId);
-            instances.remove(selectedIndex);
-            selectedIndex = -1;
-            updateButtonStates();
+            
+            // Show dangerous confirmation panel
+            terminatePanel = ConfirmationPanel.builder(Component.translatable("gui.storyadventure.admin.instances.confirm_terminate_title").getString())
+                .description(Component.translatable("gui.storyadventure.admin.instances.confirm_terminate_desc", shortId).getString())
+                .dangerous()
+                .withInput(Component.translatable("gui.storyadventure.admin.instances.confirm_terminate_input").getString())
+                .onConfirm(reason -> {
+                    ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.TERMINATE, info.id));
+                    showMessage(Component.translatable("command.storyadventure.admin.instances.terminated", shortId).getString());
+                    
+                    // Remove from local list immediately for responsiveness
+                    instances.remove(selectedIndex);
+                    selectedIndex = -1;
+                    updateButtonStates();
+                    
+                    // Trigger a full refresh to sync with server
+                    // Delay slightly to let server process
+                    net.minecraft.client.Minecraft.getInstance().tell(this::refreshList);
+                })
+                .onCancel(() -> {})
+                .build();
+            
+            terminatePanel.show(width, height, font);
         }
     }
     
     private void refreshList() {
-        sendCommand("storyadmin instances");
-        showMessage("§e正在刷新实例列表...");
-        // In a full implementation, this would trigger a network request
-        // and the server would send back the instance list
+        // Clear current list first
+        instances.clear();
+        selectedIndex = -1;
+        updateButtonStates();
+        
+        showMessage(Component.translatable("command.storyadventure.admin.instances.listing").getString());
+        
+        // Request direct sync from server
+        ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.SYNC, null));
+    }
+    
+    /**
+     * Called by network handler when sync data arrives.
+     */
+    public void onSyncReceived() {
+        updateButtonStates();
+        if (instances.isEmpty()) {
+            showMessage(Component.translatable("command.storyadventure.admin.instances.sync_none").getString());
+        } else {
+            showMessage(Component.translatable("command.storyadventure.admin.instances.synced", instances.size()).getString());
+        }
     }
     
     public record InstanceInfo(UUID id, String storyName, String currentNode, 

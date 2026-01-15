@@ -32,7 +32,22 @@ public class NetworkHandler {
         PayloadTypeRegistry.playC2S().register(StoryActionPayload.TYPE, StoryActionPayload.STREAM_CODEC);
         PayloadTypeRegistry.playC2S().register(DialogueChoicePayload.TYPE, DialogueChoicePayload.STREAM_CODEC);
         PayloadTypeRegistry.playC2S().register(PuzzleInputPayload.TYPE, PuzzleInputPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playS2C().register(SyncAdminStoriesPayload.TYPE, SyncAdminStoriesPayload.STREAM_CODEC);
         PayloadTypeRegistry.playS2C().register(SyncStoriesPayload.TYPE, SyncStoriesPayload.STREAM_CODEC);
+        
+        PayloadTypeRegistry.playS2C().register(SyncStoryGraphPayload.TYPE, SyncStoryGraphPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(RequestStoryGraphPayload.TYPE, RequestStoryGraphPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(SaveStoryPayload.TYPE, SaveStoryPayload.STREAM_CODEC);
+        
+        // Waypoint system payloads
+        PayloadTypeRegistry.playS2C().register(SyncWaypointsPayload.TYPE, SyncWaypointsPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playS2C().register(SyncTriggerBoxesPayload.TYPE, SyncTriggerBoxesPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(AdminTriggerActionPayload.TYPE, AdminTriggerActionPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(AdminStoryActionPayload.TYPE, AdminStoryActionPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playC2S().register(AdminInstanceActionPayload.TYPE, AdminInstanceActionPayload.STREAM_CODEC);
+        
+        // Victory confirmation payload
+        PayloadTypeRegistry.playC2S().register(VictoryConfirmPayload.TYPE, VictoryConfirmPayload.STREAM_CODEC);
         
         StoryAdventureMod.LOGGER.info("Registered network payload types");
     }
@@ -225,6 +240,74 @@ public class NetworkHandler {
                  }
              }
         });
+
+        ServerPlayNetworking.registerGlobalReceiver(RequestStoryGraphPayload.TYPE, (payload, context) -> {
+            ServerPlayer player = context.player();
+            String storyId = payload.storyId();
+            
+            try {
+                java.nio.file.Path path = java.nio.file.Paths.get("config", "storyadventure", "stories", storyId + ".json");
+                if (java.nio.file.Files.exists(path)) {
+                    String json = java.nio.file.Files.readString(path, java.nio.charset.StandardCharsets.UTF_8);
+                    ServerPlayNetworking.send(player, new SyncStoryGraphPayload(storyId, json));
+                    StoryAdventureMod.LOGGER.info("Synced story graph {} to {}", storyId, player.getName().getString());
+                } else {
+                    player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c服务器找不到故事文件: " + storyId));
+                }
+            } catch (Exception e) {
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c读取故事文件失败: " + e.getMessage()));
+                e.printStackTrace();
+            }
+        });
+
+        ServerPlayNetworking.registerGlobalReceiver(SaveStoryPayload.TYPE, (payload, context) -> {
+            ServerPlayer player = context.player();
+            String storyId = payload.storyId();
+            String json = payload.json();
+            
+            // Check permissions (should be operator)
+            if (!player.hasPermissions(2)) {
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c只有管理员可以保存故事"));
+                return;
+            }
+
+            try {
+                java.nio.file.Path path = java.nio.file.Paths.get("config", "storyadventure", "stories", storyId + ".json");
+                // Backup
+                java.nio.file.Path backup = path.resolveSibling(storyId + ".json.bak");
+                if (java.nio.file.Files.exists(path)) {
+                    java.nio.file.Files.copy(path, backup, java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                }
+                
+                // Save
+                java.nio.file.Files.writeString(path, json, java.nio.charset.StandardCharsets.UTF_8);
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a故事已成功保存到服务器: " + storyId));
+                StoryAdventureMod.LOGGER.info("Admin {} saved story graph {}", player.getName().getString(), storyId);
+                
+                // Trigger reload in memory
+                StoryAdventureMod.getInstance().getStoryLoader().loadAllStories();
+            } catch (Exception e) {
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c保存故事失败: " + e.getMessage()));
+                e.printStackTrace();
+            }
+        });
+
+        ServerPlayNetworking.registerGlobalReceiver(AdminTriggerActionPayload.TYPE, (payload, context) -> {
+            context.server().execute(() -> handleAdminTriggerAction(context.player(), payload));
+        });
+
+        ServerPlayNetworking.registerGlobalReceiver(AdminStoryActionPayload.TYPE, (payload, context) -> {
+            context.server().execute(() -> handleAdminStoryAction(context.player(), payload));
+        });
+
+        ServerPlayNetworking.registerGlobalReceiver(AdminInstanceActionPayload.TYPE, (payload, context) -> {
+            context.server().execute(() -> handleAdminInstanceAction(context.player(), payload));
+        });
+        
+        // Victory confirmation handler - teleport player to spawn
+        ServerPlayNetworking.registerGlobalReceiver(VictoryConfirmPayload.TYPE, (payload, context) -> {
+            context.server().execute(() -> handleVictoryConfirm(context.player(), context.server()));
+        });
         
         StoryAdventureMod.LOGGER.debug("Registered server network receivers");
     }
@@ -318,6 +401,23 @@ public class NetworkHandler {
         ServerPlayNetworking.send(player, new SyncStoriesPayload(summaries));
     }
     
+    public static void syncAdminStories(ServerPlayer player, StoryRegistry registry) {
+        java.util.List<SyncAdminStoriesPayload.AdminStoryInfo> infos = new java.util.ArrayList<>();
+        var validator = new com.warmpixel.storyadventure.loader.StoryValidator();
+        
+        for (var story : registry.getAllStories()) {
+            var errors = validator.validate(story);
+            boolean valid = errors.isEmpty();
+            String errorMsg = valid ? "" : String.join("; ", errors);
+            
+            infos.add(new SyncAdminStoriesPayload.AdminStoryInfo(
+                story.getStoryId(), story.getName(), story.getNodeCount(),
+                story.getVersion(), valid, errorMsg
+            ));
+        }
+        ServerPlayNetworking.send(player, new SyncAdminStoriesPayload(infos));
+    }
+    
     /**
      * Sync instance state to party members.
      */
@@ -341,5 +441,138 @@ public class NetworkHandler {
      */
     public static void sendHudUpdate(ServerPlayer player, String objectiveText, long remainingTime) {
         // Send HUD update packet
+    }
+
+    public static void syncTriggerBoxes(ServerPlayer player) {
+        var manager = com.warmpixel.storyadventure.core.waypoint.TriggerBoxManager.getInstance();
+        if (manager == null) return;
+
+        java.util.List<SyncTriggerBoxesPayload.TriggerBoxData> list = new java.util.ArrayList<>();
+        for (var box : manager.getAllBoxes()) {
+            list.add(new SyncTriggerBoxesPayload.TriggerBoxData(
+                box.getId(), box.getLabel(),
+                box.getBounds().minX, box.getBounds().minY, box.getBounds().minZ,
+                box.getBounds().maxX, box.getBounds().maxY, box.getBounds().maxZ,
+                !box.getPlayersInside().isEmpty()
+            ));
+        }
+        ServerPlayNetworking.send(player, new SyncTriggerBoxesPayload(list));
+    }
+
+    private static void handleAdminTriggerAction(ServerPlayer player, AdminTriggerActionPayload payload) {
+        if (player == null || !player.hasPermissions(2)) return;
+        
+        var manager = com.warmpixel.storyadventure.core.waypoint.TriggerBoxManager.getInstance();
+        if (manager == null) return;
+        
+        switch (payload.action()) {
+            case LIST -> syncTriggerBoxes(player);
+            case SAVE -> {
+                var box = new com.warmpixel.storyadventure.core.waypoint.TriggerBox(payload.id(), 
+                    new net.minecraft.world.phys.AABB(payload.minX(), payload.minY(), payload.minZ(), 
+                                                   payload.maxX(), payload.maxY(), payload.maxZ()));
+                box.setLabel(payload.label());
+                box.setLinkedNodeId(payload.linkedNodeId().isEmpty() ? null : payload.linkedNodeId());
+                manager.updateBox(payload.id(), box);
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已保存触发器: " + payload.id()));
+                syncTriggerBoxes(player);
+            }
+            case DELETE -> {
+                if (manager.deleteBox(payload.id())) {
+                    player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已删除触发器: " + payload.id()));
+                    syncTriggerBoxes(player);
+                }
+            }
+        }
+    }
+
+    private static void handleAdminStoryAction(ServerPlayer player, AdminStoryActionPayload payload) {
+        if (player == null || !player.hasPermissions(2)) return;
+        
+        var registry = StoryAdventureMod.getInstance().getStoryRegistry();
+        var loader = StoryAdventureMod.getInstance().getStoryLoader();
+        
+        switch (payload.action()) {
+            case SYNC -> syncAdminStories(player, registry);
+            case RELOAD -> {
+                loader.reload();
+                syncAdminStories(player, registry);
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a故事已重载"));
+            }
+            case VALIDATE -> {
+                loader.reload(); // Reload triggers validation
+                syncAdminStories(player, registry);
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a故事已验证"));
+            }
+        }
+    }
+
+    private static void handleAdminInstanceAction(ServerPlayer player, AdminInstanceActionPayload payload) {
+        if (player == null || !player.hasPermissions(2)) return;
+        
+        var manager = StoryAdventureMod.getInstance().getInstanceManager();
+        
+        switch (payload.action()) {
+            case SYNC -> syncInstances(player, manager);
+            case TERMINATE -> {
+                if (payload.instanceId() != null) {
+                    manager.cleanupInstance(payload.instanceId());
+                    syncInstances(player, manager);
+                    player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a实例已终止"));
+                }
+            }
+            case PAUSE -> {
+                if (payload.instanceId() != null) {
+                    var inst = manager.getInstance(payload.instanceId());
+                    if (inst != null) {
+                        inst.pause();
+                        syncInstances(player, manager);
+                        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a实例已暂停"));
+                    }
+                }
+            }
+            case RESUME -> {
+                if (payload.instanceId() != null) {
+                    var inst = manager.getInstance(payload.instanceId());
+                    if (inst != null) {
+                        inst.resume();
+                        syncInstances(player, manager);
+                        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a实例已恢复"));
+                    }
+                }
+            }
+        }
+    }
+    
+    private static void handleVictoryConfirm(ServerPlayer player, net.minecraft.server.MinecraftServer server) {
+        if (player == null) return;
+        
+        StoryAdventureMod.LOGGER.info("Victory confirmed by player {}, teleporting to spawn", player.getName().getString());
+        
+        // Get world spawn point
+        var overworld = server.overworld();
+        var spawnPos = overworld.getSharedSpawnPos();
+        
+        // Teleport player to world spawn
+        player.teleportTo(overworld, 
+            spawnPos.getX() + 0.5, 
+            spawnPos.getY(), 
+            spawnPos.getZ() + 0.5, 
+            0, 0);
+        
+        // Send message
+        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已返回出生点"));
+        
+        // Clear any instance association
+        var instanceManager = StoryAdventureMod.getInstance().getInstanceManager();
+        var instance = instanceManager.getPlayerInstance(player.getUUID());
+        if (instance != null) {
+            // Mark player as completed/left if needed
+            StoryAdventureMod.LOGGER.debug("Player {} leaving completed instance {}", 
+                player.getName().getString(), instance.getInstanceId());
+        }
+        
+        // Hide HUD
+        sendOpenUI(player, OpenUIPayload.SCREEN_HUD_HIDE);
     }
 }

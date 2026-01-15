@@ -84,10 +84,23 @@ public class CutsceneNodeHandler implements NodeHandler {
         String teleportTo = node.getString("teleport_on_complete", "");
         if (!teleportTo.isEmpty()) {
             StoryAdventureMod.LOGGER.info("[CutsceneNodeHandler] Teleport requested to: {}", teleportTo);
-            // TODO: Teleport party members to specified location
-            // Note: This logic seems to be missing access to ServerLevel/MinecraftServer here directly 
-            // without fetching it from the instance's players or similar.
-            // For now just logging it.
+            var loc = instance.getGraph().getSpecialLocation(teleportTo);
+            if (loc != null) {
+                var server = instance.getServer();
+                var worldKey = net.minecraft.resources.ResourceKey.create(
+                    net.minecraft.core.registries.Registries.DIMENSION, 
+                    net.minecraft.resources.ResourceLocation.parse(loc.dimension())
+                );
+                var targetWorld = server.getLevel(worldKey);
+                if (targetWorld != null) {
+                    for (java.util.UUID memberId : instance.getParty().getMembers()) {
+                        var player = server.getPlayerList().getPlayer(memberId);
+                        if (player != null) {
+                            player.teleportTo(targetWorld, loc.x(), loc.y(), loc.z(), loc.yaw(), loc.pitch());
+                        }
+                    }
+                }
+            }
         }
         
         // Re-enable player movement

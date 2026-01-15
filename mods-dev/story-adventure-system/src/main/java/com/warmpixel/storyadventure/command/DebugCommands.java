@@ -45,22 +45,25 @@ public class DebugCommands {
                     
                     if (instances.isEmpty()) {
                         source.sendSuccess(() -> Component.literal("§e没有活动的实例。"), false);
-                        return 0;
-                    }
-                    
-                    source.sendSuccess(() -> Component.literal("§6=== 活动实例 ==="), false);
-                    for (Instance instance : instances) {
-                        source.sendSuccess(() -> Component.literal(String.format(
-                            "§f%s §7- %s §8[%s] §7节点: %s",
-                            instance.getInstanceId().toString().substring(0, 8),
-                            instance.getGraph().getName(),
-                            instance.getStatus(),
-                            instance.getCurrentNodeId()
-                        )), false);
+                    } else {
+                        source.sendSuccess(() -> Component.literal("§6=== 活动实例 ==="), false);
+                        for (Instance instance : instances) {
+                            source.sendSuccess(() -> Component.literal(String.format(
+                                "§f%s §7- %s §8[%s] §7节点: %s",
+                                instance.getInstanceId().toString().substring(0, 8),
+                                instance.getGraph().getName(),
+                                instance.getStatus(),
+                                instance.getCurrentNodeId()
+                            )), false);
+                        }
                     }
                     
                     if (ctx.getSource().getPlayer() != null) {
-                        NetworkHandler.syncInstances(ctx.getSource().getPlayer(), instanceManager);
+                        try {
+                            NetworkHandler.syncInstances(ctx.getSource().getPlayer(), instanceManager);
+                        } catch (Exception e) {
+                            com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.error("Failed to sync instances: ", e);
+                        }
                     }
                     return instances.size();
                 }))
@@ -106,6 +109,10 @@ public class DebugCommands {
                         
                         instance.pause();
                         ctx.getSource().sendSuccess(() -> Component.literal("§e实例 " + idStr + " 已暂停。"), true);
+                        
+                        if (ctx.getSource().getPlayer() != null) {
+                            NetworkHandler.syncInstances(ctx.getSource().getPlayer(), instanceManager);
+                        }
                         return 1;
                     })))
             
@@ -123,6 +130,10 @@ public class DebugCommands {
                         
                         instance.resume();
                         ctx.getSource().sendSuccess(() -> Component.literal("§a实例 " + idStr + " 已恢复。"), true);
+                        
+                        if (ctx.getSource().getPlayer() != null) {
+                            NetworkHandler.syncInstances(ctx.getSource().getPlayer(), instanceManager);
+                        }
                         return 1;
                     })))
             
@@ -140,6 +151,10 @@ public class DebugCommands {
                         
                         instanceManager.cleanupInstance(instance.getInstanceId());
                         ctx.getSource().sendSuccess(() -> Component.literal("§c实例 " + idStr + " 已终止。"), true);
+                        
+                        if (ctx.getSource().getPlayer() != null) {
+                            NetworkHandler.syncInstances(ctx.getSource().getPlayer(), instanceManager);
+                        }
                         return 1;
                     })))
             
@@ -333,6 +348,95 @@ public class DebugCommands {
                     return 1;
                 }))
             
+            // Waypoint management
+            .then(Commands.literal("waypoint")
+                .then(Commands.literal("create")
+                    .then(Commands.argument("label", StringArgumentType.greedyString())
+                        .executes(ctx -> {
+                            var entity = ctx.getSource().getEntity();
+                            if (entity == null) {
+                                ctx.getSource().sendFailure(Component.literal("§c必须由玩家执行此命令。"));
+                                return 0;
+                            }
+                            
+                            String label = StringArgumentType.getString(ctx, "label");
+                            String id = "wp_" + System.currentTimeMillis() % 100000;
+                            
+                            ctx.getSource().sendSuccess(() -> Component.literal(String.format(
+                                "§a路标已创建！\n§7ID: %s\n§7标签: %s\n§7位置: %.1f, %.1f, %.1f",
+                                id, label, entity.getX(), entity.getY(), entity.getZ()
+                            )), true);
+                            
+                            return 1;
+                        })))
+                .executes(ctx -> {
+                    ctx.getSource().sendSuccess(() -> Component.literal(
+                        "§e用法: /storyadmin waypoint create <标签>"
+                    ), false);
+                    return 1;
+                }))
+            
+            // Trigger box management
+            .then(Commands.literal("triggers")
+                .then(Commands.literal("list")
+                    .executes(ctx -> {
+                        var manager = com.warmpixel.storyadventure.core.waypoint.TriggerBoxManager.getInstance();
+                        if (manager == null) {
+                            ctx.getSource().sendFailure(Component.literal("§c触发器管理器未初始化"));
+                            return 0;
+                        }
+                        
+                        var boxes = manager.getAllBoxes();
+                        if (boxes.isEmpty()) {
+                            ctx.getSource().sendSuccess(() -> Component.literal("§e没有触发器"), false);
+                            return 0;
+                        }
+                        
+                        ctx.getSource().sendSuccess(() -> Component.literal("§6=== 全局触发器 (" + boxes.size() + ") ==="), false);
+                        for (var box : boxes) {
+                            ctx.getSource().sendSuccess(() -> Component.literal(String.format(
+                                "§e%s §7- %s §8[%.0f,%.0f,%.0f -> %.0f,%.0f,%.0f]",
+                                box.getId(), box.getLabel(),
+                                box.getBounds().minX, box.getBounds().minY, box.getBounds().minZ,
+                                box.getBounds().maxX, box.getBounds().maxY, box.getBounds().maxZ
+                            )), false);
+                        }
+                        
+                        // Sync to player for gizmo rendering
+                        if (ctx.getSource().getPlayer() != null) {
+                            com.warmpixel.storyadventure.item.AdminWandItem.syncTriggerBoxesToPlayer(
+                                (net.minecraft.server.level.ServerPlayer) ctx.getSource().getPlayer());
+                        }
+                        
+                        return boxes.size();
+                    }))
+                .then(Commands.literal("delete")
+                    .then(Commands.argument("id", StringArgumentType.word())
+                        .executes(ctx -> {
+                            String id = StringArgumentType.getString(ctx, "id");
+                            var manager = com.warmpixel.storyadventure.core.waypoint.TriggerBoxManager.getInstance();
+                            if (manager == null) {
+                                ctx.getSource().sendFailure(Component.literal("§c触发器管理器未初始化"));
+                                return 0;
+                            }
+                            
+                            if (manager.deleteBox(id)) {
+                                ctx.getSource().sendSuccess(() -> Component.literal("§a触发器 " + id + " 已删除"), true);
+                                return 1;
+                            } else {
+                                ctx.getSource().sendFailure(Component.literal("§c找不到触发器: " + id));
+                                return 0;
+                            }
+                        })))
+                .executes(ctx -> {
+                    ctx.getSource().sendSuccess(() -> Component.literal(
+                        "§e用法:\n" +
+                        "§e/storyadmin triggers list §7- 列出所有触发器\n" +
+                        "§e/storyadmin triggers delete <id> §7- 删除触发器"
+                    ), false);
+                    return 1;
+                }))
+            
             // Help
             .executes(ctx -> {
                 ctx.getSource().sendSuccess(() -> Component.literal("§6=== 故事管理员命令 ==="), false);
@@ -347,6 +451,8 @@ public class DebugCommands {
                 ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadmin setlocation <story> spawn §7- 设置出生点"), false);
                 ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadmin setlocation <story> return §7- 设置返回点"), false);
                 ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadmin tp <story> §7- 传送到故事场景"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadmin waypoint create <label> §7- 创建路标"), false);
+                ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadmin triggers list/delete §7- 管理触发器"), false);
                 ctx.getSource().sendSuccess(() -> Component.literal("§e/storyadmin ui §7- 打开管理界面"), false);
                 return 1;
             })

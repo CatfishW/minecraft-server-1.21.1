@@ -40,6 +40,9 @@ public class InstanceState {
     // Node visit history
     private final List<String> nodeHistory = new ArrayList<>();
     
+    // Custom metadata for node handlers
+    private final JsonObject metadata = new JsonObject();
+    
     public InstanceState(Instance instance) {
         this.instance = instance;
     }
@@ -174,6 +177,10 @@ public class InstanceState {
     
     public List<String> getNodeHistory() {
         return Collections.unmodifiableList(nodeHistory);
+    }
+    
+    public JsonObject getMetadata() {
+        return metadata;
     }
     
     // === Checkpoints ===

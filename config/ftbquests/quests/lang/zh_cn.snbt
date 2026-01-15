@@ -1,5 +1,6 @@
 {
 	chapter.014603D984656A62.title: "时装"
+	chapter.01D2B7C37DFF905D.title: "造房子！"
 	chapter.05F75DC645DC87C8.title: "咔擦咔擦~"
 	chapter.0A339E631AC882D0.title: "田园生活"
 	chapter.0ED616B082498A8E.title: "萌新必看~"
@@ -9,9 +10,9 @@
 	chapter.314295D22AC3D6E2.title: "快速旅行！"
 	chapter.326DF02059866FB2.title: "地契"
 	chapter.5A8D3F2E1B4C6901.title: "军旅生涯"
-	chapter_group.4E5AA64291FA4369.title: "属于自己的角落&c(核心玩法)&r"
-	chapter_group.5F9ABE3ACEA913EF.title: "认识这个世界"
-	chapter_group.6A83FBBB746164FB.title: "方块里的奇妙世界"
+	chapter_group.4E5AA64291FA4369.title: "&b属于自己的角落&r&c(核心玩法)&r"
+	chapter_group.5F9ABE3ACEA913EF.title: "&b认识这个世界"
+	chapter_group.6A83FBBB746164FB.title: "&b方块里的奇妙世界"
 	chapters.automobility: "Automobility 载具指南"
 	chapters.automobility.subtitle: "打造属于你的载具！"
 	quest.010BBA6A8F47B641.desc: "具备三连发功能的全自动/半自动机器手枪。"
@@ -115,6 +116,12 @@
 		"非常适合那些追求外观干练且实战性能卓越的 9mm 手枪的玩家。"
 	]
 	quest.10DED764ED7FEC7A.subtitle: "模块化典范"
+	quest.11B1F680C0E4D711.quest_desc: [
+		"在相机配件里装入红石灯，即可获得闪光灯~"
+		""
+		"闪光灯会让你有更高的亮度。"
+	]
+	quest.11B1F680C0E4D711.title: "傻瓜灯"
 	quest.11C12DDBF71379FA.quest_desc: [
 		"自己种的菜，吃着才放心！"
 		"种田生活，不种田怎么行呢？"
@@ -161,6 +168,12 @@
 		"绳子放在地面，也可以防止掉落伤害，跟蜘蛛网一样~"
 	]
 	quest.143B707C3D651141.title: "其他的工具"
+	quest.1601D49E96F454F0.quest_desc: [
+		"手持相机，按shift+右键可以打开相机配件界面。"
+		""
+		"相机有很多配件，其中&a胶卷&r是必不可少的，请选择一个胶卷进行制作吧~"
+	]
+	quest.1601D49E96F454F0.title: "相机配件"
 	quest.19222B59A173595D.quest_desc: [
 		"我要喝汤！"
 		""
@@ -337,6 +350,14 @@
 	quest.2F1190F30C9F1886.desc: ".45 柯尔特自动手枪弹。"
 	quest.2F1190F30C9F1886.quest_desc: ["一种重型、低速的弹药，以其在近距离极其惊人的制止力和破坏力而闻名。"]
 	quest.2F1190F30C9F1886.subtitle: "沉重打击：.45 ACP"
+	quest.2FFD91A52B6FBAB9.quest_desc: ["在相机配件里装入各种颜色的玻璃板即可获得不同颜色的滤镜。"]
+	quest.2FFD91A52B6FBAB9.title: "滤镜"
+	quest.330B9024DA0EB25D.quest_desc: [
+		"在相机里装入望远镜，即可获得长焦镜头。"
+		""
+		"你会获得更大的可变焦范围。"
+	]
+	quest.330B9024DA0EB25D.title: "长焦镜头"
 	quest.33DEA06438AE1857.quest_desc: ["如果在锅里煮稻米，那么就会得到香喷喷的大米饭！"]
 	quest.33DEA06438AE1857.title: "干饭人！"
 	quest.34A7A4F5EAF7D5B2.quest_desc: [
@@ -351,6 +372,16 @@
 		"强悍且可靠，它与 AK 系列通用的弹药和部分零件使其成为极佳的战场支援武器。"
 	]
 	quest.3566A734C4B26AE3.subtitle: "持久压制：RPK"
+	quest.35C6314A7D8632C3.quest_desc: [
+		"有些记忆，需要在黑暗中，慢慢显影。"
+		""
+		"接下来我们开始冲洗照片。"
+		""
+		"首先需要一个暗房，在暗房里，我们使用纸、颜料将其进行冲洗。"
+		""
+		"不同的颜料代表了不同的颜色通道，如果不理解颜色通道，直接使用&3青色染料&r、&d品红色染料&r、&e黄色染料&r、&0黑色染料&r直接进行冲洗。"
+	]
+	quest.35C6314A7D8632C3.title: "并不是所有照片，都诞生在阳光下"
 	quest.37227BBA30022E21.quest_desc: ["经过一番耕耘与探索，你已经掌握了种植、烹饪与收获的艺术。每一次挥铲、每一锅炖煮，都凝聚着你的努力与耐心。现在，放下工具，品味你的劳动成果，享受属于你的田园生活吧！"]
 	quest.373DC6FD396B6000.desc: "经典的三连发制式步枪。"
 	quest.373DC6FD396B6000.subtitle: "步枪系列 - M16A4"
@@ -456,6 +487,13 @@
 		"传送石碑需要摸一下才能激活，这样下次你就可以在已激活的传送石碑里选择另一个已激活的传送石碑进行传送。"
 	]
 	quest.40EC72980E654D69.title: "传送！"
+	quest.410F3A70173C2108.quest_desc: [
+		"胶卷拍摄好后，需要在&e工作台&r制作成&a已冲洗胶卷&r。"
+		""
+		"黑白胶卷用一个水瓶制作。"
+		"彩色胶卷需要和平凡的药水、浓稠的药水、粗制的药水进行制作。"
+	]
+	quest.410F3A70173C2108.title: "冲洗胶卷！"
 	quest.41334BDA175365B0.quest_desc: ["在广袤的田野间，你迎来了属于自己的农场——这里是&b农夫乐事&r的世界。播下的种子，会在阳光与雨露的滋养下慢慢生长，等待你去收获。每一次耕作、每一份收获，都是田园生活的乐趣。农夫乐事不仅教会你种植和收获，更让你体验劳动的喜悦与生活的宁静，让每一片土地都充满希望与故事。"]
 	quest.41334BDA175365B0.title: "农夫乐事"
 	quest.41E967BFCD9AAD02.quest_desc: [
@@ -480,6 +518,8 @@
 	]
 	quest.421EEAC57A479305.quest_subtitle: "农夫乐事食物的buff与debuff"
 	quest.421EEAC57A479305.title: "我好像获得了一个不得了的效果！"
+	quest.437EC1CA8E30BD48.quest_desc: ["一台相机，可能比一把钻石镐更重要。"]
+	quest.437EC1CA8E30BD48.title: "第一台相机"
 	quest.441F355F79650C28.desc: "近战之王，一发入魂。"
 	quest.441F355F79650C28.subtitle: "系列概览"
 	quest.441F355F79650C28.title: "霰弹枪系列"
@@ -577,6 +617,16 @@
 		"其模块化的设计意味着通过选择正确的配件，它可以轻松在近距离室内强袭和中距离精准打击之间自由切换。"
 	]
 	quest.5209B7D526B63AF5.subtitle: "全能平台"
+	quest.522EAC134C2AEEDC.quest_desc: [
+		"有些瞬间，只存在一次。"
+		""
+		"按下右键即可进入拍摄模式。"
+		""
+		"在&e拍摄模式&r下，使用滚轮即可进行&a变焦&r。"
+		"按下shift即可调整&a高级参数&r。"
+		"按下F5进入&a自拍模式&r。"
+		"按下右键即可&a拍摄&r。"
+	]
 	quest.52B45A131951B66D.quest_desc: [
 		"将&a机动车加工台&r放置在地面上，然后把&a外壳&r、&a轮子&r、&a引擎&r、&e其他部件(非必须)&r，放上去。(对着加工台右键。)"
 		""
@@ -625,6 +675,11 @@
 	quest.5931084901770695.desc: "发射威力强大的7.62毫米子弹的重型版本。"
 	quest.5931084901770695.subtitle: "步枪系列 - SCAR-H"
 	quest.5931084901770695.title: "SCAR-H"
+	quest.5AE4EF6FF5839848.quest_desc: [
+		"感谢您游玩WarmPixel，希望在这里记录下您的美好时光~"
+		""
+		"更多相关信息请打开物品栏，对着相机按F1，查看模组官方wiki，或是在网上搜索Exposure。比如照片的风格合成等等。"
+	]
 	quest.5C2FC86C4CA630DE.quest_desc: [
 		"好吃！"
 		""
@@ -871,6 +926,20 @@
 		"在近距离格斗中，这头每分钟 1200 发射速的猛兽能粉碎路径上的一切障碍。"
 	]
 	quest.7B9E513A78438F7A.subtitle: "超速打击：短剑"
+	quest.7CD8E5B065A60BB3.quest_desc: [
+		"被看到的记录，才真正存在。"
+		""
+		"当你再次翻开这些记录， 你会知道——"
+		""
+		"&a你曾经，真正生活在这里。&r"
+	]
+	quest.7CD8E5B065A60BB3.title: "挂在墙上的记忆"
+	quest.7D68DBC6E8BC455B.quest_desc: [
+		"你在WarmPixel的日子，记得被记录~"
+		""
+		"愿你享受时光，记录下每一个留恋瞬间。"
+	]
+	quest.7D68DBC6E8BC455B.title: "这个世界值得被记录~"
 	quest.7D9D01A21A0CA8C9.desc: "带有集成瞄准镜的德国卡宾枪。"
 	quest.7D9D01A21A0CA8C9.subtitle: "步枪系列 - G36K"
 	quest.7D9D01A21A0CA8C9.title: "G36K"
@@ -1148,11 +1217,13 @@
 	task.047CB7D8C83B2328.title: "爽~"
 	task.0E4988CCD2404877.title: "愿你享受生活~"
 	task.112539B32461A8F1.title: "我炫炫炫！"
+	task.1F3A6E56E11B270F.title: "感谢有你~"
 	task.229152F9742B7795.title: "敲敲敲！"
 	task.2743DAF6268CDEE1.title: "感谢有你~"
 	task.28886459917C7A4E.title: "1"
 	task.2D2608F60BBD4414.title: "我已了解"
 	task.32DBA4AF24569EB7.title: "没错，就是锅盖！"
+	task.343F75455CED7981.title: "拍片！"
 	task.3FDA9E3E0865F5D4.title: "未成年人禁止饮酒！"
 	task.403B88F14FF6AB82.title: "好吃！"
 	task.45FCFE325C3D0AF2.title: "我已简单了解田园生活玩法"
@@ -1161,5 +1232,6 @@
 	task.53794FE4A79216BD.title: "爽~"
 	task.6D3E047EC7F1DEAD.title: "组装好咯！"
 	task.72E6FABC9C5BE68C.title: "感谢有你~"
+	task.73B5294CA9711E9C.title: "记录下美好瞬间！"
 	task.76613D96E9C5667B.title: "森罗厨房"
 }

@@ -78,6 +78,73 @@ public class ClientNetworkHandler {
             });
         });
         
+        ClientPlayNetworking.registerGlobalReceiver(SyncAdminStoriesPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> {
+                if (Minecraft.getInstance().screen instanceof AdminStoryManagerScreen managerScreen) {
+                    managerScreen.clearStories();
+                    for (var story : payload.stories()) {
+                        managerScreen.addStory(story.id(), story.name(), story.nodeCount(), 
+                            story.version(), story.valid(), story.errorMsg());
+                    }
+                }
+            });
+        });
+        
+        ClientPlayNetworking.registerGlobalReceiver(SyncStoryGraphPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> {
+                if (Minecraft.getInstance().screen instanceof com.warmpixel.storyadventure.client.ui.admin.graph.StoryGraphScreen graphScreen) {
+                    graphScreen.onSyncReceived(payload.json());
+                }
+            });
+        });
+        
+        ClientPlayNetworking.registerGlobalReceiver(SyncWaypointsPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> {
+                var renderer = com.warmpixel.storyadventure.client.render.WaypointIndicatorRenderer.getInstance();
+                if (renderer == null) return;
+                
+                renderer.clear();
+                for (var wpData : payload.waypoints()) {
+                    var wp = new com.warmpixel.storyadventure.core.waypoint.Waypoint(wpData.id(), 
+                        new net.minecraft.world.phys.Vec3(wpData.x(), wpData.y(), wpData.z()));
+                    wp.setLabel(wpData.label());
+                    wp.setColor(wpData.color());
+                    wp.setShowDistance(wpData.showDistance());
+                    wp.setIcon(com.warmpixel.storyadventure.core.waypoint.Waypoint.WaypointIcon.fromId(wpData.icon()));
+                    renderer.addWaypoint(wp);
+                }
+                renderer.setEnabled(!payload.waypoints().isEmpty());
+            });
+        });
+        
+        ClientPlayNetworking.registerGlobalReceiver(SyncTriggerBoxesPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> {
+                var renderer = com.warmpixel.storyadventure.client.render.TriggerBoxGizmoRenderer.getInstance();
+                if (renderer == null) return;
+                
+                renderer.clear();
+                for (var boxData : payload.boxes()) {
+                    var box = new com.warmpixel.storyadventure.core.waypoint.TriggerBox(boxData.id(),
+                        new net.minecraft.world.phys.AABB(
+                            boxData.minX(), boxData.minY(), boxData.minZ(),
+                            boxData.maxX(), boxData.maxY(), boxData.maxZ()
+                        ));
+                    box.setLabel(boxData.label());
+                    renderer.addTriggerBox(box);
+                }
+
+                // Also update TriggerBoxManagerScreen if open
+                if (context.client().screen instanceof com.warmpixel.storyadventure.client.ui.admin.TriggerBoxManagerScreen managerScreen) {
+                    managerScreen.clearBoxes();
+                    for (var boxData : payload.boxes()) {
+                        managerScreen.addBoxFromSync(boxData.id(), boxData.label(), 
+                            boxData.minX(), boxData.minY(), boxData.minZ(),
+                            boxData.maxX(), boxData.maxY(), boxData.maxZ());
+                    }
+                }
+            });
+        });
+        
         StoryAdventureMod.LOGGER.info("Registered client network receivers");
     }
     
@@ -152,16 +219,78 @@ public class ClientNetworkHandler {
             }
             
             case OpenUIPayload.SCREEN_HUD_SHOW -> {
-                StrangerHudRenderer.getInstance().show("怪奇物语", "第一章：失踪");
-                // Demo data
-                var objectives = new java.util.ArrayList<StrangerHudRenderer.ObjectiveEntry>();
-                objectives.add(new StrangerHudRenderer.ObjectiveEntry("调查威尔的房间", false, true));
-                StrangerHudRenderer.getInstance().setObjectives(objectives);
-                StrangerHudRenderer.getInstance().startTimer(300000);
+                try {
+                    String title = "怪奇物语";
+                    String chapter = "第一章";
+                    
+                    if (extraData != null && !extraData.isEmpty()) {
+                        com.google.gson.JsonObject json = com.google.gson.JsonParser.parseString(extraData).getAsJsonObject();
+                        if (json.has("title")) title = json.get("title").getAsString();
+                        if (json.has("chapter")) chapter = json.get("chapter").getAsString();
+                        
+                        StrangerHudRenderer.getInstance().show(title, chapter);
+                        
+                        // Parse objectives from JSON if present
+                        if (json.has("objectives") && json.get("objectives").isJsonArray()) {
+                            var objectives = new java.util.ArrayList<StrangerHudRenderer.ObjectiveEntry>();
+                            for (var objElem : json.getAsJsonArray("objectives")) {
+                                var obj = objElem.getAsJsonObject();
+                                String text = obj.has("text") ? obj.get("text").getAsString() : "目标";
+                                boolean complete = obj.has("complete") && obj.get("complete").getAsBoolean();
+                                boolean current = obj.has("current") && obj.get("current").getAsBoolean();
+                                objectives.add(new StrangerHudRenderer.ObjectiveEntry(text, complete, current));
+                            }
+                            StrangerHudRenderer.getInstance().setObjectives(objectives);
+                        }
+                        
+                        // Timer if present
+                        if (json.has("timer")) {
+                            long timerMs = json.get("timer").getAsLong();
+                            if (timerMs > 0) {
+                                StrangerHudRenderer.getInstance().startTimer(timerMs);
+                            }
+                        }
+                    } else {
+                        StrangerHudRenderer.getInstance().show(title, chapter);
+                    }
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.error("Failed to parse HUD data", e);
+                    StrangerHudRenderer.getInstance().show("怪奇物语", "第一章");
+                }
             }
             
             case OpenUIPayload.SCREEN_HUD_HIDE -> {
                 StrangerHudRenderer.getInstance().hide();
+            }
+            
+            case OpenUIPayload.SCREEN_VICTORY -> {
+                try {
+                    com.google.gson.JsonObject json = com.google.gson.JsonParser.parseString(extraData).getAsJsonObject();
+                    String storyName = json.has("storyName") ? json.get("storyName").getAsString() : "未知故事";
+                    long completionTime = json.has("completionTime") ? json.get("completionTime").getAsLong() : 0;
+                    
+                    java.util.List<StrangerVictoryScreen.RewardEntry> rewards = new java.util.ArrayList<>();
+                    if (json.has("rewards") && json.get("rewards").isJsonArray()) {
+                        for (var rewardElem : json.getAsJsonArray("rewards")) {
+                            var reward = rewardElem.getAsJsonObject();
+                            String type = reward.has("type") ? reward.get("type").getAsString() : "ITEM";
+                            int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 1;
+                            
+                            if ("EXPERIENCE".equals(type)) {
+                                rewards.add(StrangerVictoryScreen.RewardEntry.experience(amount));
+                            } else if ("ITEM".equals(type)) {
+                                String item = reward.has("item") ? reward.get("item").getAsString() : "物品";
+                                rewards.add(StrangerVictoryScreen.RewardEntry.item(item, amount));
+                            }
+                        }
+                    }
+                    
+                    mc.setScreen(new StrangerVictoryScreen(storyName, completionTime, rewards));
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.error("Failed to parse victory data", e);
+                    // Fallback with default data
+                    mc.setScreen(new StrangerVictoryScreen("任务完成", 0, new java.util.ArrayList<>()));
+                }
             }
             
             default -> {
@@ -183,6 +312,7 @@ public class ClientNetworkHandler {
             for (SyncInstancesPayload.InstanceInfo info : lastSyncedInstances) {
                 managerScreen.addInstance(info.id(), info.storyName(), info.node(), info.status(), info.playerCount(), info.elapsed());
             }
+            managerScreen.onSyncReceived();
         }
     }
 

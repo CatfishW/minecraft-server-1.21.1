@@ -1,10 +1,330 @@
 {
+	autofocus_id: "437EC1CA8E30BD48"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "05F75DC645DC87C8"
 	group: "6A83FBBB746164FB"
+	icon: {
+		id: "exposure:camera"
+	}
 	id: "05F75DC645DC87C8"
 	order_index: 2
 	quest_links: [ ]
-	quests: [ ]
+	quests: [
+		{
+			dependencies: ["7D68DBC6E8BC455B"]
+			hide_until_deps_complete: true
+			id: "437EC1CA8E30BD48"
+			rewards: [{
+				count: 50
+				id: "136D7680EDDC53B9"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "0EC6BBD4718DAE5D"
+				item: { count: 1, id: "exposure:camera" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["437EC1CA8E30BD48"]
+			hide_until_deps_complete: true
+			id: "1601D49E96F454F0"
+			rewards: [{
+				count: 50
+				id: "65A194464504C245"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [
+				{
+					id: "01B6E0A5372BD30F"
+					item: { count: 1, id: "exposure:color_film" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "480AAB91CBDF2669"
+					item: { count: 1, id: "exposure:black_and_white_film" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1601D49E96F454F0"]
+			id: "330B9024DA0EB25D"
+			rewards: [{
+				count: 50
+				id: "27548390B35F642C"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "5A31F381450D5667"
+				item: { count: 1, id: "minecraft:spyglass" }
+				type: "item"
+			}]
+			x: 3.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["1601D49E96F454F0"]
+			id: "11B1F680C0E4D711"
+			rewards: [{
+				count: 50
+				id: "2BACC7C971FC1833"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "6DC958C717D512E0"
+				item: { count: 1, id: "minecraft:redstone_lamp" }
+				type: "item"
+			}]
+			x: 3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["1601D49E96F454F0"]
+			id: "2FFD91A52B6FBAB9"
+			rewards: [{
+				count: 50
+				id: "4266FDE82503100E"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6ACDE2FC65FE24B1"
+					item: { count: 1, id: "minecraft:white_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "7C826DE3F9CB32BF"
+					item: { count: 1, id: "minecraft:orange_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "711DAD26014CC2F4"
+					item: { count: 1, id: "minecraft:magenta_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "6780CA9E26674045"
+					item: { count: 1, id: "minecraft:light_blue_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "1D40E1046A7C5153"
+					item: { count: 1, id: "minecraft:yellow_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "570D497414ECFB3E"
+					item: { count: 1, id: "minecraft:pink_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "7C3943411DAF86E3"
+					item: { count: 1, id: "minecraft:black_stained_glass_pane" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 3.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["522EAC134C2AEEDC"]
+			id: "410F3A70173C2108"
+			rewards: [{
+				count: 50
+				id: "6268514931106F2A"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [
+				{
+					id: "4546FA926BCF078A"
+					item: { components: { "minecraft:potion_contents": { potion: "minecraft:mundane" } }, count: 1, id: "minecraft:potion" }
+					type: "item"
+				}
+				{
+					id: "1C2E12274FABE1BC"
+					item: { components: { "minecraft:potion_contents": { potion: "minecraft:thick" } }, count: 1, id: "minecraft:potion" }
+					type: "item"
+				}
+				{
+					id: "2ACFFDA0F1A632F5"
+					item: { components: { "minecraft:potion_contents": { potion: "minecraft:awkward" } }, count: 1, id: "minecraft:potion" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 18.0d
+		}
+		{
+			dependencies: ["1601D49E96F454F0"]
+			id: "522EAC134C2AEEDC"
+			size: 2.0d
+			tasks: [{
+				id: "343F75455CED7981"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 12.0d
+		}
+		{
+			dependencies: ["410F3A70173C2108"]
+			id: "35C6314A7D8632C3"
+			rewards: [{
+				count: 50
+				id: "1C74874DA8BE0F8C"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [
+				{
+					id: "3644DA07D5496FAA"
+					item: { count: 1, id: "exposure:lightroom" }
+					type: "item"
+				}
+				{
+					id: "2F2DE63C4D6729A3"
+					item: { count: 1, id: "minecraft:paper" }
+					type: "item"
+				}
+				{
+					id: "321DFE14277649A3"
+					item: { count: 1, id: "minecraft:cyan_dye" }
+					type: "item"
+				}
+				{
+					id: "33C6FE8F88A63E9C"
+					item: { count: 1, id: "minecraft:magenta_dye" }
+					type: "item"
+				}
+				{
+					id: "50D4119EA5283BB0"
+					item: { count: 1, id: "minecraft:yellow_dye" }
+					type: "item"
+				}
+				{
+					id: "5F86FFC9AAD57E82"
+					item: { count: 1, id: "minecraft:black_dye" }
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 24.0d
+		}
+		{
+			dependencies: ["35C6314A7D8632C3"]
+			id: "7CD8E5B065A60BB3"
+			rewards: [{
+				id: "4C3EE8C52D34E279"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:silver_coin"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [
+				{
+					id: "7E04CC9F32A3A101"
+					item: { count: 1, id: "exposure:photograph_frame" }
+					optional_task: true
+					type: "item"
+				}
+				{
+					id: "36B3FBA75596F2E1"
+					item: { count: 1, id: "exposure:album" }
+					optional_task: true
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 31.0d
+		}
+		{
+			icon: {
+				id: "exposure:chromatic_sheet"
+			}
+			id: "7D68DBC6E8BC455B"
+			rewards: [{
+				count: 50
+				id: "42B4B0FC279E49EE"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			shape: "square"
+			size: 5.0d
+			tasks: [{
+				id: "73B5294CA9711E9C"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: -10.0d
+		}
+		{
+			dependencies: ["7CD8E5B065A60BB3"]
+			id: "5AE4EF6FF5839848"
+			rewards: [{
+				id: "33501ECBE096DFA3"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:silver_coin"
+				}
+				type: "item"
+			}]
+			size: 3.0d
+			tasks: [{
+				id: "1F3A6E56E11B270F"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 37.0d
+		}
+	]
 }

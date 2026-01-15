@@ -12,9 +12,19 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceKey;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import com.warmpixel.storyadventure.core.waypoint.Waypoint;
+import com.warmpixel.storyadventure.core.waypoint.TriggerBox;
+import com.warmpixel.storyadventure.core.action.NodeAction;
 
 /**
  * Represents a single running instance of a story.
@@ -31,6 +41,11 @@ public class Instance {
     private InstanceStatus status;
     private long startTimeMillis;
     private long lastUpdateMillis;
+    
+    // Waypoints and triggers
+    private final Map<String, Waypoint> activeWaypoints = new HashMap<>();
+    private final Map<String, TriggerBox> activeTriggers = new HashMap<>();
+    private MinecraftServer server;
     
     public enum InstanceStatus {
         CREATED, RUNNING, PAUSED, COMPLETED, FAILED
@@ -63,6 +78,7 @@ public class Instance {
     public InstanceStatus getStatus() { return status; }
     public long getStartTimeMillis() { return startTimeMillis; }
     public long getElapsedMillis() { return System.currentTimeMillis() - startTimeMillis; }
+    public MinecraftServer getServer() { return server; }
     
     public StageNode getCurrentNode() {
         return graph.getNode(currentNodeId);
@@ -81,6 +97,7 @@ public class Instance {
         }
         
         status = InstanceStatus.RUNNING;
+        this.server = server;
         startTimeMillis = System.currentTimeMillis();
         
         StoryAdventureMod.LOGGER.info("[Instance.start] Status set to RUNNING. Start time: {}", startTimeMillis);
@@ -128,6 +145,21 @@ public class Instance {
             StoryAdventureMod.LOGGER.info("[Instance.start] No 'start' location defined. Players will remain at current position.");
         }
         
+        // Show HUD for all players
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                // Build HUD data JSON
+                String hudData = String.format("{\"title\":\"%s\",\"chapter\":\"%s\"}", 
+                    escapeJson(graph.getName()), "第一章");
+                com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+                    player, 
+                    com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_SHOW, 
+                    hudData
+                );
+            }
+        }
+        
         // Enter the entry node
         StoryAdventureMod.LOGGER.debug("[Instance.start] Transitioning to entry node: {}", currentNodeId);
         enterNode(currentNodeId);
@@ -144,7 +176,48 @@ public class Instance {
             }
         }
         
+        // Check triggers for all party members
+        checkPlayerTriggers();
+        
         lastUpdateMillis = System.currentTimeMillis();
+    }
+    
+    /**
+     * Check all active triggers for player enter/exit events.
+     */
+    private void checkPlayerTriggers() {
+        if (server == null || activeTriggers.isEmpty()) return;
+        
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player == null) continue;
+            
+            var pos = player.position();
+            
+            for (TriggerBox trigger : activeTriggers.values()) {
+                TriggerBox.TriggerEvent event = trigger.checkPlayer(memberId, pos);
+                
+                if (event == TriggerBox.TriggerEvent.ENTER) {
+                    StoryAdventureMod.LOGGER.debug("[Instance] Player {} entered trigger {}", player.getName().getString(), trigger.getId());
+                    
+                    for (NodeAction action : trigger.getOnEnterActions()) {
+                        action.execute(List.of(player));
+                    }
+                    
+                    // If linked to a node, trigger transition
+                    if (trigger.getLinkedNodeId() != null) {
+                        transitionTo(trigger.getLinkedNodeId(), player);
+                    }
+                    
+                } else if (event == TriggerBox.TriggerEvent.EXIT) {
+                    StoryAdventureMod.LOGGER.debug("[Instance] Player {} exited trigger {}", player.getName().getString(), trigger.getId());
+                    
+                    for (NodeAction action : trigger.getOnExitActions()) {
+                        action.execute(List.of(player));
+                    }
+                }
+            }
+        }
     }
     
     /**
@@ -172,8 +245,72 @@ public class Instance {
      */
     public void complete() {
         status = InstanceStatus.COMPLETED;
+        long elapsedMs = getElapsedMillis();
         StoryAdventureMod.LOGGER.info("Instance {} completed successfully in {}ms",
-            instanceId, getElapsedMillis());
+            instanceId, elapsedMs);
+        
+        // Send victory screen to all party members
+        if (server != null) {
+            // Build victory data JSON
+            StringBuilder jsonBuilder = new StringBuilder();
+            jsonBuilder.append("{");
+            jsonBuilder.append("\"storyName\":\"").append(escapeJson(graph.getName())).append("\",");
+            jsonBuilder.append("\"completionTime\":").append(elapsedMs).append(",");
+            jsonBuilder.append("\"rewards\":[");
+            
+            // Get rewards from current node if it has any
+            StageNode currentNode = getCurrentNode();
+            if (currentNode != null && currentNode.getData().has("rewards")) {
+                var rewardsArray = currentNode.getData().getAsJsonArray("rewards");
+                boolean first = true;
+                for (var rewardElem : rewardsArray) {
+                    if (!first) jsonBuilder.append(",");
+                    first = false;
+                    
+                    var reward = rewardElem.getAsJsonObject();
+                    String type = reward.has("type") ? reward.get("type").getAsString() : "ITEM";
+                    
+                    jsonBuilder.append("{");
+                    jsonBuilder.append("\"type\":\"").append(type).append("\",");
+                    
+                    if ("EXPERIENCE".equals(type)) {
+                        int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 0;
+                        jsonBuilder.append("\"amount\":").append(amount);
+                    } else if ("ITEM".equals(type)) {
+                        String item = reward.has("item") ? reward.get("item").getAsString() : "minecraft:diamond";
+                        int count = reward.has("count") ? reward.get("count").getAsInt() : 1;
+                        jsonBuilder.append("\"item\":\"").append(escapeJson(item)).append("\",");
+                        jsonBuilder.append("\"amount\":").append(count);
+                    }
+                    
+                    jsonBuilder.append("}");
+                }
+            }
+            
+            jsonBuilder.append("]}");
+            String victoryJson = jsonBuilder.toString();
+            
+            // Send to all party members
+            for (UUID memberId : party.getMembers()) {
+                ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+                if (player != null) {
+                    com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+                        player, 
+                        com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_VICTORY, 
+                        victoryJson
+                    );
+                }
+            }
+        }
+    }
+    
+    private String escapeJson(String str) {
+        if (str == null) return "";
+        return str.replace("\\", "\\\\")
+                  .replace("\"", "\\\"")
+                  .replace("\n", "\\n")
+                  .replace("\r", "\\r")
+                  .replace("\t", "\\t");
     }
     
     /**
@@ -303,6 +440,38 @@ public class Instance {
         state.clearNodeResult();
         state.recordNodeEntry(nodeId);
         
+        // Execute on_enter actions for all party members
+        JsonObject nodeData = node.getData();
+        if (nodeData.has("on_enter") && nodeData.get("on_enter").isJsonArray()) {
+            var actionsArray = nodeData.getAsJsonArray("on_enter");
+            
+            // Get all online party members
+            java.util.List<net.minecraft.server.level.ServerPlayer> onlinePlayers = new java.util.ArrayList<>();
+            for (UUID memberId : party.getMembers()) {
+                net.minecraft.server.level.ServerPlayer p = server.getPlayerList().getPlayer(memberId);
+                if (p != null) {
+                    onlinePlayers.add(p);
+                }
+            }
+            
+            // Execute each action for all players
+            for (var actionElem : actionsArray) {
+                if (actionElem.isJsonObject()) {
+                    var actionJson = actionElem.getAsJsonObject();
+                    var action = com.warmpixel.storyadventure.core.action.ActionFactory.fromJson(actionJson);
+                    if (action != null) {
+                        try {
+                            action.execute(onlinePlayers);
+                            StoryAdventureMod.LOGGER.debug("[Instance.enterNode] Executed action: {} for {} players", 
+                                actionJson.get("type").getAsString(), onlinePlayers.size());
+                        } catch (Exception e) {
+                            StoryAdventureMod.LOGGER.error("[Instance.enterNode] Failed to execute action", e);
+                        }
+                    }
+                }
+            }
+        }
+        
         // Call NodeHandler
         NodeType type = node.getType();
         var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(type);
@@ -317,6 +486,28 @@ public class Instance {
             }
         } else {
              StoryAdventureMod.LOGGER.warn("[Instance.enterNode] No handler found for node type: {}", type);
+        }
+
+        // Load triggers defined in node data
+        loadTriggersFromNode(node);
+    }
+
+    private void loadTriggersFromNode(StageNode node) {
+        activeTriggers.clear();
+        JsonObject data = node.getData();
+        if (data.has("triggers") && data.get("triggers").isJsonArray()) {
+            JsonArray triggersArray = data.getAsJsonArray("triggers");
+            for (JsonElement elem : triggersArray) {
+                if (elem.isJsonObject()) {
+                    JsonObject trigJson = elem.getAsJsonObject();
+                    String id = trigJson.has("id") ? trigJson.get("id").getAsString() : "trig_" + UUID.randomUUID().toString().substring(0, 8);
+                    TriggerBox box = TriggerBox.fromJson(id, trigJson);
+                    if (box != null) {
+                        addTrigger(box);
+                        StoryAdventureMod.LOGGER.debug("[Instance] Loaded trigger {} for node {}", id, node.getId());
+                    }
+                }
+            }
         }
     }
     
@@ -344,6 +535,77 @@ public class Instance {
      */
     public boolean hasPlayer(UUID playerId) {
         return party.hasMember(playerId);
+    }
+    
+    // ==================== Waypoint & Trigger API ====================
+    
+    /**
+     * Add a waypoint to this instance.
+     */
+    public void addWaypoint(Waypoint waypoint) {
+        activeWaypoints.put(waypoint.getId(), waypoint);
+        syncWaypointsToParty();
+    }
+    
+    /**
+     * Remove a waypoint from this instance.
+     */
+    public void removeWaypoint(String waypointId) {
+        activeWaypoints.remove(waypointId);
+        syncWaypointsToParty();
+    }
+    
+    /**
+     * Add a trigger box to this instance.
+     */
+    public void addTrigger(TriggerBox trigger) {
+        activeTriggers.put(trigger.getId(), trigger);
+    }
+    
+    /**
+     * Remove a trigger box from this instance.
+     */
+    public void removeTrigger(String triggerId) {
+        activeTriggers.remove(triggerId);
+    }
+    
+    /**
+     * Get all active waypoints.
+     */
+    public Map<String, Waypoint> getActiveWaypoints() {
+        return activeWaypoints;
+    }
+    
+    /**
+     * Get all active triggers.
+     */
+    public Map<String, TriggerBox> getActiveTriggers() {
+        return activeTriggers;
+    }
+    
+    /**
+     * Clear all waypoints and triggers (e.g., on node transition).
+     */
+    public void clearWaypointsAndTriggers() {
+        activeWaypoints.clear();
+        activeTriggers.clear();
+        syncWaypointsToParty();
+    }
+    
+    /**
+     * Sync waypoints to all party members via network.
+     */
+    private void syncWaypointsToParty() {
+        if (server == null) return;
+        // Network sync will be implemented when we add the payload
+        // For now, this is a placeholder
+    }
+    
+    /**
+     * Set the server reference (called during start).
+     */
+    public void setServer(MinecraftServer server) {
+        this.server = server;
     }
     
     @Override

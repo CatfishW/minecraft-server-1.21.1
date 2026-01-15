@@ -4,6 +4,8 @@ import com.warmpixel.storyadventure.client.ui.StrangerButton;
 import com.warmpixel.storyadventure.client.ui.StrangerScreen;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import com.warmpixel.storyadventure.network.AdminStoryActionPayload;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +22,16 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     private int scrollOffset = 0;
     
     public AdminStoryManagerScreen() {
-        super(Component.literal("故事管理"));
+        super(Component.translatable("gui.storyadventure.admin.stories.title"));
     }
     
     public void addStory(String id, String name, int nodeCount, String version, boolean valid, String errorMsg) {
         stories.add(new StoryInfo(id, name, nodeCount, version, valid, errorMsg));
+    }
+    
+    public void clearStories() {
+        stories.clear();
+        selectedIndex = -1;
     }
     
     @Override
@@ -36,43 +43,34 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         int rightX = width - 170;
         int y = 80;
         
-        // Reload all button
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("🔄 重载全部"), this::reloadAll);
-        y += buttonHeight + 8;
+        // Action buttons - compact layout
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.reload_all"), this::reloadAll);
+        y += buttonHeight + 4;
         
-        // Validate button
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("✓ 验证选中"), this::validateSelected);
-        y += buttonHeight + 8;
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.validate_selected"), this::validateSelected);
+        y += buttonHeight + 4;
         
-        // View structure button
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("📊 查看节点"), this::viewStructure);
-        y += buttonHeight + 8;
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.graph_editor"), this::openGraphEditor);
+        y += buttonHeight + 12;
         
-        // Set spawn location
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("📍 设置出生点"), this::setSpawnLocation);
-        y += buttonHeight + 8;
+        // Locations Group
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.set_spawn"), this::setSpawnLocation);
+        y += buttonHeight + 4;
         
-        // Set return location
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("🏠 设置返回点"), this::setReturnLocation);
-        y += buttonHeight + 8;
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.set_return"), this::setReturnLocation);
+        y += buttonHeight + 4;
         
-        // Teleport to scene
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("✈ 传送到场景"), this::teleportToScene);
-        y += buttonHeight + 20;
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.tp_to_scene"), this::teleportToScene);
+        y += buttonHeight + 12;
         
-        // Create new button
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
-            Component.literal("+ 创建模板"), this::createTemplate);
+        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.create_template"), this::createTemplate);
         
         // Close button
         addStrangerButton(width / 2 - 60, height - 45, 120, 28,
-            Component.literal("关闭"), this::onClose);
+            Component.translatable("gui.storyadventure.admin.stories.close"), this::onClose);
+            
+        // Request fresh data - use direct payload to avoid re-open loop
+        refreshStories();
     }
     
     @Override
@@ -87,11 +85,11 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         drawPanelBorder(graphics, listX, listY, listWidth, listHeight);
         
         // Headers
-        graphics.drawString(font, "ID", listX + 10, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "名称", listX + 150, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "节点数", listX + 320, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "版本", listX + 380, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, "状态", listX + 440, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.id"), listX + 10, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.name"), listX + 120, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.nodes"), listX + listWidth - 140, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.version"), listX + listWidth - 80, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.status"), listX + listWidth - 40, listY + 8, COLOR_NEON_RED);
         
         graphics.fill(listX + 5, listY + 22, listX + listWidth - 5, listY + 23, COLOR_BORDER);
         
@@ -107,7 +105,7 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         }
         
         if (stories.isEmpty()) {
-            graphics.drawCenteredString(font, "没有加载的故事", listX + listWidth / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
+            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.admin.stories.empty"), listX + listWidth / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
         }
         
         // Selected story details
@@ -117,7 +115,7 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         
         // Stats
         int validCount = (int) stories.stream().filter(s -> s.valid).count();
-        String stats = String.format("总计: %d 个故事 | 有效: %d | 错误: %d", 
+        Component stats = Component.translatable("gui.storyadventure.admin.stories.stats", 
             stories.size(), validCount, stories.size() - validCount);
         graphics.drawString(font, stats, 40, height - 70, COLOR_TEXT_DIM);
     }
@@ -137,17 +135,23 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         graphics.drawString(font, truncate(info.id, 18), x + 10, y + 8, COLOR_TEXT_BODY);
         
         // Name
-        graphics.drawString(font, truncate(info.name, 20), x + 150, y + 8, COLOR_TEXT_BODY);
+        graphics.drawString(font, truncate(info.name, 20), x + 120, y + 8, COLOR_TEXT_BODY);
         
         // Node count
-        graphics.drawString(font, String.valueOf(info.nodeCount), x + 325, y + 8, COLOR_TEXT_DIM);
+        graphics.drawString(font, String.valueOf(info.nodeCount), x + width - 135, y + 8, COLOR_TEXT_DIM);
         
         // Version
-        graphics.drawString(font, info.version, x + 380, y + 8, COLOR_TEXT_DIM);
+        graphics.drawString(font, info.version, x + width - 80, y + 8, COLOR_TEXT_DIM);
         
         // Status
-        String statusText = info.valid ? "✓ 有效" : "✕ 错误";
-        graphics.drawString(font, statusText, x + 440, y + 8, statusColor);
+        String statusText = info.valid ? "Valid" : "Error"; // Shorten "Valid" to just symbol or short text? The header is "Status"
+        // Or keep translatable but ensure it fits? "Valid" is short enough.
+        // But previously it was "status.valid" translation.
+        statusText = info.valid ? Component.translatable("gui.storyadventure.admin.stories.status.valid").getString() 
+                                      : Component.translatable("gui.storyadventure.admin.stories.status.error").getString();
+        // Since "Valid" is short, we can use an icon or text.
+        // Let's draw it right aligned or something.
+        graphics.drawString(font, statusText, x + width - 40, y + 8, statusColor);
         
         // Error preview
         if (!info.valid && !info.errorMsg.isEmpty()) {
@@ -160,7 +164,7 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         
         if (!info.valid && !info.errorMsg.isEmpty()) {
             graphics.fill(30, detailsY - 5, width - 30, detailsY + 25, 0xE01A0808);
-            graphics.drawString(font, "⚠ 错误详情:", 40, detailsY, 0xFFFF6666);
+            graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.error_details"), 40, detailsY, 0xFFFF6666);
             graphics.drawString(font, info.errorMsg, 40, detailsY + 12, 0xFFAA4444);
         }
     }
@@ -230,30 +234,32 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     }
     
     private void reloadAll() {
-        sendCommand("storyadmin reload");
-        showMessage("§a正在重新加载所有故事...");
+        ClientPlayNetworking.send(new AdminStoryActionPayload(AdminStoryActionPayload.Action.RELOAD, ""));
+        showMessage(Component.translatable("command.storyadventure.admin.stories.reloading").getString());
     }
     
     private void validateSelected() {
         if (selectedIndex >= 0 && selectedIndex < stories.size()) {
             StoryInfo info = stories.get(selectedIndex);
-            sendCommand("storyadmin reload");
-            showMessage("§e正在验证故事 '" + info.id + "'...");
+            ClientPlayNetworking.send(new AdminStoryActionPayload(AdminStoryActionPayload.Action.VALIDATE, info.id));
+            showMessage(Component.translatable("command.storyadventure.admin.stories.validating", info.id).getString());
         } else {
-            showMessage("§c请先选择一个故事");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.select_first").getString());
         }
+    }
+
+    private void refreshStories() {
+        ClientPlayNetworking.send(new AdminStoryActionPayload(AdminStoryActionPayload.Action.SYNC, ""));
     }
     
     private void viewStructure() {
         if (selectedIndex >= 0 && selectedIndex < stories.size()) {
             StoryInfo info = stories.get(selectedIndex);
-            showMessage("§6=== 故事结构: " + info.name + " ===");
-            showMessage("§7ID: §f" + info.id);
-            showMessage("§7节点数: §f" + info.nodeCount);
-            showMessage("§7版本: §f" + info.version);
-            showMessage("§7使用命令 §f/storyadmin debug <instance_id> §7查看运行中实例的详细节点信息");
+            // Open the node list screen for this story
+            AdminNodeListScreen nodeListScreen = new AdminNodeListScreen(info.id, info.name);
+            net.minecraft.client.Minecraft.getInstance().setScreen(nodeListScreen);
         } else {
-            showMessage("§c请先选择一个故事");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.select_first").getString());
         }
     }
     
@@ -261,9 +267,9 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         if (selectedIndex >= 0 && selectedIndex < stories.size()) {
             StoryInfo info = stories.get(selectedIndex);
             sendCommand("storyadmin setlocation " + info.id + " spawn");
-            showMessage("§a已将当前位置设为故事 '" + info.id + "' 的出生点");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.spawn_set", info.id).getString());
         } else {
-            showMessage("§c请先选择一个故事");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.select_first").getString());
         }
     }
     
@@ -271,9 +277,9 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         if (selectedIndex >= 0 && selectedIndex < stories.size()) {
             StoryInfo info = stories.get(selectedIndex);
             sendCommand("storyadmin setlocation " + info.id + " return");
-            showMessage("§a已将当前位置设为故事 '" + info.id + "' 的返回点");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.return_set", info.id).getString());
         } else {
-            showMessage("§c请先选择一个故事");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.select_first").getString());
         }
     }
     
@@ -281,17 +287,28 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         if (selectedIndex >= 0 && selectedIndex < stories.size()) {
             StoryInfo info = stories.get(selectedIndex);
             sendCommand("storyadmin tp " + info.id);
-            showMessage("§a正在传送到故事 '" + info.id + "' 的场景...");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.tp_scene", info.id).getString());
             onClose();
         } else {
-            showMessage("§c请先选择一个故事");
+            showMessage(Component.translatable("command.storyadventure.admin.stories.select_first").getString());
+        }
+    }
+    
+    private void openGraphEditor() {
+        if (selectedIndex >= 0 && selectedIndex < stories.size()) {
+            StoryInfo info = stories.get(selectedIndex);
+            com.warmpixel.storyadventure.client.ui.admin.graph.StoryGraphScreen graphScreen = 
+                new com.warmpixel.storyadventure.client.ui.admin.graph.StoryGraphScreen(info.id, info.name);
+            net.minecraft.client.Minecraft.getInstance().setScreen(graphScreen);
+        } else {
+            showMessage(Component.translatable("command.storyadventure.admin.stories.select_first").getString());
         }
     }
     
     private void createTemplate() {
-        showMessage("§e正在创建新故事模板...");
-        showMessage("§7新模板将保存到: §fconfig/storyadventure/stories/new_story.json");
-        showMessage("§7请编辑该文件后使用 §f/storyadmin reload §7重新加载");
+        showMessage(Component.translatable("command.storyadventure.admin.stories.template_creating").getString());
+        showMessage(Component.translatable("command.storyadventure.admin.stories.template_path", "config/storyadventure/stories/new_story.json").getString());
+        showMessage(Component.translatable("command.storyadventure.admin.stories.template_hint").getString());
     }
     
     public record StoryInfo(String id, String name, int nodeCount, String version, boolean valid, String errorMsg) {}

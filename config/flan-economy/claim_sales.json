@@ -1,5 +1,11 @@
 [
   {
+    "claimId": "c4bd15c0-854e-4d7d-8483-4b1b06da572d",
+    "sellerId": "aa24840b-eb03-3e8b-bbba-ab6f36abe6d5",
+    "price": 9999999999,
+    "iconId": "minecraft:gold_block"
+  },
+  {
     "claimId": "c25c964a-e91b-4063-9db7-7e0479a06c1b",
     "sellerId": "aa24840b-eb03-3e8b-bbba-ab6f36abe6d5",
     "price": 10000,

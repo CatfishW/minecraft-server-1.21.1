@@ -1,15 +1,22 @@
 package com.warmpixel.storyadventure.core.node;
 
+import com.google.gson.JsonObject;
 import com.warmpixel.storyadventure.StoryAdventureMod;
 import com.warmpixel.storyadventure.core.graph.StageNode;
 import com.warmpixel.storyadventure.instance.Instance;
+import com.warmpixel.storyadventure.network.NetworkHandler;
+import com.warmpixel.storyadventure.network.OpenUIPayload;
 import net.minecraft.server.level.ServerPlayer;
+
+import java.util.UUID;
 
 /**
  * Handler for DIALOGUE nodes.
  * Integrates with Easy NPC dialog system for rich NPC conversations.
  */
 public class DialogueNodeHandler implements NodeHandler {
+    
+    private boolean dialogueTriggered = false;
     
     @Override
     public void onEnter(Instance instance, StageNode node) {
@@ -19,16 +26,108 @@ public class DialogueNodeHandler implements NodeHandler {
         StoryAdventureMod.LOGGER.info("[DialogueNodeHandler] onEnter: instance={}, node={}, npc='{}', dialogSet='{}'", 
             instance.getInstanceId(), node.getId(), npcTemplate, dialogSet);
         
-        // TODO: Integration with Easy NPC
-        // 1. Find or spawn the NPC from template
-        // 2. Open dialog screen for party members
-        // 3. Track relationship impacts
-        StoryAdventureMod.LOGGER.debug("[DialogueNodeHandler] Ready for NPC interaction in node {}", node.getId());
+        dialogueTriggered = false;
+        
+        // Check if there's a proximity_trigger - if so, wait for player to approach
+        JsonObject data = node.getData();
+        if (data.has("proximity_trigger")) {
+            StoryAdventureMod.LOGGER.info("[DialogueNodeHandler] Waiting for proximity trigger in node {}", node.getId());
+        } else {
+            // No proximity trigger - open dialogue immediately for all players
+            openDialogueForAllPlayers(instance, node);
+        }
     }
     
     @Override
     public void onTick(Instance instance, StageNode node) {
-        // Dialogue nodes don't tick - they wait for player input
+        // Check proximity trigger if not yet triggered
+        if (dialogueTriggered) return;
+        
+        JsonObject data = node.getData();
+        if (!data.has("proximity_trigger")) return;
+        
+        JsonObject trigger = data.getAsJsonObject("proximity_trigger");
+        double targetX = trigger.has("target_x") ? trigger.get("target_x").getAsDouble() : 0;
+        double targetY = trigger.has("target_y") ? trigger.get("target_y").getAsDouble() : 64;
+        double targetZ = trigger.has("target_z") ? trigger.get("target_z").getAsDouble() : 0;
+        double radius = trigger.has("radius") ? trigger.get("radius").getAsDouble() : 2.0;
+        
+        // Check if any party member is within proximity range
+        for (UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                double dx = player.getX() - targetX;
+                double dy = player.getY() - targetY;
+                double dz = player.getZ() - targetZ;
+                double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+                
+                if (distance <= radius) {
+                    StoryAdventureMod.LOGGER.info("[DialogueNodeHandler] Player {} triggered dialogue proximity (distance: {})", 
+                        player.getName().getString(), distance);
+                    
+                    // Trigger dialogue for ALL party members
+                    dialogueTriggered = true;
+                    openDialogueForAllPlayers(instance, node);
+                    break;
+                }
+            }
+        }
+    }
+    
+    private void openDialogueForAllPlayers(Instance instance, StageNode node) {
+        String npcName = node.getString("npc_name", "NPC");
+        
+        // Build dialogue JSON from node data
+        StringBuilder dialogueJson = new StringBuilder();
+        dialogueJson.append("{");
+        dialogueJson.append("\"npcName\":\"").append(escapeJson(npcName)).append("\",");
+        
+        // Get lines from node
+        dialogueJson.append("\"lines\":[");
+        JsonObject data = node.getData();
+        if (data.has("lines") && data.get("lines").isJsonArray()) {
+            var lines = data.getAsJsonArray("lines");
+            for (int i = 0; i < lines.size(); i++) {
+                if (i > 0) dialogueJson.append(",");
+                dialogueJson.append("\"").append(escapeJson(lines.get(i).getAsString())).append("\"");
+            }
+        }
+        dialogueJson.append("],");
+        
+        // Get choices from node
+        dialogueJson.append("\"choices\":[");
+        if (data.has("choices") && data.get("choices").isJsonArray()) {
+            var choices = data.getAsJsonArray("choices");
+            for (int i = 0; i < choices.size(); i++) {
+                if (i > 0) dialogueJson.append(",");
+                var choice = choices.get(i).getAsJsonObject();
+                String id = choice.has("id") ? choice.get("id").getAsString() : "choice_" + i;
+                String text = choice.has("text") ? choice.get("text").getAsString() : "选项 " + (i + 1);
+                dialogueJson.append("{");
+                dialogueJson.append("\"id\":\"").append(escapeJson(id)).append("\",");
+                dialogueJson.append("\"text\":\"").append(escapeJson(text)).append("\"");
+                dialogueJson.append("}");
+            }
+        }
+        dialogueJson.append("]}");
+        
+        // Send dialogue to ALL party members
+        for (UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_DIALOGUE, dialogueJson.toString());
+                StoryAdventureMod.LOGGER.info("[DialogueNodeHandler] Opened dialogue for player {}", player.getName().getString());
+            }
+        }
+    }
+    
+    private String escapeJson(String str) {
+        if (str == null) return "";
+        return str.replace("\\", "\\\\")
+                  .replace("\"", "\\\"")
+                  .replace("\n", "\\n")
+                  .replace("\r", "\\r")
+                  .replace("\t", "\\t");
     }
     
     @Override
@@ -69,7 +168,7 @@ public class DialogueNodeHandler implements NodeHandler {
     @Override
     public void onExit(Instance instance, StageNode node) {
         StoryAdventureMod.LOGGER.debug("[DialogueNodeHandler] onExit: instance={}, node={}", instance.getInstanceId(), node.getId());
-        // Clean up dialogue state
+        dialogueTriggered = false;
     }
     
     @Override
@@ -78,3 +177,4 @@ public class DialogueNodeHandler implements NodeHandler {
         return instance.getState().getLastDialogueChoice() != null;
     }
 }
+
