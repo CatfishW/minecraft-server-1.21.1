@@ -39,13 +39,57 @@ public class SpawnNPCAction implements NodeAction {
     public void execute(List<ServerPlayer> players) {
         if (players.isEmpty()) return;
         
-        // NPC spawning logic will vary depending on the NPC mod being used (e.g., EasyNPC, Taterzens, etc.)
-        // For now, we'll log it and implement a placeholder command-based spawn.
         var server = players.get(0).getServer();
-        if (server != null) {
-            // Example command: /easynpc spawn {template} {x} {y} {z}
-            String cmd = String.format("easynpc spawn %s %.2f %.2f %.2f", npcTemplate, position.x, position.y, position.z);
-            server.getCommands().performPrefixedCommand(server.createCommandSourceStack(), cmd);
+        if (server == null) return;
+        
+        // Get the server level for spawning
+        net.minecraft.server.level.ServerLevel level = null;
+        for (var serverLevel : server.getAllLevels()) {
+            if (serverLevel.dimension().location().toString().equals(dimension)) {
+                level = serverLevel;
+                break;
+            }
+        }
+        
+        if (level == null) {
+            level = server.overworld();
+        }
+        
+        // Use NPCTemplateManager API to spawn at specific position
+        try {
+            boolean success = de.markusbordihn.easynpc.config.NPCTemplateManager.spawnFromTemplate(
+                level, npcTemplate, position.x, position.y, position.z
+            );
+            
+            if (!success) {
+                // Fallback to command if API fails
+                String cmd = String.format(
+                    "execute in %s positioned %.2f %.2f %.2f run easy_npc template spawn %s", 
+                    dimension, position.x, position.y, position.z, npcTemplate
+                );
+                server.getCommands().performPrefixedCommand(
+                    server.createCommandSourceStack().withSuppressedOutput(), 
+                    cmd
+                );
+                com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.info("[SpawnNPCAction] Attempted fallback command spawn for {}", npcTemplate);
+            } else {
+                com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.info(
+                    "[SpawnNPCAction] Successfully spawned NPC '{}' at {},{},{}", 
+                    npcTemplate, position.x, position.y, position.z);
+                
+                // Set rotation after spawn if possible (using command as it's easier to target latest entity)
+                String rotCmd = String.format(
+                    "execute in %s as @e[type=easy_npc:humanoid,distance=..2,limit=1,sort=nearest] run tp @s ~ ~ ~ %.2f %.2f",
+                    dimension, yaw, pitch
+                );
+                server.getCommands().performPrefixedCommand(
+                    server.createCommandSourceStack().withSuppressedOutput(), 
+                    rotCmd
+                );
+            }
+        } catch (Exception e) {
+            com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.error(
+                "[SpawnNPCAction] Error spawning NPC '{}': {}", npcTemplate, e.getMessage());
         }
     }
     

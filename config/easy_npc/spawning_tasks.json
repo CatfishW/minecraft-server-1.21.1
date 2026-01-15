@@ -9,10 +9,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "78ea646b-9688-47ee-a463-f9a713d78c97"
+      "afe2b183-a77d-496b-88dd-49f39607cf34"
     ]
   },
   {
@@ -25,10 +25,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "7f4e0a19-dcfb-4bd6-a38a-570177b126aa"
+      "d0e5da0e-368f-4579-9c9c-b5224e507503"
     ]
   },
   {
@@ -41,10 +41,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "3527b1d4-772e-425f-82fc-58d177064991"
+      "273f8c8d-3ba7-44e1-b519-be88d725c0b8"
     ]
   },
   {
@@ -57,10 +57,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "d5cf8f93-2899-4558-88e0-12f2bd9a4586"
+      "d43eb69f-44cf-4af7-84b5-15c12bbcad41"
     ]
   },
   {
@@ -73,10 +73,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "00488d55-41dd-431a-b10a-cf52540da688"
+      "27b6c92f-d3af-4406-bb45-69b443dad302"
     ]
   },
   {
@@ -89,10 +89,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6f9a4f6f-561f-48bd-9ad8-c9ad0dfcc495"
+      "04fc22ce-edc3-4497-8117-e840969b6ba1"
     ]
   },
   {
@@ -105,10 +105,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f10e57cd-5889-452a-8b64-e3caf21c0b0c"
+      "a2393078-6ffa-43b3-bd5f-d26a22cb941f"
     ]
   },
   {
@@ -121,10 +121,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "65360720-660a-40b7-b3cf-872a2cb4e9f7"
+      "dac89ef4-e613-439f-b21a-61eb11bfe617"
     ]
   },
   {
@@ -137,10 +137,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6c882df7-d8e5-4ec8-a8cb-4c8c13692538"
+      "8339dcae-9f4c-41d1-93c5-2ab3dd6c4248"
     ]
   },
   {
@@ -153,10 +153,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "357ca13f-69b6-44d8-b33d-1398bed61b73"
+      "1dbddaa4-a680-4c9e-bd5f-63e7f7d93c61"
     ]
   },
   {
@@ -169,10 +169,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "b4a0419b-c5f3-4cb3-b182-c7a04bbf0e63"
+      "d907c137-7aa5-44a5-8937-71067efbc193"
     ]
   },
   {
@@ -185,10 +185,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "2d1270dd-9348-4684-955f-5bfe8d3ab805"
+      "4a7415f9-cb91-4bd0-8eb7-7693931d9d8f"
     ]
   },
   {
@@ -201,10 +201,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "d09250cb-c1e5-4879-b93a-4474d571da16"
+      "fd69ed17-d415-4d48-888e-9736aed50f78"
     ]
   },
   {
@@ -217,10 +217,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6e98669d-d18f-41d9-804c-f163be13ce40"
+      "91643176-69f9-4c78-bc04-1b00a45852fe"
     ]
   },
   {
@@ -233,10 +233,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "df0d24f6-46af-4754-939a-df5dadebe971"
+      "be0b8835-fd5b-40c9-90d0-53c1da0646c0"
     ]
   },
   {
@@ -249,10 +249,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e4c7db61-5a9b-4aaf-9a3b-9748a8eb3247"
+      "9ed42b0c-212f-4edb-9e5a-a2792b696f97"
     ]
   },
   {
@@ -265,10 +265,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "d7a7491e-56e9-4048-8243-043f00471b66"
+      "a74071c1-22d9-4a78-b9b3-ff4f2476277d"
     ]
   },
   {
@@ -281,10 +281,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "746447f8-935b-4947-94e1-215db451c91e"
+      "e401b8a4-0b67-4092-ac70-771a89c975dd"
     ]
   },
   {
@@ -297,11 +297,9 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "f698ee72-a652-49c8-a2e8-2b5153cf1cc8"
-    ]
+    "activeEntityUUIDs": []
   },
   {
     "templateName": "npc_219_lydia_rodarte-quayle",
@@ -313,10 +311,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e69609ca-c47f-43bf-9f2f-ef7e3c18a522"
+      "8b1ee0be-1bcb-4ac9-9db5-3bbfe17048c1"
     ]
   },
   {
@@ -329,10 +327,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e7c24228-9fc3-4cb2-a93a-75ee9164808c"
+      "4a19453a-b53d-4aa0-bfbb-404d2af71d2c"
     ]
   },
   {
@@ -345,10 +343,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "0a22ad04-3fe4-4847-aba5-054e73bbf4c6"
+      "12135a6e-4151-4a22-8544-580007c7ae8a"
     ]
   },
   {
@@ -361,10 +359,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "36e1186c-dcd2-4e90-b68a-b7ece34c53a9"
+      "98de1202-50f0-4358-8f9a-bb69e6978a79"
     ]
   },
   {
@@ -377,10 +375,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "14aa33ee-0b91-460a-985c-07701b953264"
+      "c207266b-c003-47bc-bd1a-fab78a66b33f"
     ]
   },
   {
@@ -393,10 +391,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "ea0704d8-45a4-4e72-88d8-d96853344a6e"
+      "2376951c-5aba-439a-961a-0d6fd96889cb"
     ]
   },
   {
@@ -409,10 +407,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "fb916981-23ba-4b40-a42d-910fa35c677e"
+      "ad8d6db4-41f8-4640-82bc-75a23f98820d"
     ]
   },
   {
@@ -425,10 +423,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "23ad76e2-b9f4-49d1-ac9c-d71207fe8689"
+      "49f7e170-19e1-4857-b075-2b4d0e26c336"
     ]
   },
   {
@@ -441,10 +439,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "12944c4a-f48e-4e94-93b0-e89c6ce2aad4"
+      "0570a010-1473-442d-aae7-52b68c9074a0"
     ]
   },
   {
@@ -457,10 +455,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "fced483a-1490-4f82-b9cd-0c5d5eacf28f"
+      "458b6abe-ce95-48cf-a342-48b4698e19e9"
     ]
   },
   {
@@ -473,10 +471,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "0652de71-474d-4731-a5cd-f98f9b774f70"
+      "aa63e534-35c4-49ea-942e-3bec25fc5584"
     ]
   },
   {
@@ -489,10 +487,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "4b948027-447c-4555-b822-45d3f2efc8bf"
+      "ca71a0f5-8748-4f6f-83ae-017abe480608"
     ]
   },
   {
@@ -505,10 +503,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "42e36a0c-0ad7-4d5f-87fa-c4c7bb7b9e00"
+      "fe3cb4d9-57ce-48f4-ad82-2203740242f6"
     ]
   },
   {
@@ -521,10 +519,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e4f6cac7-b646-402d-8291-9ce8d279bab6"
+      "28f5ddee-d833-4268-978c-cdd64f3f814f"
     ]
   },
   {
@@ -537,10 +535,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6362bdb9-1822-4486-b5db-639a2db52deb"
+      "1b6769ad-a699-42a4-b346-ed767012f740"
     ]
   },
   {
@@ -553,10 +551,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "35ea72f8-940f-4a3b-8804-9e2343b151ac"
+      "7bfbdfd3-7207-4438-a143-c2ee09293dd3"
     ]
   },
   {
@@ -569,9 +567,11 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": []
+    "activeEntityUUIDs": [
+      "746b62fe-d0e9-415d-8342-395f3810e8d8"
+    ]
   },
   {
     "templateName": "npc_201_jesse_pinkman",
@@ -583,10 +583,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "432ef707-7645-4e0b-98cb-811225356437"
+      "d3bf4887-1667-44c8-b30c-bfc57b4b79ab"
     ]
   },
   {
@@ -599,10 +599,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "744e4761-8264-4292-b5dc-70a9bf6b2ede"
+      "7743c2b2-46fb-4e3d-900d-582e91e8b28c"
     ]
   },
   {
@@ -615,11 +615,9 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "b4c603f2-1435-4c54-9620-bbb132ef12e1"
-    ]
+    "activeEntityUUIDs": []
   },
   {
     "templateName": "npc_23_ben_hanscom",
@@ -631,10 +629,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "05a16778-b801-4174-8ef9-1de84c01d694"
+      "91adfa53-5e20-4178-a238-a658c58359dc"
     ]
   },
   {
@@ -647,10 +645,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "df06e105-f9b1-47bb-a147-4d905a82dff4"
+      "a476e3d1-6dac-4015-a5e1-f7ecd6b68c4a"
     ]
   },
   {
@@ -663,10 +661,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "450ff220-78cb-4550-9f72-da7c7cacccd9"
+      "09f44a0b-e8e5-4a32-a0f5-8008036e351e"
     ]
   },
   {
@@ -679,10 +677,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5c658821-8e57-4459-bd5a-7aab4c526241"
+      "fe403ea6-5234-49ec-9f7f-e150b9981bc0"
     ]
   },
   {
@@ -695,10 +693,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "81498efb-ac25-4b20-a111-37b1dfe0b322"
+      "6da41460-6b3b-4a3a-aeab-ba8dd62d81ec"
     ]
   },
   {
@@ -711,10 +709,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "a557cb61-1e6c-4c1f-b8c3-e45dbfcc8c8f"
+      "0b101d06-ea56-4b4b-84e3-b7759bb268b6"
     ]
   },
   {
@@ -727,10 +725,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "34183114-9ecc-421f-805b-22e67dc5a1e8"
+      "0467a520-230c-4d11-b587-2671af04732b"
     ]
   },
   {
@@ -743,10 +741,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5072e2c4-de61-4f3f-8477-d91f10a9c510"
+      "8a86b718-5ea9-447e-8021-ed00dc2dd841"
     ]
   },
   {
@@ -759,10 +757,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5e7cc6c9-baff-43aa-8d84-964ee7349cf6"
+      "ce3089d6-d05c-4168-bd7b-4834489b308b"
     ]
   },
   {
@@ -775,10 +773,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "2582dc10-2555-4ab4-9b0a-e029e93683fe"
+      "b06f3c40-efec-4eb4-aed0-796bdc333f68"
     ]
   },
   {
@@ -791,10 +789,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e35ea903-f068-4630-a18c-b189c8d6da51"
+      "54d734e8-f672-4279-acdb-09bb5d984ac5"
     ]
   },
   {
@@ -807,10 +805,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "38ce9789-41b1-4974-bfd1-b9f75eee0aa5"
+      "1b288a58-d0bd-43c4-b5b5-5cb27d7c2986"
     ]
   },
   {
@@ -823,10 +821,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6b6a800f-3cc0-4452-990f-19e352832b21"
+      "f3f2a661-b39a-4fff-bbab-97a1df171eba"
     ]
   },
   {
@@ -839,10 +837,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "afb73bda-690f-4fda-9180-5ddba35e7804"
+      "48e36b3e-fd45-4e51-9ce6-4747560fc5ca"
     ]
   },
   {
@@ -855,10 +853,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "adc990bd-6dfb-4b36-b7a6-72dd70c6adcb"
+      "fcbed19e-ea3a-4dd4-b107-1d11fa4643b0"
     ]
   },
   {
@@ -871,10 +869,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "a7934383-f002-4404-b16d-dcb2175cac2c"
+      "8db6e628-3a99-4d57-8e78-543ae7c1396f"
     ]
   },
   {
@@ -887,10 +885,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "80a6e001-fe01-4db2-bc8a-d6a67761d226"
+      "c89f1a63-e199-4fdb-93b5-653e2d2e6e49"
     ]
   },
   {
@@ -903,10 +901,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "34848524-f03b-4477-b4f5-da69e49fa6ad"
+      "148dfc7f-0baf-4f2f-857b-92933aa431eb"
     ]
   },
   {
@@ -919,10 +917,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "8c709805-c0e1-49fc-af47-0d0f003dce29"
+      "6bafa928-3a04-4350-82ab-1c725b9e463b"
     ]
   },
   {
@@ -935,11 +933,9 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "c9af2d07-9f61-4d62-b449-efba1b662ea8"
-    ]
+    "activeEntityUUIDs": []
   },
   {
     "templateName": "npc_309_leonel_salamanca",
@@ -951,10 +947,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f3e403d5-eb58-4acb-93fb-b90208794447"
+      "9acf87f3-4565-4607-800f-7c9f18923e79"
     ]
   },
   {
@@ -967,10 +963,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "a42cdba8-9a30-4464-b9ee-c0d21d2c095a"
+      "5e764293-632c-4b5c-a273-f235045fb823"
     ]
   },
   {
@@ -983,10 +979,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "46372c2a-f209-4834-bc3a-86b2f06f702e"
+      "1a6ee868-fb7d-4182-9303-3724dafd7681"
     ]
   },
   {
@@ -999,10 +995,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "91c7c24d-0f60-4243-96e5-d94a06e0f1ed"
+      "f52a3375-0b15-4bff-bbdf-7f28f8c27245"
     ]
   },
   {
@@ -1015,10 +1011,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "9534be1d-b161-4e84-bee7-df4f4a77ccfd"
+      "fddc66ff-26f6-459a-9382-6d5a2087efbe"
     ]
   },
   {
@@ -1031,10 +1027,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6f39b872-803a-4687-97b5-87c44d45d16a"
+      "9fefe0d7-c71a-47aa-adb7-c29b90c9bf0a"
     ]
   },
   {
@@ -1047,10 +1043,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6a1256e4-39e7-4a56-b6f8-5b3e0502746a"
+      "0883d641-7b41-476c-a57c-c28574143558"
     ]
   },
   {
@@ -1063,10 +1059,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f6cc2f5e-fba0-405b-932e-05722713f4d3"
+      "5a81b942-c597-455b-9912-7251c5134121"
     ]
   },
   {
@@ -1079,10 +1075,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "810f8c64-5952-4063-85d1-214b78333fdb"
+      "26121d98-d142-4f9e-905b-fe34a85254bb"
     ]
   },
   {
@@ -1095,10 +1091,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "01979f64-4008-43ba-87de-64f6d67965f2"
+      "9f0f0b6b-b127-4a21-b7de-d29862b8a2d1"
     ]
   },
   {
@@ -1111,10 +1107,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5807d705-9d6e-4ce9-92fe-2441fc7fe9ea"
+      "104ac871-8d10-4325-8a2f-6b2400969883"
     ]
   },
   {
@@ -1127,10 +1123,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "fe0dd851-09ed-4115-bbab-f9fc76d75830"
+      "12dd73f9-ac77-4b9c-a07d-968043f694be"
     ]
   },
   {
@@ -1143,10 +1139,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "8aa1c09a-8a1e-4c51-9294-ca6dab15d879"
+      "ebb97037-6024-41ab-a5cb-57392e7ab508"
     ]
   },
   {
@@ -1159,10 +1155,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "ce6ab99b-0ce9-46ae-a55c-a564247e1b8a"
+      "a9bccba5-3654-4b3b-80dd-58bcfd563683"
     ]
   },
   {
@@ -1175,10 +1171,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "3a157a7c-4e28-41f2-8bfe-53e1b30e7909"
+      "fa5315f4-41c6-4ac3-a647-1676c6ffb0dc"
     ]
   },
   {
@@ -1191,10 +1187,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "c6de8520-d1b8-44a1-9483-d456a548efec"
+      "b9c7ee9d-915c-4fca-9fde-24020ed617f7"
     ]
   },
   {
@@ -1207,10 +1203,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "76285f86-f3a3-4767-8fe2-9874e3573fef"
+      "53d06c20-5ad9-4fac-abaf-0b1f5618a0b2"
     ]
   },
   {
@@ -1223,10 +1219,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "60485303-b4e1-4037-8f58-c0f59edf06e1"
+      "ce3d90fe-3593-4f76-a557-5d604c343151"
     ]
   },
   {
@@ -1239,10 +1235,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "27a71012-f7b3-4bf1-bd76-af1165ead754"
+      "521b5a5a-d93f-4f6c-97ef-678e96094450"
     ]
   },
   {
@@ -1255,10 +1251,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "a5a970fd-4019-4d40-8be3-1614ca2ee871"
+      "89150ce0-9243-4b4b-ac6a-d31f2972002f"
     ]
   },
   {
@@ -1271,10 +1267,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "194bf572-859b-44e6-94d0-9c9e75f04d92"
+      "268b11d2-f353-4f72-ac7f-2fde90958e74"
     ]
   },
   {
@@ -1287,10 +1283,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "b6c4dcef-d186-440b-9454-14121aa7bcfd"
+      "0fe8e54f-aa42-43cc-9dcd-6f62a4384194"
     ]
   },
   {
@@ -1303,10 +1299,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "140b9c5d-b51e-4884-bdb4-39cf0428915c"
+      "6f44080e-02e0-464a-ba34-914006ad320d"
     ]
   },
   {
@@ -1319,10 +1315,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "2ce25614-eb6e-4043-9cad-b46b5c293f25"
+      "0e29c5bc-c714-4ca7-ac72-55ab4924e4a4"
     ]
   },
   {
@@ -1335,10 +1331,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "8c090097-861d-4b3d-a497-059038cdb4aa"
+      "c4d349ec-4f06-481b-a05f-6736e49daf0b"
     ]
   },
   {
@@ -1351,10 +1347,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "1ec5c208-df87-4060-993e-b0f96bafbc32"
+      "89be4e66-bc5d-4889-8bf4-b01205337c1e"
     ]
   },
   {
@@ -1367,10 +1363,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "66e5258d-093b-4452-be9c-3273d46ba855"
+      "84356f38-e8d2-45a8-b67c-9d79f35930e9"
     ]
   },
   {
@@ -1383,10 +1379,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "cb3c741e-62be-470f-accd-30804fa13375"
+      "3e6aa6dc-71ec-4429-8e6a-81715e113f60"
     ]
   },
   {
@@ -1399,10 +1395,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "c579c0b6-97d0-46b8-a299-c6007c56a3d5"
+      "e22c5e8d-a64b-446d-8c35-91621d1db8cd"
     ]
   },
   {
@@ -1415,10 +1411,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "72f6edae-bf5c-4ef6-8b8f-9b48e54f6a38"
+      "dbc4ca65-7e86-4266-9575-b93559bb372b"
     ]
   },
   {
@@ -1431,10 +1427,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f688f5d8-b5c1-44e2-b348-900b0f093b8f"
+      "9edc6603-c2e7-4a5e-818a-d5aa168b9c8d"
     ]
   },
   {
@@ -1447,10 +1443,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "d319b3cf-fbfd-4e06-b3c6-7c4e26f7807f"
+      "3e324847-3bee-4807-a442-038e87566d14"
     ]
   },
   {
@@ -1463,10 +1459,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "4a7adf62-a3ed-4b34-9985-b494366e5412"
+      "9fc6d9f2-6dd5-459a-bb80-5166677b9ff1"
     ]
   },
   {
@@ -1479,11 +1475,9 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "f5be6c14-d7a7-4aff-a3e8-b1d9adb88c46"
-    ]
+    "activeEntityUUIDs": []
   },
   {
     "templateName": "npc_340_victoria_chase",
@@ -1495,10 +1489,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "21f107e2-b9b2-4eb0-9ff7-e4df6573c551"
+      "9c406080-0208-40aa-b34c-c5e23feeedd1"
     ]
   },
   {
@@ -1511,10 +1505,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "55882298-6249-43c9-bc8f-c1e243f873aa"
+      "b7cfe909-ea42-49ab-9612-038511feeb88"
     ]
   },
   {
@@ -1527,10 +1521,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "4a7c8913-c50b-4e01-97fb-79dc26042f20"
+      "291866fa-84df-4d3d-aa64-49d410551674"
     ]
   },
   {
@@ -1543,10 +1537,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "98aa51a3-cee2-4806-bbaf-e16d57a9b3b4"
+      "82077d42-2dde-4df4-a151-23be14a57321"
     ]
   },
   {
@@ -1559,10 +1553,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "dccee609-8f11-42dc-b9bc-1bba10403d41"
+      "28929a9b-dc23-45e8-acab-93500d708f3b"
     ]
   },
   {
@@ -1575,10 +1569,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "10a0f60b-f291-4247-88a3-c795e3efcd53"
+      "d9ecc334-d452-41bd-b10c-84755b2c70b9"
     ]
   },
   {
@@ -1591,10 +1585,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "f6ebb4a0-3d84-4c14-a2ef-4ad0000185f9"
+      "63aee833-328e-4936-a513-d04c2f3ec06f"
     ]
   },
   {
@@ -1607,10 +1601,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "10bbd0c9-dddf-43de-8021-7106d15ef565"
+      "58cc0ab0-e240-4e12-8c69-83dfd845744d"
     ]
   },
   {
@@ -1623,10 +1617,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "8a5d0d1a-886f-4cbb-a9e6-946b9a018345"
+      "76ba7df6-bc1b-4f74-a3fe-9269dc7d075e"
     ]
   },
   {
@@ -1639,11 +1633,9 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "d3c0b0aa-b701-4404-bd40-cb757dc2db17"
-    ]
+    "activeEntityUUIDs": []
   },
   {
     "templateName": "npc_39_overseer_hank",
@@ -1655,10 +1647,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6f546006-6cda-4ca0-a3cb-79b52b401194"
+      "3ab7c0e4-371b-41a2-9b3a-ad12329193c1"
     ]
   },
   {
@@ -1671,10 +1663,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "180bf14a-3a99-41e9-b208-cf748f1fb49d"
+      "a6f5b932-858f-46cf-b22d-c957df4b3125"
     ]
   },
   {
@@ -1687,10 +1679,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "4bfad42a-b26c-436f-98de-e3953cda856c"
+      "4efd1879-fa8a-4664-954c-460493f4cbf3"
     ]
   },
   {
@@ -1703,10 +1695,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "93b83187-98bb-4222-b50d-401e0db6b4e9"
+      "5886ed93-bbe7-49c7-bebd-3ccfb06d22c2"
     ]
   },
   {
@@ -1719,10 +1711,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "9246517c-ac5d-40e1-b321-ed8bd0490ff2"
+      "b5199e0d-f5cf-4927-84be-ae778bdcdd60"
     ]
   },
   {
@@ -1735,10 +1727,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "0e439ac0-e0ef-4ff5-901f-d9444fe2f76e"
+      "99ee7ae9-7c39-479c-a622-844e7b21691b"
     ]
   },
   {
@@ -1751,10 +1743,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "1e1ebc3e-7b1c-4f15-847b-fdac2f7cca2d"
+      "1403a623-15c5-407d-9e35-a8e9620b7b7e"
     ]
   },
   {
@@ -1767,10 +1759,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6fe7388d-7773-45cb-9d48-bd60adc947d3"
+      "6ad5a427-e636-41f0-b6d3-2f9e8d3ff821"
     ]
   },
   {
@@ -1783,10 +1775,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "b010d191-0c9b-4468-b4ff-458ef3984d7b"
+      "f29618f1-fe95-4248-bb56-4585b8c7bc22"
     ]
   },
   {
@@ -1799,10 +1791,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "0686f6a4-697a-4a46-89de-455c530566ee"
+      "b53aac0d-25e8-4788-a7a9-54dd880e25e1"
     ]
   },
   {
@@ -1815,11 +1807,9 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": [
-      "fb9fe250-e552-4fa1-91bf-ded6fbba85a3"
-    ]
+    "activeEntityUUIDs": []
   },
   {
     "templateName": "npc_217_gale_boetticher",
@@ -1831,10 +1821,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "fcd63b0c-7841-4af0-bd59-2909908b5765"
+      "cb801788-d28f-40dd-8a05-a4a93f815303"
     ]
   },
   {
@@ -1847,9 +1837,11 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
-    "activeEntityUUIDs": []
+    "activeEntityUUIDs": [
+      "8f8a5ede-ebe3-4008-b6b4-b13ae17e3a99"
+    ]
   },
   {
     "templateName": "npc_303_hank_schrader",
@@ -1861,10 +1853,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "397ace2b-ca25-4463-9308-cb1ed97d8a55"
+      "07cc5f75-9207-437e-becd-22a8e7bf2bf2"
     ]
   },
   {
@@ -1877,10 +1869,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "7074fa77-1c9f-4a8a-a258-b18c0873c7c0"
+      "5810e070-7823-457f-9ff2-927e74ff4d43"
     ]
   },
   {
@@ -1893,10 +1885,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "4cd389f8-f6f9-4875-aa41-5a489c43512f"
+      "f71eb440-05d1-4dd9-82c7-e965705d2aa1"
     ]
   },
   {
@@ -1909,10 +1901,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "1b6742d0-8a20-4ec5-a0d1-0d1c0c0899fa"
+      "fef02961-9775-4755-b966-709c337dfad9"
     ]
   },
   {
@@ -1925,10 +1917,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "5232d21a-5a43-4134-a452-c905b8eb78be"
+      "04a85c35-9ec0-4023-8fcb-7ec0ab35efab"
     ]
   },
   {
@@ -1941,10 +1933,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "91ced68a-df4f-4d06-97c5-7d3d94e0ec53"
+      "9b6758d0-40a5-4b62-9c7d-b19c45a71ac7"
     ]
   },
   {
@@ -1957,10 +1949,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "7ef2e5db-0bd3-4a8b-875d-9896da5ad844"
+      "aa838701-3401-4fb3-8e2d-abc4b454e1cc"
     ]
   },
   {
@@ -1973,10 +1965,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "89771bd9-196b-4d1e-852b-9101590db2c0"
+      "51d4f5ab-afe7-4dac-9904-137437e3a9a4"
     ]
   },
   {
@@ -1989,10 +1981,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "2c8eadb2-1a67-4ae9-8035-20325d530460"
+      "3455dd55-8e61-48d7-b4e7-85de8662d78b"
     ]
   },
   {
@@ -2005,10 +1997,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "3dddba58-bca5-44dd-96d7-14c35348ed36"
+      "b5bb5cf6-0311-4d2c-a4fb-11f52812672c"
     ]
   },
   {
@@ -2021,10 +2013,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "e561eff8-ac0c-449f-bad9-3595723e3141"
+      "baaf3ed0-3299-4fa2-9580-8e886049a85a"
     ]
   },
   {
@@ -2037,10 +2029,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "6f370ce5-d3fb-4601-84a4-32c62f1a78f5"
+      "aff4917c-8fb4-4989-a031-982295098910"
     ]
   },
   {
@@ -2053,10 +2045,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "554662b5-8c0e-4500-a454-06606450d1a5"
+      "3a00c97c-d0fa-47e0-8f60-89119ac1cdae"
     ]
   },
   {
@@ -2069,10 +2061,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "347862f1-8c58-44a2-81e3-e0693fa0904e"
+      "421e64bb-4f86-4a0b-ac28-9dde5d56945f"
     ]
   },
   {
@@ -2085,10 +2077,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "df35d68d-ea8c-485d-bf9a-246fdac5b440"
+      "e787463e-6662-42d7-9657-85cdcb558505"
     ]
   },
   {
@@ -2101,10 +2093,10 @@
     "maxCount": 1,
     "delayTicks": 10000,
     "groupSpawn": true,
-    "tickCounter": 390,
+    "tickCounter": 497,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
-      "2821efb4-a4bf-4363-88a1-67c11418cfed"
+      "b2a532fc-0a4c-4ff8-a592-b8b083a2f501"
     ]
   },
   {
@@ -2117,7 +2109,7 @@
     "maxCount": 100,
     "delayTicks": 20000,
     "groupSpawn": true,
-    "tickCounter": 3479,
+    "tickCounter": 3590,
     "initialSpawnDone": true,
     "activeEntityUUIDs": [
       "fc567d24-5548-40d9-b2e5-64d01ff6e3e5",

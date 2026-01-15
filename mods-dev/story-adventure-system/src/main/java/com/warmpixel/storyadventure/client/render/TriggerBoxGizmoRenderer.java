@@ -54,12 +54,52 @@ public class TriggerBoxGizmoRenderer {
         poseStack.translate(-cameraPos.x, -cameraPos.y, -cameraPos.z);
         
         for (TriggerBox box : triggerBoxes) {
-            renderBox(poseStack, bufferSource, box);
+            if (box.getRadius() > 0) {
+                renderSphere(poseStack, bufferSource, box);
+            } else {
+                renderBox(poseStack, bufferSource, box);
+            }
         }
         
         poseStack.popPose();
     }
     
+    private void renderSphere(PoseStack poseStack, MultiBufferSource bufferSource, TriggerBox box) {
+        Vec3 center = box.getCenter();
+        double radius = box.getRadius();
+        if (center == null) return;
+
+        float r = 0.2f, g = 1.0f, b = 0.3f, a = 0.6f;
+        if (!box.getPlayersInside().isEmpty()) {
+            r = 1.0f; g = 0.8f; b = 0.0f;
+        }
+
+        VertexConsumer lineConsumer = bufferSource.getBuffer(RenderType.lines());
+        Matrix4f matrix = poseStack.last().pose();
+
+        // Draw 3 primary circles to represent the sphere
+        int segments = 24;
+        for (int i = 0; i < segments; i++) {
+            float angle1 = (float) i / segments * ((float) Math.PI * 2);
+            float angle2 = (float) (i + 1) / segments * ((float) Math.PI * 2);
+
+            float cos1 = (float) Math.cos(angle1) * (float) radius;
+            float sin1 = (float) Math.sin(angle1) * (float) radius;
+            float cos2 = (float) Math.cos(angle2) * (float) radius;
+            float sin2 = (float) Math.sin(angle2) * (float) radius;
+
+            // XY circle
+            drawLine(lineConsumer, matrix, (float)center.x + cos1, (float)center.y + sin1, (float)center.z, 
+                     (float)center.x + cos2, (float)center.y + sin2, (float)center.z, r, g, b, a);
+            // XZ circle
+            drawLine(lineConsumer, matrix, (float)center.x + cos1, (float)center.y, (float)center.z + sin1, 
+                     (float)center.x + cos2, (float)center.y, (float)center.z + sin2, r, g, b, a);
+            // YZ circle
+            drawLine(lineConsumer, matrix, (float)center.x, (float)center.y + cos1, (float)center.z + sin1, 
+                     (float)center.x, (float)center.y + cos2, (float)center.z + sin2, r, g, b, a);
+        }
+    }
+
     private void renderBox(PoseStack poseStack, MultiBufferSource bufferSource, TriggerBox box) {
         AABB bounds = box.getBounds();
         

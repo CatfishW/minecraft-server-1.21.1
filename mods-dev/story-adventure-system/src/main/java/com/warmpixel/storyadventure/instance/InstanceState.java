@@ -183,15 +183,31 @@ public class InstanceState {
         return metadata;
     }
     
+    // Last checkpoint reached
+    private String lastCheckpointId = null;
+    
+    public String getLastCheckpointId() {
+        return lastCheckpointId;
+    }
+    
+    public void setLastCheckpointId(String id) {
+        this.lastCheckpointId = id;
+    }
+
     // === Checkpoints ===
     
     public void saveCheckpoint(String checkpointId, CheckpointState checkpoint) {
         StoryAdventureMod.LOGGER.info("[InstanceState] Checkpoint saved: '{}' (instance: {})", checkpointId, instance.getInstanceId());
         checkpoints.put(checkpointId, checkpoint);
+        this.lastCheckpointId = checkpointId;
     }
     
     public boolean hasReachedCheckpoint(String checkpointId) {
         return checkpoints.containsKey(checkpointId);
+    }
+    
+    public CheckpointState getCheckpoint(String checkpointId) {
+        return checkpoints.get(checkpointId);
     }
     
     public void restoreFromCheckpoint(String checkpointId) {
@@ -199,6 +215,7 @@ public class InstanceState {
         if (checkpoint != null) {
             StoryAdventureMod.LOGGER.info("[InstanceState] Restoring from checkpoint: '{}' (instance: {})", checkpointId, instance.getInstanceId());
             checkpoint.restore(this);
+            this.lastCheckpointId = checkpointId;
         } else {
             StoryAdventureMod.LOGGER.warn("[InstanceState] Failed to restore from checkpoint: '{}' (not found) (instance: {})", checkpointId, instance.getInstanceId());
         }
@@ -233,6 +250,11 @@ public class InstanceState {
             tag.putString("CurrentNodeResult", currentNodeResult);
         }
         
+        // Save last checkpoint
+        if (lastCheckpointId != null) {
+            tag.putString("LastCheckpointId", lastCheckpointId);
+        }
+        
         return tag;
     }
     
@@ -262,6 +284,11 @@ public class InstanceState {
         // Load current node result
         if (tag.contains("CurrentNodeResult")) {
             currentNodeResult = tag.getString("CurrentNodeResult");
+        }
+        
+        // Load last checkpoint
+        if (tag.contains("LastCheckpointId")) {
+            lastCheckpointId = tag.getString("LastCheckpointId");
         }
     }
     
@@ -349,10 +376,31 @@ public class InstanceState {
         private final Map<String, Boolean> savedFlags;
         private final Set<String> savedClues;
         
+        // Respawn data
+        private String dimension = "minecraft:overworld";
+        private double x, y, z;
+        private float yaw, pitch;
+        
         public CheckpointState(InstanceState state) {
             this.savedFlags = new HashMap<>(state.flags);
             this.savedClues = new HashSet<>(state.discoveredClues);
         }
+        
+        public void setLocation(String dimension, double x, double y, double z, float yaw, float pitch) {
+            this.dimension = dimension;
+            this.x = x;
+            this.y = y;
+            this.z = z;
+            this.yaw = yaw;
+            this.pitch = pitch;
+        }
+        
+        public String getDimension() { return dimension; }
+        public double getX() { return x; }
+        public double getY() { return y; }
+        public double getZ() { return z; }
+        public float getYaw() { return yaw; }
+        public float getPitch() { return pitch; }
         
         public void restore(InstanceState state) {
             state.flags.clear();

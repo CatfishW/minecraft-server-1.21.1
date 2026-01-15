@@ -3,7 +3,9 @@
     "package": "com.warmpixel.storyadventure.mixin",
     "compatibilityLevel": "JAVA_21",
     "mixins": [],
-    "client": [],
+    "client": [
+        "GameRendererAccessor"
+    ],
     "server": [],
     "injectors": {
         "defaultRequire": 1

@@ -5,6 +5,10 @@ import com.warmpixel.storyadventure.core.graph.StageGraph;
 import com.warmpixel.storyadventure.core.graph.StageNode;
 import com.warmpixel.storyadventure.core.graph.StageEdge;
 import com.warmpixel.storyadventure.core.graph.NodeType;
+import com.warmpixel.storyadventure.core.waypoint.TriggerBox;
+import com.warmpixel.storyadventure.core.waypoint.Waypoint;
+import com.warmpixel.storyadventure.core.action.NodeAction;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.resources.ResourceLocation;
@@ -127,6 +131,10 @@ public class Instance {
                                 player.getName().getString(), memberId, startLoc.x(), startLoc.y(), startLoc.z(), startLoc.dimension());
                             
                             player.teleportTo(level, startLoc.x(), startLoc.y(), startLoc.z(), startLoc.yaw(), startLoc.pitch());
+                            
+                            // Clear law status for the player
+                            String clearLawCmd = "law clear " + player.getName().getString();
+                            server.getCommands().performPrefixedCommand(server.createCommandSourceStack().withSuppressedOutput(), clearLawCmd);
                         } else {
                             StoryAdventureMod.LOGGER.warn("[Instance.start] Player {} is offline or not found, skipping teleport.", memberId);
                         }
@@ -172,6 +180,11 @@ public class Instance {
         if (current != null) {
             var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(current.getType());
             if (handler != null) {
+                // Debug log every 10 seconds for active node ticking
+                if (server.getTickCount() % 200 == 0) {
+                    StoryAdventureMod.LOGGER.debug("[Instance] Ticking node: {} (type: {}) for instance {}", 
+                        currentNodeId, current.getType(), instanceId);
+                }
                 handler.onTick(this, current);
             }
         }
@@ -194,11 +207,17 @@ public class Instance {
             
             var pos = player.position();
             
+            // Find target reference point for distance triggers (first waypoint in the node)
+            Vec3 targetRef = null;
+            if (!activeWaypoints.isEmpty()) {
+                targetRef = activeWaypoints.values().iterator().next().getPosition();
+            }
+            
             for (TriggerBox trigger : activeTriggers.values()) {
-                TriggerBox.TriggerEvent event = trigger.checkPlayer(memberId, pos);
+                TriggerBox.TriggerEvent event = trigger.checkPlayer(memberId, pos, targetRef);
                 
                 if (event == TriggerBox.TriggerEvent.ENTER) {
-                    StoryAdventureMod.LOGGER.debug("[Instance] Player {} entered trigger {}", player.getName().getString(), trigger.getId());
+                    StoryAdventureMod.LOGGER.info("[Instance] Trigger activated: player={}, trigger={}", player.getName().getString(), trigger.getId());
                     
                     for (NodeAction action : trigger.getOnEnterActions()) {
                         action.execute(List.of(player));
@@ -281,6 +300,10 @@ public class Instance {
                         int count = reward.has("count") ? reward.get("count").getAsInt() : 1;
                         jsonBuilder.append("\"item\":\"").append(escapeJson(item)).append("\",");
                         jsonBuilder.append("\"amount\":").append(count);
+                    } else if ("COIN".equals(type)) {
+                        int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 1;
+                        jsonBuilder.append("\"amount\":").append(amount).append(",");
+                        jsonBuilder.append("\"item\":\"").append(escapeJson("numismatic-overhaul:gold_coin")).append("\"");
                     }
                     
                     jsonBuilder.append("}");
@@ -290,15 +313,75 @@ public class Instance {
             jsonBuilder.append("]}");
             String victoryJson = jsonBuilder.toString();
             
+            // Clear waypoints
+            activeWaypoints.clear();
+            
             // Send to all party members
             for (UUID memberId : party.getMembers()) {
                 ServerPlayer player = server.getPlayerList().getPlayer(memberId);
                 if (player != null) {
+                    // Hide HUD first
+                    com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+                        player, 
+                        com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_HIDE, 
+                        ""
+                    );
+                    
+                    // Clear waypoint indicators
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                        new com.warmpixel.storyadventure.network.SyncWaypointsPayload(java.util.List.of()));
+                    
+                    // Give actual rewards
+                    giveRewards(player);
+
+                    // Show victory screen
                     com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
                         player, 
                         com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_VICTORY, 
                         victoryJson
                     );
+                }
+            }
+        }
+    }
+    
+    private void giveRewards(ServerPlayer player) {
+        StageNode currentNode = getCurrentNode();
+        if (currentNode == null || !currentNode.getData().has("rewards")) return;
+        
+        var rewardsArray = currentNode.getData().getAsJsonArray("rewards");
+        for (var rewardElem : rewardsArray) {
+            var reward = rewardElem.getAsJsonObject();
+            String type = reward.has("type") ? reward.get("type").getAsString() : "ITEM";
+            
+            if ("EXPERIENCE".equals(type)) {
+                int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 0;
+                player.giveExperiencePoints(amount);
+            } else if ("ITEM".equals(type) || "COIN".equals(type)) {
+                String itemId = "minecraft:diamond";
+                int count = 1;
+                
+                if ("COIN".equals(type)) {
+                    itemId = "numismatic-overhaul:gold_coin";
+                    count = reward.has("amount") ? reward.get("amount").getAsInt() : 1;
+                } else {
+                    itemId = reward.has("item") ? reward.get("item").getAsString() : "minecraft:diamond";
+                    count = reward.has("count") ? reward.get("count").getAsInt() : 1;
+                }
+                
+                try {
+                    net.minecraft.resources.ResourceLocation id = net.minecraft.resources.ResourceLocation.parse(itemId);
+                    var item = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(id);
+                    if (item != null && item != net.minecraft.world.item.Items.AIR) {
+                        net.minecraft.world.item.ItemStack stack = new net.minecraft.world.item.ItemStack(item, count);
+                        if (!player.getInventory().add(stack)) {
+                            player.drop(stack, false);
+                        }
+                    } else {
+                         StoryAdventureMod.LOGGER.error("Item not found or is AIR: " + itemId);
+                    }
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.error("Failed to give item reward: " + itemId, e);
                 }
             }
         }
@@ -394,11 +477,32 @@ public class Instance {
         StageNode current = getCurrentNode();
         if (current == null) return;
         
-        // Check for single unconditional edge (auto-advance)
         List<StageEdge> edges = current.getEdges();
-        if (edges.size() == 1 && edges.get(0).isUnconditional()) {
-            transitionTo(edges.get(0).getTargetNodeId(), null);
+        
+        // Check all edges and find one that can transition
+        for (StageEdge edge : edges) {
+            if (edge.canTransition(this, null)) {
+                StoryAdventureMod.LOGGER.info("[Instance.evaluateAutoTransitions] Found valid edge to {} from {}", 
+                    edge.getTargetNodeId(), current.getId());
+                
+                // Exit current node
+                exitNode(currentNodeId);
+                
+                // Update current node
+                String previousNodeId = currentNodeId;
+                currentNodeId = edge.getTargetNodeId();
+                lastUpdateMillis = System.currentTimeMillis();
+                
+                StoryAdventureMod.LOGGER.info("[Instance.evaluateAutoTransitions] Transitioning: {} -> {}", 
+                    previousNodeId, currentNodeId);
+                
+                // Enter new node
+                enterNode(currentNodeId);
+                return;
+            }
         }
+        
+        StoryAdventureMod.LOGGER.debug("[Instance.evaluateAutoTransitions] No valid transitions found from {}", current.getId());
     }
     
     /**

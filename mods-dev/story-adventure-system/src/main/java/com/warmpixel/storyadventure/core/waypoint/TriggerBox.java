@@ -22,13 +22,18 @@ public class TriggerBox {
     private final String id;
     private String label;
     private AABB bounds;
+    private Vec3 center;
+    private double radius = -1;
     private List<NodeAction> onEnterActions;
     private List<NodeAction> onExitActions;
     private String linkedNodeId;
     private boolean oneShot;
+    private double targetDistance = -1;
     
     // Track which players are currently inside
     private final Set<UUID> playersInside = new HashSet<>();
+    // Track which players have already triggered this (for oneShot)
+    private final Set<UUID> triggeredPlayers = new HashSet<>();
     
     public TriggerBox(String id, AABB bounds) {
         this.id = id;
@@ -39,6 +44,19 @@ public class TriggerBox {
         this.oneShot = false;
     }
     
+    public TriggerBox(String id, Vec3 center, double radius) {
+        this.id = id;
+        this.center = center;
+        this.radius = radius;
+        this.label = id;
+        this.onEnterActions = new ArrayList<>();
+        this.onExitActions = new ArrayList<>();
+        this.oneShot = false;
+        // Create a loose AABB for rendering/gizmo purposes if needed
+        this.bounds = new AABB(center.x - radius, center.y - radius, center.z - radius, 
+                               center.x + radius, center.y + radius, center.z + radius);
+    }
+    
     public TriggerBox(String id, Vec3 corner1, Vec3 corner2) {
         this(id, new AABB(corner1, corner2));
     }
@@ -47,7 +65,20 @@ public class TriggerBox {
      * Check if a player position is inside this trigger box.
      */
     public boolean contains(Vec3 position) {
-        return bounds.contains(position);
+        return contains(position, null);
+    }
+    
+    public boolean contains(Vec3 position, Vec3 referencePoint) {
+        if (targetDistance > 0 && referencePoint != null) {
+            return position.distanceTo(referencePoint) <= targetDistance;
+        }
+        if (radius > 0 && center != null) {
+            double dx = position.x - center.x;
+            double dy = position.y - center.y;
+            double dz = position.z - center.z;
+            return (dx * dx + dy * dy + dz * dz) <= (radius * radius);
+        }
+        return bounds != null && bounds.contains(position);
     }
     
     /**
@@ -55,11 +86,22 @@ public class TriggerBox {
      * Returns true if state changed (player entered or exited).
      */
     public TriggerEvent checkPlayer(UUID playerId, Vec3 position) {
-        boolean inside = contains(position);
+        return checkPlayer(playerId, position, null);
+    }
+    
+    public TriggerEvent checkPlayer(UUID playerId, Vec3 position, Vec3 referencePoint) {
+        boolean inside = contains(position, referencePoint);
         boolean wasInside = playersInside.contains(playerId);
         
         if (inside && !wasInside) {
             playersInside.add(playerId);
+            
+            // If one-shot, check if already triggered for this player
+            if (oneShot && triggeredPlayers.contains(playerId)) {
+                return TriggerEvent.NONE;
+            }
+            
+            triggeredPlayers.add(playerId);
             return TriggerEvent.ENTER;
         } else if (!inside && wasInside) {
             playersInside.remove(playerId);
@@ -73,20 +115,32 @@ public class TriggerBox {
      */
     public void resetPlayer(UUID playerId) {
         playersInside.remove(playerId);
+        triggeredPlayers.remove(playerId);
     }
     
     /**
      * Parse a TriggerBox from JSON.
      */
     public static TriggerBox fromJson(String id, JsonObject json) {
-        double minX = json.getAsJsonArray("min").get(0).getAsDouble();
-        double minY = json.getAsJsonArray("min").get(1).getAsDouble();
-        double minZ = json.getAsJsonArray("min").get(2).getAsDouble();
-        double maxX = json.getAsJsonArray("max").get(0).getAsDouble();
-        double maxY = json.getAsJsonArray("max").get(1).getAsDouble();
-        double maxZ = json.getAsJsonArray("max").get(2).getAsDouble();
+        TriggerBox box;
         
-        TriggerBox box = new TriggerBox(id, new AABB(minX, minY, minZ, maxX, maxY, maxZ));
+        if (json.has("center") && json.has("radius")) {
+            JsonArray centerArr = json.getAsJsonArray("center");
+            Vec3 center = new Vec3(centerArr.get(0).getAsDouble(), centerArr.get(1).getAsDouble(), centerArr.get(2).getAsDouble());
+            double radius = json.get("radius").getAsDouble();
+            box = new TriggerBox(id, center, radius);
+        } else if (json.has("min") && json.has("max")) {
+            double minX = json.getAsJsonArray("min").get(0).getAsDouble();
+            double minY = json.getAsJsonArray("min").get(1).getAsDouble();
+            double minZ = json.getAsJsonArray("min").get(2).getAsDouble();
+            double maxX = json.getAsJsonArray("max").get(0).getAsDouble();
+            double maxY = json.getAsJsonArray("max").get(1).getAsDouble();
+            double maxZ = json.getAsJsonArray("max").get(2).getAsDouble();
+            box = new TriggerBox(id, new AABB(minX, minY, minZ, maxX, maxY, maxZ));
+        } else {
+            // Fallback/Error case
+            box = new TriggerBox(id, new AABB(0, 0, 0, 0, 0, 0));
+        }
         
         if (json.has("label")) {
             box.setLabel(json.get("label").getAsString());
@@ -98,6 +152,10 @@ public class TriggerBox {
         
         if (json.has("oneShot")) {
             box.setOneShot(json.get("oneShot").getAsBoolean());
+        }
+        
+        if (json.has("target_distance")) {
+            box.setTargetDistance(json.get("target_distance").getAsDouble());
         }
         
         if (json.has("onEnter")) {
@@ -144,6 +202,10 @@ public class TriggerBox {
         
         json.addProperty("oneShot", oneShot);
         
+        if (targetDistance > 0) {
+            json.addProperty("target_distance", targetDistance);
+        }
+        
         JsonArray enterArr = new JsonArray();
         for (NodeAction action : onEnterActions) {
             enterArr.add(action.toJson());
@@ -167,13 +229,17 @@ public class TriggerBox {
     public List<NodeAction> getOnExitActions() { return onExitActions; }
     public String getLinkedNodeId() { return linkedNodeId; }
     public boolean isOneShot() { return oneShot; }
+    public double getTargetDistance() { return targetDistance; }
     public Set<UUID> getPlayersInside() { return playersInside; }
+    public double getRadius() { return radius; }
+    public Vec3 getCenter() { return center; }
     
     // Setters
     public TriggerBox setLabel(String label) { this.label = label; return this; }
     public TriggerBox setBounds(AABB bounds) { this.bounds = bounds; return this; }
     public TriggerBox setLinkedNodeId(String nodeId) { this.linkedNodeId = nodeId; return this; }
     public TriggerBox setOneShot(boolean oneShot) { this.oneShot = oneShot; return this; }
+    public TriggerBox setTargetDistance(double dist) { this.targetDistance = dist; return this; }
     
     public enum TriggerEvent {
         NONE, ENTER, EXIT

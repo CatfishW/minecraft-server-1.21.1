@@ -54,6 +54,24 @@ public class StrangerVictoryScreen extends StrangerScreen {
             Component.literal("确认返回"), this::onConfirmClick);
     }
     
+    @Override
+    public void tick() {
+        super.tick();
+        
+        if (confirmed) return;
+        
+        // Update countdown
+        long now = System.currentTimeMillis();
+        if (now - lastCountdownUpdate >= 1000) {
+            lastCountdownUpdate = now;
+            countdownSeconds--;
+            
+            if (countdownSeconds <= 0) {
+                onConfirmClick();
+            }
+        }
+    }
+    
     private void onConfirmClick() {
         if (!confirmed) {
             confirmed = true;
@@ -64,22 +82,9 @@ public class StrangerVictoryScreen extends StrangerScreen {
             ClientPlayNetworking.send(
                 new com.warmpixel.storyadventure.network.VictoryConfirmPayload()
             );
-        }
-    }
-    
-    @Override
-    public void tick() {
-        super.tick();
-        
-        // Update countdown
-        long now = System.currentTimeMillis();
-        if (now - lastCountdownUpdate >= 1000) {
-            lastCountdownUpdate = now;
-            countdownSeconds--;
             
-            if (countdownSeconds <= 0 && !confirmed) {
-                onConfirmClick();
-            }
+            // Close the screen
+            this.onClose();
         }
     }
     

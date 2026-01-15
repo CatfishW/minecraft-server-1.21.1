@@ -28,9 +28,34 @@ public class DialogueNodeHandler implements NodeHandler {
         
         dialogueTriggered = false;
         
-        // Check if there's a proximity_trigger - if so, wait for player to approach
+        // Check if there's a proximity_trigger
         JsonObject data = node.getData();
         if (data.has("proximity_trigger")) {
+            // Check if any player is ALREADY within range (common when transitioning from a nearby task)
+            JsonObject trigger = data.getAsJsonObject("proximity_trigger");
+            double targetX = trigger.has("target_x") ? trigger.get("target_x").getAsDouble() : 0;
+            double targetY = trigger.has("target_y") ? trigger.get("target_y").getAsDouble() : 64;
+            double targetZ = trigger.has("target_z") ? trigger.get("target_z").getAsDouble() : 0;
+            double radius = trigger.has("radius") ? trigger.get("radius").getAsDouble() : 5.0; // Default larger radius
+            
+            for (UUID memberId : instance.getParty().getMembers()) {
+                ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+                if (player != null) {
+                    double dx = player.getX() - targetX;
+                    double dy = player.getY() - targetY;
+                    double dz = player.getZ() - targetZ;
+                    double distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
+                    
+                    if (distance <= radius) {
+                        StoryAdventureMod.LOGGER.info("[DialogueNodeHandler] Player {} already in proximity on enter (distance: {})", 
+                            player.getName().getString(), distance);
+                        dialogueTriggered = true;
+                        openDialogueForAllPlayers(instance, node);
+                        return;
+                    }
+                }
+            }
+            
             StoryAdventureMod.LOGGER.info("[DialogueNodeHandler] Waiting for proximity trigger in node {}", node.getId());
         } else {
             // No proximity trigger - open dialogue immediately for all players
@@ -50,7 +75,7 @@ public class DialogueNodeHandler implements NodeHandler {
         double targetX = trigger.has("target_x") ? trigger.get("target_x").getAsDouble() : 0;
         double targetY = trigger.has("target_y") ? trigger.get("target_y").getAsDouble() : 64;
         double targetZ = trigger.has("target_z") ? trigger.get("target_z").getAsDouble() : 0;
-        double radius = trigger.has("radius") ? trigger.get("radius").getAsDouble() : 2.0;
+        double radius = trigger.has("radius") ? trigger.get("radius").getAsDouble() : 5.0;
         
         // Check if any party member is within proximity range
         for (UUID memberId : instance.getParty().getMembers()) {

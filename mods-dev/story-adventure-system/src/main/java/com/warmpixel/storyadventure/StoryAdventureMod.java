@@ -13,6 +13,7 @@ import com.warmpixel.storyadventure.network.NetworkHandler;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
@@ -50,6 +51,9 @@ public class StoryAdventureMod implements ModInitializer {
         storyLoader = new StoryLoader(configDir.resolve("stories"), storyRegistry);
         instanceManager = new InstanceManager();
         partyManager = new PartyManager();
+        
+        // Register events
+        com.warmpixel.storyadventure.core.event.StoryEventListener.register();
         
         // Register networking
         NetworkHandler.registerPayloadTypes();
@@ -104,6 +108,39 @@ public class StoryAdventureMod implements ModInitializer {
         ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
             // Handle player disconnect from instances
             instanceManager.handlePlayerDisconnect(handler.getPlayer().getUUID());
+        });
+        
+        // Player respawn logic (Checkpoint respawning)
+        ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) -> {
+            var instance = instanceManager.getPlayerInstance(newPlayer.getUUID());
+            if (instance != null && instance.getStatus() == com.warmpixel.storyadventure.instance.Instance.InstanceStatus.RUNNING) {
+                String lastCheckpointId = instance.getState().getLastCheckpointId();
+                if (lastCheckpointId != null) {
+                    var checkpoint = instance.getState().getCheckpoint(lastCheckpointId);
+                    if (checkpoint != null) {
+                        LOGGER.info("[Respawn] Teleporting player {} to last checkpoint {}", newPlayer.getName().getString(), lastCheckpointId);
+                        
+                        // Parse dimension
+                        try {
+                            net.minecraft.resources.ResourceLocation dimLoc = net.minecraft.resources.ResourceLocation.tryParse(checkpoint.getDimension());
+                            if (dimLoc != null) {
+                                net.minecraft.resources.ResourceKey<net.minecraft.world.level.Level> dimKey = 
+                                    net.minecraft.resources.ResourceKey.create(net.minecraft.core.registries.Registries.DIMENSION, dimLoc);
+                                net.minecraft.server.level.ServerLevel targetLevel = newPlayer.getServer().getLevel(dimKey);
+                                
+                                if (targetLevel != null) {
+                                    newPlayer.teleportTo(targetLevel, checkpoint.getX(), checkpoint.getY(), checkpoint.getZ(), 
+                                        checkpoint.getYaw(), checkpoint.getPitch());
+                                } else {
+                                    newPlayer.teleportTo(checkpoint.getX(), checkpoint.getY(), checkpoint.getZ());
+                                }
+                            }
+                        } catch (Exception e) {
+                            LOGGER.error("[Respawn] Failed to teleport player to checkpoint", e);
+                        }
+                    }
+                }
+            }
         });
         
         LOGGER.info("Story Adventure System initialized!");

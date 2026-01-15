@@ -180,6 +180,11 @@ public class StrangerDialogueScreen extends StrangerScreen {
     }
     
     @Override
+    public boolean shouldCloseOnEsc() {
+        return false;
+    }
+
+    @Override
     public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
         // Skip text on any key
         if (!textComplete) {
@@ -187,6 +192,12 @@ public class StrangerDialogueScreen extends StrangerScreen {
             textComplete = true;
             return true;
         }
+        
+        // Prevent closing on ESC by returning true without calling super
+        if (keyCode == 256) { // GLFW_KEY_ESCAPE is 256
+            return true;
+        }
+        
         return super.keyPressed(keyCode, scanCode, modifiers);
     }
     

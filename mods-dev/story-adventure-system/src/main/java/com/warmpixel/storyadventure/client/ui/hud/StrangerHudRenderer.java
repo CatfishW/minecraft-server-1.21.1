@@ -121,6 +121,12 @@ public class StrangerHudRenderer implements HudRenderCallback {
                 y += 10;
             }
         }
+        
+        // Draw WarmPixel branding at bottom
+        String branding = "WarmPixel原创";
+        int brandingWidth = font.width(branding);
+        graphics.drawString(font, branding, HUD_X + HUD_WIDTH - brandingWidth - 6, 
+            HUD_Y + totalHeight - 12, 0x80666666);
     }
     
     private void drawBorder(GuiGraphics graphics, int x, int y, int w, int h) {

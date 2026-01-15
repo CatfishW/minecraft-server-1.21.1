@@ -303,4 +303,61 @@ config/storyadventure/stories/
 
 ---
 
-*Last Updated: 2026-01-14*
+## Integration Notes
+
+### Easy NPC Integration ✅
+The mod integrates with Easy NPC for spawning template NPCs at specific coordinates.
+
+**SpawnNPCAction** uses `NPCTemplateManager.spawnFromTemplate(level, templateName, x, y, z)` to spawn NPCs directly.
+
+```json
+{
+  "type": "SPAWN_NPC",
+  "npc_template": "npc_07_joyce_byers",
+  "dimension": "minecraft:overworld",
+  "x": 1029.863,
+  "y": 409.0,
+  "z": -1116.588,
+  "yaw": 180.0,
+  "pitch": 0.0
+}
+```
+
+---
+
+## Session Updates (2026-01-14 20:20)
+
+### Fixes Applied:
+
+1. **Waypoint Indicator Accuracy** ✅
+   - Rewrote projection using camera matrices for proper 3D-to-2D conversion
+   - Indicators now correctly track world positions
+   - Distance-based sizing (closer = larger)
+   - Smaller base indicator size
+
+2. **Dialogue System** ✅
+   - Fixed SCREEN_DIALOGUE handler to parse `npcName`, `lines`, and `choices` from JSON
+   - Dialogue buttons now correctly send `DialogueChoicePayload` to server
+   - Screen closes after choice selection
+   - DialogueNodeHandler checks proximity immediately on enter
+
+3. **NPC Spawning** ✅
+   - Added Easy NPC as compile-only dependency
+   - Uses `NPCTemplateManager.spawnFromTemplate()` API directly
+   - Supports dimension, coordinates, and rotation
+
+4. **HUD Branding** ✅
+   - Added "WarmPixel原创" branding to bottom-right of HUD panel
+
+5. **Edge Transitions** ✅
+   - `evaluateAutoTransitions()` now checks ALL edges (including conditional)
+   - Transitions to first edge where ALL conditions are met
+
+6. **Instance Completion** ✅
+   - Hides HUD before showing victory screen
+   - Clears all waypoints on completion
+
+---
+
+*Last Updated: 2026-01-14 20:20*
+*WarmPixel原创*

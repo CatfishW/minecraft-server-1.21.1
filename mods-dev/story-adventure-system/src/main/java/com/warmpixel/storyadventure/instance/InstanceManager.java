@@ -92,30 +92,29 @@ public class InstanceManager {
     }
     
     /**
-     * Remove a player from their current instance.
+     * Remove a player from their current instance mapping (e.g. when finishing).
      */
     public void removePlayerFromInstance(UUID playerId) {
         UUID instanceId = playerInstanceMap.remove(playerId);
         if (instanceId != null) {
             Instance instance = instances.get(instanceId);
             if (instance != null) {
-                StoryAdventureMod.LOGGER.info("[InstanceManager] Removing player {} from instance {}", playerId, instanceId);
-                instance.getParty().removeMember(playerId);
+                StoryAdventureMod.LOGGER.info("[InstanceManager] Detaching player {} from tracking for instance {}", playerId, instanceId);
                 
-                // If party is now empty, cleanup the instance
-                if (instance.getParty().isEmpty()) {
-                    StoryAdventureMod.LOGGER.info("[InstanceManager] Instance {} is empty after player removal. Cleaning up.", instanceId);
-                    cleanupInstance(instanceId);
-                } else {
-                    // Pause the instance if we want to wait for reconnect
-                    StoryAdventureMod.LOGGER.info("[InstanceManager] Pausing instance {} as player left.", instanceId);
-                    instance.pause();
+                // Check if anyone from the original party is still in the tracking map for this instance
+                boolean anyoneLeft = false;
+                for (UUID mappedInstanceId : playerInstanceMap.values()) {
+                    if (instanceId.equals(mappedInstanceId)) {
+                        anyoneLeft = true;
+                        break;
+                    }
                 }
-            } else {
-                StoryAdventureMod.LOGGER.warn("[InstanceManager] Instance {} not found during player removal", instanceId);
+                
+                if (!anyoneLeft) {
+                    StoryAdventureMod.LOGGER.info("[InstanceManager] All players detached. Cleaning up instance {}.", instanceId);
+                    cleanupInstance(instanceId);
+                }
             }
-        } else {
-            StoryAdventureMod.LOGGER.debug("[InstanceManager] Player {} was not in any instance", playerId);
         }
     }
     

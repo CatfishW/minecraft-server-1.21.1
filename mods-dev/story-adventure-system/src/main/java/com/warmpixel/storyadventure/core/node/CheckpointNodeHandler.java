@@ -6,6 +6,8 @@ import com.warmpixel.storyadventure.instance.Instance;
 import com.warmpixel.storyadventure.instance.InstanceState;
 import net.minecraft.server.level.ServerPlayer;
 
+import java.util.UUID;
+
 /**
  * Handler for CHECKPOINT nodes.
  * Savepoints with optional "rewind" anchor capability.
@@ -26,7 +28,45 @@ public class CheckpointNodeHandler implements NodeHandler {
             // Save state as checkpoint
             StoryAdventureMod.LOGGER.debug("[CheckpointNodeHandler] Saving checkpoint state for {}", checkpointId);
             InstanceState.CheckpointState checkpoint = new InstanceState.CheckpointState(instance.getState());
+            
+            // Capture current location for respawning
+            ServerPlayer leadPlayer = null;
+            for (UUID memberId : instance.getParty().getMembers()) {
+                leadPlayer = instance.getServer().getPlayerList().getPlayer(memberId);
+                if (leadPlayer != null) break;
+            }
+            
+            if (leadPlayer != null) {
+                checkpoint.setLocation(
+                    leadPlayer.level().dimension().location().toString(),
+                    leadPlayer.getX(),
+                    leadPlayer.getY(),
+                    leadPlayer.getZ(),
+                    leadPlayer.getYRot(),
+                    leadPlayer.getXRot()
+                );
+            }
+            
             instance.getState().saveCheckpoint(checkpointId, checkpoint);
+        }
+        
+        // Notify players with message if defined in JSON data
+        String message = node.getString("message", "");
+        if (!message.isEmpty()) {
+            // Get all online party members
+            java.util.List<ServerPlayer> onlinePlayers = new java.util.ArrayList<>();
+            for (UUID memberId : instance.getParty().getMembers()) {
+                ServerPlayer p = instance.getServer().getPlayerList().getPlayer(memberId);
+                if (p != null) onlinePlayers.add(p);
+            }
+            
+            // Show as title/subtitle
+            new com.warmpixel.storyadventure.core.action.TitleAction(message, "", 10, 80, 20).execute(onlinePlayers);
+            
+            // Also send to chat for record
+            for (ServerPlayer p : onlinePlayers) {
+                p.sendSystemMessage(net.minecraft.network.chat.Component.literal("§6[存档点] §f" + message));
+            }
         }
         
         // TODO: Save player inventories and positions if configured

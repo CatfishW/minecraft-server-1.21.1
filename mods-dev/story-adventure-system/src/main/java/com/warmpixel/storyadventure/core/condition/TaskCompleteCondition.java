@@ -13,8 +13,46 @@ public class TaskCompleteCondition implements EdgeCondition {
     
     @Override
     public boolean evaluate(Instance instance, ServerPlayer player) {
-        boolean result = instance.getState().isCurrentNodeCompleteWith("success");
-        com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.debug("[TaskCompleteCondition] Evaluating. Result={}", result);
+        // ✅ FIX: Check multiple indicators of task completion
+        
+        // Check 1: Standard node result
+        boolean nodeResult = instance.getState().isCurrentNodeCompleteWith("success");
+        
+        // Check 2: Explicit task_complete metadata flag
+        boolean taskCompleteFlag = false;
+        if (instance.getState().getMetadata().has("task_complete")) {
+            try {
+                taskCompleteFlag = instance.getState().getMetadata().get("task_complete").getAsBoolean();
+            } catch (Exception e) {
+                StoryAdventureMod.LOGGER.warn("[TaskCompleteCondition] Failed to read task_complete flag: {}", e.getMessage());
+            }
+        }
+        
+        // Check 3: All objectives completed (fallback check)
+        boolean allObjectivesComplete = false;
+        int completed = 0;
+        int total = 0;
+        
+        try {
+            if (instance.getState().getMetadata().has("completed_objectives")) {
+                completed = instance.getState().getMetadata().get("completed_objectives").getAsInt();
+            }
+            if (instance.getState().getMetadata().has("total_objectives")) {
+                total = instance.getState().getMetadata().get("total_objectives").getAsInt();
+            }
+            if (total > 0 && completed >= total) {
+                allObjectivesComplete = true;
+            }
+        } catch (Exception e) {
+            StoryAdventureMod.LOGGER.warn("[TaskCompleteCondition] Failed to read objective counts: {}", e.getMessage());
+        }
+        
+        // Any of the three conditions passing means task is complete
+        boolean result = nodeResult || taskCompleteFlag || allObjectivesComplete;
+        
+        StoryAdventureMod.LOGGER.info("[TaskCompleteCondition] Evaluating: nodeResult={}, taskCompleteFlag={}, objectives={}/{}, allComplete={} => RESULT: {}", 
+            nodeResult, taskCompleteFlag, completed, total, allObjectivesComplete, result);
+        
         return result;
     }
     

@@ -563,14 +563,11 @@ public class NetworkHandler {
         // Send message
         player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已返回出生点"));
         
-        // Clear any instance association
+        // Clear instance association
         var instanceManager = StoryAdventureMod.getInstance().getInstanceManager();
-        var instance = instanceManager.getPlayerInstance(player.getUUID());
-        if (instance != null) {
-            // Mark player as completed/left if needed
-            StoryAdventureMod.LOGGER.debug("Player {} leaving completed instance {}", 
-                player.getName().getString(), instance.getInstanceId());
-        }
+        instanceManager.removePlayerFromInstance(player.getUUID());
+        
+        StoryAdventureMod.LOGGER.info("Player {} cleared from instance system after victory", player.getName().getString());
         
         // Hide HUD
         sendOpenUI(player, OpenUIPayload.SCREEN_HUD_HIDE);

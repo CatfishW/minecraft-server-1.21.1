@@ -1,6 +1,7 @@
 package com.warmpixel.storyadventure.client;
 
 import com.warmpixel.storyadventure.client.command.ClientUICommands;
+import com.warmpixel.storyadventure.client.render.EnemyIndicatorRenderer;
 import com.warmpixel.storyadventure.client.render.TriggerBoxGizmoRenderer;
 import com.warmpixel.storyadventure.client.render.WaypointIndicatorRenderer;
 import com.warmpixel.storyadventure.client.ui.hud.EdgeIndicatorRenderer;
@@ -27,9 +28,11 @@ public class StoryAdventureClient implements ClientModInitializer {
         StrangerHudRenderer.register();
         EdgeIndicatorRenderer.register();
         WaypointIndicatorRenderer.register();
+        com.warmpixel.storyadventure.client.render.WorldDestinationRenderer.register();
         
         // Register world-space renderers
         TriggerBoxGizmoRenderer.register();
+        EnemyIndicatorRenderer.register();
         
         // Register client-side UI commands (these work when typing directly in chat)
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {

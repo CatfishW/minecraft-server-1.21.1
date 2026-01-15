@@ -114,6 +114,13 @@ public class ClientNetworkHandler {
                     renderer.addWaypoint(wp);
                 }
                 renderer.setEnabled(!payload.waypoints().isEmpty());
+                
+                // Update 3D world indicators
+                java.util.List<net.minecraft.world.phys.Vec3> destPoints = new java.util.ArrayList<>();
+                for (var wpData : payload.waypoints()) {
+                    destPoints.add(new net.minecraft.world.phys.Vec3(wpData.x(), wpData.y(), wpData.z()));
+                }
+                com.warmpixel.storyadventure.client.render.WorldDestinationRenderer.setDestinations(destPoints);
             });
         });
         
@@ -181,14 +188,62 @@ public class ClientNetworkHandler {
             }
             
             case OpenUIPayload.SCREEN_DIALOGUE -> {
-                StrangerDialogueScreen screen = new StrangerDialogueScreen(
-                    "乔伊斯·拜尔斯",
-                    "求求你！你一定要帮帮我！威尔...我的儿子威尔失踪了！警察说他可能只是离家出走，但我知道不是这样的。灯...家里的灯一直在闪烁。我知道这很疯狂，但我觉得他在试图联系我。");
-                screen.addChoice("help", "我会帮助你", () -> {
-                    // This is just a demo/fallback if triggered manually
-                });
-                screen.addChoice("unsure", "这听起来很奇怪...", () -> {
-                });
+                String npcName = "NPC";
+                StringBuilder dialogueText = new StringBuilder();
+                java.util.List<String[]> choicesList = new java.util.ArrayList<>();
+                
+                // Parse extraData JSON if present
+                if (extraData != null && !extraData.isEmpty()) {
+                    try {
+                        com.google.gson.JsonObject json = com.google.gson.JsonParser.parseString(extraData).getAsJsonObject();
+                        
+                        if (json.has("npcName")) {
+                            npcName = json.get("npcName").getAsString();
+                        }
+                        
+                        if (json.has("lines") && json.get("lines").isJsonArray()) {
+                            var lines = json.getAsJsonArray("lines");
+                            for (int i = 0; i < lines.size(); i++) {
+                                if (i > 0) dialogueText.append("\n\n");
+                                dialogueText.append(lines.get(i).getAsString());
+                            }
+                        }
+                        
+                        if (json.has("choices") && json.get("choices").isJsonArray()) {
+                            var choices = json.getAsJsonArray("choices");
+                            for (var choiceElem : choices) {
+                                var choice = choiceElem.getAsJsonObject();
+                                String id = choice.has("id") ? choice.get("id").getAsString() : "default";
+                                String text = choice.has("text") ? choice.get("text").getAsString() : "确定";
+                                choicesList.add(new String[]{id, text});
+                            }
+                        }
+                    } catch (Exception e) {
+                        StoryAdventureMod.LOGGER.error("Failed to parse dialogue data", e);
+                    }
+                }
+                
+                // Fallback if no dialogue text
+                if (dialogueText.isEmpty()) {
+                    dialogueText.append("...");
+                }
+                
+                StrangerDialogueScreen screen = new StrangerDialogueScreen(npcName, dialogueText.toString());
+                
+                // Add choices from JSON
+                for (String[] choice : choicesList) {
+                    screen.addChoice(choice[0], choice[1], () -> {
+                        mc.setScreen(null); // Close dialogue after selection
+                    });
+                }
+                
+                // Add default choice if none defined
+                if (choicesList.isEmpty()) {
+                    screen.addChoice("continue", "继续", () -> {
+                        mc.setScreen(null);
+                    });
+                }
+                
                 mc.setScreen(screen);
             }
             
@@ -281,6 +336,8 @@ public class ClientNetworkHandler {
                             } else if ("ITEM".equals(type)) {
                                 String item = reward.has("item") ? reward.get("item").getAsString() : "物品";
                                 rewards.add(StrangerVictoryScreen.RewardEntry.item(item, amount));
+                            } else if ("COIN".equals(type)) {
+                                rewards.add(StrangerVictoryScreen.RewardEntry.item("金币", amount));
                             }
                         }
                     }

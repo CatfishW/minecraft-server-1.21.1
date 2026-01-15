@@ -18,12 +18,6 @@ import java.util.UUID;
  */
 public class CombatNodeHandler implements NodeHandler {
     
-    private int totalEnemiesSpawned = 0;
-    private int enemiesKilled = 0;
-    private final Set<UUID> spawnedEnemyUUIDs = new HashSet<>();
-    private long combatStartTime = 0;
-    private boolean combatStarted = false;
-    
     @Override
     public void onEnter(Instance instance, StageNode node) {
         String combatType = node.getString("combat_type", "WAVE");
@@ -32,15 +26,16 @@ public class CombatNodeHandler implements NodeHandler {
         StoryAdventureMod.LOGGER.info("[CombatNodeHandler] onEnter: instance={}, node={}, type={}, escape={}", 
             instance.getInstanceId(), node.getId(), combatType, escapeAvailable);
         
-        // Reset combat state
-        totalEnemiesSpawned = 0;
-        enemiesKilled = 0;
-        spawnedEnemyUUIDs.clear();
-        combatStarted = false;
-        combatStartTime = System.currentTimeMillis();
+        // Reset combat state in metadata
+        instance.getState().getMetadata().addProperty("combat_total", 0);
+        instance.getState().getMetadata().addProperty("combat_killed", 0);
+        instance.getState().getMetadata().addProperty("combat_active", true);
+        instance.getState().getMetadata().addProperty("combat_start_time", System.currentTimeMillis());
         
         // Parse and spawn enemies from JSON
         JsonObject data = node.getData();
+        int totalToSpawn = 0;
+        
         if (data.has("enemies") && data.get("enemies").isJsonArray()) {
             JsonArray enemies = data.getAsJsonArray("enemies");
             
@@ -62,7 +57,6 @@ public class CombatNodeHandler implements NodeHandler {
             double centerX = spawnCenter.getX();
             double centerY = spawnCenter.getY();
             double centerZ = spawnCenter.getZ();
-            
             Random random = new Random();
             
             for (var enemyElem : enemies) {
@@ -74,57 +68,48 @@ public class CombatNodeHandler implements NodeHandler {
                 StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Spawning {} x {} with radius {}", count, entityType, spawnRadius);
                 
                 for (int i = 0; i < count; i++) {
-                    // Calculate random position around player within spawn_radius
                     double angle = random.nextDouble() * Math.PI * 2;
-                    double distance = spawnRadius * 0.5 + random.nextDouble() * spawnRadius * 0.5; // Min 50% of radius
+                    double distance = spawnRadius * 0.5 + random.nextDouble() * spawnRadius * 0.5;
                     double spawnX = centerX + Math.cos(angle) * distance;
                     double spawnZ = centerZ + Math.sin(angle) * distance;
-                    double spawnY = centerY;
                     
-                    // Use summon command
-                    String summonCmd = String.format("summon %s %.2f %.2f %.2f", 
-                        entityType, spawnX, spawnY, spawnZ);
+                    net.minecraft.world.level.Level level = spawnCenter.level();
+                    int groundY = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, (int)spawnX, (int)spawnZ);
+                    double spawnY = Math.max(centerY - 5, Math.min(centerY + 5, groundY)); 
+                    
+                    String summonCmd = String.format("summon %s %.2f %.2f %.2f {Tags:[\"story_enemy\",\"instance_%s\"]}", 
+                        entityType, spawnX, spawnY, spawnZ, instance.getInstanceId().toString());
                     
                     instance.getServer().getCommands().performPrefixedCommand(
                         instance.getServer().createCommandSourceStack().withSuppressedOutput(),
                         summonCmd
                     );
                     
-                    totalEnemiesSpawned++;
+                    totalToSpawn++;
                 }
             }
-            
-            StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Spawned {} enemies total", totalEnemiesSpawned);
-            combatStarted = true;
-            
-            // Store in metadata for tracking
-            instance.getState().getMetadata().addProperty("total_enemies", totalEnemiesSpawned);
-            instance.getState().getMetadata().addProperty("enemies_killed", 0);
         }
+        
+        StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Spawned {} enemies total", totalToSpawn);
+        instance.getState().getMetadata().addProperty("combat_total", totalToSpawn);
+        
+        // Initial HUD sync
+        syncHudToParty(instance, node);
     }
     
     @Override
     public void onTick(Instance instance, StageNode node) {
-        if (!combatStarted) return;
+        if (!isCombatActive(instance)) return;
         
-        // Check for combat victory/defeat
-        // For now we use a simple approach - check if combat has been going for a reasonable time
-        // and enemies should be dead based on player actions
-        
-        // Read from metadata
-        int killed = instance.getState().getMetadata().has("enemies_killed") ? 
-            instance.getState().getMetadata().get("enemies_killed").getAsInt() : 0;
-        int total = instance.getState().getMetadata().has("total_enemies") ? 
-            instance.getState().getMetadata().get("total_enemies").getAsInt() : totalEnemiesSpawned;
+        int killed = getKilledCount(instance);
+        int total = getTotalCount(instance);
         
         if (total > 0 && killed >= total) {
-            StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Combat victory! All {} enemies defeated", total);
-            instance.getState().setNodeResult("victory");
-            instance.evaluateAutoTransitions();
-            combatStarted = false;
+            markCombatVictory(instance, node);
+            return;
         }
         
-        // Check for player deaths (all players dead = defeat)
+        // Check for player deaths
         boolean anyPlayerAlive = false;
         for (UUID memberId : instance.getParty().getMembers()) {
             ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
@@ -135,10 +120,7 @@ public class CombatNodeHandler implements NodeHandler {
         }
         
         if (!anyPlayerAlive) {
-            StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Combat defeat! All players dead");
-            instance.getState().setNodeResult("defeat");
-            instance.evaluateAutoTransitions();
-            combatStarted = false;
+            markCombatDefeat(instance, node);
         }
     }
     
@@ -149,54 +131,119 @@ public class CombatNodeHandler implements NodeHandler {
             
         switch (action) {
             case "enemy_killed" -> {
-                int killed = instance.getState().getMetadata().has("enemies_killed") ? 
-                    instance.getState().getMetadata().get("enemies_killed").getAsInt() : 0;
-                killed++;
-                instance.getState().getMetadata().addProperty("enemies_killed", killed);
+                int killed = getKilledCount(instance) + 1;
+                instance.getState().getMetadata().addProperty("combat_killed", killed);
                 
-                int total = instance.getState().getMetadata().has("total_enemies") ? 
-                    instance.getState().getMetadata().get("total_enemies").getAsInt() : totalEnemiesSpawned;
-                
+                int total = getTotalCount(instance);
                 StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Enemy killed: {}/{}", killed, total);
                 
-                // Notify all players of progress
-                String progress = String.format("§e[战斗] §f消灭进度: %d/%d", killed, total);
-                for (UUID memberId : instance.getParty().getMembers()) {
-                    ServerPlayer p = instance.getServer().getPlayerList().getPlayer(memberId);
-                    if (p != null) {
-                        p.sendSystemMessage(net.minecraft.network.chat.Component.literal(progress));
-                    }
+                // Update HUD for progress
+                syncHudToParty(instance, node);
+                
+                if (killed >= total) {
+                    markCombatVictory(instance, node);
                 }
-            }
-            case "player_death" -> {
-                StoryAdventureMod.LOGGER.warn("[CombatNodeHandler] Player death recorded: {}", 
-                    player != null ? player.getName().getString() : "unknown");
             }
             case "escape_attempt" -> {
                 if (node.getBoolean("escape_available", false)) {
                     StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Escape successful!");
                     instance.getState().setNodeResult("escaped");
+                    instance.getState().getMetadata().addProperty("combat_active", false);
                     instance.evaluateAutoTransitions();
-                } else {
-                    StoryAdventureMod.LOGGER.debug("[CombatNodeHandler] Escape attempt failed (not available).");
                 }
             }
-            default -> StoryAdventureMod.LOGGER.warn("[CombatNodeHandler] Unknown action: {}", action);
         }
+    }
+    
+    private void markCombatVictory(Instance instance, StageNode node) {
+        if (!isCombatActive(instance)) return;
+        
+        StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Combat victory! Node: {}", node.getId());
+        instance.getState().setNodeResult("victory");
+        instance.getState().getMetadata().addProperty("combat_active", false);
+        
+        // Notify players
+        for (UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer p = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (p != null) {
+                p.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a§l[战斗胜利] §r§a所有目标已消灭！"));
+            }
+        }
+        
+        instance.evaluateAutoTransitions();
+    }
+    
+    private void markCombatDefeat(Instance instance, StageNode node) {
+        if (!isCombatActive(instance)) return;
+        
+        StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Combat defeat! Node: {}", node.getId());
+        instance.getState().setNodeResult("defeat");
+        instance.getState().getMetadata().addProperty("combat_active", false);
+        instance.evaluateAutoTransitions();
+    }
+    
+    private void syncHudToParty(Instance instance, StageNode node) {
+        int killed = getKilledCount(instance);
+        int total = getTotalCount(instance);
+        int remaining = Math.max(0, total - killed);
+        
+        String title = node.getString("title", "战斗");
+        String desc = node.getString("description", "消灭敌人");
+        
+        StringBuilder hudJson = new StringBuilder();
+        hudJson.append("{");
+        hudJson.append("\"title\":\"").append(escapeJson(instance.getGraph().getName())).append("\",");
+        hudJson.append("\"chapter\":\"").append(escapeJson(title)).append("\",");
+        hudJson.append("\"objectives\":[");
+        hudJson.append("{");
+        hudJson.append("\"text\":\"").append(escapeJson(desc + " (剩余: " + remaining + ")")).append("\",");
+        hudJson.append("\"complete\":").append(killed >= total ? "true" : "false").append(",");
+        hudJson.append("\"current\":true");
+        hudJson.append("}");
+        hudJson.append("]");
+        hudJson.append("}");
+        
+        String json = hudJson.toString();
+        for (UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer p = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (p != null) {
+                com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+                    p,
+                    com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_SHOW,
+                    json
+                );
+            }
+        }
+    }
+    
+    private boolean isCombatActive(Instance instance) {
+        return instance.getState().getMetadata().has("combat_active") && 
+               instance.getState().getMetadata().get("combat_active").getAsBoolean();
+    }
+    
+    private int getKilledCount(Instance instance) {
+        return instance.getState().getMetadata().has("combat_killed") ? 
+            instance.getState().getMetadata().get("combat_killed").getAsInt() : 0;
+    }
+    
+    private int getTotalCount(Instance instance) {
+        return instance.getState().getMetadata().has("combat_total") ? 
+            instance.getState().getMetadata().get("combat_total").getAsInt() : 0;
+    }
+    
+    private String escapeJson(String str) {
+        if (str == null) return "";
+        return str.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n");
     }
     
     @Override
     public void onExit(Instance instance, StageNode node) {
-        StoryAdventureMod.LOGGER.debug("[CombatNodeHandler] onExit: Cleaning up combat encounter");
-        combatStarted = false;
-        spawnedEnemyUUIDs.clear();
+        instance.getState().getMetadata().addProperty("combat_active", false);
     }
     
     @Override
     public boolean canComplete(Instance instance, StageNode node) {
-        return instance.getState().isCurrentNodeCompleteWith("victory") ||
-               instance.getState().isCurrentNodeCompleteWith("defeat") ||
-               instance.getState().isCurrentNodeCompleteWith("escaped");
+        return !isCombatActive(instance);
     }
 }
 

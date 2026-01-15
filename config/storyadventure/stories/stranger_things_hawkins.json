@@ -58,7 +58,221 @@
       ],
       "edges": [
         {
-          "target": "navigate_to_joyce"
+          "target": "find_the_boys"
+        }
+      ]
+    },
+    "find_the_boys": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "寻找小伙伴",
+        "description": "去麦克的地下室找迈克、达斯汀和卢卡斯",
+        "waypoint": {
+          "id": "boys_location",
+          "label": "迈克的地下室",
+          "x": 985.0,
+          "y": 409.0,
+          "z": -1045.0,
+          "icon": "npc",
+          "color": "0xFF00FF00"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": 985.0,
+            "target_y": 409.0,
+            "target_z": -1045.0,
+            "radius": 5.0,
+            "description": "到达地下室"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "bg_story_1",
+            "label": "背景故事1",
+            "target_distance": 20.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "MESSAGE",
+                "text": "§7[旁白] §f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。"
+              }
+            ]
+          }
+        ]
+      },
+      "on_enter": [
+        {
+          "type": "SPAWN_NPC",
+          "npc_template": "npc_02_mike_wheeler",
+          "dimension": "minecraft:overworld",
+          "x": 985.0,
+          "y": 409.0,
+          "z": -1045.0,
+          "yaw": 0.0,
+          "pitch": 0.0
+        },
+        {
+          "type": "SPAWN_NPC",
+          "npc_template": "npc_03_dustin_henderson",
+          "dimension": "minecraft:overworld",
+          "x": 986.0,
+          "y": 409.0,
+          "z": -1045.5,
+          "yaw": 45.0,
+          "pitch": 0.0
+        },
+        {
+          "type": "SPAWN_NPC",
+          "npc_template": "npc_04_lucas_sinclair",
+          "dimension": "minecraft:overworld",
+          "x": 984.0,
+          "y": 409.0,
+          "z": -1045.5,
+          "yaw": -45.0,
+          "pitch": 0.0
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§e[任务] §f前往地下室和伙伴们商量搜寻威尔的计划"
+        }
+      ],
+      "edges": [
+        {
+          "target": "meet_the_boys",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "meet_the_boys": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_02_mike_wheeler",
+        "dialog_set": "main",
+        "npc_name": "迈克·威勒",
+        "lines": [
+          "威尔失踪了，我们必须找到他！",
+          "我们昨晚在树林里看到了一些奇怪的东西...",
+          "我们应该先去警局，看看霍珀警长有没有什么新消息。"
+        ],
+        "choices": [
+          {
+            "id": "go_to_police",
+            "text": "好，我们去警局找霍珀。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "find_hopper",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_police"
+            }
+          ]
+        }
+      ]
+    },
+    "find_hopper": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "寻找霍珀警长",
+        "description": "前往霍金斯警局寻找吉姆·霍珀",
+        "waypoint": {
+          "id": "hopper_location",
+          "label": "霍金斯警局",
+          "x": 1005.0,
+          "y": 409.0,
+          "z": -1080.0,
+          "icon": "npc",
+          "color": "0xFF0000FF"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": 1005.0,
+            "target_y": 409.0,
+            "target_z": -1080.0,
+            "radius": 5.0,
+            "description": "进入警局"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "bg_story_2",
+            "label": "背景故事2",
+            "target_distance": 25.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "MESSAGE",
+                "text": "§7[旁白] §f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。"
+              }
+            ]
+          }
+        ]
+      },
+      "on_enter": [
+        {
+          "type": "SPAWN_NPC",
+          "npc_template": "npc_06_jim_hopper",
+          "dimension": "minecraft:overworld",
+          "x": 1005.0,
+          "y": 409.0,
+          "z": -1080.0,
+          "yaw": 90.0,
+          "pitch": 0.0
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§e[任务] §f询问霍珀警长关于搜索的进展"
+        }
+      ],
+      "edges": [
+        {
+          "target": "meet_hopper",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "meet_hopper": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_06_jim_hopper",
+        "dialog_set": "main",
+        "npc_name": "吉姆·霍珀",
+        "lines": [
+          "听着，孩子们，搜救工作正在进行中。",
+          "乔伊斯的状态不太好，她一直在胡言乱语。",
+          "如果你们真的想帮忙，去她家看看她吧。"
+        ],
+        "choices": [
+          {
+            "id": "go_to_joyce",
+            "text": "明白了，我们这就去乔伊斯家。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "navigate_to_joyce",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_joyce"
+            }
+          ]
         }
       ]
     },
@@ -83,8 +297,22 @@
             "target_x": 1029.863,
             "target_y": 409.0,
             "target_z": -1116.588,
-            "radius": 3.0,
+            "radius": 5.0,
             "description": "到达乔伊斯的位置"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "bg_story_3",
+            "label": "背景故事3",
+            "target_distance": 25.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "MESSAGE",
+                "text": "§7[旁白] §f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生..."
+              }
+            ]
           }
         ]
       },
@@ -118,7 +346,7 @@
         "dialog_set": "main",
         "npc_name": "乔伊斯·拜尔斯",
         "proximity_trigger": {
-          "radius": 2.0,
+          "radius": 5.0,
           "target_x": 1029.863,
           "target_y": 409.0,
           "target_z": -1116.588
@@ -181,7 +409,7 @@
             "target_x": 1023.965,
             "target_y": 412.0,
             "target_z": -1132.124,
-            "radius": 2.0,
+            "radius": 5.0,
             "description": "检查可疑区域"
           }
         ]
@@ -212,14 +440,14 @@
         "enemies": [
           {
             "type": "minecraft:zombie",
-            "count": 50,
-            "spawn_radius": 10
+            "count": 4,
+            "spawn_radius": 5
           }
         ],
         "arena_bounds": {
           "center": {
             "x": 1023.965,
-            "y": 412.0,
+            "y": 409.0,
             "z": -1132.124
           },
           "radius": 30
@@ -261,7 +489,11 @@
         "rewards": [
           {
             "type": "EXPERIENCE",
-            "amount": 500
+            "amount": 500000
+          },
+          {
+            "type": "COIN",
+            "amount": 5
           }
         ]
       },
@@ -274,615 +506,6 @@
         {
           "type": "PLAY_SOUND",
           "sound": "minecraft:ui.toast.challenge_complete"
-        }
-      ]
-    },
-    "accept_mission": {
-      "type": "checkpoint",
-      "data": {
-        "rewind_anchor": true,
-        "save_inventory": true,
-        "message": "任务开始：寻找威尔"
-      },
-      "edges": [
-        {
-          "target": "investigate_house"
-        }
-      ]
-    },
-    "bad_ending_defeated": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 200,
-        "message": "黑暗降临...\n魔怪获胜了。\n\n霍金斯镇被颠倒世界吞噬。\n\n故事结束。",
-        "is_ending": true,
-        "ending_type": "failure"
-      }
-    },
-    "bad_ending_lost": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 150,
-        "message": "你迷失在颠倒世界中...\n再也找不到回去的路。\n\n故事结束。",
-        "is_ending": true,
-        "ending_type": "failure"
-      }
-    },
-    "captured_by_demogorgon": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 80,
-        "message": "黑暗吞噬了你...\n当你醒来时，发现自己身处一个陌生的地方。\n这里...不是霍金斯。"
-      },
-      "edges": [
-        {
-          "target": "upside_down_escape"
-        }
-      ]
-    },
-    "defeat_demogorgon": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 80,
-        "message": "那个生物发出刺耳的尖叫，消失在一道裂缝中...\n你看到了另一个世界的一瞥——黑暗、扭曲、充满危险。"
-      },
-      "edges": [
-        {
-          "target": "discover_eleven"
-        }
-      ]
-    },
-    "lab_puzzle": {
-      "type": "puzzle",
-      "data": {
-        "puzzle_type": "CODE_LOCK",
-        "title": "霍金斯实验室",
-        "description": "进入实验室需要密码",
-        "solution": "1983",
-        "max_attempts": 5,
-        "hints": [
-          "威尔失踪的年份",
-          "这一切开始的时间"
-        ]
-      },
-      "edges": [
-        {
-          "target": "final_battle_prep",
-          "conditions": [
-            {
-              "type": "PUZZLE_SOLVED"
-            }
-          ]
-        },
-        {
-          "target": "puzzle_failed_alternative",
-          "conditions": [
-            {
-              "type": "PUZZLE_FAILED"
-            }
-          ]
-        }
-      ]
-    },
-    "first_demogorgon_encounter": {
-      "type": "combat",
-      "data": {
-        "combat_type": "BOSS",
-        "title": "恐怖的遭遇",
-        "description": "一个可怕的生物从阴影中出现！",
-        "escape_available": true,
-        "enemies": [
-          {
-            "type": "storyadventure:demogorgon_scout",
-            "count": 1
-          }
-        ],
-        "arena_bounds": {
-          "center": {
-            "x": 0,
-            "y": 64,
-            "z": 0
-          },
-          "radius": 20
-        }
-      },
-      "edges": [
-        {
-          "target": "defeat_demogorgon",
-          "conditions": [
-            {
-              "type": "COMBAT_WON"
-            }
-          ]
-        },
-        {
-          "target": "escape_demogorgon",
-          "conditions": [
-            {
-              "type": "COMBAT_ESCAPED"
-            }
-          ]
-        },
-        {
-          "target": "captured_by_demogorgon",
-          "conditions": [
-            {
-              "type": "COMBAT_LOST"
-            }
-          ]
-        }
-      ]
-    },
-    "final_battle_direct": {
-      "type": "combat",
-      "data": {
-        "combat_type": "WAVE",
-        "title": "最终决战 - 正面突击",
-        "description": "直面魔怪和它的爪牙！",
-        "waves": [
-          {
-            "enemies": [
-              {
-                "type": "storyadventure:demogorgon_minion",
-                "count": 4
-              }
-            ]
-          },
-          {
-            "enemies": [
-              {
-                "type": "storyadventure:demogorgon_minion",
-                "count": 3
-              },
-              {
-                "type": "storyadventure:demogorgon_scout",
-                "count": 1
-              }
-            ]
-          },
-          {
-            "enemies": [
-              {
-                "type": "storyadventure:demogorgon_boss",
-                "count": 1
-              }
-            ]
-          }
-        ]
-      },
-      "edges": [
-        {
-          "target": "good_ending",
-          "conditions": [
-            {
-              "type": "COMBAT_WON"
-            }
-          ]
-        },
-        {
-          "target": "bad_ending_defeated",
-          "conditions": [
-            {
-              "type": "COMBAT_LOST"
-            }
-          ]
-        }
-      ]
-    },
-    "intro_cutscene": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 200,
-        "message": "1983年11月6日，印第安纳州霍金斯镇...\n一切看起来都很平常，直到那个夜晚...",
-        "title": "怪奇物语",
-        "subtitle": "霍金斯事件",
-        "fade_in": true
-      },
-      "edges": [
-        {
-          "target": "meet_joyce"
-        }
-      ]
-    },
-    "investigate_house": {
-      "type": "task",
-      "data": {
-        "task_type": "INVESTIGATE",
-        "title": "调查拜尔斯家",
-        "description": "在威尔的房间和周围寻找线索",
-        "objectives": [
-          {
-            "type": "INTERACT",
-            "target": "wills_room",
-            "description": "检查威尔的房间"
-          },
-          {
-            "type": "COLLECT_ITEM",
-            "item": "storyadventure:flickering_light",
-            "count": 1,
-            "description": "收集闪烁的灯泡"
-          },
-          {
-            "type": "INTERACT",
-            "target": "shed",
-            "description": "检查后院棚屋"
-          }
-        ],
-        "time_limit_seconds": 300
-      },
-      "edges": [
-        {
-          "target": "find_first_clue",
-          "conditions": [
-            {
-              "type": "TASK_COMPLETE"
-            }
-          ]
-        },
-        {
-          "target": "time_pressure",
-          "conditions": [
-            {
-              "type": "TASK_FAILED"
-            }
-          ]
-        }
-      ]
-    },
-    "discover_eleven": {
-      "type": "dialogue",
-      "data": {
-        "npc_template": "eleven",
-        "npc_name": "十一",
-        "lines": [
-          "...",
-          "不好...魔怪...会找到你。",
-          "我能帮忙。我有...力量。",
-          "但我需要艾格奇华夫饼。"
-        ],
-        "relationship_impact": {
-          "eleven": 10
-        }
-      },
-      "edges": [
-        {
-          "target": "gather_supplies"
-        }
-      ]
-    },
-    "meet_joyce": {
-      "type": "dialogue",
-      "data": {
-        "npc_template": "joyce_byers",
-        "dialog_set": "first_meeting",
-        "npc_name": "乔伊斯·拜尔斯",
-        "lines": [
-          "求求你！你一定要帮帮我！",
-          "威尔...我的儿子威尔失踪了！",
-          "警察说他可能只是离家出走，但我知道不是这样的。",
-          "灯...家里的灯一直在闪烁。我知道这很疯狂，但我觉得他在试图联系我。"
-        ],
-        "relationship_impact": {
-          "joyce_byers": 5
-        }
-      },
-      "edges": [
-        {
-          "target": "accept_mission",
-          "priority": 1,
-          "conditions": [
-            {
-              "type": "DIALOGUE_CHOICE",
-              "value": "help"
-            }
-          ]
-        },
-        {
-          "target": "reluctant_help",
-          "conditions": [
-            {
-              "type": "DIALOGUE_CHOICE",
-              "value": "unsure"
-            }
-          ]
-        }
-      ]
-    },
-    "good_ending": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 300,
-        "message": "魔怪倒下了！裂缝开始关闭...\n\n威尔被找到了，虽然虚弱但活着。\n霍金斯镇恢复了平静...\n\n但在阴影中，某些东西仍在等待...\n\n恭喜！你完成了 怪奇物语：霍金斯事件！",
-        "is_ending": true,
-        "ending_type": "success",
-        "rewards": [
-          {
-            "type": "ITEM",
-            "item": "minecraft:nether_star",
-            "count": 1
-          },
-          {
-            "type": "EXPERIENCE",
-            "amount": 1000
-          }
-        ]
-      }
-    },
-    "final_battle_prep": {
-      "type": "checkpoint",
-      "data": {
-        "rewind_anchor": true,
-        "save_inventory": true,
-        "message": "最终战斗：做好准备"
-      },
-      "edges": [
-        {
-          "target": "final_battle_vote"
-        }
-      ]
-    },
-    "escape_demogorgon": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 60,
-        "message": "你勉强逃脱了那个可怕的生物！\n但你知道，它还会回来的..."
-      },
-      "edges": [
-        {
-          "target": "discover_eleven"
-        }
-      ]
-    },
-    "reluctant_help": {
-      "type": "dialogue",
-      "data": {
-        "npc_template": "joyce_byers",
-        "npc_name": "乔伊斯·拜尔斯",
-        "lines": [
-          "我...我知道这听起来疯狂...",
-          "但如果你有孩子，你就会明白一个母亲的直觉。",
-          "拜托，至少去威尔的房间看看，也许你能找到什么线索。"
-        ]
-      },
-      "edges": [
-        {
-          "target": "accept_mission"
-        }
-      ]
-    },
-    "final_battle_vote": {
-      "type": "dialogue",
-      "data": {
-        "npc_template": "hopper",
-        "npc_name": "霍珀警长",
-        "dialog_set": "strategy",
-        "lines": [
-          "好了，我们只有一次机会。",
-          "我们可以直接进攻，快速但危险。",
-          "或者我们可以设置陷阱，更安全但需要时间。",
-          "你们决定。"
-        ],
-        "choices": [
-          {
-            "id": "direct",
-            "text": "直接进攻！"
-          },
-          {
-            "id": "trap",
-            "text": "设置陷阱"
-          }
-        ],
-        "vote_required": true,
-        "vote_id": "final_strategy"
-      },
-      "edges": [
-        {
-          "target": "final_battle_direct",
-          "conditions": [
-            {
-              "type": "VOTE",
-              "vote_id": "final_strategy",
-              "choice": "direct",
-              "requirement": "MAJORITY"
-            }
-          ]
-        },
-        {
-          "target": "final_battle_trap",
-          "conditions": [
-            {
-              "type": "VOTE",
-              "vote_id": "final_strategy",
-              "choice": "trap",
-              "requirement": "MAJORITY"
-            }
-          ]
-        }
-      ]
-    },
-    "final_battle_trap": {
-      "type": "task",
-      "data": {
-        "task_type": "SETUP",
-        "title": "设置陷阱",
-        "description": "在魔怪到来之前布置陷阱",
-        "objectives": [
-          {
-            "type": "PLACE_BLOCK",
-            "block": "minecraft:tripwire_hook",
-            "count": 4,
-            "description": "放置绊线钩"
-          },
-          {
-            "type": "INTERACT",
-            "target": "trap_activator",
-            "description": "激活陷阱系统"
-          }
-        ],
-        "time_limit_seconds": 120
-      },
-      "edges": [
-        {
-          "target": "final_battle_easy",
-          "conditions": [
-            {
-              "type": "TASK_COMPLETE"
-            }
-          ]
-        },
-        {
-          "target": "final_battle_direct",
-          "conditions": [
-            {
-              "type": "TASK_FAILED"
-            }
-          ]
-        }
-      ]
-    },
-    "final_battle_easy": {
-      "type": "combat",
-      "data": {
-        "combat_type": "BOSS",
-        "title": "最终决战 - 陷阱生效",
-        "description": "陷阱削弱了魔怪！",
-        "enemies": [
-          {
-            "type": "storyadventure:demogorgon_boss_weakened",
-            "count": 1
-          }
-        ]
-      },
-      "edges": [
-        {
-          "target": "good_ending",
-          "conditions": [
-            {
-              "type": "COMBAT_WON"
-            }
-          ]
-        },
-        {
-          "target": "bad_ending_defeated",
-          "conditions": [
-            {
-              "type": "COMBAT_LOST"
-            }
-          ]
-        }
-      ]
-    },
-    "find_first_clue": {
-      "type": "cutscene",
-      "data": {
-        "duration_ticks": 100,
-        "message": "你在棚屋的墙壁上发现了奇怪的黏液痕迹...\n空气中弥漫着一股腐烂的气味。\n突然，灯光开始疯狂闪烁！"
-      },
-      "edges": [
-        {
-          "target": "first_demogorgon_encounter"
-        }
-      ]
-    },
-    "puzzle_failed_alternative": {
-      "type": "dialogue",
-      "data": {
-        "npc_template": "eleven",
-        "npc_name": "十一",
-        "lines": [
-          "我...我能打开它。",
-          "但这会很痛。",
-          "站开。"
-        ]
-      },
-      "edges": [
-        {
-          "target": "final_battle_prep"
-        }
-      ]
-    },
-    "gather_supplies": {
-      "type": "task",
-      "data": {
-        "task_type": "FETCH",
-        "title": "收集物资",
-        "description": "为最终对抗做准备",
-        "objectives": [
-          {
-            "type": "COLLECT_ITEM",
-            "item": "minecraft:golden_apple",
-            "count": 2,
-            "description": "收集金苹果"
-          },
-          {
-            "type": "COLLECT_ITEM",
-            "item": "minecraft:torch",
-            "count": 16,
-            "description": "收集火把"
-          }
-        ]
-      },
-      "edges": [
-        {
-          "target": "lab_puzzle",
-          "conditions": [
-            {
-              "type": "TASK_COMPLETE"
-            }
-          ]
-        }
-      ]
-    },
-    "time_pressure": {
-      "type": "dialogue",
-      "data": {
-        "npc_template": "hopper",
-        "npc_name": "霍珀警长",
-        "lines": [
-          "嘿，你在这里做什么？",
-          "这是犯罪现场，普通人不能随便进入。",
-          "不过...既然你已经在这了，也许你能帮上忙。",
-          "跟我来，我发现了一些奇怪的东西。"
-        ]
-      },
-      "edges": [
-        {
-          "target": "find_first_clue"
-        }
-      ]
-    },
-    "upside_down_escape": {
-      "type": "task",
-      "data": {
-        "task_type": "ESCAPE",
-        "title": "逃离颠倒世界",
-        "description": "在这个扭曲的维度中找到出口",
-        "objectives": [
-          {
-            "type": "REACH_LOCATION",
-            "target": "portal_exit",
-            "description": "找到裂缝出口"
-          }
-        ],
-        "stealth_required": true,
-        "time_limit_seconds": 180
-      },
-      "edges": [
-        {
-          "target": "discover_eleven",
-          "conditions": [
-            {
-              "type": "TASK_COMPLETE"
-            }
-          ]
-        },
-        {
-          "target": "bad_ending_lost",
-          "conditions": [
-            {
-              "type": "TASK_FAILED"
-            }
-          ]
         }
       ]
     }
