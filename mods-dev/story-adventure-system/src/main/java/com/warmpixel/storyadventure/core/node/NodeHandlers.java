@@ -18,6 +18,7 @@ public class NodeHandlers {
         register(NodeType.COMBAT, new CombatNodeHandler());
         register(NodeType.CUTSCENE, new CutsceneNodeHandler());
         register(NodeType.CHECKPOINT, new CheckpointNodeHandler());
+        register(NodeType.ITEM_INTERACTION, new ItemInteractionNodeHandler());
     }
     
     public static void register(NodeType type, NodeHandler handler) {

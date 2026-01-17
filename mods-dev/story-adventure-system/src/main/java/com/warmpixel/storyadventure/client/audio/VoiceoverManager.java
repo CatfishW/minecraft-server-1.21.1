@@ -4,23 +4,25 @@ import com.warmpixel.storyadventure.StoryAdventureMod;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.client.resources.sounds.SoundInstance;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import net.minecraft.client.resources.sounds.Sound;
+import net.minecraft.client.sounds.SoundManager;
+import net.minecraft.util.RandomSource;
 
 /**
  * Manages voiceover audio playback on the client.
- * Integrated with Minecraft's SoundManager for proper volume control and compatibility.
+ * Uses Minecraft's built-in resource system for sound loading.
  */
 @Environment(EnvType.CLIENT)
 public class VoiceoverManager {
     
     private static VoiceoverManager instance;
-    private ExternalSoundInstance currentVoiceover = null;
+    private SoundInstance currentVoiceover = null;
     private final Object lock = new Object();
     
     private VoiceoverManager() {}
@@ -33,57 +35,63 @@ public class VoiceoverManager {
     }
     
     /**
-     * Play a voiceover sound from the voiceovers folder.
+     * Play a voiceover sound from the mod's assets or config folder.
+     * @param soundPath The path to the voiceover, e.g. "stranger_things_hawkins/bg_story_1_msg_0"
+     * @param volume Volume of the sound (0.0-1.0)
+     * @param pitch Pitch of the sound
+     * @param characterId ID of the speaking character (for logging)
      */
     public void playVoiceover(String soundPath, float volume, float pitch, String characterId) {
-        // Normalize the sound path (remove any extension if present)
-        String normalizedPath = soundPath;
+        if (soundPath == null || soundPath.isEmpty()) return;
+
+        // Normalize the sound path (ensure lowercase and remove extension)
+        String normalizedPath = soundPath.toLowerCase().trim();
         if (normalizedPath.endsWith(".ogg")) {
             normalizedPath = normalizedPath.substring(0, normalizedPath.length() - 4);
         }
         
-        // Build the full path using FabricLoader's config directory
-        Path configDir = FabricLoader.getInstance().getConfigDir();
-        Path voiceoverPath = configDir.resolve("storyadventure").resolve("voiceovers").resolve(normalizedPath + ".ogg");
+        // Convert path to sound event name (e.g. stranger_things_hawkins/bg_story_1 -> voiceover.stranger_things_hawkins.bg_story_1)
+        final String soundEventName = "voiceover." + normalizedPath.replace("/", ".");
         
-        if (!Files.exists(voiceoverPath)) {
-            StoryAdventureMod.LOGGER.warn("[VoiceoverManager] Voiceover file not found: {}", voiceoverPath.toAbsolutePath());
-            return;
-        }
-        
-        String absolutePath = voiceoverPath.toAbsolutePath().toString();
-        final String finalNormalizedPath = normalizedPath;
-        
+        StoryAdventureMod.LOGGER.info("[VoiceoverManager] Requesting playback: {} (character: {})", soundEventName, characterId);
+
         // Schedule on the main thread
         Minecraft.getInstance().execute(() -> {
             synchronized (lock) {
                 stopCurrentVoiceoverInternal();
                 
                 try {
-                    // Create a custom sound instance
-                    currentVoiceover = new ExternalSoundInstance(
-                        finalNormalizedPath,
-                        absolutePath,
-                        volume,
-                        pitch,
-                        SoundSource.VOICE
+                    // Create the ResourceLocation for the sound event
+                    ResourceLocation soundLocation = ResourceLocation.fromNamespaceAndPath(
+                        StoryAdventureMod.MOD_ID, 
+                        soundEventName
                     );
                     
-                    // Register the path using the SOUND's location (not the instance location)
-                    // This is what SoundBufferLibrary.getStream() will receive
-                    ExternalSoundRegistry.registerExternalPath(currentVoiceover.getSoundResourceLocation(), absolutePath);
-                    
-                    StoryAdventureMod.LOGGER.debug("[VoiceoverManager] Registered external path: {} -> {}", 
-                        currentVoiceover.getSoundResourceLocation(), absolutePath);
+                    // Create a standard sound instance (since it's now registered in sounds.json)
+                    currentVoiceover = new SimpleSoundInstance(
+                        soundLocation,
+                        SoundSource.MASTER,
+                        volume,
+                        pitch,
+                        RandomSource.create(),
+                        false,  // looping
+                        0,      // delay
+                        SoundInstance.Attenuation.NONE,
+                        0.0,    // x
+                        0.0,    // y
+                        0.0,    // z
+                        true    // relative (plays at player's position)
+                    );
                     
                     // Play it through Minecraft's sound manager
                     Minecraft.getInstance().getSoundManager().play(currentVoiceover);
                     
-                    StoryAdventureMod.LOGGER.info("[VoiceoverManager] Playing voiceover: {} (character: {})", 
-                        finalNormalizedPath, characterId);
+                    StoryAdventureMod.LOGGER.info("[VoiceoverManager] Now playing: {} (character: {})", 
+                        soundLocation, characterId);
                     
                 } catch (Exception e) {
-                    StoryAdventureMod.LOGGER.error("[VoiceoverManager] Failed to play voiceover: " + finalNormalizedPath, e);
+                    StoryAdventureMod.LOGGER.error("[VoiceoverManager] Error playing voiceover {}: {}", soundEventName, e.getMessage());
+                    e.printStackTrace();
                     currentVoiceover = null;
                 }
             }
@@ -109,7 +117,6 @@ public class VoiceoverManager {
         if (currentVoiceover != null) {
             try {
                 Minecraft.getInstance().getSoundManager().stop(currentVoiceover);
-                ExternalSoundRegistry.removeExternalPath(currentVoiceover.getSoundResourceLocation());
             } catch (Exception e) {
                 StoryAdventureMod.LOGGER.debug("[VoiceoverManager] Error stopping voiceover", e);
             }
@@ -135,50 +142,29 @@ public class VoiceoverManager {
     
     public void cleanup() {
         stopCurrentVoiceover();
-        ExternalSoundRegistry.clear();
     }
 
-    public static Path getVoiceoversPath(String storyId) {
-        return FabricLoader.getInstance().getConfigDir()
-            .resolve("storyadventure").resolve("voiceovers").resolve(storyId);
-    }
-    
-    public static Path getVoiceoversBasePath() {
-        return FabricLoader.getInstance().getConfigDir()
-            .resolve("storyadventure").resolve("voiceovers");
-    }
-    
+    /**
+     * Check if a voiceover exists in the mod's assets.
+     * Note: This now checks if the sound event is registered.
+     */
     public static boolean voiceoverExists(String soundPath) {
         String normalizedPath = soundPath;
-        if (!normalizedPath.endsWith(".ogg")) {
-            normalizedPath = normalizedPath + ".ogg";
+        if (normalizedPath.endsWith(".ogg")) {
+            normalizedPath = normalizedPath.substring(0, normalizedPath.length() - 4);
         }
-        Path path = FabricLoader.getInstance().getConfigDir()
-            .resolve("storyadventure").resolve("voiceovers").resolve(normalizedPath);
-        return Files.exists(path);
-    }
-    
-    public static void ensureVoiceoverDirectory(String storyId) {
+        
+        String soundEventName = "voiceover." + normalizedPath.replace("/", ".");
+        ResourceLocation soundLocation = ResourceLocation.fromNamespaceAndPath(
+            StoryAdventureMod.MOD_ID, 
+            soundEventName
+        );
+        
+        // Check if the sound event is registered in the sound manager
         try {
-            Path dir = getVoiceoversPath(storyId);
-            if (!Files.exists(dir)) {
-                Files.createDirectories(dir);
-                StoryAdventureMod.LOGGER.info("[VoiceoverManager] Created voiceover directory: {}", dir);
-            }
-        } catch (IOException e) {
-            StoryAdventureMod.LOGGER.error("[VoiceoverManager] Failed to create voiceover directory", e);
-        }
-    }
-    
-    public static void ensureVoiceoverBaseDirectory() {
-        try {
-            Path dir = getVoiceoversBasePath();
-            if (!Files.exists(dir)) {
-                Files.createDirectories(dir);
-                StoryAdventureMod.LOGGER.info("[VoiceoverManager] Created voiceover base directory: {}", dir);
-            }
-        } catch (IOException e) {
-            StoryAdventureMod.LOGGER.error("[VoiceoverManager] Failed to create voiceover base directory", e);
+            return Minecraft.getInstance().getSoundManager().getAvailableSounds().contains(soundLocation);
+        } catch (Exception e) {
+            return false;
         }
     }
 }

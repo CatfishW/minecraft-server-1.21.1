@@ -77,6 +77,26 @@ public class StoryAdventureMod implements ModInitializer {
         
         // Server lifecycle events
         ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            // Clean up orphaned story entities from previous server sessions
+            // These have "story_entity" tag but instances are gone after restart
+            LOGGER.info("Cleaning up orphaned story entities from previous sessions...");
+            try {
+                String cleanupCmd = "kill @e[tag=story_entity]";
+                server.getCommands().performPrefixedCommand(
+                    server.createCommandSourceStack().withSuppressedOutput(),
+                    cleanupCmd
+                );
+                // Also clean up with easy_npc command for NPC entities
+                String npcCleanupCmd = "easy_npc delete @e[tag=story_entity]";
+                server.getCommands().performPrefixedCommand(
+                    server.createCommandSourceStack().withSuppressedOutput(),
+                    npcCleanupCmd
+                );
+                LOGGER.info("Orphaned story entity cleanup complete");
+            } catch (Exception e) {
+                LOGGER.warn("Failed to cleanup orphaned story entities: {}", e.getMessage());
+            }
+            
             LOGGER.info("Loading story definitions...");
             storyLoader.loadAllStories();
             LOGGER.info("Loaded {} stories", storyRegistry.getStoryCount());
@@ -95,6 +115,15 @@ public class StoryAdventureMod implements ModInitializer {
         });
         
         ServerLifecycleEvents.SERVER_STOPPING.register(server -> {
+            LOGGER.info("Cleaning up instance entities before shutdown...");
+            for (var instance : instanceManager.getAllInstances()) {
+                try {
+                    instance.cleanupEntities();
+                } catch (Exception e) {
+                    LOGGER.error("[Shutdown] Failed to cleanup entities for instance {}", instance.getInstanceId(), e);
+                }
+            }
+            
             LOGGER.info("Saving instance states...");
             instanceManager.saveAllInstances();
         });

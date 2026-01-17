@@ -193,8 +193,10 @@ public class ShopService {
                     }
                     long tax = Math.round(baseTotal * config.taxes.shopTaxRate);
                     long total = baseTotal + tax;
-                    ItemStack checkStack = ItemKeyFactory.stackFromSnbt(offer.itemJson(), totalCount, player.getServer().registryAccess());
-                    return inventoryAdapter.canInsertStack(player, checkStack).thenCompose(canInsert -> {
+                    // Prepare template stack
+                    ItemStack checkStack = ItemKeyFactory.stackFromSnbt(offer.itemJson(), 1, player.getServer().registryAccess());
+                    
+                    return inventoryAdapter.canInsertItems(player, checkStack, totalCount).thenCompose(canInsert -> {
                         if (!canInsert) {
                             return CompletableFuture.completedFuture(EconomyResult.fail("message.warm_pixel_economy.inventory_full"));
                         }
@@ -218,8 +220,8 @@ public class ShopService {
                                 }
                                 return fresh;
                             }, executor).thenCompose(fresh -> {
-                                ItemStack stack = ItemKeyFactory.stackFromSnbt(fresh.itemJson(), totalCount, player.getServer().registryAccess());
-                                return inventoryAdapter.insertStack(player, stack).thenCompose(success -> {
+                                ItemStack templateStack = ItemKeyFactory.stackFromSnbt(fresh.itemJson(), 1, player.getServer().registryAccess());
+                                return inventoryAdapter.insertItems(player, templateStack, totalCount).thenCompose(success -> {
                                     if (success) {
                                         playSound(player, SoundEvents.VILLAGER_TRADE);
                                         return CompletableFuture.completedFuture(EconomyResult.ok("message.warm_pixel_economy.purchase_complete"));

@@ -12,23 +12,40 @@ import java.util.List;
 /**
  * Represents a complete camera path for a cutscene.
  * Contains a sequence of keyframes and optional look-at target.
+ * Uses Catmull-Rom spline interpolation for smooth position curves.
  */
 public class CameraPath {
     
     private final List<CameraKeyframe> keyframes;
-    private final int totalDurationTicks;
+    private final float totalDurationTicks;
     private final LookAtTarget lookAtTarget;
+    
+    // Pre-computed segment data for fast lookup
+    private final float[] segmentStartTimes;
+    
+    // Interpolation mode
+    private InterpolationMode positionInterpolation = InterpolationMode.CATMULL_ROM;
+    private InterpolationMode rotationInterpolation = InterpolationMode.SMOOTH_LERP;
+    
+    public enum InterpolationMode {
+        LINEAR,
+        SMOOTH_LERP,
+        CATMULL_ROM
+    }
     
     public CameraPath(List<CameraKeyframe> keyframes, LookAtTarget lookAtTarget) {
         this.keyframes = new ArrayList<>(keyframes);
         this.lookAtTarget = lookAtTarget;
         
-        // Calculate total duration
-        int total = 0;
-        for (CameraKeyframe kf : keyframes) {
-            total += kf.getDurationTicks();
+        // Pre-compute segment start times for O(1) lookup
+        this.segmentStartTimes = new float[keyframes.size()];
+        float accumulated = 0f;
+        for (int i = 0; i < keyframes.size(); i++) {
+            segmentStartTimes[i] = accumulated;
+            keyframes.get(i).setAccumulatedTime(accumulated);
+            accumulated += keyframes.get(i).getDurationTicks();
         }
-        this.totalDurationTicks = total;
+        this.totalDurationTicks = accumulated;
     }
     
     // ==================== Getters ====================
@@ -37,7 +54,7 @@ public class CameraPath {
         return Collections.unmodifiableList(keyframes);
     }
     
-    public int getTotalDurationTicks() {
+    public float getTotalDurationTicks() {
         return totalDurationTicks;
     }
     
@@ -53,15 +70,24 @@ public class CameraPath {
         return keyframes.size();
     }
     
+    public void setPositionInterpolation(InterpolationMode mode) {
+        this.positionInterpolation = mode;
+    }
+    
+    public void setRotationInterpolation(InterpolationMode mode) {
+        this.rotationInterpolation = mode;
+    }
+    
     // ==================== Interpolation ====================
     
     /**
      * Get the interpolated camera state at a given time.
-     * @param tickTime Current tick time since cutscene start
-     * @param partialTicks Partial tick for smooth rendering
+     * Uses high-precision float timing for smooth interpolation.
+     * 
+     * @param exactTime Exact time in ticks (including fractional part)
      * @return Interpolated camera state
      */
-    public CameraState getStateAt(int tickTime, float partialTicks) {
+    public CameraState getStateAt(float exactTime) {
         if (keyframes.isEmpty()) {
             return new CameraState(Vec3.ZERO, 0, 0, 0, 70f);
         }
@@ -71,68 +97,182 @@ public class CameraPath {
             return new CameraState(kf.getPosition(), kf.getYaw(), kf.getPitch(), kf.getRoll(), kf.getFov());
         }
         
-        float exactTime = tickTime + partialTicks;
+        // Clamp time to valid range
+        exactTime = Math.max(0f, Math.min(totalDurationTicks, exactTime));
         
-        // Find the current keyframe pair
-        int accumulatedTime = 0;
-        for (int i = 1; i < keyframes.size(); i++) {
-            CameraKeyframe from = keyframes.get(i - 1);
-            CameraKeyframe to = keyframes.get(i);
-            int segmentDuration = to.getDurationTicks();
-            
-            if (exactTime <= accumulatedTime + segmentDuration || i == keyframes.size() - 1) {
-                // We're in this segment
-                float segmentTime = exactTime - accumulatedTime;
-                float t = segmentDuration > 0 ? segmentTime / segmentDuration : 1f;
-                t = Math.max(0f, Math.min(1f, t));
-                
-                // Apply easing
-                double eased = to.getEasing().apply(t);
-                
-                return interpolate(from, to, (float) eased);
-            }
-            
-            accumulatedTime += segmentDuration;
+        // Binary search for the current segment (O(log n))
+        int segmentIndex = findSegmentIndex(exactTime);
+        
+        if (segmentIndex >= keyframes.size() - 1) {
+            // At or past the end
+            CameraKeyframe last = keyframes.get(keyframes.size() - 1);
+            return new CameraState(last.getPosition(), last.getYaw(), last.getPitch(), last.getRoll(), last.getFov());
         }
         
-        // Past the end - return last keyframe
-        CameraKeyframe last = keyframes.get(keyframes.size() - 1);
-        return new CameraState(last.getPosition(), last.getYaw(), last.getPitch(), last.getRoll(), last.getFov());
+        CameraKeyframe from = keyframes.get(segmentIndex);
+        CameraKeyframe to = keyframes.get(segmentIndex + 1);
+        
+        // Calculate local time within segment
+        float segmentStart = segmentStartTimes[segmentIndex];
+        float segmentDuration = to.getDurationTicks();
+        
+        if (segmentDuration <= 0) {
+            return new CameraState(to.getPosition(), to.getYaw(), to.getPitch(), to.getRoll(), to.getFov());
+        }
+        
+        float localTime = exactTime - segmentStart;
+        float t = localTime / segmentDuration;
+        t = Math.max(0f, Math.min(1f, t));
+        
+        // Apply easing function
+        float eased = (float) to.getEasing().apply(t);
+        
+        return interpolate(segmentIndex, from, to, eased);
     }
     
     /**
-     * Interpolate between two keyframes.
+     * Binary search for segment containing the given time.
      */
-    private CameraState interpolate(CameraKeyframe from, CameraKeyframe to, float t) {
-        // Position lerp
-        Vec3 pos = from.getPosition().lerp(to.getPosition(), t);
+    private int findSegmentIndex(float time) {
+        int low = 0;
+        int high = keyframes.size() - 1;
         
-        // Rotation lerp (with angle wrapping for yaw)
-        float yaw = lerpAngle(from.getYaw(), to.getYaw(), t);
-        float pitch = lerp(from.getPitch(), to.getPitch(), t);
-        float roll = lerp(from.getRoll(), to.getRoll(), t);
+        while (low < high) {
+            int mid = (low + high + 1) / 2;
+            if (segmentStartTimes[mid] <= time) {
+                low = mid;
+            } else {
+                high = mid - 1;
+            }
+        }
         
-        // FOV lerp
-        float fov = lerp(from.getFov(), to.getFov(), t);
+        return low;
+    }
+    
+    /**
+     * Interpolate between keyframes using configured interpolation modes.
+     */
+    private CameraState interpolate(int segmentIndex, CameraKeyframe from, CameraKeyframe to, float t) {
+        // Position interpolation
+        Vec3 pos = interpolatePosition(segmentIndex, t);
+        
+        // Rotation interpolation with proper angle handling
+        float yaw = interpolateRotation(from.getYaw(), to.getYaw(), t);
+        float pitch = interpolateRotation(from.getPitch(), to.getPitch(), t);
+        float roll = smoothLerp(from.getRoll(), to.getRoll(), t);
+        
+        // FOV interpolation (smooth lerp for natural feel)
+        float fov = smoothLerp(from.getFov(), to.getFov(), t);
         
         return new CameraState(pos, yaw, pitch, roll, fov);
     }
     
-    private float lerp(float a, float b, float t) {
+    /**
+     * Interpolate position using Catmull-Rom spline for smooth curves.
+     */
+    private Vec3 interpolatePosition(int segmentIndex, float t) {
+        CameraKeyframe from = keyframes.get(segmentIndex);
+        CameraKeyframe to = keyframes.get(segmentIndex + 1);
+        
+        if (positionInterpolation == InterpolationMode.LINEAR) {
+            return lerpVec3(from.getPosition(), to.getPosition(), t);
+        }
+        
+        if (positionInterpolation == InterpolationMode.SMOOTH_LERP) {
+            // Smoothstep interpolation
+            float smoothT = smoothstep(t);
+            return lerpVec3(from.getPosition(), to.getPosition(), smoothT);
+        }
+        
+        // Catmull-Rom spline interpolation
+        Vec3 p0 = segmentIndex > 0 
+            ? keyframes.get(segmentIndex - 1).getPosition() 
+            : extrapolatePoint(to.getPosition(), from.getPosition());
+            
+        Vec3 p1 = from.getPosition();
+        Vec3 p2 = to.getPosition();
+        
+        Vec3 p3 = segmentIndex + 2 < keyframes.size() 
+            ? keyframes.get(segmentIndex + 2).getPosition() 
+            : extrapolatePoint(from.getPosition(), to.getPosition());
+        
+        return catmullRom(p0, p1, p2, p3, t);
+    }
+    
+    /**
+     * Catmull-Rom spline interpolation for smooth curves through control points.
+     */
+    private Vec3 catmullRom(Vec3 p0, Vec3 p1, Vec3 p2, Vec3 p3, float t) {
+        float t2 = t * t;
+        float t3 = t2 * t;
+        
+        // Catmull-Rom basis functions
+        float b0 = -0.5f * t3 + t2 - 0.5f * t;
+        float b1 = 1.5f * t3 - 2.5f * t2 + 1.0f;
+        float b2 = -1.5f * t3 + 2.0f * t2 + 0.5f * t;
+        float b3 = 0.5f * t3 - 0.5f * t2;
+        
+        double x = b0 * p0.x + b1 * p1.x + b2 * p2.x + b3 * p3.x;
+        double y = b0 * p0.y + b1 * p1.y + b2 * p2.y + b3 * p3.y;
+        double z = b0 * p0.z + b1 * p1.z + b2 * p2.z + b3 * p3.z;
+        
+        return new Vec3(x, y, z);
+    }
+    
+    /**
+     * Extrapolate a point for spline boundaries.
+     */
+    private Vec3 extrapolatePoint(Vec3 anchor, Vec3 direction) {
+        return new Vec3(
+            2 * direction.x - anchor.x,
+            2 * direction.y - anchor.y,
+            2 * direction.z - anchor.z
+        );
+    }
+    
+    /**
+     * Linear interpolation for Vec3.
+     */
+    private Vec3 lerpVec3(Vec3 a, Vec3 b, float t) {
+        return new Vec3(
+            a.x + (b.x - a.x) * t,
+            a.y + (b.y - a.y) * t,
+            a.z + (b.z - a.z) * t
+        );
+    }
+    
+    /**
+     * Interpolate angles, handling wrap-around at 180/-180.
+     * Uses spherical linear interpolation approach for smooth rotation.
+     */
+    private float interpolateRotation(float from, float to, float t) {
+        // Normalize angles
+        float diff = to - from;
+        
+        // Find shortest path
+        while (diff > 180f) diff -= 360f;
+        while (diff < -180f) diff += 360f;
+        
+        if (rotationInterpolation == InterpolationMode.SMOOTH_LERP) {
+            t = smoothstep(t);
+        }
+        
+        return from + diff * t;
+    }
+    
+    /**
+     * Smooth linear interpolation.
+     */
+    private float smoothLerp(float a, float b, float t) {
+        t = smoothstep(t);
         return a + (b - a) * t;
     }
     
     /**
-     * Lerp angles, handling the wrap-around at 180/-180.
+     * Smoothstep function for natural easing.
      */
-    private float lerpAngle(float a, float b, float t) {
-        float diff = b - a;
-        
-        // Normalize difference to [-180, 180]
-        while (diff > 180) diff -= 360;
-        while (diff < -180) diff += 360;
-        
-        return a + diff * t;
+    private float smoothstep(float t) {
+        return t * t * (3f - 2f * t);
     }
     
     // ==================== JSON Serialization ====================
@@ -142,7 +282,9 @@ public class CameraPath {
      * Expected format:
      * {
      *   "keyframes": [...],
-     *   "look_at": { "type": "position", "value": [x, y, z] }
+     *   "look_at": { "type": "position", "value": [x, y, z] },
+     *   "position_interpolation": "CATMULL_ROM",
+     *   "rotation_interpolation": "SMOOTH_LERP"
      * }
      */
     public static CameraPath fromJson(JsonObject json) {
@@ -162,7 +304,24 @@ public class CameraPath {
             lookAt = LookAtTarget.fromJson(json.getAsJsonObject("look_at"));
         }
         
-        return new CameraPath(keyframes, lookAt);
+        CameraPath path = new CameraPath(keyframes, lookAt);
+        
+        // Parse interpolation modes
+        if (json.has("position_interpolation")) {
+            try {
+                path.positionInterpolation = InterpolationMode.valueOf(
+                    json.get("position_interpolation").getAsString().toUpperCase());
+            } catch (IllegalArgumentException ignored) {}
+        }
+        
+        if (json.has("rotation_interpolation")) {
+            try {
+                path.rotationInterpolation = InterpolationMode.valueOf(
+                    json.get("rotation_interpolation").getAsString().toUpperCase());
+            } catch (IllegalArgumentException ignored) {}
+        }
+        
+        return path;
     }
     
     /**
@@ -180,6 +339,9 @@ public class CameraPath {
         if (lookAtTarget != null) {
             json.add("look_at", lookAtTarget.toJson());
         }
+        
+        json.addProperty("position_interpolation", positionInterpolation.name());
+        json.addProperty("rotation_interpolation", rotationInterpolation.name());
         
         return json;
     }
@@ -209,6 +371,26 @@ public class CameraPath {
         public float getPitch() { return pitch; }
         public float getRoll() { return roll; }
         public float getFov() { return fov; }
+        
+        /**
+         * Interpolate between two camera states.
+         */
+        public static CameraState lerp(CameraState a, CameraState b, float t) {
+            return new CameraState(
+                a.position.lerp(b.position, t),
+                lerpAngle(a.yaw, b.yaw, t),
+                lerpAngle(a.pitch, b.pitch, t),
+                a.roll + (b.roll - a.roll) * t,
+                a.fov + (b.fov - a.fov) * t
+            );
+        }
+        
+        private static float lerpAngle(float a, float b, float t) {
+            float diff = b - a;
+            while (diff > 180f) diff -= 360f;
+            while (diff < -180f) diff += 360f;
+            return a + diff * t;
+        }
     }
     
     /**
@@ -281,7 +463,7 @@ public class CameraPath {
     
     @Override
     public String toString() {
-        return String.format("CameraPath{keyframes=%d, duration=%d ticks, lookAt=%s}",
+        return String.format("CameraPath{keyframes=%d, duration=%.1f ticks, lookAt=%s}",
             keyframes.size(), totalDurationTicks, lookAtTarget != null);
     }
 }

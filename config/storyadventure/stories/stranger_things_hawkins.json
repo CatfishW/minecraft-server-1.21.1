@@ -6,6 +6,13 @@
   "min_players": 1,
   "max_players": 4,
   "estimated_duration_minutes": 25,
+  "max_team_deaths": 5,
+  "failure_rewards": [
+    {
+      "type": "EXPERIENCE",
+      "amount": 2000
+    }
+  ],
   "entry_node": "intro_cutscene",
   "locations": {
     "start": {
@@ -29,29 +36,132 @@
     "intro_cutscene": {
       "type": "cutscene",
       "data": {
-        "duration_ticks": 120,
+        "duration_ticks": 240,
         "skippable": false,
         "letterbox": true,
-        "fade_in_ticks": 20,
-        "fade_out_ticks": 20,
+        "fade_in_ticks": 0,
+        "fade_out_ticks": 0,
         "on_enter": [
+          {
+            "type": "COMMAND",
+            "command": "easy_npc delete @e[tag=instance_{instance_id}]",
+            "as_op": true
+          },
           {
             "type": "COMMAND",
             "command": "storyui hud hide",
             "as_op": true
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_02_mike_wheeler",
+            "dimension": "minecraft:overworld",
+            "x": 965.0,
+            "y": 409.0,
+            "z": -1030.0,
+            "yaw": 180.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_03_dustin_henderson",
+            "dimension": "minecraft:overworld",
+            "x": 967.0,
+            "y": 409.0,
+            "z": -1028.0,
+            "yaw": 180.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_04_lucas_sinclair",
+            "dimension": "minecraft:overworld",
+            "x": 963.0,
+            "y": 409.0,
+            "z": -1028.0,
+            "yaw": 180.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_06_jim_hopper",
+            "dimension": "minecraft:overworld",
+            "x": 838.0,
+            "y": 409.0,
+            "z": -1047.0,
+            "yaw": 90.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_07_joyce_byers",
+            "dimension": "minecraft:overworld",
+            "x": 1030.0,
+            "y": 409.0,
+            "z": -1117.0,
+            "yaw": 0.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_01_eleven",
+            "dimension": "minecraft:overworld",
+            "x": 724.4,
+            "y": 409.0,
+            "z": -946.1,
+            "yaw": 90.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_05_will_byers",
+            "dimension": "minecraft:overworld",
+            "x": 722.0,
+            "y": 409.0,
+            "z": -944.0,
+            "yaw": 90.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "stranger_things_hawkins"
+            ]
           }
         ],
         "camera_path": {
           "keyframes": [
             {
               "position": [
-                947.77,
-                472.68,
-                -962.19
+                901.59,
+                476.55,
+                -1102.22
               ],
               "rotation": [
-                -296.0,
-                -15.9,
+                1353.6,
+                -4.4,
                 0.0
               ],
               "fov": 70.0,
@@ -60,13 +170,13 @@
             },
             {
               "position": [
-                946.18,
-                457.78,
-                -981.64
+                937.28,
+                425.29,
+                -1099.65
               ],
               "rotation": [
-                -218.6,
-                30.6,
+                1355.3,
+                3.5,
                 0.0
               ],
               "fov": 70.0,
@@ -75,20 +185,67 @@
             },
             {
               "position": [
-                978.18,
-                412.54,
-                -1012.64
+                930.4,
+                432.39,
+                -1073.19
               ],
               "rotation": [
-                -180.0,
-                2.4,
+                1478.1,
+                -0.1,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                926.75,
+                422.68,
+                -1027.62
+              ],
+              "rotation": [
+                1400.1,
+                13.5,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                952.96,
+                421.47,
+                -1009.2
+              ],
+              "rotation": [
+                1339.9,
+                32.1,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                977.35,
+                411.75,
+                -1011.27
+              ],
+              "rotation": [
+                1260.7,
+                -1.4,
                 0.0
               ],
               "fov": 70.0,
               "duration_ticks": 60,
               "easing": "EASE_IN_OUT"
             }
-          ]
+          ],
+          "position_interpolation": "CATMULL_ROM",
+          "rotation_interpolation": "SMOOTH_LERP"
         }
       },
       "edges": [
@@ -118,7 +275,7 @@
           },
           {
             "type": "MESSAGE",
-            "text": "§e[任务] §f前往标记位置寻找乔伊斯·拜尔斯"
+            "text": "§f前往标记位置寻找乔伊斯·拜尔斯"
           },
           {
             "type": "COMMAND",
@@ -167,7 +324,7 @@
             "onEnter": [
               {
                 "type": "MESSAGE",
-                "text": "§7[旁白] §f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
+                "text": "§f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
                 "voiceover": "stranger_things_hawkins/bg_story_1_msg_0"
               }
             ]
@@ -177,8 +334,28 @@
       "on_enter": [
         {
           "type": "MESSAGE",
-          "text": "§e[任务] §f前往地下室和伙伴们商量搜寻威尔的计划",
+          "text": "§f前往地下室和伙伴们商量搜寻威尔的计划",
           "voiceover": "stranger_things_hawkins/find_the_boys_enter_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
+          "voiceover": "stranger_things_hawkins/bg_story_1_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
+          "voiceover": "stranger_things_hawkins/bg_story_1_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
+          "voiceover": "stranger_things_hawkins/bg_story_1_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f霍金斯镇最近并不平静。几天前，年轻的威尔·拜尔斯在回家的路上神秘失踪了。",
+          "voiceover": "stranger_things_hawkins/bg_story_1_msg_0"
         }
       ],
       "edges": [
@@ -205,11 +382,99 @@
         ],
         "choices": [
           {
+            "id": "ask_about_will",
+            "text": "你们最后一次见到威尔是在哪？"
+          },
+          {
+            "id": "ask_about_monster",
+            "text": "你们看到的奇怪东西到底是什么？"
+          },
+          {
             "id": "go_to_police",
-            "text": "好，我们去警局找霍珀。"
+            "text": "走吧，带我去见警长。"
           }
         ],
-        "voiceover": "stranger_things_hawkins/meet_the_boys_voice"
+        "voiceover": "stranger_things_hawkins/meet_the_boys_voice",
+        "profile_id": "mike"
+      },
+      "on_enter": [],
+      "edges": [
+        {
+          "target": "boys_answer_will",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "ask_about_will"
+            }
+          ]
+        },
+        {
+          "target": "boys_answer_monster",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "ask_about_monster"
+            }
+          ]
+        },
+        {
+          "target": "find_hopper",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_police"
+            }
+          ]
+        }
+      ]
+    },
+    "boys_answer_will": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_02_mike_wheeler",
+        "npc_name": "迈克·威勒",
+        "lines": [
+          "就在那个名为'幽暗密林'的弯道附近，就在警长找到他自行车的地方。",
+          "他本该在回家的路上，但他根本没到家。"
+        ],
+        "choices": [
+          {
+            "id": "go_to_police",
+            "text": "好的，我们现在就去警局。"
+          }
+        ],
+        "profile_id": "mike",
+        "voiceover": "stranger_things_hawkins/boys_answer_will_voice"
+      },
+      "edges": [
+        {
+          "target": "find_hopper",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_police"
+            }
+          ]
+        }
+      ]
+    },
+    "boys_answer_monster": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_03_dustin_henderson",
+        "npc_name": "达斯汀·亨德森",
+        "lines": [
+          "它很大，没有脸... 几乎看起来不像人类。",
+          "我们只是匆匆一瞥，然后大家都逃跑了。"
+        ],
+        "choices": [
+          {
+            "id": "go_to_police",
+            "text": "太可怕了，我们要去警局把这个告诉霍珀。"
+          }
+        ],
+        "profile_id": "dustin",
+        "voiceover": "stranger_things_hawkins/boys_answer_monster_voice"
       },
       "edges": [
         {
@@ -257,7 +522,7 @@
             "onEnter": [
               {
                 "type": "MESSAGE",
-                "text": "§7[旁白] §f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
+                "text": "§f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
                 "voiceover": "stranger_things_hawkins/bg_story_2_msg_0"
               }
             ]
@@ -267,8 +532,28 @@
       "on_enter": [
         {
           "type": "MESSAGE",
-          "text": "§e[任务] §f询问霍珀警长关于搜索的进展",
+          "text": "§f询问霍珀警长关于搜索的进展",
           "voiceover": "stranger_things_hawkins/find_hopper_enter_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
+          "voiceover": "stranger_things_hawkins/bg_story_2_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
+          "voiceover": "stranger_things_hawkins/bg_story_2_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
+          "voiceover": "stranger_things_hawkins/bg_story_2_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f搜救队找遍了森林却一无所获。奇怪的是，电力系统开始频繁故障，灯光闪烁不停，仿佛某种未知力量在干扰。",
+          "voiceover": "stranger_things_hawkins/bg_story_2_msg_0"
         }
       ],
       "edges": [
@@ -295,19 +580,134 @@
         ],
         "choices": [
           {
+            "id": "ask_about_joyce",
+            "text": "乔伊斯现在的情况怎么样？"
+          },
+          {
+            "id": "ask_about_search",
+            "text": "搜救工作有什么发现吗？"
+          },
+          {
             "id": "go_to_joyce",
-            "text": "明白了，我们这就去乔伊斯家。"
+            "text": "好的，我们现在就去见乔伊斯。"
           }
         ],
-        "voiceover": "stranger_things_hawkins/meet_hopper_voice"
+        "voiceover": "stranger_things_hawkins/meet_hopper_voice",
+        "profile_id": "hopper"
       },
+      "on_enter": [],
+      "edges": [
+        {
+          "target": "hopper_answer_joyce",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "ask_about_joyce"
+            }
+          ]
+        },
+        {
+          "target": "hopper_answer_search",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "ask_about_search"
+            }
+          ]
+        },
+        {
+          "target": "take_bus_to_joyce",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_joyce"
+            }
+          ]
+        }
+      ]
+    },
+    "hopper_answer_joyce": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_06_jim_hopper",
+        "npc_name": "吉姆·霍珀",
+        "lines": [
+          "她崩溃了。她声称威尔在墙里和她说话，还通过灯泡发信号。",
+          "作为母亲，她的心情可以理解，但那些话听起来真的太疯狂了。"
+        ],
+        "choices": [
+          {
+            "id": "go_to_joyce",
+            "text": "听起来很诡异，我们去看看她。"
+          }
+        ],
+        "profile_id": "hopper",
+        "voiceover": "stranger_things_hawkins/hopper_answer_joyce_voice"
+      },
+      "edges": [
+        {
+          "target": "take_bus_to_joyce",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_joyce"
+            }
+          ]
+        }
+      ]
+    },
+    "hopper_answer_search": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_06_jim_hopper",
+        "npc_name": "吉姆·霍珀",
+        "lines": [
+          "只有那辆自行车。其他的什么都没有。没有足迹，没有衣服碎片，什么都没有。",
+          "就像他凭空蒸发了一样。"
+        ],
+        "choices": [
+          {
+            "id": "go_to_joyce",
+            "text": "我们会尽力帮忙的。现在先去找乔伊斯。"
+          }
+        ],
+        "profile_id": "hopper",
+        "voiceover": "stranger_things_hawkins/hopper_answer_search_voice"
+      },
+      "edges": [
+        {
+          "target": "take_bus_to_joyce",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "go_to_joyce"
+            }
+          ]
+        }
+      ]
+    },
+    "take_bus_to_joyce": {
+      "type": "item_interaction",
+      "data": {
+        "interaction_type": "ride_vehicle",
+        "title": "乘坐校车",
+        "description": "登上校车前往乔伊斯·拜尔斯的家",
+        "bus_type": "automobility:shopping_cart",
+        "spawn_offset": 10.0,
+        "keep_vehicle_on_exit": true
+      },
+      "on_enter": [
+        {
+          "type": "MESSAGE",
+          "text": "§f 登上校车前往乔伊斯家"
+        }
+      ],
       "edges": [
         {
           "target": "navigate_to_joyce",
           "conditions": [
             {
-              "type": "DIALOGUE_CHOICE",
-              "value": "go_to_joyce"
+              "type": "TASK_COMPLETE"
             }
           ]
         }
@@ -347,14 +747,35 @@
             "onEnter": [
               {
                 "type": "MESSAGE",
-                "text": "§7[旁白] §f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
+                "text": "§f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
                 "voiceover": "stranger_things_hawkins/bg_story_3_msg_0"
               }
             ]
           }
         ]
       },
-      "on_enter": [],
+      "on_enter": [
+        {
+          "type": "MESSAGE",
+          "text": "§f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
+          "voiceover": "stranger_things_hawkins/bg_story_3_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
+          "voiceover": "stranger_things_hawkins/bg_story_3_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
+          "voiceover": "stranger_things_hawkins/bg_story_3_msg_0"
+        },
+        {
+          "type": "MESSAGE",
+          "text": "§f乔伊斯坚信威尔在通过灯泡和她交流。大家都觉得她疯了，但在霍金斯，科学无法解释的事情正在发生...",
+          "voiceover": "stranger_things_hawkins/bg_story_3_msg_0"
+        }
+      ],
       "edges": [
         {
           "target": "meet_joyce_new",
@@ -393,8 +814,18 @@
             "text": "我应该去哪里找线索？"
           }
         ],
-        "voiceover": "stranger_things_hawkins/meet_joyce_new_voice"
+        "voiceover": "stranger_things_hawkins/meet_joyce_new_voice",
+        "profile_id": "joyce"
       },
+      "on_enter": [
+        {
+          "type": "DESPAWN_ENTITIES",
+          "tags": [
+            "story_vehicle",
+            "instance_{instance_id}"
+          ]
+        }
+      ],
       "edges": [
         {
           "target": "search_for_clue",
@@ -445,7 +876,7 @@
       "on_enter": [
         {
           "type": "MESSAGE",
-          "text": "§e[任务] §f跟随标记寻找线索"
+          "text": "§f跟随标记寻找线索"
         }
       ],
       "edges": [
@@ -467,9 +898,12 @@
         "description": "魔怪大军从阴影中涌出！",
         "enemies": [
           {
-            "type": "minecraft:zombie",
-            "count": 30,
-            "spawn_radius": 10
+            "type": "demogorgon",
+            "count": 5,
+            "spawn_radius": 15,
+            "tags": [
+              "demogorgon_horde_entity"
+            ]
           }
         ],
         "arena_bounds": {
@@ -484,7 +918,7 @@
       "on_enter": [
         {
           "type": "MESSAGE",
-          "text": "§c§l[警告] §4魔怪大军出现了！准备战斗！",
+          "text": "§c§4魔怪大军出现了！准备战斗！",
           "voiceover": "stranger_things_hawkins/demogorgon_horde_enter_msg_0"
         },
         {
@@ -569,7 +1003,7 @@
       "on_enter": [
         {
           "type": "MESSAGE",
-          "text": "§7[旁白] §f空气变得凝重，你能听到来自另一个世界的低语...",
+          "text": "§f空气变得凝重，你能听到来自另一个世界的低语...",
           "voiceover": "stranger_things_hawkins/mirkwood_portal_enter_msg_0"
         }
       ],
@@ -609,7 +1043,7 @@
           },
           {
             "type": "MESSAGE",
-            "text": "§8[提示] §7你进入了颠倒世界。这里充满了危险，快找到威尔！"
+            "text": "§7你进入了颠倒世界。这里充满了危险，快找到威尔！"
           }
         ]
       },
@@ -672,17 +1106,10 @@
             "text": "别怕，我们会保护你的！"
           }
         ],
-        "voiceover": "stranger_things_hawkins/meet_will_and_eleven_voice"
+        "voiceover": "stranger_things_hawkins/meet_will_and_eleven_voice",
+        "profile_id": "will"
       },
-      "on_enter": [
-        {
-          "type": "SPAWN_NPC",
-          "npc_template": "npc_01_eleven",
-          "x": 724.4,
-          "y": 409.0,
-          "z": -946.1
-        }
-      ],
+      "on_enter": [],
       "edges": [
         {
           "target": "final_boss_demogorgon",
@@ -699,18 +1126,17 @@
       "type": "combat",
       "data": {
         "combat_type": "BOSS",
-        "title": "最终之战：大祭司魔怪",
-        "description": "真正的魔怪现身了！为了救出威尔，必须彻底消灭它！",
+        "target_tag": "demogorgon_boss_entity",
+        "title": "最终之战：魔王",
+        "description": "真正的魔王现身了！为了救出威尔，必须彻底消灭它！",
         "enemies": [
           {
-            "type": "minecraft:wither",
-            "count": 10,
-            "spawn_radius": 5
-          },
-          {
-            "type": "minecraft:phantom",
-            "count": 10,
-            "spawn_radius": 3
+            "type": "demogorgon_boss",
+            "count": 1,
+            "spawn_radius": 5,
+            "tags": [
+              "demogorgon_boss_entity"
+            ]
           }
         ],
         "arena_bounds": {
@@ -727,6 +1153,58 @@
           "type": "TITLE",
           "title": "§4魔王降临",
           "subtitle": "决死一战"
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar add boss_{instance_id_safe} {\"text\":\"§4§l魔王\"}",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar set boss_{instance_id_safe} color red",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar set boss_{instance_id_safe} style notched_10",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar set boss_{instance_id_safe} max 500",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar set boss_{instance_id_safe} value 500",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar set boss_{instance_id_safe} players @a",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "easy_npc scale @e[tag=demogorgon_boss_entity,tag=instance_{instance_id},limit=1] main 1.96",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "execute store result bossbar boss_{instance_id_safe} value run data get entity @e[tag=demogorgon_boss_entity,tag=instance_{instance_id},limit=1] Health",
+          "as_op": true
+        },
+        {
+          "type": "COMMAND",
+          "command": "bossbar remove boss_{instance_id_safe}",
+          "as_op": true
+        }
+      ],
+      "on_exit": [
+        {
+          "type": "COMMAND",
+          "command": "bossbar remove boss_{instance_id_safe}",
+          "as_op": true
         }
       ],
       "edges": [
@@ -745,6 +1223,8 @@
       "data": {
         "duration_ticks": 200,
         "message": "你成功救出了威尔，并将魔怪赶回了阴影！\\n\\n霍金斯终于恢复了平静...暂时。\\n\\n恭喜完成任务！",
+        "fade_in_ticks": 0,
+        "fade_out_ticks": 0,
         "is_ending": true,
         "ending_type": "success",
         "rewards": [
@@ -766,6 +1246,11 @@
       },
       "on_enter": [
         {
+          "type": "COMMAND",
+          "command": "easy_npc delete @e[tag=instance_{instance_id}]",
+          "as_op": true
+        },
+        {
           "type": "TITLE",
           "title": "§6传奇终结",
           "subtitle": "霍金斯英雄"
@@ -776,7 +1261,7 @@
         },
         {
           "type": "MESSAGE",
-          "text": "§e[成就] §f你已救出了威尔·拜尔斯！",
+          "text": "§f你已救出了威尔·拜尔斯！",
           "voiceover": "stranger_things_hawkins/instance_complete_enter_msg_2"
         }
       ]

@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.phys.Vec3;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,14 +17,20 @@ public class SpawnNPCAction implements NodeAction {
     private final Vec3 position;
     private final float yaw;
     private final float pitch;
+    private final List<String> tags;
     private java.util.UUID instanceId;
     
     public SpawnNPCAction(String npcTemplate, String dimension, Vec3 position, float yaw, float pitch) {
+        this(npcTemplate, dimension, position, yaw, pitch, List.of());
+    }
+    
+    public SpawnNPCAction(String npcTemplate, String dimension, Vec3 position, float yaw, float pitch, List<String> tags) {
         this.npcTemplate = npcTemplate;
         this.dimension = dimension;
         this.position = position;
         this.yaw = yaw;
         this.pitch = pitch;
+        this.tags = new ArrayList<>(tags);
     }
     
     public void setInstanceId(java.util.UUID instanceId) {
@@ -78,9 +85,24 @@ public class SpawnNPCAction implements NodeAction {
             
             if (spawnedEntity != null) {
                 // Success! Add tags
-                spawnedEntity.addTag("story_enemy");
+                List<String> resolvedTags = new ArrayList<>();
+                for (String tag : tags) {
+                    if (tag == null || tag.isEmpty()) continue;
+                    if (instanceId != null) {
+                        resolvedTags.add(tag.replace("{instance_id}", instanceId.toString()));
+                    } else {
+                        resolvedTags.add(tag);
+                    }
+                }
+                if (!resolvedTags.contains("story_entity")) {
+                    resolvedTags.add("story_entity");
+                }
                 if (instanceId != null) {
-                    spawnedEntity.addTag("instance_" + instanceId.toString());
+                    resolvedTags.add("instance_" + instanceId.toString());
+                }
+                
+                for (String tag : resolvedTags) {
+                    spawnedEntity.addTag(tag);
                 }
                 
                 com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.info(
@@ -94,31 +116,8 @@ public class SpawnNPCAction implements NodeAction {
                 spawnedEntity.teleportTo(level, position.x, position.y, position.z, java.util.Set.of(), yaw, pitch);
                 
             } else {
-                // Fallback to command if API fails using the NEW command syntax
-                StringBuilder tags = new StringBuilder("[\"story_enemy\"");
-                if (instanceId != null) {
-                    tags.append(",\"instance_").append(instanceId.toString()).append("\"");
-                }
-                tags.append("]");
-                
-                String nbt = String.format("{Tags:%s}", tags.toString());
-                
-                // Use the new syntax: easy_npc template spawn <template> <x> <y> <z> <nbt>
-                // Enforce US Locale for coordinates to ensure '.' usage
-                String cmd = String.format(java.util.Locale.US,
-                    "easy_npc template spawn %s %.2f %.2f %.2f %s", 
-                    npcTemplate, position.x, position.y, position.z, nbt
-                );
-                
-                // Execute in the correct dimension
-                String fullCmd = String.format("execute in %s run %s", dimension, cmd);
-                
-                com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.info("[SpawnNPCAction] Executing fallback command: {}", fullCmd);
-                
-                server.getCommands().performPrefixedCommand(
-                    server.createCommandSourceStack().withSuppressedOutput().withLevel(level).withPermission(2), 
-                    fullCmd
-                );
+                com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.error(
+                    "[SpawnNPCAction] API spawn returned null for template '{}'", npcTemplate);
             }
         } catch (Exception e) {
             com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.error(
@@ -138,6 +137,13 @@ public class SpawnNPCAction implements NodeAction {
         json.addProperty("z", position.z);
         json.addProperty("yaw", yaw);
         json.addProperty("pitch", pitch);
+        if (!tags.isEmpty()) {
+            var tagsArray = new com.google.gson.JsonArray();
+            for (String tag : tags) {
+                tagsArray.add(tag);
+            }
+            json.add("tags", tagsArray);
+        }
         return json;
     }
     
@@ -150,6 +156,15 @@ public class SpawnNPCAction implements NodeAction {
         float yaw = json.has("yaw") ? json.get("yaw").getAsFloat() : 0;
         float pitch = json.has("pitch") ? json.get("pitch").getAsFloat() : 0;
         
-        return new SpawnNPCAction(template, dim, new Vec3(x, y, z), yaw, pitch);
+        List<String> tags = new ArrayList<>();
+        if (json.has("tags") && json.get("tags").isJsonArray()) {
+            for (var elem : json.getAsJsonArray("tags")) {
+                if (elem.isJsonPrimitive()) {
+                    tags.add(elem.getAsString());
+                }
+            }
+        }
+        
+        return new SpawnNPCAction(template, dim, new Vec3(x, y, z), yaw, pitch, tags);
     }
 }

@@ -28,6 +28,8 @@ public record OpenUIPayload(String screenType, String extraData) implements Cust
     public static final String SCREEN_HUD_SHOW = "hud_show";
     public static final String SCREEN_HUD_HIDE = "hud_hide";
     public static final String SCREEN_VICTORY = "victory";
+    public static final String SCREEN_DEFEAT = "defeat";
+
     
     private static void write(FriendlyByteBuf buf, OpenUIPayload payload) {
         buf.writeUtf(payload.screenType);

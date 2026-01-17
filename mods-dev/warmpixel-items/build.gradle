@@ -51,6 +51,12 @@ jar {
     }
 }
 
+task copyJarToMods(type: Copy) {
+    dependsOn remapJar
+    from remapJar
+    into "../../mods"
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {

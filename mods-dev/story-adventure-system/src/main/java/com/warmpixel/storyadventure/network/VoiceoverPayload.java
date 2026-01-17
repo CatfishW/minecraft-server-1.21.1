@@ -29,7 +29,7 @@ public record VoiceoverPayload(
         buf.writeUtf(payload.soundPath);
         buf.writeFloat(payload.volume);
         buf.writeFloat(payload.pitch);
-        buf.writeUtf(payload.characterId);
+        buf.writeUtf(payload.characterId != null ? payload.characterId : "");
     }
     
     public static VoiceoverPayload read(FriendlyByteBuf buf) {

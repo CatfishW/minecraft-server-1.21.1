@@ -12,7 +12,7 @@
     "/config/physicsmod/*.json",
     "/resourcepacks/*.zip",
     "/config/easy_npc/skin/**",
-    "/config/storyadventure/voiceovers/**"
+    "/config/storyadventure/profiles/**"
   ],
   "allowEditsInFiles": [
     "/options.txt",

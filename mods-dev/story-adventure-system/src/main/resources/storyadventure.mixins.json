@@ -10,10 +10,11 @@
         "CinematicInputMixin",
         "CinematicMinecraftMixin",
         "CinematicGuiMixin",
-        "CinematicItemInHandRendererMixin",
-        "SoundBufferLibraryMixin"
+        "CinematicItemInHandRendererMixin"
     ],
-    "server": [],
+    "server": [
+        "StoryVehicleProtectionMixin"
+    ],
     "injectors": {
         "defaultRequire": 1
     }

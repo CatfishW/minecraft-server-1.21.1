@@ -8,8 +8,9 @@ import java.util.List;
 
 /**
  * Stranger Things themed dialogue screen for NPC conversations.
- * Features typewriter text effect, neon accents, and custom choice buttons.
+ * Features profile images, typewriter text effect, neon accents, and custom choice buttons.
  */
+import net.minecraft.resources.ResourceLocation;
 public class StrangerDialogueScreen extends StrangerScreen {
     
     private static final int PANEL_MARGIN = 40;
@@ -20,17 +21,28 @@ public class StrangerDialogueScreen extends StrangerScreen {
     private String npcName;
     private String dialogueText;
     private List<DialogueChoice> choices = new ArrayList<>();
+    private ResourceLocation profileTexture;
     
     // Typewriter effect
     private int displayedCharacters = 0;
     private long lastCharTime = 0;
-    private static final long CHAR_DELAY_MS = 30;
+    private static final long CHAR_DELAY_MS = 25;
     private boolean textComplete = false;
     
     public StrangerDialogueScreen(String npcName, String dialogueText) {
+        this(npcName, dialogueText, null);
+    }
+    
+    public StrangerDialogueScreen(String npcName, String dialogueText, String profileId) {
         super(Component.literal(npcName));
         this.npcName = npcName;
-        this.dialogueText = dialogueText;
+        // Clean up text: replace [LF] markers with real newlines, and handle escaped newlines
+        this.dialogueText = dialogueText.replace("[LF]", "\n").replace("\\n", "\n");
+        
+        if (profileId != null && !profileId.isEmpty()) {
+            this.profileTexture = com.warmpixel.storyadventure.client.util.ExternalTextureLoader.getProfileTexture(profileId);
+            com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.info("Opening dialogue for NPC '{}' with profile '{}'. Texture loaded: {}", npcName, profileId, this.profileTexture);
+        }
     }
     
     public void addChoice(String choiceId, String choiceText, Runnable onSelect) {
@@ -49,8 +61,12 @@ public class StrangerDialogueScreen extends StrangerScreen {
         super.init();
         
         // Initialize choice buttons (hidden until text complete)
-        int choiceY = height - PANEL_MARGIN - DIALOGUE_BOX_HEIGHT + 50;
-        int choiceWidth = width - PANEL_MARGIN * 4;
+        int boxWidth = Math.min(width - PANEL_MARGIN * 2, 400);
+        int boxHeight = DIALOGUE_BOX_HEIGHT;
+        // Move box up if there are multiple choices to prevent bottom cutoff
+        int boxY = height - PANEL_MARGIN - boxHeight - (choices.size() * 30);
+        int choiceY = boxY + boxHeight + 8;
+        int choiceWidth = Math.min(boxWidth - 40, 280); // Dynamic width based on box size
         
         for (int i = 0; i < choices.size(); i++) {
             DialogueChoice choice = choices.get(i);
@@ -75,15 +91,34 @@ public class StrangerDialogueScreen extends StrangerScreen {
         updateTypewriter();
         
         // Render dialogue box
-        int boxX = PANEL_MARGIN;
-        int boxY = height - PANEL_MARGIN - DIALOGUE_BOX_HEIGHT;
-        int boxWidth = width - PANEL_MARGIN * 2;
+        int boxWidth = Math.min(width - PANEL_MARGIN * 2, 400);
+        int boxHeight = DIALOGUE_BOX_HEIGHT;
+        int boxX = (width - boxWidth) / 2;
+        int boxY = height - PANEL_MARGIN - boxHeight - (choices.size() * 30); // Move up to make room for buttons
         
         // Draw dialogue box background
-        graphics.fill(boxX, boxY, boxX + boxWidth, boxY + DIALOGUE_BOX_HEIGHT, 0xE0080808);
+        graphics.fill(boxX, boxY, boxX + boxWidth, boxY + boxHeight, 0xE0080808);
         
         // Draw box border
-        drawBoxBorder(graphics, boxX, boxY, boxWidth, DIALOGUE_BOX_HEIGHT);
+        drawBoxBorder(graphics, boxX, boxY, boxWidth, boxHeight);
+        
+        int textX = boxX + 15;
+        int textWidth = boxWidth - 30;
+        
+        // Render profile image if available
+        if (profileTexture != null) {
+            int profileSize = 80;
+            int profileX = boxX + 15;
+            int profileY = boxY + (boxHeight - profileSize) / 2;
+            
+            // Draw profile frame
+            graphics.fill(profileX - 2, profileY - 2, profileX + profileSize + 2, profileY + profileSize + 2, COLOR_NEON_RED);
+            graphics.blit(profileTexture, profileX, profileY, 0, 0, profileSize, profileSize, profileSize, profileSize);
+            
+            // Adjust text position
+            textX = profileX + profileSize + 15;
+            textWidth = boxWidth - (textX - boxX) - 15;
+        }
         
         // Draw NPC name badge
         int nameWidth = font.width(npcName) + 16;
@@ -93,15 +128,14 @@ public class StrangerDialogueScreen extends StrangerScreen {
         
         // Draw dialogue text with typewriter effect
         String displayText = dialogueText.substring(0, Math.min(displayedCharacters, dialogueText.length()));
-        drawWrappedText(graphics, displayText, boxX + 15, boxY + 12, boxWidth - 30, COLOR_TEXT_BODY);
+        drawWrappedText(graphics, displayText, textX, boxY + 20, textWidth, COLOR_TEXT_BODY);
         
         // Show blinking cursor if not complete
         if (!textComplete) {
-            long blink = (System.currentTimeMillis() / 500) % 2;
+            long blink = (System.currentTimeMillis() / 400) % 2;
             if (blink == 0) {
-                String cursorText = displayText + "▌";
-                int cursorX = boxX + 15 + font.width(getLastLine(displayText));
-                int cursorY = boxY + 12 + getLineCount(displayText, boxWidth - 30) * 10;
+                int cursorY = boxY + 20 + (getLineCount(displayText, textWidth) - 1) * 10;
+                int cursorX = textX + font.width(getLastLine(displayText, textWidth));
                 graphics.drawString(font, "▌", cursorX, cursorY, COLOR_NEON_RED);
             }
         }
@@ -152,27 +186,36 @@ public class StrangerDialogueScreen extends StrangerScreen {
     
     private List<String> wrapText(String text, int maxWidth) {
         List<String> lines = new ArrayList<>();
-        StringBuilder current = new StringBuilder();
+        // Split by newlines first to honor manual line breaks
+        String[] paragraphs = text.split("\n", -1);
         
-        for (int i = 0; i < text.length(); i++) {
-            char c = text.charAt(i);
-            String test = current.toString() + c;
-            
-            if (font.width(test) <= maxWidth) {
-                current.append(c);
-            } else {
-                if (!current.isEmpty()) lines.add(current.toString());
-                current = new StringBuilder(String.valueOf(c));
+        for (String paragraph : paragraphs) {
+            if (paragraph.isEmpty()) {
+                lines.add("");
+                continue;
             }
+            
+            StringBuilder current = new StringBuilder();
+            for (int i = 0; i < paragraph.length(); i++) {
+                char c = paragraph.charAt(i);
+                String test = current.toString() + c;
+                
+                if (font.width(test) <= maxWidth) {
+                    current.append(c);
+                } else {
+                    if (!current.isEmpty()) lines.add(current.toString());
+                    current = new StringBuilder(String.valueOf(c));
+                }
+            }
+            if (!current.isEmpty()) lines.add(current.toString());
         }
         
-        if (!current.isEmpty()) lines.add(current.toString());
         return lines;
     }
     
-    private String getLastLine(String text) {
-        int lastNewline = text.lastIndexOf('\n');
-        return lastNewline >= 0 ? text.substring(lastNewline + 1) : text;
+    private String getLastLine(String text, int maxWidth) {
+        List<String> lines = wrapText(text, maxWidth);
+        return lines.isEmpty() ? "" : lines.get(lines.size() - 1);
     }
     
     private int getLineCount(String text, int maxWidth) {

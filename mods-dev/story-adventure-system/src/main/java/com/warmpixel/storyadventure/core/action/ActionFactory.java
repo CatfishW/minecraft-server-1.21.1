@@ -24,6 +24,7 @@ public class ActionFactory {
         register("TELEPORT", TeleportAction::fromJson);
         register("GIVE_ITEM", GiveItemAction::fromJson);
         register("SPAWN_NPC", SpawnNPCAction::fromJson);
+        register("DESPAWN_ENTITIES", DespawnEntitiesAction::fromJson);
     }
     
     public static void register(String type, Function<JsonObject, NodeAction> parser) {
@@ -69,6 +70,7 @@ public class ActionFactory {
             case "TELEPORT" -> "传送玩家";
             case "SPAWN_NPC" -> "生成NPC";
             case "GIVE_ITEM" -> "给予物品";
+            case "DESPAWN_ENTITIES" -> "清理实体";
             case "EFFECT" -> "添加效果";
             case "PARTICLE" -> "播放粒子";
             default -> type;
@@ -113,6 +115,11 @@ public class ActionFactory {
                 obj.addProperty("x", 0);
                 obj.addProperty("y", 64);
                 obj.addProperty("z", 0);
+            }
+            case "DESPAWN_ENTITIES" -> {
+                var tags = new com.google.gson.JsonArray();
+                tags.add("story_entity");
+                obj.add("tags", tags);
             }
         }
         

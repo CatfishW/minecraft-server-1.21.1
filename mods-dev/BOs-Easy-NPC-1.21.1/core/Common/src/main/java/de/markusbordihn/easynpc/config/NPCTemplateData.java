@@ -404,12 +404,16 @@ public class NPCTemplateData {
     // Faction-based targeting
     private boolean attackHostileFactions = false;
     private String[] hostileFactions;
+    private String attackType;
     
     public boolean isAttackHostileFactions() { return attackHostileFactions; }
     public void setAttackHostileFactions(boolean attackHostileFactions) { this.attackHostileFactions = attackHostileFactions; }
     
     public String[] getHostileFactions() { return hostileFactions; }
     public void setHostileFactions(String[] hostileFactions) { this.hostileFactions = hostileFactions; }
+
+    public String getAttackType() { return attackType; }
+    public void setAttackType(String attackType) { this.attackType = attackType; }
   }
   
   /**

@@ -50,7 +50,7 @@ public class NetworkHandler {
         PayloadTypeRegistry.playC2S().register(VictoryConfirmPayload.TYPE, VictoryConfirmPayload.STREAM_CODEC);
         
         // Cutscene payload (server to client)
-        PayloadTypeRegistry.playS2C().register(CutscenePayload.TYPE, CutscenePayload.CODEC);
+        PayloadTypeRegistry.playS2C().register(CutscenePayload.TYPE, CutscenePayload.STREAM_CODEC);
         
         // Voiceover payload (server to client)
         PayloadTypeRegistry.playS2C().register(VoiceoverPayload.TYPE, VoiceoverPayload.STREAM_CODEC);
@@ -380,11 +380,11 @@ public class NetworkHandler {
      */
     public static void sendCutsceneStart(ServerPlayer player, com.google.gson.JsonObject cameraPath, 
                                           boolean skippable, boolean letterbox, 
-                                          int fadeInTicks, int fadeOutTicks, String instanceId) {
+                                          int fadeInTicks, int fadeOutTicks, String instanceId, String voiceover) {
         if (player != null && player.connection != null) {
-            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks);
+            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover);
             ServerPlayNetworking.send(player, payload);
-            StoryAdventureMod.LOGGER.info("Sent cutscene START to {}", player.getName().getString());
+            StoryAdventureMod.LOGGER.info("Sent cutscene START to {} (voiceover: {})", player.getName().getString(), voiceover);
         }
     }
     

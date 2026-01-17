@@ -13,14 +13,16 @@ public class MessageAction implements NodeAction {
     
     private final String text;
     private final boolean actionBar;
+    private final String voiceover;
     
     public MessageAction(String text) {
-        this(text, false);
+        this(text, false, null);
     }
     
-    public MessageAction(String text, boolean actionBar) {
+    public MessageAction(String text, boolean actionBar, String voiceover) {
         this.text = text;
         this.actionBar = actionBar;
+        this.voiceover = voiceover;
     }
     
     @Override
@@ -30,6 +32,11 @@ public class MessageAction implements NodeAction {
     
     @Override
     public void execute(List<ServerPlayer> players) {
+        // Play voiceover if specified
+        if (voiceover != null && !voiceover.isEmpty() && !players.isEmpty()) {
+            new PlayVoiceoverAction(voiceover, "narrator").execute(players);
+        }
+
         for (ServerPlayer player : players) {
             String processed = text.replace("{player}", player.getName().getString());
             
@@ -47,17 +54,19 @@ public class MessageAction implements NodeAction {
         obj.addProperty("type", "MESSAGE");
         obj.addProperty("text", text);
         if (actionBar) obj.addProperty("action_bar", true);
+        if (voiceover != null && !voiceover.isEmpty()) obj.addProperty("voiceover", voiceover);
         return obj;
     }
     
     @Override
     public String getSummary() {
-        return "消息: " + (text.length() > 25 ? text.substring(0, 23) + ".." : text);
+        return (voiceover != null && !voiceover.isEmpty() ? "🔊 " : "消息: ") + (text.length() > 25 ? text.substring(0, 23) + ".." : text);
     }
     
     public static MessageAction fromJson(JsonObject obj) {
         String text = obj.has("text") ? obj.get("text").getAsString() : "";
         boolean actionBar = obj.has("action_bar") && obj.get("action_bar").getAsBoolean();
-        return new MessageAction(text, actionBar);
+        String voiceover = obj.has("voiceover") ? obj.get("voiceover").getAsString() : null;
+        return new MessageAction(text, actionBar, voiceover);
     }
 }

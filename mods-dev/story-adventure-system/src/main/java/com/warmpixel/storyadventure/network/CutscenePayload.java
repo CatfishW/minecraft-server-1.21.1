@@ -18,7 +18,8 @@ public record CutscenePayload(
     boolean skippable,       // Whether the cutscene can be skipped
     boolean letterbox,       // Enable letterbox bars
     int fadeInTicks,         // Fade in duration
-    int fadeOutTicks         // Fade out duration
+    int fadeOutTicks,        // Fade out duration
+    String voiceover         // Optional voiceover path
 ) implements CustomPacketPayload {
     
     public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath("storyadventure", "cutscene");
@@ -26,30 +27,32 @@ public record CutscenePayload(
     
     private static final Gson GSON = new Gson();
     
-    public static final StreamCodec<FriendlyByteBuf, CutscenePayload> CODEC = new StreamCodec<>() {
-        @Override
-        public CutscenePayload decode(FriendlyByteBuf buf) {
-            String action = buf.readUtf();
-            String instanceId = buf.readUtf();
-            String cameraPathJson = buf.readUtf();
-            boolean skippable = buf.readBoolean();
-            boolean letterbox = buf.readBoolean();
-            int fadeInTicks = buf.readVarInt();
-            int fadeOutTicks = buf.readVarInt();
-            return new CutscenePayload(action, instanceId, cameraPathJson, skippable, letterbox, fadeInTicks, fadeOutTicks);
-        }
-        
-        @Override
-        public void encode(FriendlyByteBuf buf, CutscenePayload payload) {
-            buf.writeUtf(payload.action());
-            buf.writeUtf(payload.instanceId());
-            buf.writeUtf(payload.cameraPathJson());
-            buf.writeBoolean(payload.skippable());
-            buf.writeBoolean(payload.letterbox());
-            buf.writeVarInt(payload.fadeInTicks());
-            buf.writeVarInt(payload.fadeOutTicks());
-        }
-    };
+    public static final StreamCodec<FriendlyByteBuf, CutscenePayload> STREAM_CODEC = StreamCodec.of(
+        CutscenePayload::write, CutscenePayload::read
+    );
+    
+    public static void write(FriendlyByteBuf buf, CutscenePayload payload) {
+        buf.writeUtf(payload.action());
+        buf.writeUtf(payload.instanceId());
+        buf.writeUtf(payload.cameraPathJson());
+        buf.writeBoolean(payload.skippable());
+        buf.writeBoolean(payload.letterbox());
+        buf.writeVarInt(payload.fadeInTicks());
+        buf.writeVarInt(payload.fadeOutTicks());
+        buf.writeUtf(payload.voiceover() != null ? payload.voiceover() : "");
+    }
+    
+    public static CutscenePayload read(FriendlyByteBuf buf) {
+        String action = buf.readUtf();
+        String instanceId = buf.readUtf();
+        String cameraPathJson = buf.readUtf();
+        boolean skippable = buf.readBoolean();
+        boolean letterbox = buf.readBoolean();
+        int fadeInTicks = buf.readVarInt();
+        int fadeOutTicks = buf.readVarInt();
+        String voiceover = buf.readUtf();
+        return new CutscenePayload(action, instanceId, cameraPathJson, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover);
+    }
     
     @Override
     public Type<? extends CustomPacketPayload> type() {
@@ -63,23 +66,23 @@ public record CutscenePayload(
      */
     public static CutscenePayload start(String instanceId, JsonObject cameraPath, 
                                          boolean skippable, boolean letterbox,
-                                         int fadeInTicks, int fadeOutTicks) {
+                                         int fadeInTicks, int fadeOutTicks, String voiceover) {
         String pathJson = cameraPath != null ? GSON.toJson(cameraPath) : "{}";
-        return new CutscenePayload("START", instanceId, pathJson, skippable, letterbox, fadeInTicks, fadeOutTicks);
+        return new CutscenePayload("START", instanceId, pathJson, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover);
     }
     
     /**
      * Create a STOP cutscene payload.
      */
     public static CutscenePayload stop(String instanceId) {
-        return new CutscenePayload("STOP", instanceId, "", true, false, 0, 0);
+        return new CutscenePayload("STOP", instanceId, "", true, false, 0, 0, "");
     }
     
     /**
      * Create a SKIP cutscene payload.
      */
     public static CutscenePayload skip(String instanceId) {
-        return new CutscenePayload("SKIP", instanceId, "", true, false, 0, 0);
+        return new CutscenePayload("SKIP", instanceId, "", true, false, 0, 0, "");
     }
     
     /**

@@ -1,0 +1,51 @@
+{
+    "name": "§4§l魔王",
+    "entityType": "easy_npc:zombie",
+    "faction": "bandit",
+    "description": "The ultimate Demogorgon boss from the Upside Down.",
+    "skin": {
+        "type": "CUSTOM",
+        "textureId": "demogorgon"
+    },
+    "attributes": {
+        "maxHealth": 10000.0,
+        "movementSpeed": 0.4,
+        "attackDamage": 25.0,
+        "armor": 10.0,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": false,
+        "nameVisibility": "ALWAYS"
+    },
+    "equipment": {},
+    "objectives": {
+        "attackHostileMobs": false,
+        "attackPlayers": true,
+        "attackHostileFactions": true,
+        "hostileFactions": [
+            "guards",
+            "villagers",
+            "default"
+        ],
+        "returnToSpawn": false,
+        "wanderRange": 50.0,
+        "useCustomAttack": false,
+        "attackRadius": 40.0,
+        "attackType": "MELEE_ATTACK"
+    },
+    "story": "",
+    "dialog": {
+        "greeting": "",
+        "buttons": []
+    },
+    "drop": {
+        "item": {
+            "item": "minecraft:nether_star",
+            "count": 1
+        },
+        "minCount": 1,
+        "maxCount": 1,
+        "chance": 1.0,
+        "playerKillOnly": true
+    }
+}

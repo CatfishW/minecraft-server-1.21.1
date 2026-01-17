@@ -65,6 +65,14 @@ public class CombatNodeHandler implements NodeHandler {
                 int count = enemy.has("count") ? enemy.get("count").getAsInt() : 1;
                 double spawnRadius = enemy.has("spawn_radius") ? enemy.get("spawn_radius").getAsDouble() : 10.0;
                 
+                // Collect additional tags if specified
+                java.util.List<String> extraTags = new java.util.ArrayList<>();
+                if (enemy.has("tags") && enemy.get("tags").isJsonArray()) {
+                    for (var tagElem : enemy.getAsJsonArray("tags")) {
+                        extraTags.add(tagElem.getAsString());
+                    }
+                }
+                
                 StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Spawning {} x {} with radius {}", count, entityType, spawnRadius);
                 
                 for (int i = 0; i < count; i++) {
@@ -77,24 +85,88 @@ public class CombatNodeHandler implements NodeHandler {
                     int groundY = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING, (int)spawnX, (int)spawnZ);
                     double spawnY = Math.max(centerY - 5, Math.min(centerY + 5, groundY)); 
                     
-                    String cmd;
+                    // Collect all tags to apply
+                    java.util.List<String> allTags = new java.util.ArrayList<>();
+                    allTags.add("story_entity");
+                    allTags.add("story_enemy");
+                    allTags.add("instance_" + instance.getInstanceId().toString());
+                    allTags.addAll(extraTags);
+                    
                     // If type has a colon (e.g. minecraft:zombie), assume it's a standard entity.
-                    // If it's a template name (no colon or starts with easy_npc prefix), use the new command.
+                    // If it's a template name (no colon or starts with easy_npc prefix), use NPCTemplateManager API.
+                    net.minecraft.world.entity.Entity spawnedEntity = null;
+                    
                     if (entityType.contains(":") && !entityType.toLowerCase().startsWith("easy_npc:")) {
-                         cmd = String.format("summon %s %.2f %.2f %.2f {Tags:[\"story_enemy\",\"instance_%s\"]}", 
-                            entityType, spawnX, spawnY, spawnZ, instance.getInstanceId().toString());
+                        // Standard entity - use summon command
+                        StringBuilder tagsList = new StringBuilder("[\"story_entity\",\"story_enemy\",\"instance_" + instance.getInstanceId().toString() + "\"");
+                        for (String t : extraTags) {
+                            tagsList.append(",\"").append(t).append("\"");
+                        }
+                        tagsList.append("]");
+                        
+                        String cmd = String.format("summon %s %.2f %.2f %.2f {Tags:%s}", 
+                            entityType, spawnX, spawnY, spawnZ, tagsList.toString());
+                        instance.getServer().getCommands().performPrefixedCommand(
+                            instance.getServer().createCommandSourceStack().withSuppressedOutput(),
+                            cmd
+                        );
                     } else {
-                         // Assume it's an NPC template
-                         String nbt = String.format("{Tags:[\"story_enemy\",\"instance_%s\"]}", instance.getInstanceId().toString());
-                         cmd = String.format("easy_npc template spawn %s %.2f %.2f %.2f %s", 
-                            entityType, spawnX, spawnY, spawnZ, nbt);
+                        // NPC template - use NPCTemplateManager API directly
+                        try {
+                            net.minecraft.server.level.ServerLevel serverLevel = spawnCenter.serverLevel();
+                            spawnedEntity = de.markusbordihn.easynpc.config.NPCTemplateManager.spawnEntityFromTemplate(
+                                serverLevel, entityType, spawnX, spawnY, spawnZ
+                            );
+                            
+                            if (spawnedEntity != null) {
+                                // Add all tags
+                                for (String tag : allTags) {
+                                    spawnedEntity.addTag(tag);
+                                }
+                                StoryAdventureMod.LOGGER.info("[CombatNodeHandler] Successfully spawned NPC '{}' at {},{},{}", 
+                                    entityType, spawnX, spawnY, spawnZ);
+                            } else {
+                                StoryAdventureMod.LOGGER.error("[CombatNodeHandler] Failed to spawn NPC template '{}' - API returned null", entityType);
+                            }
+                        } catch (Exception e) {
+                            StoryAdventureMod.LOGGER.error("[CombatNodeHandler] Error spawning NPC '{}': {}", entityType, e.getMessage());
+                            e.printStackTrace();
+                        }
                     }
                     
-                    instance.getServer().getCommands().performPrefixedCommand(
-                        instance.getServer().createCommandSourceStack().withSuppressedOutput(),
-                        cmd
-                    );
+                    // Apply scale if specified
+                    if (enemy.has("scale")) {
+                        float scale = enemy.get("scale").getAsFloat();
+                        if (spawnedEntity != null) {
+                            // Use entity UUID directly for API-spawned NPCs
+                            String scaleCmd = String.format(java.util.Locale.US, "easy_npc scale %s main %.2f", 
+                                spawnedEntity.getStringUUID(), scale);
+                            instance.getServer().getCommands().performPrefixedCommand(
+                                instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                                scaleCmd
+                            );
+                        } else {
+                            // Fallback for summon-command spawned entities
+                            String scaleCmd = String.format(java.util.Locale.US, "easy_npc scale @e[tag=instance_%s,tag=story_enemy,limit=1,sort=nearest] main %.2f", 
+                                instance.getInstanceId().toString(), scale);
+                            instance.getServer().getCommands().performPrefixedCommand(
+                                instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                                scaleCmd
+                            );
+                        }
+                    }
                     
+                    // Auto-setup bossbar if specified
+                    if (enemy.has("bossbar")) {
+                        String bossLabel = enemy.get("bossbar").getAsString();
+                        String bossId = "boss_" + instance.getInstanceId().toString().replace("-", "_");
+                        setupBossBar(instance, bossId, bossLabel);
+                        // Store boss entity tag if provided for tracking
+                        if (!extraTags.isEmpty()) {
+                            instance.getState().getMetadata().addProperty("boss_entity_tag", extraTags.get(0));
+                        }
+                        instance.getState().getMetadata().addProperty("boss_bar_id", bossId);
+                    }
                     totalToSpawn++;
                 }
             }
@@ -111,6 +183,14 @@ public class CombatNodeHandler implements NodeHandler {
     public void onTick(Instance instance, StageNode node) {
         if (!isCombatActive(instance)) return;
         
+        // Update bossbar if active
+        if (instance.getState().getMetadata().has("boss_bar_id")) {
+            String bossId = instance.getState().getMetadata().get("boss_bar_id").getAsString();
+            String bossTag = instance.getState().getMetadata().has("boss_entity_tag") ? 
+                instance.getState().getMetadata().get("boss_entity_tag").getAsString() : "";
+            updateBossBar(instance, bossId, bossTag);
+        }
+
         int killed = getKilledCount(instance);
         int total = getTotalCount(instance);
         
@@ -141,6 +221,17 @@ public class CombatNodeHandler implements NodeHandler {
             
         switch (action) {
             case "enemy_killed" -> {
+                if (!(data instanceof net.minecraft.world.entity.Entity entity)) return;
+                
+                // Only count entities tagged as story_enemy
+                if (!entity.getTags().contains("story_enemy")) return;
+                
+                // If a specific target tag is required (e.g. for a boss), check it
+                String targetTag = node.getString("target_tag", "");
+                if (!targetTag.isEmpty() && !entity.getTags().contains(targetTag)) {
+                    return;
+                }
+
                 int killed = getKilledCount(instance) + 1;
                 instance.getState().getMetadata().addProperty("combat_killed", killed);
                 
@@ -153,6 +244,10 @@ public class CombatNodeHandler implements NodeHandler {
                 if (killed >= total) {
                     markCombatVictory(instance, node);
                 }
+            }
+            case "sync_hud" -> {
+                // Triggered by death event listener to update lives display
+                syncHudToParty(instance, node);
             }
             case "escape_attempt" -> {
                 if (node.getBoolean("escape_available", false)) {
@@ -210,7 +305,10 @@ public class CombatNodeHandler implements NodeHandler {
         hudJson.append("\"complete\":").append(killed >= total ? "true" : "false").append(",");
         hudJson.append("\"current\":true");
         hudJson.append("}");
-        hudJson.append("]");
+        hudJson.append("],");
+        // Add lives information
+        hudJson.append("\"remainingLives\":").append(instance.getRemainingLives()).append(",");
+        hudJson.append("\"maxLives\":").append(instance.getMaxTeamDeaths());
         hudJson.append("}");
         
         String json = hudJson.toString();
@@ -248,7 +346,44 @@ public class CombatNodeHandler implements NodeHandler {
     
     @Override
     public void onExit(Instance instance, StageNode node) {
+        // Cleanup bossbar if it exists
+        if (instance.getState().getMetadata().has("boss_bar_id")) {
+            String bossId = instance.getState().getMetadata().get("boss_bar_id").getAsString();
+            String removeCmd = String.format("bossbar remove %s", bossId);
+            instance.getServer().getCommands().performPrefixedCommand(
+                instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                removeCmd
+            );
+            instance.getState().getMetadata().remove("boss_bar_id");
+            instance.getState().getMetadata().remove("boss_entity_tag");
+        }
         instance.getState().getMetadata().addProperty("combat_active", false);
+    }
+
+    private void setupBossBar(Instance instance, String bossId, String label) {
+        String addCmd = String.format("bossbar add %s {\"text\":\"%s\"}", bossId, label);
+        instance.getServer().getCommands().performPrefixedCommand(
+            instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2), addCmd);
+        
+        instance.getServer().getCommands().performPrefixedCommand(
+            instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2),
+            String.format("bossbar set %s color red", bossId));
+        
+        instance.getServer().getCommands().performPrefixedCommand(
+            instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2),
+            String.format("bossbar set %s players @a", bossId));
+    }
+
+    private void updateBossBar(Instance instance, String bossId, String bossTag) {
+        // Find boss entity by tag and instance id
+        String selector = bossTag.isEmpty() ? 
+            String.format("@e[tag=instance_%s,tag=story_enemy,limit=1,sort=nearest]", instance.getInstanceId()) :
+            String.format("@e[tag=instance_%s,tag=%s,limit=1]", instance.getInstanceId(), bossTag);
+            
+        String updateCmd = String.format("execute store result bossbar %s value run data get entity %s Health", bossId, selector);
+        instance.getServer().getCommands().performPrefixedCommand(
+            instance.getServer().createCommandSourceStack().withSuppressedOutput().withPermission(2),
+            updateCmd);
     }
     
     @Override

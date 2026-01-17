@@ -13,13 +13,13 @@ import net.minecraft.resources.ResourceLocation;
  */
 public class StrangerButton extends AbstractWidget {
     // Color scheme (Stranger Things neon red theme)
-    private static final int COLOR_NEON_RED = 0xFFE50914;       // Netflix red
-    private static final int COLOR_NEON_GLOW = 0xAAFF3366;      // Pink glow
-    private static final int COLOR_DARK_BG = 0xFF0A0A0A;        // Near black
-    private static final int COLOR_HOVER_BG = 0xFF1A0A0A;       // Slight red tint when hovered
-    private static final int COLOR_TEXT = 0xFFE0E0E0;           // Light gray text
+    private static final int COLOR_NEON_RED = 0xFF3BB6A6;       // Accent teal
+    private static final int COLOR_NEON_GLOW = 0x663BB6A6;      // Soft glow
+    private static final int COLOR_DARK_BG = 0xFF0E1218;        // Neutral dark
+    private static final int COLOR_HOVER_BG = 0xFF151B22;       // Slight lift on hover
+    private static final int COLOR_TEXT = 0xFFE6EEF3;           // Light text
     private static final int COLOR_TEXT_HOVER = 0xFFFFFFFF;     // White on hover
-    private static final int COLOR_BORDER = 0xFF330011;         // Dark red border
+    private static final int COLOR_BORDER = 0xFF1D252E;         // Subtle border
     
     private final Runnable onPress;
     private boolean glowPulse = true;
@@ -39,22 +39,18 @@ public class StrangerButton extends AbstractWidget {
         float pulsePhase = ((System.currentTimeMillis() - creationTime) % 2000) / 2000f;
         float glowIntensity = glowPulse ? (float)(0.5 + 0.5 * Math.sin(pulsePhase * Math.PI * 2)) : 1f;
         
-        // Draw outer glow (when hovered or pulsing)
+        // Draw outer glow (subtle)
         if (hovered || glowPulse) {
-            int glowAlpha = (int)(60 * glowIntensity);
+            int glowAlpha = (int)(36 * glowIntensity);
             int glowColor = (glowAlpha << 24) | (COLOR_NEON_GLOW & 0x00FFFFFF);
-            
-            // Multiple layers for blur effect
-            for (int i = 3; i >= 1; i--) {
-                graphics.fill(getX() - i, getY() - i, getX() + width + i, getY() + height + i, glowColor);
-            }
+            graphics.fill(getX() - 1, getY() - 1, getX() + width + 1, getY() + height + 1, glowColor);
         }
         
         // Draw background
         int bgColor = hovered ? COLOR_HOVER_BG : COLOR_DARK_BG;
         graphics.fill(getX(), getY(), getX() + width, getY() + height, bgColor);
         
-        // Draw border with gradient effect
+        // Draw border
         int borderColor = hovered ? COLOR_NEON_RED : COLOR_BORDER;
         
         // Top border
@@ -66,22 +62,8 @@ public class StrangerButton extends AbstractWidget {
         // Right border
         graphics.fill(getX() + width - 1, getY(), getX() + width, getY() + height, borderColor);
         
-        // Draw corner accents (80s style)
-        if (hovered) {
-            int cornerSize = 4;
-            // Top-left
-            graphics.fill(getX(), getY(), getX() + cornerSize, getY() + 2, COLOR_NEON_RED);
-            graphics.fill(getX(), getY(), getX() + 2, getY() + cornerSize, COLOR_NEON_RED);
-            // Top-right
-            graphics.fill(getX() + width - cornerSize, getY(), getX() + width, getY() + 2, COLOR_NEON_RED);
-            graphics.fill(getX() + width - 2, getY(), getX() + width, getY() + cornerSize, COLOR_NEON_RED);
-            // Bottom-left
-            graphics.fill(getX(), getY() + height - 2, getX() + cornerSize, getY() + height, COLOR_NEON_RED);
-            graphics.fill(getX(), getY() + height - cornerSize, getX() + 2, getY() + height, COLOR_NEON_RED);
-            // Bottom-right
-            graphics.fill(getX() + width - cornerSize, getY() + height - 2, getX() + width, getY() + height, COLOR_NEON_RED);
-            graphics.fill(getX() + width - 2, getY() + height - cornerSize, getX() + width, getY() + height, COLOR_NEON_RED);
-        }
+        // Draw top accent strip
+        graphics.fill(getX() + 1, getY() + 1, getX() + width - 1, getY() + 3, borderColor);
         
         // Draw text centered
         int textColor = hovered ? COLOR_TEXT_HOVER : COLOR_TEXT;

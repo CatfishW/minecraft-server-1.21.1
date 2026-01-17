@@ -101,20 +101,40 @@ public class DialogueNodeHandler implements NodeHandler {
     
     private void openDialogueForAllPlayers(Instance instance, StageNode node) {
         String npcName = node.getString("npc_name", "NPC");
+        String title = node.getString("title", npcName);
         
         // Build dialogue JSON from node data
+        JsonObject data = node.getData();
+
+        // Update HUD first
+        syncHudWithDialogue(instance, node, title);
+
         StringBuilder dialogueJson = new StringBuilder();
         dialogueJson.append("{");
         dialogueJson.append("\"npcName\":\"").append(escapeJson(npcName)).append("\",");
         
+        // Include profile_id if present
+        if (data.has("profile_id")) {
+            dialogueJson.append("\"profileId\":\"").append(escapeJson(data.get("profile_id").getAsString())).append("\",");
+        }
+
+        // Include voiceover if present at root
+        if (data.has("voiceover")) {
+            dialogueJson.append("\"voiceover\":\"").append(escapeJson(data.get("voiceover").getAsString())).append("\",");
+        }
+        
         // Get lines from node
         dialogueJson.append("\"lines\":[");
-        JsonObject data = node.getData();
         if (data.has("lines") && data.get("lines").isJsonArray()) {
             var lines = data.getAsJsonArray("lines");
             for (int i = 0; i < lines.size(); i++) {
                 if (i > 0) dialogueJson.append(",");
-                dialogueJson.append("\"").append(escapeJson(lines.get(i).getAsString())).append("\"");
+                if (lines.get(i).isJsonPrimitive()) {
+                    dialogueJson.append("\"").append(escapeJson(lines.get(i).getAsString())).append("\"");
+                } else {
+                    // Pass through the object as a string (to be parsed on client)
+                    dialogueJson.append(lines.get(i).toString());
+                }
             }
         }
         dialogueJson.append("],");
@@ -146,6 +166,30 @@ public class DialogueNodeHandler implements NodeHandler {
         }
     }
     
+    private void syncHudWithDialogue(Instance instance, StageNode node, String title) {
+        // Build HUD data JSON
+        StringBuilder hudJson = new StringBuilder();
+        hudJson.append("{");
+        hudJson.append("\"title\":\"").append(escapeJson(instance.getGraph().getName())).append("\",");
+        hudJson.append("\"chapter\":\"").append(escapeJson(title)).append("\",");
+        hudJson.append("\"objectives\":[{");
+        hudJson.append("\"text\":\"").append(escapeJson("正在与 " + node.getString("npc_name", "NPC") + " 对话")).append("\",");
+        hudJson.append("\"complete\":false,");
+        hudJson.append("\"current\":true");
+        hudJson.append("}]}");
+        
+        for (UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                NetworkHandler.sendOpenUI(
+                    player, 
+                    OpenUIPayload.SCREEN_HUD_SHOW, 
+                    hudJson.toString()
+                );
+            }
+        }
+    }
+
     private String escapeJson(String str) {
         if (str == null) return "";
         return str.replace("\\", "\\\\")

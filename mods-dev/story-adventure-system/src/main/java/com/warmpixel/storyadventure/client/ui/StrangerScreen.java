@@ -14,15 +14,15 @@ import java.util.List;
  */
 public abstract class StrangerScreen extends Screen {
     // Stranger Things color palette
-    protected static final int COLOR_BG_DARK = 0xF0050505;       // Near black with transparency
-    protected static final int COLOR_BG_GRADIENT = 0xF0100808;   // Dark red tint
-    protected static final int COLOR_NEON_RED = 0xFFE50914;      // Netflix/Stranger Things red
-    protected static final int COLOR_NEON_PINK = 0xFFFF3366;     // Neon pink accent
-    protected static final int COLOR_TEXT_TITLE = 0xFFE50914;    // Red title text
-    protected static final int COLOR_TEXT_BODY = 0xFFCCCCCC;     // Light gray body
-    protected static final int COLOR_TEXT_DIM = 0xFF666666;      // Dimmed text
-    protected static final int COLOR_BORDER = 0xFF330011;        // Dark red border
-    protected static final int COLOR_SCANLINE = 0x08FFFFFF;      // CRT scanline effect
+    protected static final int COLOR_BG_DARK = 0xF0080A0E;       // Neutral dark base
+    protected static final int COLOR_BG_GRADIENT = 0xF0101318;   // Subtle cool tint
+    protected static final int COLOR_NEON_RED = 0xFF3BB6A6;      // Accent teal
+    protected static final int COLOR_NEON_PINK = 0xFF6BE0CF;     // Soft accent
+    protected static final int COLOR_TEXT_TITLE = 0xFFE6EEF3;    // Light title text
+    protected static final int COLOR_TEXT_BODY = 0xFFCBD3DA;     // Light gray body
+    protected static final int COLOR_TEXT_DIM = 0xFF8A949C;      // Dimmed text
+    protected static final int COLOR_BORDER = 0xFF1D252E;        // Subtle border
+    protected static final int COLOR_SCANLINE = 0x04FFFFFF;      // Very subtle scanline
     
     protected final List<StrangerButton> strangerButtons = new ArrayList<>();
     protected long screenOpenTime;
@@ -37,9 +37,6 @@ public abstract class StrangerScreen extends Screen {
         // Render dark background with vignette effect
         renderStrangerBackground(graphics);
         
-        // Render CRT scanline effect
-        renderScanlines(graphics);
-        
         // Render title with glow
         renderTitle(graphics);
         
@@ -51,8 +48,6 @@ public abstract class StrangerScreen extends Screen {
         // Render content (subclass implementation)
         renderContent(graphics, mouseX, mouseY, partialTick);
         
-        // Render border frame
-        renderBorderFrame(graphics);
     }
     
     protected void renderStrangerBackground(GuiGraphics graphics) {
@@ -79,18 +74,15 @@ public abstract class StrangerScreen extends Screen {
             graphics.fill(width - inset, 0, width, height, vignetteColor);
         }
         
-        // Subtle red glow in center
-        int glowRadius = 100;
-        int glowColor = 0x10E50914;
-        graphics.fill(centerX - glowRadius, centerY - glowRadius, 
-                     centerX + glowRadius, centerY + glowRadius, glowColor);
+        // Subtle neutral glow in center
+        int glowRadius = 120;
+        int glowColor = 0x0C1D2630;
+        graphics.fill(centerX - glowRadius, centerY - glowRadius,
+            centerX + glowRadius, centerY + glowRadius, glowColor);
     }
     
     protected void renderScanlines(GuiGraphics graphics) {
-        // CRT monitor scanline effect for 80s aesthetic
-        for (int y = 0; y < height; y += 2) {
-            graphics.fill(0, y, width, y + 1, COLOR_SCANLINE);
-        }
+        // Intentionally no-op to keep the UI clean and modern.
     }
     
     protected void renderTitle(GuiGraphics graphics) {
@@ -112,29 +104,11 @@ public abstract class StrangerScreen extends Screen {
         
         // Draw underline accent
         int underlineY = titleY + 12;
-        graphics.fill(titleX - 5, underlineY, titleX + titleWidth + 5, underlineY + 1, COLOR_NEON_RED);
+        graphics.fill(titleX - 4, underlineY, titleX + titleWidth + 4, underlineY + 1, COLOR_NEON_RED);
     }
     
     protected void renderBorderFrame(GuiGraphics graphics) {
-        int margin = 8;
-        int cornerSize = 20;
-        
-        // Corner accents (Stranger Things style)
-        // Top-left
-        graphics.fill(margin, margin, margin + cornerSize, margin + 2, COLOR_NEON_RED);
-        graphics.fill(margin, margin, margin + 2, margin + cornerSize, COLOR_NEON_RED);
-        
-        // Top-right
-        graphics.fill(width - margin - cornerSize, margin, width - margin, margin + 2, COLOR_NEON_RED);
-        graphics.fill(width - margin - 2, margin, width - margin, margin + cornerSize, COLOR_NEON_RED);
-        
-        // Bottom-left
-        graphics.fill(margin, height - margin - 2, margin + cornerSize, height - margin, COLOR_NEON_RED);
-        graphics.fill(margin, height - margin - cornerSize, margin + 2, height - margin, COLOR_NEON_RED);
-        
-        // Bottom-right
-        graphics.fill(width - margin - cornerSize, height - margin - 2, width - margin, height - margin, COLOR_NEON_RED);
-        graphics.fill(width - margin - 2, height - margin - cornerSize, width - margin, height - margin, COLOR_NEON_RED);
+        // Intentionally no-op to avoid heavy corner framing.
     }
     
     /**

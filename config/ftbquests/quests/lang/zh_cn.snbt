@@ -45,6 +45,9 @@
 	]
 	quest.05FD3ACED90B6FDA.quest_subtitle: "森罗美食的buff与debuff"
 	quest.05FD3ACED90B6FDA.title: "我好像获得了一个不得了的效果！"
+	quest.0687F93B8E7C0C2A.quest_desc: ["拿起你的工具，亲手建造属于自己的房子吧！不论是温馨的小木屋、还是精致的庭院，每一块方砖都将记录你的创意与心意。"]
+	quest.0687F93B8E7C0C2A.quest_subtitle: "打造你的温暖小屋"
+	quest.0687F93B8E7C0C2A.title: "造房子咯~"
 	quest.09C89C27729611D8.quest_desc: [
 		"用纸在工作台可以合成菜谱。"
 		""
@@ -522,6 +525,8 @@
 	quest.40EC72980E654D69.quest_desc: [
 		"在WarmPixel中，添加了传送石碑进行传送。"
 		"传送石碑需要摸一下才能激活，这样下次你就可以在已激活的传送石碑里选择另一个已激活的传送石碑进行传送。"
+		""
+		"为了便捷玩家游玩，我们取消了传送石的合成，可直接在&a便民服务中心&r(主城)购买。"
 	]
 	quest.40EC72980E654D69.title: "传送！"
 	quest.410F3A70173C2108.quest_desc: [
@@ -828,6 +833,12 @@
 		"极高的可靠性和强悍的火力压制力使其成为霰弹枪爱好者眼中的顶级利器。"
 	]
 	quest.68E13544F5C1A090.subtitle: "半自动狂怒"
+	quest.6AFB0213E565DAF2.quest_desc: [
+		"在WarmPixel中，我们特地为玩家简化了装饰物的制作流程。"
+		""
+		"现在，您可以前往&a便民服务中心&r(主城)，购买&b装饰物兑换券&r，然后把它放进切石机里即可得到绝大部分装饰物。"
+	]
+	quest.6AFB0213E565DAF2.title: "买建材！"
 	quest.6B595CD19517130E.desc: "高精度狙击步枪。"
 	quest.6B595CD19517130E.subtitle: "狙击步枪系列 - AWP"
 	quest.6B595CD19517130E.title: "AI AWP"
@@ -1295,6 +1306,7 @@
 	task.05E90396F7670416.title: "1"
 	task.0DE6B51B8CCF6817.title: "很方便哦~"
 	task.0E4988CCD2404877.title: "愿你享受生活~"
+	task.0ECE827630DB8F00.title: "先成家，后立业~"
 	task.112539B32461A8F1.title: "我炫炫炫！"
 	task.1F3A6E56E11B270F.title: "感谢有你~"
 	task.229152F9742B7795.title: "敲敲敲！"

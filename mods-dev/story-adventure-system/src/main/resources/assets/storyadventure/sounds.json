@@ -1,12 +1,155 @@
 {
-    "voiceover.narrator": {
+    "voiceover.stranger_things_hawkins.bg_story_1_msg_0": {
         "category": "voice",
-        "subtitle": "Narrator",
-        "sounds": []
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/bg_story_1_msg_0",
+                "stream": true
+            }
+        ]
     },
-    "voiceover.character": {
+    "voiceover.stranger_things_hawkins.bg_story_2_msg_0": {
         "category": "voice",
-        "subtitle": "Character",
-        "sounds": []
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/bg_story_2_msg_0",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.bg_story_3_msg_0": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/bg_story_3_msg_0",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.demogorgon_horde_enter_msg_0": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/demogorgon_horde_enter_msg_0",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.find_hopper_enter_msg_0": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/find_hopper_enter_msg_0",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.find_the_boys_enter_msg_0": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/find_the_boys_enter_msg_0",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.instance_complete_enter_msg_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/instance_complete_enter_msg_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.instance_complete_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/instance_complete_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.meet_hopper_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/meet_hopper_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.meet_joyce_new_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/meet_joyce_new_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.meet_the_boys_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/meet_the_boys_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.meet_will_and_eleven_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/meet_will_and_eleven_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.mirkwood_portal_enter_msg_0": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/mirkwood_portal_enter_msg_0",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.boys_answer_monster_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/boys_answer_monster_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.boys_answer_will_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/boys_answer_will_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.hopper_answer_joyce_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/hopper_answer_joyce_voice",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins.hopper_answer_search_voice": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins/hopper_answer_search_voice",
+                "stream": true
+            }
+        ]
     }
 }

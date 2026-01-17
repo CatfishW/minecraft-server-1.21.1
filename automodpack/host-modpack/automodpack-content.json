@@ -6,1509 +6,12 @@
   "mcVersion": "1.21.1",
   "list": [
     {
-      "file": "/config/easy_npc/skin/humanoid/Lucy_MacLean_ed2fe3b8.png",
-      "size": "11384",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "3c5def2e1dd5606c729369b5a3e9a5d922b7387a"
-    },
-    {
-      "file": "/mods/story-adventure-system-0.1.0.jar",
-      "size": "536440",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "ad67c5c4a1925920f1889d1f807c3d540042c61d",
-      "murmur": "669312243"
-    },
-    {
-      "file": "/mods/refurbished_furniture-fabric-1.21.1-1.0.20.jar",
-      "size": "6959351",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "124492487edcbaa14e04a6fb30c73f25af4fbf1d",
-      "murmur": "3659151876"
-    },
-    {
-      "file": "/mods/modernfix-fabric-5.25.1+mc1.21.1.jar",
-      "size": "471258",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4ab39e9c736e7204146792c545ec5b29fc0a3872",
-      "murmur": "4091424383"
-    },
-    {
-      "file": "/mods/uilib-1.0.1-1.21.1-fabric.jar",
-      "size": "248816",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "63a8473bfbcb3debea51ef661433bbd860460865",
-      "murmur": "739709934"
-    },
-    {
-      "file": "/mods/[钠／Embeddium：动态光源] sodiumdynamiclights-fabric-1.0.10-1.21.1.jar",
-      "size": "899434",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "11bff7127c2d01a97c931cda6012c8d2c3e1f39f",
-      "murmur": "1463640626"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Hancock_86e9f0fa.png",
-      "size": "1043",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "c203f504ed85c5af6dc5303be892b2456d93e53f"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Jesse_Pinkman_b5e10a33.png",
-      "size": "1545",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "03a2fbbe9332dcf12288035c8f23700b0a680a64"
-    },
-    {
-      "file": "/mods/[钠 · 扩展] sodium-extra-fabric-0.6.0+mc1.21.1.jar",
-      "size": "373661",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "66160fac4fdb9ddd854c5ed068fc329d24d09fd1",
-      "murmur": "252571872"
-    },
-    {
-      "file": "/mods/yuushya-modelling-1.21.0-fabric-2.2.0.jar",
-      "size": "377703",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "21e96b6ad83274e887aa9e1c92f3bf520b641316",
-      "murmur": "3558074205"
-    },
-    {
-      "file": "/mods/indium-1.0.35+mc1.21.jar",
-      "size": "105000",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "1bf4b5db91f4e6d7a4f94fe2e96525d22df1cacb",
-      "murmur": "1980880126"
-    },
-    {
-      "file": "/mods/player-animation-lib-fabric-2.0.4+1.21.1.jar",
-      "size": "204541",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "2985c208766cde078a39c22b5ad989b74b7bc490",
-      "murmur": "4232483337"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/meet_joyce_new_voice.ogg",
-      "size": "45896",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "f645d17e6aaaf7c852a4a6082111a9905daa92a9"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Captain_Ironclaw_1308dc9a.png",
-      "size": "2020",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Elder_Stoneheart_4e55bc5a.png",
-      "size": "2020",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
-    },
-    {
-      "file": "/mods/CreativeCore_FABRIC_v2.13.14_mc1.21.1.jar",
-      "size": "1239340",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4be77c0f88b7bcb2a099a9540b2008296b648183",
-      "murmur": "251553544"
-    },
-    {
-      "file": "/config/physicsmod/physics_blocks_client_config.json",
-      "size": "2922666",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "6407c2ea17d4bfd6535cb92de1a035624568c700"
-    },
-    {
-      "file": "/mods/city_vehicles-1.2+1.21.1.jar",
-      "size": "63123",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "b8f5e2c6bab0e6e294a57cbc819119c626d12991",
-      "murmur": "3675717587"
-    },
-    {
-      "file": "/mods/balm-fabric-1.21.1-21.0.56.jar",
-      "size": "773504",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "0377b2e07551dc9fbcb40b94a3d38e098cd85d7e",
-      "murmur": "1247350979"
-    },
-    {
-      "file": "/config/physicsmod/physics_vines_client_config.json",
-      "size": "18610",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "14d9655be64a42f3fdd1a64cbcc8c1719458ffe5"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/David_Madsen_269d62fd.png",
-      "size": "813",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "f56e1df06c1a5adf278c28f5b8f9c8d1f4bc6596"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Ben_Hanscom_95d4a498.png",
-      "size": "1235",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "3fcf297832e2facda3e2582322b64deee9c5f58d"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Hector_Salamanca_c11f1c0d.png",
-      "size": "884",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "50267ad8c796808c7bef2817ee05949445f14305"
-    },
-    {
-      "file": "/mods/SkiesClear-fabric-1.21.1-1.1.2.jar",
-      "size": "990004",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "081f87b55bf8cfd2794f7aa650327ccedbf68b62",
-      "murmur": "2216685280"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Nether_Scout_Blaze_a9be6ed9.png",
-      "size": "2020",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Preston_Garvey_7c934b1c.png",
-      "size": "744",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "359aa5ec149fd0cff8eaa30fd3dae97214ad46e5"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Librarian_Quill_8a487422.png",
-      "size": "2020",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
-    },
-    {
-      "file": "/mods/corndelight-1.21-1.0.0.jar",
-      "size": "134477",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "d4e7f93023e0d567945db7e826df46b6a40e7cc4",
-      "murmur": "2075524555"
-    },
-    {
-      "file": "/mods/epicterrain-0.1.4.jar",
-      "size": "463739",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "a71fa3df06fb56441e1d9b443a4b4245056a7dfa",
-      "murmur": "3524157970"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Will_Byers_1fbd73dd.png",
-      "size": "1544",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "ebf9bbab034f3af537850fab30965aeed61279a5"
-    },
-    {
-      "file": "/mods/display-delight-1.5.0-mc1.21.1.jar",
-      "size": "719295",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "3297615588ea196a8a1712a750b605a6b0cb9354",
-      "murmur": "2097087054"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Skinny_Pete_ad8b918a.png",
-      "size": "350",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "8ba2ce87c8bf34d0e74560f6e70357c0cf40e93c"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Warren_Graham_0b85195a.png",
-      "size": "994",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "a236cbe661beffef7fb3ca1076a7748aa8a20039"
-    },
-    {
-      "file": "/mods/textile_backup-3.1.3-1.21.jar",
-      "size": "1308283",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "f390d2acd7e963d2087580fa94b6e4eafe7ac652",
-      "murmur": "1076578361"
-    },
-    {
-      "file": "/config/physicsmod/physics_server_config.json",
-      "size": "98",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "0cf27aeb14501870eda238b245283ae2284423ed"
-    },
-    {
-      "file": "/mods/[REI物品管理器] RoughlyEnoughItems-16.0.799-fabric.jar",
-      "size": "2451799",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "ea0efe8b13a52e9d8d5a18d062810117a7efec0f",
-      "murmur": "1057235278"
-    },
-    {
-      "file": "/mods/mcw-doors-1.1.2-mc1.21.1fabric.jar",
-      "size": "1223064",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "78ba11ac0d3c60af84956d12a0557fddbff39cd5",
-      "murmur": "3721413290"
-    },
-    {
-      "file": "/mods/coroutil-fabric-1.21.1-1.3.8.jar",
-      "size": "2956258",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "1bb71c0df6959b06915d6d62b8040aa0892f08ae",
-      "murmur": "3456641658"
-    },
-    {
-      "file": "/mods/exposure-fabric-1.21.1-1.9.13.jar",
-      "size": "1968399",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "12ab0a6a56bd08712defb9f5f5526d47f7768325",
-      "murmur": "1619958374"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Belch_Huggins_de451409.png",
-      "size": "489",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "99a3edc025789a708e1e4dac5c7f9cb4071d4ee2"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Jimmy_McGill_f998e992.png",
-      "size": "1622",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "bb44fabac17e17d971697650a45619493988b979"
-    },
-    {
-      "file": "/mods/cloth-config-15.0.140-fabric.jar",
-      "size": "1157166",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "5d82342a2df53fd6df712bfdd583a811572918a4",
-      "murmur": "1877101333"
-    },
-    {
-      "file": "/mods/waystones-fabric-1.21.1-21.1.9.jar",
-      "size": "857292",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "5aedc3d9632de6e02ef4cdaaceaa00b834caf37a",
-      "murmur": "489623822"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Nick_Valentine_33a8e0e8.png",
-      "size": "652",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "e9083c4837b5240d3c4094585ada93bbc0c5b195"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Farmer_Chen_144014d4.png",
-      "size": "1449",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "63b19b529e36005ba93154ddaf3d46f26b749f00"
-    },
-    {
-      "file": "/mods/mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
-      "size": "651571",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "f9be270761e17ad131f186b2537c2ce2f305815a",
-      "murmur": "1706073822"
-    },
-    {
-      "file": "/mods/framework-fabric-1.21.1-0.13.9.jar",
-      "size": "1647872",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "9ff919d5fee807ba36492f302e97fd6519e221e6",
-      "murmur": "528309357"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/meet_hopper_voice.ogg",
-      "size": "52948",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "f3dff079d50a224940acea200d40cfad0f07a304"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Stacey_Ehrmantraut_e6a51676.png",
-      "size": "833",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "733f4c249e4948d464bce5ac445c5b7cbf23ef0a"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Samuel_Raymond_2157cfea.png",
-      "size": "1932",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "966196608a6f4ad9f69945232d24db07073c2893"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Jim_Hopper_420d1d50.png",
-      "size": "2864",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "996279805d7a3851592a688f58a6b6b6df686874"
-    },
-    {
-      "file": "/mods/owo-lib-0.12.15.4+1.21.jar",
-      "size": "1183559",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "45725e6d33b624e565a7a6e5d3627af40814288d",
-      "murmur": "3800197123"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Craig_Kettleman_1e9b8dfb.png",
-      "size": "695",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "fb703f0ea571adda9d40f540bde410ba53c2ba52"
-    },
-    {
-      "file": "/config/physicsmod/physics_client_config.json",
-      "size": "3951",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "de3dddf7cf2e717e9b11c8820214774cfd0d21a3"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Eddie_Munson_b6d74424.png",
-      "size": "876",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "dcdedc8a4a8dc916cb3411ecc3a136b9093dfd25"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Nacho_Varga_68995da5.png",
-      "size": "1366",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "aa4dea33c20c0bbd305115631d6d048b73731ed2"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Nancy_Wheeler_3d23e74b.png",
-      "size": "2508",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "21657a1a8e615f860e47acccf5a55dff731b79b6"
-    },
-    {
-      "file": "/mods/mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
-      "size": "1278810",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "0d47db265d99f75f29c93b37489b5602f37ec4af",
-      "murmur": "2397254641"
-    },
-    {
-      "file": "/mods/beautify-1.3.0+1.21.1.jar",
-      "size": "836013",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "8fb1df342725d8546da7034a3111d15704b41986",
-      "murmur": "2565943545"
-    },
-    {
-      "file": "/mods/ftb-quests-fabric-2101.1.19.jar",
-      "size": "1433860",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "82cf13053b4b51e6f1123c008246b83ee6839193",
-      "murmur": "3456305973"
-    },
-    {
-      "file": "/mods/worldgenfeaturefix-fabric-1.21-1.0.1.jar",
-      "size": "14376",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "80227f4bb529aaa21770be81e44d72ab103de13c",
-      "murmur": "852430779"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Bill_Denbrough_7e00e06c.png",
-      "size": "770",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "5625af942aa494c17b853e4428980d67e173af63"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Strong_7fa6bbc5.png",
-      "size": "1586",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "5f703da1dedad6a0155605f8c4ddadf3828de7a2"
-    },
-    {
       "file": "/config/easy_npc/skin/humanoid/Chloe_Price_a57d0e00.png",
       "size": "1071",
       "type": "config",
       "editable": true,
       "forceCopy": false,
       "sha1": "3e3e07e13422752fa46d1f1f8c8eb34a0ceca8c1"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Mrs_Kersh_3975c12f.png",
-      "size": "1866",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "99bf7eef9d8004d4e1ed3eda6b0e305d92ac9f9b"
-    },
-    {
-      "file": "/mods/yamlconfig-1.2-1.21-fabric.jar",
-      "size": "572349",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "60d4c9b3a1ae75544efa9e72f0481e6ca3f66814",
-      "murmur": "4189247453"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Elder_Maxson_ecbd4dc1.png",
-      "size": "658",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "bbeb3b929ef8631681cb6ae78d3f77611a6bd0ba"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Dustin_Henderson_a14b589d.png",
-      "size": "470",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "81a78e2b36c14ffc5ddb28be574c73aa1ddcc900"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/mirkwood_portal_enter_msg_0.ogg",
-      "size": "25364",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "6d17ec5934e4424bc79c0341d80326ce7c2d66e8"
-    },
-    {
-      "file": "/mods/entity_model_features_1.21-fabric-3.0.10.jar",
-      "size": "488262",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "8369a9db73a1538090feb6f51762a733bcbd3f09",
-      "murmur": "1157512228"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Tyrus_Kitt_d2e3b0d1.png",
-      "size": "1038",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "a19b9f8d0081a41b9ab186b6464e27ca70a62508"
-    },
-    {
-      "file": "/mods/RoughlyEnoughItems-16.0.788-fabric.jar",
-      "size": "2451660",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "77f2691bff5f465ea1f3ece345f2a12567e3a2b6",
-      "murmur": "2403770988"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Frank_Bowers_024879d0.png",
-      "size": "2452",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "fd87b01e5fb1b8917aa95f60ef24530b6372995a"
-    },
-    {
-      "file": "/resourcepacks/server_resource.zip",
-      "size": "19097",
-      "type": "resourcepack",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "c4220012c7d201c32abcc8604f371191cc358747",
-      "murmur": "2292163668"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Joyce_Byers_03fb962b.png",
-      "size": "370",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "576460d5338af38df9a73ac115929c890c853ec7"
-    },
-    {
-      "file": "/mods/warmpixel-auth-1.0.0.jar",
-      "size": "13718297",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "253ce308de748365a1f8d441b5edf91babdce535",
-      "murmur": "3784083668"
-    },
-    {
-      "file": "/mods/Axiom-5.2.1-for-MC1.21.1.jar",
-      "size": "44210201",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "12fc300ced1d9e71abbd4505a623cfed5723d835",
-      "murmur": "3053653728"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/instance_complete_enter_msg_2.ogg",
-      "size": "18466",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "882540fb025bb8b9fa9b256e6a98e42853f162ba"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Lydia_RodarteQuayle_e02cd3fa.png",
-      "size": "3282",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "cb8ba297a8f7c6149fb3f0e03d46f4da90b18105"
-    },
-    {
-      "file": "/config/physicsmod/physics_mobs_client_config.json",
-      "size": "26",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "16a35a8c745f5ea0c579f7da1e23bfa4a6af6a97"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Bus_Driver_70eea669.png",
-      "size": "445",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "d45e43e79b8b120456b0d9ebacebde2900cd1453"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Howard_Hamlin_83325c3e.png",
-      "size": "992",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "c9b683f58c7b7f93b1b10483f7f382f0d651d899"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/The_Wandering_Enchanter_fc0301bd.png",
-      "size": "2020",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
-    },
-    {
-      "file": "/mods/physics-mod-3.0.24-mc-1.21.1-fabric.jar",
-      "size": "61792601",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "2da4ff860fc487b3df82a5f15a4023dba7600249",
-      "murmur": "2104341325"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Armed_Police_ac34813e.png",
-      "size": "5010",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "9cedd6060f9cf2e0c1d268874fd74a0a1d9218f7"
-    },
-    {
-      "file": "/mods/athena-fabric-1.21-4.0.2.jar",
-      "size": "82788",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "d79183521f9bcb043ebdc6438f1987e46c12a067",
-      "murmur": "1560953245"
-    },
-    {
-      "file": "/resourcepacks/furnitures.zip",
-      "size": "3135111",
-      "type": "resourcepack",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "b7583494abea3bc6bf5001f45da29eda2703a092",
-      "murmur": "310172865"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Mike_Wheeler_0b7979ec.png",
-      "size": "729",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "c48726b1b395b12a238ccec5141c47249c06f258"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Todd_Alquist_174057a9.png",
-      "size": "879",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "55e825f296748072f878b99969ed74efbc21da8e"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Skyler_White_4ad73caf.png",
-      "size": "879",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "9d90ab648d94357a4485d24248cb0b0b1dd1132d"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Starter_Helper_a0f64e13.png",
-      "size": "3108",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "3477d0c28521958602c7c52dae9a9ee4301f7863"
-    },
-    {
-      "file": "/mods/itemrestrictions-1.3.2-1.21.1-fabric.jar",
-      "size": "74044",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "1eb1569832a38e1ed439c28573650fe0e3600d5f",
-      "murmur": "265500171"
-    },
-    {
-      "file": "/mods/warmpixel-pay-1.0.0.jar",
-      "size": "11955",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "8f1e5d7d466111a8302ff432dde13784d6b67652",
-      "murmur": "1575164679"
-    },
-    {
-      "file": "/mods/MyNethersDelight-1.21.1-2.0.3+1.7.8.refabricated.jar",
-      "size": "706365",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "ab0cea2a1b945ae357c3f5c97e4e1448d0e28862",
-      "murmur": "262036147"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Billy_Hargrove_2ed3f775.png",
-      "size": "421",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "fefa8d776a2f2f004e423dabf0f3c57e6ac5da24"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Gustavo_Fring_c51e0ae4.png",
-      "size": "924",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "55b85f77d4cbc55083bfd3f24a798799f701e04b"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Murray_Bauman_87daed88.png",
-      "size": "1353",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "d5f1fe2069a4aba7d282d95bbf8b4ce15e751c27"
-    },
-    {
-      "file": "/mods/easy_npc_bundle-fabric-1.21.1-6.6.1.jar",
-      "size": "32331",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "0c757a4e98c5c217cfe03715b83cbaa133af381e",
-      "murmur": "3179544789"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/MacCready_5b099247.png",
-      "size": "1149",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "e404bfa9ae526c49d687c17ed97731825b82d55c"
-    },
-    {
-      "file": "/mods/alternate-current-mc1.21-1.9.0.jar",
-      "size": "51836",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "b3dbc4fc4acfd98f3f6b62bbb4e641ed4df915e8",
-      "murmur": "3015653537"
-    },
-    {
-      "file": "/mods/accessories-fabric-1.1.0-beta.52+1.21.1.jar",
-      "size": "1095894",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "e4c823950882d127f6e4c7a710d33c2c84b9c304",
-      "murmur": "1315853219"
-    },
-    {
-      "file": "/mods/Clumps-fabric-1.21.1-19.0.0.1.jar",
-      "size": "20723",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "14628ba309d876cfefc4cef864a66ef12812066c",
-      "murmur": "1960002860"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Walter_White_Jr_c069889d.png",
-      "size": "1276",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "4e40a5b72dc0f0604e84c25c43ec2f0bbee3d9f7"
-    },
-    {
-      "file": "/mods/chunksfadein-fabric-3.0.20-1.21.jar",
-      "size": "448316",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "b3bd66029744d17b6594494554616be27561e102",
-      "murmur": "831130285"
-    },
-    {
-      "file": "/mods/arc-1.9.5-1.21.1-fabric.jar",
-      "size": "439757",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "7ecbb2ffdacd2987abc47acf410eddba3bf65733",
-      "murmur": "3082230192"
-    },
-    {
-      "file": "/mods/seriousplayeranimations-1.2.0.jar",
-      "size": "159577",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "100e4921ebd0367eee882b8d75311d0b20efda3f",
-      "murmur": "585578152"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Jane_Margolis_0f7a2155.png",
-      "size": "6244",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "26de04648a19302c3e47cc2edf181934e060b58c"
-    },
-    {
-      "file": "/mods/mcw-furniture-3.4.1-mc1.21.1fabric.jar",
-      "size": "2087232",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4c914a4d3bb84103b34346e60c6aa981be8dfa23",
-      "murmur": "778289155"
-    },
-    {
-      "file": "/mods/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
-      "size": "633065",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "18bf1f21cd2db6dcd4e42db85eae54e2a49a48ee",
-      "murmur": "4152126359"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Kate_Marsh_ef402ba5.png",
-      "size": "1293",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "39d63506db9a3974eb78a7024e83c29bcfba3611"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Eleven_1846a3f3.png",
-      "size": "720",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "e62ed0fdff7e61450dacb1c7a601b018b653667d"
-    },
-    {
-      "file": "/mods/fabric-api-0.116.7+1.21.1.jar",
-      "size": "2424884",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "79e9f3e82499fbae5bd667b96a79927ae68f90eb",
-      "murmur": "1538479477"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/find_the_boys_enter_msg_0.ogg",
-      "size": "19942",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "0efd9de0518a0c9a2d6ab2a38c6eac0bfe3cd5ec"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Pennywise_876d04fd.png",
-      "size": "2157",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "746ea2bca83f6453a8138a541139ccc3d3a2bd81"
-    },
-    {
-      "file": "/mods/automobility-0.5.0.h+1.21.1-fabric.jar",
-      "size": "1323587",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "e75acfb15ed700ebed1798b5db3fff157ad750bb",
-      "murmur": "2063780254"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Hayden_Jones_94efe616.png",
-      "size": "968",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "2a7d6cdd5f6c28d1736036be91420aa4d66d4a19"
-    },
-    {
-      "file": "/mods/[钠／Embeddium：附属] sodiumextras-fabric-1.0.8-1.21.1.jar",
-      "size": "876916",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4cf42ca95c94491d0af73aa443d17fca29ad83c0",
-      "murmur": "25641654"
-    },
-    {
-      "file": "/mods/iris-fabric-1.8.8+mc1.21.1.jar",
-      "size": "2690177",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4e0df4011503b4b36ba69877ea7247c1a47fea00",
-      "murmur": "3227894169"
-    },
-    {
-      "file": "/mods/fabrictailor-2.5.0.jar",
-      "size": "123261",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "cd38b5b7b60a2ea68580d11d2e8cc0b008b0532a",
-      "murmur": "4092869020"
-    },
-    {
-      "file": "/mods/ferritecore-7.0.2-hotfix-fabric.jar",
-      "size": "120709",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "48ee764932d0c8ec81a2223dbe333886938e512c",
-      "murmur": "4222391363"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Francesca_Liddy_fa65b3d3.png",
-      "size": "1084",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "2a08df12a95cf5107a104090212a1ec3678f8401"
-    },
-    {
-      "file": "/mods/spark-1.10.109-fabric.jar",
-      "size": "3609981",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "eff42cbeee6fe9a7f3c57031c23200256366dcd1",
-      "murmur": "1396803699"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Paladin_Danse_60d700d1.png",
-      "size": "3708",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "a1c30a565119bd5b567b12690c7e68243febc3ab"
-    },
-    {
-      "file": "/mods/tacz-pack-upgrader-2.0.0.jar",
-      "size": "7160312",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "d37c5a1caa906a5339e2429ed2af18ae57bf794e",
-      "murmur": "3570688778"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Erica_Sinclair_12f7b9e1.png",
-      "size": "992",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "fc544cbc030ace1bd608833952b185cf4139b101"
-    },
-    {
-      "file": "/mods/Item_Obliterator-Fabric_Quilt-MC_1.21-3.1.1.jar",
-      "size": "29943",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "42202c67ef7166ffb5255ada7370b36c9d50110c",
-      "murmur": "3781555978"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Space_Walker_15299f2b.png",
-      "size": "1018",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "89c73c9a5a2dd133591e75993ba79f0a6970b112"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/bg_story_1_msg_0.ogg",
-      "size": "77463",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "d3a694a5c5c3cd43e7dac14638dcbfe8ae91b6a4"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Dogmeat_c2c46330.png",
-      "size": "902",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "2a44576944af2e6d4ea5f59fff02cd884da83165"
-    },
-    {
-      "file": "/mods/[钠] sodium-fabric-0.6.13+mc1.21.1.jar",
-      "size": "1297761",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "928a2598178c3a58b0638bab842f467d2e49251a",
-      "murmur": "4286610893"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Rachel_Amber_adf7764a.png",
-      "size": "763",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "ad219364dadcbc0bfc3b9f8f35461fddcd1e0baa"
-    },
-    {
-      "file": "/mods/cutscene-api-mc1.21.1-fabric-1.6.6.jar",
-      "size": "280910",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "df8c60b5184b910b33dc1e4236ba14de06551a37",
-      "murmur": "2447686579"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/The_Cousins_4d2432fe.png",
-      "size": "980",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "6cb61b079105a62d6604aef451c0e3b86d353b1a"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/find_hopper_enter_msg_0.ogg",
-      "size": "43577",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "1da3c6225735d68886cace97dba2b04a49f5e3c5"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Huell_Babineaux_a11bc599.png",
-      "size": "1210",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "b019c84713f538f693851837133073f304cd0f76"
-    },
-    {
-      "file": "/mods/voicechat-fabric-1.21.1-2.6.11.jar",
-      "size": "5341236",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "7a11b339144c9de7ad33addc3b01915b1db2168a",
-      "murmur": "1047034063"
-    },
-    {
-      "file": "/mods/sittingplus-2.0.6-1.21.1-FABRIC.jar",
-      "size": "21633",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "20a77b0400ff554cb9e0a27062cb2119219bc387",
-      "murmur": "1536154714"
-    },
-    {
-      "file": "/mods/immersive_paintings-fabric-1.21.1-0.7.4.jar",
-      "size": "5354723",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "d3b097e265086d07dc3016d7aff66b38e1f437f1",
-      "murmur": "2838236284"
-    },
-    {
-      "file": "/mods/spawn-point-1.0.0.jar",
-      "size": "6400",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "826eebc9abdfac8cfce7364143786959218d9b6f",
-      "murmur": "803195592"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Mike_Ehrmantraut_53c2c1d5.png",
-      "size": "1130",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "44d63f2f3571c222e5af3fbe3f53812effcef39f"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Beverly_Marsh_48221ecd.png",
-      "size": "859",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "4d8a889fcb0394750c6cef2f0d7c598bcf098cdd"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/instance_complete_voice.ogg",
-      "size": "50897",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "c0f6e345614a17c23fb7b55898445cea5900be6b"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Clifford_Main_f0ac4f17.png",
-      "size": "1075",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "ac5adaf4becc3dd644f30c996d300f5a1df8d046"
-    },
-    {
-      "file": "/mods/flan-1.21.1-1.12.5-fabric.jar",
-      "size": "925382",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "16c7bf82b6ddff97bc1a7023155997b537f98c0b",
-      "murmur": "670713166"
-    },
-    {
-      "file": "/mods/entity_texture_features_1.21-fabric-7.0.8.jar",
-      "size": "730042",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "6a8ead6c257b184ed1d59d535b7c51a05bb0ba69",
-      "murmur": "3270967502"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Badger_53764bbb.png",
-      "size": "2216",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "894ea6b62cb0f41b0dc0672954a5228d010f4501"
-    },
-    {
-      "file": "/mods/letsdo-vinery-fabric-1.5.2.jar",
-      "size": "2983515",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "8847a71d9dee7396d5c4d2f502fcf1368c64ccb8",
-      "murmur": "164018916"
-    },
-    {
-      "file": "/mods/Multiworld-Fabric-1.21.1.jar",
-      "size": "149140",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "e26899f4a6b536717a33bb25a78060a391cfe266",
-      "murmur": "721745778"
-    },
-    {
-      "file": "/mods/watut-fabric-1.21.0-1.2.7.jar",
-      "size": "839492",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "31d06c335b9a3a9fd649e8f4518aaf5a65630f57",
-      "murmur": "2385888551"
-    },
-    {
-      "file": "/mods/npc-bus-driver-1.0.0.jar",
-      "size": "73917",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "8d9d18d6d1ea3e5ce1fde1ae999eed3b44be5260",
-      "murmur": "585559531"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Betsy_Kettleman_220a6d05.png",
-      "size": "879",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "cdc2c724cdec003beb8e8ecc027f94ca33ffad38"
-    },
-    {
-      "file": "/mods/numismatic-overhaul-0.3.5+1.21.jar",
-      "size": "509477",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "58b63790cf9c256128b8ebceec5b01f454e64450",
-      "murmur": "4184956559"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Bandit_Boss_b856691c.png",
-      "size": "3959",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "1b2e905862fe5e87f7d604a90ae60e3946277be6"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Steven_Gomez_11f60b8e.png",
-      "size": "690",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "0fbd2894b5af9e1aee265fd9d67ba40acf81c7c1"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Georgie_Denbrough_00bf582a.png",
-      "size": "412",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "ede3110469d2987e131199f65ebe2446c9425a90"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Juliet_Watson_689ebdea.png",
-      "size": "1017",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "502d511db9bbf372e0e11cf2d578958b0cf67bd2"
-    },
-    {
-      "file": "/mods/[Reese的钠视频界面] reeses-sodium-options-fabric-1.8.3+mc1.21.4.jar",
-      "size": "81067",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "c72f07a8f139f0420cbce29bd9eb29fb24db427f",
-      "murmur": "1957765779"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Richie_Tozier_c795c7d0.png",
-      "size": "2067",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "d04f9c663f039eac961efd1d03921e349e5b3490"
-    },
-    {
-      "file": "/mods/ImageDisplayer-1.0.0.jar",
-      "size": "464874",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "16fee6eec4ad4f7c660120ae4de1f41fb763698a",
-      "murmur": "2232280761"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Piper_Wright_80b00b31.png",
-      "size": "822",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "919446057ab43f2535130191e3061c853dbd8366"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Mark_Jefferson_4dbb75d0.png",
-      "size": "995",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "21b29e34b108778e1a55f5b1f597ec8e80b7756d"
-    },
-    {
-      "file": "/mods/waterframes-FABRIC-mc1.21.1-v2.1.22.jar",
-      "size": "266292",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "d891be7912177a847a3547a76d8afc07fe64aef6",
-      "murmur": "1170673236"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/bg_story_2_msg_0.ogg",
-      "size": "33798",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "5a937ef74882e3e0c1dd183c10692c00ca653976"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Tuco_Salamanca_39fb1585.png",
-      "size": "475",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "9dba38c297c551cda77a8912b4f0ece54e60d47d"
-    },
-    {
-      "file": "/mods/warm-pixel-economy-0.1.0.jar",
-      "size": "186253",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "10f2a27f0835e8d88fecb2ec01a3d56e5bd36662",
-      "murmur": "1711708589"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Merchant_a9e19d90.png",
-      "size": "4327",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "769e141541cf560865a2ebeef9179e8ca813fdda"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Bandit_1c6ebf9d.png",
-      "size": "1085",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "c2e70041dc52d3d74a10075c8690744a86b9fca0"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Story_Guide_1891d28b.png",
-      "size": "853",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "73c0a8e07f19b5bd1dd8dee7753bcaf74370ddcd"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Leonel_Salamanca_35d134f7.png",
-      "size": "2557",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "60e7de00e1f971d9746ffcc8d100e4aefb8fa60c"
-    },
-    {
-      "file": "/mods/AmbientSounds_FABRIC_v6.3.3_mc1.21.1.jar",
-      "size": "84820039",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4004939ba14a386a3c0dc540a1dfa46d1a35ea58",
-      "murmur": "2181634311"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/bg_story_3_msg_0.ogg",
-      "size": "46439",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "994ec295b8877178ec89964ae9331aef21a30de9"
-    },
-    {
-      "file": "/mods/fzzy_config-0.7.4-fix1+1.21.jar",
-      "size": "2342492",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "4e46df66d86fad9deccda388b1a77be011003c89",
-      "murmur": "3441069578"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Henry_357c46ac.png",
-      "size": "1608",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "d182238561a28170eb36e3d0d2f3228e4c7c1042"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Alyssa_Jenkins_0d0c52f4.png",
-      "size": "1592",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "db4ca196b59d8bb8ba1a2c2534c3a2334e42af2f"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Martin_Brenner_b8320e51.png",
-      "size": "2054",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "d052c2d50b79ee3cec5a02a9fd0bfd5ef9ea45f9"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Forge_Master_Ember_1371dced.png",
-      "size": "2020",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
-    },
-    {
-      "file": "/mods/essential_commands-0.35.2-mc1.21.jar",
-      "size": "1442941",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "1dda78e1ecace03b1a622611ef8783bb1259dc91",
-      "murmur": "3502250719"
-    },
-    {
-      "file": "/mods/chipped-fabric-1.21.1-4.0.2.jar",
-      "size": "15016830",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "add18f65d7b131e05313cd98069cb71adac3483c",
-      "murmur": "435641275"
     },
     {
       "file": "/config/easy_npc/skin/humanoid/Marie_Schrader_c2bab051.png",
@@ -1519,110 +22,15 @@
       "sha1": "f028d987feb5bb5fd38b571bbd28805d21944075"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Steve_Harrington_85451418.png",
-      "size": "1053",
+      "file": "/config/easy_npc/skin/humanoid/Nathan_Prescott_5e04acf5.png",
+      "size": "832",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "34585f6240f222fc8b92401c241eaa916317acf2"
+      "sha1": "11476c1e6bacb741f747f41290008b4e8a88a5aa"
     },
     {
-      "file": "/mods/FarmersDelight-1.21.1-3.2.2+refabricated.jar",
-      "size": "3129714",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "59846405e46af1e46ad9570a6f004c89652374db",
-      "murmur": "2996824463"
-    },
-    {
-      "file": "/mods/flan-economy-1.0.0.jar",
-      "size": "106714",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "657594fc63bd9355f1fa567827ce8e9ae54b10d1",
-      "murmur": "463201489"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Irene_Landry_4f2fc496.png",
-      "size": "6244",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "dbd80483c3677eff2cfd57896d4ae04d471e704f"
-    },
-    {
-      "file": "/mods/vmp-fabric-mc1.21.1-0.2.0+beta.7.172-all.jar",
-      "size": "433667",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "267975777ba52a23d4423a60e9288f9ce288344e",
-      "murmur": "2846364621"
-    },
-    {
-      "file": "/mods/mcw-bridges-3.1.0-mc1.21.1fabric.jar",
-      "size": "656977",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "236a31a8ccdefdde5f66a7385cb5282c782f433f",
-      "murmur": "980801265"
-    },
-    {
-      "file": "/mods/continuity-3.0.0-beta.5+1.21.jar",
-      "size": "1007136",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "16d31a39e85dc10cdff4e06198a1bb26b4b82427",
-      "murmur": "343786006"
-    },
-    {
-      "file": "/mods/PresenceFootsteps-1.11.1+1.21.jar",
-      "size": "5690812",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "cfbeb32cc1dc17ef5c83a9f7a073a26453da8a8c",
-      "murmur": "3658487412"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Overseer_Hank_a73f65f5.png",
-      "size": "629",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "757da05aff6e08f9bea03208490c70cf35530e86"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Adrian_Mellon_3390e9c4.png",
-      "size": "725",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "7ce2a6cb1bcced1b42fdcb8db68ba48b0b630f07"
-    },
-    {
-      "file": "/mods/tabtps-fabric-mc1.21.1-1.3.25.jar",
-      "size": "2452454",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "48672964a74b5742e044ceb6e7dfccaa89a1d517",
-      "murmur": "1236367448"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Victoria_Chase_2343fd54.png",
-      "size": "1054",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "facfa61ec55e1b3f7e15c2ec99005823c05b72c1"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/The_Ender_Watcher_2044b5a3.png",
+      "file": "/config/easy_npc/skin/humanoid/Nether_Scout_Blaze_a9be6ed9.png",
       "size": "2020",
       "type": "config",
       "editable": true,
@@ -1638,48 +46,130 @@
       "sha1": "4172a776b41fc78415026fef82e8e5b3111db675"
     },
     {
-      "file": "/mods/ftb-library-fabric-2101.1.29.jar",
-      "size": "1405280",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "fca140a67a3aaa356e43f91b475d1689eaab86e5",
-      "murmur": "2151022582"
-    },
-    {
-      "file": "/mods/Adorn-6.1.2+1.21.1-fabric.jar",
-      "size": "5125068",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "30b2e89f343179d97032426687c7a6ac88505e98",
-      "murmur": "3568277638"
-    },
-    {
-      "file": "/mods/story-adventure-system-0.1.0-sources.jar",
-      "size": "264968",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "52ad23064324696a1298fcbadc453ce29c28efb5",
-      "murmur": "4156178257"
-    },
-    {
-      "file": "/mods/warmpixel-items-1.0.0.jar",
-      "size": "8253324",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "c969f03a5553e623f7222df85ddfabb741de2ed1",
-      "murmur": "239390739"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Elite_Armed_Police_38273aaf.png",
-      "size": "2201",
+      "file": "/config/easy_npc/skin/humanoid/Adrian_Mellon_3390e9c4.png",
+      "size": "725",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "2e6e49dc5a0e8842aa49eba685f7d61289c75d8a"
+      "sha1": "7ce2a6cb1bcced1b42fdcb8db68ba48b0b630f07"
+    },
+    {
+      "file": "/mods/cutscene-api-mc1.21.1-fabric-1.6.6.jar",
+      "size": "280910",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "df8c60b5184b910b33dc1e4236ba14de06551a37",
+      "murmur": "2447686579"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Gale_Boetticher_ad42ea3b.png",
+      "size": "1524",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "785e04a8e02b4998cf90a9981b16326fc8b6ad03"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Victor_Criss_30b5d5ad.png",
+      "size": "1063",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "c164f729446bac133b09b5829231e39cdbb33c7a"
+    },
+    {
+      "file": "/mods/Clumps-fabric-1.21.1-19.0.0.1.jar",
+      "size": "20723",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "14628ba309d876cfefc4cef864a66ef12812066c",
+      "murmur": "1960002860"
+    },
+    {
+      "file": "/config/physicsmod/physics_animations_client_config.json",
+      "size": "2704",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "09deba4d55b8ed6aade01e21def0bc0b3831788f"
+    },
+    {
+      "file": "/mods/letsdo-vinery-fabric-1.5.2.jar",
+      "size": "2983515",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8847a71d9dee7396d5c4d2f502fcf1368c64ccb8",
+      "murmur": "164018916"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Strong_7fa6bbc5.png",
+      "size": "1586",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "5f703da1dedad6a0155605f8c4ddadf3828de7a2"
+    },
+    {
+      "file": "/mods/tacz-pack-upgrader-2.0.0.jar",
+      "size": "7160312",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d37c5a1caa906a5339e2429ed2af18ae57bf794e",
+      "murmur": "3570688778"
+    },
+    {
+      "file": "/mods/[Reese的钠视频界面] reeses-sodium-options-fabric-1.8.3+mc1.21.4.jar",
+      "size": "81067",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "c72f07a8f139f0420cbce29bd9eb29fb24db427f",
+      "murmur": "1957765779"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Overseer_Hank_a73f65f5.png",
+      "size": "629",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "757da05aff6e08f9bea03208490c70cf35530e86"
+    },
+    {
+      "file": "/mods/warmpixel-items-1.0.0.jar",
+      "size": "8256777",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "f1548d3d2fb26b1a8b984a1d6057d6a545bed65d",
+      "murmur": "1235508317"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Kim_Wexler_32e54163.png",
+      "size": "938",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e854765f6213e4e6b21687181b00a8a20d9221b9"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Mike_Ehrmantraut_53c2c1d5.png",
+      "size": "1130",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "44d63f2f3571c222e5af3fbe3f53812effcef39f"
+    },
+    {
+      "file": "/config/physicsmod/physics_server_config.json",
+      "size": "98",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "0cf27aeb14501870eda238b245283ae2284423ed"
     },
     {
       "file": "/mods/fabric-language-kotlin-1.13.8+kotlin.2.3.0.jar",
@@ -1691,105 +181,170 @@
       "murmur": "1908825025"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Don_Hagarty_1a583a97.png",
-      "size": "430",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "48b52c2a9398d32b844e62145c454ef38d3fa7ef"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Jonathan_Byers_94493ba3.png",
-      "size": "6826",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "4fd03a1035515bde1a4d4b410041555369e81d02"
-    },
-    {
-      "file": "/mods/notenoughanimations-fabric-1.11.1-mc1.21.1.jar",
-      "size": "1923320",
+      "file": "/mods/[REI物品管理器] RoughlyEnoughItems-16.0.799-fabric.jar",
+      "size": "2451799",
       "type": "mod",
       "editable": false,
       "forceCopy": false,
-      "sha1": "8cc4cbd822c24cc06042b4f6c394677da2d0b8d0",
-      "murmur": "4289689446"
+      "sha1": "ea0efe8b13a52e9d8d5a18d062810117a7efec0f",
+      "murmur": "1057235278"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Maximus_766eedf8.png",
-      "size": "515",
+      "file": "/config/easy_npc/skin/humanoid/Bandit_1c6ebf9d.png",
+      "size": "1085",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "c587606caa004982e0f2168338a3188c42cf1781"
+      "sha1": "c2e70041dc52d3d74a10075c8690744a86b9fca0"
     },
     {
-      "file": "/mods/bleed-gore-1.0.0.jar",
-      "size": "24436",
+      "file": "/tacz/pgp_pack.zip",
+      "size": "15530609",
+      "type": "other",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "7743f0928a890c6de7f29ba928c06f0450c346d0"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Hayden_Jones_94efe616.png",
+      "size": "968",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "2a7d6cdd5f6c28d1736036be91420aa4d66d4a19"
+    },
+    {
+      "file": "/mods/easy_npc_bundle-fabric-1.21.1-6.6.1.jar",
+      "size": "32331",
       "type": "mod",
       "editable": false,
       "forceCopy": false,
-      "sha1": "e117f32a3eab6dd14fbd103fa618add6417ac5a0",
-      "murmur": "3403186215"
+      "sha1": "0c757a4e98c5c217cfe03715b83cbaa133af381e",
+      "murmur": "3179544789"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Stanley_Uris_30b12fdc.png",
-      "size": "903",
+      "file": "/config/easy_npc/skin/humanoid/Rachel_Amber_adf7764a.png",
+      "size": "763",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "1299f6b4343d610864f07056c893651b0ee52ac0"
+      "sha1": "ad219364dadcbc0bfc3b9f8f35461fddcd1e0baa"
     },
     {
-      "file": "/mods/NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
-      "size": "309410",
+      "file": "/config/easy_npc/skin/humanoid/Max_Mayfield_08b5eae4.png",
+      "size": "778",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "c1aa88d67c3034bba86b852c2323855002c58def"
+    },
+    {
+      "file": "/mods/ftb-library-fabric-2101.1.29.jar",
+      "size": "1405280",
       "type": "mod",
       "editable": false,
       "forceCopy": false,
-      "sha1": "789cabd9b1fed079af87f675d1d6c1c95b603e19",
-      "murmur": "1541505596"
+      "sha1": "fca140a67a3aaa356e43f91b475d1689eaab86e5",
+      "murmur": "2151022582"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Marco_Salamanca_201ee4b2.png",
-      "size": "2621",
+      "file": "/config/easy_npc/skin/humanoid/Warren_Graham_0b85195a.png",
+      "size": "994",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "50c13bb084c5a291d608c390f2e2c819c80a17e0"
+      "sha1": "a236cbe661beffef7fb3ca1076a7748aa8a20039"
     },
     {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/demogorgon_horde_enter_msg_0.ogg",
-      "size": "23180",
+      "file": "/config/physicsmod/physics_vines_client_config.json",
+      "size": "18610",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "3d169a46a310558f4abe49768bac3d5dc1f144cc"
+      "sha1": "14d9655be64a42f3fdd1a64cbcc8c1719458ffe5"
     },
     {
-      "file": "/mods/yuushya-1.21.0-fabric-2.2.2.jar",
-      "size": "15722220",
+      "file": "/config/easy_npc/skin/humanoid/Elite_Armed_Police_38273aaf.png",
+      "size": "2201",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "2e6e49dc5a0e8842aa49eba685f7d61289c75d8a"
+    },
+    {
+      "file": "/mods/entity_texture_features_1.21-fabric-7.0.8.jar",
+      "size": "730042",
       "type": "mod",
       "editable": false,
       "forceCopy": false,
-      "sha1": "ce9ce5b4e9c9c8474de049d9c538e9c7cdf6faa4",
-      "murmur": "2238533024"
+      "sha1": "6a8ead6c257b184ed1d59d535b7c51a05bb0ba69",
+      "murmur": "3270967502"
     },
     {
-      "file": "/mods/Chunky-Fabric-1.4.23.jar",
-      "size": "342979",
+      "file": "/mods/itemrestrictions-1.3.2-1.21.1-fabric.jar",
+      "size": "74044",
       "type": "mod",
       "editable": false,
       "forceCopy": false,
-      "sha1": "6c8098fc0f124c7b6492de60db0108747f7f9821",
-      "murmur": "3775061967"
+      "sha1": "1eb1569832a38e1ed439c28573650fe0e3600d5f",
+      "murmur": "265500171"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Hank_Schrader_e3b88358.png",
-      "size": "1412",
+      "file": "/mods/xaeroworldmap-fabric-1.21.1-1.40.6.jar",
+      "size": "1406730",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "35638fedcb3527489f5f35778e7dd78de5492f36",
+      "murmur": "489271356"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Tuco_Salamanca_39fb1585.png",
+      "size": "475",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "b6dd5c6702766ca7b780d5a5fb653bf07e233e00"
+      "sha1": "9dba38c297c551cda77a8912b4f0ece54e60d47d"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Nick_Valentine_33a8e0e8.png",
+      "size": "652",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e9083c4837b5240d3c4094585ada93bbc0c5b195"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Cait_1ff697b4.png",
+      "size": "877",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "a867fd93a7a09adc42ac5b9df55d135b08d8efe3"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Huell_Babineaux_a11bc599.png",
+      "size": "1210",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "b019c84713f538f693851837133073f304cd0f76"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Alyssa_Jenkins_0d0c52f4.png",
+      "size": "1592",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "db4ca196b59d8bb8ba1a2c2534c3a2334e42af2f"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/MacCready_5b099247.png",
+      "size": "1149",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e404bfa9ae526c49d687c17ed97731825b82d55c"
     },
     {
       "file": "/mods/TACZ-Refabricated-1.21.1-0.4.0-forge1.1.7-hotfix.jar",
@@ -1801,276 +356,13 @@
       "murmur": "1938432052"
     },
     {
-      "file": "/mods/resourcefullib-fabric-1.21-3.0.12.jar",
-      "size": "485586",
+      "file": "/mods/continuity-3.0.0-beta.5+1.21.jar",
+      "size": "1007136",
       "type": "mod",
       "editable": false,
       "forceCopy": false,
-      "sha1": "cb67e1302b5116953f45556cc61dbcf40d986ecd",
-      "murmur": "3889720147"
-    },
-    {
-      "file": "/config/physicsmod/physics_cloth_config.json",
-      "size": "49",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "eb546b9b88636bed3aaf1f0d532309a2639bc8f9"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Kim_Wexler_32e54163.png",
-      "size": "938",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "e854765f6213e4e6b21687181b00a8a20d9221b9"
-    },
-    {
-      "file": "/mods/xercapaint-1.21.1-1.0.1.jar",
-      "size": "400450",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "897d7787396e245878d761beb7156b7024bf21c8",
-      "murmur": "947075319"
-    },
-    {
-      "file": "/mods/ftb-teams-fabric-2101.1.9.jar",
-      "size": "287518",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "a96e1169958eb92939ae67a1beb0aada373cbbbe",
-      "murmur": "777513639"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Max_Mayfield_08b5eae4.png",
-      "size": "778",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "c1aa88d67c3034bba86b852c2323855002c58def"
-    },
-    {
-      "file": "/mods/easy_npc-fabric-1.21.1-6.6.1.jar",
-      "size": "1970105",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "d42f4ae6454fb9327492fb894b646a21a80795ef",
-      "murmur": "3883078017"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Walter_White_d487ea88.png",
-      "size": "1082",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "ceab8952a99fa419467d6a8a4618334da483326a"
-    },
-    {
-      "file": "/mods/fabric-api-0.107.0+1.21.1.jar",
-      "size": "2340631",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "ba0f27b37fe600d3e69953750d1909da88929a9d",
-      "murmur": "1526651962"
-    },
-    {
-      "file": "/tacz/pgp_pack.zip",
-      "size": "15530609",
-      "type": "other",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "7743f0928a890c6de7f29ba928c06f0450c346d0"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Cait_1ff697b4.png",
-      "size": "877",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "a867fd93a7a09adc42ac5b9df55d135b08d8efe3"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Robin_Buckley_48230e8d.png",
-      "size": "1454",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "f807012658177475a84f450924a00a37c597390d"
-    },
-    {
-      "file": "/mods/Necronomicon-Fabric-1.6.0+1.21.jar",
-      "size": "37055",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "b6ac70d9ecac570f56e75db81d8281976fea1357",
-      "murmur": "2319169093"
-    },
-    {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/meet_will_and_eleven_voice.ogg",
-      "size": "45555",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "a2c14842bf7a2ec25c8c3cc2030d335531bfb3b4"
-    },
-    {
-      "file": "/mods/modmenu-11.0.3.jar",
-      "size": "973066",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "6213120772192040a0aeb5c7cfe330c068605b1f",
-      "murmur": "2497936418"
-    },
-    {
-      "file": "/mods/architectury-13.0.8-fabric.jar",
-      "size": "600915",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "e71346a43c563e5784580dd096338acfb45f49d4",
-      "murmur": "584683133"
-    },
-    {
-      "file": "/mods/lithium-fabric-0.15.1+mc1.21.1.jar",
-      "size": "772848",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "6038cf136da413753345bf9d48e5798241439894",
-      "murmur": "2862911914"
-    },
-    {
-      "file": "/mods/krypton-0.2.8.jar",
-      "size": "161045",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "73e792eb5f120787becda4b87b6ff18b26caea50",
-      "murmur": "1419355547"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Codsworth_f5e57f34.png",
-      "size": "362",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "b7397719296703df1d6ed8680af225e10412d124"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Gale_Boetticher_ad42ea3b.png",
-      "size": "1524",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "785e04a8e02b4998cf90a9981b16326fc8b6ad03"
-    },
-    {
-      "file": "/mods/watermedia-2.1.36.jar",
-      "size": "37858040",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "aaad859737065f7be2824973aa38a5fdb7456f9d",
-      "murmur": "1118881583"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Nathan_Prescott_5e04acf5.png",
-      "size": "832",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "11476c1e6bacb741f747f41290008b4e8a88a5aa"
-    },
-    {
-      "file": "/mods/malilib-fabric-1.21-0.21.10.jar",
-      "size": "1411200",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "e2699ef71618c54fc03c6c8b28e336603596dcef",
-      "murmur": "849549853"
-    },
-    {
-      "file": "/mods/warm-pixel-performance-optimizer-1.0.0.jar",
-      "size": "25051",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "a8bb25521eb9ea289d4365bb9b7c4637a788b084",
-      "murmur": "2968800477"
-    },
-    {
-      "file": "/config/physicsmod/physics_animations_client_config.json",
-      "size": "2704",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "09deba4d55b8ed6aade01e21def0bc0b3831788f"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Patrick_Hockstetter_22ffdabf.png",
-      "size": "336",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "f2f80f0def39bdb9837f66448b5b3adac3e1c2a7"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Saul_Goodman_e6e8fc55.png",
-      "size": "1085",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "48c9cddb028d361eeffee95f127db8ff6ab5c3df"
-    },
-    {
-      "file": "/mods/litematica-fabric-1.21-0.19.60.jar",
-      "size": "1578454",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "dfd63a022413444682108946d23fe53883f5ce6a",
-      "murmur": "912540377"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Henry_Bowers_e34297e4.png",
-      "size": "260",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "f0c2a0d019d79d1712e140c6813ca1c9e8caea96"
-    },
-    {
-      "file": "/mods/worldedit-mod-7.3.8.jar",
-      "size": "6222854",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250",
-      "murmur": "683807693"
-    },
-    {
-      "file": "/config/easy_npc/skin/humanoid/Lucas_Sinclair_eb0ffea3.png",
-      "size": "400",
-      "type": "config",
-      "editable": true,
-      "forceCopy": false,
-      "sha1": "0cb81fbb99719907c1db322b4e4a1c5e1e625e66"
-    },
-    {
-      "file": "/mods/handcrafted-fabric-1.21.1-4.0.3.jar",
-      "size": "7127377",
-      "type": "mod",
-      "editable": false,
-      "forceCopy": false,
-      "sha1": "a9579fecd7ed429c282be21d5c921d220197acc6",
-      "murmur": "3248713794"
+      "sha1": "16d31a39e85dc10cdff4e06198a1bb26b4b82427",
+      "murmur": "343786006"
     },
     {
       "file": "/mods/easy_npc_config_ui-fabric-1.21.1-6.6.1.jar",
@@ -2082,6 +374,1256 @@
       "murmur": "4164125082"
     },
     {
+      "file": "/config/easy_npc/skin/humanoid/Dogmeat_c2c46330.png",
+      "size": "902",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "2a44576944af2e6d4ea5f59fff02cd884da83165"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Juliet_Watson_689ebdea.png",
+      "size": "1017",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "502d511db9bbf372e0e11cf2d578958b0cf67bd2"
+    },
+    {
+      "file": "/mods/worldgenfeaturefix-fabric-1.21-1.0.1.jar",
+      "size": "14376",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "80227f4bb529aaa21770be81e44d72ab103de13c",
+      "murmur": "852430779"
+    },
+    {
+      "file": "/mods/spark-1.10.109-fabric.jar",
+      "size": "3609981",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "eff42cbeee6fe9a7f3c57031c23200256366dcd1",
+      "murmur": "1396803699"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Story_Guide_1891d28b.png",
+      "size": "853",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "73c0a8e07f19b5bd1dd8dee7753bcaf74370ddcd"
+    },
+    {
+      "file": "/config/easy_npc/skin/zombie/demogorgon.png",
+      "size": "1496",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e17bd593aeb8a47d807cc9e545b20742bfa8c911"
+    },
+    {
+      "file": "/mods/Adorn-6.1.2+1.21.1-fabric.jar",
+      "size": "5125068",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "30b2e89f343179d97032426687c7a6ac88505e98",
+      "murmur": "3568277638"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Farmer_Chen_144014d4.png",
+      "size": "1449",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "63b19b529e36005ba93154ddaf3d46f26b749f00"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Dustin_Henderson_a14b589d.png",
+      "size": "470",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "81a78e2b36c14ffc5ddb28be574c73aa1ddcc900"
+    },
+    {
+      "file": "/config/physicsmod/physics_client_config.json",
+      "size": "3951",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "de3dddf7cf2e717e9b11c8820214774cfd0d21a3"
+    },
+    {
+      "file": "/mods/uilib-1.0.1-1.21.1-fabric.jar",
+      "size": "248816",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "63a8473bfbcb3debea51ef661433bbd860460865",
+      "murmur": "739709934"
+    },
+    {
+      "file": "/mods/resourcefullib-fabric-1.21-3.0.12.jar",
+      "size": "485586",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "cb67e1302b5116953f45556cc61dbcf40d986ecd",
+      "murmur": "3889720147"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/The_Ender_Watcher_2044b5a3.png",
+      "size": "2020",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
+    },
+    {
+      "file": "/mods/seriousplayeranimations-1.2.0.jar",
+      "size": "159577",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "100e4921ebd0367eee882b8d75311d0b20efda3f",
+      "murmur": "585578152"
+    },
+    {
+      "file": "/mods/exposure-fabric-1.21.1-1.9.13.jar",
+      "size": "1968399",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "12ab0a6a56bd08712defb9f5f5526d47f7768325",
+      "murmur": "1619958374"
+    },
+    {
+      "file": "/mods/warmpixel-pay-1.0.0.jar",
+      "size": "11955",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8f1e5d7d466111a8302ff432dde13784d6b67652",
+      "murmur": "1575164679"
+    },
+    {
+      "file": "/mods/chipped-fabric-1.21.1-4.0.2.jar",
+      "size": "15016830",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "add18f65d7b131e05313cd98069cb71adac3483c",
+      "murmur": "435641275"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Leonel_Salamanca_35d134f7.png",
+      "size": "2557",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "60e7de00e1f971d9746ffcc8d100e4aefb8fa60c"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Ben_Hanscom_95d4a498.png",
+      "size": "1235",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "3fcf297832e2facda3e2582322b64deee9c5f58d"
+    },
+    {
+      "file": "/mods/notenoughanimations-fabric-1.11.1-mc1.21.1.jar",
+      "size": "1923320",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8cc4cbd822c24cc06042b4f6c394677da2d0b8d0",
+      "murmur": "4289689446"
+    },
+    {
+      "file": "/mods/balm-fabric-1.21.1-21.0.56.jar",
+      "size": "773504",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "0377b2e07551dc9fbcb40b94a3d38e098cd85d7e",
+      "murmur": "1247350979"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Frank_Bowers_024879d0.png",
+      "size": "2452",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "fd87b01e5fb1b8917aa95f60ef24530b6372995a"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Steven_Gomez_11f60b8e.png",
+      "size": "690",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "0fbd2894b5af9e1aee265fd9d67ba40acf81c7c1"
+    },
+    {
+      "file": "/config/storyadventure/profiles/lucas.png",
+      "size": "900476",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "8daf058b8dc569ab8d1a474d23f4ca518657d9c7"
+    },
+    {
+      "file": "/mods/flan-economy-1.0.0.jar",
+      "size": "106714",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "657594fc63bd9355f1fa567827ce8e9ae54b10d1",
+      "murmur": "463201489"
+    },
+    {
+      "file": "/mods/physics-mod-3.0.24-mc-1.21.1-fabric.jar",
+      "size": "61792601",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "2da4ff860fc487b3df82a5f15a4023dba7600249",
+      "murmur": "2104341325"
+    },
+    {
+      "file": "/config/storyadventure/profiles/mike.png",
+      "size": "735979",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "d30fab1cef78464f346d025ad88a73ceb72ccfdb"
+    },
+    {
+      "file": "/mods/automobility-0.5.0.h+1.21.1-fabric.jar",
+      "size": "1323587",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e75acfb15ed700ebed1798b5db3fff157ad750bb",
+      "murmur": "2063780254"
+    },
+    {
+      "file": "/mods/ftb-quests-fabric-2101.1.19.jar",
+      "size": "1433860",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "82cf13053b4b51e6f1123c008246b83ee6839193",
+      "murmur": "3456305973"
+    },
+    {
+      "file": "/mods/vmp-fabric-mc1.21.1-0.2.0+beta.7.172-all.jar",
+      "size": "433667",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "267975777ba52a23d4423a60e9288f9ce288344e",
+      "murmur": "2846364621"
+    },
+    {
+      "file": "/mods/corndelight-1.21-1.0.0.jar",
+      "size": "134477",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d4e7f93023e0d567945db7e826df46b6a40e7cc4",
+      "murmur": "2075524555"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Nancy_Wheeler_3d23e74b.png",
+      "size": "2508",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "21657a1a8e615f860e47acccf5a55dff731b79b6"
+    },
+    {
+      "file": "/mods/xercapaint-1.21.1-1.0.1.jar",
+      "size": "400450",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "897d7787396e245878d761beb7156b7024bf21c8",
+      "murmur": "947075319"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Stanley_Uris_30b12fdc.png",
+      "size": "903",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "1299f6b4343d610864f07056c893651b0ee52ac0"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Jonathan_Byers_94493ba3.png",
+      "size": "6826",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "4fd03a1035515bde1a4d4b410041555369e81d02"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Will_Byers_1fbd73dd.png",
+      "size": "1544",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "ebf9bbab034f3af537850fab30965aeed61279a5"
+    },
+    {
+      "file": "/resourcepacks/server_resource.zip",
+      "size": "19097",
+      "type": "resourcepack",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "c4220012c7d201c32abcc8604f371191cc358747",
+      "murmur": "2292163668"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Starter_Helper_a0f64e13.png",
+      "size": "3108",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "3477d0c28521958602c7c52dae9a9ee4301f7863"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Billy_Hargrove_2ed3f775.png",
+      "size": "421",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "fefa8d776a2f2f004e423dabf0f3c57e6ac5da24"
+    },
+    {
+      "file": "/mods/mcw-mcwfences-1.2.1-mc1.21.1fabric.jar",
+      "size": "651571",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "f9be270761e17ad131f186b2537c2ce2f305815a",
+      "murmur": "1706073822"
+    },
+    {
+      "file": "/mods/indium-1.0.35+mc1.21.jar",
+      "size": "105000",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "1bf4b5db91f4e6d7a4f94fe2e96525d22df1cacb",
+      "murmur": "1980880126"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Martin_Brenner_b8320e51.png",
+      "size": "2054",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "d052c2d50b79ee3cec5a02a9fd0bfd5ef9ea45f9"
+    },
+    {
+      "file": "/mods/fabrictailor-2.5.0.jar",
+      "size": "123261",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "cd38b5b7b60a2ea68580d11d2e8cc0b008b0532a",
+      "murmur": "4092869020"
+    },
+    {
+      "file": "/mods/easy_npc-fabric-1.21.1-6.6.1.jar",
+      "size": "1970506",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "77f65439178b26cef110232809473f5c42b274ee",
+      "murmur": "2374513392"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Hancock_86e9f0fa.png",
+      "size": "1043",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "c203f504ed85c5af6dc5303be892b2456d93e53f"
+    },
+    {
+      "file": "/mods/refurbished_furniture-fabric-1.21.1-1.0.20.jar",
+      "size": "6959351",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "124492487edcbaa14e04a6fb30c73f25af4fbf1d",
+      "murmur": "3659151876"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/demogorgon.png",
+      "size": "1496",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e17bd593aeb8a47d807cc9e545b20742bfa8c911"
+    },
+    {
+      "file": "/mods/InventorySorter-1.9.0-1.21.jar",
+      "size": "224380",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "bdb968ff98c338af9826f3acd0ed42afae8b8f5f",
+      "murmur": "1991574161"
+    },
+    {
+      "file": "/mods/entity_model_features_1.21-fabric-3.0.10.jar",
+      "size": "488262",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8369a9db73a1538090feb6f51762a733bcbd3f09",
+      "murmur": "1157512228"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Hector_Salamanca_c11f1c0d.png",
+      "size": "884",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "50267ad8c796808c7bef2817ee05949445f14305"
+    },
+    {
+      "file": "/mods/mcw-mcwwindows-2.4.2-mc1.21.1fabric.jar",
+      "size": "1278810",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "0d47db265d99f75f29c93b37489b5602f37ec4af",
+      "murmur": "2397254641"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Elder_Maxson_ecbd4dc1.png",
+      "size": "658",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "bbeb3b929ef8631681cb6ae78d3f77611a6bd0ba"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Nacho_Varga_68995da5.png",
+      "size": "1366",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "aa4dea33c20c0bbd305115631d6d048b73731ed2"
+    },
+    {
+      "file": "/mods/mcw-bridges-3.1.0-mc1.21.1fabric.jar",
+      "size": "656977",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "236a31a8ccdefdde5f66a7385cb5282c782f433f",
+      "murmur": "980801265"
+    },
+    {
+      "file": "/mods/owo-lib-0.12.15.4+1.21.jar",
+      "size": "1183559",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "45725e6d33b624e565a7a6e5d3627af40814288d",
+      "murmur": "3800197123"
+    },
+    {
+      "file": "/mods/mcw-furniture-3.4.1-mc1.21.1fabric.jar",
+      "size": "2087232",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4c914a4d3bb84103b34346e60c6aa981be8dfa23",
+      "murmur": "778289155"
+    },
+    {
+      "file": "/mods/beautify-1.3.0+1.21.1.jar",
+      "size": "836013",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8fb1df342725d8546da7034a3111d15704b41986",
+      "murmur": "2565943545"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Howard_Hamlin_83325c3e.png",
+      "size": "992",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "c9b683f58c7b7f93b1b10483f7f382f0d651d899"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Henry_Bowers_e34297e4.png",
+      "size": "260",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "f0c2a0d019d79d1712e140c6813ca1c9e8caea96"
+    },
+    {
+      "file": "/mods/story-adventure-system-1.21.1-0.1.0.jar",
+      "size": "11175148",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b80b24586640f947ec1741d270d460cb89684e05",
+      "murmur": "1806346872"
+    },
+    {
+      "file": "/config/storyadventure/profiles/joyce.png",
+      "size": "708070",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e0332b7d09c7f050576b6bd442e84eec6f04c736"
+    },
+    {
+      "file": "/mods/bleed-gore-1.0.0.jar",
+      "size": "24436",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e117f32a3eab6dd14fbd103fa618add6417ac5a0",
+      "murmur": "3403186215"
+    },
+    {
+      "file": "/mods/CreativeCore_FABRIC_v2.13.14_mc1.21.1.jar",
+      "size": "1239340",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4be77c0f88b7bcb2a099a9540b2008296b648183",
+      "murmur": "251553544"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Eleven_1846a3f3.png",
+      "size": "720",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "e62ed0fdff7e61450dacb1c7a601b018b653667d"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Hank_Schrader_e3b88358.png",
+      "size": "1412",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "b6dd5c6702766ca7b780d5a5fb653bf07e233e00"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Erica_Sinclair_12f7b9e1.png",
+      "size": "992",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "fc544cbc030ace1bd608833952b185cf4139b101"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Clifford_Main_f0ac4f17.png",
+      "size": "1075",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "ac5adaf4becc3dd644f30c996d300f5a1df8d046"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Tyrus_Kitt_d2e3b0d1.png",
+      "size": "1038",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "a19b9f8d0081a41b9ab186b6464e27ca70a62508"
+    },
+    {
+      "file": "/mods/Necronomicon-Fabric-1.6.0+1.21.jar",
+      "size": "37055",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b6ac70d9ecac570f56e75db81d8281976fea1357",
+      "murmur": "2319169093"
+    },
+    {
+      "file": "/mods/essential_commands-0.35.2-mc1.21.jar",
+      "size": "1442941",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "1dda78e1ecace03b1a622611ef8783bb1259dc91",
+      "murmur": "3502250719"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Murray_Bauman_87daed88.png",
+      "size": "1353",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "d5f1fe2069a4aba7d282d95bbf8b4ce15e751c27"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Mike_Wheeler_0b7979ec.png",
+      "size": "729",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "c48726b1b395b12a238ccec5141c47249c06f258"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Pennywise_876d04fd.png",
+      "size": "2157",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "746ea2bca83f6453a8138a541139ccc3d3a2bd81"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Beverly_Marsh_48221ecd.png",
+      "size": "859",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "4d8a889fcb0394750c6cef2f0d7c598bcf098cdd"
+    },
+    {
+      "file": "/mods/city_vehicles-1.2+1.21.1.jar",
+      "size": "63123",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "25020fe3ee748a0b1dc7adaa7bd3a2e678985240",
+      "murmur": "3884132379"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/The_Wandering_Enchanter_fc0301bd.png",
+      "size": "2020",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Jim_Hopper_420d1d50.png",
+      "size": "2864",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "996279805d7a3851592a688f58a6b6b6df686874"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Maximus_766eedf8.png",
+      "size": "515",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "c587606caa004982e0f2168338a3188c42cf1781"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Victoria_Chase_2343fd54.png",
+      "size": "1054",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "facfa61ec55e1b3f7e15c2ec99005823c05b72c1"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Craig_Kettleman_1e9b8dfb.png",
+      "size": "695",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "fb703f0ea571adda9d40f540bde410ba53c2ba52"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Skyler_White_4ad73caf.png",
+      "size": "879",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "9d90ab648d94357a4485d24248cb0b0b1dd1132d"
+    },
+    {
+      "file": "/mods/yamlconfig-1.2-1.21-fabric.jar",
+      "size": "572349",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "60d4c9b3a1ae75544efa9e72f0481e6ca3f66814",
+      "murmur": "4189247453"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Mark_Jefferson_4dbb75d0.png",
+      "size": "995",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "21b29e34b108778e1a55f5b1f597ec8e80b7756d"
+    },
+    {
+      "file": "/mods/architectury-13.0.8-fabric.jar",
+      "size": "600915",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e71346a43c563e5784580dd096338acfb45f49d4",
+      "murmur": "584683133"
+    },
+    {
+      "file": "/mods/ForgeConfigAPIPort-v21.1.6-1.21.1-Fabric.jar",
+      "size": "633065",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "18bf1f21cd2db6dcd4e42db85eae54e2a49a48ee",
+      "murmur": "4152126359"
+    },
+    {
+      "file": "/mods/warmpixel-auth-1.0.0.jar",
+      "size": "13718297",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "253ce308de748365a1f8d441b5edf91babdce535",
+      "murmur": "3784083668"
+    },
+    {
+      "file": "/mods/yuushya-1.21.0-fabric-2.2.2.jar",
+      "size": "15722220",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "ce9ce5b4e9c9c8474de049d9c538e9c7cdf6faa4",
+      "murmur": "2238533024"
+    },
+    {
+      "file": "/config/physicsmod/physics_mobs_client_config.json",
+      "size": "26",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "16a35a8c745f5ea0c579f7da1e23bfa4a6af6a97"
+    },
+    {
+      "file": "/config/storyadventure/profiles/hopper.png",
+      "size": "659439",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "785f30a36f252827e8f5ba5f78e1109f0ec9e6ba"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Steve_Harrington_85451418.png",
+      "size": "1053",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "34585f6240f222fc8b92401c241eaa916317acf2"
+    },
+    {
+      "file": "/mods/iris-fabric-1.8.8+mc1.21.1.jar",
+      "size": "2690177",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4e0df4011503b4b36ba69877ea7247c1a47fea00",
+      "murmur": "3227894169"
+    },
+    {
+      "file": "/mods/textile_backup-3.1.3-1.21.jar",
+      "size": "1308283",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "f390d2acd7e963d2087580fa94b6e4eafe7ac652",
+      "murmur": "1076578361"
+    },
+    {
+      "file": "/mods/waterframes-FABRIC-mc1.21.1-v2.1.22.jar",
+      "size": "266292",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d891be7912177a847a3547a76d8afc07fe64aef6",
+      "murmur": "1170673236"
+    },
+    {
+      "file": "/mods/arc-1.9.5-1.21.1-fabric.jar",
+      "size": "439757",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "7ecbb2ffdacd2987abc47acf410eddba3bf65733",
+      "murmur": "3082230192"
+    },
+    {
+      "file": "/mods/alternate-current-mc1.21-1.9.0.jar",
+      "size": "51836",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b3dbc4fc4acfd98f3f6b62bbb4e641ed4df915e8",
+      "murmur": "3015653537"
+    },
+    {
+      "file": "/mods/modmenu-11.0.3.jar",
+      "size": "973066",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6213120772192040a0aeb5c7cfe330c068605b1f",
+      "murmur": "2497936418"
+    },
+    {
+      "file": "/mods/Item_Obliterator-Fabric_Quilt-MC_1.21-3.1.1.jar",
+      "size": "29943",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "42202c67ef7166ffb5255ada7370b36c9d50110c",
+      "murmur": "3781555978"
+    },
+    {
+      "file": "/config/storyadventure/profiles/will.png",
+      "size": "681504",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "bc4a0b598fbaee90ef5fc45995ea14b9da7519cb"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Paladin_Danse_60d700d1.png",
+      "size": "3708",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "a1c30a565119bd5b567b12690c7e68243febc3ab"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Lucas_Sinclair_eb0ffea3.png",
+      "size": "400",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "0cb81fbb99719907c1db322b4e4a1c5e1e625e66"
+    },
+    {
+      "file": "/mods/[钠／Embeddium：附属] sodiumextras-fabric-1.0.8-1.21.1.jar",
+      "size": "876916",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4cf42ca95c94491d0af73aa443d17fca29ad83c0",
+      "murmur": "25641654"
+    },
+    {
+      "file": "/mods/krypton-0.2.8.jar",
+      "size": "161045",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "73e792eb5f120787becda4b87b6ff18b26caea50",
+      "murmur": "1419355547"
+    },
+    {
+      "file": "/mods/framework-fabric-1.21.1-0.13.9.jar",
+      "size": "1647872",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "9ff919d5fee807ba36492f302e97fd6519e221e6",
+      "murmur": "528309357"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Bandit_Boss_b856691c.png",
+      "size": "3959",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "1b2e905862fe5e87f7d604a90ae60e3946277be6"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Belch_Huggins_de451409.png",
+      "size": "489",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "99a3edc025789a708e1e4dac5c7f9cb4071d4ee2"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Georgie_Denbrough_00bf582a.png",
+      "size": "412",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "ede3110469d2987e131199f65ebe2446c9425a90"
+    },
+    {
+      "file": "/mods/fabric-api-0.116.7+1.21.1.jar",
+      "size": "2424884",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "79e9f3e82499fbae5bd667b96a79927ae68f90eb",
+      "murmur": "1538479477"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Badger_53764bbb.png",
+      "size": "2216",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "894ea6b62cb0f41b0dc0672954a5228d010f4501"
+    },
+    {
+      "file": "/mods/story-adventure-system-0.1.0.jar",
+      "size": "11174651",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "9ad9b2d2b9754ab33bf2a357188e639669b90c12",
+      "murmur": "2896451927"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Space_Walker_15299f2b.png",
+      "size": "1018",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "89c73c9a5a2dd133591e75993ba79f0a6970b112"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Don_Hagarty_1a583a97.png",
+      "size": "430",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "48b52c2a9398d32b844e62145c454ef38d3fa7ef"
+    },
+    {
+      "file": "/config/physicsmod/physics_cloth_config.json",
+      "size": "49",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "eb546b9b88636bed3aaf1f0d532309a2639bc8f9"
+    },
+    {
+      "file": "/mods/[钠／Embeddium：动态光源] sodiumdynamiclights-fabric-1.0.10-1.21.1.jar",
+      "size": "899434",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "11bff7127c2d01a97c931cda6012c8d2c3e1f39f",
+      "murmur": "1463640626"
+    },
+    {
+      "file": "/mods/immersive_paintings-fabric-1.21.1-0.7.4.jar",
+      "size": "5354723",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d3b097e265086d07dc3016d7aff66b38e1f437f1",
+      "murmur": "2838236284"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Robin_Buckley_48230e8d.png",
+      "size": "1454",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "f807012658177475a84f450924a00a37c597390d"
+    },
+    {
+      "file": "/config/storyadventure/profiles/dustin.png",
+      "size": "722981",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "ff1fcfd666b60de4c2ac0184278997a2824d781a"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Betsy_Kettleman_220a6d05.png",
+      "size": "879",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "cdc2c724cdec003beb8e8ecc027f94ca33ffad38"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/The_Cousins_4d2432fe.png",
+      "size": "980",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "6cb61b079105a62d6604aef451c0e3b86d353b1a"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Walter_White_Jr_c069889d.png",
+      "size": "1276",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "4e40a5b72dc0f0604e84c25c43ec2f0bbee3d9f7"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Saul_Goodman_e6e8fc55.png",
+      "size": "1085",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "48c9cddb028d361eeffee95f127db8ff6ab5c3df"
+    },
+    {
+      "file": "/mods/player-animation-lib-fabric-2.0.4+1.21.1.jar",
+      "size": "204541",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "2985c208766cde078a39c22b5ad989b74b7bc490",
+      "murmur": "4232483337"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Walter_White_d487ea88.png",
+      "size": "1082",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "ceab8952a99fa419467d6a8a4618334da483326a"
+    },
+    {
+      "file": "/mods/waystones-fabric-1.21.1-21.1.9.jar",
+      "size": "857292",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "5aedc3d9632de6e02ef4cdaaceaa00b834caf37a",
+      "murmur": "489623822"
+    },
+    {
+      "file": "/mods/MyNethersDelight-1.21.1-2.0.3+1.7.8.refabricated.jar",
+      "size": "706365",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "ab0cea2a1b945ae357c3f5c97e4e1448d0e28862",
+      "murmur": "262036147"
+    },
+    {
+      "file": "/mods/watermedia-2.1.36.jar",
+      "size": "37858040",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "aaad859737065f7be2824973aa38a5fdb7456f9d",
+      "murmur": "1118881583"
+    },
+    {
+      "file": "/mods/fabric-api-0.107.0+1.21.1.jar",
+      "size": "2340631",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "ba0f27b37fe600d3e69953750d1909da88929a9d",
+      "murmur": "1526651962"
+    },
+    {
+      "file": "/mods/watut-fabric-1.21.0-1.2.7.jar",
+      "size": "839492",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "31d06c335b9a3a9fd649e8f4518aaf5a65630f57",
+      "murmur": "2385888551"
+    },
+    {
+      "file": "/mods/yuushya-modelling-1.21.0-fabric-2.2.0.jar",
+      "size": "377703",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "21e96b6ad83274e887aa9e1c92f3bf520b641316",
+      "murmur": "3558074205"
+    },
+    {
+      "file": "/mods/npc-bus-driver-1.0.0.jar",
+      "size": "73917",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "8d9d18d6d1ea3e5ce1fde1ae999eed3b44be5260",
+      "murmur": "585559531"
+    },
+    {
+      "file": "/mods/spawn-point-1.0.0.jar",
+      "size": "6400",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "826eebc9abdfac8cfce7364143786959218d9b6f",
+      "murmur": "803195592"
+    },
+    {
+      "file": "/config/physicsmod/physics_blocks_client_config.json",
+      "size": "2922666",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "6407c2ea17d4bfd6535cb92de1a035624568c700"
+    },
+    {
+      "file": "/mods/worldedit-mod-7.3.8.jar",
+      "size": "6222854",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "924fe181a29bd66be6783f6d589968ab0ee02250",
+      "murmur": "683807693"
+    },
+    {
+      "file": "/mods/RoughlyEnoughItems-16.0.788-fabric.jar",
+      "size": "2451660",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "77f2691bff5f465ea1f3ece345f2a12567e3a2b6",
+      "murmur": "2403770988"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/David_Madsen_269d62fd.png",
+      "size": "813",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "f56e1df06c1a5adf278c28f5b8f9c8d1f4bc6596"
+    },
+    {
+      "file": "/mods/coroutil-fabric-1.21.1-1.3.8.jar",
+      "size": "2956258",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "1bb71c0df6959b06915d6d62b8040aa0892f08ae",
+      "murmur": "3456641658"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Piper_Wright_80b00b31.png",
+      "size": "822",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "919446057ab43f2535130191e3061c853dbd8366"
+    },
+    {
+      "file": "/mods/litematica-fabric-1.21-0.19.60.jar",
+      "size": "1578454",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "dfd63a022413444682108946d23fe53883f5ce6a",
+      "murmur": "912540377"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Librarian_Quill_8a487422.png",
+      "size": "2020",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Merchant_a9e19d90.png",
+      "size": "4327",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "769e141541cf560865a2ebeef9179e8ca813fdda"
+    },
+    {
+      "file": "/mods/sittingplus-2.0.6-1.21.1-FABRIC.jar",
+      "size": "21633",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "20a77b0400ff554cb9e0a27062cb2119219bc387",
+      "murmur": "1536154714"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Preston_Garvey_7c934b1c.png",
+      "size": "744",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "359aa5ec149fd0cff8eaa30fd3dae97214ad46e5"
+    },
+    {
+      "file": "/mods/fzzy_config-0.7.4-fix1+1.21.jar",
+      "size": "2342492",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4e46df66d86fad9deccda388b1a77be011003c89",
+      "murmur": "3441069578"
+    },
+    {
+      "file": "/mods/NoChatReports-FABRIC-1.21.1-v2.9.1.jar",
+      "size": "309410",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "789cabd9b1fed079af87f675d1d6c1c95b603e19",
+      "murmur": "1541505596"
+    },
+    {
+      "file": "/mods/flan-1.21.1-1.12.5-fabric.jar",
+      "size": "925382",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "16c7bf82b6ddff97bc1a7023155997b537f98c0b",
+      "murmur": "670713166"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Bus_Driver_70eea669.png",
+      "size": "445",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "d45e43e79b8b120456b0d9ebacebde2900cd1453"
+    },
+    {
+      "file": "/mods/[钠 · 扩展] sodium-extra-fabric-0.6.0+mc1.21.1.jar",
+      "size": "373661",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "66160fac4fdb9ddd854c5ed068fc329d24d09fd1",
+      "murmur": "252571872"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Lydia_RodarteQuayle_e02cd3fa.png",
+      "size": "3282",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "cb8ba297a8f7c6149fb3f0e03d46f4da90b18105"
+    },
+    {
       "file": "/mods/kaleidoscopecookery-1.1.2a-fabric+mc1.21.1.jar",
       "size": "2231501",
       "type": "mod",
@@ -2091,12 +1633,13 @@
       "murmur": "81071969"
     },
     {
-      "file": "/config/easy_npc/skin/humanoid/Victor_Criss_30b5d5ad.png",
-      "size": "1063",
-      "type": "config",
-      "editable": true,
+      "file": "/mods/warm-pixel-performance-optimizer-1.0.0.jar",
+      "size": "25051",
+      "type": "mod",
+      "editable": false,
       "forceCopy": false,
-      "sha1": "c164f729446bac133b09b5829231e39cdbb33c7a"
+      "sha1": "a8bb25521eb9ea289d4365bb9b7c4637a788b084",
+      "murmur": "2968800477"
     },
     {
       "file": "/config/easy_npc/skin/humanoid/Lalo_Salamanca_faf8fdff.png",
@@ -2107,12 +1650,387 @@
       "sha1": "131fe7333a301249998a62a561933bf5f5da0992"
     },
     {
-      "file": "/config/storyadventure/voiceovers/stranger_things_hawkins/meet_the_boys_voice.ogg",
-      "size": "59315",
+      "file": "/config/easy_npc/skin/humanoid/Bill_Denbrough_7e00e06c.png",
+      "size": "770",
       "type": "config",
       "editable": true,
       "forceCopy": false,
-      "sha1": "f61508c80d506ac940ad5f922428de970932d034"
+      "sha1": "5625af942aa494c17b853e4428980d67e173af63"
+    },
+    {
+      "file": "/mods/FarmersDelight-1.21.1-3.2.2+refabricated.jar",
+      "size": "3129714",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "59846405e46af1e46ad9570a6f004c89652374db",
+      "murmur": "2996824463"
+    },
+    {
+      "file": "/mods/PresenceFootsteps-1.11.1+1.21.jar",
+      "size": "5690812",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "cfbeb32cc1dc17ef5c83a9f7a073a26453da8a8c",
+      "murmur": "3658487412"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Gustavo_Fring_c51e0ae4.png",
+      "size": "924",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "55b85f77d4cbc55083bfd3f24a798799f701e04b"
+    },
+    {
+      "file": "/mods/chunksfadein-fabric-3.0.20-1.21.jar",
+      "size": "448316",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b3bd66029744d17b6594494554616be27561e102",
+      "murmur": "831130285"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Patrick_Hockstetter_22ffdabf.png",
+      "size": "336",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "f2f80f0def39bdb9837f66448b5b3adac3e1c2a7"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Captain_Ironclaw_1308dc9a.png",
+      "size": "2020",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
+    },
+    {
+      "file": "/mods/numismatic-overhaul-0.3.5+1.21.jar",
+      "size": "509477",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "58b63790cf9c256128b8ebceec5b01f454e64450",
+      "murmur": "4184956559"
+    },
+    {
+      "file": "/mods/SkiesClear-fabric-1.21.1-1.1.2.jar",
+      "size": "990004",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "081f87b55bf8cfd2794f7aa650327ccedbf68b62",
+      "murmur": "2216685280"
+    },
+    {
+      "file": "/mods/AmbientSounds_FABRIC_v6.3.3_mc1.21.1.jar",
+      "size": "84820039",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4004939ba14a386a3c0dc540a1dfa46d1a35ea58",
+      "murmur": "2181634311"
+    },
+    {
+      "file": "/config/storyadventure/profiles/eleven.png",
+      "size": "600134",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "4ce1b9309a4fc34cfd279129bc1b52c06c5b0fa6"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Mrs_Kersh_3975c12f.png",
+      "size": "1866",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "99bf7eef9d8004d4e1ed3eda6b0e305d92ac9f9b"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Richie_Tozier_c795c7d0.png",
+      "size": "2067",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "d04f9c663f039eac961efd1d03921e349e5b3490"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Codsworth_f5e57f34.png",
+      "size": "362",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "b7397719296703df1d6ed8680af225e10412d124"
+    },
+    {
+      "file": "/mods/handcrafted-fabric-1.21.1-4.0.3.jar",
+      "size": "7127377",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "a9579fecd7ed429c282be21d5c921d220197acc6",
+      "murmur": "3248713794"
+    },
+    {
+      "file": "/mods/epicterrain-0.1.4.jar",
+      "size": "463739",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "a71fa3df06fb56441e1d9b443a4b4245056a7dfa",
+      "murmur": "3524157970"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Jane_Margolis_0f7a2155.png",
+      "size": "6244",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "26de04648a19302c3e47cc2edf181934e060b58c"
+    },
+    {
+      "file": "/mods/cloth-config-15.0.140-fabric.jar",
+      "size": "1157166",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "5d82342a2df53fd6df712bfdd583a811572918a4",
+      "murmur": "1877101333"
+    },
+    {
+      "file": "/mods/Axiom-5.2.1-for-MC1.21.1.jar",
+      "size": "44210201",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "12fc300ced1d9e71abbd4505a623cfed5723d835",
+      "murmur": "3053653728"
+    },
+    {
+      "file": "/mods/ImageDisplayer-1.0.0.jar",
+      "size": "464874",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "16fee6eec4ad4f7c660120ae4de1f41fb763698a",
+      "murmur": "2232280761"
+    },
+    {
+      "file": "/mods/ferritecore-7.0.2-hotfix-fabric.jar",
+      "size": "120709",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "48ee764932d0c8ec81a2223dbe333886938e512c",
+      "murmur": "4222391363"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Samuel_Raymond_2157cfea.png",
+      "size": "1932",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "966196608a6f4ad9f69945232d24db07073c2893"
+    },
+    {
+      "file": "/mods/[钠] sodium-fabric-0.6.13+mc1.21.1.jar",
+      "size": "1297761",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "928a2598178c3a58b0638bab842f467d2e49251a",
+      "murmur": "4286610893"
+    },
+    {
+      "file": "/mods/ftb-teams-fabric-2101.1.9.jar",
+      "size": "287518",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "a96e1169958eb92939ae67a1beb0aada373cbbbe",
+      "murmur": "777513639"
+    },
+    {
+      "file": "/mods/malilib-fabric-1.21-0.21.10.jar",
+      "size": "1411200",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e2699ef71618c54fc03c6c8b28e336603596dcef",
+      "murmur": "849549853"
+    },
+    {
+      "file": "/mods/athena-fabric-1.21-4.0.2.jar",
+      "size": "82788",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "d79183521f9bcb043ebdc6438f1987e46c12a067",
+      "murmur": "1560953245"
+    },
+    {
+      "file": "/mods/accessories-fabric-1.1.0-beta.52+1.21.1.jar",
+      "size": "1095894",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e4c823950882d127f6e4c7a710d33c2c84b9c304",
+      "murmur": "1315853219"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Skinny_Pete_ad8b918a.png",
+      "size": "350",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "8ba2ce87c8bf34d0e74560f6e70357c0cf40e93c"
+    },
+    {
+      "file": "/mods/xaerominimap-fabric-1.21.1-25.3.5.jar",
+      "size": "2159839",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "82cbfff0e68092f31869f4d6509590e58c9f6b92",
+      "murmur": "2314065765"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Jesse_Pinkman_b5e10a33.png",
+      "size": "1545",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "03a2fbbe9332dcf12288035c8f23700b0a680a64"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Irene_Landry_4f2fc496.png",
+      "size": "6244",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "dbd80483c3677eff2cfd57896d4ae04d471e704f"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Eddie_Munson_b6d74424.png",
+      "size": "876",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "dcdedc8a4a8dc916cb3411ecc3a136b9093dfd25"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Joyce_Byers_03fb962b.png",
+      "size": "370",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "576460d5338af38df9a73ac115929c890c853ec7"
+    },
+    {
+      "file": "/resourcepacks/furnitures.zip",
+      "size": "3135111",
+      "type": "resourcepack",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "b7583494abea3bc6bf5001f45da29eda2703a092",
+      "murmur": "310172865"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Jimmy_McGill_f998e992.png",
+      "size": "1622",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "bb44fabac17e17d971697650a45619493988b979"
+    },
+    {
+      "file": "/mods/Multiworld-Fabric-1.21.1.jar",
+      "size": "149140",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "e26899f4a6b536717a33bb25a78060a391cfe266",
+      "murmur": "721745778"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Lucy_MacLean_ed2fe3b8.png",
+      "size": "11384",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "3c5def2e1dd5606c729369b5a3e9a5d922b7387a"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Stacey_Ehrmantraut_e6a51676.png",
+      "size": "833",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "733f4c249e4948d464bce5ac445c5b7cbf23ef0a"
+    },
+    {
+      "file": "/mods/display-delight-1.5.0-mc1.21.1.jar",
+      "size": "719295",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "3297615588ea196a8a1712a750b605a6b0cb9354",
+      "murmur": "2097087054"
+    },
+    {
+      "file": "/mods/modernfix-fabric-5.25.1+mc1.21.1.jar",
+      "size": "471258",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "4ab39e9c736e7204146792c545ec5b29fc0a3872",
+      "murmur": "4091424383"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Armed_Police_ac34813e.png",
+      "size": "5010",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "9cedd6060f9cf2e0c1d268874fd74a0a1d9218f7"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Henry_357c46ac.png",
+      "size": "1608",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "d182238561a28170eb36e3d0d2f3228e4c7c1042"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Kate_Marsh_ef402ba5.png",
+      "size": "1293",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "39d63506db9a3974eb78a7024e83c29bcfba3611"
+    },
+    {
+      "file": "/mods/tabtps-fabric-mc1.21.1-1.3.25.jar",
+      "size": "2452454",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "48672964a74b5742e044ceb6e7dfccaa89a1d517",
+      "murmur": "1236367448"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Elder_Stoneheart_4e55bc5a.png",
+      "size": "2020",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
     },
     {
       "file": "/mods/packetfixer-3.3.1-1.20.5-1.21.X-merged.jar",
@@ -2122,6 +2040,74 @@
       "forceCopy": false,
       "sha1": "a8bb6e25807682e72c23bf4065f3cd5f6373ece3",
       "murmur": "3606950632"
+    },
+    {
+      "file": "/mods/mcw-doors-1.1.2-mc1.21.1fabric.jar",
+      "size": "1223064",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "78ba11ac0d3c60af84956d12a0557fddbff39cd5",
+      "murmur": "3721413290"
+    },
+    {
+      "file": "/mods/Chunky-Fabric-1.4.23.jar",
+      "size": "342979",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6c8098fc0f124c7b6492de60db0108747f7f9821",
+      "murmur": "3775061967"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Francesca_Liddy_fa65b3d3.png",
+      "size": "1084",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "2a08df12a95cf5107a104090212a1ec3678f8401"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Todd_Alquist_174057a9.png",
+      "size": "879",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "55e825f296748072f878b99969ed74efbc21da8e"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Forge_Master_Ember_1371dced.png",
+      "size": "2020",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "399d61a54bced37a8551be5ce7ad1cc50906c50e"
+    },
+    {
+      "file": "/mods/lithium-fabric-0.15.1+mc1.21.1.jar",
+      "size": "772848",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "6038cf136da413753345bf9d48e5798241439894",
+      "murmur": "2862911914"
+    },
+    {
+      "file": "/mods/warm-pixel-economy-1.0.0.jar",
+      "size": "186814",
+      "type": "mod",
+      "editable": false,
+      "forceCopy": false,
+      "sha1": "0297f0e907b7e4dbffd769b4b2429c0bcfa36252",
+      "murmur": "1563285864"
+    },
+    {
+      "file": "/config/easy_npc/skin/humanoid/Marco_Salamanca_201ee4b2.png",
+      "size": "2621",
+      "type": "config",
+      "editable": true,
+      "forceCopy": false,
+      "sha1": "50c13bb084c5a291d608c390f2e2c819c80a17e0"
     }
   ]
 }

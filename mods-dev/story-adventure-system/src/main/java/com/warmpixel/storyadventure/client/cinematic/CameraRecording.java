@@ -27,6 +27,8 @@ public class CameraRecording {
     private String name;
     private final List<RecordedKeyframe> keyframes;
     private LocalDateTime createdAt;
+    private CameraPath.InterpolationMode positionInterpolation = CameraPath.InterpolationMode.CATMULL_ROM;
+    private CameraPath.InterpolationMode rotationInterpolation = CameraPath.InterpolationMode.SMOOTH_LERP;
     
     public CameraRecording() {
         this.name = "Untitled Recording";
@@ -96,6 +98,22 @@ public class CameraRecording {
         return createdAt;
     }
     
+    public CameraPath.InterpolationMode getPositionInterpolation() {
+        return positionInterpolation;
+    }
+    
+    public void setPositionInterpolation(CameraPath.InterpolationMode mode) {
+        this.positionInterpolation = mode;
+    }
+    
+    public CameraPath.InterpolationMode getRotationInterpolation() {
+        return rotationInterpolation;
+    }
+    
+    public void setRotationInterpolation(CameraPath.InterpolationMode mode) {
+        this.rotationInterpolation = mode;
+    }
+    
     // ==================== Conversion ====================
     
     /**
@@ -113,7 +131,10 @@ public class CameraRecording {
             ));
         }
         
-        return new CameraPath(pathKeyframes, null);
+        CameraPath path = new CameraPath(pathKeyframes, null);
+        path.setPositionInterpolation(positionInterpolation);
+        path.setRotationInterpolation(rotationInterpolation);
+        return path;
     }
     
     /**
@@ -146,6 +167,8 @@ public class CameraRecording {
         }
         
         pathObj.add("keyframes", keyframesArr);
+        pathObj.addProperty("position_interpolation", positionInterpolation.name());
+        pathObj.addProperty("rotation_interpolation", rotationInterpolation.name());
         return pathObj;
     }
     
@@ -160,6 +183,8 @@ public class CameraRecording {
         JsonObject json = new JsonObject();
         json.addProperty("name", name);
         json.addProperty("created_at", createdAt.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+        json.addProperty("position_interpolation", positionInterpolation.name());
+        json.addProperty("rotation_interpolation", rotationInterpolation.name());
         
         JsonArray keyframesArr = new JsonArray();
         for (RecordedKeyframe kf : keyframes) {
@@ -204,6 +229,20 @@ public class CameraRecording {
             } catch (Exception e) {
                 recording.createdAt = LocalDateTime.now();
             }
+        }
+        
+        if (json.has("position_interpolation")) {
+            try {
+                recording.positionInterpolation = CameraPath.InterpolationMode.valueOf(
+                    json.get("position_interpolation").getAsString().toUpperCase());
+            } catch (IllegalArgumentException ignored) {}
+        }
+        
+        if (json.has("rotation_interpolation")) {
+            try {
+                recording.rotationInterpolation = CameraPath.InterpolationMode.valueOf(
+                    json.get("rotation_interpolation").getAsString().toUpperCase());
+            } catch (IllegalArgumentException ignored) {}
         }
         
         if (json.has("keyframes") && json.get("keyframes").isJsonArray()) {
@@ -334,6 +373,14 @@ public class CameraRecording {
         
         public RecordedKeyframe withFov(float newFov) {
             return new RecordedKeyframe(x, y, z, yaw, pitch, roll, newFov, durationTicks, easing);
+        }
+        
+        public RecordedKeyframe withPosition(double newX, double newY, double newZ) {
+            return new RecordedKeyframe(newX, newY, newZ, yaw, pitch, roll, fov, durationTicks, easing);
+        }
+        
+        public RecordedKeyframe withRotation(float newYaw, float newPitch, float newRoll) {
+            return new RecordedKeyframe(x, y, z, newYaw, newPitch, newRoll, fov, durationTicks, easing);
         }
     }
 }

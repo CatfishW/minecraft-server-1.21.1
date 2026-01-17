@@ -45,11 +45,11 @@ public class StrangerInvitationNotificationScreen extends StrangerScreen {
         int rectX = width / 2 - rectW / 2;
         int rectY = height / 2 - rectH / 2;
         
-        graphics.fill(rectX, rectY, rectX + rectW, rectY + rectH, 0xF0080808);
+        graphics.fill(rectX, rectY, rectX + rectW, rectY + rectH, 0xF0101216);
         drawPanelBorder(graphics, rectX, rectY, rectW, rectH);
         
-        graphics.drawCenteredString(font, "队伍邀请", width / 2, rectY + 15, COLOR_NEON_RED);
-        graphics.drawCenteredString(font, "玩家 " + inviterName + " 邀请你加入他的队伍", width / 2, rectY + 40, 0xFFFFFFFF);
+        graphics.drawCenteredString(font, "队伍邀请", width / 2, rectY + 15, COLOR_TEXT_TITLE);
+        graphics.drawCenteredString(font, "玩家 " + inviterName + " 邀请你加入他的队伍", width / 2, rectY + 40, COLOR_TEXT_BODY);
     }
     
     private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {

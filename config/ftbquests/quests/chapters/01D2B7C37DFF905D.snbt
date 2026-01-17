@@ -6,5 +6,39 @@
 	id: "01D2B7C37DFF905D"
 	order_index: 2
 	quest_links: [ ]
-	quests: [ ]
+	quests: [
+		{
+			icon: {
+				id: "yuushya:kitchen_stuff_0"
+			}
+			id: "0687F93B8E7C0C2A"
+			rewards: [{
+				count: 50
+				id: "7D2DE2D6DE67B9C5"
+				item: {
+					count: 1
+					id: "numismatic-overhaul:bronze_coin"
+				}
+				type: "item"
+			}]
+			size: 2.0d
+			tasks: [{
+				id: "0ECE827630DB8F00"
+				type: "checkmark"
+			}]
+			x: 0.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["0687F93B8E7C0C2A"]
+			id: "6AFB0213E565DAF2"
+			tasks: [{
+				id: "0790F9B4EF204ACB"
+				item: { count: 1, id: "novus_items:decoration_exchange_voucher" }
+				type: "item"
+			}]
+			x: 0.5d
+			y: 5.0d
+		}
+	]
 }

@@ -20,6 +20,8 @@ public class StageGraph {
     private final int minPlayers;
     private final int maxPlayers;
     private final int estimatedDurationMinutes;
+    private final int maxTeamDeaths;
+    private final JsonArray failureRewards;
     private final String entryNodeId;
     private final Map<String, StageNode> nodes;
     private final Map<String, ClueDefinition> clues;
@@ -36,6 +38,8 @@ public class StageGraph {
         this.minPlayers = builder.minPlayers;
         this.maxPlayers = builder.maxPlayers;
         this.estimatedDurationMinutes = builder.estimatedDurationMinutes;
+        this.maxTeamDeaths = builder.maxTeamDeaths;
+        this.failureRewards = builder.failureRewards;
         this.entryNodeId = builder.entryNodeId;
         this.nodes = Collections.unmodifiableMap(new HashMap<>(builder.nodes));
         this.clues = Collections.unmodifiableMap(new HashMap<>(builder.clues));
@@ -51,6 +55,8 @@ public class StageGraph {
     public int getMinPlayers() { return minPlayers; }
     public int getMaxPlayers() { return maxPlayers; }
     public int getEstimatedDurationMinutes() { return estimatedDurationMinutes; }
+    public int getMaxTeamDeaths() { return maxTeamDeaths; }
+    public JsonArray getFailureRewards() { return failureRewards; }
     public String getEntryNodeId() { return entryNodeId; }
     
     public StageNode getNode(String nodeId) {
@@ -201,6 +207,8 @@ public class StageGraph {
         builder.maxPlayers(json.has("max_players") ? json.get("max_players").getAsInt() : 4);
         builder.estimatedDurationMinutes(json.has("estimated_duration_minutes") ? 
             json.get("estimated_duration_minutes").getAsInt() : 60);
+        builder.maxTeamDeaths(json.has("max_team_deaths") ? json.get("max_team_deaths").getAsInt() : 15);
+        builder.failureRewards(json.has("failure_rewards") ? json.getAsJsonArray("failure_rewards") : new JsonArray());
         
         // Parse nodes
         JsonObject nodesJson = json.getAsJsonObject("nodes");
@@ -306,6 +314,8 @@ public class StageGraph {
         private int minPlayers = 1;
         private int maxPlayers = 4;
         private int estimatedDurationMinutes = 60;
+        private int maxTeamDeaths = 15;
+        private JsonArray failureRewards = new JsonArray();
         private final Map<String, StageNode> nodes = new HashMap<>();
         private final Map<String, ClueDefinition> clues = new HashMap<>();
         private final Map<String, FlagDefinition> flags = new HashMap<>();
@@ -322,6 +332,8 @@ public class StageGraph {
         public Builder minPlayers(int minPlayers) { this.minPlayers = minPlayers; return this; }
         public Builder maxPlayers(int maxPlayers) { this.maxPlayers = maxPlayers; return this; }
         public Builder estimatedDurationMinutes(int minutes) { this.estimatedDurationMinutes = minutes; return this; }
+        public Builder maxTeamDeaths(int deaths) { this.maxTeamDeaths = deaths; return this; }
+        public Builder failureRewards(JsonArray rewards) { this.failureRewards = rewards; return this; }
         
         public Builder addNode(StageNode node) {
             nodes.put(node.getId(), node);

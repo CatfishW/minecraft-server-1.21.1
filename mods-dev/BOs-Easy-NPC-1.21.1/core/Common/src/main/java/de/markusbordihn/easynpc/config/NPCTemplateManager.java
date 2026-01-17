@@ -37,6 +37,7 @@ import de.markusbordihn.easynpc.data.dialog.DialogType;
 import de.markusbordihn.easynpc.data.objective.ObjectiveDataEntry;
 import de.markusbordihn.easynpc.data.objective.ObjectiveType;
 import de.markusbordihn.easynpc.data.skin.SkinDataEntry;
+import de.markusbordihn.easynpc.data.skin.SkinType;
 import de.markusbordihn.easynpc.data.display.DisplayAttributeType;
 import de.markusbordihn.easynpc.data.display.NameVisibilityType;
 import de.markusbordihn.easynpc.data.synched.SynchedDataIndex;
@@ -1044,6 +1045,18 @@ public class NPCTemplateManager {
     }
     if (objectives.isAttackPlayers()) {
       objectiveCapable.addOrUpdateCustomObjective(new ObjectiveDataEntry(ObjectiveType.ATTACK_PLAYER));
+    }
+
+    // Specific Attack Type
+    if (objectives.getAttackType() != null && !objectives.getAttackType().isEmpty()) {
+      String attackTypeStr = objectives.getAttackType().toUpperCase();
+      try {
+        ObjectiveType type = ObjectiveType.valueOf(attackTypeStr);
+        objectiveCapable.addOrUpdateCustomObjective(new ObjectiveDataEntry(type));
+        log.info("{} Applied specified attack type objective: {}", LOG_PREFIX, type);
+      } catch (IllegalArgumentException e) {
+        log.warn("{} Invalid attack type specified in template: {}", LOG_PREFIX, objectives.getAttackType());
+      }
     }
     if (objectives.isReturnToSpawn()) {
       objectiveCapable.addOrUpdateCustomObjective(new ObjectiveDataEntry(ObjectiveType.MOVE_BACK_TO_HOME));

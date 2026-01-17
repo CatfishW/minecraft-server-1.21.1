@@ -24,7 +24,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
     
     // 布局常量
     private static final int GUI_WIDTH = 200;
-    private static final int GUI_HEIGHT = 240;
+    private static final int GUI_HEIGHT = 260; // Increased to 260
     private static final int PADDING = 12;
     private static final int SLIDER_WIDTH = 140;
     private static final int SLIDER_HEIGHT = 8;
@@ -68,7 +68,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         
         // 数量输入框
         int boxX = leftPos + (imageWidth - 80) / 2;
-        int boxY = topPos + 145;
+        int boxY = topPos + 160; // Moved down to 160
         quantityBox = new EditBox(font, boxX, boxY, 80, 18, Component.literal("0"));
         quantityBox.setMaxLength(4);
         quantityBox.setFilter(s -> s.isEmpty() || s.matches("\\d+"));
@@ -148,7 +148,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
     }
 
     private void renderItemDisplay(GuiGraphics graphics, int x, int y) {
-        int itemAreaY = y + 35;
+        int itemAreaY = y + 25; // Moved up from 35
         
         // 物品背景框
         int boxX = x + (imageWidth - 24) / 2 - 4;
@@ -177,7 +177,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
     }
 
     private void renderPriceInfo(GuiGraphics graphics, int x, int y) {
-        int infoY = y + 82;
+        int infoY = y + 72; // Moved up from 82
         int leftX = x + PADDING;
         
         long unitPrice = calculateUnitPrice();
@@ -191,7 +191,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         String balanceLabel = "Balance: " + formatNumber(balance);
         graphics.drawString(font, balanceLabel, leftX, infoY, 0x7EB8E8, false);
         
-        // 背包数量（仅出售模式）
+        // 背包数量（仅出售模式）- Right Aligned on same line
         if (menu.mode() == TradeMode.SELL) {
             String invLabel = Component.translatable("ui.warm_pixel_economy.trade.inventory", inventoryCount).getString();
             int invLabelX = x + imageWidth - PADDING - font.width(invLabel);
@@ -199,13 +199,13 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         }
         
         // 单价和税费
-        infoY += 14;
+        infoY += 12; // Reduced spacing
         Component priceInfo = Component.translatable("ui.warm_pixel_economy.trade.unit_tax", 
                 formatNumber(unitPrice), formatNumber(tax));
         graphics.drawString(font, priceInfo, leftX, infoY, 0xB0B0B0, false);
         
         // 总计/收款
-        infoY += 14;
+        infoY += 12; // Reduced spacing
         if (menu.mode() == TradeMode.BUY) {
             Component totalLabel = Component.translatable("ui.warm_pixel_economy.trade.total", formatNumber(total));
             graphics.drawString(font, totalLabel, leftX, infoY, 0xFFD966, false);
@@ -215,7 +215,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         }
         
         // 警告信息
-        infoY += 14;
+        infoY += 12; // Reduced spacing
         TradeValidation validation = validateTrade();
         if (!validation.valid && units > 0) {
             graphics.drawString(font, validation.message, leftX, infoY, 0xE07A7A, false);
@@ -223,7 +223,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
     }
 
     private void renderQuickButtons(GuiGraphics graphics, int x, int y, int mouseX, int mouseY) {
-        int buttonY = y + 128;
+        int buttonY = y + 120; // Adjusted Y
         int buttonWidth = 36;
         int buttonHeight = 14;
         int spacing = 4;
@@ -242,7 +242,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         
         // 出售全部按钮（仅出售模式）
         if (menu.mode() == TradeMode.SELL) {
-            int sellAllY = buttonY - 16;
+            int sellAllY = buttonY + 16; // Moved BELOW quick buttons
             int sellAllWidth = totalWidth;
             boolean hover = isWithin(mouseX, mouseY, startX, sellAllY, sellAllWidth, buttonHeight);
             String sellAllText = Component.translatable("ui.warm_pixel_economy.trade.sell_all").getString();
@@ -252,7 +252,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
 
     private void renderSlider(GuiGraphics graphics, int x, int y) {
         int sliderX = x + (imageWidth - SLIDER_WIDTH) / 2;
-        int sliderY = y + 172;
+        int sliderY = y + 195; // Moved down to 195 // Moved down to 185
         
         // 标签
         String qtyLabel = "x" + units + " / " + maxUnits;
@@ -282,7 +282,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         int buttonWidth = 70;
         int buttonHeight = 20;
         int spacing = 16;
-        int buttonY = y + 200;
+        int buttonY = y + 225; // Moved down to 225
         int startX = x + (imageWidth - buttonWidth * 2 - spacing) / 2;
         
         TradeValidation validation = validateTrade();
@@ -305,7 +305,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
 
     private void renderStatus(GuiGraphics graphics, int x, int y) {
         if (statusMessage != null && !statusMessage.getString().isEmpty()) {
-            int statusY = y + imageHeight - 16;
+            int statusY = y + imageHeight - 12;
             int statusX = x + (imageWidth - font.width(statusMessage)) / 2;
             int color = statusSuccess ? 0x87E0A0 : 0xE07A7A;
             graphics.drawString(font, statusMessage, statusX, statusY, color, false);
@@ -393,7 +393,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
     }
 
     private boolean handleQuickButtons(double mouseX, double mouseY) {
-        int y = topPos + 128;
+        int y = topPos + 120; // Matches renderQuickButtons Y
         int buttonWidth = 36;
         int buttonHeight = 14;
         int spacing = 4;
@@ -424,7 +424,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         
         // 出售全部
         if (menu.mode() == TradeMode.SELL) {
-            int sellAllY = y - 16;
+            int sellAllY = y + 16; // Matches renderQuickButtons SellAll Y
             if (isWithin(mouseX, mouseY, startX, sellAllY, totalWidth, buttonHeight)) {
                 setUnits(maxUnits);
                 return true;
@@ -438,7 +438,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
         int buttonWidth = 70;
         int buttonHeight = 20;
         int spacing = 16;
-        int buttonY = topPos + 200;
+        int buttonY = topPos + 225; // Match renderActionButtons
         int startX = leftPos + (imageWidth - buttonWidth * 2 - spacing) / 2;
         
         // 确认
@@ -481,7 +481,7 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
 
     private boolean isOnSlider(double mouseX, double mouseY) {
         int sliderX = leftPos + (imageWidth - SLIDER_WIDTH) / 2;
-        int sliderY = topPos + 172;
+        int sliderY = topPos + 195; // Match renderSlider
         return isWithin(mouseX, mouseY, sliderX - 5, sliderY - 5, SLIDER_WIDTH + 10, SLIDER_HEIGHT + 10);
     }
 
@@ -610,7 +610,11 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
             long unitTotal = calculateUnitPrice() + Math.round(calculateUnitPrice() * menu.taxRate());
             int maxByBalance = unitTotal > 0 ? (int) (balance / unitTotal) : absoluteMax;
             
-            maxUnits = Math.max(0, Math.min(maxByStock, maxByBalance));
+            // 计算背包空间限制
+            int availableSpace = calculateAvailableSpace();
+            int maxBySpace = availableSpace / perOffer;
+            
+            maxUnits = Math.max(0, Math.min(Math.min(maxByStock, maxByBalance), maxBySpace));
         } else {
             // 出售模式：受背包物品数量限制
             maxUnits = Math.max(0, inventoryCount / perOffer);
@@ -636,6 +640,32 @@ public class ShopTradeScreen extends AbstractContainerScreen<ShopTradeMenu> {
             return Math.max(1, (long) (menu.offer().price() * menu.sellRatio()));
         }
         return menu.offer().price();
+    }
+
+    private int calculateAvailableSpace() {
+        if (minecraft == null || minecraft.player == null || displayStack.isEmpty()) {
+            return 0;
+        }
+
+        Inventory inventory = minecraft.player.getInventory();
+        int totalSpace = 0;
+        int maxStackSize = Math.min(displayStack.getMaxStackSize(), inventory.getMaxStackSize());
+
+        // 检查主背包 (0-35)
+        for (int i = 0; i < 36; i++) {
+            ItemStack slotStack = inventory.getItem(i);
+            
+            if (slotStack.isEmpty()) {
+                totalSpace += maxStackSize;
+            } else if (isSameItem(slotStack, displayStack)) {
+                int space = maxStackSize - slotStack.getCount();
+                if (space > 0) {
+                    totalSpace += space;
+                }
+            }
+        }
+        
+        return totalSpace;
     }
 
     private long calculateTax() {

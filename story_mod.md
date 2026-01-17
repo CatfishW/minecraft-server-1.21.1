@@ -21267,3 +21267,4 @@ public class VoiceoverManager {
 }
 ```
 
+Camera cutscene keyframes transitioning wasn't smooth enough, it was kinda laggy, help me refine it. 

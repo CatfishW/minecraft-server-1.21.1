@@ -121,13 +121,13 @@ public class StrangerLobbyScreen extends StrangerScreen {
         int panelHeight = height - 130;
         
         // Background
-        graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0080808);
+        graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0101216);
         drawPanelBorder(graphics, panelX, panelY, panelWidth, panelHeight);
         
         int y = panelY + 10;
         
         // Story title
-        graphics.drawString(font, "【" + storyName + "】", panelX + 15, y, COLOR_NEON_RED);
+        graphics.drawString(font, "【" + storyName + "】", panelX + 15, y, COLOR_TEXT_TITLE);
         y += 20;
         
         // Description (wrapped)
@@ -153,7 +153,7 @@ public class StrangerLobbyScreen extends StrangerScreen {
         y = panelY + panelHeight - 40;
         graphics.fill(panelX + 15, y, panelX + panelWidth - 15, y + 1, COLOR_BORDER);
         y += 8;
-        graphics.drawString(font, "💡 提示: 建议携带武器和食物", panelX + 15, y, 0xFF888888);
+        graphics.drawString(font, "💡 提示: 建议携带武器和食物", panelX + 15, y, COLOR_TEXT_DIM);
     }
     
     private void renderPartyPanel(GuiGraphics graphics, int mouseX, int mouseY) {
@@ -163,17 +163,17 @@ public class StrangerLobbyScreen extends StrangerScreen {
         int panelHeight = height - 130;
         
         // Background
-        graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0080808);
+        graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0101216);
         drawPanelBorder(graphics, panelX, panelY, panelWidth, panelHeight);
         
         // Panel title
         graphics.drawString(font, "队伍成员 (" + members.size() + "/" + maxPlayers + ")", 
-            panelX + 15, panelY + 10, COLOR_NEON_RED);
+            panelX + 15, panelY + 10, COLOR_TEXT_TITLE);
         
         // Ready count
         long readyCount = members.stream().filter(m -> m.ready).count();
         String readyText = "准备: " + readyCount + "/" + members.size();
-        int readyColor = readyCount == members.size() ? 0xFF44FF44 : COLOR_TEXT_DIM;
+        int readyColor = readyCount == members.size() ? 0xFF6EE7A6 : COLOR_TEXT_DIM;
         graphics.drawString(font, readyText, panelX + panelWidth - font.width(readyText) - 15, 
             panelY + 10, readyColor);
         
@@ -194,18 +194,18 @@ public class StrangerLobbyScreen extends StrangerScreen {
     private void renderMemberEntry(GuiGraphics graphics, PartyMember member, 
                                     int x, int y, int width, int mouseX, int mouseY) {
         // Background
-        int bgColor = member.ready ? 0xFF0A1A0A : 0xFF0A0A0A;
+        int bgColor = member.ready ? 0xFF13241F : 0xFF12161C;
         graphics.fill(x, y, x + width, y + MEMBER_ENTRY_HEIGHT, bgColor);
         
         // Border
-        int borderColor = member.ready ? 0xFF44FF44 : COLOR_BORDER;
+        int borderColor = member.ready ? 0xFF3BB6A6 : COLOR_BORDER;
         graphics.fill(x, y, x + width, y + 1, borderColor);
         graphics.fill(x, y + MEMBER_ENTRY_HEIGHT - 1, x + width, y + MEMBER_ENTRY_HEIGHT, borderColor);
         graphics.fill(x, y, x + 1, y + MEMBER_ENTRY_HEIGHT, borderColor);
         graphics.fill(x + width - 1, y, x + width, y + MEMBER_ENTRY_HEIGHT, borderColor);
         
         // Player icon (placeholder)
-        graphics.fill(x + 8, y + 6, x + 30, y + 30, 0xFF333333);
+        graphics.fill(x + 8, y + 6, x + 30, y + 30, 0xFF30363D);
         graphics.drawString(font, "👤", x + 11, y + 12, COLOR_TEXT_BODY);
         
         // Name
@@ -215,13 +215,13 @@ public class StrangerLobbyScreen extends StrangerScreen {
         
         // Ready status
         String statusText = member.ready ? "✓ 已准备" : "○ 等待中...";
-        int statusColor = member.ready ? 0xFF44FF44 : COLOR_TEXT_DIM;
+        int statusColor = member.ready ? 0xFF6EE7A6 : COLOR_TEXT_DIM;
         graphics.drawString(font, statusText, x + 38, y + 22, statusColor);
     }
     
     private void renderEmptySlot(GuiGraphics graphics, int x, int y, int width) {
         // Dashed border style for empty slot
-        graphics.fill(x, y, x + width, y + MEMBER_ENTRY_HEIGHT, 0x40080808);
+        graphics.fill(x, y, x + width, y + MEMBER_ENTRY_HEIGHT, 0x4012161C);
         
         // Draw dashed border
         for (int i = 0; i < width; i += 8) {
@@ -262,16 +262,6 @@ public class StrangerLobbyScreen extends StrangerScreen {
         graphics.fill(x, y + h - 1, x + w, y + h, COLOR_BORDER);
         graphics.fill(x, y, x + 1, y + h, COLOR_BORDER);
         graphics.fill(x + w - 1, y, x + w, y + h, COLOR_BORDER);
-        
-        int cs = 10;
-        graphics.fill(x, y, x + cs, y + 2, COLOR_NEON_RED);
-        graphics.fill(x, y, x + 2, y + cs, COLOR_NEON_RED);
-        graphics.fill(x + w - cs, y, x + w, y + 2, COLOR_NEON_RED);
-        graphics.fill(x + w - 2, y, x + w, y + cs, COLOR_NEON_RED);
-        graphics.fill(x, y + h - 2, x + cs, y + h, COLOR_NEON_RED);
-        graphics.fill(x, y + h - cs, x + 2, y + h, COLOR_NEON_RED);
-        graphics.fill(x + w - cs, y + h - 2, x + w, y + h, COLOR_NEON_RED);
-        graphics.fill(x + w - 2, y + h - cs, x + w, y + h, COLOR_NEON_RED);
     }
     
     private List<String> wrapText(String text, int maxWidth) {

@@ -3,8 +3,10 @@ package com.warmpixel.storyadventure.core.event;
 import com.warmpixel.storyadventure.StoryAdventureMod;
 import com.warmpixel.storyadventure.instance.Instance;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.server.level.ServerPlayer;
 
 import java.util.UUID;
 
@@ -16,6 +18,9 @@ public class StoryEventListener {
     public static void register() {
          // Listen for entity deaths to track combat progress and kill objectives
         ServerLivingEntityEvents.AFTER_DEATH.register(StoryEventListener::onEntityDeath);
+        
+        // Listen for player deaths to track lives in instances
+        ServerPlayerEvents.AFTER_RESPAWN.register(StoryEventListener::onPlayerRespawn);
     }
     
     private static void onEntityDeath(LivingEntity entity, DamageSource damageSource) {
@@ -39,6 +44,41 @@ public class StoryEventListener {
                     }
                 } catch (Exception e) {
                     // Ignore malformed tags
+                }
+            }
+        }
+    }
+    
+    private static void onPlayerRespawn(ServerPlayer oldPlayer, ServerPlayer newPlayer, boolean alive) {
+        // Check if player is in an active instance
+        UUID playerId = newPlayer.getUUID();
+        Instance instance = StoryAdventureMod.getInstance().getInstanceManager().getPlayerInstance(playerId);
+        
+        if (instance != null && instance.getStatus() == Instance.InstanceStatus.RUNNING) {
+            StoryAdventureMod.LOGGER.info("[StoryEventListener] Player {} died in instance {}", 
+                newPlayer.getName().getString(), instance.getInstanceId());
+            
+            // Increment death count and check for failure
+            boolean failed = instance.incrementDeathCount();
+            
+            if (!failed) {
+                // Update lives UI for all party members
+                syncLivesUIToParty(instance);
+            }
+        }
+    }
+    
+    private static void syncLivesUIToParty(Instance instance) {
+        // Sync lives to all party members by triggering HUD update
+        var currentNode = instance.getCurrentNode();
+        if (currentNode != null) {
+            var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(currentNode.getType());
+            if (handler != null) {
+                // Trigger HUD sync via handler (if supported)
+                try {
+                    handler.onAction(instance, currentNode, null, "sync_hud", null);
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.debug("[StoryEventListener] Handler doesn't support sync_hud action: {}", e.getMessage());
                 }
             }
         }

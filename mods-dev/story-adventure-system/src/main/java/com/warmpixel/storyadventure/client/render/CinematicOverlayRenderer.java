@@ -28,7 +28,7 @@ public class CinematicOverlayRenderer implements HudRenderCallback {
     
     public static void register() {
         instance = new CinematicOverlayRenderer();
-        HudRenderCallback.EVENT.register(instance);
+        // HudRenderCallback.EVENT.register(instance); // Disabled to prevent double rendering with Mixin
     }
     
     public static CinematicOverlayRenderer getInstance() {
@@ -49,10 +49,12 @@ public class CinematicOverlayRenderer implements HudRenderCallback {
         float partialTicks = deltaTracker.getGameTimeDeltaPartialTick(true);
         
         // Update controller tick
-        controller.tick(partialTicks);
+        controller.renderTick(partialTicks);
         
         // Render fade effect (behind letterbox)
-        renderFade(graphics, screenWidth, screenHeight, controller.getFadeProgress());
+        if (controller.isFadeEnabled()) {
+            renderFade(graphics, screenWidth, screenHeight, controller.getFadeProgress());
+        }
         
         // Render letterbox bars
         if (controller.isLetterboxEnabled()) {

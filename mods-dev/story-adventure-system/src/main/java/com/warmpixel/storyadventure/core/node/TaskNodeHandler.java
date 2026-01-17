@@ -176,6 +176,11 @@ public class TaskNodeHandler implements NodeHandler {
         if (timeLimitSeconds > 0) {
             hudJson.append(",\"timer\":").append(timeLimitSeconds * 1000L);
         }
+        
+        // Add lives information
+        hudJson.append(",\"remainingLives\":").append(instance.getRemainingLives());
+        hudJson.append(",\"maxLives\":").append(instance.getMaxTeamDeaths());
+        
         hudJson.append("}");
         
         for (UUID memberId : instance.getParty().getMembers()) {
@@ -688,6 +693,13 @@ public class TaskNodeHandler implements NodeHandler {
                 StoryAdventureMod.LOGGER.info("[TaskNodeHandler] Skipping task for node {}", node.getId());
                 instance.getState().setNodeResult("skipped");
                 instance.evaluateAutoTransitions();
+            }
+            
+            case "sync_hud" -> {
+                // Triggered by death event listener to update lives display
+                int timeLimitSeconds = node.getInt("time_limit_seconds", 0);
+                List<TaskObjective> objectives = parseObjectives(node);
+                syncHudToParty(instance, node, objectives, timeLimitSeconds);
             }
             
             default -> StoryAdventureMod.LOGGER.warn("[TaskNodeHandler] Unknown action: {}", action);

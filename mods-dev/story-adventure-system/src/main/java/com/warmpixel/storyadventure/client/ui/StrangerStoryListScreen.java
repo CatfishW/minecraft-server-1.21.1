@@ -57,7 +57,7 @@ public class StrangerStoryListScreen extends StrangerScreen {
         int listHeight = ENTRY_HEIGHT * VISIBLE_ENTRIES;
         
         // Draw list background
-        graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0080808);
+        graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0101216);
         
         // Draw list border
         drawListBorder(graphics, listX, listY, listWidth, listHeight);
@@ -86,7 +86,7 @@ public class StrangerStoryListScreen extends StrangerScreen {
         boolean hovered = mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + ENTRY_HEIGHT;
         
         // Background
-        int bgColor = selected ? 0xFF1A0808 : (hovered ? 0xFF100505 : 0xFF080808);
+        int bgColor = selected ? 0xFF1B232C : (hovered ? 0xFF151B22 : 0xFF0E1218);
         graphics.fill(x, y, x + width, y + ENTRY_HEIGHT - 2, bgColor);
         
         // Border
@@ -119,13 +119,6 @@ public class StrangerStoryListScreen extends StrangerScreen {
         graphics.fill(x, y + h - 1, x + w, y + h, COLOR_BORDER);
         graphics.fill(x, y, x + 1, y + h, COLOR_BORDER);
         graphics.fill(x + w - 1, y, x + w, y + h, COLOR_BORDER);
-        
-        // Corner accents
-        int cs = 8;
-        graphics.fill(x, y, x + cs, y + 2, COLOR_NEON_RED);
-        graphics.fill(x, y, x + 2, y + cs, COLOR_NEON_RED);
-        graphics.fill(x + w - cs, y, x + w, y + 2, COLOR_NEON_RED);
-        graphics.fill(x + w - 2, y, x + w, y + cs, COLOR_NEON_RED);
     }
     
     @Override

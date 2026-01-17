@@ -1,0 +1,51 @@
+{
+    "name": "§c§l魔怪",
+    "entityType": "easy_npc:zombie",
+    "faction": "bandit",
+    "description": "A terrifying monster from the Upside Down.",
+    "skin": {
+        "type": "CUSTOM",
+        "textureId": "demogorgon"
+    },
+    "attributes": {
+        "maxHealth": 100.0,
+        "movementSpeed": 0.35,
+        "attackDamage": 15.0,
+        "armor": 4.0,
+        "invulnerable": false,
+        "attackableByPlayers": true,
+        "attackableByMonsters": false,
+        "nameVisibility": "NEVER"
+    },
+    "equipment": {},
+    "objectives": {
+        "attackHostileMobs": false,
+        "attackPlayers": true,
+        "attackHostileFactions": true,
+        "hostileFactions": [
+            "guards",
+            "villagers",
+            "default"
+        ],
+        "returnToSpawn": false,
+        "wanderRange": 32.0,
+        "useCustomAttack": false,
+        "attackRadius": 32.0,
+        "attackType": "MELEE_ATTACK"
+    },
+    "story": "",
+    "dialog": {
+        "greeting": "",
+        "buttons": []
+    },
+    "drop": {
+        "item": {
+            "item": "minecraft:rotten_flesh",
+            "count": 10
+        },
+        "minCount": 10,
+        "maxCount": 30,
+        "chance": 0.5,
+        "playerKillOnly": true
+    }
+}

@@ -20,7 +20,9 @@ public class CinematicItemInHandRendererMixin {
      * Skip rendering hands and items when a cutscene is active.
      */
     @Inject(method = "renderHandsWithItems", at = @At("HEAD"), cancellable = true)
-    private void storyadventure$hideHandsDuringCutscene(float partialTicks, PoseStack poseStack, MultiBufferSource.BufferSource bufferSource, LocalPlayer player, int light, CallbackInfo ci) {
+    private void storyadventure$hideHandsDuringCutscene(float partialTicks, PoseStack poseStack, 
+                                                         MultiBufferSource.BufferSource bufferSource, 
+                                                         LocalPlayer player, int light, CallbackInfo ci) {
         if (CinematicCameraController.getInstance().isActive()) {
             ci.cancel();
         }

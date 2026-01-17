@@ -18,15 +18,28 @@ public class CameraKeyframe {
     private final int durationTicks;
     private final EasingFunction easing;
     
+    // Cached accumulated time for faster lookup
+    private float accumulatedTime = 0f;
+    
     public CameraKeyframe(Vec3 position, float yaw, float pitch, float roll, 
                           float fov, int durationTicks, EasingFunction easing) {
         this.position = position;
-        this.yaw = yaw;
+        this.yaw = normalizeAngle(yaw);
         this.pitch = pitch;
         this.roll = roll;
         this.fov = fov;
         this.durationTicks = durationTicks;
         this.easing = easing;
+    }
+    
+    /**
+     * Normalize angle to [-180, 180] range.
+     */
+    private static float normalizeAngle(float angle) {
+        angle = angle % 360f;
+        if (angle > 180f) angle -= 360f;
+        if (angle < -180f) angle += 360f;
+        return angle;
     }
     
     // ==================== Getters ====================
@@ -57,6 +70,14 @@ public class CameraKeyframe {
     
     public EasingFunction getEasing() {
         return easing;
+    }
+    
+    public float getAccumulatedTime() {
+        return accumulatedTime;
+    }
+    
+    public void setAccumulatedTime(float time) {
+        this.accumulatedTime = time;
     }
     
     // ==================== JSON Serialization ====================

@@ -1,11 +1,16 @@
 package com.warmpixel.storyadventure.item;
 
 import com.warmpixel.storyadventure.client.ui.admin.AdminDashboardScreen;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -74,6 +79,82 @@ public class AdminWandItem extends Item {
     }
     
     /**
+     * Handle shift+right-click on living entities to display NBT/tag data.
+     */
+    @Override
+    public InteractionResult interactLivingEntity(ItemStack stack, Player player, LivingEntity target, InteractionHand hand) {
+        if (!player.hasPermissions(2)) {
+            return InteractionResult.PASS;
+        }
+        
+        // Shift+Right Click on entity = inspect NBT and tags
+        if (player.isShiftKeyDown() && !player.level().isClientSide) {
+            inspectEntity(player, target);
+            return InteractionResult.SUCCESS;
+        }
+        
+        return InteractionResult.PASS;
+    }
+    
+    /**
+     * Inspect any entity (including non-living like vehicles) and display info in chat.
+     * Called from server-side only.
+     */
+    public static void inspectEntity(Player player, Entity entity) {
+        player.sendSystemMessage(Component.literal("═══════════════════════════════════").withStyle(ChatFormatting.GOLD));
+        player.sendSystemMessage(Component.literal("Entity Inspector").withStyle(ChatFormatting.GOLD, ChatFormatting.BOLD));
+        player.sendSystemMessage(Component.literal("═══════════════════════════════════").withStyle(ChatFormatting.GOLD));
+        
+        // Basic info
+        player.sendSystemMessage(Component.literal("Type: ").withStyle(ChatFormatting.YELLOW)
+            .append(Component.literal(entity.getType().toString()).withStyle(ChatFormatting.WHITE)));
+        player.sendSystemMessage(Component.literal("UUID: ").withStyle(ChatFormatting.YELLOW)
+            .append(Component.literal(entity.getUUID().toString()).withStyle(ChatFormatting.GRAY)));
+        player.sendSystemMessage(Component.literal("Name: ").withStyle(ChatFormatting.YELLOW)
+            .append(entity.getDisplayName().copy().withStyle(ChatFormatting.WHITE)));
+        
+        // Position
+        player.sendSystemMessage(Component.literal("Position: ").withStyle(ChatFormatting.YELLOW)
+            .append(Component.literal(String.format("%.2f, %.2f, %.2f", entity.getX(), entity.getY(), entity.getZ())).withStyle(ChatFormatting.WHITE)));
+        
+        // Tags
+        var tags = entity.getTags();
+        if (tags.isEmpty()) {
+            player.sendSystemMessage(Component.literal("Tags: ").withStyle(ChatFormatting.YELLOW)
+                .append(Component.literal("(none)").withStyle(ChatFormatting.GRAY)));
+        } else {
+            player.sendSystemMessage(Component.literal("Tags (" + tags.size() + "):").withStyle(ChatFormatting.YELLOW));
+            for (String tag : tags) {
+                player.sendSystemMessage(Component.literal("  • ").withStyle(ChatFormatting.GRAY)
+                    .append(Component.literal(tag).withStyle(ChatFormatting.GREEN)));
+            }
+        }
+        
+        // NBT Data
+        player.sendSystemMessage(Component.literal("NBT Data:").withStyle(ChatFormatting.YELLOW));
+        CompoundTag nbt = new CompoundTag();
+        entity.saveWithoutId(nbt);
+        
+        // Print key NBT fields (truncated to prevent spam)
+        int count = 0;
+        for (String key : nbt.getAllKeys()) {
+            if (count >= 15) {
+                player.sendSystemMessage(Component.literal("  ... and " + (nbt.getAllKeys().size() - 15) + " more fields").withStyle(ChatFormatting.GRAY));
+                break;
+            }
+            String value = nbt.get(key).toString();
+            if (value.length() > 50) {
+                value = value.substring(0, 47) + "...";
+            }
+            player.sendSystemMessage(Component.literal("  " + key + ": ").withStyle(ChatFormatting.AQUA)
+                .append(Component.literal(value).withStyle(ChatFormatting.WHITE)));
+            count++;
+        }
+        
+        player.sendSystemMessage(Component.literal("═══════════════════════════════════").withStyle(ChatFormatting.GOLD));
+    }
+    
+    /**
      * Handle trigger box creation (server-side).
      * First click: Set corner 1
      * Second click: Set corner 2 and create box
@@ -138,12 +219,14 @@ public class AdminWandItem extends Item {
     
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
-        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.title").withStyle(net.minecraft.ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.title").withStyle(ChatFormatting.GRAY));
         tooltip.add(Component.literal(""));
-        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.right_click").withStyle(net.minecraft.ChatFormatting.YELLOW));
-        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.shift_right_click").withStyle(net.minecraft.ChatFormatting.YELLOW));
-        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.waypoint").withStyle(net.minecraft.ChatFormatting.GRAY));
-        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.admin_only").withStyle(net.minecraft.ChatFormatting.RED));
+        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.right_click").withStyle(ChatFormatting.YELLOW));
+        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.shift_right_click").withStyle(ChatFormatting.YELLOW));
+        tooltip.add(Component.literal("Shift+Right-Click Entity: ").withStyle(ChatFormatting.YELLOW)
+            .append(Component.literal("Inspect NBT/Tags").withStyle(ChatFormatting.AQUA)));
+        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.waypoint").withStyle(ChatFormatting.GRAY));
+        tooltip.add(Component.translatable("item.storyadventure.admin_wand.tooltip.admin_only").withStyle(ChatFormatting.RED));
     }
     
     @Override

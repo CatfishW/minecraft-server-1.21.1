@@ -28,6 +28,8 @@
   "ui.warm_pixel_economy.trade.accept": "Accept",
   "ui.warm_pixel_economy.trade.cancel": "Cancel",
   "ui.warm_pixel_economy.trade.stack": "Stack",
+  "ui.warm_pixel_economy.trade.inventory": "Owned: %s",
+  "ui.warm_pixel_economy.trade.sell_all": "Sell All",
   "ui.warm_pixel_economy.nav.previous": "Previous Page",
   "ui.warm_pixel_economy.nav.next": "Next Page",
   "ui.warm_pixel_economy.category.all": "All Items",

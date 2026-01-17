@@ -1751,8 +1751,8 @@
       "bidIncrement": 1,
       "createdAt": 1768456904186,
       "expiresAt": 1768543304182,
-      "status": "OPEN",
-      "version": 0
+      "status": "EXPIRED",
+      "version": 1
     }
   },
   "deliveries": {

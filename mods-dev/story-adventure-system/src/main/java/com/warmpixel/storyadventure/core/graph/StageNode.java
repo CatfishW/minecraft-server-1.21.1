@@ -75,6 +75,26 @@ public class StageNode {
     }
     
     /**
+     * Get a float data field with default value.
+     */
+    public float getFloat(String key, float defaultValue) {
+        if (data.has(key) && data.get(key).isJsonPrimitive()) {
+            return data.get(key).getAsFloat();
+        }
+        return defaultValue;
+    }
+    
+    /**
+     * Get a double data field with default value.
+     */
+    public double getDouble(String key, double defaultValue) {
+        if (data.has(key) && data.get(key).isJsonPrimitive()) {
+            return data.get(key).getAsDouble();
+        }
+        return defaultValue;
+    }
+    
+    /**
      * Get a nested JsonObject.
      */
     public JsonObject getObject(String key) {

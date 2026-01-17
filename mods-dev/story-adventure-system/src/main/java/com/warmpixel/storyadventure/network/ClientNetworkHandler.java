@@ -205,6 +205,8 @@ public class ClientNetworkHandler {
                 java.util.List<String[]> choicesList = new java.util.ArrayList<>();
                 String voiceoverPath = null; // Optional voiceover
                 
+                String profileId = null;
+                
                 // Parse extraData JSON if present
                 if (extraData != null && !extraData.isEmpty()) {
                     try {
@@ -212,6 +214,10 @@ public class ClientNetworkHandler {
                         
                         if (json.has("npcName")) {
                             npcName = json.get("npcName").getAsString();
+                        }
+
+                        if (json.has("profileId")) {
+                            profileId = json.get("profileId").getAsString();
                         }
                         
                         // Parse voiceover if present
@@ -262,7 +268,7 @@ public class ClientNetworkHandler {
                     voiceoverManager.playVoiceover(voiceoverPath, npcName);
                 }
                 
-                StrangerDialogueScreen screen = new StrangerDialogueScreen(npcName, dialogueText.toString());
+                StrangerDialogueScreen screen = new StrangerDialogueScreen(npcName, dialogueText.toString(), profileId);
                 
                 // Add choices from JSON
                 for (String[] choice : choicesList) {
@@ -343,6 +349,13 @@ public class ClientNetworkHandler {
                                 StrangerHudRenderer.getInstance().startTimer(timerMs);
                             }
                         }
+                        
+                        // Lives display if present
+                        if (json.has("remainingLives") && json.has("maxLives")) {
+                            int remaining = json.get("remainingLives").getAsInt();
+                            int max = json.get("maxLives").getAsInt();
+                            StrangerHudRenderer.getInstance().setLives(remaining, max);
+                        }
                     } else {
                         StrangerHudRenderer.getInstance().show(title, chapter);
                     }
@@ -387,6 +400,36 @@ public class ClientNetworkHandler {
                     mc.setScreen(new StrangerVictoryScreen("任务完成", 0, new java.util.ArrayList<>()));
                 }
             }
+            
+            case OpenUIPayload.SCREEN_DEFEAT -> {
+                try {
+                    com.google.gson.JsonObject json = com.google.gson.JsonParser.parseString(extraData).getAsJsonObject();
+                    String storyName = json.has("storyName") ? json.get("storyName").getAsString() : "未知故事";
+                    String reason = json.has("reason") ? json.get("reason").getAsString() : "未知原因";
+                    int deathCount = json.has("deathCount") ? json.get("deathCount").getAsInt() : 0;
+                    int maxDeaths = json.has("maxDeaths") ? json.get("maxDeaths").getAsInt() : 15;
+                    
+                    java.util.List<StrangerDefeatScreen.RewardEntry> rewards = new java.util.ArrayList<>();
+                    if (json.has("rewards") && json.get("rewards").isJsonArray()) {
+                        for (var rewardElem : json.getAsJsonArray("rewards")) {
+                            var reward = rewardElem.getAsJsonObject();
+                            String type = reward.has("type") ? reward.get("type").getAsString() : "EXPERIENCE";
+                            int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 0;
+                            
+                            if ("EXPERIENCE".equals(type)) {
+                                rewards.add(StrangerDefeatScreen.RewardEntry.experience(amount));
+                            }
+                        }
+                    }
+                    
+                    mc.setScreen(new StrangerDefeatScreen(storyName, reason, deathCount, maxDeaths, rewards));
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.error("Failed to parse defeat data", e);
+                    // Fallback with default data
+                    mc.setScreen(new StrangerDefeatScreen("任务失败", "未知原因", 0, 15, new java.util.ArrayList<>()));
+                }
+            }
+
             
             default -> {
                 StoryAdventureMod.LOGGER.warn("Unknown screen type received: {}", screenType);
@@ -437,13 +480,20 @@ public class ClientNetworkHandler {
                 // Start the cutscene
                 controller.startCutscene(path, config);
                 StoryAdventureMod.LOGGER.info("Started cutscene for instance {}", payload.instanceId());
+
+                // Play cutscene voiceover if provided
+                if (payload.voiceover() != null && !payload.voiceover().isEmpty()) {
+                    com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance().playVoiceover(payload.voiceover(), "narrator");
+                }
             }
             case "STOP" -> {
                 controller.stopCutscene();
+                com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance().stopCurrentVoiceover();
                 StoryAdventureMod.LOGGER.info("Stopped cutscene for instance {}", payload.instanceId());
             }
             case "SKIP" -> {
                 controller.skipCutscene();
+                com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance().stopCurrentVoiceover();
                 StoryAdventureMod.LOGGER.info("Skipped cutscene for instance {}", payload.instanceId());
             }
             default -> StoryAdventureMod.LOGGER.warn("Unknown cutscene action: {}", payload.action());

@@ -28,6 +28,7 @@ public class CutsceneNodeHandler implements NodeHandler {
     public void onEnter(Instance instance, StageNode node) {
         int durationTicks = node.getInt("duration_ticks", 100);
         String message = node.getString("message", "");
+        String voiceover = node.getString("voiceover", "");
         boolean skippable = node.getBoolean("skippable", true);
         boolean letterbox = node.getBoolean("letterbox", true);
         int fadeInTicks = node.getInt("fade_in_ticks", 20);
@@ -53,7 +54,7 @@ public class CutsceneNodeHandler implements NodeHandler {
             ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
             if (player != null) {
                 NetworkHandler.sendCutsceneStart(player, cameraPathJson, skippable, letterbox, 
-                    fadeInTicks, fadeOutTicks, instanceId);
+                    fadeInTicks, fadeOutTicks, instanceId, voiceover);
                 
                 // Show optional title message
                 if (!message.isEmpty()) {

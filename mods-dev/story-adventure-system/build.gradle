@@ -26,6 +26,12 @@ dependencies {
     
     // Easy NPC integration (compile-only, provided at runtime by the mod)
     compileOnly files('libs/easy-npc.jar')
+    
+    // NPC Bus Driver integration (compile-only, provided at runtime)
+    compileOnly files('libs/npc-bus-driver-1.0.0.jar')
+    
+    // Automobility for vehicle mixin (compile-only, provided at runtime)
+    compileOnly files('libs/automobility-0.5.0.h+1.21.1-fabric.jar')
 }
 
 processResources {

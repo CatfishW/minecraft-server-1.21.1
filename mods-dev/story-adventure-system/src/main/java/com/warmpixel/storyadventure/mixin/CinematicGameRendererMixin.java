@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * Mixin to override FOV during cinematic cutscenes.
+ * Uses the smoothed FOV from the render state for seamless transitions.
  */
 @Mixin(GameRenderer.class)
 public class CinematicGameRendererMixin {
@@ -22,6 +23,7 @@ public class CinematicGameRendererMixin {
                                              CallbackInfoReturnable<Double> cir) {
         CinematicCameraController controller = CinematicCameraController.getInstance();
         if (controller.isActive()) {
+            // Use the smoothed FOV from render state
             cir.setReturnValue((double) controller.getCameraFov());
         }
     }

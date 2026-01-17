@@ -39,7 +39,13 @@ public enum NodeType {
      * Savepoints with optional "rewind" anchor capability.
      * Stores inventory, position, and story state.
      */
-    CHECKPOINT("checkpoint");
+    CHECKPOINT("checkpoint"),
+    
+    /**
+     * Item/vehicle interactions: getting on buses, using objects, etc.
+     * Tracks when player interacts with spawned entities.
+     */
+    ITEM_INTERACTION("item_interaction");
     
     private final String id;
     

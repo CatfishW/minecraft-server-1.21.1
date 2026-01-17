@@ -70,6 +70,10 @@ public class Instance {
         for (var flag : graph.getAllFlags()) {
             state.setFlag(flag.id(), flag.defaultValue());
         }
+        
+        // Initialize death tracking
+        state.getMetadata().addProperty("team_deaths", 0);
+        state.getMetadata().addProperty("max_team_deaths", graph.getMaxTeamDeaths());
     }
     
     // Getters
@@ -89,6 +93,53 @@ public class Instance {
     }
     
     /**
+     * Get the current team death count.
+     */
+    public int getTeamDeaths() {
+        return state.getMetadata().has("team_deaths") ? 
+            state.getMetadata().get("team_deaths").getAsInt() : 0;
+    }
+    
+    /**
+     * Get the maximum allowed team deaths before failure.
+     */
+    public int getMaxTeamDeaths() {
+        return state.getMetadata().has("max_team_deaths") ? 
+            state.getMetadata().get("max_team_deaths").getAsInt() : 15;
+    }
+    
+    /**
+     * Get remaining lives (max - current deaths).
+     */
+    public int getRemainingLives() {
+        return Math.max(0, getMaxTeamDeaths() - getTeamDeaths());
+    }
+    
+    /**
+     * Increment the team death counter and check for failure.
+     * 
+     * @return true if the instance has now failed due to exceeding death limit
+     */
+    public boolean incrementDeathCount() {
+        int currentDeaths = getTeamDeaths();
+        int maxDeaths = getMaxTeamDeaths();
+        currentDeaths++;
+        state.getMetadata().addProperty("team_deaths", currentDeaths);
+        
+        StoryAdventureMod.LOGGER.info("[Instance] Team death #{} / {} for instance {}", 
+            currentDeaths, maxDeaths, instanceId);
+        
+        if (currentDeaths >= maxDeaths) {
+            StoryAdventureMod.LOGGER.warn("[Instance] Instance {} has exceeded death limit ({}/{}), triggering failure!",
+ instanceId, currentDeaths, maxDeaths);
+            fail();
+            return true;
+        }
+        
+        return false;
+    }
+    
+    /**
      * Start the instance, transitioning to the entry node.
      */
     public void start(MinecraftServer server) {
@@ -105,6 +156,22 @@ public class Instance {
         startTimeMillis = System.currentTimeMillis();
         
         StoryAdventureMod.LOGGER.info("[Instance.start] Status set to RUNNING. Start time: {}", startTimeMillis);
+        
+        // Remove entities from previous instances that no longer exist.
+        cleanupOrphanedInstanceEntities(server);
+        
+        // Clean up any lingering NPCs from previous runs
+        try {
+            String instanceTag = "instance_" + instanceId.toString();
+            String npcDeleteCmd = String.format("easy_npc delete @e[tag=%s]", instanceTag);
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput(),
+                npcDeleteCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance.start] Cleaned up lingering NPCs for instance {}", instanceId);
+        } catch (Exception e) {
+            StoryAdventureMod.LOGGER.warn("[Instance.start] Failed to cleanup lingering NPCs: {}", e.getMessage());
+        }
             
         // Teleport players to start location if defined
         var startLoc = graph.getSpecialLocation("start");
@@ -154,6 +221,9 @@ public class Instance {
         }
         
         // Show HUD for all players
+        // Show HUD for all players - DISABLED explicit auto-show.
+        // HUD should be controlled by story nodes (e.g. on_enter actions)
+        /*
         for (UUID memberId : party.getMembers()) {
             ServerPlayer player = server.getPlayerList().getPlayer(memberId);
             if (player != null) {
@@ -167,6 +237,7 @@ public class Instance {
                 );
             }
         }
+        */
         
         // Enter the entry node
         StoryAdventureMod.LOGGER.debug("[Instance.start] Transitioning to entry node: {}", currentNodeId);
@@ -238,6 +309,61 @@ public class Instance {
             }
         }
     }
+
+    private void cleanupOrphanedInstanceEntities(MinecraftServer server) {
+        var instanceIds = com.warmpixel.storyadventure.StoryAdventureMod.getInstance()
+            .getInstanceManager()
+            .getAllInstances()
+            .stream()
+            .filter(inst -> inst.getStatus() == InstanceStatus.RUNNING || inst.getStatus() == InstanceStatus.PAUSED)
+            .map(Instance::getInstanceId)
+            .collect(java.util.stream.Collectors.toSet());
+        
+        int removedCount = 0;
+        for (ServerLevel level : server.getAllLevels()) {
+            java.util.List<net.minecraft.world.entity.Entity> entitiesToRemove = new java.util.ArrayList<>();
+            for (net.minecraft.world.entity.Entity entity : level.getAllEntities()) {
+                boolean hasStoryEntityTag = entity.getTags().contains("story_entity");
+                boolean hasStoryVehicleTag = entity.getTags().contains("story_vehicle");
+                
+                if (!hasStoryEntityTag && !hasStoryVehicleTag) {
+                    continue;
+                }
+                
+                java.util.Optional<java.util.UUID> entityInstanceId = entity.getTags().stream()
+                    .filter(tag -> tag.startsWith("instance_"))
+                    .map(tag -> tag.substring("instance_".length()))
+                    .map(id -> {
+                        try {
+                            return java.util.UUID.fromString(id);
+                        } catch (IllegalArgumentException ex) {
+                            return null;
+                        }
+                    })
+                    .filter(java.util.Objects::nonNull)
+                    .findFirst();
+                
+                if (entityInstanceId.isEmpty() || !instanceIds.contains(entityInstanceId.get())) {
+                    entitiesToRemove.add(entity);
+                }
+            }
+            
+            for (net.minecraft.world.entity.Entity entity : entitiesToRemove) {
+                try {
+                    entity.ejectPassengers();
+                    entity.discard();
+                    removedCount++;
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.warn("[Instance.start] Failed to discard orphaned entity {}: {}", entity, e.getMessage());
+                }
+            }
+        }
+        
+        if (removedCount > 0) {
+            StoryAdventureMod.LOGGER.info("[Instance.start] Removed {} orphaned story entities before starting instance {}", 
+                removedCount, instanceId);
+        }
+    }
     
     /**
      * Pause the instance (e.g., when all players disconnect).
@@ -270,6 +396,7 @@ public class Instance {
         
         // Clean up entities
         cleanupEntities();
+        cleanupOrphanedInstanceEntities(server);
         
         // Send victory screen to all party members
         if (server != null) {
@@ -403,23 +530,160 @@ public class Instance {
      * Mark the instance as failed.
      */
     public void fail() {
+        if (status == InstanceStatus.FAILED || status == InstanceStatus.COMPLETED) {
+            // Already ended, don't double-process
+            return;
+        }
+        
         status = InstanceStatus.FAILED;
+        long elapsedMs = getElapsedMillis();
         StoryAdventureMod.LOGGER.info("Instance {} failed after {}ms",
-            instanceId, getElapsedMillis());
+            instanceId, elapsedMs);
             
         // Clean up entities
         cleanupEntities();
+        cleanupOrphanedInstanceEntities(server);
+        
+        // Send defeat screen to all party members
+        if (server != null) {
+            // Build defeat data JSON
+            StringBuilder jsonBuilder = new StringBuilder();
+            jsonBuilder.append("{");
+            jsonBuilder.append("\"storyName\":\"").append(escapeJson(graph.getName())).append("\",");
+            jsonBuilder.append("\"reason\":\"团队死亡次数超过限制\",");
+            jsonBuilder.append("\"deathCount\":").append(getTeamDeaths()).append(",");
+            jsonBuilder.append("\"maxDeaths\":").append(getMaxTeamDeaths()).append(",");
+            jsonBuilder.append("\"rewards\":[");
+            
+            // Get failure rewards from graph
+            JsonArray failureRewards = graph.getFailureRewards();
+            if (failureRewards != null && !failureRewards.isEmpty()) {
+                boolean first = true;
+                for (var rewardElem : failureRewards) {
+                    if (!first) jsonBuilder.append(",");
+                    first = false;
+                    
+                    var reward = rewardElem.getAsJsonObject();
+                    String type = reward.has("type") ? reward.get("type").getAsString() : "EXPERIENCE";
+                    
+                    jsonBuilder.append("{");
+                    jsonBuilder.append("\"type\":\"").append(type).append("\",");
+                    
+                    if ("EXPERIENCE".equals(type)) {
+                        int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 0;
+                        jsonBuilder.append("\"amount\":").append(amount);
+                    }
+                    
+                    jsonBuilder.append("}");
+                }
+            }
+            
+            jsonBuilder.append("]}");
+            String defeatJson = jsonBuilder.toString();
+            
+            // Clear waypoints
+            activeWaypoints.clear();
+            
+            // Get spawn location
+            var spawnLoc = graph.getSpecialLocation("spawn");
+            
+            // Send to all party members
+            for (UUID memberId : party.getMembers()) {
+                ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+                if (player != null) {
+                    // Hide HUD first
+                    com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+                        player, 
+                        com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_HIDE, 
+                        ""
+                    );
+                    
+                    // Clear waypoint indicators
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                        new com.warmpixel.storyadventure.network.SyncWaypointsPayload(java.util.List.of()));
+                    
+                    // Give failure rewards
+                    giveFailureRewards(player);
+                    
+                    // Show defeat screen
+                    com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+                        player, 
+                        com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_DEFEAT, 
+                        defeatJson
+                    );
+                    
+                    // Teleport to spawn after a delay (3 seconds for UI to show)
+                    if (spawnLoc != null) {
+                        server.execute(() -> {
+                            try {
+                                Thread.sleep(3000);
+                                ServerPlayer p = server.getPlayerList().getPlayer(memberId);
+                                if (p != null) {
+                                    ResourceLocation dimRl = ResourceLocation.parse(spawnLoc.dimension());
+                                    ResourceKey<net.minecraft.world.level.Level> dimKey = ResourceKey.create(Registries.DIMENSION, dimRl);
+                                    ServerLevel level = server.getLevel(dimKey);
+                                    if (level != null) {
+                                        p.teleportTo(level, spawnLoc.x(), spawnLoc.y(), spawnLoc.z(), spawnLoc.yaw(), spawnLoc.pitch());
+                                    }
+                                }
+                            } catch (Exception e) {
+                                StoryAdventureMod.LOGGER.error("[Instance] Failed to teleport player to spawn after defeat", e);
+                            }
+                        });
+                    }
+                }
+            }
+            
+            // Ensure instance is terminated and mappings are cleared after defeat
+            server.execute(() -> {
+                try {
+                    Thread.sleep(3500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                StoryAdventureMod.getInstance().getInstanceManager().cleanupInstance(instanceId);
+            });
+        }
+    }
+    
+    private void giveFailureRewards(ServerPlayer player) {
+        JsonArray failureRewards = graph.getFailureRewards();
+        if (failureRewards == null || failureRewards.isEmpty()) return;
+        
+        for (var rewardElem : failureRewards) {
+            var reward = rewardElem.getAsJsonObject();
+            String type = reward.has("type") ? reward.get("type").getAsString() : "EXPERIENCE";
+            
+            if ("EXPERIENCE".equals(type)) {
+                int amount = reward.has("amount") ? reward.get("amount").getAsInt() : 0;
+                player.giveExperiencePoints(amount);
+                StoryAdventureMod.LOGGER.info("[Instance] Gave {} XP to {} as failure reward", amount, player.getName().getString());
+            }
+        }
     }
     
     /**
      * Clean up any entities spawned by this instance (tagged with instance_ID).
      */
-    private void cleanupEntities() {
+    public void cleanupEntities() {
         if (server == null) return;
         
         String instanceTag = "instance_" + instanceId.toString();
         StoryAdventureMod.LOGGER.info("[Instance] Cleaning up entities for instance {} (tag: {})", instanceId, instanceTag);
         
+        // Use Easy NPC delete command for NPCs
+        String npcDeleteCmd = String.format("easy_npc delete @e[tag=%s]", instanceTag);
+        try {
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                npcDeleteCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance] Executed NPC cleanup command: {}", npcDeleteCmd);
+        } catch (Exception e) {
+            StoryAdventureMod.LOGGER.warn("[Instance] Failed to execute easy_npc delete command: {}", e.getMessage());
+        }
+        
+        // Also remove via entity discard as fallback
         for (ServerLevel level : server.getAllLevels()) {
             java.util.List<net.minecraft.world.entity.Entity> entitiesToRemove = new java.util.ArrayList<>();
             // Iterable<Entity> getAllEntities()
@@ -431,6 +695,7 @@ public class Instance {
             
             for (net.minecraft.world.entity.Entity entity : entitiesToRemove) {
                 try {
+                    entity.ejectPassengers();
                     entity.discard(); // remove without death events
                 } catch (Exception e) {
                     StoryAdventureMod.LOGGER.warn("[Instance] Failed to discard entity {}: {}", entity, e.getMessage());
@@ -605,6 +870,8 @@ public class Instance {
                         try {
                             if (action instanceof com.warmpixel.storyadventure.core.action.SpawnNPCAction spawnAction) {
                                 spawnAction.setInstanceId(instanceId);
+                            } else if (action instanceof com.warmpixel.storyadventure.core.action.DespawnEntitiesAction despawnAction) {
+                                despawnAction.setInstanceId(instanceId);
                             } else if (action instanceof com.warmpixel.storyadventure.core.action.CommandAction cmdAction) {
                                 cmdAction.setInstanceId(instanceId);
                             }

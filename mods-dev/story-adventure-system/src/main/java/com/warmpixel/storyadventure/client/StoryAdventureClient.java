@@ -11,6 +11,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.minecraft.client.Minecraft;
 
 /**
  * Client-side entrypoint for Story Adventure System.
@@ -41,5 +42,8 @@ public class StoryAdventureClient implements ClientModInitializer {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
             ClientUICommands.register(dispatcher);
         });
+
+        // Register custom resource pack for external voiceovers
+        // NOTE: Reverted to using built-in assets for voiceovers.
     }
 }

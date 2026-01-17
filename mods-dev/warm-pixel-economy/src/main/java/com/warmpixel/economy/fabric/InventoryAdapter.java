@@ -63,10 +63,17 @@ public class InventoryAdapter {
      * 异步插入物品栈
      */
     public CompletableFuture<Boolean> insertStack(ServerPlayer player, ItemStack stack) {
+        return insertItems(player, stack, stack.getCount());
+    }
+
+    /**
+     * 异步插入指定数量的物品
+     */
+    public CompletableFuture<Boolean> insertItems(ServerPlayer player, ItemStack template, int count) {
         CompletableFuture<Boolean> future = new CompletableFuture<>();
         server.execute(() -> {
             try {
-                boolean result = insertStackSync(player, stack);
+                boolean result = insertItemsSync(player, template, count);
                 future.complete(result);
             } catch (Exception e) {
                 System.err.println("[Economy] Error inserting items: " + e.getMessage());
@@ -81,10 +88,17 @@ public class InventoryAdapter {
      * 异步检查是否能插入物品栈
      */
     public CompletableFuture<Boolean> canInsertStack(ServerPlayer player, ItemStack stack) {
+        return canInsertItems(player, stack, stack.getCount());
+    }
+
+    /**
+     * 异步检查是否能插入指定数量的物品
+     */
+    public CompletableFuture<Boolean> canInsertItems(ServerPlayer player, ItemStack template, int count) {
         CompletableFuture<Boolean> future = new CompletableFuture<>();
         server.execute(() -> {
             try {
-                boolean result = canInsertStackSync(player, stack);
+                boolean result = canInsertItemsSync(player, template, count);
                 future.complete(result);
             } catch (Exception e) {
                 System.err.println("[Economy] Error checking insert: " + e.getMessage());
@@ -213,92 +227,106 @@ public class InventoryAdapter {
     /**
      * 同步插入物品栈
      */
-    private boolean insertStackSync(ServerPlayer player, ItemStack stack) {
-        if (player == null || stack == null || stack.isEmpty()) {
+    /**
+     * 同步插入指定数量的物品
+     */
+    private boolean insertItemsSync(ServerPlayer player, ItemStack template, int totalCount) {
+        if (player == null || template == null || totalCount <= 0) {
             return true;
         }
-        
+
         Inventory inventory = player.getInventory();
-        ItemStack remaining = stack.copy();
-        int maxStackSize = Math.min(remaining.getMaxStackSize(), inventory.getMaxStackSize());
-        
+        int remainingToInsert = totalCount;
+        int maxStackSize = Math.min(template.getMaxStackSize(), inventory.getMaxStackSize());
+
         // 首先检查空间是否足够
-        if (!canInsertStackSync(player, stack)) {
+        if (!canInsertItemsSync(player, template, totalCount)) {
             return false;
         }
-        
+
         // 第一遍：填充现有的相同物品堆叠
-        for (int i = 0; i < 36 && !remaining.isEmpty(); i++) {
+        for (int i = 0; i < 36 && remainingToInsert > 0; i++) {
             ItemStack slotStack = inventory.getItem(i);
-            
+
             if (slotStack.isEmpty()) {
                 continue;
             }
-            
-            if (!ItemStack.isSameItemSameComponents(slotStack, remaining)) {
+
+            if (!ItemStack.isSameItemSameComponents(slotStack, template)) {
                 continue;
             }
-            
+
             int space = maxStackSize - slotStack.getCount();
             if (space <= 0) {
                 continue;
             }
-            
-            int toMove = Math.min(space, remaining.getCount());
-            slotStack.grow(toMove);
-            remaining.shrink(toMove);
+
+            int toAdd = Math.min(space, remainingToInsert);
+            slotStack.grow(toAdd);
+            remainingToInsert -= toAdd;
         }
-        
+
         // 第二遍：放入空槽位
-        for (int i = 0; i < 36 && !remaining.isEmpty(); i++) {
+        for (int i = 0; i < 36 && remainingToInsert > 0; i++) {
             ItemStack slotStack = inventory.getItem(i);
-            
+
             if (!slotStack.isEmpty()) {
                 continue;
             }
-            
-            int toMove = Math.min(maxStackSize, remaining.getCount());
-            ItemStack newStack = remaining.copy();
-            newStack.setCount(toMove);
+
+            int toAdd = Math.min(maxStackSize, remainingToInsert);
+            ItemStack newStack = template.copy();
+            newStack.setCount(toAdd);
             inventory.setItem(i, newStack);
-            remaining.shrink(toMove);
+            remainingToInsert -= toAdd;
         }
-        
+
         // 同步背包
         syncInventory(player);
-        
-        return remaining.isEmpty();
+
+        return remainingToInsert <= 0;
+    }
+
+    private boolean insertStackSync(ServerPlayer player, ItemStack stack) {
+        return insertItemsSync(player, stack, stack.getCount());
     }
 
     /**
      * 同步检查是否能插入物品栈
      */
-    private boolean canInsertStackSync(ServerPlayer player, ItemStack stack) {
-        if (player == null || stack == null || stack.isEmpty()) {
+    /**
+     * 同步检查是否能插入指定数量的物品
+     */
+    private boolean canInsertItemsSync(ServerPlayer player, ItemStack template, int totalCount) {
+        if (player == null || template == null || totalCount <= 0) {
             return true;
         }
-        
+
         Inventory inventory = player.getInventory();
-        int remaining = stack.getCount();
-        int maxStackSize = Math.min(stack.getMaxStackSize(), inventory.getMaxStackSize());
-        
+        int remaining = totalCount;
+        int maxStackSize = Math.min(template.getMaxStackSize(), inventory.getMaxStackSize());
+
         for (int i = 0; i < 36 && remaining > 0; i++) {
             ItemStack slotStack = inventory.getItem(i);
-            
+
             if (slotStack.isEmpty()) {
                 remaining -= maxStackSize;
                 continue;
             }
-            
-            if (ItemStack.isSameItemSameComponents(slotStack, stack)) {
+
+            if (ItemStack.isSameItemSameComponents(slotStack, template)) {
                 int space = maxStackSize - slotStack.getCount();
                 if (space > 0) {
                     remaining -= space;
                 }
             }
         }
-        
+
         return remaining <= 0;
+    }
+
+    private boolean canInsertStackSync(ServerPlayer player, ItemStack stack) {
+        return canInsertItemsSync(player, stack, stack.getCount());
     }
 
     /**

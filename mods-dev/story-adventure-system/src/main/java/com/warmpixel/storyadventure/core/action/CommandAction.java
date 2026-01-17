@@ -42,28 +42,64 @@ public class CommandAction implements NodeAction {
         var server = players.get(0).getServer();
         if (server == null) return;
 
-        for (ServerPlayer player : players) {
-            String processedCmd = command
-                .replace("{player}", player.getName().getString())
-                .replace("{uuid}", player.getUUID().toString())
-                .replace("{x}", String.format("%.2f", player.getX()))
-                .replace("{y}", String.format("%.2f", player.getY()))
-                .replace("{z}", String.format("%.2f", player.getZ()));
-                
-            if (instanceId != null) {
-                processedCmd = processedCmd.replace("{instance_id}", instanceId.toString());
+        // Try to get instanceId from player if not already set
+        if (this.instanceId == null) {
+            var instance = com.warmpixel.storyadventure.StoryAdventureMod.getInstance().getInstanceManager().getPlayerInstance(players.get(0).getUUID());
+            if (instance != null) {
+                this.instanceId = instance.getInstanceId();
             }
-            
-            CommandSourceStack source = asOp ? server.createCommandSourceStack() : player.createCommandSourceStack();
-            // Suppress output to prevent chat spam
-            source = source.withSuppressedOutput();
-            // Ensure permission level if OP
-            if (asOp) {
-                source = source.withPermission(2);
-            }
-            
-            server.getCommands().performPrefixedCommand(source, processedCmd);
         }
+
+        // Determine if this command needs to run for each player or just once
+        boolean isPlayerSpecific = command.contains("{player}") || 
+                                    command.contains("{uuid}") || 
+                                    command.contains("{x}") || 
+                                    command.contains("{y}") || 
+                                    command.contains("{z}");
+
+        if (isPlayerSpecific) {
+            for (ServerPlayer player : players) {
+                String processedCmd = processPlaceholders(command, player);
+                executeCommand(server, player, processedCmd);
+            }
+        } else {
+            // Run global command once
+            String processedCmd = processPlaceholders(command, players.get(0));
+            executeCommand(server, players.get(0), processedCmd);
+        }
+    }
+
+    private String processPlaceholders(String cmd, ServerPlayer player) {
+        String processed = cmd
+            .replace("{player}", player.getName().getString())
+            .replace("{uuid}", player.getUUID().toString())
+            .replace("{x}", String.format("%.2f", player.getX()))
+            .replace("{y}", String.format("%.2f", player.getY()))
+            .replace("{z}", String.format("%.2f", player.getZ()));
+            
+        if (instanceId != null) {
+            processed = processed.replace("{instance_id}", instanceId.toString());
+            // Add safe instance ID for bossbars (underscores instead of dashes)
+            processed = processed.replace("{instance_id_safe}", instanceId.toString().replace("-", "_"));
+        } else if (cmd.contains("{instance_id}")) {
+            // Critical: placeholder exists but no instance ID - this will break tagging!
+            com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.error(
+                "[CommandAction] CRITICAL: Command contains {{instance_id}} but instanceId is null! " +
+                "Entity tagging will fail. Command: {}", cmd);
+        }
+        return processed;
+    }
+
+    private void executeCommand(net.minecraft.server.MinecraftServer server, ServerPlayer player, String cmd) {
+        CommandSourceStack source = asOp ? server.createCommandSourceStack() : player.createCommandSourceStack();
+        // Suppress output to prevent chat spam
+        source = source.withSuppressedOutput();
+        // Ensure permission level if OP
+        if (asOp) {
+            source = source.withPermission(2);
+        }
+        
+        server.getCommands().performPrefixedCommand(source, cmd);
     }
     
     @Override
