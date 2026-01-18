@@ -231,12 +231,15 @@ public class StrangerHudRenderer implements HudRenderCallback {
     }
     
     private int calculatePanelX(int panelWidth, int screenWidth, float scale) {
-        int scaledRightMargin = (int) (HUD_X / scale);
-        return Math.max(HUD_X, screenWidth - panelWidth - scaledRightMargin);
+        // Position at top-right near border
+        int rightMargin = 6;  // Small margin from right edge
+        int scaledPanelWidth = (int) (panelWidth * scale);
+        return screenWidth - scaledPanelWidth - rightMargin;
     }
 
     private int calculatePanelY(int totalHeight, int screenHeight, float scale) {
-        return HUD_Y;
+        // Position near top border
+        return 6;  // Small margin from top edge
     }
     
     // Public API for updating HUD state

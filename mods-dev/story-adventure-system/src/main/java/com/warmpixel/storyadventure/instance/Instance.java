@@ -20,11 +20,16 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.HashMap;
+import java.util.Set;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.warmpixel.storyadventure.core.waypoint.Waypoint;
 import com.warmpixel.storyadventure.core.waypoint.TriggerBox;
@@ -50,6 +55,11 @@ public class Instance {
     private final Map<String, Waypoint> activeWaypoints = new HashMap<>();
     private final Map<String, TriggerBox> activeTriggers = new HashMap<>();
     private MinecraftServer server;
+    
+    // Delayed tasks system
+    private final List<DelayedTask> pendingTasks = new CopyOnWriteArrayList<>();
+    
+    private record DelayedTask(long executeAtTick, NodeAction action, List<ServerPlayer> players) {}
     
     public enum InstanceStatus {
         CREATED, RUNNING, PAUSED, COMPLETED, FAILED
@@ -160,17 +170,44 @@ public class Instance {
         // Remove entities from previous instances that no longer exist.
         cleanupOrphanedInstanceEntities(server);
         
-        // Clean up any lingering NPCs from previous runs
+        // Start Xaero Waypoint session on clients
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                    com.warmpixel.storyadventure.network.XaeroWaypointPayload.start());
+            }
+        }
+
+        // Clean up any lingering NPCs from previous runs using the correct commands
         try {
-            String instanceTag = "instance_" + instanceId.toString();
-            String npcDeleteCmd = String.format("easy_npc delete @e[tag=%s]", instanceTag);
+            // Delete all story_entity tagged NPCs
+            String storyEntityCmd = "easy_npc delete @e[tag=story_entity]";
             server.getCommands().performPrefixedCommand(
                 server.createCommandSourceStack().withSuppressedOutput(),
-                npcDeleteCmd
+                storyEntityCmd
             );
-            StoryAdventureMod.LOGGER.info("[Instance.start] Cleaned up lingering NPCs for instance {}", instanceId);
+            StoryAdventureMod.LOGGER.info("[Instance.start] Executed: {}", storyEntityCmd);
+            
+            // Delete all story_enemy tagged NPCs
+            String storyEnemyCmd = "easy_npc delete @e[tag=story_enemy]";
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput(),
+                storyEnemyCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance.start] Executed: {}", storyEnemyCmd);
+            
+            // Delete all story_vehicle tagged entities using /kill
+            String storyVehicleCmd = "kill @e[tag=story_vehicle]";
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput(),
+                storyVehicleCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance.start] Executed: {}", storyVehicleCmd);
+            
+            StoryAdventureMod.LOGGER.info("[Instance.start] Cleaned up lingering NPCs and vehicles for instance {}", instanceId);
         } catch (Exception e) {
-            StoryAdventureMod.LOGGER.warn("[Instance.start] Failed to cleanup lingering NPCs: {}", e.getMessage());
+            StoryAdventureMod.LOGGER.warn("[Instance.start] Failed to cleanup lingering entities: {}", e.getMessage());
         }
             
         // Teleport players to start location if defined
@@ -245,25 +282,134 @@ public class Instance {
     }
 
     public void tick() {
-        if (status != InstanceStatus.RUNNING) return;
-
-        StageNode current = getCurrentNode();
-        if (current != null) {
-            var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(current.getType());
-            if (handler != null) {
-                // Debug log every 10 seconds for active node ticking
-                if (server.getTickCount() % 200 == 0) {
-                    StoryAdventureMod.LOGGER.debug("[Instance] Ticking node: {} (type: {}) for instance {}", 
-                        currentNodeId, current.getType(), instanceId);
+        if (status == InstanceStatus.RUNNING) {
+            StageNode current = getCurrentNode();
+            if (current != null) {
+                var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(current.getType());
+                if (handler != null) {
+                    // Debug log every 10 seconds for active node ticking
+                    if (server.getTickCount() % 200 == 0) {
+                        StoryAdventureMod.LOGGER.debug("[Instance] Ticking node: {} (type: {}) for instance {}", 
+                            currentNodeId, current.getType(), instanceId);
+                    }
+                    handler.onTick(this, current);
                 }
-                handler.onTick(this, current);
+            }
+            
+            // Check triggers for all party members
+            checkPlayerTriggers();
+            
+            // Check instance area boundary
+            checkInstanceAreaBoundary();
+            
+            // Clear law status for players in instance (every 5 seconds)
+            if (server.getTickCount() % 100 == 0) {
+                clearLawForPlayers();
+            }
+            
+            // Process delayed tasks
+            processDelayedTasks();
+        }
+        
+        lastUpdateMillis = System.currentTimeMillis();
+    }
+    
+    private void processDelayedTasks() {
+        if (pendingTasks.isEmpty() || server == null) return;
+        
+        long currentTick = server.getTickCount();
+        List<DelayedTask> toExecute = new ArrayList<>();
+        
+        for (DelayedTask task : pendingTasks) {
+            if (currentTick >= task.executeAtTick) {
+                toExecute.add(task);
             }
         }
         
-        // Check triggers for all party members
-        checkPlayerTriggers();
+        if (!toExecute.isEmpty()) {
+            pendingTasks.removeAll(toExecute);
+            for (DelayedTask task : toExecute) {
+                try {
+                    task.action.execute(task.players);
+                    StoryAdventureMod.LOGGER.debug("[Instance] Executed delayed task: {}", task.action.getType());
+                } catch (Exception e) {
+                    StoryAdventureMod.LOGGER.error("[Instance] Failed to execute delayed task", e);
+                }
+            }
+        }
+    }
+    
+    /**
+     * Check if players are within the defined instance area.
+     * If not, kick them out of the instance.
+     */
+    private void checkInstanceAreaBoundary() {
+        if (server == null || server.getTickCount() % 20 != 0) return; // Check every second
         
-        lastUpdateMillis = System.currentTimeMillis();
+        net.minecraft.world.phys.AABB area = graph.getInstanceArea();
+        if (area == null) return;
+        
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player == null) continue;
+            
+            // Check if player is alive and in game mode survival/adventure to be fair
+            if (!player.isAlive() || player.isSpectator()) continue;
+            
+            if (!area.contains(player.position())) {
+                StoryAdventureMod.LOGGER.warn("[Instance] Player {} is outside instance area: {}. Kicking from instance.", 
+                    player.getName().getString(), player.position());
+                
+                // Kick logic
+                kickPlayerFromInstance(player);
+            }
+        }
+    }
+    
+    private void kickPlayerFromInstance(ServerPlayer player) {
+        if (player == null) return;
+        
+        // Hide HUD and any other UI
+        com.warmpixel.storyadventure.network.NetworkHandler.sendOpenUI(
+            player, 
+            com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_HIDE, 
+            ""
+        );
+        
+        // Send system message
+        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c你离开了故事区域，已被移出副本。"));
+        
+        // Remove from party/instance logic
+        // We use partyManager to leave, which triggers cleanup if empty
+        StoryAdventureMod.getInstance().getPartyManager().leaveParty(player.getUUID());
+        
+        // Initial spawn teleport
+        var overworld = server.overworld();
+        var spawnPos = overworld.getSharedSpawnPos();
+        player.teleportTo(overworld, spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, 0, 0);
+    }
+    
+    /**
+     * Clear law status for all players in the instance.
+     * This disables the law system during instance gameplay.
+     */
+    private void clearLawForPlayers() {
+        if (server == null) return;
+        
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                try {
+                    String clearLawCmd = "law clear " + player.getName().getString();
+                    server.getCommands().performPrefixedCommand(
+                        server.createCommandSourceStack().withSuppressedOutput(),
+                        clearLawCmd
+                    );
+                } catch (Exception e) {
+                    // Silently ignore if law mod is not installed
+                }
+            }
+        }
     }
     
     /**
@@ -384,7 +530,6 @@ public class Instance {
             StoryAdventureMod.LOGGER.info("Instance {} resumed", instanceId);
         }
     }
-    
     /**
      * Complete the instance successfully.
      */
@@ -394,7 +539,7 @@ public class Instance {
         StoryAdventureMod.LOGGER.info("Instance {} completed successfully in {}ms",
             instanceId, elapsedMs);
         
-        // Clean up entities
+        // Clean up entities immediately
         cleanupEntities();
         cleanupOrphanedInstanceEntities(server);
         
@@ -461,6 +606,10 @@ public class Instance {
                     net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
                         new com.warmpixel.storyadventure.network.SyncWaypointsPayload(java.util.List.of()));
                     
+                    // Send Xaero waypoint END signal to restore player's original waypoint set
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                        com.warmpixel.storyadventure.network.XaeroWaypointPayload.end());
+                    
                     // Give actual rewards
                     giveRewards(player);
 
@@ -472,6 +621,17 @@ public class Instance {
                     );
                 }
             }
+            
+            // Ensure instance is fully cleaned up and mappings are cleared after victory screen shown
+            // Revert to original cleaning logic: delayed cleanup via server execute task
+            server.execute(() -> {
+                try {
+                    Thread.sleep(3500);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                StoryAdventureMod.getInstance().getInstanceManager().cleanupInstance(instanceId);
+            });
         }
     }
     
@@ -602,6 +762,10 @@ public class Instance {
                     net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
                         new com.warmpixel.storyadventure.network.SyncWaypointsPayload(java.util.List.of()));
                     
+                    // Send Xaero waypoint END signal to restore player's original waypoint set
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                        com.warmpixel.storyadventure.network.XaeroWaypointPayload.end());
+                    
                     // Give failure rewards
                     giveFailureRewards(player);
                     
@@ -611,36 +775,34 @@ public class Instance {
                         com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_DEFEAT, 
                         defeatJson
                     );
-                    
-                    // Teleport to spawn after a delay (3 seconds for UI to show)
-                    if (spawnLoc != null) {
-                        server.execute(() -> {
-                            try {
-                                Thread.sleep(3000);
-                                ServerPlayer p = server.getPlayerList().getPlayer(memberId);
-                                if (p != null) {
-                                    ResourceLocation dimRl = ResourceLocation.parse(spawnLoc.dimension());
-                                    ResourceKey<net.minecraft.world.level.Level> dimKey = ResourceKey.create(Registries.DIMENSION, dimRl);
-                                    ServerLevel level = server.getLevel(dimKey);
-                                    if (level != null) {
-                                        p.teleportTo(level, spawnLoc.x(), spawnLoc.y(), spawnLoc.z(), spawnLoc.yaw(), spawnLoc.pitch());
-                                    }
-                                }
-                            } catch (Exception e) {
-                                StoryAdventureMod.LOGGER.error("[Instance] Failed to teleport player to spawn after defeat", e);
-                            }
-                        });
-                    }
                 }
             }
             
-            // Ensure instance is terminated and mappings are cleared after defeat
+            // Revert to original cleaning logic: delayed cleanup and teleport
             server.execute(() -> {
                 try {
-                    Thread.sleep(3500);
+                    // Wait for defeat screen to show
+                    Thread.sleep(3000);
+                    
+                    // Teleport to world spawn for all members
+                    var overworld = server.overworld();
+                    var spawnPos = overworld.getSharedSpawnPos();
+                    
+                    for (UUID memberId : party.getMembers()) {
+                        ServerPlayer p = server.getPlayerList().getPlayer(memberId);
+                        if (p != null) {
+                            p.teleportTo(overworld, spawnPos.getX() + 0.5, spawnPos.getY(), spawnPos.getZ() + 0.5, 0, 0);
+                            // Also run /spawn command to be safe
+                            server.getCommands().performPrefixedCommand(p.createCommandSourceStack().withSuppressedOutput(), "spawn");
+                        }
+                    }
+                    
+                    Thread.sleep(500);
                 } catch (InterruptedException e) {
                     Thread.currentThread().interrupt();
                 }
+                
+                // Final instance cleanup
                 StoryAdventureMod.getInstance().getInstanceManager().cleanupInstance(instanceId);
             });
         }
@@ -664,6 +826,7 @@ public class Instance {
     
     /**
      * Clean up any entities spawned by this instance (tagged with instance_ID).
+     * Uses the correct commands: easy_npc delete @e[tag=story_entity] and @e[tag=story_enemy]
      */
     public void cleanupEntities() {
         if (server == null) return;
@@ -671,16 +834,41 @@ public class Instance {
         String instanceTag = "instance_" + instanceId.toString();
         StoryAdventureMod.LOGGER.info("[Instance] Cleaning up entities for instance {} (tag: {})", instanceId, instanceTag);
         
-        // Use Easy NPC delete command for NPCs
-        String npcDeleteCmd = String.format("easy_npc delete @e[tag=%s]", instanceTag);
+        // Use Easy NPC delete commands for NPCs - delete by story_entity and story_enemy tags
         try {
+            // Delete all story_entity tagged NPCs (includes friendly NPCs)
+            String storyEntityCmd = "easy_npc delete @e[tag=story_entity]";
             server.getCommands().performPrefixedCommand(
                 server.createCommandSourceStack().withSuppressedOutput().withPermission(2),
-                npcDeleteCmd
+                storyEntityCmd
             );
-            StoryAdventureMod.LOGGER.info("[Instance] Executed NPC cleanup command: {}", npcDeleteCmd);
+            StoryAdventureMod.LOGGER.info("[Instance] Executed: {}", storyEntityCmd);
+            
+            // Delete all story_enemy tagged NPCs (includes enemy NPCs)
+            String storyEnemyCmd = "easy_npc delete @e[tag=story_enemy]";
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                storyEnemyCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance] Executed: {}", storyEnemyCmd);
+            
+            // Also delete by instance-specific tag as fallback
+            String instanceCmd = String.format("easy_npc delete @e[tag=%s]", instanceTag);
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                instanceCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance] Executed: {}", instanceCmd);
+
+            // Kill all story_vehicle tagged entities
+            String storyVehicleCmd = "kill @e[tag=story_vehicle]";
+            server.getCommands().performPrefixedCommand(
+                server.createCommandSourceStack().withSuppressedOutput().withPermission(2),
+                storyVehicleCmd
+            );
+            StoryAdventureMod.LOGGER.info("[Instance] Executed: {}", storyVehicleCmd);
         } catch (Exception e) {
-            StoryAdventureMod.LOGGER.warn("[Instance] Failed to execute easy_npc delete command: {}", e.getMessage());
+            StoryAdventureMod.LOGGER.warn("[Instance] Failed to execute delete/kill commands: {}", e.getMessage());
         }
         
         // Also remove via entity discard as fallback
@@ -688,7 +876,10 @@ public class Instance {
             java.util.List<net.minecraft.world.entity.Entity> entitiesToRemove = new java.util.ArrayList<>();
             // Iterable<Entity> getAllEntities()
             for (net.minecraft.world.entity.Entity entity : level.getAllEntities()) {
-                if (entity.getTags().contains(instanceTag)) {
+                if (entity.getTags().contains(instanceTag) || 
+                    entity.getTags().contains("story_entity") || 
+                    entity.getTags().contains("story_enemy") ||
+                    entity.getTags().contains("story_vehicle")) {
                     entitiesToRemove.add(entity);
                 }
             }
@@ -704,6 +895,28 @@ public class Instance {
             
             if (!entitiesToRemove.isEmpty()) {
                 StoryAdventureMod.LOGGER.info("[Instance] Removed {} entities from {}", entitiesToRemove.size(), level.dimension().location());
+            }
+        }
+    }
+    
+    /**
+     * Clean up player states for this instance (e.g. revert game modes).
+     */
+    public void cleanupPlayers() {
+        if (server == null) return;
+        
+        StoryAdventureMod.LOGGER.info("[Instance] Cleaning up player states for instance {}", instanceId);
+        
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                // Ensure survival mode (back from cutscene spectator mode if necessary)
+                if (player.gameMode.getGameModeForPlayer() == net.minecraft.world.level.GameType.SPECTATOR) {
+                    player.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+                }
+                
+                // Stop any client-side cutscene just in case
+                com.warmpixel.storyadventure.network.NetworkHandler.sendCutsceneStop(player, instanceId.toString());
             }
         }
     }
@@ -876,9 +1089,21 @@ public class Instance {
                                 cmdAction.setInstanceId(instanceId);
                             }
                             
-                            action.execute(onlinePlayers);
-                            StoryAdventureMod.LOGGER.debug("[Instance.enterNode] Executed action: {} for {} players", 
-                                actionJson.get("type").getAsString(), onlinePlayers.size());
+                            // Check for delay_ticks - schedule delayed execution if present
+                            int delayTicks = actionJson.has("delay_ticks") ? actionJson.get("delay_ticks").getAsInt() : 0;
+                            if (delayTicks > 0 && server != null) {
+                                pendingTasks.add(new DelayedTask(
+                                    server.getTickCount() + delayTicks,
+                                    action,
+                                    new ArrayList<>(onlinePlayers)
+                                ));
+                                StoryAdventureMod.LOGGER.debug("[Instance.enterNode] Scheduled action for {} ticks later: {}", 
+                                    delayTicks, actionJson.get("type").getAsString());
+                            } else {
+                                action.execute(onlinePlayers);
+                                StoryAdventureMod.LOGGER.debug("[Instance.enterNode] Executed action: {} for {} players", 
+                                    actionJson.get("type").getAsString(), onlinePlayers.size());
+                            }
                         } catch (Exception e) {
                             StoryAdventureMod.LOGGER.error("[Instance.enterNode] Failed to execute action", e);
                         }
@@ -1012,8 +1237,34 @@ public class Instance {
      */
     private void syncWaypointsToParty() {
         if (server == null) return;
-        // Network sync will be implemented when we add the payload
-        // For now, this is a placeholder
+        
+        List<com.warmpixel.storyadventure.network.SyncWaypointsPayload.WaypointData> list = new ArrayList<>();
+        for (Waypoint wp : activeWaypoints.values()) {
+            list.add(new com.warmpixel.storyadventure.network.SyncWaypointsPayload.WaypointData(
+                wp.getId(), wp.getLabel(), 
+                wp.getPosition().x, wp.getPosition().y, wp.getPosition().z,
+                wp.getIcon().getId(), wp.getColor(), wp.showsDistance()
+            ));
+        }
+        
+        com.warmpixel.storyadventure.network.SyncWaypointsPayload payload = new com.warmpixel.storyadventure.network.SyncWaypointsPayload(list);
+        
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer player = server.getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, payload);
+                
+                // Also sync to Xaero waypoints
+                for (Waypoint wp : activeWaypoints.values()) {
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                        com.warmpixel.storyadventure.network.XaeroWaypointPayload.add(
+                            wp.getId(), wp.getLabel(),
+                            wp.getPosition().x, wp.getPosition().y, wp.getPosition().z,
+                            wp.getColor()
+                        ));
+                }
+            }
+        }
     }
     
     /**

@@ -34,6 +34,7 @@ public class NetworkHandler {
         PayloadTypeRegistry.playC2S().register(PuzzleInputPayload.TYPE, PuzzleInputPayload.STREAM_CODEC);
         PayloadTypeRegistry.playS2C().register(SyncAdminStoriesPayload.TYPE, SyncAdminStoriesPayload.STREAM_CODEC);
         PayloadTypeRegistry.playS2C().register(SyncStoriesPayload.TYPE, SyncStoriesPayload.STREAM_CODEC);
+        PayloadTypeRegistry.playS2C().register(PuzzleResultPayload.TYPE, PuzzleResultPayload.STREAM_CODEC);
         
         PayloadTypeRegistry.playS2C().register(SyncStoryGraphPayload.TYPE, SyncStoryGraphPayload.STREAM_CODEC);
         PayloadTypeRegistry.playC2S().register(RequestStoryGraphPayload.TYPE, RequestStoryGraphPayload.STREAM_CODEC);
@@ -54,6 +55,9 @@ public class NetworkHandler {
         
         // Voiceover payload (server to client)
         PayloadTypeRegistry.playS2C().register(VoiceoverPayload.TYPE, VoiceoverPayload.STREAM_CODEC);
+        
+        // Xaero Waypoint payload (server to client)
+        PayloadTypeRegistry.playS2C().register(XaeroWaypointPayload.TYPE, XaeroWaypointPayload.STREAM_CODEC);
         
         StoryAdventureMod.LOGGER.info("Registered network payload types");
     }
@@ -220,6 +224,9 @@ public class NetworkHandler {
                         StoryAdventureMod.LOGGER.warn("[NetworkHandler] DISBAND_PARTY failed: Player {} not leader or not in party", player.getName().getString());
                     }
                 }
+                case REQUEST_STORY_LIST -> {
+                    syncStoryList(player, StoryAdventureMod.getInstance().getStoryRegistry());
+                }
             }
         });
         
@@ -380,12 +387,20 @@ public class NetworkHandler {
      */
     public static void sendCutsceneStart(ServerPlayer player, com.google.gson.JsonObject cameraPath, 
                                           boolean skippable, boolean letterbox, 
-                                          int fadeInTicks, int fadeOutTicks, String instanceId, String voiceover) {
+                                          int fadeInTicks, int fadeOutTicks, String instanceId, String voiceover,
+                                          com.google.gson.JsonArray subtitles) {
         if (player != null && player.connection != null) {
-            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover);
+            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitles);
             ServerPlayNetworking.send(player, payload);
             StoryAdventureMod.LOGGER.info("Sent cutscene START to {} (voiceover: {})", player.getName().getString(), voiceover);
         }
+    }
+    
+    // Overload for backward compatibility/laziness if needed, or update callers
+    public static void sendCutsceneStart(ServerPlayer player, com.google.gson.JsonObject cameraPath, 
+                                          boolean skippable, boolean letterbox, 
+                                          int fadeInTicks, int fadeOutTicks, String instanceId, String voiceover) {
+        sendCutsceneStart(player, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, instanceId, voiceover, null);
     }
     
     /**

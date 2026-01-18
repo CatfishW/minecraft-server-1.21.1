@@ -41,6 +41,20 @@ public class CinematicCameraController {
     private boolean fadeEnabled = false;
     private float totalDurationTicks = 0f;
     
+    // Subtitles
+    private java.util.List<Subtitle> subtitles = new java.util.ArrayList<>();
+    private String currentSubtitle = null;
+    private String currentSubtitleVoiceover = null;
+    private int lastSubtitleIndex = -1; // Track which subtitle is currently active
+    
+    // Subtitle Typewriter Effect
+    private int subtitleDisplayedCharacters = 0;
+    private long lastSubtitleCharTime = 0;
+    private static final long SUBTITLE_CHAR_DELAY_MS = 30;
+    private boolean subtitleComplete = false;
+    
+    public record Subtitle(String text, int startTick, int durationTick, String voiceover) {}
+    
     // Letterbox animation
     private static final float LETTERBOX_ANIM_DURATION = 10f;
     
@@ -70,6 +84,13 @@ public class CinematicCameraController {
         return instance;
     }
     
+    @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
+    public static void register() {
+        net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            getInstance().gameTick();
+        });
+    }
+    
     // ==================== Cutscene Control ====================
     
     /**
@@ -87,6 +108,18 @@ public class CinematicCameraController {
         this.active = true;
         this.paused = false;
         this.skippable = config.isSkippable();
+        
+        this.subtitles.clear();
+        if (config.getSubtitles() != null) {
+            this.subtitles.addAll(config.getSubtitles());
+        }
+        this.currentSubtitle = null;
+        this.currentSubtitleVoiceover = null;
+        this.lastSubtitleIndex = -1;
+        this.subtitleDisplayedCharacters = 0;
+        this.subtitleComplete = false;
+        StoryAdventureMod.LOGGER.info("[CinematicCamera] startCutscene: loaded {} subtitles, totalDuration={} ticks", 
+            this.subtitles.size(), path.getTotalDurationTicks());
         
         this.letterboxEnabled = config.isLetterboxEnabled();
         this.letterboxProgress = 0f;
@@ -208,10 +241,26 @@ public class CinematicCameraController {
         updateLetterbox(currentExactTick);
         updateFade(currentExactTick);
         
+        // Update subtitles
+        updateSubtitles(currentExactTick);
+        updateSubtitleTypewriter();
+        
         // Check for cutscene completion
         if (currentExactTick >= totalDurationTicks) {
             StoryAdventureMod.LOGGER.info("[CinematicCamera] Cutscene completed naturally");
             stopCutscene();
+        }
+    }
+    
+    private void updateSubtitleTypewriter() {
+        if (currentSubtitle != null && subtitleDisplayedCharacters < currentSubtitle.length()) {
+            long now = System.currentTimeMillis();
+            if (now - lastSubtitleCharTime >= SUBTITLE_CHAR_DELAY_MS) {
+                subtitleDisplayedCharacters++;
+                lastSubtitleCharTime = now;
+            }
+        } else {
+            subtitleComplete = true;
         }
     }
     
@@ -445,6 +494,59 @@ public class CinematicCameraController {
         return Math.min(1f, currentExactTick / totalDurationTicks);
     }
     
+    private void updateSubtitles(float tick) {
+        currentSubtitle = null;
+        currentSubtitleVoiceover = null;
+        int newSubtitleIndex = -1;
+        
+        for (int i = 0; i < subtitles.size(); i++) {
+            Subtitle sub = subtitles.get(i);
+            if (tick >= sub.startTick() && tick < sub.startTick() + sub.durationTick()) {
+                currentSubtitle = sub.text();
+                currentSubtitleVoiceover = sub.voiceover();
+                newSubtitleIndex = i;
+                break;
+            }
+        }
+        
+        if (newSubtitleIndex != -1 && newSubtitleIndex != lastSubtitleIndex) {
+            StoryAdventureMod.LOGGER.info("[CinematicCamera] Subtitle active: '{}' (index: {}, voiceover: {})", 
+                currentSubtitle, newSubtitleIndex, currentSubtitleVoiceover);
+        }
+        
+        // Trigger voiceover when a new subtitle becomes active
+        if (newSubtitleIndex != -1 && newSubtitleIndex != lastSubtitleIndex) {
+            StoryAdventureMod.LOGGER.info("[CinematicCamera] Subtitle changed: index={} -> {}, text='{}', voiceover='{}'", 
+                lastSubtitleIndex, newSubtitleIndex, currentSubtitle, currentSubtitleVoiceover);
+            lastSubtitleIndex = newSubtitleIndex;
+            
+            // Reset typewriter when subtitle changes
+            subtitleDisplayedCharacters = 0;
+            subtitleComplete = false;
+            lastSubtitleCharTime = System.currentTimeMillis();
+            
+            if (currentSubtitleVoiceover != null && !currentSubtitleVoiceover.isEmpty()) {
+                // Play the voiceover audio on the client
+                com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance()
+                    .playVoiceover(currentSubtitleVoiceover, "cutscene");
+            }
+        } else if (newSubtitleIndex == -1) {
+            lastSubtitleIndex = -1;
+        }
+    }
+    
+    public String getCurrentSubtitle() {
+        return currentSubtitle;
+    }
+    
+    public int getSubtitleDisplayedCharacters() {
+        return subtitleDisplayedCharacters;
+    }
+    
+    public boolean isSubtitleComplete() {
+        return subtitleComplete;
+    }
+    
     // ==================== Configuration ====================
     
     /**
@@ -459,6 +561,7 @@ public class CinematicCameraController {
         private float smoothingFactor = 0.15f;
         private Runnable onComplete;
         private Runnable onSkip;
+        private java.util.List<Subtitle> subtitles;
         
         public CutsceneConfig() {}
         
@@ -508,6 +611,11 @@ public class CinematicCameraController {
             return this;
         }
         
+        public CutsceneConfig setSubtitles(java.util.List<Subtitle> subtitles) {
+            this.subtitles = subtitles;
+            return this;
+        }
+        
         public boolean isSkippable() { return skippable; }
         public boolean isLetterboxEnabled() { return letterboxEnabled; }
         public int getFadeInTicks() { return fadeInTicks; }
@@ -516,5 +624,6 @@ public class CinematicCameraController {
         public float getSmoothingFactor() { return smoothingFactor; }
         public Runnable getOnComplete() { return onComplete; }
         public Runnable getOnSkip() { return onSkip; }
+        public java.util.List<Subtitle> getSubtitles() { return subtitles; }
     }
 }

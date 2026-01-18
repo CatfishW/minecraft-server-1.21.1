@@ -50,6 +50,11 @@ public class VoiceoverManager {
             normalizedPath = normalizedPath.substring(0, normalizedPath.length() - 4);
         }
         
+        // Strip namespace prefix if present (e.g., "storyadventure:" or "minecraft:")
+        if (normalizedPath.contains(":")) {
+            normalizedPath = normalizedPath.substring(normalizedPath.indexOf(":") + 1);
+        }
+        
         // Convert path to sound event name (e.g. stranger_things_hawkins/bg_story_1 -> voiceover.stranger_things_hawkins.bg_story_1)
         final String soundEventName = "voiceover." + normalizedPath.replace("/", ".");
         
@@ -154,6 +159,11 @@ public class VoiceoverManager {
             normalizedPath = normalizedPath.substring(0, normalizedPath.length() - 4);
         }
         
+        // Strip namespace prefix if present
+        if (normalizedPath.contains(":")) {
+            normalizedPath = normalizedPath.substring(normalizedPath.indexOf(":") + 1);
+        }
+        
         String soundEventName = "voiceover." + normalizedPath.replace("/", ".");
         ResourceLocation soundLocation = ResourceLocation.fromNamespaceAndPath(
             StoryAdventureMod.MOD_ID, 
@@ -162,7 +172,9 @@ public class VoiceoverManager {
         
         // Check if the sound event is registered in the sound manager
         try {
-            return Minecraft.getInstance().getSoundManager().getAvailableSounds().contains(soundLocation);
+            boolean exists = Minecraft.getInstance().getSoundManager().getSoundEvent(soundLocation) != null;
+            StoryAdventureMod.LOGGER.debug("[VoiceoverManager] Checked existence of sound event: {} -> {}", soundLocation, exists);
+            return exists;
         } catch (Exception e) {
             return false;
         }

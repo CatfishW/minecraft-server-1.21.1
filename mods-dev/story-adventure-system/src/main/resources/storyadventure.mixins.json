@@ -13,7 +13,10 @@
         "CinematicItemInHandRendererMixin"
     ],
     "server": [
-        "StoryVehicleProtectionMixin"
+        "StoryVehicleProtectionMixin",
+        "InstanceCommandProtectionMixin",
+        "ProjectileMixin",
+        "BlockBreakBypassMixin"
     ],
     "injectors": {
         "defaultRequire": 1

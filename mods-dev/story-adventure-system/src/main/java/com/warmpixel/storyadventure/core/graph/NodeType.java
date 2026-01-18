@@ -45,7 +45,13 @@ public enum NodeType {
      * Item/vehicle interactions: getting on buses, using objects, etc.
      * Tracks when player interacts with spawned entities.
      */
-    ITEM_INTERACTION("item_interaction");
+    ITEM_INTERACTION("item_interaction"),
+    
+    /**
+     * Physical world interactions: breaking blocks, clicking buttons, shooting targets.
+     * Admin configurable interactions for puzzles and progression.
+     */
+    WORLD_INTERACTION("world_interaction");
     
     private final String id;
     

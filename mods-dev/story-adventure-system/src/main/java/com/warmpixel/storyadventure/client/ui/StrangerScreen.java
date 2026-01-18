@@ -38,7 +38,8 @@ public abstract class StrangerScreen extends Screen {
         renderStrangerBackground(graphics);
         
         // Render title with glow
-        renderTitle(graphics);
+        // Render title/tabs
+        renderTitle(graphics, mouseX, mouseY);
         
         // Render custom buttons
         for (StrangerButton button : strangerButtons) {
@@ -57,6 +58,9 @@ public abstract class StrangerScreen extends Screen {
         
         // Base dark fill
         graphics.fill(0, 0, width, height, COLOR_BG_DARK);
+        
+        // Render 80s Grid
+        renderGrid(graphics);
         
         // Radial vignette effect (darker at edges)
         for (int layer = 0; layer < 5; layer++) {
@@ -79,20 +83,50 @@ public abstract class StrangerScreen extends Screen {
         int glowColor = 0x0C1D2630;
         graphics.fill(centerX - glowRadius, centerY - glowRadius,
             centerX + glowRadius, centerY + glowRadius, glowColor);
+            
+        renderScanlines(graphics);
+    }
+    
+    protected void renderGrid(GuiGraphics graphics) {
+        int gridSize = 40;
+        int gridColor = 0x08FFFFFF; // Very faint white/cyan
+        
+        // Moving grid effect
+        long time = System.currentTimeMillis();
+        int offset = (int)((time / 50) % gridSize);
+        
+        // Perspective-ish grid (simple bottom half)
+        // Vertical lines
+        for (int x = 0; x <= width; x += gridSize) {
+            graphics.fill(x, 0, x + 1, height, gridColor);
+        }
+        
+        // Horizontal lines
+        for (int y = -offset; y <= height; y += gridSize) {
+            if (y >= 0) graphics.fill(0, y, width, y + 1, gridColor);
+        }
     }
     
     protected void renderScanlines(GuiGraphics graphics) {
-        // Intentionally no-op to keep the UI clean and modern.
+        // Subtle scanline overlay
+        int scanColor = 0x03000000;
+        for(int y = 0; y < height; y += 4) {
+            graphics.fill(0, y, width, y+1, scanColor);
+        }
     }
     
-    protected void renderTitle(GuiGraphics graphics) {
+    protected void renderTitle(GuiGraphics graphics, int mouseX, int mouseY) {
+         // Default implementation just centers title if not overridden
+        renderCenteredTitle(graphics, title.getString());
+    }
+    
+    protected void renderCenteredTitle(GuiGraphics graphics, String text) {
         // Pulsing glow effect
         float pulse = (float)(0.7 + 0.3 * Math.sin((System.currentTimeMillis() - screenOpenTime) / 500.0));
         int glowAlpha = (int)(40 * pulse);
         int glowColor = (glowAlpha << 24) | (COLOR_NEON_PINK & 0x00FFFFFF);
         
-        String titleText = title.getString();
-        int titleWidth = font.width(titleText);
+        int titleWidth = font.width(text);
         int titleX = (width - titleWidth) / 2;
         int titleY = 20;
         
@@ -100,11 +134,35 @@ public abstract class StrangerScreen extends Screen {
         graphics.fill(titleX - 10, titleY - 4, titleX + titleWidth + 10, titleY + 14, glowColor);
         
         // Draw title text
-        graphics.drawString(font, title, titleX, titleY, COLOR_TEXT_TITLE);
+        graphics.drawString(font, text, titleX, titleY, COLOR_TEXT_TITLE);
         
         // Draw underline accent
         int underlineY = titleY + 12;
         graphics.fill(titleX - 4, underlineY, titleX + titleWidth + 4, underlineY + 1, COLOR_NEON_RED);
+    }
+
+    protected boolean renderTopTab(GuiGraphics graphics, String text, int x, int y, boolean active, int mouseX, int mouseY) {
+        int w = font.width(text) + 30;
+        int h = 24;
+        
+        boolean hovered = mouseX >= x && mouseX < x + w && mouseY >= y && mouseY < y + h;
+        
+        // Tab shape
+        int borderColor = active ? COLOR_NEON_RED : (hovered ? COLOR_NEON_PINK : COLOR_BORDER);
+        int fillColor = active ? 0xFF151B22 : (hovered ? 0xFF0E1216 : 0x00000000); // Transparent if inactive
+        
+        graphics.fill(x, y, x + w, y + h, fillColor);
+        renderRectOutline(graphics, x, y, w, h, borderColor);
+        
+        // Active Indicator (Bottom bar)
+        if (active) {
+            graphics.fill(x, y + h - 2, x + w, y + h, COLOR_NEON_RED);
+        }
+        
+        int textColor = active ? COLOR_NEON_RED : (hovered ? 0xFFFFFFFF : COLOR_TEXT_DIM);
+        graphics.drawCenteredString(font, text, x + w / 2, y + 8, textColor);
+        
+        return hovered;
     }
     
     protected void renderBorderFrame(GuiGraphics graphics) {
@@ -116,6 +174,13 @@ public abstract class StrangerScreen extends Screen {
      */
     protected abstract void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick);
     
+    protected void renderRectOutline(GuiGraphics graphics, int x, int y, int w, int h, int color) {
+        graphics.fill(x, y, x + w, y + 1, color); // Top
+        graphics.fill(x, y + h - 1, x + w, y + h, color); // Bottom
+        graphics.fill(x, y, x + 1, y + h, color); // Left
+        graphics.fill(x + w - 1, y, x + w, y + h, color); // Right
+    }
+
     protected StrangerButton addStrangerButton(int x, int y, int width, int height, 
                                                 Component text, Runnable onPress) {
         StrangerButton button = new StrangerButton(x, y, width, height, text, onPress);

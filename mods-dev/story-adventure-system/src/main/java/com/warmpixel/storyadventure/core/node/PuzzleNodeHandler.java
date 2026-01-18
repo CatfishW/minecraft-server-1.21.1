@@ -46,20 +46,54 @@ public class PuzzleNodeHandler implements NodeHandler {
         String solution = node.getString("solution", "");
         String answer = data != null ? data.toString() : "";
         
-        StoryAdventureMod.LOGGER.debug("[PuzzleNodeHandler] Checking answer from player {}. Input='{}'", player.getName().getString(), answer);
+        // Get puzzle-specific state key
+        String stateKey = "puzzle_attempts_" + node.getId();
+        int currentAttempts = 0;
+        if (instance.getState().getMetadata().has(stateKey)) {
+            currentAttempts = instance.getState().getMetadata().get(stateKey).getAsInt();
+        }
+        
+        StoryAdventureMod.LOGGER.debug("[PuzzleNodeHandler] Checking answer from player {}. Input='{}', currentAttempts={}", 
+            player.getName().getString(), answer, currentAttempts);
         
         if (solution.equals(answer)) {
             // Puzzle solved!
             StoryAdventureMod.LOGGER.info("[PuzzleNodeHandler] Puzzle solved by player {}", player.getName().getString());
             instance.getState().setNodeResult("solved");
+            
+            // Clean up state
+            instance.getState().getMetadata().remove(stateKey);
+
+            // Close puzzle UI on clients
+            for (var memberId : instance.getParty().getMembers()) {
+                var member = instance.getServer().getPlayerList().getPlayer(memberId);
+                if (member != null) {
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(
+                        member,
+                        new com.warmpixel.storyadventure.network.PuzzleResultPayload(true)
+                    );
+                }
+            }
+            
             instance.evaluateAutoTransitions();
         } else {
             // Wrong answer - track attempt
-            // If max attempts reached, set result to failed
-            int maxAttempts = node.getInt("max_attempts", 3);
-            // TODO: Track attempts in node state
+            currentAttempts++;
+            instance.getState().getMetadata().addProperty(stateKey, currentAttempts);
             
-            StoryAdventureMod.LOGGER.info("[PuzzleNodeHandler] Wrong answer from player {}. (Max attempts: {})", player.getName().getString(), maxAttempts);
+            int maxAttempts = node.getInt("max_attempts", 3);
+            StoryAdventureMod.LOGGER.info("[PuzzleNodeHandler] Wrong answer from player {}. (Attempts: {}/{})", 
+                player.getName().getString(), currentAttempts, maxAttempts);
+            
+            if (currentAttempts >= maxAttempts) {
+                StoryAdventureMod.LOGGER.info("[PuzzleNodeHandler] Max attempts reached for puzzle {}", node.getId());
+                instance.getState().setNodeResult("failed");
+                instance.evaluateAutoTransitions();
+            } else {
+                // Send feedback to player? The UI tracks its own attempts locally, but for sync
+                // we might want a packet. For now, we rely on local UI tracking + server verification.
+                // But if the server says "failed", the instance will transition and likely close the UI.
+            }
         }
     }
     

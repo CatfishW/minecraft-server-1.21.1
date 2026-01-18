@@ -115,6 +115,11 @@ public class SpawnNPCAction implements NodeAction {
                 // Force position update to apply rotation
                 spawnedEntity.teleportTo(level, position.x, position.y, position.z, java.util.Set.of(), yaw, pitch);
                 
+                // Apply glow effect for visibility (same effect as EasyNPC wand)
+                spawnedEntity.setGlowingTag(true);
+                com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.debug(
+                    "[SpawnNPCAction] Applied glow effect to NPC '{}'", npcTemplate);
+                
             } else {
                 com.warmpixel.storyadventure.StoryAdventureMod.LOGGER.error(
                     "[SpawnNPCAction] API spawn returned null for template '{}'", npcTemplate);

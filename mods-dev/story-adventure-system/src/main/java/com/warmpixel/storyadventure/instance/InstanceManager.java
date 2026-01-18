@@ -156,16 +156,23 @@ public class InstanceManager {
     public void cleanupInstance(UUID instanceId) {
         Instance instance = instances.remove(instanceId);
         if (instance != null) {
-            // Clean up entities
             try {
                 instance.cleanupEntities();
+                instance.cleanupPlayers();
             } catch (Exception e) {
-                StoryAdventureMod.LOGGER.error("[InstanceManager] Error cleaning up entities for instance " + instanceId, e);
+                StoryAdventureMod.LOGGER.error("[InstanceManager] Error cleaning up instance " + instanceId, e);
             }
 
             // Remove all player mappings
             for (UUID memberId : instance.getParty().getMembers()) {
                 playerInstanceMap.remove(memberId);
+                
+                // Restore Xaero waypoints on client
+                net.minecraft.server.level.ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+                if (player != null) {
+                    net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
+                        com.warmpixel.storyadventure.network.XaeroWaypointPayload.end());
+                }
             }
             
             StoryAdventureMod.LOGGER.info("[InstanceManager] Cleaned up instance {}", instanceId);

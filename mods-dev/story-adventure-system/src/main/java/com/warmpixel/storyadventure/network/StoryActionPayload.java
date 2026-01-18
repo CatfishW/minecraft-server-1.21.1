@@ -21,7 +21,8 @@ public record StoryActionPayload(Action action, String data) implements CustomPa
         SELECT_STORY,
         START_ADVENTURE,
         LEAVE_PARTY,
-        DISBAND_PARTY
+        DISBAND_PARTY,
+        REQUEST_STORY_LIST
     }
     
     private static void write(FriendlyByteBuf buf, StoryActionPayload payload) {

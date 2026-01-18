@@ -19,6 +19,7 @@ public class NodeHandlers {
         register(NodeType.CUTSCENE, new CutsceneNodeHandler());
         register(NodeType.CHECKPOINT, new CheckpointNodeHandler());
         register(NodeType.ITEM_INTERACTION, new ItemInteractionNodeHandler());
+        register(NodeType.WORLD_INTERACTION, new WorldInteractionNodeHandler());
     }
     
     public static void register(NodeType type, NodeHandler handler) {

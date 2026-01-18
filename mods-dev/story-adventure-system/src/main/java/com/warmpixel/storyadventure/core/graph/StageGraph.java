@@ -27,6 +27,7 @@ public class StageGraph {
     private final Map<String, ClueDefinition> clues;
     private final Map<String, FlagDefinition> flags;
     private final Map<String, StoryLocation> specialLocations = new HashMap<>();
+    private final net.minecraft.world.phys.AABB instanceArea;
 
     public record StoryLocation(String dimension, double x, double y, double z, float yaw, float pitch) {}
     
@@ -45,6 +46,7 @@ public class StageGraph {
         this.clues = Collections.unmodifiableMap(new HashMap<>(builder.clues));
         this.flags = Collections.unmodifiableMap(new HashMap<>(builder.flags));
         this.specialLocations.putAll(builder.specialLocations);
+        this.instanceArea = builder.instanceArea;
     }
     
     // Getters
@@ -58,6 +60,7 @@ public class StageGraph {
     public int getMaxTeamDeaths() { return maxTeamDeaths; }
     public JsonArray getFailureRewards() { return failureRewards; }
     public String getEntryNodeId() { return entryNodeId; }
+    public net.minecraft.world.phys.AABB getInstanceArea() { return instanceArea; }
     
     public StageNode getNode(String nodeId) {
         return nodes.get(nodeId);
@@ -113,6 +116,18 @@ public class StageGraph {
         json.addProperty("max_players", maxPlayers);
         json.addProperty("estimated_duration_minutes", estimatedDurationMinutes);
         json.addProperty("entry_node", entryNodeId);
+        
+        // Instance Area
+        if (instanceArea != null) {
+            JsonObject areaJson = new JsonObject();
+            areaJson.addProperty("minX", instanceArea.minX);
+            areaJson.addProperty("minY", instanceArea.minY);
+            areaJson.addProperty("minZ", instanceArea.minZ);
+            areaJson.addProperty("maxX", instanceArea.maxX);
+            areaJson.addProperty("maxY", instanceArea.maxY);
+            areaJson.addProperty("maxZ", instanceArea.maxZ);
+            json.add("instance_area", areaJson);
+        }
         
         // Locations
         if (!specialLocations.isEmpty()) {
@@ -210,6 +225,18 @@ public class StageGraph {
         builder.maxTeamDeaths(json.has("max_team_deaths") ? json.get("max_team_deaths").getAsInt() : 15);
         builder.failureRewards(json.has("failure_rewards") ? json.getAsJsonArray("failure_rewards") : new JsonArray());
         
+        if (json.has("instance_area")) {
+            JsonObject area = json.getAsJsonObject("instance_area");
+            builder.instanceArea(new net.minecraft.world.phys.AABB(
+                area.get("minX").getAsDouble(),
+                area.get("minY").getAsDouble(),
+                area.get("minZ").getAsDouble(),
+                area.get("maxX").getAsDouble(),
+                area.get("maxY").getAsDouble(),
+                area.get("maxZ").getAsDouble()
+            ));
+        }
+
         // Parse nodes
         JsonObject nodesJson = json.getAsJsonObject("nodes");
         for (Map.Entry<String, JsonElement> entry : nodesJson.entrySet()) {
@@ -320,6 +347,7 @@ public class StageGraph {
         private final Map<String, ClueDefinition> clues = new HashMap<>();
         private final Map<String, FlagDefinition> flags = new HashMap<>();
         private final Map<String, StoryLocation> specialLocations = new HashMap<>();
+        private net.minecraft.world.phys.AABB instanceArea;
         
         public Builder(String storyId, String entryNodeId) {
             this.storyId = storyId;
@@ -334,6 +362,7 @@ public class StageGraph {
         public Builder estimatedDurationMinutes(int minutes) { this.estimatedDurationMinutes = minutes; return this; }
         public Builder maxTeamDeaths(int deaths) { this.maxTeamDeaths = deaths; return this; }
         public Builder failureRewards(JsonArray rewards) { this.failureRewards = rewards; return this; }
+        public Builder instanceArea(net.minecraft.world.phys.AABB area) { this.instanceArea = area; return this; }
         
         public Builder addNode(StageNode node) {
             nodes.put(node.getId(), node);

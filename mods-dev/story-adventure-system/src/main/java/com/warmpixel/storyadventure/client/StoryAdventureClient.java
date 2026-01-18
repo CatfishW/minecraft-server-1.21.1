@@ -36,6 +36,7 @@ public class StoryAdventureClient implements ClientModInitializer {
         EnemyIndicatorRenderer.register();
         
         // Register cinematic overlay for cutscenes
+        com.warmpixel.storyadventure.client.cinematic.CinematicCameraController.register();
         com.warmpixel.storyadventure.client.render.CinematicOverlayRenderer.register();
         
         // Register client-side UI commands (these work when typing directly in chat)

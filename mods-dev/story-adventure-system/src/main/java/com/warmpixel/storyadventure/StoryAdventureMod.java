@@ -3,6 +3,7 @@ package com.warmpixel.storyadventure;
 import com.warmpixel.storyadventure.command.DebugCommands;
 import com.warmpixel.storyadventure.command.InstanceCommands;
 import com.warmpixel.storyadventure.command.ServerUICommands;
+import com.warmpixel.storyadventure.command.StoryAdminCommand;
 import com.warmpixel.storyadventure.command.StoryCommands;
 import com.warmpixel.storyadventure.instance.InstanceManager;
 import com.warmpixel.storyadventure.instance.PartyManager;
@@ -65,6 +66,7 @@ public class StoryAdventureMod implements ModInitializer {
             ServerUICommands.register(dispatcher, instanceManager, partyManager);
             InstanceCommands.register(dispatcher, instanceManager, partyManager, storyRegistry);
             DebugCommands.register(dispatcher, instanceManager, storyRegistry);
+            StoryAdminCommand.register(dispatcher);
         });
 
         // Server tick event
@@ -86,11 +88,23 @@ public class StoryAdventureMod implements ModInitializer {
                     server.createCommandSourceStack().withSuppressedOutput(),
                     cleanupCmd
                 );
+                // Also clean up story_enemy entities
+                String enemyCleanupCmd = "kill @e[tag=story_enemy]";
+                server.getCommands().performPrefixedCommand(
+                    server.createCommandSourceStack().withSuppressedOutput(),
+                    enemyCleanupCmd
+                );
                 // Also clean up with easy_npc command for NPC entities
                 String npcCleanupCmd = "easy_npc delete @e[tag=story_entity]";
                 server.getCommands().performPrefixedCommand(
                     server.createCommandSourceStack().withSuppressedOutput(),
                     npcCleanupCmd
+                );
+                // Also clean up story_enemy NPCs
+                String enemyNpcCleanupCmd = "easy_npc delete @e[tag=story_enemy]";
+                server.getCommands().performPrefixedCommand(
+                    server.createCommandSourceStack().withSuppressedOutput(),
+                    enemyNpcCleanupCmd
                 );
                 LOGGER.info("Orphaned story entity cleanup complete");
             } catch (Exception e) {

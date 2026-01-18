@@ -151,5 +151,689 @@
                 "stream": true
             }
         ]
+    },
+    "voiceover.stranger_things_hawkins_hard.after_library_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/after_library_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.after_police_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/after_police_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.approaching_roadblock_library": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/approaching_roadblock_library",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.approaching_roadblock_police": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/approaching_roadblock_police",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.basement_cutscene_sub": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/basement_cutscene_sub",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.basement_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/basement_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.boss_prelude_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/boss_prelude_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.bus_to_library_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/bus_to_library_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.bus_to_police_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/bus_to_police_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.byers_cutscene_sub": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/byers_cutscene_sub",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.byers_travel_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/byers_travel_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.byers_wall_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/byers_wall_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.enter_upside_down_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/enter_upside_down_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.find_will_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/find_will_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.gate_open_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/gate_open_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_files_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_files_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.instance_complete_cutscene": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/instance_complete_cutscene",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.instance_complete_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/instance_complete_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.intro_cutscene_sub_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/intro_cutscene_sub_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.intro_cutscene_sub_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/intro_cutscene_sub_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.intro_cutscene_sub_3": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/intro_cutscene_sub_3",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.joyce_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/joyce_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.library_alarm_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/library_alarm_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.library_archive_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/library_archive_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.library_clue_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/library_clue_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.library_cutscene_sub": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/library_cutscene_sub",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.library_puzzle_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/library_puzzle_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.meet_boys_enter": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/meet_boys_enter",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.meet_boys_trigger_bg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/meet_boys_trigger_bg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.offer_pool_sidequest_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/offer_pool_sidequest_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.player_spawn_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/player_spawn_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.police_alarm_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/police_alarm_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.police_clue_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/police_clue_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.police_cutscene_sub": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/police_cutscene_sub",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.pool_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/pool_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.pool_reward_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/pool_reward_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.pool_travel_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/pool_travel_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.reach_library_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/reach_library_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.reach_police_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/reach_police_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.return_library_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/return_library_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.road_ambush_library_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/road_ambush_library_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.road_ambush_police_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/road_ambush_police_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.roadblock_checkpoint_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/roadblock_checkpoint_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.roadblock_police_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/roadblock_police_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.sneak_records_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/sneak_records_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.snoop_success_dialogue_combined": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/snoop_success_dialogue_combined",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.spider_combat_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/spider_combat_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.spider_nest_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/spider_nest_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.town_road_library_sub": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/town_road_library_sub",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.town_road_police_sub": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/town_road_police_sub",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.upside_down_search_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/upside_down_search_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.upside_wave_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/upside_wave_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.eleven_fireworks_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/eleven_fireworks_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.basement_dialogue_mike_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/basement_dialogue_mike_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.snoop_success_nancy_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/snoop_success_nancy_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.eleven_fireworks_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/eleven_fireworks_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.basement_dialogue_mike_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/basement_dialogue_mike_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.eleven_boss_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/eleven_boss_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.snoop_success_nancy_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/snoop_success_nancy_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_dialogue_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_dialogue_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_files_dialogue_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_files_dialogue_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.will_dialogue_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/will_dialogue_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_files_dialogue_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_files_dialogue_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.basement_dialogue_mike_3": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/basement_dialogue_mike_3",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_dialogue_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_dialogue_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.eleven_pool_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/eleven_pool_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.hopper_dialogue_3": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/hopper_dialogue_3",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.will_dialogue_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/will_dialogue_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.joyce_dialogue_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/joyce_dialogue_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.eleven_pool_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/eleven_pool_1",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.roadblock_combat_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/roadblock_combat_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.joyce_dialogue_2": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/joyce_dialogue_2",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.roadblock_police_combat_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/roadblock_police_combat_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.byers_clue_msg": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/byers_clue_msg",
+                "stream": true
+            }
+        ]
+    },
+    "voiceover.stranger_things_hawkins_hard.eleven_boss_1": {
+        "category": "voice",
+        "sounds": [
+            {
+                "name": "storyadventure:voiceovers/stranger_things_hawkins_hard/eleven_boss_1",
+                "stream": true
+            }
+        ]
     }
 }

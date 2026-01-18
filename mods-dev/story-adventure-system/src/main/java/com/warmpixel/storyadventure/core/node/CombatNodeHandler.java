@@ -199,19 +199,7 @@ public class CombatNodeHandler implements NodeHandler {
             return;
         }
         
-        // Check for player deaths
-        boolean anyPlayerAlive = false;
-        for (UUID memberId : instance.getParty().getMembers()) {
-            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
-            if (player != null && player.isAlive()) {
-                anyPlayerAlive = true;
-                break;
-            }
-        }
-        
-        if (!anyPlayerAlive) {
-            markCombatDefeat(instance, node);
-        }
+
     }
     
     @Override

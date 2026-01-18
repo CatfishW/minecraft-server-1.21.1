@@ -2,6 +2,8 @@ package com.warmpixel.storyadventure.client.ui;
 
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +17,15 @@ public class StrangerStoryListScreen extends StrangerScreen {
     private final List<StoryEntry> stories = new ArrayList<>();
     private int selectedIndex = -1;
     private int scrollOffset = 0;
-    private static final int ENTRY_HEIGHT = 50;
-    private static final int VISIBLE_ENTRIES = 5;
+    private static final int ENTRY_HEIGHT = 44; // Slightly tighter list
+    private boolean storyListRequested = false;
+    
+    // Layout Constants
+    private static final int HEADER_HEIGHT = 50;
+    private static final int FOOTER_HEIGHT = 60;
     
     public StrangerStoryListScreen() {
-        super(Component.literal("选择故事"));
+        super(Component.translatable("gui.storyadventure.title.select_story"));
     }
     
     public void addStory(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes) {
@@ -35,50 +41,129 @@ public class StrangerStoryListScreen extends StrangerScreen {
     @Override
     protected void init() {
         super.init();
+
+        if (!storyListRequested && stories.isEmpty()) {
+            requestStoryListRefresh();
+        }
         
-        int buttonWidth = 150;
-        int buttonHeight = 28;
-        int bottomY = height - 50;
+        int buttonWidth = 160;
+        int buttonHeight = 32;
+        int bottomY = height - 44;
         
-        // Start button
-        addStrangerButton(width / 2 - buttonWidth - 10, bottomY, buttonWidth, buttonHeight,
-            Component.literal("开始故事"), this::startSelectedStory);
+        // Right-aligned buttons in the footer area
+        int rightPanelStart = (int)(width * 0.35) + 20;
+        int rightPanelWidth = width - rightPanelStart - 20;
         
-        // Back button  
-        addStrangerButton(width / 2 + 10, bottomY, buttonWidth, buttonHeight,
-            Component.literal("返回"), this::onClose);
+        // Center the buttons within the right panel area
+        int buttonsTotalWidth = buttonWidth * 2 + 20;
+        int buttonsStartX = rightPanelStart + (rightPanelWidth - buttonsTotalWidth) / 2;
+        
+        // Back button (left)
+        addStrangerButton(buttonsStartX, bottomY, buttonWidth, buttonHeight,
+            Component.translatable("gui.storyadventure.button.back"), this::onClose);
+
+        // Start button (right) - Only enabled if selected, but we render it always and check in callback
+        StrangerButton startBtn = addStrangerButton(buttonsStartX + buttonWidth + 20, bottomY, buttonWidth, buttonHeight,
+            Component.translatable("gui.storyadventure.button.start_story"), this::startSelectedStory);
+        startBtn.setGlowPulse(true);
+    }
+
+    private void requestStoryListRefresh() {
+        storyListRequested = true;
+        ClientPlayNetworking.send(
+            new com.warmpixel.storyadventure.network.StoryActionPayload(
+                com.warmpixel.storyadventure.network.StoryActionPayload.Action.REQUEST_STORY_LIST,
+                ""
+            )
+        );
     }
     
+    private static final ResourceLocation COVER_IMAGE = ResourceLocation.fromNamespaceAndPath("storyadventure", "textures/gui/story_cover_placeholder.png");
+
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int listX = 50;
-        int listY = 60;
-        int listWidth = width - 100;
-        int listHeight = ENTRY_HEIGHT * VISIBLE_ENTRIES;
+        int leftPanelWidth = (int)(width * 0.35);
+        int listX = 20;
+        int listY = HEADER_HEIGHT + 10;
+        int listWidth = leftPanelWidth - 20;
+        int listHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT - 20;
         
-        // Draw list background
-        graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0101216);
+        int visibleEntries = listHeight / ENTRY_HEIGHT;
         
-        // Draw list border
-        drawListBorder(graphics, listX, listY, listWidth, listHeight);
+        // --- Left Panel: Story List ---
         
-        // Draw entries
+        // Background for List Area
+        graphics.fill(listX - 10, listY - 10, listX + listWidth + 10, listY + listHeight + 10, 0x40000000);
+        renderRectOutline(graphics, listX - 10, listY - 10, listWidth + 20, listHeight + 20, COLOR_BORDER);
+
         if (stories.isEmpty()) {
-             graphics.drawCenteredString(font, "加载中...", width / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
+             graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.loading"), listX + listWidth / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
         } else {
-            int visibleEnd = Math.min(scrollOffset + VISIBLE_ENTRIES, stories.size());
+            int visibleEnd = Math.min(scrollOffset + visibleEntries, stories.size());
             for (int i = scrollOffset; i < visibleEnd; i++) {
                 int entryY = listY + (i - scrollOffset) * ENTRY_HEIGHT;
-                renderStoryEntry(graphics, stories.get(i), listX + 4, entryY, listWidth - 8, i == selectedIndex, mouseX, mouseY);
+                renderStoryEntry(graphics, stories.get(i), listX, entryY, listWidth, i == selectedIndex, mouseX, mouseY);
+            }
+            
+            // Scroll Indicators
+            if (scrollOffset > 0) {
+                 graphics.drawCenteredString(font, "▲", listX + listWidth / 2, listY - 8, COLOR_NEON_RED);
+            }
+            if (scrollOffset + visibleEntries < stories.size()) {
+                 graphics.drawCenteredString(font, "▼", listX + listWidth / 2, listY + listHeight, COLOR_NEON_RED);
             }
         }
         
-        // Draw scroll indicators if needed
-        if (scrollOffset > 0) {
-            graphics.drawString(font, "▲", listX + listWidth / 2 - 4, listY - 12, COLOR_NEON_RED);
-        }
-        if (scrollOffset + VISIBLE_ENTRIES < stories.size()) {
-            graphics.drawString(font, "▼", listX + listWidth / 2 - 4, listY + listHeight + 4, COLOR_NEON_RED);
+        // --- Right Panel: Details ---
+        
+        int rightPanelStart = leftPanelWidth + 20;
+        int rightPanelWidth = width - rightPanelStart - 40;
+        int contentY = HEADER_HEIGHT + 10;
+        
+        if (selectedIndex >= 0 && selectedIndex < stories.size()) {
+            StoryEntry story = stories.get(selectedIndex);
+            
+            // 1. Thumbnail / Preview Image (16:9 Aspect Ratio)
+            int thumbHeight = (int)(rightPanelWidth * 0.5625);
+            // Limit height if screen is short
+            int maxThumbH = (int)(height * 0.45);
+            if (thumbHeight > maxThumbH) thumbHeight = maxThumbH;
+            
+            // Draw Thumbnail
+            renderThumbnail(graphics, story, rightPanelStart, contentY, rightPanelWidth, thumbHeight);
+            
+            int textY = contentY + thumbHeight + 15;
+            
+            // 2. Title
+            graphics.pose().pushPose();
+            graphics.pose().translate(rightPanelStart, textY, 0);
+            graphics.pose().scale(1.3f, 1.3f, 1.0f);
+            graphics.drawString(font, story.name, 0, 0, COLOR_NEON_RED);
+            graphics.pose().popPose();
+            textY += 20;
+            
+            // 3. Stats Row
+            String stats = String.format("👥 %d-%d Players   ⏱ ~%d Mins", story.minPlayers, story.maxPlayers, story.estimatedMinutes);
+            graphics.drawString(font, stats, rightPanelStart, textY, COLOR_NEON_PINK);
+            textY += 15;
+            
+            // Divider
+            graphics.fill(rightPanelStart, textY, rightPanelStart + rightPanelWidth, textY + 1, COLOR_BORDER);
+            textY += 10;
+            
+            // 4. Description (Scrollable-ish, or just clamp)
+            String desc = story.description;
+            List<net.minecraft.util.FormattedCharSequence> wrappedDesc = font.split(Component.literal(desc), rightPanelWidth);
+            for (net.minecraft.util.FormattedCharSequence line : wrappedDesc) {
+                // Stop if getting too close to buttons
+                if (textY > height - FOOTER_HEIGHT - 10) break; 
+                graphics.drawString(font, line, rightPanelStart, textY, COLOR_TEXT_BODY);
+                textY += 11;
+            }
+            
+        } else {
+            // Empty State
+            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.select_prompt"), rightPanelStart + rightPanelWidth / 2, height / 2, COLOR_TEXT_DIM);
         }
     }
     
@@ -86,57 +171,58 @@ public class StrangerStoryListScreen extends StrangerScreen {
         boolean hovered = mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + ENTRY_HEIGHT;
         
         // Background
-        int bgColor = selected ? 0xFF1B232C : (hovered ? 0xFF151B22 : 0xFF0E1218);
-        graphics.fill(x, y, x + width, y + ENTRY_HEIGHT - 2, bgColor);
+        int bgColor = selected ? 0xFF1B232C : (hovered ? 0xFF151B22 : 0x00000000); // Transparent if not interacting
+        graphics.fill(x, y, x + width, y + ENTRY_HEIGHT - 4, bgColor);
         
-        // Border
-        int borderColor = selected ? COLOR_NEON_RED : COLOR_BORDER;
-        graphics.fill(x, y, x + width, y + 1, borderColor);
-        graphics.fill(x, y + ENTRY_HEIGHT - 3, x + width, y + ENTRY_HEIGHT - 2, borderColor);
-        graphics.fill(x, y, x + 1, y + ENTRY_HEIGHT - 2, borderColor);
-        graphics.fill(x + width - 1, y, x + width, y + ENTRY_HEIGHT - 2, borderColor);
+        // Active Indicator (Left Bar)
+        if (selected) {
+            graphics.fill(x, y, x + 3, y + ENTRY_HEIGHT - 4, COLOR_NEON_RED);
+             // Glow effect gradient
+             graphics.fillGradient(x + 3, y, x + width, y + ENTRY_HEIGHT - 4, 0x203BB6A6, 0x003BB6A6);
+        } else if (hovered) {
+             graphics.fill(x, y, x + 2, y + ENTRY_HEIGHT - 4, COLOR_BORDER);
+        }
         
         // Title
-        graphics.drawString(font, story.name, x + 8, y + 6, selected ? COLOR_NEON_RED : COLOR_TEXT_BODY);
+        int textColor = selected ? COLOR_NEON_RED : (hovered ? 0xFFFFFFFF : COLOR_TEXT_BODY);
+        graphics.drawString(font, story.name, x + 10, y + 8, textColor);
         
-        // Description (truncated)
-        String desc = story.description;
-        if (font.width(desc) > width - 16) {
-            while (font.width(desc + "...") > width - 16 && desc.length() > 0) {
-                desc = desc.substring(0, desc.length() - 1);
-            }
-            desc += "...";
-        }
-        graphics.drawString(font, desc, x + 8, y + 20, COLOR_TEXT_DIM);
-        
-        // Player count and duration
-        String info = String.format("%d-%d人 | 约%d分钟", story.minPlayers, story.maxPlayers, story.estimatedMinutes);
-        graphics.drawString(font, info, x + 8, y + 34, COLOR_TEXT_DIM);
+        // Mini Info
+        String meta = String.format("%d-%d %s", story.minPlayers, story.maxPlayers, Component.translatable("gui.storyadventure.label.people").getString());
+        graphics.drawString(font, meta, x + 10, y + 22, COLOR_TEXT_DIM);
     }
     
-    private void drawListBorder(GuiGraphics graphics, int x, int y, int w, int h) {
-        graphics.fill(x, y, x + w, y + 1, COLOR_BORDER);
-        graphics.fill(x, y + h - 1, x + w, y + h, COLOR_BORDER);
-        graphics.fill(x, y, x + 1, y + h, COLOR_BORDER);
-        graphics.fill(x + w - 1, y, x + w, y + h, COLOR_BORDER);
+    // ... existing helpers ...
+
+    private void renderThumbnail(GuiGraphics graphics, StoryEntry story, int x, int y, int w, int h) {
+        // Draw the static image
+        com.mojang.blaze3d.systems.RenderSystem.setShaderTexture(0, COVER_IMAGE);
+        graphics.blit(COVER_IMAGE, x, y, w, h, 0, 0, w, h, w, h);
+        
+        // Inner border
+        renderRectOutline(graphics, x, y, w, h, COLOR_BORDER);
+        
+        // "Scanner" line animation (optional, kept for cool factor)
+        float scanPhase = (System.currentTimeMillis() % 3000) / 3000.0f;
+        int scanY = y + (int)(h * scanPhase);
+        graphics.fill(x, scanY, x + w, scanY + 1, 0x403BB6A6);
     }
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        // Check for story selection
-        int listX = 50;
-        int listY = 60;
-        int listWidth = width - 100;
-        
-        if (mouseX >= listX && mouseX < listX + listWidth) {
-            int relY = (int)mouseY - listY;
-            if (relY >= 0 && relY < ENTRY_HEIGHT * VISIBLE_ENTRIES) {
-                int clickedIndex = scrollOffset + relY / ENTRY_HEIGHT;
-                if (clickedIndex < stories.size()) {
-                    selectedIndex = clickedIndex;
-                    return true;
-                }
-            }
+        int leftPanelWidth = (int)(width * 0.35);
+        int listX = 20;
+        int listY = HEADER_HEIGHT + 10;
+        int listWidth = leftPanelWidth - 20;
+        int listHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT - 20;
+
+        if (mouseX >= listX && mouseX < listX + listWidth && mouseY >= listY && mouseY < listY + listHeight) {
+             int relY = (int)mouseY - listY;
+             int clickedIndex = scrollOffset + relY / ENTRY_HEIGHT;
+             if (clickedIndex >= 0 && clickedIndex < stories.size()) {
+                 selectedIndex = clickedIndex;
+                 return true;
+             }
         }
         
         return super.mouseClicked(mouseX, mouseY, button);
@@ -144,10 +230,13 @@ public class StrangerStoryListScreen extends StrangerScreen {
     
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
+        int listHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT - 20;
+        int visibleEntries = listHeight / ENTRY_HEIGHT;
+        
         if (vAmount > 0 && scrollOffset > 0) {
             scrollOffset--;
             return true;
-        } else if (vAmount < 0 && scrollOffset + VISIBLE_ENTRIES < stories.size()) {
+        } else if (vAmount < 0 && scrollOffset + visibleEntries < stories.size()) {
             scrollOffset++;
             return true;
         }
@@ -163,7 +252,6 @@ public class StrangerStoryListScreen extends StrangerScreen {
                     story.id
                 )
             );
-            // Don't close immediately, wait for server to switch us to Lobby
         }
     }
     

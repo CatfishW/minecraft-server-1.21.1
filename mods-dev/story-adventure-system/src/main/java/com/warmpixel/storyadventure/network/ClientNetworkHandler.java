@@ -99,6 +99,14 @@ public class ClientNetworkHandler {
                 }
             });
         });
+
+        ClientPlayNetworking.registerGlobalReceiver(PuzzleResultPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> {
+                if (payload.success() && Minecraft.getInstance().screen instanceof StrangerPuzzleScreen) {
+                    Minecraft.getInstance().setScreen(null);
+                }
+            });
+        });
         
         ClientPlayNetworking.registerGlobalReceiver(SyncWaypointsPayload.TYPE, (payload, context) -> {
             context.client().execute(() -> {
@@ -117,12 +125,20 @@ public class ClientNetworkHandler {
                 }
                 renderer.setEnabled(!payload.waypoints().isEmpty());
                 
-                // Update 3D world indicators
-                java.util.List<net.minecraft.world.phys.Vec3> destPoints = new java.util.ArrayList<>();
-                for (var wpData : payload.waypoints()) {
-                    destPoints.add(new net.minecraft.world.phys.Vec3(wpData.x(), wpData.y(), wpData.z()));
+                // Update 3D world indicators with label support
+                if (payload.waypoints().size() == 1) {
+                    var wpData = payload.waypoints().get(0);
+                    com.warmpixel.storyadventure.client.render.WorldDestinationRenderer.setDestinationWithLabel(
+                        new net.minecraft.world.phys.Vec3(wpData.x(), wpData.y(), wpData.z()),
+                        wpData.label()
+                    );
+                } else {
+                    java.util.List<net.minecraft.world.phys.Vec3> destPoints = new java.util.ArrayList<>();
+                    for (var wpData : payload.waypoints()) {
+                        destPoints.add(new net.minecraft.world.phys.Vec3(wpData.x(), wpData.y(), wpData.z()));
+                    }
+                    com.warmpixel.storyadventure.client.render.WorldDestinationRenderer.setDestinations(destPoints);
                 }
-                com.warmpixel.storyadventure.client.render.WorldDestinationRenderer.setDestinations(destPoints);
             });
         });
         
@@ -164,7 +180,25 @@ public class ClientNetworkHandler {
             context.client().execute(() -> handleVoiceoverPayload(payload));
         });
         
+        // Xaero Waypoint payload - handle Xaero waypoint integration
+        ClientPlayNetworking.registerGlobalReceiver(XaeroWaypointPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> handleXaeroWaypointPayload(payload));
+        });
+        
         StoryAdventureMod.LOGGER.info("Registered client network receivers");
+    }
+    
+    private static void handleXaeroWaypointPayload(XaeroWaypointPayload payload) {
+        switch (payload.action()) {
+            case START -> com.warmpixel.storyadventure.client.integration.XaeroWaypointIntegration.onInstanceStart();
+            case ADD -> com.warmpixel.storyadventure.client.integration.XaeroWaypointIntegration.addWaypoint(
+                payload.id(), payload.name(), payload.x(), payload.y(), payload.z(), payload.color()
+            );
+            case REMOVE -> com.warmpixel.storyadventure.client.integration.XaeroWaypointIntegration.removeWaypoint(
+                payload.id(), payload.name()
+            );
+            case END -> com.warmpixel.storyadventure.client.integration.XaeroWaypointIntegration.onInstanceEnd();
+        }
     }
     
     /**
@@ -476,6 +510,37 @@ public class ClientNetworkHandler {
                     .setLetterboxEnabled(payload.letterbox())
                     .setFadeInTicks(payload.fadeInTicks())
                     .setFadeOutTicks(payload.fadeOutTicks());
+                
+                // Parse subtitles
+                var subtitlesJson = payload.getSubtitlesAsJson();
+                StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Raw subtitlesJson: {}", payload.subtitlesJson());
+                StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Parsed subtitlesJson array size: {}", subtitlesJson != null ? subtitlesJson.size() : 0);
+                if (subtitlesJson != null && !subtitlesJson.isEmpty()) {
+                    var subtitleList = new java.util.ArrayList<CinematicCameraController.Subtitle>();
+                    for (var elem : subtitlesJson) {
+                        if (elem.isJsonObject()) {
+                            var obj = elem.getAsJsonObject();
+                            String text = obj.has("text") ? obj.get("text").getAsString() : "";
+                            
+                            int start = 0;
+                            if (obj.has("start_tick")) start = obj.get("start_tick").getAsInt();
+                            else if (obj.has("start_ticks")) start = obj.get("start_ticks").getAsInt();
+                            else if (obj.has("start")) start = obj.get("start").getAsInt();
+                            
+                            int duration = 60;
+                            if (obj.has("duration_tick")) duration = obj.get("duration_tick").getAsInt();
+                            else if (obj.has("duration_ticks")) duration = obj.get("duration_ticks").getAsInt();
+                            else if (obj.has("duration")) duration = obj.get("duration").getAsInt();
+                            
+                            String voiceover = obj.has("voiceover") ? obj.get("voiceover").getAsString() : null;
+                            subtitleList.add(new CinematicCameraController.Subtitle(text, start, duration, voiceover));
+                            StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Parsed subtitle: text='{}', start={}, duration={}, voiceover={}", 
+                                text, start, duration, voiceover);
+                        }
+                    }
+                    config.setSubtitles(subtitleList);
+                    StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Set {} subtitles on config", subtitleList.size());
+                }
                 
                 // Start the cutscene
                 controller.startCutscene(path, config);

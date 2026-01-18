@@ -66,6 +66,12 @@ public class CinematicOverlayRenderer implements HudRenderCallback {
             renderSkipPrompt(graphics, mc.font, screenWidth, screenHeight, controller.getLetterboxProgress());
         }
         
+        // Render subtitles
+        String subtitle = controller.getCurrentSubtitle();
+        if (subtitle != null && !subtitle.isEmpty()) {
+            renderSubtitle(graphics, mc.font, screenWidth, screenHeight, subtitle, controller.getLetterboxProgress());
+        }
+        
         // Render progress bar (optional, subtle)
         renderProgressBar(graphics, screenWidth, screenHeight, controller.getProgress(), controller.getLetterboxProgress());
     }
@@ -138,5 +144,47 @@ public class CinematicOverlayRenderer implements HudRenderCallback {
         int fillAlpha = (int) (200 * letterboxProgress);
         graphics.fill(0, progressBarY, fillWidth, progressBarY + progressBarHeight, 
             (fillAlpha << 24) | 0xFFFFFF);
+    }
+
+    /**
+     * Render a subtitle at the bottom of the screen.
+     * Always renders with full alpha for visibility.
+     */
+    private void renderSubtitle(GuiGraphics graphics, Font font, int screenWidth, int screenHeight, 
+                                 String text, float letterboxProgress) {
+        if (text == null || text.isEmpty()) return;
+
+        CinematicCameraController controller = CinematicCameraController.getInstance();
+        int displayedChars = controller.getSubtitleDisplayedCharacters();
+        String displayText = text.substring(0, Math.min(displayedChars, text.length()));
+
+        // Movie-style positioning: at the bottom
+        // Calculate position based on whether letterbox is active
+        int letterboxHeight = (int)(screenHeight * LETTERBOX_HEIGHT_RATIO * letterboxProgress);
+        
+        // Wrap text to fit screen width (with padding)
+        int maxWidth = screenWidth - 80;
+        java.util.List<net.minecraft.util.FormattedCharSequence> lines = font.split(net.minecraft.network.chat.Component.literal(displayText), maxWidth);
+        
+        int totalHeight = lines.size() * (font.lineHeight + 2);
+        int y = screenHeight - letterboxHeight - totalHeight - 20;
+        
+        // If no letterbox, position near bottom but not cut off
+        if (letterboxProgress < 0.1f) {
+            y = screenHeight - totalHeight - 40;
+        }
+
+        for (int i = 0; i < lines.size(); i++) {
+            net.minecraft.util.FormattedCharSequence line = lines.get(i);
+            int textWidth = font.width(line);
+            int x = (screenWidth - textWidth) / 2;
+            int lineY = y + i * (font.lineHeight + 2);
+
+            // Draw background shadow for better readability
+            graphics.fill(x - 4, lineY - 1, x + textWidth + 4, lineY + font.lineHeight + 1, 0x99000000);
+            
+            // Draw text with white color (full alpha)
+            graphics.drawString(font, line, x, lineY, 0xFFFFFFFF, true);
+        }
     }
 }

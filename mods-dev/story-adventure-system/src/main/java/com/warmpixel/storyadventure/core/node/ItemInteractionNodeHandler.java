@@ -122,13 +122,20 @@ public class ItemInteractionNodeHandler implements NodeHandler {
         ServerLevel level = player.serverLevel();
         String instanceTag = "instance_" + instance.getInstanceId().toString();
         
-        // Calculate spawn position offset from player (in front of them)
-        Vec3 playerPos = player.position();
-        float yaw = player.getYRot();
-        double offsetX = -Math.sin(Math.toRadians(yaw)) * spawnOffset;
-        double offsetZ = Math.cos(Math.toRadians(yaw)) * spawnOffset;
+        BlockPos spawnPos;
+        float yaw;
         
-        BlockPos spawnPos = BlockPos.containing(playerPos.x + offsetX, playerPos.y, playerPos.z + offsetZ);
+        if (node.getData().has("x") && node.getData().has("y") && node.getData().has("z")) {
+            spawnPos = BlockPos.containing(node.getDouble("x", 0.0), node.getDouble("y", 0.0), node.getDouble("z", 0.0));
+            yaw = node.getFloat("yaw", 0.0f);
+        } else {
+            // Calculate spawn position offset from player (in front of them)
+            Vec3 playerPos = player.position();
+            yaw = player.getYRot();
+            double offsetX = -Math.sin(Math.toRadians(yaw)) * spawnOffset;
+            double offsetZ = Math.cos(Math.toRadians(yaw)) * spawnOffset;
+            spawnPos = BlockPos.containing(playerPos.x + offsetX, playerPos.y, playerPos.z + offsetZ);
+        }
         
         StoryAdventureMod.LOGGER.info("[ItemInteractionNodeHandler] Spawning bus at {} for instance {}", spawnPos, instance.getInstanceId());
         

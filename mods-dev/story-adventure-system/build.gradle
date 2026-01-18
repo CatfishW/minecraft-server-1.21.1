@@ -32,6 +32,10 @@ dependencies {
     
     // Automobility for vehicle mixin (compile-only, provided at runtime)
     compileOnly files('libs/automobility-0.5.0.h+1.21.1-fabric.jar')
+    
+    // Xaero's Minimap and World Map integration (compile-only, provided at runtime)
+    compileOnly files('libs/xaerominimap-fabric-1.21.1-25.3.5.jar')
+    compileOnly files('libs/xaeroworldmap-fabric-1.21.1-1.40.6.jar')
 }
 
 processResources {

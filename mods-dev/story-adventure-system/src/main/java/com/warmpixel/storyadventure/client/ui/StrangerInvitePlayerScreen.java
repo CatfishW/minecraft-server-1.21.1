@@ -47,7 +47,19 @@ public class StrangerInvitePlayerScreen extends StrangerScreen {
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        graphics.drawCenteredString(font, "输入玩家名称", width / 2, height / 2 - 40, 0xFFFFFFFF);
+        int panelW = 240;
+        int panelH = 120;
+        int panelX = width / 2 - panelW / 2;
+        int panelY = height / 2 - panelH / 2;
+        
+        // PAnel Background
+        graphics.fill(panelX, panelY, panelX + panelW, panelY + panelH, 0xE0101216);
+        renderRectOutline(graphics, panelX, panelY, panelW, panelH, COLOR_BORDER);
+        
+        // Title
+        graphics.drawCenteredString(font, "INVITE OPERATIVE", width / 2, panelY + 15, COLOR_NEON_RED);
+        graphics.drawCenteredString(font, "Enter player name to send invitation", width / 2, panelY + 30, COLOR_TEXT_DIM);
+        
         nameInput.render(graphics, mouseX, mouseY, partialTick);
     }
 }
