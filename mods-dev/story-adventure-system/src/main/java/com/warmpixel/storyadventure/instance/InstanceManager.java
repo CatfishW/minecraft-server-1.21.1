@@ -157,6 +157,7 @@ public class InstanceManager {
         Instance instance = instances.remove(instanceId);
         if (instance != null) {
             try {
+                instance.cleanupBossBars();
                 instance.cleanupEntities();
                 instance.cleanupPlayers();
             } catch (Exception e) {

@@ -16,14 +16,24 @@ public class AdminDashboardScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 500);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 360);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
-        int buttonWidth = 200;
-        int buttonHeight = 32;
-        int centerX = width / 2 - buttonWidth / 2;
-        int startY = height / 2 - 100;
-        int gap = 8;
+        int buttonWidth = 180;
+        int buttonHeight = 28;
+        int centerX = guiLeft + (guiWidth - buttonWidth) / 2;
+        int startY = guiTop + 60;
+        int gap = 6;
         
         // Instance Manager
         addStrangerButton(centerX, startY, buttonWidth, buttonHeight,
@@ -46,40 +56,38 @@ public class AdminDashboardScreen extends StrangerScreen {
             Component.translatable("gui.storyadventure.admin.dashboard.stats"), this::openSystemStats);
         
         // Close
-        addStrangerButton(width / 2 - 60, height - 50, 120, 28,
+        addStrangerButton(guiLeft + (guiWidth - 100) / 2, guiTop + guiHeight - 35, 100, 24,
             Component.translatable("gui.storyadventure.admin.dashboard.close"), this::onClose);
     }
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        // Quick stats panel
-        int panelX = 30;
-        int panelY = 50;
-        int panelWidth = 150;
-        int panelHeight = 100;
+        // Quick stats panel (Left side of buttons)
+        int panelX = guiLeft + 15;
+        int panelY = guiTop + 60;
+        int panelWidth = (guiWidth - 180 - 60) / 2; // Split remaining space
+        if (panelWidth < 80) panelWidth = 0; // Hide if too small
         
-        graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0080808);
-        drawPanelBorder(graphics, panelX, panelY, panelWidth, panelHeight);
-        
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.quick_stats"), panelX + 10, panelY + 8, COLOR_NEON_RED);
-        graphics.fill(panelX + 5, panelY + 20, panelX + panelWidth - 5, panelY + 21, COLOR_BORDER);
-        
-        // Placeholder stats
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.active_instances", 0), panelX + 10, panelY + 28, COLOR_TEXT_BODY);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.online_players", 0), panelX + 10, panelY + 42, COLOR_TEXT_BODY);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.loaded_stories", 1), panelX + 10, panelY + 56, COLOR_TEXT_BODY);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.server_status", 
-            Component.translatable("gui.storyadventure.admin.dashboard.status_ok").getString()), panelX + 10, panelY + 70, 0xFF44FF44);
+        if (panelWidth > 0) {
+            int panelHeight = 85;
+            graphics.fill(panelX, panelY, panelX + panelWidth, panelY + panelHeight, 0xE0080808);
+            drawPanelBorder(graphics, panelX, panelY, panelWidth, panelHeight);
+            
+            graphics.drawString(font, "STATS", panelX + 5, panelY + 5, COLOR_NEON_RED);
+            graphics.drawString(font, "ACT: 0", panelX + 5, panelY + 20, COLOR_TEXT_BODY);
+            graphics.drawString(font, "PLR: 0", panelX + 5, panelY + 34, COLOR_TEXT_BODY);
+        }
         
         // Right panel - recent activity
-        int rightPanelX = width - 180;
-        graphics.fill(rightPanelX, panelY, rightPanelX + panelWidth, panelY + panelHeight, 0xE0080808);
-        drawPanelBorder(graphics, rightPanelX, panelY, panelWidth, panelHeight);
-        
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.recent_activity"), rightPanelX + 10, panelY + 8, COLOR_NEON_RED);
-        graphics.fill(rightPanelX + 5, panelY + 20, rightPanelX + panelWidth - 5, panelY + 21, COLOR_BORDER);
-        
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.dashboard.no_activity"), rightPanelX + 10, panelY + 35, COLOR_TEXT_DIM);
+        int rightPanelX = guiLeft + guiWidth - panelWidth - 15;
+        if (panelWidth > 0) {
+            int panelHeight = 85;
+            graphics.fill(rightPanelX, panelY, rightPanelX + panelWidth, panelY + panelHeight, 0xE0080808);
+            drawPanelBorder(graphics, rightPanelX, panelY, panelWidth, panelHeight);
+            
+            graphics.drawString(font, "LOGS", rightPanelX + 5, panelY + 5, COLOR_NEON_RED);
+            graphics.drawString(font, "None", rightPanelX + 5, panelY + 20, COLOR_TEXT_DIM);
+        }
     }
     
     private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {

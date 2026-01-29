@@ -45,19 +45,29 @@ public class AdminSystemStatsScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 640);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 420);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
         // Refresh button
-        addStrangerButton(width - 150, 50, 120, 24,
+        addStrangerButton(guiLeft + guiWidth - 135, guiTop + 15, 120, 24,
             Component.translatable("gui.storyadventure.admin.stats.refresh"), this::refreshStats);
         
         // Back button
-        addStrangerButton(30, height - 45, 100, 28,
+        addStrangerButton(guiLeft + 15, guiTop + guiHeight - 35, 100, 24,
             Component.translatable("gui.storyadventure.admin.stats.back"), this::goBack);
         
         // Close button
-        addStrangerButton(width / 2 - 60, height - 45, 120, 28,
+        addStrangerButton(guiLeft + guiWidth / 2 - 60, guiTop + guiHeight - 35, 120, 24,
             Component.translatable("gui.storyadventure.admin.stats.close"), this::onClose);
         
         // Request initial stats
@@ -66,11 +76,11 @@ public class AdminSystemStatsScreen extends StrangerScreen {
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int panelWidth = 200;
-        int panelHeight = 120;
-        int gap = 20;
-        int startX = 40;
-        int startY = 60;
+        int panelWidth = (guiWidth - 80) / 3;
+        int panelHeight = (guiHeight - 160) / 2;
+        int gap = 15;
+        int startX = guiLeft + 20;
+        int startY = guiTop + 50;
         
         // === Instance Stats Panel ===
         renderStatPanel(graphics, startX, startY, panelWidth, panelHeight, 
@@ -136,8 +146,8 @@ public class AdminSystemStatsScreen extends StrangerScreen {
         
         // === Recent Activity Panel ===
         int activityX = startX + (panelWidth + gap) * 2;
-        int activityWidth = width - activityX - 40;
-        int activityHeight = height - 140;
+        int activityWidth = guiLeft + guiWidth - activityX - 20;
+        int activityHeight = guiHeight - 120;
         
         graphics.fill(activityX, startY, activityX + activityWidth, startY + activityHeight, 0xE0080808);
         drawPanelBorder(graphics, activityX, startY, activityWidth, activityHeight);
@@ -149,7 +159,7 @@ public class AdminSystemStatsScreen extends StrangerScreen {
         if (recentActivity.isEmpty()) {
             graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stats.no_activity"), activityX + 10, actY, COLOR_TEXT_DIM);
         } else {
-            for (int i = 0; i < Math.min(recentActivity.size(), 10); i++) {
+            for (int i = 0; i < Math.min(recentActivity.size(), 15); i++) {
                 ActivityEntry entry = recentActivity.get(i);
                 String timeAgo = formatTimeAgo(entry.timestamp);
                 graphics.drawString(font, "§7" + timeAgo + " §f" + entry.message, activityX + 10, actY, COLOR_TEXT_BODY);
@@ -174,7 +184,7 @@ public class AdminSystemStatsScreen extends StrangerScreen {
         // Last update time
         if (lastUpdateTime > 0) {
             String updateStr = Component.translatable("gui.storyadventure.admin.stats.last_update", formatTimeAgo(lastUpdateTime)).getString();
-            graphics.drawString(font, updateStr, 40, height - 70, COLOR_TEXT_DIM);
+            graphics.drawString(font, updateStr, guiLeft + 20, guiTop + guiHeight - 65, COLOR_TEXT_DIM);
         }
     }
     

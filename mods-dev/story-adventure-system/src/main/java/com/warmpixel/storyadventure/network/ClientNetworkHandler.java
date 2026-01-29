@@ -74,7 +74,7 @@ public class ClientNetworkHandler {
                     listScreen.clearStories();
                     for (var story : payload.stories()) {
                         listScreen.addStory(story.id(), story.name(), story.description(), 
-                            story.minPlayers(), story.maxPlayers(), story.estimatedMinutes());
+                            story.minPlayers(), story.maxPlayers(), story.estimatedMinutes(), story.cover());
                     }
                 }
             });
@@ -102,7 +102,7 @@ public class ClientNetworkHandler {
 
         ClientPlayNetworking.registerGlobalReceiver(PuzzleResultPayload.TYPE, (payload, context) -> {
             context.client().execute(() -> {
-                if (payload.success() && Minecraft.getInstance().screen instanceof StrangerPuzzleScreen) {
+                if (Minecraft.getInstance().screen instanceof StrangerPuzzleScreen) {
                     Minecraft.getInstance().setScreen(null);
                 }
             });
@@ -184,6 +184,95 @@ public class ClientNetworkHandler {
         ClientPlayNetworking.registerGlobalReceiver(XaeroWaypointPayload.TYPE, (payload, context) -> {
             context.client().execute(() -> handleXaeroWaypointPayload(payload));
         });
+        
+        // BGM payload - handle BGM from server
+        ClientPlayNetworking.registerGlobalReceiver(BGMPayload.TYPE, (payload, context) -> {
+            context.client().execute(() -> handleBGMPayload(payload));
+        });
+        
+        // Item/Block indicator payloads
+        ClientPlayNetworking.registerGlobalReceiver(
+            com.warmpixel.storyadventure.network.packet.ItemBlockIndicatorAddPacket.TYPE, 
+            (payload, context) -> {
+                context.client().execute(() -> {
+                    var indicator = new com.warmpixel.storyadventure.client.render.ItemBlockIndicatorRenderer.ItemBlockIndicator(
+                        payload.id(),
+                        new net.minecraft.world.phys.Vec3(payload.x(), payload.y(), payload.z()),
+                        payload.color(),
+                        payload.label(),
+                        payload.circleRadius(),
+                        payload.showArrow(),
+                        payload.showCircle()
+                    );
+                    com.warmpixel.storyadventure.client.render.ItemBlockIndicatorRenderer.addIndicator(indicator);
+                    StoryAdventureMod.LOGGER.debug("[ItemBlockIndicator] Added indicator '{}' at ({}, {}, {})", 
+                        payload.id(), payload.x(), payload.y(), payload.z());
+                });
+            }
+        );
+        
+        ClientPlayNetworking.registerGlobalReceiver(
+            com.warmpixel.storyadventure.network.packet.ItemBlockIndicatorRemovePacket.TYPE, 
+            (payload, context) -> {
+                context.client().execute(() -> {
+                    com.warmpixel.storyadventure.client.render.ItemBlockIndicatorRenderer.removeIndicator(payload.id());
+                    StoryAdventureMod.LOGGER.debug("[ItemBlockIndicator] Removed indicator '{}'", payload.id());
+                });
+            }
+        );
+        
+        ClientPlayNetworking.registerGlobalReceiver(
+            com.warmpixel.storyadventure.network.packet.ItemBlockIndicatorClearPacket.TYPE, 
+            (payload, context) -> {
+                context.client().execute(() -> {
+                    com.warmpixel.storyadventure.client.render.ItemBlockIndicatorRenderer.clearIndicators();
+                    StoryAdventureMod.LOGGER.debug("[ItemBlockIndicator] Cleared all indicators");
+                });
+            }
+        );
+        
+        // UI Tutorial packet handler
+        ClientPlayNetworking.registerGlobalReceiver(
+            com.warmpixel.storyadventure.network.packet.UITutorialPacket.TYPE,
+            (payload, context) -> {
+                context.client().execute(() -> {
+                    switch (payload.action().toLowerCase()) {
+                        case "show" -> {
+                            var entry = new com.warmpixel.storyadventure.client.ui.hud.UITutorialRenderer.TutorialEntry(
+                                payload.id(),
+                                payload.elementType(),
+                                payload.elementIndex(),
+                                payload.screenX(),
+                                payload.screenY(),
+                                payload.width(),
+                                payload.height(),
+                                payload.message(),
+                                payload.keyHint(),
+                                payload.color(),
+                                payload.showArrow(),
+                                payload.showPulse(),
+                                payload.showClickHint(),
+                                payload.durationTicks(),
+                                payload.requireClick()
+                            );
+                            com.warmpixel.storyadventure.client.ui.hud.UITutorialRenderer.showTutorial(entry);
+                            StoryAdventureMod.LOGGER.debug("[UITutorial] Added tutorial '{}' ({}): {}", 
+                                payload.id(), payload.elementType(), payload.message());
+                        }
+                        case "hide" -> {
+                            com.warmpixel.storyadventure.client.ui.hud.UITutorialRenderer.hideTutorial(payload.id());
+                            StoryAdventureMod.LOGGER.debug("[UITutorial] Removed tutorial '{}'", payload.id());
+                        }
+                        case "clear" -> {
+                            com.warmpixel.storyadventure.client.ui.hud.UITutorialRenderer.clearTutorials();
+                            StoryAdventureMod.LOGGER.debug("[UITutorial] Cleared all tutorials");
+                        }
+                    }
+                });
+            }
+        );
+        
+        // UITutorialClickPayload is registered in NetworkHandler.registerPayloadTypes()
         
         StoryAdventureMod.LOGGER.info("Registered client network receivers");
     }
@@ -326,8 +415,40 @@ public class ClientNetworkHandler {
 
             
             case OpenUIPayload.SCREEN_PUZZLE -> {
+                String puzzleType = "CODE_LOCK";
+                String title = "";
+                String subtitle = "";
+                int maxAttempts = 5;
+                int codeLength = 4;
+                java.util.List<String> hints = new java.util.ArrayList<>();
+
+                if (extraData != null && !extraData.isEmpty()) {
+                    try {
+                        var json = com.google.gson.JsonParser.parseString(extraData).getAsJsonObject();
+                        if (json.has("puzzle_type")) puzzleType = json.get("puzzle_type").getAsString();
+                        if (json.has("title")) title = json.get("title").getAsString();
+                        if (json.has("subtitle")) subtitle = json.get("subtitle").getAsString();
+                        if (json.has("max_attempts")) maxAttempts = json.get("max_attempts").getAsInt();
+                        if (json.has("code_length")) codeLength = json.get("code_length").getAsInt();
+                        if (json.has("hint")) {
+                            String hint = json.get("hint").getAsString();
+                            if (!hint.isEmpty()) hints.add(hint);
+                        }
+                        if (json.has("hints") && json.get("hints").isJsonArray()) {
+                            for (var elem : json.getAsJsonArray("hints")) {
+                                if (elem.isJsonPrimitive()) {
+                                    String hint = elem.getAsString();
+                                    if (!hint.isEmpty()) hints.add(hint);
+                                }
+                            }
+                        }
+                    } catch (Exception e) {
+                        // Fallback to defaults if JSON is malformed
+                    }
+                }
+
                 StrangerPuzzleScreen screen = new StrangerPuzzleScreen(
-                    "CODE_LOCK", "威尔失踪的年份", 5);
+                    puzzleType, title, subtitle, hints, maxAttempts, codeLength);
                 mc.setScreen(screen);
             }
             
@@ -376,14 +497,22 @@ public class ClientNetworkHandler {
                             StrangerHudRenderer.getInstance().setObjectives(objectives);
                         }
                         
-                        // Timer if present
+                        // Timer if present (task-specific timer)
                         if (json.has("timer")) {
                             long timerMs = json.get("timer").getAsLong();
                             if (timerMs > 0) {
                                 StrangerHudRenderer.getInstance().startTimer(timerMs);
                             }
                         }
-                        
+
+                        // Instance timer (overall instance time limit)
+                        if (json.has("instanceTimer")) {
+                            long instanceTimerMs = json.get("instanceTimer").getAsLong();
+                            if (instanceTimerMs > 0) {
+                                StrangerHudRenderer.getInstance().setInstanceTimer(instanceTimerMs);
+                            }
+                        }
+
                         // Lives display if present
                         if (json.has("remainingLives") && json.has("maxLives")) {
                             int remaining = json.get("remainingLives").getAsInt();
@@ -533,13 +662,38 @@ public class ClientNetworkHandler {
                             else if (obj.has("duration")) duration = obj.get("duration").getAsInt();
                             
                             String voiceover = obj.has("voiceover") ? obj.get("voiceover").getAsString() : null;
-                            subtitleList.add(new CinematicCameraController.Subtitle(text, start, duration, voiceover));
-                            StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Parsed subtitle: text='{}', start={}, duration={}, voiceover={}", 
-                                text, start, duration, voiceover);
+                            String focusTarget = null;
+                            if (obj.has("focus_target")) focusTarget = obj.get("focus_target").getAsString();
+                            else if (obj.has("focus_npc")) focusTarget = obj.get("focus_npc").getAsString();
+                            else if (obj.has("focusNpc")) focusTarget = obj.get("focusNpc").getAsString();
+                            else if (obj.has("focus")) focusTarget = obj.get("focus").getAsString();
+                            
+                            subtitleList.add(new CinematicCameraController.Subtitle(text, start, duration, voiceover, focusTarget));
+                            StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Parsed subtitle: text='{}', start={}, duration={}, voiceover={}, focusTarget={}", 
+                                text, start, duration, voiceover, focusTarget);
                         }
                     }
                     config.setSubtitles(subtitleList);
                     StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Set {} subtitles on config", subtitleList.size());
+                }
+
+                // Parse NPC animations
+                var animationsJson = payload.getAnimationsAsJson();
+                if (animationsJson != null && !animationsJson.isEmpty()) {
+                    var animList = new java.util.ArrayList<CinematicCameraController.NPCAnimation>();
+                    for (var elem : animationsJson) {
+                        if (elem.isJsonObject()) {
+                            var obj = elem.getAsJsonObject();
+                            int tick = obj.has("tick") ? obj.get("tick").getAsInt() : 0;
+                            String npc = obj.has("npc") ? obj.get("npc").getAsString() : "";
+                            String pose = obj.has("pose") ? obj.get("pose").getAsString() : "";
+                            if (!npc.isEmpty() && !pose.isEmpty()) {
+                                animList.add(new CinematicCameraController.NPCAnimation(tick, npc, pose));
+                            }
+                        }
+                    }
+                    config.setAnimations(animList);
+                    StoryAdventureMod.LOGGER.info("[ClientNetworkHandler] Set {} animations on config", animList.size());
                 }
                 
                 // Start the cutscene
@@ -573,5 +727,20 @@ public class ClientNetworkHandler {
         var voiceoverManager = com.warmpixel.storyadventure.client.audio.VoiceoverManager.getInstance();
         voiceoverManager.playVoiceover(payload.soundPath(), payload.volume(), payload.pitch(), payload.characterId());
         StoryAdventureMod.LOGGER.debug("Playing voiceover: {} (character: {})", payload.soundPath(), payload.characterId());
+    }
+
+    private static void handleBGMPayload(BGMPayload payload) {
+        var bgmManager = com.warmpixel.storyadventure.client.audio.BGMManager.getInstance();
+        if (payload.stop()) {
+            bgmManager.stopBGM(payload.fadeTicks());
+        } else {
+            bgmManager.playBGM(payload.soundPath(), payload.volume(), payload.loop(), payload.fadeTicks());
+        }
+    }
+
+    public static void sendTutorialClick(String tutorialId) {
+        net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking.send(
+            new com.warmpixel.storyadventure.network.packet.UITutorialClickPayload(tutorialId)
+        );
     }
 }

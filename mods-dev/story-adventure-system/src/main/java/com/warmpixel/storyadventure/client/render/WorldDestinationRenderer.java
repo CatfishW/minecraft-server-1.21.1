@@ -152,16 +152,13 @@ public class WorldDestinationRenderer {
         float sin = (float) Math.sin(rot) * s;
         
         // Main vertical line
-        consumer.addVertex(matrix, (float)x, (float)y - s*1.5f, (float)z).setColor(r, g, b, a).setNormal(0, 1, 0);
-        consumer.addVertex(matrix, (float)x, (float)y + s*1.5f, (float)z).setColor(r, g, b, a).setNormal(0, 1, 0);
+        addLine(consumer, matrix, x, y - s * 1.5f, z, x, y + s * 1.5f, z, r, g, b, a);
         
         // Rotating horizontal cross 1
-        consumer.addVertex(matrix, (float)x - cos, (float)y, (float)z - sin).setColor(r, g, b, a).setNormal(0, 1, 0);
-        consumer.addVertex(matrix, (float)x + cos, (float)y, (float)z + sin).setColor(r, g, b, a).setNormal(0, 1, 0);
+        addLine(consumer, matrix, x - cos, y, z - sin, x + cos, y, z + sin, r, g, b, a);
         
         // Rotating horizontal cross 2 (perpendicular)
-        consumer.addVertex(matrix, (float)x + sin, (float)y, (float)z - cos).setColor(r, g, b, a).setNormal(0, 1, 0);
-        consumer.addVertex(matrix, (float)x - sin, (float)y, (float)z + cos).setColor(r, g, b, a).setNormal(0, 1, 0);
+        addLine(consumer, matrix, x + sin, y, z - cos, x - sin, y, z + cos, r, g, b, a);
     }
 
     private static void renderRotatingCircle(VertexConsumer consumer, Matrix4f matrix, Vec3 pos, float time) {
@@ -191,8 +188,7 @@ public class WorldDestinationRenderer {
                 float yOffset = 0.05f + (float)Math.sin(time * 2.0f) * 0.05f;
                 float y = (float)pos.y + yOffset;
 
-                consumer.addVertex(matrix, x1, y, z1).setColor(r, g, b, alpha).setNormal(0, 1, 0);
-                consumer.addVertex(matrix, x2, y, z2).setColor(r, g, b, alpha).setNormal(0, 1, 0);
+                addLine(consumer, matrix, x1, y, z1, x2, y, z2, r, g, b, alpha);
             }
         }
     }
@@ -215,8 +211,7 @@ public class WorldDestinationRenderer {
             float z2 = (float) (pos.z + Mth.sin(angle2) * radius);
             float y2 = (float) (pos.y + 1.2f);
 
-            consumer.addVertex(matrix, x1, y1, z1).setColor(r, g, b, a).setNormal(0, 1, 0);
-            consumer.addVertex(matrix, x2, y2, z2).setColor(r, g, b, a).setNormal(0, 1, 0);
+            addLine(consumer, matrix, x1, y1, z1, x2, y2, z2, r, g, b, a);
         }
     }
 
@@ -231,9 +226,28 @@ public class WorldDestinationRenderer {
             float ox = Mth.cos(angle) * offset;
             float oz = Mth.sin(angle) * offset;
             
-            consumer.addVertex(matrix, (float)pos.x + ox, (float)pos.y, (float)pos.z + oz).setColor(r, g, b, a).setNormal(0, 1, 0);
-            consumer.addVertex(matrix, (float)pos.x + ox, (float)pos.y + height, (float)pos.z + oz).setColor(r, g, b, 0).setNormal(0, 1, 0);
+            addLine(consumer, matrix, pos.x + ox, pos.y, pos.z + oz, pos.x + ox, pos.y + height, pos.z + oz, r, g, b, a);
         }
+    }
+
+    private static void addLine(VertexConsumer consumer, Matrix4f matrix, double x1, double y1, double z1, double x2, double y2, double z2, int r, int g, int b, int a) {
+        float dx = (float) (x2 - x1);
+        float dy = (float) (y2 - y1);
+        float dz = (float) (z2 - z1);
+        float lenSq = dx * dx + dy * dy + dz * dz;
+        if (lenSq > 1.0e-6f) {
+            float invLen = (float) Mth.fastInvSqrt(lenSq);
+            dx *= invLen;
+            dy *= invLen;
+            dz *= invLen;
+        } else {
+            dx = 0.0f;
+            dy = 1.0f;
+            dz = 0.0f;
+        }
+
+        consumer.addVertex(matrix, (float) x1, (float) y1, (float) z1).setColor(r, g, b, a).setNormal(dx, dy, dz);
+        consumer.addVertex(matrix, (float) x2, (float) y2, (float) z2).setColor(r, g, b, a).setNormal(dx, dy, dz);
     }
 
     private static void renderDistanceLabel(Minecraft mc, PoseStack poseStack, MultiBufferSource buffers, WorldRenderContext context,

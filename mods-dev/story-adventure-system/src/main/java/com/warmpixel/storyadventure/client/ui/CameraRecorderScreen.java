@@ -49,15 +49,22 @@ public class CameraRecorderScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return PANEL_WIDTH;
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return PANEL_HEIGHT;
+    }
+
+    @Override
     protected void init() {
         super.init();
         strangerButtons.clear();
         
-        int panelX = (width - PANEL_WIDTH) / 2;
-        int panelY = (height - PANEL_HEIGHT) / 2;
-        
         // Duration input box
-        durationBox = new EditBox(font, panelX + 110, panelY + 118, 50, 14, Component.literal("Duration"));
+        durationBox = new EditBox(font, guiLeft + 110, guiTop + 118, 50, 14, Component.literal("Duration"));
         durationBox.setValue("60");
         durationBox.setMaxLength(5);
         durationBox.setFilter(s -> s.matches("\\d*"));
@@ -66,19 +73,19 @@ public class CameraRecorderScreen extends StrangerScreen {
         addRenderableWidget(durationBox);
         
         // === Recording Controls Row ===
-        int ctrlY = panelY + 135;
+        int ctrlY = guiTop + 135;
         
-        addStrangerButton(panelX + 15, ctrlY, 120, 18, 
+        addStrangerButton(guiLeft + 15, ctrlY, 120, 18, 
             Component.literal("📍 录制关键帧"), this::recordKeyframe);
         
-        addStrangerButton(panelX + 175, ctrlY, 150, 18,
+        addStrangerButton(guiLeft + 175, ctrlY, 150, 18,
             Component.literal(easingOptions[selectedEasingIndex]), this::cycleEasing);
         
         // === Bottom Action Buttons ===
-        int btnY = panelY + PANEL_HEIGHT - 32;
+        int btnY = guiTop + guiHeight - 32;
         int btnWidth = 60;
         int btnGap = 5;
-        int btnX = panelX + 15;
+        int btnX = guiLeft + 15;
         
         addStrangerButton(btnX, btnY, btnWidth, 18, 
             Component.literal("💾 保存"), this::saveRecording);
@@ -112,17 +119,11 @@ public class CameraRecorderScreen extends StrangerScreen {
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int panelX = (width - PANEL_WIDTH) / 2;
-        int panelY = (height - PANEL_HEIGHT) / 2;
-        
-        // Main panel
-        renderPanel(graphics, panelX, panelY, PANEL_WIDTH, PANEL_HEIGHT);
-        
-        int y = panelY + 30;
+        int y = guiTop + 30;
         
         // === Current Camera Section ===
-        renderSectionBackground(graphics, panelX + 10, y, PANEL_WIDTH - 20, 45);
-        graphics.drawString(font, "§e当前摄像机", panelX + 15, y + 3, COLOR_TEXT_TITLE);
+        renderSectionBackground(graphics, guiLeft + 10, y, guiWidth - 20, 45);
+        graphics.drawString(font, "§e当前摄像机", guiLeft + 15, y + 3, COLOR_TEXT_TITLE);
         
         Minecraft mc = Minecraft.getInstance();
         if (mc.player != null && mc.gameRenderer != null) {
@@ -132,25 +133,25 @@ public class CameraRecorderScreen extends StrangerScreen {
             float pitch = camera.getXRot();
             
             graphics.drawString(font, String.format("§7位置: §fX:%.1f Y:%.1f Z:%.1f", pos.x, pos.y, pos.z), 
-                panelX + 15, y + 16, COLOR_TEXT_BODY);
+                guiLeft + 15, y + 16, COLOR_TEXT_BODY);
             graphics.drawString(font, String.format("§7旋转: §f偏航:%.1f° 俯仰:%.1f° §7FOV:§f%.0f", yaw, pitch, mc.options.fov().get().doubleValue()), 
-                panelX + 15, y + 28, COLOR_TEXT_BODY);
+                guiLeft + 15, y + 28, COLOR_TEXT_BODY);
         }
         
         y += 50;
         
         // === Recording Controls Section ===
-        renderSectionBackground(graphics, panelX + 10, y, PANEL_WIDTH - 20, 40);
-        graphics.drawString(font, "§e录制控制", panelX + 15, y + 3, COLOR_TEXT_TITLE);
-        graphics.drawString(font, "时长(tick):", panelX + 15, y + 20, COLOR_TEXT_DIM);
-        graphics.drawString(font, "缓动:", panelX + 175, y + 20, COLOR_TEXT_DIM);
+        renderSectionBackground(graphics, guiLeft + 10, y, guiWidth - 20, 40);
+        graphics.drawString(font, "§e录制控制", guiLeft + 15, y + 3, COLOR_TEXT_TITLE);
+        graphics.drawString(font, "时长(tick):", guiLeft + 15, y + 20, COLOR_TEXT_DIM);
+        graphics.drawString(font, "缓动:", guiLeft + 175, y + 20, COLOR_TEXT_DIM);
         
         y += 60;
         
         // === Keyframes List Section ===
         String listTitle = String.format("§e关键帧 (%d)", recording.getKeyframeCount());
-        renderSectionBackground(graphics, panelX + 10, y, PANEL_WIDTH - 20, 85);
-        graphics.drawString(font, listTitle, panelX + 15, y + 3, COLOR_TEXT_TITLE);
+        renderSectionBackground(graphics, guiLeft + 10, y, guiWidth - 20, 85);
+        graphics.drawString(font, listTitle, guiLeft + 15, y + 3, COLOR_TEXT_TITLE);
         
         int listY = y + 15;
         int listItemHeight = 16;
@@ -159,61 +160,38 @@ public class CameraRecorderScreen extends StrangerScreen {
         List<CameraRecording.RecordedKeyframe> keyframes = recording.getKeyframes();
         
         if (keyframes.isEmpty()) {
-            graphics.drawCenteredString(font, "§8暂无关键帧", panelX + PANEL_WIDTH / 2, listY + 25, COLOR_TEXT_DIM);
+            graphics.drawCenteredString(font, "§8暂无关键帧", guiLeft + guiWidth / 2, listY + 25, COLOR_TEXT_DIM);
         } else {
             for (int i = scrollOffset; i < Math.min(keyframes.size(), scrollOffset + maxVisible); i++) {
                 CameraRecording.RecordedKeyframe kf = keyframes.get(i);
                 int itemY = listY + (i - scrollOffset) * listItemHeight;
                 
                 if (i == selectedKeyframe) {
-                    graphics.fill(panelX + 12, itemY, panelX + PANEL_WIDTH - 12, itemY + listItemHeight - 1, 0x30FFFFFF);
+                    graphics.fill(guiLeft + 12, itemY, guiLeft + guiWidth - 12, itemY + listItemHeight - 1, 0x30FFFFFF);
                 }
                 
-                if (mouseX >= panelX + 12 && mouseX <= panelX + PANEL_WIDTH - 12 &&
+                if (mouseX >= guiLeft + 12 && mouseX <= guiLeft + guiWidth - 12 &&
                     mouseY >= itemY && mouseY < itemY + listItemHeight) {
-                    graphics.fill(panelX + 12, itemY, panelX + PANEL_WIDTH - 12, itemY + listItemHeight - 1, 0x15FFFFFF);
+                    graphics.fill(guiLeft + 12, itemY, guiLeft + guiWidth - 12, itemY + listItemHeight - 1, 0x15FFFFFF);
                 }
                 
-                graphics.drawString(font, String.format("§b#%d", i + 1), panelX + 15, itemY + 3, COLOR_ACCENT_CYAN);
-                graphics.drawString(font, String.format("§7(%.0f,%.0f,%.0f)", kf.x(), kf.y(), kf.z()), panelX + 35, itemY + 3, COLOR_TEXT_BODY);
-                graphics.drawString(font, String.format("§f%.0f°/%.0f°", kf.yaw(), kf.pitch()), panelX + 155, itemY + 3, COLOR_TEXT_BODY);
-                graphics.drawString(font, String.format("§e%dt", kf.durationTicks()), panelX + 230, itemY + 3, COLOR_TEXT_BODY);
-                graphics.drawString(font, "§c✕", panelX + PANEL_WIDTH - 25, itemY + 3, 0xFFFF5555);
+                graphics.drawString(font, String.format("§b#%d", i + 1), guiLeft + 15, itemY + 3, COLOR_ACCENT_CYAN);
+                graphics.drawString(font, String.format("§7(%.0f,%.0f,%.0f)", kf.x(), kf.y(), kf.z()), guiLeft + 35, itemY + 3, COLOR_TEXT_BODY);
+                graphics.drawString(font, String.format("§f%.0f°/%.0f°", kf.yaw(), kf.pitch()), guiLeft + 155, itemY + 3, COLOR_TEXT_BODY);
+                graphics.drawString(font, String.format("§e%dt", kf.durationTicks()), guiLeft + 230, itemY + 3, COLOR_TEXT_BODY);
+                graphics.drawString(font, "§c✕", guiLeft + guiWidth - 25, itemY + 3, 0xFFFF5555);
             }
             
-            if (scrollOffset > 0) graphics.drawString(font, "§7▲", panelX + PANEL_WIDTH - 22, y + 3, 0xAAAAAA);
-            if (scrollOffset + maxVisible < keyframes.size()) graphics.drawString(font, "§7▼", panelX + PANEL_WIDTH - 22, y + 75, 0xAAAAAA);
+            if (scrollOffset > 0) graphics.drawString(font, "§7▲", guiLeft + guiWidth - 22, y + 3, 0xAAAAAA);
+            if (scrollOffset + maxVisible < keyframes.size()) graphics.drawString(font, "§7▼", guiLeft + guiWidth - 22, y + 75, 0xAAAAAA);
         }
         
         y += 90;
         
         // === Status Message ===
         if (!statusMessage.isEmpty() && System.currentTimeMillis() - statusMessageTime < 2500) {
-            graphics.drawCenteredString(font, statusMessage, panelX + PANEL_WIDTH / 2, y, statusColor);
+            graphics.drawCenteredString(font, statusMessage, guiLeft + guiWidth / 2, y, statusColor);
         }
-    }
-    
-    private void renderPanel(GuiGraphics graphics, int x, int y, int w, int h) {
-        // Glow
-        for (int i = 3; i >= 1; i--) {
-            int glowColor = ((8 + i * 4) << 24) | (COLOR_NEON_RED & 0x00FFFFFF);
-            graphics.fill(x - i, y - i, x + w + i, y + h + i, glowColor);
-        }
-        
-        graphics.fill(x, y, x + w, y + h, COLOR_PANEL_BG);
-        
-        // Border
-        graphics.fill(x, y, x + w, y + 1, COLOR_NEON_RED);
-        graphics.fill(x, y + h - 1, x + w, y + h, COLOR_NEON_RED);
-        graphics.fill(x, y, x + 1, y + h, COLOR_NEON_RED);
-        graphics.fill(x + w - 1, y, x + w, y + h, COLOR_NEON_RED);
-        
-        // Header
-        graphics.fill(x + 1, y + 1, x + w - 1, y + 24, 0xFF1A0808);
-        graphics.fill(x + 1, y + 24, x + w - 1, y + 25, COLOR_BORDER);
-        
-        graphics.drawCenteredString(font, title, x + w / 2, y + 8, COLOR_ACCENT_CYAN);
-        graphics.drawString(font, "§8[ESC]", x + w - 35, y + 8, COLOR_TEXT_DIM);
     }
     
     private void renderSectionBackground(GuiGraphics graphics, int x, int y, int w, int h) {
@@ -230,19 +208,16 @@ public class CameraRecorderScreen extends StrangerScreen {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        int panelX = (width - PANEL_WIDTH) / 2;
-        int panelY = (height - PANEL_HEIGHT) / 2;
-        
-        int listY = panelY + 30 + 50 + 60 + 15;
+        int listY = guiTop + 30 + 50 + 60 + 15;
         int listItemHeight = 16;
         
-        if (mouseX >= panelX + 12 && mouseX <= panelX + PANEL_WIDTH - 12) {
+        if (mouseX >= guiLeft + 12 && mouseX <= guiLeft + guiWidth - 12) {
             for (int i = 0; i < Math.min(recording.getKeyframeCount() - scrollOffset, 4); i++) {
                 int itemY = listY + i * listItemHeight;
                 if (mouseY >= itemY && mouseY < itemY + listItemHeight) {
                     int keyframeIndex = scrollOffset + i;
                     
-                    if (mouseX >= panelX + PANEL_WIDTH - 30) {
+                    if (mouseX >= guiLeft + guiWidth - 30) {
                         recording.removeKeyframe(keyframeIndex);
                         setStatus("已删除 #" + (keyframeIndex + 1), COLOR_WARNING);
                         if (selectedKeyframe >= recording.getKeyframeCount()) selectedKeyframe = -1;

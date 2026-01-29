@@ -1,0 +1,2927 @@
+{
+  "id": "japan_outbreak_hard",
+  "name": "暗潮疫城：东湾封锁（困难）",
+  "cover": "japan_outbreak_hard.png",
+  "description": "日本东湾市爆发未知病毒，疑似人为泄露。感染迅速失控，街区沦陷，武装土匪趁乱掠夺。中国派出解放军特遣队进入封锁区，协助救援、取样并寻找源头。你必须穿越尸潮、破解密码、夺回血样，并击退武装头目，为撤离争取时间。",
+  "version": "1.0.0",
+  "min_players": 1,
+  "max_players": 4,
+  "estimated_duration_minutes": 18,
+  "difficulty": "hard",
+  "max_team_deaths": 5,
+  "failure_rewards": [
+    {
+      "type": "EXPERIENCE",
+      "amount": 1200
+    }
+  ],
+  "entry_node": "intro_cutscene",
+  "locations": {
+    "start": {
+      "dimension": "minecraft:overworld",
+      "x": -1238.7,
+      "y": 90.0,
+      "z": 1410.512,
+      "yaw": 0.0,
+      "pitch": 0.0
+    },
+    "spawn": {
+      "dimension": "minecraft:overworld",
+      "x": -1238.7,
+      "y": 90.0,
+      "z": 1410.512,
+      "yaw": 0.0,
+      "pitch": 0.0
+    }
+  },
+  "nodes": {
+    "intro_cutscene": {
+      "type": "cutscene",
+      "data": {
+        "duration_ticks": 840,
+        "skippable": false,
+        "letterbox": true,
+        "fade_in_ticks": 0,
+        "fade_out_ticks": 0,
+        "subtitles": [
+          {
+            "text": "日本东湾市，凌晨03:20。",
+            "start_tick": 0,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_1"
+          },
+          {
+            "text": "实验室样本外泄，感染扩散失控。",
+            "start_tick": 120,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_2"
+          },
+          {
+            "text": "街道沦陷，幸存者向会议中心集结。",
+            "start_tick": 240,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_3"
+          },
+          {
+            "text": "中国派出PLA特遣队进入封锁区。",
+            "start_tick": 360,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_4"
+          },
+          {
+            "text": "任务：稳定局势、取回血样、解救科学家。",
+            "start_tick": 480,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_5"
+          },
+          {
+            "text": "但黑市武装也已潜入废城。",
+            "start_tick": 600,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_6"
+          },
+          {
+            "text": "行动开始。",
+            "start_tick": 720,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/intro_cutscene_sub_7"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "COMMAND",
+            "command": "easy_npc delete @e[tag=story_entity]",
+            "as_op": true
+          },
+          {
+            "type": "COMMAND",
+            "command": "kill @e[tag=story_entity]",
+            "as_op": true
+          },
+          {
+            "type": "COMMAND",
+            "command": "storyui hud hide",
+            "as_op": true
+          },
+          {
+            "type": "COMMAND",
+            "command": "function horde:outbreak_start",
+            "as_op": true
+          }
+        ],
+        "camera_path": {
+          "keyframes": [
+            {
+              "position": [
+                -1210.65,
+                92.62,
+                1439.74
+              ],
+              "rotation": [
+                -1072.9,
+                -15.4,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 0,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1212.12,
+                102.04,
+                1441.0
+              ],
+              "rotation": [
+                -1078.4,
+                13.7,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1216.71,
+                96.47,
+                1440.28
+              ],
+              "rotation": [
+                -1129.1,
+                33.8,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1216.07,
+                97.92,
+                1430.76
+              ],
+              "rotation": [
+                -1105.0,
+                22.7,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1225.78,
+                101.78,
+                1423.96
+              ],
+              "rotation": [
+                -1132.3,
+                23.5,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1227.87,
+                101.21,
+                1432.69
+              ],
+              "rotation": [
+                -1160.3,
+                21.5,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1227.65,
+                99.62,
+                1442.7
+              ],
+              "rotation": [
+                -1167.1,
+                22.6,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1229.68,
+                104.05,
+                1456.23
+              ],
+              "rotation": [
+                -1200.7,
+                29.5,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1212.4,
+                97.69,
+                1462.5
+              ],
+              "rotation": [
+                -1259.2,
+                28.9,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1215.5,
+                93.09,
+                1454.27
+              ],
+              "rotation": [
+                -1284.4,
+                19.7,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1222.18,
+                91.62,
+                1444.53
+              ],
+              "rotation": [
+                -1262.3,
+                3.2,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1224.68,
+                92.31,
+                1419.72
+              ],
+              "rotation": [
+                -1122.5,
+                0.7,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1223.83,
+                91.62,
+                1413.1
+              ],
+              "rotation": [
+                -1300.9,
+                4.4,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1233.48,
+                91.68,
+                1410.47
+              ],
+              "rotation": [
+                -1349.2,
+                7.1,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1238.7,
+                91.62,
+                1410.51
+              ],
+              "rotation": [
+                -1529.2,
+                1.4,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            }
+          ],
+          "position_interpolation": "CATMULL_ROM",
+          "rotation_interpolation": "SMOOTH_LERP"
+        }
+      },
+      "edges": [
+        {
+          "target": "player_spawn"
+        }
+      ]
+    },
+    "player_spawn": {
+      "type": "checkpoint",
+      "data": {
+        "rewind_anchor": true,
+        "save_inventory": true,
+        "message": "进入封锁区",
+        "on_enter": [
+          {
+            "type": "TELEPORT",
+            "dimension": "minecraft:overworld",
+            "x": -1238.7,
+            "y": 90.0,
+            "z": 1410.512
+          },
+          {
+            "type": "TITLE",
+            "title": "暗潮疫城",
+            "subtitle": "东湾封锁"
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f与指挥官会合，建立行动基线。",
+            "delay_ticks": 40
+          },
+          {
+            "type": "COMMAND",
+            "command": "storyui hud show",
+            "as_op": true
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_pla_commander",
+            "dimension": "minecraft:overworld",
+            "x": -1214.894,
+            "y": 88.0625,
+            "z": 1473.301,
+            "yaw": 180.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "instance_{instance_id}",
+              "pla_main"
+            ]
+          },
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_pla_rifleman",
+            "dimension": "minecraft:overworld",
+            "x": -1216.0,
+            "y": 88.0,
+            "z": 1471.5,
+            "yaw": 160.0,
+            "pitch": 0.0,
+            "tags": [
+              "story_entity",
+              "instance_{instance_id}",
+              "pla_support"
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "briefing_dialogue_1"
+        }
+      ]
+    },
+    "briefing_dialogue_1": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_pla_commander",
+        "dialog_set": "main",
+        "npc_name": "赵云峰",
+        "profile_id": "pla_commander",
+        "lines": [
+          "东湾市已经失控。病毒来源被怀疑为日本实验室泄露，但细节仍不明。",
+          "我们要做三件事：稳定民众情绪、找回血样、确认源头。",
+          "会议室里还有幸存者，先安抚他们，再去情报室接通电源。"
+        ],
+        "choices": [
+          {
+            "id": "briefing_confirm",
+            "text": "明白，开始行动。"
+          }
+        ],
+        "voiceover": "storyadventure:japan_outbreak_hard/briefing_dialogue_1_dialogue"
+      },
+      "edges": [
+        {
+          "target": "reach_conference_room_task",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "briefing_confirm"
+            }
+          ]
+        }
+      ]
+    },
+    "reach_conference_room_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往会议室",
+        "description": "到会议室安抚幸存者，建立临时指挥点。",
+        "waypoint": {
+          "id": "conference_room",
+          "label": "会议室",
+          "x": -1214.894,
+          "y": 88.0625,
+          "z": 1473.301,
+          "icon": "npc",
+          "color": "0xFF33CCFF"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -1214.894,
+            "target_y": 88.0625,
+            "target_z": 1473.301,
+            "radius": 4.0,
+            "description": "进入会议室"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "conf_wave_far",
+            "label": "会议室尸潮1",
+            "target_distance": 80.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_common_1",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_rotting",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              }
+            ]
+          },
+          {
+            "id": "conf_wave_mid",
+            "label": "会议室尸潮2+土匪",
+            "target_distance": 50.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_common_1",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 30.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_stalker",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 30.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_crawler",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 30.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 32.0
+              }
+            ]
+          },
+          {
+            "id": "conf_wave_near",
+            "label": "会议室尸潮3",
+            "target_distance": 20.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 12.0,
+                "max_distance": 24.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -1214.0,
+                "y": 90.0,
+                "z": 1448.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 12.0,
+                "max_distance": 24.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "conference_sit_interaction",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "conference_sit_interaction": {
+      "type": "world_interaction",
+      "data": {
+        "title": "安抚幸存者",
+        "description": "在会议桌旁就坐，稳定气氛。",
+        "interactions": [
+          {
+            "type": "CLICK_BLOCK",
+            "x": -1212,
+            "y": 88,
+            "z": 1467,
+            "count": 1,
+            "feedback_msg": "幸存者已安抚"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "MESSAGE",
+            "text": "§f你坐下与幸存者交流，会议室暂时安静下来。"
+          }
+        ],
+        "waypoint": {
+          "id": "wp_conference_seat",
+          "label": "会议室座位",
+          "x": -1212,
+          "y": 88,
+          "z": 1467,
+          "icon": "objective",
+          "color": "0xFF66CCFF"
+        }
+      },
+      "edges": [
+        {
+          "target": "conference_cutscene"
+        }
+      ]
+    },
+    "conference_cutscene": {
+      "type": "cutscene",
+      "data": {
+        "title": "指挥官简报",
+        "description": "听取赵云峰指挥官的作战简报",
+        "duration_ticks": 200,
+        "skippable": true,
+        "letterbox": true,
+        "fade_in_ticks": 20,
+        "fade_out_ticks": 20,
+        "voiceover": "storyadventure:japan_outbreak_hard/conference_briefing",
+        "camera_path": {
+          "keyframes": [
+            {
+              "position": [-1210.5, 90.5, 1465.5],
+              "rotation": [45, -5, 0],
+              "fov": 70,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [-1208.5, 89.5, 1464.0],
+              "rotation": [60, 0, 0],
+              "fov": 65,
+              "duration_ticks": 80,
+              "easing": "LINEAR"
+            },
+            {
+              "position": [-1210.5, 90.5, 1465.5],
+              "rotation": [45, -5, 0],
+              "fov": 70,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            }
+          ],
+          "look_at": {
+            "type": "position",
+            "value": [-1208.0, 89.0, 1462.0]
+          },
+          "position_interpolation": "CATMULL_ROM",
+          "rotation_interpolation": "SMOOTH_LERP"
+        },
+        "subtitles": [
+          {
+            "text": "§e赵云峰：§f同志们，情况紧急，我就长话短说。",
+            "start_tick": 10,
+            "duration_tick": 50,
+            "focus_npc": "conference_commander"
+          },
+          {
+            "text": "§e赵云峰：§f东湾市病毒泄露源头已经查明，是人为投放。",
+            "start_tick": 60,
+            "duration_tick": 50,
+            "focus_npc": "conference_commander"
+          },
+          {
+            "text": "§e赵云峰：§f我们接到的命令是：获取变异体血样，为疫苗研发争取时间。",
+            "start_tick": 110,
+            "duration_tick": 50,
+            "focus_npc": "conference_commander"
+          },
+          {
+            "text": "§e赵云峰：§f情报室就在隔壁楼，先恢复电力，然后行动。",
+            "start_tick": 160,
+            "duration_tick": 40,
+            "focus_npc": "conference_commander"
+          }
+        ],
+        "npc_animations": [
+          {
+            "tick": 10,
+            "npc": "conference_commander",
+            "pose": "easy_npc:humanoid/talking"
+          },
+          {
+            "tick": 60,
+            "npc": "conference_commander",
+            "pose": "easy_npc:humanoid/serious"
+          },
+          {
+            "tick": 110,
+            "npc": "conference_commander",
+            "pose": "easy_npc:humanoid/pointing"
+          },
+          {
+            "tick": 160,
+            "npc": "conference_commander",
+            "pose": "easy_npc:humanoid/salute"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "SPAWN_NPC",
+            "npc_template": "npc_pla_commander",
+            "dimension": "minecraft:overworld",
+            "x": -1208.0,
+            "y": 88.0,
+            "z": 1462.0,
+            "yaw": -90,
+            "pitch": 0,
+            "tags": ["story_npc", "conference_commander"]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "conference_food_interaction"
+        }
+      ]
+    },
+    "conference_food_interaction": {
+      "type": "world_interaction",
+      "data": {
+        "title": "补给口粮",
+        "description": "从炉子里取出食物，分发给队员。",
+        "interactions": [
+          {
+            "type": "CLICK_BLOCK",
+            "x": -1205,
+            "y": 88,
+            "z": 1470,
+            "count": 1,
+            "feedback_msg": "口粮补给完成"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "GIVE_ITEM",
+            "item": "minecraft:cooked_beef",
+            "count": 64
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f口粮补充完毕，队伍状态稳定。"
+          }
+        ],
+        "waypoint": {
+          "id": "wp_conference_food",
+          "label": "炉子",
+          "x": -1205,
+          "y": 88,
+          "z": 1470,
+          "icon": "objective",
+          "color": "0xFF66CCFF"
+        }
+      },
+      "edges": [
+        {
+          "target": "conference_dialogue_2"
+        }
+      ]
+    },
+    "conference_dialogue_2": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_pla_commander",
+        "dialog_set": "main",
+        "npc_name": "赵云峰",
+        "profile_id": "pla_commander",
+        "lines": [
+          "情报室就在隔壁楼。我们需要恢复电力，下载医生的研究记录。",
+          "城里出现了三只高危变异体，它们的血样可能是唯一线索。",
+          "先去情报室。然后我们动身清理变异体。"
+        ],
+        "choices": [
+          {
+            "id": "conference_confirm",
+            "text": "出发。"
+          }
+        ],
+        "voiceover": "storyadventure:japan_outbreak_hard/conference_dialogue_2_dialogue"
+      },
+      "edges": [
+        {
+          "target": "intel_room_task",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "conference_confirm"
+            }
+          ]
+        }
+      ]
+    },
+    "intel_room_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往情报室",
+        "description": "抵达情报室并接通电源。",
+        "waypoint": {
+          "id": "intel_room",
+          "label": "情报室",
+          "x": -1187.461,
+          "y": 90.0,
+          "z": 1441.95,
+          "icon": "clue",
+          "color": "0xFF33CC99"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -1187.461,
+            "target_y": 90.0,
+            "target_z": 1441.95,
+            "radius": 4.0,
+            "description": "进入情报室"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "intel_wave_far",
+            "label": "情报室尸潮1",
+            "target_distance": 90.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_common_1",
+                "dimension": "minecraft:overworld",
+                "x": -1190.0,
+                "y": 90.0,
+                "z": 1425.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_rotting",
+                "dimension": "minecraft:overworld",
+                "x": -1190.0,
+                "y": 90.0,
+                "z": 1425.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              }
+            ]
+          },
+          {
+            "id": "intel_wave_mid",
+            "label": "情报室尸潮2+土匪",
+            "target_distance": 55.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_stalker",
+                "dimension": "minecraft:overworld",
+                "x": -1190.0,
+                "y": 90.0,
+                "z": 1425.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 14.0,
+                "max_distance": 28.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -1190.0,
+                "y": 90.0,
+                "z": 1425.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 14.0,
+                "max_distance": 28.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -1190.0,
+                "y": 90.0,
+                "z": 1425.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 30.0
+              }
+            ]
+          },
+          {
+            "id": "intel_wave_near",
+            "label": "情报室尸潮3",
+            "target_distance": 25.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -1190.0,
+                "y": 90.0,
+                "z": 1425.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 12.0,
+                "max_distance": 24.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "power_on_interaction",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "power_on_interaction": {
+      "type": "world_interaction",
+      "data": {
+        "title": "恢复供电",
+        "description": "启动备用电源，恢复情报室系统。",
+        "interactions": [
+          {
+            "type": "CLICK_BLOCK",
+            "x": -1185,
+            "y": 91,
+            "z": 1439,
+            "count": 1,
+            "feedback_msg": "电力恢复"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "MESSAGE",
+            "text": "§f电力已恢复，系统开始启动。"
+          }
+        ],
+        "waypoint": {
+          "id": "wp_power",
+          "label": "电源开关",
+          "x": -1185,
+          "y": 91,
+          "z": 1439,
+          "icon": "objective",
+          "color": "0xFF66CCFF"
+        }
+      },
+      "edges": [
+        {
+          "target": "intel_files_interaction"
+        }
+      ]
+    },
+    "intel_files_interaction": {
+      "type": "world_interaction",
+      "data": {
+        "title": "收集情报",
+        "description": "检索日志并锁定医生位置。",
+        "interactions": [
+          {
+            "type": "CLICK_BLOCK",
+            "x": -1185,
+            "y": 91,
+            "z": 1437,
+            "count": 2,
+            "feedback_msg": "情报下载完成"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "MESSAGE",
+            "text": "§f日志显示：医生最后出现在东侧住宅区。"
+          }
+        ],
+        "waypoint": {
+          "id": "wp_intel",
+          "label": "终端",
+          "x": -1185,
+          "y": 91,
+          "z": 1437,
+          "icon": "objective",
+          "color": "0xFF66CCFF"
+        }
+      },
+      "edges": [
+        {
+          "target": "intel_dialogue_3"
+        }
+      ]
+    },
+    "intel_dialogue_3": {
+      "type": "dialogue",
+      "data": {
+        "npc_template": "npc_pla_commander",
+        "dialog_set": "main",
+        "npc_name": "赵云峰",
+        "profile_id": "pla_commander",
+        "lines": [
+          "情报确认了三处高危变异体坐标。必须拿到血样。",
+          "把蓝色大巴开到街口，我们用它穿过尸潮。",
+          "注意：武装土匪正在抢夺样本，行动要快。"
+        ],
+        "choices": [
+          {
+            "id": "intel_confirm",
+            "text": "准备出发。"
+          }
+        ],
+        "voiceover": "storyadventure:japan_outbreak_hard/intel_dialogue_3_dialogue"
+      },
+      "edges": [
+        {
+          "target": "bus_spawn_checkpoint",
+          "conditions": [
+            {
+              "type": "DIALOGUE_CHOICE",
+              "value": "intel_confirm"
+            }
+          ]
+        }
+      ]
+    },
+    "bus_spawn_checkpoint": {
+      "type": "item_interaction",
+      "data": {
+        "interaction_type": "ride_vehicle",
+        "title": "搭乘蓝色大巴",
+        "description": "上车穿越封锁街区，前往第一处变异体。",
+        "bus_type": "cityvehicles:blue_bus",
+        "x": -1188.583,
+        "y": 90.0,
+        "z": 1457.0,
+        "yaw": -90.0,
+        "keep_vehicle_on_exit": true,
+        "on_enter": [
+          {
+            "type": "COMMAND",
+            "command": "kill @e[type=cityvehicles:blue_bus,distance=..20]",
+            "as_op": true
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f大巴已就位，上车出发。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss1_travel_task"
+        }
+      ]
+    },
+    "boss1_travel_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往变异体一号区域",
+        "description": "抵达第一处变异体出没区域。",
+        "waypoint": {
+          "id": "boss1",
+          "label": "变异体一号",
+          "x": -981.299,
+          "y": 73.0,
+          "z": 1476.591,
+          "icon": "danger",
+          "color": "0xFFFF3333"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -981.299,
+            "target_y": 73.0,
+            "target_z": 1476.591,
+            "radius": 6.0,
+            "description": "进入变异体一号区域"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "boss1_wave_far",
+            "label": "一号尸潮1",
+            "target_distance": 140.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -1010.0,
+                "y": 75.0,
+                "z": 1458.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 40.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_common_1",
+                "dimension": "minecraft:overworld",
+                "x": -1010.0,
+                "y": 75.0,
+                "z": 1458.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 40.0
+              }
+            ]
+          },
+          {
+            "id": "boss1_wave_mid",
+            "label": "一号尸潮2+土匪",
+            "target_distance": 90.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_stalker",
+                "dimension": "minecraft:overworld",
+                "x": -1000.0,
+                "y": 74.0,
+                "z": 1468.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_rotting",
+                "dimension": "minecraft:overworld",
+                "x": -1000.0,
+                "y": 74.0,
+                "z": 1468.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 35.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -1000.0,
+                "y": 74.0,
+                "z": 1468.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 38.0
+              }
+            ]
+          },
+          {
+            "id": "boss1_wave_near",
+            "label": "一号尸潮3",
+            "target_distance": 50.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -990.0,
+                "y": 73.0,
+                "z": 1474.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 28.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss1_combat",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "boss1_combat": {
+      "type": "combat",
+      "data": {
+        "combat_type": "BOSS",
+        "title": "变异体一号",
+        "description": "击杀变异首领并获取血样。",
+        "enemies": [
+          {
+            "type": "zombie_mutant",
+            "count": 1,
+            "spawn_radius": 6,
+            "tags": [
+              "boss_zombie_1",
+              "instance_{instance_id}"
+            ],
+            "scale": 1.5,
+            "bossbar": "§4§l变异首领",
+            "drops": [
+              {
+                "item": "minecraft:ghast_tear",
+                "count": 1,
+                "chance": 1.0,
+                "nbt": "{components:{\"minecraft:custom_name\":'\"\u00a7c感染者血样\"',\"minecraft:custom_data\":{story_sample:1b}}}"
+              }
+            ]
+          },
+          {
+            "type": "zombie_runner",
+            "count": 6,
+            "spawn_radius": 12,
+            "tags": [
+              "boss_minion",
+              "instance_{instance_id}"
+            ]
+          },
+          {
+            "type": "zombie_common_1",
+            "count": 8,
+            "spawn_radius": 14,
+            "tags": [
+              "boss_minion",
+              "instance_{instance_id}"
+            ]
+          }
+        ],
+        "arena_bounds": {
+          "center": {
+            "x": -981.299,
+            "y": 73.0,
+            "z": 1476.591
+          },
+          "radius": 35
+        },
+        "on_enter": [
+          {
+            "type": "TITLE",
+            "title": "§4首领出现",
+            "subtitle": "全力压制"
+          },
+          {
+            "type": "PLAY_SOUND",
+            "sound": "minecraft:entity.wither.spawn"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss1_sample_checkpoint",
+          "conditions": [
+            {
+              "type": "COMBAT_WON"
+            }
+          ]
+        }
+      ]
+    },
+    "boss1_sample_checkpoint": {
+      "type": "checkpoint",
+      "data": {
+        "message": "取得血样 1/3",
+        "on_enter": [
+          {
+            "type": "SET_FLAG",
+            "flag": "sample_1",
+            "value": true
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f变异首领已消灭！收集掉落的血样。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss2_travel_task"
+        }
+      ]
+    },
+    "boss2_travel_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往变异体二号区域",
+        "description": "穿越街区，清理第二处变异体。",
+        "waypoint": {
+          "id": "boss2",
+          "label": "变异体二号",
+          "x": -931.572,
+          "y": 79.0,
+          "z": 1429.766,
+          "icon": "danger",
+          "color": "0xFFFF3333"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -931.572,
+            "target_y": 79.0,
+            "target_z": 1429.766,
+            "radius": 6.0,
+            "description": "进入变异体二号区域"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "boss2_wave_far",
+            "label": "二号尸潮1",
+            "target_distance": 120.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_common_1",
+                "dimension": "minecraft:overworld",
+                "x": -950.0,
+                "y": 78.0,
+                "z": 1440.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 38.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -950.0,
+                "y": 78.0,
+                "z": 1440.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 38.0
+              }
+            ]
+          },
+          {
+            "id": "boss2_wave_mid",
+            "label": "二号尸潮2+土匪",
+            "target_distance": 70.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_stalker",
+                "dimension": "minecraft:overworld",
+                "x": -940.0,
+                "y": 78.0,
+                "z": 1435.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 30.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_rotting",
+                "dimension": "minecraft:overworld",
+                "x": -940.0,
+                "y": 78.0,
+                "z": 1435.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 30.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -940.0,
+                "y": 78.0,
+                "z": 1435.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 32.0
+              }
+            ]
+          },
+          {
+            "id": "boss2_wave_near",
+            "label": "二号尸潮3",
+            "target_distance": 35.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -934.0,
+                "y": 79.0,
+                "z": 1432.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 12.0,
+                "max_distance": 24.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss2_combat",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "boss2_combat": {
+      "type": "combat",
+      "data": {
+        "combat_type": "BOSS",
+        "title": "变异体二号",
+        "description": "高危变异体更耐打，注意走位。",
+        "enemies": [
+          {
+            "type": "zombie_mutant",
+            "count": 1,
+            "spawn_radius": 6,
+            "tags": [
+              "boss_zombie_2",
+              "instance_{instance_id}"
+            ],
+            "scale": 1.6,
+            "bossbar": "§4§l变异首领",
+            "drops": [
+              {
+                "item": "minecraft:ghast_tear",
+                "count": 1,
+                "chance": 1.0,
+                "nbt": "{components:{\"minecraft:custom_name\":'\"\u00a7c感染者血样\"',\"minecraft:custom_data\":{story_sample:1b}}}"
+              }
+            ]
+          },
+          {
+            "type": "zombie_armed",
+            "count": 4,
+            "spawn_radius": 10,
+            "tags": [
+              "boss_minion",
+              "instance_{instance_id}"
+            ]
+          },
+          {
+            "type": "zombie_runner",
+            "count": 6,
+            "spawn_radius": 12,
+            "tags": [
+              "boss_minion",
+              "instance_{instance_id}"
+            ]
+          }
+        ],
+        "arena_bounds": {
+          "center": {
+            "x": -931.572,
+            "y": 79.0,
+            "z": 1429.766
+          },
+          "radius": 35
+        },
+        "on_enter": [
+          {
+            "type": "TITLE",
+            "title": "§4强变异体",
+            "subtitle": "小心硬直"
+          },
+          {
+            "type": "PLAY_SOUND",
+            "sound": "minecraft:entity.wither.spawn"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss2_sample_checkpoint",
+          "conditions": [
+            {
+              "type": "COMBAT_WON"
+            }
+          ]
+        }
+      ]
+    },
+    "boss2_sample_checkpoint": {
+      "type": "checkpoint",
+      "data": {
+        "message": "取得血样 2/3",
+        "on_enter": [
+          {
+            "type": "SET_FLAG",
+            "flag": "sample_2",
+            "value": true
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f变异首领已消灭！收集掉落的血样。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss3_travel_task"
+        }
+      ]
+    },
+    "boss3_travel_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往变异体三号区域",
+        "description": "第三处变异体可能拥有更高感染性。",
+        "waypoint": {
+          "id": "boss3",
+          "label": "变异体三号",
+          "x": -872.606,
+          "y": 73.0,
+          "z": 1551.178,
+          "icon": "danger",
+          "color": "0xFFFF3333"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -872.606,
+            "target_y": 73.0,
+            "target_z": 1551.178,
+            "radius": 6.0,
+            "description": "进入变异体三号区域"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "boss3_wave_far",
+            "label": "三号尸潮1",
+            "target_distance": 140.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_common_1",
+                "dimension": "minecraft:overworld",
+                "x": -900.0,
+                "y": 74.0,
+                "z": 1525.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 38.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -900.0,
+                "y": 74.0,
+                "z": 1525.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 38.0
+              }
+            ]
+          },
+          {
+            "id": "boss3_wave_mid",
+            "label": "三号尸潮2+土匪",
+            "target_distance": 90.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_stalker",
+                "dimension": "minecraft:overworld",
+                "x": -890.0,
+                "y": 73.0,
+                "z": 1538.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 34.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -890.0,
+                "y": 73.0,
+                "z": 1538.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 18.0,
+                "max_distance": 34.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -890.0,
+                "y": 73.0,
+                "z": 1538.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 36.0
+              }
+            ]
+          },
+          {
+            "id": "boss3_wave_near",
+            "label": "三号尸潮3",
+            "target_distance": 50.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -880.0,
+                "y": 73.0,
+                "z": 1548.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 14.0,
+                "max_distance": 26.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_crawler",
+                "dimension": "minecraft:overworld",
+                "x": -880.0,
+                "y": 73.0,
+                "z": 1548.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 14.0,
+                "max_distance": 26.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss3_combat",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "boss3_combat": {
+      "type": "combat",
+      "data": {
+        "combat_type": "BOSS",
+        "title": "变异体三号",
+        "description": "终极变异体，留意包围。",
+        "enemies": [
+          {
+            "type": "zombie_mutant",
+            "count": 1,
+            "spawn_radius": 6,
+            "tags": [
+              "boss_zombie_3",
+              "instance_{instance_id}"
+            ],
+            "scale": 1.7,
+            "bossbar": "§4§l终极变异首领",
+            "drops": [
+              {
+                "item": "minecraft:ghast_tear",
+                "count": 1,
+                "chance": 1.0,
+                "nbt": "{components:{\"minecraft:custom_name\":'\"\u00a7c感染者血样\"',\"minecraft:custom_data\":{story_sample:1b}}}"
+              }
+            ]
+          },
+          {
+            "type": "zombie_runner",
+            "count": 8,
+            "spawn_radius": 14,
+            "tags": [
+              "boss_minion",
+              "instance_{instance_id}"
+            ]
+          },
+          {
+            "type": "zombie_armed",
+            "count": 4,
+            "spawn_radius": 12,
+            "tags": [
+              "boss_minion",
+              "instance_{instance_id}"
+            ]
+          }
+        ],
+        "arena_bounds": {
+          "center": {
+            "x": -872.606,
+            "y": 73.0,
+            "z": 1551.178
+          },
+          "radius": 35
+        },
+        "on_enter": [
+          {
+            "type": "TITLE",
+            "title": "§4终极变异体",
+            "subtitle": "坚持到底"
+          },
+          {
+            "type": "PLAY_SOUND",
+            "sound": "minecraft:entity.wither.spawn"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "boss3_sample_checkpoint",
+          "conditions": [
+            {
+              "type": "COMBAT_WON"
+            }
+          ]
+        }
+      ]
+    },
+    "boss3_sample_checkpoint": {
+      "type": "checkpoint",
+      "data": {
+        "message": "取得血样 3/3",
+        "on_enter": [
+          {
+            "type": "SET_FLAG",
+            "flag": "sample_3",
+            "value": true
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f终极变异首领已消灭！收集最后一份血样。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "sample_collection_task"
+        }
+      ]
+    },
+    "sample_collection_task": {
+      "type": "task",
+      "data": {
+        "task_type": "COLLECT",
+        "title": "汇总血样",
+        "description": "确认已收集三份变异血样。",
+        "waypoint": {
+          "id": "sample_check",
+          "label": "确认血样",
+          "x": -872.606,
+          "y": 73.0,
+          "z": 1551.178,
+          "icon": "objective",
+          "color": "0xFF66CCFF"
+        },
+        "objectives": [
+          {
+            "type": "COLLECT_ITEM",
+            "item_id": "minecraft:ghast_tear",
+            "count": 3,
+            "description": "收集 3 份感染者血样"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "MESSAGE",
+            "text": "§f血样装箱完毕，继续追踪密码线索。"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "password_clue_travel_task",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "password_clue_travel_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往密码线索点",
+        "description": "抵达线索点并搜索密码。",
+        "waypoint": {
+          "id": "password_clue",
+          "label": "密码线索",
+          "x": -810.961,
+          "y": 81.0,
+          "z": 1490.698,
+          "icon": "clue",
+          "color": "0xFF33CCFF"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -810.961,
+            "target_y": 81.0,
+            "target_z": 1490.698,
+            "radius": 5.0,
+            "description": "抵达线索点"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "clue_wave_far",
+            "label": "线索尸潮1",
+            "target_distance": 120.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -840.0,
+                "y": 82.0,
+                "z": 1505.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 40.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_rotting",
+                "dimension": "minecraft:overworld",
+                "x": -840.0,
+                "y": 82.0,
+                "z": 1505.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 40.0
+              }
+            ]
+          },
+          {
+            "id": "clue_wave_mid",
+            "label": "线索尸潮2",
+            "target_distance": 70.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_stalker",
+                "dimension": "minecraft:overworld",
+                "x": -825.0,
+                "y": 82.0,
+                "z": 1498.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 32.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -825.0,
+                "y": 82.0,
+                "z": 1498.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 16.0,
+                "max_distance": 32.0
+              }
+            ]
+          },
+          {
+            "id": "clue_wave_near",
+            "label": "线索尸潮3",
+            "target_distance": 30.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -815.0,
+                "y": 82.0,
+                "z": 1492.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 12.0,
+                "max_distance": 24.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "password_clue_cutscene",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "password_clue_cutscene": {
+      "type": "cutscene",
+      "data": {
+        "duration_ticks": 360,
+        "skippable": false,
+        "letterbox": true,
+        "fade_in_ticks": 0,
+        "fade_out_ticks": 0,
+        "subtitles": [
+          {
+            "text": "这里像被紧急撤离过。",
+            "start_tick": 0,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/password_clue_cutscene_sub_1"
+          },
+          {
+            "text": "墙上记录着一串被擦掉的密码。",
+            "start_tick": 120,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/password_clue_cutscene_sub_2"
+          },
+          {
+            "text": "必须找到完整线索。",
+            "start_tick": 240,
+            "duration_tick": 120,
+            "voiceover": "storyadventure:japan_outbreak_hard/password_clue_cutscene_sub_3"
+          }
+        ],
+        "camera_path": {
+          "keyframes": [
+            {
+              "position": [
+                -868.73,
+                99.94,
+                1513.7
+              ],
+              "rotation": [
+                -810.2,
+                24.5,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 0,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -865.24,
+                98.64,
+                1511.88
+              ],
+              "rotation": [
+                -809.0,
+                20.4,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -841.71,
+                90.5,
+                1519.11
+              ],
+              "rotation": [
+                -870.4,
+                33.3,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -807.84,
+                84.72,
+                1510.01
+              ],
+              "rotation": [
+                -936.8,
+                15.2,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -812.88,
+                82.62,
+                1494.92
+              ],
+              "rotation": [
+                -991.9,
+                8.3,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -817.7,
+                82.62,
+                1495.74
+              ],
+              "rotation": [
+                -899.3,
+                -10.2,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -811.3,
+                82.62,
+                1489.3
+              ],
+              "rotation": [
+                -721.3,
+                5.0,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            }
+          ],
+          "position_interpolation": "CATMULL_ROM",
+          "rotation_interpolation": "SMOOTH_LERP"
+        }
+      },
+      "edges": [
+        {
+          "target": "password_clue_interaction"
+        }
+      ]
+    },
+    "password_clue_interaction": {
+      "type": "world_interaction",
+      "data": {
+        "title": "寻找密码线索",
+        "description": "在残破墙面上寻找关键线索。",
+        "interactions": [
+          {
+            "type": "CLICK_BLOCK",
+            "x": -811,
+            "y": 82,
+            "z": 1492,
+            "count": 3,
+            "feedback_msg": "密码线索锁定"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "SET_FLAG",
+            "flag": "password_found",
+            "value": true
+          },
+          {
+            "type": "MESSAGE",
+            "text": "§f你拼出残缺密码：‘九号机柜，日文注释’。"
+          }
+        ],
+        "waypoint": {
+          "id": "wp_password",
+          "label": "密码线索",
+          "x": -811,
+          "y": 82,
+          "z": 1492,
+          "icon": "clue",
+          "color": "0xFF66CCFF"
+        }
+      },
+      "edges": [
+        {
+          "target": "doctor_house_travel_task"
+        }
+      ]
+    },
+    "doctor_house_travel_task": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往医生住宅",
+        "description": "抵达医生的住宅并解锁电脑。",
+        "waypoint": {
+          "id": "doctor_house",
+          "label": "医生住宅",
+          "x": -929.435,
+          "y": 74.0625,
+          "z": 1680.589,
+          "icon": "npc",
+          "color": "0xFF33CCFF"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -929.435,
+            "target_y": 74.0625,
+            "target_z": 1680.589,
+            "radius": 6.0,
+            "description": "进入医生住宅区域"
+          }
+        ],
+        "triggers": [
+          {
+            "id": "doctor_wave_far",
+            "label": "住宅尸潮1",
+            "target_distance": 160.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_runner",
+                "dimension": "minecraft:overworld",
+                "x": -945.0,
+                "y": 74.0,
+                "z": 1650.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 22.0,
+                "max_distance": 42.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -945.0,
+                "y": 74.0,
+                "z": 1650.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 22.0,
+                "max_distance": 42.0
+              }
+            ]
+          },
+          {
+            "id": "doctor_bandit_wave",
+            "label": "武装土匪",
+            "target_distance": 90.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -935.0,
+                "y": 74.0,
+                "z": 1668.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 36.0
+              },
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "bandit_ak47",
+                "dimension": "minecraft:overworld",
+                "x": -935.0,
+                "y": 74.0,
+                "z": 1668.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_bandits",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 20.0,
+                "max_distance": 36.0
+              }
+            ]
+          },
+          {
+            "id": "doctor_wave_near",
+            "label": "住宅尸潮2",
+            "target_distance": 40.0,
+            "oneShot": true,
+            "onEnter": [
+              {
+                "type": "SPAWN_NPC",
+                "npc_template": "zombie_armed",
+                "dimension": "minecraft:overworld",
+                "x": -930.0,
+                "y": 74.0,
+                "z": 1675.0,
+                "yaw": 0.0,
+                "pitch": 0.0,
+                "tags": [
+                  "story_horde",
+                  "instance_{instance_id}"
+                ],
+                "spawn_mode": "RELATIVE_TO_PLAYER",
+                "min_distance": 14.0,
+                "max_distance": 26.0
+              }
+            ]
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "doctor_house_cutscene",
+          "conditions": [
+            {
+              "type": "TASK_COMPLETE"
+            }
+          ]
+        }
+      ]
+    },
+    "doctor_house_cutscene": {
+      "type": "cutscene",
+      "data": {
+        "duration_ticks": 240,
+        "skippable": false,
+        "letterbox": true,
+        "fade_in_ticks": 0,
+        "fade_out_ticks": 0,
+        "subtitles": [
+          {
+            "text": "这栋房子没有灯，里面可能还有人。",
+            "start_tick": 0,
+            "duration_tick": 60,
+            "voiceover": "storyadventure:japan_outbreak_hard/doctor_house_cutscene_sub_1"
+          },
+          {
+            "text": "你听见屋内有人翻找文件。",
+            "start_tick": 60,
+            "duration_tick": 60,
+            "voiceover": "storyadventure:japan_outbreak_hard/doctor_house_cutscene_sub_2"
+          },
+          {
+            "text": "武装土匪也在寻找医生的电脑。",
+            "start_tick": 120,
+            "duration_tick": 60,
+            "voiceover": "storyadventure:japan_outbreak_hard/doctor_house_cutscene_sub_3"
+          },
+          {
+            "text": "必须抢先破解。",
+            "start_tick": 180,
+            "duration_tick": 60,
+            "voiceover": "storyadventure:japan_outbreak_hard/doctor_house_cutscene_sub_4"
+          }
+        ],
+        "camera_path": {
+          "keyframes": [
+            {
+              "position": [
+                -1053.45,
+                115.62,
+                1701.58
+              ],
+              "rotation": [
+                -1541.2,
+                34.8,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 0,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1053.45,
+                115.62,
+                1701.58
+              ],
+              "rotation": [
+                -1541.2,
+                34.8,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -1019.1,
+                94.24,
+                1694.53
+              ],
+              "rotation": [
+                -1539.7,
+                24.3,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -969.34,
+                81.5,
+                1677.99
+              ],
+              "rotation": [
+                -1527.5,
+                11.7,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [
+                -938.5,
+                74.62,
+                1687.08
+              ],
+              "rotation": [
+                -1560.4,
+                -13.9,
+                0.0
+              ],
+              "fov": 70.0,
+              "duration_ticks": 60,
+              "easing": "EASE_IN_OUT"
+            }
+          ],
+          "position_interpolation": "CATMULL_ROM",
+          "rotation_interpolation": "SMOOTH_LERP"
+        }
+      },
+      "edges": [
+        {
+          "target": "doctor_laptop_interaction"
+        }
+      ]
+    },
+    "doctor_laptop_interaction": {
+      "type": "world_interaction",
+      "data": {
+        "title": "解锁医生电脑",
+        "description": "输入密码，打开研究档案。",
+        "interactions": [
+          {
+            "type": "CLICK_BLOCK",
+            "x": -932,
+            "y": 78,
+            "z": 1677,
+            "count": 1,
+            "feedback_msg": "电脑解锁成功"
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "MESSAGE",
+            "text": "§f你输入密码，发现病毒样本编号与三处变异体一致。"
+          }
+        ],
+        "waypoint": {
+          "id": "wp_laptop",
+          "label": "医生电脑",
+          "x": -932,
+          "y": 78,
+          "z": 1677,
+          "icon": "clue",
+          "color": "0xFF66CCFF"
+        }
+      },
+      "edges": [
+        {
+          "target": "bandit_ambush_combat"
+        }
+      ]
+    },
+    "bandit_ambush_combat": {
+      "type": "combat",
+      "data": {
+        "combat_type": "WAVE",
+        "title": "土匪突袭",
+        "description": "武装土匪冲入住宅，挡住他们！",
+        "enemies": [
+          {
+            "type": "bandit_ak47",
+            "count": 8,
+            "spawn_radius": 12,
+            "tags": [
+              "story_bandits",
+              "instance_{instance_id}"
+            ]
+          },
+          {
+            "type": "zombie_runner",
+            "count": 6,
+            "spawn_radius": 10,
+            "tags": [
+              "story_horde",
+              "instance_{instance_id}"
+            ]
+          }
+        ],
+        "arena_bounds": {
+          "center": {
+            "x": -929.435,
+            "y": 74.0625,
+            "z": 1680.589
+          },
+          "radius": 35
+        },
+        "on_enter": [
+          {
+            "type": "MESSAGE",
+            "text": "§c土匪：样本我们要了！退后！"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "final_boss_travel",
+          "conditions": [
+            {
+              "type": "COMBAT_WON"
+            }
+          ]
+        }
+      ]
+    },
+    "final_boss_travel": {
+      "type": "task",
+      "data": {
+        "task_type": "INVESTIGATE",
+        "title": "前往土匪头目据点",
+        "description": "追击土匪头目，准备最终决战。",
+        "waypoint": {
+          "id": "final_boss_arena",
+          "label": "土匪头目据点",
+          "x": -982.558,
+          "y": 73.0,
+          "z": 1677.621,
+          "icon": "danger",
+          "color": "0xFFFF0000"
+        },
+        "objectives": [
+          {
+            "type": "REACH_LOCATION",
+            "target_x": -982.558,
+            "target_y": 73.0,
+            "target_z": 1677.621,
+            "radius": 15.0,
+            "description": "到达土匪头目据点"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "final_boss_bandit"
+        }
+      ]
+    },
+    "final_boss_bandit": {
+      "type": "combat",
+      "data": {
+        "combat_type": "BOSS",
+        "title": "土匪首领",
+        "description": "击败土匪头目，护送样本撤离。",
+        "enemies": [
+          {
+            "type": "bandit_boss",
+            "count": 1,
+            "spawn_radius": 6,
+            "tags": [
+              "bandit_boss",
+              "instance_{instance_id}"
+            ],
+            "scale": 1.3,
+            "bossbar": "§c§l土匪头目"
+          },
+          {
+            "type": "bandit_ak47",
+            "count": 6,
+            "spawn_radius": 10,
+            "tags": [
+              "story_bandits",
+              "instance_{instance_id}"
+            ]
+          }
+        ],
+        "arena_bounds": {
+          "center": {
+            "x": -982.558,
+            "y": 73.0,
+            "z": 1677.621
+          },
+          "radius": 40
+        },
+        "on_enter": [
+          {
+            "type": "TITLE",
+            "title": "§4土匪头目现身",
+            "subtitle": "守住样本"
+          },
+          {
+            "type": "PLAY_SOUND",
+            "sound": "minecraft:entity.ender_dragon.growl"
+          }
+        ]
+      },
+      "edges": [
+        {
+          "target": "instance_complete",
+          "conditions": [
+            {
+              "type": "COMBAT_WON"
+            }
+          ]
+        }
+      ]
+    },
+    "instance_complete": {
+      "type": "cutscene",
+      "data": {
+        "duration_ticks": 300,
+        "message": "样本已封存，医生资料也已备份。你们击退了土匪和尸潮，为东湾市争取了撤离窗口。任务完成。",
+        "fade_in_ticks": 20,
+        "fade_out_ticks": 40,
+        "is_ending": true,
+        "ending_type": "success",
+        "voiceover": "storyadventure:japan_outbreak_hard/mission_complete",
+        "camera_path": {
+          "keyframes": [
+            {
+              "position": [-982.0, 75.0, 1677.0],
+              "rotation": [0, -10, 0],
+              "fov": 80,
+              "duration_ticks": 100,
+              "easing": "EASE_IN_OUT"
+            },
+            {
+              "position": [-990.0, 80.0, 1685.0],
+              "rotation": [45, -15, 0],
+              "fov": 70,
+              "duration_ticks": 100,
+              "easing": "LINEAR"
+            },
+            {
+              "position": [-978.0, 85.0, 1670.0],
+              "rotation": [-30, 10, 0],
+              "fov": 75,
+              "duration_ticks": 100,
+              "easing": "EASE_OUT"
+            }
+          ],
+          "look_at": {
+            "type": "position",
+            "value": [-982.558, 73.0, 1677.621]
+          },
+          "position_interpolation": "CATMULL_ROM",
+          "rotation_interpolation": "SMOOTH_LERP"
+        },
+        "subtitles": [
+          {
+            "text": "§e赵云峰：§f任务完成！所有样本已安全封存。",
+            "start_tick": 20,
+            "duration_tick": 60
+          },
+          {
+            "text": "§e赵云峰：§f医生资料下载完毕，正在上传至指挥部。",
+            "start_tick": 80,
+            "duration_tick": 60
+          },
+          {
+            "text": "§e赵云峰：§f你们为东湾市争取了宝贵的撤离时间，干得漂亮！",
+            "start_tick": 140,
+            "duration_tick": 70
+          },
+          {
+            "text": "§e赵云峰：§f全体注意，准备撤离！回家！",
+            "start_tick": 210,
+            "duration_tick": 60
+          }
+        ],
+        "rewards": [
+          {
+            "type": "EXPERIENCE",
+            "amount": 9000
+          },
+          {
+            "type": "COIN",
+            "amount": 10
+          },
+          {
+            "type": "ITEM",
+            "item": "minecraft:netherite_ingot",
+            "amount": 1
+          }
+        ],
+        "on_enter": [
+          {
+            "type": "COMMAND",
+            "command": "easy_npc delete @e[tag=instance_{instance_id}]",
+            "as_op": true
+          },
+          {
+            "type": "COMMAND",
+            "command": "kill @e[tag=outbreak_event]",
+            "as_op": true
+          },
+          {
+            "type": "COMMAND",
+            "command": "easy_npc delete @e[tag=horde_member]",
+            "as_op": true
+          },
+          {
+            "type": "TITLE",
+            "title": "§6任务完成",
+            "subtitle": "东湾封锁解除"
+          },
+          {
+            "type": "PLAY_SOUND",
+            "sound": "minecraft:ui.toast.challenge_complete"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -40,6 +40,8 @@ public class StrangerHudRenderer implements HudRenderCallback {
     private List<String> clues = new ArrayList<>();
     private long timerEndTime = 0;
     private boolean timerActive = false;
+    private long instanceTimerEndTime = 0;
+    private boolean instanceTimerActive = false;
     private int remainingLives = 0;
     private int maxLives = 0;
     private boolean showLives = false;
@@ -73,6 +75,7 @@ public class StrangerHudRenderer implements HudRenderCallback {
         // Calculate total height needed
         int totalHeight = HUD_PADDING_Y * 2 + 28 + objectives.size() * 13 + (clues.isEmpty() ? 0 : 18 + clues.size() * 11);
         if (timerActive) totalHeight += 20;
+        if (instanceTimerActive) totalHeight += 20;
         if (showLives) totalHeight += 18;
         
         int startY = calculatePanelY(totalHeight, screenHeight, scale);
@@ -128,7 +131,27 @@ public class StrangerHudRenderer implements HudRenderCallback {
             graphics.drawString(font, timeStr, startX + HUD_PADDING_X, y, timerColor);
             y += 14;
         }
-        
+
+        // Draw instance timer (overall instance time limit)
+        if (instanceTimerActive) {
+            y += 4;
+            long remaining = Math.max(0, instanceTimerEndTime - System.currentTimeMillis());
+            int seconds = (int)(remaining / 1000);
+            int minutes = seconds / 60;
+            seconds = seconds % 60;
+
+            String timeStr = String.format("⏳ 副本剩余: %02d:%02d", minutes, seconds);
+            int timerColor = remaining < 60000 ? COLOR_TIMER_URGENT : COLOR_ACCENT; // Red if less than 1 minute
+
+            // Pulse effect when urgent (less than 1 minute)
+            if (remaining < 60000 && (System.currentTimeMillis() / 500) % 2 == 0) {
+                timerColor = 0xFFFFFFFF;
+            }
+
+            graphics.drawString(font, timeStr, startX + HUD_PADDING_X, y, timerColor);
+            y += 14;
+        }
+
         // Draw lives display
         if (showLives && maxLives > 0) {
             y += 4;
@@ -209,7 +232,11 @@ public class StrangerHudRenderer implements HudRenderCallback {
         if (timerActive) {
             maxTextWidth = Math.max(maxTextWidth, font.width("⏱ 00:00"));
         }
-        
+
+        if (instanceTimerActive) {
+            maxTextWidth = Math.max(maxTextWidth, font.width("⏳ 副本剩余: 00:00"));
+        }
+
         if (showLives) {
             String livesText = "❤ 生命值: " + remainingLives + " / " + maxLives;
             maxTextWidth = Math.max(maxTextWidth, font.width(livesText));
@@ -276,6 +303,7 @@ public class StrangerHudRenderer implements HudRenderCallback {
         objectives.clear();
         clues.clear();
         timerActive = false;
+        instanceTimerActive = false;
         showLives = false;
         remainingLives = 0;
         maxLives = 0;
@@ -287,6 +315,15 @@ public class StrangerHudRenderer implements HudRenderCallback {
         this.maxLives = max;
         this.showLives = max > 0;
     }
-    
+
+    public void setInstanceTimer(long durationMs) {
+        this.instanceTimerActive = true;
+        this.instanceTimerEndTime = System.currentTimeMillis() + durationMs;
+    }
+
+    public void stopInstanceTimer() {
+        this.instanceTimerActive = false;
+    }
+
     public record ObjectiveEntry(String text, boolean complete, boolean current) {}
 }

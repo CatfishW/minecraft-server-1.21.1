@@ -65,13 +65,33 @@ public class CutsceneNodeHandler implements NodeHandler {
         // If the cutscene camera is far from players, temporarily move them near the camera to load chunks.
         var cameraStart = getCameraStartPosition(cameraPathJson);
         var keyframes = parseKeyframes(cameraPathJson);
-        if (!keyframes.isEmpty()) {
-            runtimes.put(instance.getInstanceId(), new CutsceneRuntime(System.currentTimeMillis(), keyframes));
+        // Parse NPC animations
+        List<NPCAnimation> serverAnimations = new ArrayList<>();
+        if (node.getData().has("npc_animations") && node.getData().get("npc_animations").isJsonArray()) {
+            for (var elem : node.getData().getAsJsonArray("npc_animations")) {
+                if (elem.isJsonObject()) {
+                    var obj = elem.getAsJsonObject();
+                    int tick = obj.has("tick") ? obj.get("tick").getAsInt() : 0;
+                    String npc = obj.has("npc") ? obj.get("npc").getAsString() : "";
+                    String pose = obj.has("pose") ? obj.get("pose").getAsString() : "";
+                    if (!npc.isEmpty() && !pose.isEmpty()) {
+                        // serverAnimations.add(new NPCAnimation(tick, npc, pose));
+                    }
+                }
+            }
+        }
+
+        if (!keyframes.isEmpty() || !serverAnimations.isEmpty()) {
+            runtimes.put(instance.getInstanceId(), new CutsceneRuntime(System.currentTimeMillis(), keyframes, serverAnimations));
         }
         
         // Parse subtitles
         com.google.gson.JsonArray subtitles = node.getData().has("subtitles") ? 
             node.getData().getAsJsonArray("subtitles") : null;
+        
+        // Parse animations to pass to client
+        com.google.gson.JsonArray animations = node.getData().has("npc_animations") ?
+            node.getData().getAsJsonArray("npc_animations") : null;
         
         // Send cutscene start command to all party members
         String instanceId = instance.getInstanceId().toString();
@@ -90,12 +110,18 @@ public class CutsceneNodeHandler implements NodeHandler {
                     }
                 }
                 applyFallProtection(instance, player, durationTicks);
-                NetworkHandler.sendCutsceneStart(player, cameraPathJson, skippable, letterbox, 
-                    fadeInTicks, fadeOutTicks, instanceId, voiceover, subtitles);
-                
-                // Set to spectator mode during cutscene
-                player.setGameMode(net.minecraft.world.level.GameType.SPECTATOR);
-                
+                NetworkHandler.sendCutsceneStart(player, cameraPathJson, skippable, letterbox,
+                    fadeInTicks, fadeOutTicks, instanceId, voiceover, subtitles, animations);
+
+                // Set to survival mode during cutscene with invisibility and invincibility
+                player.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+                // Add invisibility effect (infinite duration, no particles, no icon)
+                player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY,
+                    durationTicks + 100, 0, true, false, false));
+                // Add damage resistance level 5 for invincibility (100% damage reduction)
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,
+                    durationTicks + 100, 4, true, false, false));
+
                 // Show optional title message
                 if (!message.isEmpty()) {
                     player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§7" + message));
@@ -117,15 +143,20 @@ public class CutsceneNodeHandler implements NodeHandler {
         }
     }
 
+    private static record NPCAnimation(int tick, String npc, String pose) {}
+
     private static class CutsceneRuntime {
         final long startTimeMs;
         final List<CutsceneKeyframe> keyframes;
+        final List<NPCAnimation> animations;
+        final java.util.Set<Integer> triggeredAnimations = new java.util.HashSet<>();
         long lastTeleportTick = -1;
         final long totalTicks;
 
-        CutsceneRuntime(long startTimeMs, List<CutsceneKeyframe> keyframes) {
+        CutsceneRuntime(long startTimeMs, List<CutsceneKeyframe> keyframes, List<NPCAnimation> animations) {
             this.startTimeMs = startTimeMs;
             this.keyframes = keyframes;
+            this.animations = animations;
             long total = 0;
             for (CutsceneKeyframe kf : keyframes) {
                 total += Math.max(0, kf.durationTicks);
@@ -265,6 +296,21 @@ public class CutsceneNodeHandler implements NodeHandler {
         player.fallDistance = 0.0f;
     }
 
+    /**
+     * Clear all cutscene-related effects from the player.
+     * Removes invisibility and resistance effects applied during cutscene.
+     */
+    private void clearCutsceneEffects(ServerPlayer player) {
+        // Remove invisibility effect
+        player.removeEffect(MobEffects.INVISIBILITY);
+        // Remove damage resistance (invincibility) effect
+        player.removeEffect(MobEffects.DAMAGE_RESISTANCE);
+        // Also remove any other effects that might have been applied
+        player.removeEffect(MobEffects.SLOW_FALLING);
+        StoryAdventureMod.LOGGER.debug("[CutsceneNodeHandler] Cleared cutscene effects for player {}",
+            player.getName().getString());
+    }
+
     private void restoreReturnLocations(Instance instance) {
         var meta = instance.getState().getMetadata();
         for (UUID memberId : instance.getParty().getMembers()) {
@@ -398,6 +444,18 @@ public class CutsceneNodeHandler implements NodeHandler {
                     }
                 }
             }
+
+            // Trigger NPC animations
+            // Now handled on client side
+            /*
+            for (int i = 0; i < runtime.animations.size(); i++) {
+                NPCAnimation anim = runtime.animations.get(i);
+                if (elapsedTicks >= anim.tick && !runtime.triggeredAnimations.contains(i)) {
+                    runtime.triggeredAnimations.add(i);
+                    applyNPCPose(instance, anim.npc, anim.pose);
+                }
+            }
+            */
         }
         
         if (elapsed >= durationMs) {
@@ -413,8 +471,9 @@ public class CutsceneNodeHandler implements NodeHandler {
                 if (player != null) {
                     NetworkHandler.sendCutsceneStop(player, instanceId);
                     clearFallProtection(instance, player);
-                    // Revert to survival mode after cutscene
+                    // Revert to survival mode and clear cutscene effects
                     player.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+                    clearCutsceneEffects(player);
                 }
             }
             restoreReturnLocations(instance);
@@ -453,8 +512,9 @@ public class CutsceneNodeHandler implements NodeHandler {
                 if (member != null) {
                     NetworkHandler.sendCutsceneStop(member, instanceId);
                     clearFallProtection(instance, member);
-                    // Revert to survival mode after skip
+                    // Revert to survival mode and clear cutscene effects
                     member.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+                    clearCutsceneEffects(member);
                 }
             }
             restoreReturnLocations(instance);
@@ -504,8 +564,9 @@ public class CutsceneNodeHandler implements NodeHandler {
             if (player != null) {
                 NetworkHandler.sendCutsceneStop(player, instanceId);
                 clearFallProtection(instance, player);
-                // Ensure survival mode on exit
+                // Ensure survival mode on exit and clear cutscene effects
                 player.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+                clearCutsceneEffects(player);
             }
         }
         restoreReturnLocations(instance);
@@ -516,4 +577,10 @@ public class CutsceneNodeHandler implements NodeHandler {
     public boolean canComplete(Instance instance, StageNode node) {
         return instance.getState().isCurrentNodeCompleteWith("complete");
     }
+
+    /*
+    private void applyNPCPose(Instance instance, String npcName, String poseId) {
+        // ... Removed server-side pose logic
+    }
+    */
 }

@@ -20,7 +20,7 @@ public record SyncStoriesPayload(List<StorySummary> stories) implements CustomPa
     public static final StreamCodec<FriendlyByteBuf, SyncStoriesPayload> STREAM_CODEC = 
         StreamCodec.of(SyncStoriesPayload::write, SyncStoriesPayload::read);
     
-    public record StorySummary(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes) {}
+    public record StorySummary(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes, String cover) {}
     
     private static void write(FriendlyByteBuf buf, SyncStoriesPayload payload) {
         buf.writeInt(payload.stories.size());
@@ -31,6 +31,7 @@ public record SyncStoriesPayload(List<StorySummary> stories) implements CustomPa
             buf.writeInt(story.minPlayers);
             buf.writeInt(story.maxPlayers);
             buf.writeInt(story.estimatedMinutes);
+            buf.writeUtf(story.cover != null ? story.cover : "");
         }
     }
     
@@ -44,7 +45,8 @@ public record SyncStoriesPayload(List<StorySummary> stories) implements CustomPa
                 buf.readUtf(),
                 buf.readInt(),
                 buf.readInt(),
-                buf.readInt()
+                buf.readInt(),
+                buf.readUtf()
             ));
         }
         return new SyncStoriesPayload(stories);

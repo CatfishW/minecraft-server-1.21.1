@@ -35,38 +35,48 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 600);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 400);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
+        int sidebarX = guiLeft + guiWidth - 160;
         int buttonWidth = 140;
-        int buttonHeight = 26;
-        int rightX = width - 170;
-        int y = 80;
+        int buttonHeight = 24;
+        int y = guiTop + 50;
         
         // Action buttons - compact layout
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.reload_all"), this::reloadAll);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.reload_all"), this::reloadAll);
         y += buttonHeight + 4;
         
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.validate_selected"), this::validateSelected);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.validate_selected"), this::validateSelected);
         y += buttonHeight + 4;
         
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.graph_editor"), this::openGraphEditor);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.graph_editor"), this::openGraphEditor);
         y += buttonHeight + 12;
         
         // Locations Group
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.set_spawn"), this::setSpawnLocation);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.set_spawn"), this::setSpawnLocation);
         y += buttonHeight + 4;
         
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.set_return"), this::setReturnLocation);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.set_return"), this::setReturnLocation);
         y += buttonHeight + 4;
         
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.tp_to_scene"), this::teleportToScene);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.tp_to_scene"), this::teleportToScene);
         y += buttonHeight + 12;
         
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.create_template"), this::createTemplate);
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight, Component.translatable("gui.storyadventure.admin.stories.create_template"), this::createTemplate);
         
         // Close button
-        addStrangerButton(width / 2 - 60, height - 45, 120, 28,
+        addStrangerButton(guiLeft + guiWidth / 2 - 60, guiTop + guiHeight - 35, 120, 24,
             Component.translatable("gui.storyadventure.admin.stories.close"), this::onClose);
             
         // Request fresh data - use direct payload to avoid re-open loop
@@ -76,20 +86,20 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // Story list
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - 230;
-        int listHeight = height - 110;
+        int listX = guiLeft + 15;
+        int listY = guiTop + 45;
+        int listWidth = guiWidth - 190;
+        int listHeight = guiHeight - 115;
         
         graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0080808);
         drawPanelBorder(graphics, listX, listY, listWidth, listHeight);
         
         // Headers
         graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.id"), listX + 10, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.name"), listX + 120, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.nodes"), listX + listWidth - 140, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.version"), listX + listWidth - 80, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.status"), listX + listWidth - 40, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.name"), listX + 110, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.nodes"), listX + listWidth - 150, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.version"), listX + listWidth - 100, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.col.status"), listX + listWidth - 50, listY + 8, COLOR_NEON_RED);
         
         graphics.fill(listX + 5, listY + 22, listX + listWidth - 5, listY + 23, COLOR_BORDER);
         
@@ -117,11 +127,11 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         int validCount = (int) stories.stream().filter(s -> s.valid).count();
         Component stats = Component.translatable("gui.storyadventure.admin.stories.stats", 
             stories.size(), validCount, stories.size() - validCount);
-        graphics.drawString(font, stats, 40, height - 70, COLOR_TEXT_DIM);
+        graphics.drawString(font, stats, guiLeft + 20, guiTop + guiHeight - 65, COLOR_TEXT_DIM);
     }
     
     private void renderStoryEntry(GuiGraphics graphics, StoryInfo info, 
-                                   int x, int y, int width, boolean selected, int mouseX, int mouseY) {
+                                    int x, int y, int width, boolean selected, int mouseX, int mouseY) {
         boolean hovered = mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + STORY_ENTRY_HEIGHT - 2;
         
         int bgColor = selected ? 0xFF1A0808 : (hovered ? 0xFF100505 : 0xFF0A0A0A);
@@ -135,22 +145,17 @@ public class AdminStoryManagerScreen extends StrangerScreen {
         graphics.drawString(font, truncate(info.id, 18), x + 10, y + 8, COLOR_TEXT_BODY);
         
         // Name
-        graphics.drawString(font, truncate(info.name, 20), x + 120, y + 8, COLOR_TEXT_BODY);
+        graphics.drawString(font, truncate(info.name, 20), x + 110, y + 8, COLOR_TEXT_BODY);
         
         // Node count
-        graphics.drawString(font, String.valueOf(info.nodeCount), x + width - 135, y + 8, COLOR_TEXT_DIM);
+        graphics.drawString(font, String.valueOf(info.nodeCount), x + width - 140, y + 8, COLOR_TEXT_DIM);
         
         // Version
-        graphics.drawString(font, info.version, x + width - 80, y + 8, COLOR_TEXT_DIM);
+        graphics.drawString(font, info.version, x + width - 90, y + 8, COLOR_TEXT_DIM);
         
         // Status
-        String statusText = info.valid ? "Valid" : "Error"; // Shorten "Valid" to just symbol or short text? The header is "Status"
-        // Or keep translatable but ensure it fits? "Valid" is short enough.
-        // But previously it was "status.valid" translation.
-        statusText = info.valid ? Component.translatable("gui.storyadventure.admin.stories.status.valid").getString() 
-                                      : Component.translatable("gui.storyadventure.admin.stories.status.error").getString();
-        // Since "Valid" is short, we can use an icon or text.
-        // Let's draw it right aligned or something.
+        String statusText = info.valid ? Component.translatable("gui.storyadventure.admin.stories.status.valid").getString() 
+                                       : Component.translatable("gui.storyadventure.admin.stories.status.error").getString();
         graphics.drawString(font, statusText, x + width - 40, y + 8, statusColor);
         
         // Error preview
@@ -160,12 +165,12 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     }
     
     private void renderStoryDetails(GuiGraphics graphics, StoryInfo info) {
-        int detailsY = height - 100;
+        int detailsY = guiTop + guiHeight - 110;
         
         if (!info.valid && !info.errorMsg.isEmpty()) {
-            graphics.fill(30, detailsY - 5, width - 30, detailsY + 25, 0xE01A0808);
-            graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.error_details"), 40, detailsY, 0xFFFF6666);
-            graphics.drawString(font, info.errorMsg, 40, detailsY + 12, 0xFFAA4444);
+            graphics.fill(guiLeft + 15, detailsY - 5, guiLeft + 15 + guiWidth - 190, detailsY + 25, 0xE01A0808);
+            graphics.drawString(font, Component.translatable("gui.storyadventure.admin.stories.error_details"), guiLeft + 25, detailsY, 0xFFFF6666);
+            graphics.drawString(font, info.errorMsg, guiLeft + 25, detailsY + 12, 0xFFAA4444);
         }
     }
     
@@ -188,10 +193,10 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - 230;
-        int listHeight = height - 110;
+        int listX = guiLeft + 15;
+        int listY = guiTop + 45;
+        int listWidth = guiWidth - 190;
+        int listHeight = guiHeight - 115;
         
         if (mouseX >= listX && mouseX < listX + listWidth && 
             mouseY >= listY + 28 && mouseY < listY + listHeight) {
@@ -208,7 +213,8 @@ public class AdminStoryManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
-        int visibleCount = (height - 110 - 30) / STORY_ENTRY_HEIGHT;
+        int listHeight = guiHeight - 115;
+        int visibleCount = (listHeight - 30) / STORY_ENTRY_HEIGHT;
         if (vAmount > 0 && scrollOffset > 0) {
             scrollOffset--;
             return true;

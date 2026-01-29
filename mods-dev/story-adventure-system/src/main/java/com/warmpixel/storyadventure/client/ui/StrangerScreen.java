@@ -27,18 +27,45 @@ public abstract class StrangerScreen extends Screen {
     protected final List<StrangerButton> strangerButtons = new ArrayList<>();
     protected long screenOpenTime;
     
+    protected int guiLeft;
+    protected int guiTop;
+    protected int guiWidth;
+    protected int guiHeight;
+    
     protected StrangerScreen(Component title) {
         super(title);
         this.screenOpenTime = System.currentTimeMillis();
     }
+
+    @Override
+    protected void init() {
+        super.init();
+        this.guiWidth = getWindowWidth();
+        this.guiHeight = getWindowHeight();
+        this.guiLeft = (this.width - this.guiWidth) / 2;
+        this.guiTop = (this.height - this.guiHeight) / 2;
+    }
+
+    protected int getWindowWidth() {
+        return Math.min(width - 40, 480);
+    }
+
+    protected int getWindowHeight() {
+        return Math.min(height - 40, 320);
+    }
     
     @Override
     public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        // Render dark background with vignette effect
+        // Full screen background dimming
+        graphics.fill(0, 0, width, height, 0x99000000);
+
+        // Render themed window background
         renderStrangerBackground(graphics);
         
+        // Render window frame
+        renderWindowFrame(graphics);
+        
         // Render title with glow
-        // Render title/tabs
         renderTitle(graphics, mouseX, mouseY);
         
         // Render custom buttons
@@ -48,75 +75,83 @@ public abstract class StrangerScreen extends Screen {
         
         // Render content (subclass implementation)
         renderContent(graphics, mouseX, mouseY, partialTick);
-        
     }
     
     protected void renderStrangerBackground(GuiGraphics graphics) {
-        // Full screen dark gradient
-        int centerX = width / 2;
-        int centerY = height / 2;
+        // Draw the dark background inside the window
+        graphics.fill(guiLeft, guiTop, guiLeft + guiWidth, guiTop + guiHeight, COLOR_BG_DARK);
         
-        // Base dark fill
-        graphics.fill(0, 0, width, height, COLOR_BG_DARK);
+        // Clip decorative elements to window bounds
+        graphics.enableScissor(guiLeft, guiTop, guiLeft + guiWidth, guiTop + guiHeight);
         
         // Render 80s Grid
         renderGrid(graphics);
         
-        // Radial vignette effect (darker at edges)
-        for (int layer = 0; layer < 5; layer++) {
-            int alpha = 20 + layer * 8;
-            int vignetteColor = (alpha << 24);
-            int inset = layer * 40;
-            
-            // Top
-            graphics.fill(0, 0, width, inset, vignetteColor);
-            // Bottom
-            graphics.fill(0, height - inset, width, height, vignetteColor);
-            // Left
-            graphics.fill(0, 0, inset, height, vignetteColor);
-            // Right
-            graphics.fill(width - inset, 0, width, height, vignetteColor);
-        }
-        
-        // Subtle neutral glow in center
-        int glowRadius = 120;
+        // Subtle neutral glow in window center
+        int centerX = guiLeft + guiWidth / 2;
+        int centerY = guiTop + guiHeight / 2;
+        int glowRadius = Math.min(guiWidth, guiHeight) / 2;
         int glowColor = 0x0C1D2630;
         graphics.fill(centerX - glowRadius, centerY - glowRadius,
             centerX + glowRadius, centerY + glowRadius, glowColor);
             
         renderScanlines(graphics);
+        
+        graphics.disableScissor();
+    }
+    
+    protected void renderWindowFrame(GuiGraphics graphics) {
+        // Main window border (Neon Red)
+        renderRectOutline(graphics, guiLeft, guiTop, guiWidth, guiHeight, COLOR_NEON_RED);
+        
+        // Corner accents
+        int cs = 12;
+        int thick = 2;
+        // Top-Left
+        graphics.fill(guiLeft - thick, guiTop - thick, guiLeft + cs, guiTop, COLOR_NEON_RED);
+        graphics.fill(guiLeft - thick, guiTop - thick, guiLeft, guiTop + cs, COLOR_NEON_RED);
+        // Top-Right
+        graphics.fill(guiLeft + guiWidth - cs, guiTop - thick, guiLeft + guiWidth + thick, guiTop, COLOR_NEON_RED);
+        graphics.fill(guiLeft + guiWidth, guiTop - thick, guiLeft + guiWidth + thick, guiTop + cs, COLOR_NEON_RED);
+        // Bottom-Left
+        graphics.fill(guiLeft - thick, guiTop + guiHeight, guiLeft + cs, guiTop + guiHeight + thick, COLOR_NEON_RED);
+        graphics.fill(guiLeft - thick, guiTop + guiHeight - cs, guiLeft, guiTop + guiHeight + thick, COLOR_NEON_RED);
+        // Bottom-Right
+        graphics.fill(guiLeft + guiWidth - cs, guiTop + guiHeight, guiLeft + guiWidth + thick, guiTop + guiHeight + thick, COLOR_NEON_RED);
+        graphics.fill(guiLeft + guiWidth, guiTop + guiHeight - cs, guiLeft + guiWidth + thick, guiTop + guiHeight + thick, COLOR_NEON_RED);
+
+        // Subtle outer glow
+        int outerGlow = 0x303BB6A6;
+        renderRectOutline(graphics, guiLeft - 1, guiTop - 1, guiWidth + 2, guiHeight + 2, outerGlow);
     }
     
     protected void renderGrid(GuiGraphics graphics) {
         int gridSize = 40;
-        int gridColor = 0x08FFFFFF; // Very faint white/cyan
+        int gridColor = 0x08FFFFFF;
         
-        // Moving grid effect
         long time = System.currentTimeMillis();
         int offset = (int)((time / 50) % gridSize);
         
-        // Perspective-ish grid (simple bottom half)
         // Vertical lines
-        for (int x = 0; x <= width; x += gridSize) {
-            graphics.fill(x, 0, x + 1, height, gridColor);
+        for (int x = guiLeft + (guiWidth % gridSize) / 2; x <= guiLeft + guiWidth; x += gridSize) {
+            graphics.fill(x, guiTop, x + 1, guiTop + guiHeight, gridColor);
         }
         
         // Horizontal lines
-        for (int y = -offset; y <= height; y += gridSize) {
-            if (y >= 0) graphics.fill(0, y, width, y + 1, gridColor);
+        for (int y = guiTop - offset; y <= guiTop + guiHeight; y += gridSize) {
+            if (y >= guiTop) graphics.fill(guiLeft, y, guiLeft + guiWidth, y + 1, gridColor);
         }
     }
     
     protected void renderScanlines(GuiGraphics graphics) {
-        // Subtle scanline overlay
         int scanColor = 0x03000000;
-        for(int y = 0; y < height; y += 4) {
-            graphics.fill(0, y, width, y+1, scanColor);
+        for(int y = guiTop; y < guiTop + guiHeight; y += 4) {
+            graphics.fill(guiLeft, y, guiLeft + guiWidth, y+1, scanColor);
         }
     }
     
     protected void renderTitle(GuiGraphics graphics, int mouseX, int mouseY) {
-         // Default implementation just centers title if not overridden
+         // Default implementation just centers title in window
         renderCenteredTitle(graphics, title.getString());
     }
     
@@ -127,8 +162,8 @@ public abstract class StrangerScreen extends Screen {
         int glowColor = (glowAlpha << 24) | (COLOR_NEON_PINK & 0x00FFFFFF);
         
         int titleWidth = font.width(text);
-        int titleX = (width - titleWidth) / 2;
-        int titleY = 20;
+        int titleX = guiLeft + (guiWidth - titleWidth) / 2;
+        int titleY = guiTop + 15;
         
         // Draw glow behind text
         graphics.fill(titleX - 10, titleY - 4, titleX + titleWidth + 10, titleY + 14, glowColor);

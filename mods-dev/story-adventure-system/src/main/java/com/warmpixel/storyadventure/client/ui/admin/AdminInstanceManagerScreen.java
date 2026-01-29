@@ -53,11 +53,21 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 600);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 400);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
-        int sidebarX = width - SIDEBAR_WIDTH - 20;
-        int buttonY = 100;
+        int sidebarX = guiLeft + guiWidth - SIDEBAR_WIDTH - 10;
+        int buttonY = guiTop + 50;
         int buttonWidth = SIDEBAR_WIDTH - 20;
         int buttonHeight = 24;
         int gap = 6;
@@ -92,7 +102,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
             Component.translatable("gui.storyadventure.admin.instances.refresh"), this::refreshList);
         
         // Close button at bottom
-        addStrangerButton(width / 2 - 60, height - 45, 120, 28,
+        addStrangerButton(guiLeft + guiWidth / 2 - 60, guiTop + guiHeight - 35, 120, 24,
             Component.translatable("gui.storyadventure.admin.instances.close"), this::onClose);
         
         updateButtonStates();
@@ -104,10 +114,10 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // Main list area
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - SIDEBAR_WIDTH - 70;
-        int listHeight = height - 110;
+        int listX = guiLeft + 15;
+        int listY = guiTop + 45;
+        int listWidth = guiWidth - SIDEBAR_WIDTH - 35;
+        int listHeight = guiHeight - 95;
         
         // List background
         graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0080808);
@@ -115,10 +125,10 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         
         // Column headers
         graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.story"), listX + 10, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.node"), listX + 150, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.status"), listX + 300, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.players"), listX + 380, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.time"), listX + 430, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.node"), listX + 120, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.status"), listX + 220, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.players"), listX + 300, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.col.time"), listX + 350, listY + 8, COLOR_NEON_RED);
         
         graphics.fill(listX + 5, listY + 22, listX + listWidth - 5, listY + 23, COLOR_BORDER);
         
@@ -176,34 +186,35 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         graphics.drawString(font, shortId, x + 10, y + 22, COLOR_TEXT_DIM);
         
         // Current node
-        graphics.drawString(font, truncate(info.currentNode, 18), x + 150, y + 8, COLOR_TEXT_BODY);
+        graphics.drawString(font, truncate(info.currentNode, 16), x + 120, y + 8, COLOR_TEXT_BODY);
         
         // Status with color
-        graphics.drawString(font, getStatusText(info.status), x + 300, y + 8, accentColor);
+        graphics.drawString(font, getStatusText(info.status), x + 220, y + 8, accentColor);
         
         // Player count
-        graphics.drawString(font, String.valueOf(info.playerCount), x + 385, y + 8, COLOR_TEXT_BODY);
+        graphics.drawString(font, String.valueOf(info.playerCount), x + 305, y + 8, COLOR_TEXT_BODY);
         
         // Elapsed time
         String timeStr = formatDuration(info.elapsedMs);
-        graphics.drawString(font, timeStr, x + 430, y + 8, COLOR_TEXT_DIM);
+        graphics.drawString(font, timeStr, x + 350, y + 8, COLOR_TEXT_DIM);
         
         // Progress bar placeholder
-        int progressWidth = width - 500;
-        if (progressWidth > 50) {
-            graphics.fill(x + 480, y + 10, x + 480 + progressWidth, y + 14, 0xFF222222);
+        int progressWidth = width - 420;
+        if (progressWidth > 40) {
+            graphics.fill(x + 410, y + 10, x + 410 + progressWidth, y + 14, 0xFF222222);
             int filledWidth = (int)(progressWidth * 0.35); // Placeholder progress
-            graphics.fill(x + 480, y + 10, x + 480 + filledWidth, y + 14, accentColor);
+            graphics.fill(x + 410, y + 10, x + 410 + filledWidth, y + 14, accentColor);
         }
     }
     
     private void renderSidebar(GuiGraphics graphics) {
-        int sidebarX = width - SIDEBAR_WIDTH - 20;
-        int sidebarY = 50;
+        int sidebarX = guiLeft + guiWidth - SIDEBAR_WIDTH - 15;
+        int sidebarY = guiTop + 45;
+        int sidebarHeight = guiHeight - 95;
         
         // Sidebar background
-        graphics.fill(sidebarX, sidebarY, sidebarX + SIDEBAR_WIDTH, height - 60, 0xE0080808);
-        drawPanelBorder(graphics, sidebarX, sidebarY, SIDEBAR_WIDTH, height - 110);
+        graphics.fill(sidebarX, sidebarY, sidebarX + SIDEBAR_WIDTH, sidebarY + sidebarHeight, 0xE0080808);
+        drawPanelBorder(graphics, sidebarX, sidebarY, SIDEBAR_WIDTH, sidebarHeight);
         
         // Title
         graphics.drawString(font, Component.translatable("gui.storyadventure.admin.instances.actions"), sidebarX + 10, sidebarY + 8, COLOR_NEON_RED);
@@ -225,10 +236,11 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     }
     
     private void renderStatsBar(GuiGraphics graphics) {
-        int barY = height - 55;
+        int barY = guiTop + guiHeight - 55;
+        int barWidth = guiWidth - 30;
         
         // Stats background
-        graphics.fill(30, barY, width - 30, barY + 20, 0xC0080808);
+        graphics.fill(guiLeft + 15, barY, guiLeft + 15 + barWidth, barY + 20, 0xC0080808);
         
         // Stats
         Component stats = Component.translatable("gui.storyadventure.admin.instances.stats_bar",
@@ -236,7 +248,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
             instances.stream().mapToInt(i -> i.playerCount).sum(),
             Component.translatable("gui.storyadventure.admin.dashboard.status_ok").getString());
         
-        graphics.drawString(font, stats, 40, barY + 6, COLOR_TEXT_DIM);
+        graphics.drawString(font, stats, guiLeft + 25, barY + 6, COLOR_TEXT_DIM);
     }
     
     private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {
@@ -298,10 +310,10 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         }
         
         // Check for instance selection
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - SIDEBAR_WIDTH - 70;
-        int listHeight = height - 110;
+        int listX = guiLeft + 15;
+        int listY = guiTop + 45;
+        int listWidth = guiWidth - SIDEBAR_WIDTH - 35;
+        int listHeight = guiHeight - 95;
         
         if (mouseX >= listX && mouseX < listX + listWidth && 
             mouseY >= listY + 28 && mouseY < listY + listHeight) {
@@ -324,7 +336,8 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
             return skipNodePanel.mouseScrolled(mouseX, mouseY, vAmount);
         }
         
-        int visibleCount = (height - 110 - 30) / INSTANCE_ENTRY_HEIGHT;
+        int listHeight = guiHeight - 95;
+        int visibleCount = (listHeight - 30) / INSTANCE_ENTRY_HEIGHT;
         if (vAmount > 0 && scrollOffset > 0) {
             scrollOffset--;
             return true;
@@ -390,7 +403,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private void pauseInstance() {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
-            ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.PAUSE, info.id));
+            ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.PAUSE, info.id, ""));
             showMessage(Component.translatable("command.storyadventure.admin.instances.pausing", info.id.toString().substring(0, 8)).getString());
             info = new InstanceInfo(info.id, info.storyName, info.currentNode, "PAUSED", info.playerCount, info.elapsedMs);
             instances.set(selectedIndex, info);
@@ -400,7 +413,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private void resumeInstance() {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
-            ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.RESUME, info.id));
+            ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.RESUME, info.id, ""));
             showMessage(Component.translatable("command.storyadventure.admin.instances.resuming", info.id.toString().substring(0, 8)).getString());
             info = new InstanceInfo(info.id, info.storyName, info.currentNode, "RUNNING", info.playerCount, info.elapsedMs);
             instances.set(selectedIndex, info);
@@ -410,13 +423,13 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private void skipNode() {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
-            String shortId = info.id.toString().substring(0, 8);
             
             // Show node selector panel
             skipNodePanel = new NodeSelectorPanel(Component.translatable("gui.storyadventure.admin.instances.select_target_node").getString(), 
                 nodeId -> {
-                    sendCommand("storyadmin skip " + shortId + " " + nodeId);
+                    ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.SKIP_NODE, info.id, nodeId));
                     showMessage(Component.translatable("command.storyadventure.admin.instances.skipping", nodeId).getString());
+                    onClose(); // Auto close the skip panel
                 },
                 () -> {} // Cancel - do nothing
             );
@@ -438,16 +451,14 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
     private void forceComplete() {
         if (selectedIndex >= 0 && selectedIndex < instances.size()) {
             InstanceInfo info = instances.get(selectedIndex);
-            String shortId = info.id.toString().substring(0, 8);
             
             // Show completion options panel
             forceCompletePanel = ConfirmationPanel.builder(Component.translatable("gui.storyadventure.admin.instances.confirm_complete_title").getString())
                 .description(Component.translatable("gui.storyadventure.admin.instances.confirm_complete_desc").getString())
                 .withInput(Component.translatable("gui.storyadventure.admin.instances.confirm_complete_input").getString())
                 .onConfirm(result -> {
-                    String outcome = result.isEmpty() ? "success" : result;
-                    sendCommand("storyadmin complete " + shortId + " " + outcome);
-                    showMessage(Component.translatable("command.storyadventure.admin.instances.forced_complete", shortId, outcome).getString());
+                    ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.COMPLETE, info.id, result));
+                    showMessage(Component.translatable("command.storyadventure.admin.instances.forced_complete", info.id.toString().substring(0, 8), result).getString());
                 })
                 .onCancel(() -> {})
                 .build();
@@ -467,7 +478,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
                 .dangerous()
                 .withInput(Component.translatable("gui.storyadventure.admin.instances.confirm_terminate_input").getString())
                 .onConfirm(reason -> {
-                    ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.TERMINATE, info.id));
+                    ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.TERMINATE, info.id, reason));
                     showMessage(Component.translatable("command.storyadventure.admin.instances.terminated", shortId).getString());
                     
                     // Remove from local list immediately for responsiveness
@@ -495,7 +506,7 @@ public class AdminInstanceManagerScreen extends StrangerScreen {
         showMessage(Component.translatable("command.storyadventure.admin.instances.listing").getString());
         
         // Request direct sync from server
-        ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.SYNC, null));
+        ClientPlayNetworking.send(new AdminInstanceActionPayload(AdminInstanceActionPayload.Action.SYNC, null, ""));
     }
     
     /**

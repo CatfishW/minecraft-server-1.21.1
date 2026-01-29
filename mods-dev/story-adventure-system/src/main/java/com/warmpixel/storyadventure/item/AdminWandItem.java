@@ -87,13 +87,20 @@ public class AdminWandItem extends Item {
             return InteractionResult.PASS;
         }
         
-        // Shift+Right Click on entity = inspect NBT and tags
-        if (player.isShiftKeyDown() && !player.level().isClientSide) {
-            inspectEntity(player, target);
+        // Shift+Right Click on entity = Animation Preview UI
+        if (player.isShiftKeyDown()) {
+            if (player.level().isClientSide) {
+                openAnimationPreview(target);
+            }
             return InteractionResult.SUCCESS;
         }
         
         return InteractionResult.PASS;
+    }
+
+    @net.fabricmc.api.Environment(net.fabricmc.api.EnvType.CLIENT)
+    private void openAnimationPreview(LivingEntity target) {
+        Minecraft.getInstance().setScreen(new com.warmpixel.storyadventure.client.ui.admin.AnimationPreviewScreen(target));
     }
     
     /**

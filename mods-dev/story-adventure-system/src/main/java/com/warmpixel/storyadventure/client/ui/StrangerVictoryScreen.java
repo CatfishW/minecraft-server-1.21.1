@@ -42,13 +42,23 @@ public class StrangerVictoryScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 240);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 260);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
-        int buttonWidth = 160;
-        int buttonHeight = 30;
-        int buttonX = (width - buttonWidth) / 2;
-        int buttonY = height - 60;
+        int buttonWidth = 120;
+        int buttonHeight = 26;
+        int buttonX = guiLeft + (guiWidth - buttonWidth) / 2;
+        int buttonY = guiTop + guiHeight - 40;
         
         addStrangerButton(buttonX, buttonY, buttonWidth, buttonHeight,
             Component.literal("确认返回"), this::onConfirmClick);
@@ -90,8 +100,8 @@ public class StrangerVictoryScreen extends StrangerScreen {
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int centerX = width / 2;
-        int y = 50;
+        int centerX = guiLeft + guiWidth / 2;
+        int y = guiTop + 45;
         
         // Pulsing star effect
         float pulse = (float)(0.7 + 0.3 * Math.sin((System.currentTimeMillis() - screenOpenTime) / 300.0));
@@ -102,30 +112,30 @@ public class StrangerVictoryScreen extends StrangerScreen {
         String congrats = "★ 任务完成！ ★";
         int congratsWidth = font.width(congrats);
         graphics.drawString(font, congrats, centerX - congratsWidth / 2, y, starColor);
-        y += 25;
+        y += 20;
         
         // Draw story name
         String storyText = storyName;
         int storyWidth = font.width(storyText);
         graphics.drawString(font, storyText, centerX - storyWidth / 2, y, COLOR_TEXT_TITLE);
-        y += 15;
+        y += 12;
         
         // Draw separator
-        int sepWidth = 180;
+        int sepWidth = 140;
         graphics.fill(centerX - sepWidth / 2, y, centerX + sepWidth / 2, y + 1, COLOR_BORDER);
-        y += 15;
+        y += 12;
         
         // Draw completion time
         String timeStr = formatTime(completionTimeMs);
         String timeLabel = "完成时间: " + timeStr;
         int timeWidth = font.width(timeLabel);
         graphics.drawString(font, timeLabel, centerX - timeWidth / 2, y, COLOR_TEXT_BODY);
-        y += 25;
+        y += 20;
         
         // Draw rewards section
         if (!rewards.isEmpty()) {
             // Rewards box
-            int boxWidth = 220;
+            int boxWidth = 180;
             int boxHeight = 20 + rewards.size() * 18;
             int boxX = centerX - boxWidth / 2;
             int boxY = y;
@@ -134,10 +144,7 @@ public class StrangerVictoryScreen extends StrangerScreen {
             graphics.fill(boxX, boxY, boxX + boxWidth, boxY + boxHeight, 0xC0101010);
             
             // Draw box border
-            graphics.fill(boxX, boxY, boxX + boxWidth, boxY + 1, COLOR_BORDER);
-            graphics.fill(boxX, boxY + boxHeight - 1, boxX + boxWidth, boxY + boxHeight, COLOR_BORDER);
-            graphics.fill(boxX, boxY, boxX + 1, boxY + boxHeight, COLOR_BORDER);
-            graphics.fill(boxX + boxWidth - 1, boxY, boxX + boxWidth, boxY + boxHeight, COLOR_BORDER);
+            renderRectOutline(graphics, boxX, boxY, boxWidth, boxHeight, COLOR_BORDER);
             
             // Draw rewards header
             String rewardsHeader = "— 奖励 —";
@@ -152,13 +159,13 @@ public class StrangerVictoryScreen extends StrangerScreen {
                 rewardY += 18;
             }
             
-            y = boxY + boxHeight + 20;
+            y = boxY + boxHeight + 15;
         }
         
         // Draw countdown
         String countdownText = "(" + countdownSeconds + " 秒后自动返回)";
         int countdownWidth = font.width(countdownText);
-        int countdownY = height - 35;
+        int countdownY = guiTop + guiHeight - 15;
         
         // Flash when low
         int countdownColor = countdownSeconds <= 3 ? 

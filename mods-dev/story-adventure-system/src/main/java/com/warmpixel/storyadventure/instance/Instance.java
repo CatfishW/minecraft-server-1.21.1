@@ -15,6 +15,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.Mob;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
@@ -23,6 +25,7 @@ import com.google.gson.JsonElement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -50,11 +53,18 @@ public class Instance {
     private InstanceStatus status;
     private long startTimeMillis;
     private long lastUpdateMillis;
+    private long timeLimitMillis;
+    private long lastPlayerCheckMillis;
+    private static final long PLAYER_CHECK_INTERVAL_MS = 30000; // Check every 30 seconds
     
     // Waypoints and triggers
     private final Map<String, Waypoint> activeWaypoints = new HashMap<>();
     private final Map<String, TriggerBox> activeTriggers = new HashMap<>();
     private MinecraftServer server;
+
+    // Track enemy entity UUIDs for combat nodes (to detect deaths from any cause)
+    private final Set<UUID> trackedEnemyEntities = new HashSet<>();
+    private int combatCheckCooldown = 0;
     
     // Delayed tasks system
     private final List<DelayedTask> pendingTasks = new CopyOnWriteArrayList<>();
@@ -75,6 +85,8 @@ public class Instance {
         this.status = InstanceStatus.CREATED;
         this.startTimeMillis = System.currentTimeMillis();
         this.lastUpdateMillis = startTimeMillis;
+        this.timeLimitMillis = graph.getTimeLimitMinutes() * 60L * 1000L;
+        this.lastPlayerCheckMillis = 0;
         
         // Initialize flags with defaults from graph
         for (var flag : graph.getAllFlags()) {
@@ -97,6 +109,27 @@ public class Instance {
     public long getStartTimeMillis() { return startTimeMillis; }
     public long getElapsedMillis() { return System.currentTimeMillis() - startTimeMillis; }
     public MinecraftServer getServer() { return server; }
+
+    /**
+     * Get the time limit in milliseconds for this instance.
+     */
+    public long getTimeLimitMillis() {
+        return timeLimitMillis;
+    }
+
+    /**
+     * Get the remaining time in milliseconds.
+     */
+    public long getRemainingMillis() {
+        return Math.max(0, timeLimitMillis - getElapsedMillis());
+    }
+
+    /**
+     * Check if the instance has exceeded its time limit.
+     */
+    public boolean isTimeLimitExceeded() {
+        return timeLimitMillis > 0 && getElapsedMillis() >= timeLimitMillis;
+    }
     
     public StageNode getCurrentNode() {
         return graph.getNode(currentNodeId);
@@ -164,8 +197,10 @@ public class Instance {
         status = InstanceStatus.RUNNING;
         this.server = server;
         startTimeMillis = System.currentTimeMillis();
-        
-        StoryAdventureMod.LOGGER.info("[Instance.start] Status set to RUNNING. Start time: {}", startTimeMillis);
+        lastPlayerCheckMillis = startTimeMillis;
+
+        StoryAdventureMod.LOGGER.info("[Instance.start] Status set to RUNNING. Start time: {}, Time limit: {} minutes",
+            startTimeMillis, graph.getTimeLimitMinutes());
         
         // Remove entities from previous instances that no longer exist.
         cleanupOrphanedInstanceEntities(server);
@@ -283,35 +318,234 @@ public class Instance {
 
     public void tick() {
         if (status == InstanceStatus.RUNNING) {
+            long currentTime = System.currentTimeMillis();
+
+            // Check time limit (every second)
+            if (server.getTickCount() % 20 == 0) {
+                if (isTimeLimitExceeded()) {
+                    StoryAdventureMod.LOGGER.warn("[Instance] Time limit exceeded for instance {}. Failing instance.", instanceId);
+                    failWithReason("副本时间已耗尽");
+                    return;
+                }
+            }
+
+            // Check if all players are offline (every 30 seconds)
+            if (currentTime - lastPlayerCheckMillis >= PLAYER_CHECK_INTERVAL_MS) {
+                lastPlayerCheckMillis = currentTime;
+                if (!hasAnyOnlinePlayers()) {
+                    StoryAdventureMod.LOGGER.warn("[Instance] No online players in instance {}. Failing instance.", instanceId);
+                    failWithReason("所有玩家已离线");
+                    return;
+                }
+            }
+
             StageNode current = getCurrentNode();
             if (current != null) {
                 var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(current.getType());
                 if (handler != null) {
                     // Debug log every 10 seconds for active node ticking
                     if (server.getTickCount() % 200 == 0) {
-                        StoryAdventureMod.LOGGER.debug("[Instance] Ticking node: {} (type: {}) for instance {}", 
+                        StoryAdventureMod.LOGGER.debug("[Instance] Ticking node: {} (type: {}) for instance {}",
                             currentNodeId, current.getType(), instanceId);
                     }
                     handler.onTick(this, current);
                 }
             }
-            
+
             // Check triggers for all party members
             checkPlayerTriggers();
-            
+
             // Check instance area boundary
             checkInstanceAreaBoundary();
-            
+
             // Clear law status for players in instance (every 5 seconds)
             if (server.getTickCount() % 100 == 0) {
                 clearLawForPlayers();
             }
-            
+
             // Process delayed tasks
             processDelayedTasks();
+
+            // Handle ally and enemy NPC AI logic
+            tickNPCAI();
+
+            // Check for enemy entity deaths (from any cause)
+            checkTrackedEnemyDeaths();
+        }
+
+        lastUpdateMillis = System.currentTimeMillis();
+    }
+
+    /**
+     * Track an enemy entity UUID for death monitoring.
+     * Used by combat nodes to track enemies that need to be killed.
+     */
+    public void trackEnemyEntity(UUID entityId) {
+        trackedEnemyEntities.add(entityId);
+        StoryAdventureMod.LOGGER.debug("[Instance] Tracking enemy entity: {} (total tracked: {})",
+            entityId, trackedEnemyEntities.size());
+    }
+
+    /**
+     * Clear all tracked enemy entities.
+     * Called when leaving a combat node.
+     */
+    public void clearTrackedEnemies() {
+        trackedEnemyEntities.clear();
+    }
+
+    /**
+     * Check tracked enemy entities and count removals as deaths.
+     * This ensures enemies killed by any cause (fall, lava, other mobs) are counted.
+     */
+    private void checkTrackedEnemyDeaths() {
+        if (trackedEnemyEntities.isEmpty()) return;
+
+        // Only check every 10 ticks (0.5 seconds) to reduce overhead
+        combatCheckCooldown++;
+        if (combatCheckCooldown < 10) return;
+        combatCheckCooldown = 0;
+
+        // Check if we're in a combat node
+        StageNode current = getCurrentNode();
+        if (current == null || current.getType() != com.warmpixel.storyadventure.core.graph.NodeType.COMBAT) {
+            // Not in combat, clear tracking
+            trackedEnemyEntities.clear();
+            return;
+        }
+
+        int deathsDetected = 0;
+        Iterator<UUID> it = trackedEnemyEntities.iterator();
+        while (it.hasNext()) {
+            UUID entityId = it.next();
+            boolean stillAlive = false;
+
+            // Check all levels for the entity
+            for (ServerLevel level : server.getAllLevels()) {
+                net.minecraft.world.entity.Entity entity = level.getEntity(entityId);
+                if (entity != null && entity.isAlive()) {
+                    stillAlive = true;
+                    break;
+                }
+            }
+
+            if (!stillAlive) {
+                // Entity is dead or removed, count as killed
+                it.remove();
+                deathsDetected++;
+                StoryAdventureMod.LOGGER.info("[Instance] Tracked enemy {} died (non-player kill), counting toward combat", entityId);
+            }
+        }
+
+        // If any deaths detected, trigger the combat handler
+        if (deathsDetected > 0) {
+            var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(current.getType());
+            if (handler instanceof com.warmpixel.storyadventure.core.node.CombatNodeHandler combatHandler) {
+                for (int i = 0; i < deathsDetected; i++) {
+                    // Create a dummy entity reference for the action
+                    // The handler checks tags, so we pass null and let it increment based on metadata
+                    combatHandler.onEnemyKilledByExternalCause(this, current);
+                }
+            }
+        }
+    }
+
+    /**
+     * Check if any party member is currently online.
+     */
+    private boolean hasAnyOnlinePlayers() {
+        if (server == null) return false;
+        for (UUID memberId : party.getMembers()) {
+            if (server.getPlayerList().getPlayer(memberId) != null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void onAction(ServerPlayer player, String action, Object data) {
+        if (status != InstanceStatus.RUNNING) return;
+        
+        StageNode current = getCurrentNode();
+        if (current != null) {
+            var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(current.getType());
+            if (handler != null) {
+                handler.onAction(this, current, player, action, data);
+            }
+        }
+    }
+
+    private void tickNPCAI() {
+        if (server == null || server.getTickCount() % 10 != 0) return;
+        
+        List<ServerPlayer> members = new ArrayList<>();
+        for (UUID memberId : party.getMembers()) {
+            ServerPlayer p = server.getPlayerList().getPlayer(memberId);
+            if (p != null && p.isAlive() && !p.isCreative() && !p.isSpectator()) {
+                members.add(p);
+            }
         }
         
-        lastUpdateMillis = System.currentTimeMillis();
+        if (members.isEmpty()) return;
+        
+        String instanceTag = "instance_" + instanceId.toString();
+        
+        for (ServerLevel level : server.getAllLevels()) {
+            for (Entity entity : level.getAllEntities()) {
+                Set<String> tags = entity.getTags();
+                if (tags.contains("ally_follow") && tags.contains(instanceTag)) {
+                    if (entity instanceof Mob mob) {
+                        ServerPlayer nearest = null;
+                        double minDistSq = Double.MAX_VALUE;
+                        
+                        for (ServerPlayer player : members) {
+                            if (player.level() == level) {
+                                double d2 = mob.distanceToSqr(player);
+                                if (d2 < minDistSq) {
+                                    minDistSq = d2;
+                                    nearest = player;
+                                }
+                            }
+                        }
+                        
+                        if (nearest != null) {
+                            if (minDistSq > 400) { // Teleport if very far (> 20 blocks)
+                                mob.teleportTo(nearest.getX(), nearest.getY(), nearest.getZ());
+                            } else if (minDistSq > 16) { // Move to if far (> 4 blocks)
+                                mob.getNavigation().moveTo(nearest, 1.2);
+                            } else if (minDistSq < 6.25) { // Stop if close (< 2.5 blocks)
+                                mob.getNavigation().stop();
+                            }
+                        }
+                    }
+                } else if (tags.contains(instanceTag) && (tags.contains("story_enemy") || tags.stream().anyMatch(t -> t.startsWith("enemy_")))) {
+                    if (entity instanceof Mob mob) {
+                        ServerPlayer nearest = null;
+                        double minDistSq = Double.MAX_VALUE;
+                        
+                        for (ServerPlayer player : members) {
+                            if (player.level() == level && !player.isCreative() && !player.isSpectator()) {
+                                double d2 = mob.distanceToSqr(player);
+                                if (d2 < minDistSq) {
+                                    minDistSq = d2;
+                                    nearest = player;
+                                }
+                            }
+                        }
+                        
+                        if (nearest != null) {
+                            // Aggressively find way to player regardless of range
+                            if (minDistSq > 2) { // Only move if not already on top of the player
+                                mob.getNavigation().moveTo(nearest, 1.3);
+                                if (mob.getTarget() != nearest) {
+                                    mob.setTarget(nearest);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     private void processDelayedTasks() {
@@ -376,6 +610,9 @@ public class Instance {
             ""
         );
         
+        // Stop BGM for the player leaving
+        com.warmpixel.storyadventure.network.NetworkHandler.sendBGMStop(player, 20);
+        
         // Send system message
         player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c你离开了故事区域，已被移出副本。"));
         
@@ -437,6 +674,13 @@ public class Instance {
                     StoryAdventureMod.LOGGER.info("[Instance] Trigger activated: player={}, trigger={}", player.getName().getString(), trigger.getId());
                     
                     for (NodeAction action : trigger.getOnEnterActions()) {
+                        if (action instanceof com.warmpixel.storyadventure.core.action.SpawnNPCAction spawnAction) {
+                            spawnAction.setInstanceId(instanceId);
+                        } else if (action instanceof com.warmpixel.storyadventure.core.action.DespawnEntitiesAction despawnAction) {
+                            despawnAction.setInstanceId(instanceId);
+                        } else if (action instanceof com.warmpixel.storyadventure.core.action.CommandAction cmdAction) {
+                            cmdAction.setInstanceId(instanceId);
+                        }
                         action.execute(List.of(player));
                     }
                     
@@ -449,6 +693,13 @@ public class Instance {
                     StoryAdventureMod.LOGGER.debug("[Instance] Player {} exited trigger {}", player.getName().getString(), trigger.getId());
                     
                     for (NodeAction action : trigger.getOnExitActions()) {
+                        if (action instanceof com.warmpixel.storyadventure.core.action.SpawnNPCAction spawnAction) {
+                            spawnAction.setInstanceId(instanceId);
+                        } else if (action instanceof com.warmpixel.storyadventure.core.action.DespawnEntitiesAction despawnAction) {
+                            despawnAction.setInstanceId(instanceId);
+                        } else if (action instanceof com.warmpixel.storyadventure.core.action.CommandAction cmdAction) {
+                            cmdAction.setInstanceId(instanceId);
+                        }
                         action.execute(List.of(player));
                     }
                 }
@@ -538,6 +789,8 @@ public class Instance {
         long elapsedMs = getElapsedMillis();
         StoryAdventureMod.LOGGER.info("Instance {} completed successfully in {}ms",
             instanceId, elapsedMs);
+
+        cleanupBossBars();
         
         // Clean up entities immediately
         cleanupEntities();
@@ -601,6 +854,9 @@ public class Instance {
                         com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_HIDE, 
                         ""
                     );
+                    
+                    // Stop BGM
+                    com.warmpixel.storyadventure.network.NetworkHandler.sendBGMStop(player, 40);
                     
                     // Clear waypoint indicators
                     net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
@@ -690,27 +946,36 @@ public class Instance {
      * Mark the instance as failed.
      */
     public void fail() {
+        failWithReason("团队死亡次数超过限制");
+    }
+
+    /**
+     * Mark the instance as failed with a specific reason.
+     */
+    public void failWithReason(String reason) {
         if (status == InstanceStatus.FAILED || status == InstanceStatus.COMPLETED) {
             // Already ended, don't double-process
             return;
         }
-        
+
         status = InstanceStatus.FAILED;
         long elapsedMs = getElapsedMillis();
-        StoryAdventureMod.LOGGER.info("Instance {} failed after {}ms",
-            instanceId, elapsedMs);
-            
+        StoryAdventureMod.LOGGER.info("Instance {} failed after {}ms. Reason: {}",
+            instanceId, elapsedMs, reason);
+
+        cleanupBossBars();
+
         // Clean up entities
         cleanupEntities();
         cleanupOrphanedInstanceEntities(server);
-        
+
         // Send defeat screen to all party members
         if (server != null) {
             // Build defeat data JSON
             StringBuilder jsonBuilder = new StringBuilder();
             jsonBuilder.append("{");
             jsonBuilder.append("\"storyName\":\"").append(escapeJson(graph.getName())).append("\",");
-            jsonBuilder.append("\"reason\":\"团队死亡次数超过限制\",");
+            jsonBuilder.append("\"reason\":\"").append(escapeJson(reason)).append("\",");
             jsonBuilder.append("\"deathCount\":").append(getTeamDeaths()).append(",");
             jsonBuilder.append("\"maxDeaths\":").append(getMaxTeamDeaths()).append(",");
             jsonBuilder.append("\"rewards\":[");
@@ -757,6 +1022,9 @@ public class Instance {
                         com.warmpixel.storyadventure.network.OpenUIPayload.SCREEN_HUD_HIDE, 
                         ""
                     );
+                    
+                    // Stop BGM
+                    com.warmpixel.storyadventure.network.NetworkHandler.sendBGMStop(player, 40);
                     
                     // Clear waypoint indicators
                     net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking.send(player, 
@@ -822,6 +1090,30 @@ public class Instance {
                 StoryAdventureMod.LOGGER.info("[Instance] Gave {} XP to {} as failure reward", amount, player.getName().getString());
             }
         }
+    }
+
+    /**
+     * Clean up any bossbars created for this instance.
+     */
+    public void cleanupBossBars() {
+        if (server == null) return;
+
+        String bossId = null;
+        if (state.getMetadata().has("boss_bar_id")) {
+            bossId = state.getMetadata().get("boss_bar_id").getAsString();
+        }
+        if (bossId == null || bossId.isBlank()) {
+            bossId = "boss_" + instanceId.toString().replace("-", "_");
+        }
+
+        String removeCmd = String.format("bossbar remove %s", bossId);
+        server.getCommands().performPrefixedCommand(
+            server.createCommandSourceStack().withSuppressedOutput().withPermission(2),
+            removeCmd
+        );
+
+        state.getMetadata().remove("boss_bar_id");
+        state.getMetadata().remove("boss_entity_tag");
     }
     
     /**
@@ -917,6 +1209,9 @@ public class Instance {
                 
                 // Stop any client-side cutscene just in case
                 com.warmpixel.storyadventure.network.NetworkHandler.sendCutsceneStop(player, instanceId.toString());
+
+                // Final BGM stop safeguard
+                com.warmpixel.storyadventure.network.NetworkHandler.sendBGMStop(player, 20);
             }
         }
     }
@@ -982,6 +1277,32 @@ public class Instance {
         
         StoryAdventureMod.LOGGER.debug("[Instance.transitionTo] FAILED: No valid edge found to target {}", targetNodeId);
         return false;
+    }
+
+    /**
+     * Force a transition to a target node, bypassing all condition checks.
+     * Used mainly for administrative "Skip Node" functionality.
+     */
+    public boolean forceTransition(String targetNodeId) {
+        if (targetNodeId == null || !graph.hasNode(targetNodeId)) {
+            StoryAdventureMod.LOGGER.warn("[Admin] Attempted to force transition instance {} to invalid node {}", instanceId, targetNodeId);
+            return false;
+        }
+
+        StoryAdventureMod.LOGGER.info("[Admin] Forcing transition of instance {} to node {}", instanceId, targetNodeId);
+        
+        // Exit current node
+        if (currentNodeId != null) {
+            exitNode(currentNodeId);
+        }
+        
+        // Update current node
+        currentNodeId = targetNodeId;
+        lastUpdateMillis = System.currentTimeMillis();
+        
+        // Enter new node
+        enterNode(targetNodeId);
+        return true;
     }
     
     /**
@@ -1156,6 +1477,58 @@ public class Instance {
         
         StageNode node = graph.getNode(nodeId);
         if (node != null) {
+            // Execute on_exit actions for all party members
+            JsonObject nodeData = node.getData();
+            if (nodeData.has("on_exit") && nodeData.get("on_exit").isJsonArray()) {
+                var actionsArray = nodeData.getAsJsonArray("on_exit");
+                
+                // Get all online party members
+                java.util.List<net.minecraft.server.level.ServerPlayer> onlinePlayers = new java.util.ArrayList<>();
+                for (UUID memberId : party.getMembers()) {
+                    net.minecraft.server.level.ServerPlayer p = server.getPlayerList().getPlayer(memberId);
+                    if (p != null) {
+                        onlinePlayers.add(p);
+                    }
+                }
+                
+                // Execute each action for all players
+                for (var actionElem : actionsArray) {
+                    if (actionElem.isJsonObject()) {
+                        var actionJson = actionElem.getAsJsonObject();
+                        var action = com.warmpixel.storyadventure.core.action.ActionFactory.fromJson(actionJson);
+                        if (action != null) {
+                            try {
+                                if (action instanceof com.warmpixel.storyadventure.core.action.SpawnNPCAction spawnAction) {
+                                    spawnAction.setInstanceId(instanceId);
+                                } else if (action instanceof com.warmpixel.storyadventure.core.action.DespawnEntitiesAction despawnAction) {
+                                    despawnAction.setInstanceId(instanceId);
+                                } else if (action instanceof com.warmpixel.storyadventure.core.action.CommandAction cmdAction) {
+                                    cmdAction.setInstanceId(instanceId);
+                                }
+                                
+                                // Check for delay_ticks - schedule delayed execution if present
+                                int delayTicks = actionJson.has("delay_ticks") ? actionJson.get("delay_ticks").getAsInt() : 0;
+                                if (delayTicks > 0 && server != null) {
+                                    pendingTasks.add(new DelayedTask(
+                                        server.getTickCount() + delayTicks,
+                                        action,
+                                        new ArrayList<>(onlinePlayers)
+                                    ));
+                                    StoryAdventureMod.LOGGER.debug("[Instance.exitNode] Scheduled action for {} ticks later: {}", 
+                                        delayTicks, actionJson.get("type").getAsString());
+                                } else {
+                                    action.execute(onlinePlayers);
+                                    StoryAdventureMod.LOGGER.debug("[Instance.exitNode] Executed action: {} for {} players", 
+                                        actionJson.get("type").getAsString(), onlinePlayers.size());
+                                }
+                            } catch (Exception e) {
+                                StoryAdventureMod.LOGGER.error("[Instance.exitNode] Failed to execute action", e);
+                            }
+                        }
+                    }
+                }
+            }
+
             var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(node.getType());
             if (handler != null) {
                 try {

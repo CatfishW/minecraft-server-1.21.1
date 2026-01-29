@@ -35,44 +35,54 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 600);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 400);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
+        int sidebarX = guiLeft + guiWidth - 160;
         int buttonWidth = 140;
         int buttonHeight = 24;
-        int rightX = width - 170;
-        int y = 80;
+        int y = guiTop + 80;
         
         // Teleport to player
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.admin.players.tp"), this::teleportToPlayer);
         y += buttonHeight + 8;
         
         // Kick from instance
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.admin.players.kick"), this::kickPlayer);
         y += buttonHeight + 8;
         
         // Send message
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.admin.players.message"), this::sendMessageToPlayer);
         y += buttonHeight + 8;
         
         // View player details
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.admin.players.details"), this::viewPlayerDetails);
         y += buttonHeight + 20;
         
         // Refresh button
-        addStrangerButton(rightX, y, buttonWidth, buttonHeight,
+        addStrangerButton(sidebarX, y, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.admin.players.refresh"), this::refreshList);
         
         // Back button
-        addStrangerButton(30, height - 45, 100, 28,
+        addStrangerButton(guiLeft + 15, guiTop + guiHeight - 35, 100, 24,
             Component.translatable("gui.storyadventure.admin.players.back"), this::goBack);
         
         // Close button
-        addStrangerButton(width / 2 - 60, height - 45, 120, 28,
+        addStrangerButton(guiLeft + guiWidth / 2 - 60, guiTop + guiHeight - 35, 120, 24,
             Component.translatable("gui.storyadventure.admin.players.close"), this::onClose);
         
         // Request player data
@@ -82,19 +92,19 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // Player list panel
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - 230;
-        int listHeight = height - 110;
+        int listX = guiLeft + 15;
+        int listY = guiTop + 45;
+        int listWidth = guiWidth - 190;
+        int listHeight = guiHeight - 95;
         
         graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0080808);
         drawPanelBorder(graphics, listX, listY, listWidth, listHeight);
         
         // Headers
         graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.player"), listX + 10, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.instance"), listX + 150, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.node"), listX + 320, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.role"), listX + 450, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.instance"), listX + 110, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.node"), listX + 230, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.players.col.role"), listX + 340, listY + 8, COLOR_NEON_RED);
         
         graphics.fill(listX + 5, listY + 22, listX + listWidth - 5, listY + 23, COLOR_BORDER);
         
@@ -121,7 +131,7 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
     }
     
     private void renderPlayerEntry(GuiGraphics graphics, PlayerInfo info, 
-                                    int x, int y, int width, boolean selected, int mouseX, int mouseY) {
+                                     int x, int y, int width, boolean selected, int mouseX, int mouseY) {
         boolean hovered = mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + PLAYER_ENTRY_HEIGHT - 2;
         
         int bgColor = selected ? 0xFF1A0808 : (hovered ? 0xFF100505 : 0xFF0A0A0A);
@@ -136,21 +146,21 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
         
         // Instance name
         String instanceDisplay = info.instanceName.isEmpty() ? "-" : truncate(info.instanceName, 18);
-        graphics.drawString(font, instanceDisplay, x + 150, y + 10, COLOR_TEXT_BODY);
+        graphics.drawString(font, instanceDisplay, x + 110, y + 10, COLOR_TEXT_BODY);
         
         // Current node
         String nodeDisplay = info.currentNode.isEmpty() ? "-" : truncate(info.currentNode, 16);
-        graphics.drawString(font, nodeDisplay, x + 320, y + 10, COLOR_TEXT_DIM);
+        graphics.drawString(font, nodeDisplay, x + 230, y + 10, COLOR_TEXT_DIM);
         
         // Role
         String roleText = info.isLeader ? Component.translatable("gui.storyadventure.admin.players.role.leader").getString() 
-                                      : Component.translatable("gui.storyadventure.admin.players.role.member").getString();
-        graphics.drawString(font, roleText, x + 450, y + 10, info.isLeader ? COLOR_NEON_RED : COLOR_TEXT_DIM);
+                                       : Component.translatable("gui.storyadventure.admin.players.role.member").getString();
+        graphics.drawString(font, roleText, x + 340, y + 10, info.isLeader ? COLOR_NEON_RED : COLOR_TEXT_DIM);
     }
     
     private void renderSidebar(GuiGraphics graphics) {
-        int sidebarX = width - 170;
-        int sidebarY = 50;
+        int sidebarX = guiLeft + guiWidth - 160;
+        int sidebarY = guiTop + 45;
         int sidebarWidth = 150;
         
         graphics.fill(sidebarX, sidebarY, sidebarX + sidebarWidth, sidebarY + 25, 0xE0080808);
@@ -161,7 +171,7 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
         // Selected player info
         if (selectedIndex >= 0 && selectedIndex < players.size()) {
             PlayerInfo info = players.get(selectedIndex);
-            int infoY = 260;
+            int infoY = guiTop + 260;
             
             graphics.fill(sidebarX, infoY, sidebarX + sidebarWidth, infoY + 80, 0xE0080808);
             drawPanelBorder(graphics, sidebarX, infoY, sidebarWidth, 80);
@@ -175,9 +185,9 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
     }
     
     private void renderStatsBar(GuiGraphics graphics) {
-        int barY = height - 70;
+        int barY = guiTop + guiHeight - 70;
         
-        graphics.fill(30, barY, width - 30, barY + 20, 0xC0080808);
+        graphics.fill(guiLeft + 15, barY, guiLeft + guiWidth - 15, barY + 20, 0xC0080808);
         
         int inInstanceCount = (int) players.stream().filter(p -> !p.instanceName.isEmpty()).count();
         Component stats = Component.translatable("gui.storyadventure.admin.players.stats",
@@ -185,7 +195,7 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
             inInstanceCount,
             players.stream().filter(p -> p.isLeader).count());
         
-        graphics.drawString(font, stats, 40, barY + 6, COLOR_TEXT_DIM);
+        graphics.drawString(font, stats, guiLeft + 25, barY + 6, COLOR_TEXT_DIM);
     }
     
     private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {
@@ -207,10 +217,10 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - 230;
-        int listHeight = height - 110;
+        int listX = guiLeft + 15;
+        int listY = guiTop + 45;
+        int listWidth = guiWidth - 190;
+        int listHeight = guiHeight - 95;
         
         if (mouseX >= listX && mouseX < listX + listWidth && 
             mouseY >= listY + 28 && mouseY < listY + listHeight) {
@@ -227,7 +237,8 @@ public class AdminPlayerManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
-        int visibleCount = (height - 110 - 30) / PLAYER_ENTRY_HEIGHT;
+        int listHeight = guiHeight - 95;
+        int visibleCount = (listHeight - 30) / PLAYER_ENTRY_HEIGHT;
         if (vAmount > 0 && scrollOffset > 0) {
             scrollOffset--;
             return true;

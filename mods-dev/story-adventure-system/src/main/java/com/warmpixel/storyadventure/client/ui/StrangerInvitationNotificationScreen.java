@@ -18,14 +18,24 @@ public class StrangerInvitationNotificationScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return 240;
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return 100;
+    }
+
+    @Override
     protected void init() {
         super.init();
         
-        int x = width / 2;
-        int y = height / 2;
+        int x = guiLeft + guiWidth / 2;
+        int y = guiTop + guiHeight / 2;
         
-        addStrangerButton(x - 105, y + 20, 100, 24, Component.literal("✔ 接受邀请"), this::accept);
-        addStrangerButton(x + 5, y + 20, 100, 24, Component.literal("✕ 拒绝"), this::decline);
+        addStrangerButton(x - 105, y + 10, 100, 24, Component.literal("✔ 接受邀请"), this::accept);
+        addStrangerButton(x + 5, y + 10, 100, 24, Component.literal("✕ 拒绝"), this::decline);
     }
     
     private void accept() {
@@ -40,22 +50,8 @@ public class StrangerInvitationNotificationScreen extends StrangerScreen {
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int rectW = 240;
-        int rectH = 100;
-        int rectX = width / 2 - rectW / 2;
-        int rectY = height / 2 - rectH / 2;
-        
-        graphics.fill(rectX, rectY, rectX + rectW, rectY + rectH, 0xF0101216);
-        drawPanelBorder(graphics, rectX, rectY, rectW, rectH);
-        
-        graphics.drawCenteredString(font, "队伍邀请", width / 2, rectY + 15, COLOR_TEXT_TITLE);
-        graphics.drawCenteredString(font, "玩家 " + inviterName + " 邀请你加入他的队伍", width / 2, rectY + 40, COLOR_TEXT_BODY);
-    }
-    
-    private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {
-        graphics.fill(x, y, x + w, y + 1, COLOR_BORDER);
-        graphics.fill(x, y + h - 1, x + w, y + h, COLOR_BORDER);
-        graphics.fill(x, y, x + 1, y + h, COLOR_BORDER);
-        graphics.fill(x + w - 1, y, x + w, y + h, COLOR_BORDER);
+        graphics.drawCenteredString(font, "队伍邀请", guiLeft + guiWidth / 2, guiTop + 15, COLOR_TEXT_TITLE);
+        graphics.drawCenteredString(font, "玩家 " + inviterName, guiLeft + guiWidth / 2, guiTop + 40, COLOR_TEXT_BODY);
+        graphics.drawCenteredString(font, "邀请你加入他的队伍", guiLeft + guiWidth / 2, guiTop + 52, COLOR_TEXT_BODY);
     }
 }

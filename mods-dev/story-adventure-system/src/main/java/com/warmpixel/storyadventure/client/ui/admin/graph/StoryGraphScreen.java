@@ -44,23 +44,39 @@ public class StoryGraphScreen extends StrangerScreen {
     private boolean isLoading = true;
 
     @Override
+    protected int getWindowWidth() {
+        return width;
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return height;
+    }
+
+    @Override
     protected void init() {
         super.init();
         
         // Initialize canvas
-        int canvasWidth = width - PROPERTY_PANEL_WIDTH - 20;
-        canvas = new GraphCanvas();
-        canvas.setBounds(10, 50, canvasWidth, height - 100);
+        int canvasWidth = guiWidth - PROPERTY_PANEL_WIDTH - 20;
+        if (canvas == null) {
+            canvas = new GraphCanvas();
+        }
+        canvas.setBounds(guiLeft + 10, guiTop + 35, canvasWidth, guiHeight - 85);
         
         // Initialize property panel
-        propertyPanel = new NodePropertyPanel(this, canvasWidth + 20, 50, PROPERTY_PANEL_WIDTH - 10, height - 100);
+        if (propertyPanel == null) {
+            propertyPanel = new NodePropertyPanel(this, guiLeft + canvasWidth + 20, guiTop + 35, PROPERTY_PANEL_WIDTH - 10, guiHeight - 85);
+        } else {
+            propertyPanel.setBounds(guiLeft + canvasWidth + 20, guiTop + 35, PROPERTY_PANEL_WIDTH - 10, guiHeight - 85);
+        }
         propertyPanel.init(this);
         
         // Toolbar buttons
-        int toolbarX = 10;
-        int toolbarY = height - 45;
+        int toolbarX = guiLeft + 10;
+        int toolbarY = guiTop + guiHeight - 40;
         int btnWidth = 80;
-        int btnHeight = 28;
+        int btnHeight = 24;
         int gap = 5;
         
         addStrangerButton(toolbarX, toolbarY, btnWidth, btnHeight,
@@ -83,11 +99,13 @@ public class StoryGraphScreen extends StrangerScreen {
             Component.literal("+ 新节点"), this::addNewNode);
         
         // Back button
-        addStrangerButton(width - 100, toolbarY, 90, btnHeight,
+        addStrangerButton(guiLeft + guiWidth - 100, toolbarY, 90, btnHeight,
             Component.literal("← 返回"), this::goBack);
         
         // Load story via network
-        loadStory();
+        if (storyJson == null) {
+            loadStory();
+        }
     }
 
     private void loadStory() {
@@ -192,17 +210,17 @@ public class StoryGraphScreen extends StrangerScreen {
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // Title bar with unsaved indicator
         String titleText = storyName + (hasUnsavedChanges ? " *" : "");
-        graphics.drawCenteredString(font, titleText, width / 2, 8, 
+        graphics.drawCenteredString(font, titleText, guiLeft + guiWidth / 2, guiTop + 8, 
             hasUnsavedChanges ? 0xFFFFCC44 : COLOR_NEON_RED);
         
         // Story info
-        graphics.drawString(font, "ID: " + storyId, 15, 25, COLOR_TEXT_DIM);
+        graphics.drawString(font, "ID: " + storyId, guiLeft + 15, guiTop + 22, COLOR_TEXT_DIM);
         if (entryNodeId != null) {
-            graphics.drawString(font, "入口: " + entryNodeId, 15, 38, COLOR_TEXT_DIM);
+            graphics.drawString(font, "入口: " + entryNodeId, guiLeft + 15, guiTop + 32, COLOR_TEXT_DIM);
         }
         
         if (isLoading) {
-            graphics.drawCenteredString(font, "§e请求数据中...", width / 2, height / 2, 0xFFFFFF00);
+            graphics.drawCenteredString(font, "§e请求数据中...", guiLeft + guiWidth / 2, guiTop + guiHeight / 2, 0xFFFFFF00);
             return;
         }
 

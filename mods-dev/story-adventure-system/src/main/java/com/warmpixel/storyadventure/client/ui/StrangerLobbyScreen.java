@@ -76,80 +76,125 @@ public class StrangerLobbyScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 640);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 420);
+    }
+
+    @Override
     protected void init() {
         super.init();
         missionScrollOffset = 0;
         
-        int bottomY = height - 48;
-        int centerX = width / 2;
+        int bottomY = guiTop + guiHeight - 42;
+        int centerX = guiLeft + guiWidth / 2;
         
         // --- Action Buttons (Bottom Center) ---
-        int buttonWidth = 150;
-        int buttonHeight = 34;
-        int gap = 16;
-
-        // Calculate total width of buttons to center them
-        // If leader: Invite | Ready | Start | Disband
-        // If member: Ready | Leave
+        // Responsive button sizing based on window width
+        int minButtonWidth = 80;
+        int preferredButtonWidth = 120;
+        int buttonHeight = 28;
+        int minGap = 4;
+        int preferredGap = 8;
+        
+        // Calculate available width for buttons
+        int availableWidth = guiWidth - 40; 
+        
+        int buttonWidth;
+        int gap;
         
         if (isLeader) {
-             // Invite Button (Far Left)
-            addStrangerButton(centerX - buttonWidth - gap - buttonWidth, bottomY, buttonWidth, buttonHeight,
+            int requiredForPreferred = (preferredButtonWidth * 3) + (preferredGap * 2);
+            if (availableWidth >= requiredForPreferred) {
+                buttonWidth = preferredButtonWidth;
+                gap = preferredGap;
+            } else {
+                int requiredForMin = (minButtonWidth * 3) + (minGap * 2);
+                if (availableWidth >= requiredForMin) {
+                    gap = minGap;
+                    buttonWidth = (availableWidth - gap * 2) / 3;
+                    buttonWidth = Math.min(buttonWidth, preferredButtonWidth);
+                } else {
+                    buttonWidth = minButtonWidth;
+                    gap = minGap;
+                }
+            }
+        } else {
+            buttonWidth = Math.min(preferredButtonWidth, availableWidth / 2);
+            gap = preferredGap;
+        }
+
+        int totalButtonRowWidth = isLeader ? (buttonWidth * 3 + gap * 2) : buttonWidth;
+        int buttonRowStartX = centerX - totalButtonRowWidth / 2;
+
+        if (isLeader) {
+            // Invite Button
+            addStrangerButton(buttonRowStartX, bottomY, buttonWidth, buttonHeight,
                 Component.translatable("gui.storyadventure.button.invite_player"),
                 () -> minecraft.setScreen(new StrangerInvitePlayerScreen(this)));
             
-             // Start Button (Far Right) - Only enabled if ready
+            // Ready Button
+            int readyX = buttonRowStartX + buttonWidth + gap;
+            Component readyText = isReady ? Component.translatable("gui.storyadventure.button.cancel_ready") : Component.translatable("gui.storyadventure.button.ready");
+            StrangerButton readyBtn = addStrangerButton(readyX, bottomY, buttonWidth, buttonHeight,
+                readyText,
+                this::toggleReady);
+            if (!isReady) readyBtn.setGlowPulse(true);
+            
+            // Start Button
             long readyCount = members.stream().filter(m -> m.ready).count();
             boolean canStart = readyCount >= minPlayers;
             
-            int startX = centerX + buttonWidth + gap;
+            int startX = buttonRowStartX + (buttonWidth + gap) * 2;
             StrangerButton startBtn = addStrangerButton(startX, bottomY, buttonWidth, buttonHeight,
                 Component.translatable("gui.storyadventure.button.start_adventure"),
                 this::startAdventure);
             startBtn.active = canStart;
-            startBtn.setGlowPulse(canStart); // Pulse when ready to start
+            startBtn.setGlowPulse(canStart);
             
-            // Disband (Bottom Right corner, small)
-            int smallWidth = 96;
-            int smallHeight = 22;
-            int disbandX = Math.min(width - smallWidth - 12, startX + buttonWidth - smallWidth);
-            int disbandY = bottomY - smallHeight - 8;
-             addStrangerButton(disbandX, disbandY, smallWidth, smallHeight,
+            // Disband
+            int smallWidth = 70;
+            int smallHeight = 18;
+            int disbandX = guiLeft + guiWidth - smallWidth - 10;
+            int disbandY = guiTop + 8;
+            addStrangerButton(disbandX, disbandY, smallWidth, smallHeight,
                 Component.translatable("gui.storyadventure.button.disband"),
                 this::disbandParty);
             
         } else {
-             // Leave (Bottom Right corner, small)
-             addStrangerButton(width - 108, height - 30, 96, 22,
+            // Ready Button
+            Component readyText = isReady ? Component.translatable("gui.storyadventure.button.cancel_ready") : Component.translatable("gui.storyadventure.button.ready");
+            StrangerButton readyBtn = addStrangerButton(centerX - buttonWidth / 2, bottomY, buttonWidth, buttonHeight,
+                readyText,
+                this::toggleReady);
+            if (!isReady) readyBtn.setGlowPulse(true);
+            
+            // Leave
+            int smallWidth = 70;
+            addStrangerButton(guiLeft + guiWidth - smallWidth - 10, guiTop + 8, smallWidth, 18,
                 Component.translatable("gui.storyadventure.button.leave"),
                 this::onClose);
         }
-
-        // Ready Button (Center Big)
-        // Changes appearance based on state
-        Component readyText = isReady ? Component.translatable("gui.storyadventure.button.cancel_ready") : Component.translatable("gui.storyadventure.button.ready");
-        StrangerButton readyBtn = addStrangerButton(centerX - buttonWidth / 2, bottomY, buttonWidth, buttonHeight,
-            readyText,
-            this::toggleReady);
-            
-        // Make ready button stand out if not ready
-        if (!isReady) readyBtn.setGlowPulse(true);
     }
     
     @Override
     protected void renderTitle(GuiGraphics graphics, int mouseX, int mouseY) {
-         int centerX = width / 2;
-         int topY = 20;
+         int centerX = guiLeft + guiWidth / 2;
+         int topY = guiTop + 15;
          
          // Tab 1: STORIES
          Component tab1Text = Component.translatable("gui.storyadventure.tab.story_select");
-         int tab1W = font.width(tab1Text) + 30;
+         int tab1W = font.width(tab1Text) + 20;
          int tab1X = centerX - tab1W - 5;
          renderTopTab(graphics, tab1Text.getString(), tab1X, topY, false, mouseX, mouseY);
          
          // Tab 2: LOBBY (Active)
          Component tab2Text = Component.translatable("gui.storyadventure.tab.lobby");
-         int tab2W = font.width(tab2Text) + 30;
+         int tab2W = font.width(tab2Text) + 20;
          int tab2X = centerX + 5;
          renderTopTab(graphics, tab2Text.getString(), tab2X, topY, true, mouseX, mouseY);
     }
@@ -159,17 +204,15 @@ public class StrangerLobbyScreen extends StrangerScreen {
         if (super.mouseClicked(mouseX, mouseY, button)) return true;
         
         // Handle Tab Clicks
-        int centerX = width / 2;
-        int topY = 20;
+        int centerX = guiLeft + guiWidth / 2;
+        int topY = guiTop + 15;
         
-        // Tab 1: STORIES metrics (must match renderTitle)
         Component tab1Text = Component.translatable("gui.storyadventure.tab.story_select");
-        int tab1W = font.width(tab1Text) + 30;
+        int tab1W = font.width(tab1Text) + 20;
         int tab1H = 24;
         int tab1X = centerX - tab1W - 5;
         
         if (mouseX >= tab1X && mouseX < tab1X + tab1W && mouseY >= topY && mouseY < topY + tab1H) {
-             // Go back to story list
              minecraft.setScreen(new StrangerStoryListScreen());
              return true;
         }
@@ -189,19 +232,21 @@ public class StrangerLobbyScreen extends StrangerScreen {
 
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        // Layout Config
-        int margin = 30;
-        int headerHeight = 40;
-        int footerHeight = 60;
-        int contentHeight = height - headerHeight - footerHeight - margin * 2;
+        // Layout Config - within window bounds
+        int margin = 12;
+        int headerHeight = 35;
+        int footerHeight = 45;
+        int contentHeight = guiHeight - headerHeight - footerHeight - margin;
         
-        int splitGap = 20;
-        int leftPanelWidth = (width - margin * 2 - splitGap) * 40 / 100; // 40% width
-        int rightPanelWidth = (width - margin * 2 - splitGap) * 60 / 100; // 60% width
+        int splitGap = 10;
+        int availablePanelWidth = guiWidth - margin * 2 - splitGap;
         
-        int leftPanelX = margin;
-        int rightPanelX = margin + leftPanelWidth + splitGap;
-        int panelY = headerHeight + margin;
+        int leftPanelWidth = availablePanelWidth * 42 / 100;
+        int rightPanelWidth = availablePanelWidth - leftPanelWidth;
+        
+        int leftPanelX = guiLeft + margin;
+        int rightPanelX = leftPanelX + leftPanelWidth + splitGap;
+        int panelY = guiTop + headerHeight + 5;
         
         // --- Left Panel: Mission Intel ---
         missionPanelX = leftPanelX;
@@ -213,7 +258,7 @@ public class StrangerLobbyScreen extends StrangerScreen {
         // --- Right Panel: Squad Roster ---
         renderSquadPanel(graphics, rightPanelX, panelY, rightPanelWidth, contentHeight, mouseX, mouseY);
 
-        // Countdown Overlay
+        // Countdown Overlay (relative to window)
         if (countdownActive) {
             renderCountdown(graphics);
         }
@@ -247,10 +292,13 @@ public class StrangerLobbyScreen extends StrangerScreen {
         contentY += 25;
         
         // Meta Data Grid
-        drawInfoRow(graphics, px, contentY, Component.translatable("gui.storyadventure.label.difficulty").getString(), "NORMAL");
-        drawInfoRow(graphics, px + w/2, contentY, Component.translatable("gui.storyadventure.label.est_time").getString(), estimatedMinutes + " MINS");
+        drawInfoRow(graphics, px, contentY, Component.translatable("gui.storyadventure.label.difficulty").getString(), 
+            Component.translatable("gui.storyadventure.difficulty.normal").getString());
+        drawInfoRow(graphics, px + w/2, contentY, Component.translatable("gui.storyadventure.label.est_time").getString(), 
+            Component.translatable("gui.storyadventure.admin.stats.time.minutes", estimatedMinutes).getString());
         contentY += 30;
-        drawInfoRow(graphics, px, contentY, Component.translatable("gui.storyadventure.label.squad_size").getString(), minPlayers + "-" + maxPlayers + " OPERATIVES");
+        drawInfoRow(graphics, px, contentY, Component.translatable("gui.storyadventure.label.squad_size").getString(), 
+            minPlayers + "-" + maxPlayers + " " + Component.translatable("gui.storyadventure.label.people").getString());
         contentY += 35;
         
         // Divider
@@ -416,7 +464,7 @@ public class StrangerLobbyScreen extends StrangerScreen {
         graphics.drawCenteredString(font, countText, 0, 0, color);
         graphics.pose().popPose();
         
-        graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.text.deploying"), width / 2, height / 2 + 30, 0xFFFFFFFF);
+        graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.text.deploying", storyName), width / 2, height / 2 + 30, 0xFFFFFFFF);
     }
     
     private void drawPanelBorder(GuiGraphics graphics, int x, int y, int w, int h) {

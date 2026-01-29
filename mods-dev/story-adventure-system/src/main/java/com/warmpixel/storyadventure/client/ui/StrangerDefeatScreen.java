@@ -50,10 +50,10 @@ public class StrangerDefeatScreen extends StrangerScreen {
     protected void init() {
         super.init();
         
-        int buttonWidth = 160;
-        int buttonHeight = 30;
-        int buttonX = (width - buttonWidth) / 2;
-        int buttonY = height - 60;
+        int buttonWidth = 120;
+        int buttonHeight = 26;
+        int buttonX = guiLeft + (guiWidth - buttonWidth) / 2;
+        int buttonY = guiTop + guiHeight - 40;
         
         addStrangerButton(buttonX, buttonY, buttonWidth, buttonHeight,
             Component.literal("返回重生点"), this::onConfirmClick);
@@ -91,8 +91,8 @@ public class StrangerDefeatScreen extends StrangerScreen {
     
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int centerX = width / 2;
-        int y = 50;
+        int centerX = guiLeft + guiWidth / 2;
+        int y = guiTop + 45;
         
         // Pulsing skull effect
         float pulse = (float)(0.5 + 0.5 * Math.sin((System.currentTimeMillis() - screenOpenTime) / 400.0));
@@ -103,18 +103,18 @@ public class StrangerDefeatScreen extends StrangerScreen {
         String defeatHeader = "☠ 任务失败 ☠";
         int headerWidth = font.width(defeatHeader);
         graphics.drawString(font, defeatHeader, centerX - headerWidth / 2, y, skullColor);
-        y += 25;
+        y += 20;
         
         // Draw story name
         String storyText = storyName;
         int storyWidth = font.width(storyText);
         graphics.drawString(font, storyText, centerX - storyWidth / 2, y, COLOR_TEXT_TITLE);
-        y += 15;
+        y += 12;
         
         // Draw separator
-        int sepWidth = 180;
+        int sepWidth = 140;
         graphics.fill(centerX - sepWidth / 2, y, centerX + sepWidth / 2, y + 1, COLOR_DARK_RED);
-        y += 15;
+        y += 12;
         
         // Draw failure reason
         String reasonLabel = "失败原因: " + failureReason;
@@ -126,12 +126,12 @@ public class StrangerDefeatScreen extends StrangerScreen {
         String deathStr = String.format("团队死亡次数: %d / %d", deathCount, maxDeaths);
         int deathWidth = font.width(deathStr);
         graphics.drawString(font, deathStr, centerX - deathWidth / 2, y, COLOR_TEXT_BODY);
-        y += 25;
+        y += 20;
         
         // Draw consolation rewards section
         if (!rewards.isEmpty()) {
             // Rewards box
-            int boxWidth = 220;
+            int boxWidth = 180;
             int boxHeight = 20 + rewards.size() * 18;
             int boxX = centerX - boxWidth / 2;
             int boxY = y;
@@ -140,10 +140,7 @@ public class StrangerDefeatScreen extends StrangerScreen {
             graphics.fill(boxX, boxY, boxX + boxWidth, boxY + boxHeight, 0xC0101010);
             
             // Draw box border (dark red)
-            graphics.fill(boxX, boxY, boxX + boxWidth, boxY + 1, COLOR_DARK_RED);
-            graphics.fill(boxX, boxY + boxHeight - 1, boxX + boxWidth, boxY + boxHeight, COLOR_DARK_RED);
-            graphics.fill(boxX, boxY, boxX + 1, boxY + boxHeight, COLOR_DARK_RED);
-            graphics.fill(boxX + boxWidth - 1, boxY, boxX + boxWidth, boxY + boxHeight, COLOR_DARK_RED);
+            renderRectOutline(graphics, boxX, boxY, boxWidth, boxHeight, COLOR_DARK_RED);
             
             // Draw rewards header
             String rewardsHeader = "— 安慰奖励 —";
@@ -158,13 +155,13 @@ public class StrangerDefeatScreen extends StrangerScreen {
                 rewardY += 18;
             }
             
-            y = boxY + boxHeight + 20;
+            y = boxY + boxHeight + 15;
         }
         
         // Draw countdown
         String countdownText = "(" + countdownSeconds + " 秒后自动返回)";
         int countdownWidth = font.width(countdownText);
-        int countdownY = height - 35;
+        int countdownY = guiTop + guiHeight - 15;
         
         // Flash when low
         int countdownColor = countdownSeconds <= 3 ? 

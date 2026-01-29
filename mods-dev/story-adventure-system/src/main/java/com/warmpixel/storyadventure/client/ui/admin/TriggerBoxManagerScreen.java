@@ -40,13 +40,23 @@ public class TriggerBoxManagerScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 600);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 400);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
-        int rightPanelX = LIST_WIDTH + 30;
+        int rightPanelX = guiLeft + LIST_WIDTH + 30;
         int fieldWidth = 150;
         int fieldHeight = 20;
-        int y = 60;
+        int y = guiTop + 60;
         
         // Label field
         labelField = new EditBox(font, rightPanelX + 80, y, fieldWidth, fieldHeight, Component.translatable("gui.storyadventure.admin.triggers.label"));
@@ -94,10 +104,10 @@ public class TriggerBoxManagerScreen extends StrangerScreen {
             Component.translatable("gui.storyadventure.admin.triggers.add_action"), this::addAction);
         
         // Bottom toolbar
-        int toolbarY = height - 45;
-        addStrangerButton(20, toolbarY, 100, 28, Component.translatable("gui.storyadventure.admin.triggers.refresh"), this::refreshList);
-        addStrangerButton(130, toolbarY, 120, 28, Component.translatable("gui.storyadventure.admin.triggers.new"), this::createNewBox);
-        addStrangerButton(width - 110, toolbarY, 100, 28, Component.translatable("gui.storyadventure.admin.triggers.back"), this::goBack);
+        int toolbarY = guiTop + guiHeight - 40;
+        addStrangerButton(guiLeft + 15, toolbarY, 100, 24, Component.translatable("gui.storyadventure.admin.triggers.refresh"), this::refreshList);
+        addStrangerButton(guiLeft + 130, toolbarY, 120, 24, Component.translatable("gui.storyadventure.admin.triggers.new"), this::createNewBox);
+        addStrangerButton(guiLeft + guiWidth - 110, toolbarY, 100, 24, Component.translatable("gui.storyadventure.admin.triggers.back"), this::goBack);
         
         // Load boxes
         refreshList();
@@ -125,46 +135,51 @@ public class TriggerBoxManagerScreen extends StrangerScreen {
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // Left panel - box list
-        graphics.fill(15, 45, LIST_WIDTH + 15, height - 55, 0xE0080808);
-        drawPanelBorder(graphics, 15, 45, LIST_WIDTH, height - 100);
+        int leftPanelX = guiLeft + 15;
+        int panelY = guiTop + 45;
+        int panelHeight = guiHeight - 95;
         
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.list_title", boxes.size()), 20, 50, COLOR_NEON_RED);
-        graphics.fill(20, 64, LIST_WIDTH + 10, 65, COLOR_BORDER);
+        graphics.fill(leftPanelX, panelY, leftPanelX + LIST_WIDTH, panelY + panelHeight, 0xE0080808);
+        drawPanelBorder(graphics, leftPanelX, panelY, LIST_WIDTH, panelHeight);
+        
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.list_title", boxes.size()), leftPanelX + 5, panelY + 5, COLOR_NEON_RED);
+        graphics.fill(leftPanelX + 5, panelY + 19, leftPanelX + LIST_WIDTH - 5, panelY + 20, COLOR_BORDER);
         
         // Render box entries
-        int listY = 70;
-        int visibleCount = (height - 130) / ENTRY_HEIGHT;
+        int listY = panelY + 25;
+        int visibleCount = (panelHeight - 30) / ENTRY_HEIGHT;
         int visibleEnd = Math.min(scrollOffset + visibleCount, boxes.size());
         
         for (int i = scrollOffset; i < visibleEnd; i++) {
             TriggerBoxEntry entry = boxes.get(i);
             boolean selected = entry == selectedBox;
-            boolean hovered = mouseX >= 20 && mouseX < LIST_WIDTH + 10 && 
+            boolean hovered = mouseX >= leftPanelX + 5 && mouseX < leftPanelX + LIST_WIDTH - 5 && 
                               mouseY >= listY && mouseY < listY + ENTRY_HEIGHT - 2;
             
             int bgColor = selected ? 0xFF331111 : (hovered ? 0xFF1A0808 : 0x00000000);
             if (bgColor != 0) {
-                graphics.fill(20, listY, LIST_WIDTH + 10, listY + ENTRY_HEIGHT - 2, bgColor);
+                graphics.fill(leftPanelX + 5, listY, leftPanelX + LIST_WIDTH - 5, listY + ENTRY_HEIGHT - 2, bgColor);
             }
             
             String label = entry.box.getLabel();
             if (label.length() > 20) label = label.substring(0, 18) + "...";
-            graphics.drawString(font, label, 25, listY + 4, selected ? COLOR_NEON_RED : COLOR_TEXT_BODY);
-            graphics.drawString(font, entry.box.getId(), 25, listY + 13, COLOR_TEXT_DIM);
+            graphics.drawString(font, label, leftPanelX + 10, listY + 4, selected ? COLOR_NEON_RED : COLOR_TEXT_BODY);
+            graphics.drawString(font, entry.box.getId(), leftPanelX + 10, listY + 13, COLOR_TEXT_DIM);
             
             listY += ENTRY_HEIGHT;
         }
         
         // Right panel - editor
-        int rightX = LIST_WIDTH + 25;
-        graphics.fill(rightX, 45, width - 15, height - 55, 0xE0080808);
-        drawPanelBorder(graphics, rightX, 45, width - rightX - 15, height - 100);
+        int rightX = leftPanelX + LIST_WIDTH + 10;
+        int rightWidth = guiLeft + guiWidth - rightX - 15;
+        graphics.fill(rightX, panelY, rightX + rightWidth, panelY + panelHeight, 0xE0080808);
+        drawPanelBorder(graphics, rightX, panelY, rightWidth, panelHeight);
         
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.properties"), rightX + 5, 50, COLOR_NEON_RED);
-        graphics.fill(rightX + 5, 64, width - 20, 65, COLOR_BORDER);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.properties"), rightX + 5, panelY + 5, COLOR_NEON_RED);
+        graphics.fill(rightX + 5, panelY + 19, rightX + rightWidth - 5, panelY + 20, COLOR_BORDER);
         
         if (selectedBox != null) {
-            int labelY = 65;
+            int labelY = panelY + 20;
             graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.label"), rightX + 10, labelY, COLOR_TEXT_BODY);
             labelY += 28;
             graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.linked_node"), rightX + 10, labelY, COLOR_TEXT_BODY);
@@ -173,16 +188,20 @@ public class TriggerBoxManagerScreen extends StrangerScreen {
             labelY += 28;
             graphics.drawString(font, Component.translatable("gui.storyadventure.admin.triggers.max_pos"), rightX + 10, labelY, COLOR_TEXT_BODY);
         } else {
-            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.admin.triggers.empty_selection"), (rightX + width - 15) / 2, height / 2, COLOR_TEXT_DIM);
+            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.admin.triggers.empty_selection"), rightX + rightWidth / 2, panelY + panelHeight / 2, COLOR_TEXT_DIM);
         }
     }
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         // Check list clicks
-        if (mouseX >= 20 && mouseX < LIST_WIDTH + 10 && mouseY >= 70) {
-            int listY = 70;
-            int visibleCount = (height - 130) / ENTRY_HEIGHT;
+        int leftPanelX = guiLeft + 15;
+        int panelY = guiTop + 45;
+        int listY = panelY + 25;
+        int panelHeight = guiHeight - 95;
+        
+        if (mouseX >= leftPanelX + 5 && mouseX < leftPanelX + LIST_WIDTH - 5 && mouseY >= listY) {
+            int visibleCount = (panelHeight - 30) / ENTRY_HEIGHT;
             int visibleEnd = Math.min(scrollOffset + visibleCount, boxes.size());
             
             for (int i = scrollOffset; i < visibleEnd; i++) {
@@ -199,7 +218,7 @@ public class TriggerBoxManagerScreen extends StrangerScreen {
     
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
-        if (mouseX < LIST_WIDTH + 15) {
+        if (mouseX < guiLeft + LIST_WIDTH + 15) {
             scrollOffset = Math.max(0, Math.min(boxes.size() - 5, scrollOffset - (int) vAmount));
             return true;
         }

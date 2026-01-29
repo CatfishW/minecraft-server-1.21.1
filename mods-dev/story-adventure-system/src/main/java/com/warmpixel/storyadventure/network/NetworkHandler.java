@@ -59,6 +59,18 @@ public class NetworkHandler {
         // Xaero Waypoint payload (server to client)
         PayloadTypeRegistry.playS2C().register(XaeroWaypointPayload.TYPE, XaeroWaypointPayload.STREAM_CODEC);
         
+        // BGM payload (server to client)
+        PayloadTypeRegistry.playS2C().register(BGMPayload.TYPE, BGMPayload.STREAM_CODEC);
+        
+        // Item/Block indicator payloads (server to client)
+        com.warmpixel.storyadventure.network.packet.ItemBlockIndicatorAddPacket.register();
+        com.warmpixel.storyadventure.network.packet.ItemBlockIndicatorRemovePacket.register();
+        com.warmpixel.storyadventure.network.packet.ItemBlockIndicatorClearPacket.register();
+        
+        // UI Tutorial packet (server to client)
+        com.warmpixel.storyadventure.network.packet.UITutorialPacket.register();
+        com.warmpixel.storyadventure.network.packet.UITutorialClickPayload.register();
+        
         StoryAdventureMod.LOGGER.info("Registered network payload types");
     }
     
@@ -76,14 +88,62 @@ public class NetworkHandler {
                     // Find the inviter's party (simplified - usually we'd track invitation ID)
                     // For now, we'll look for a player with the 'name' from the payload (who is the inviter)
                     ServerPlayer originalInviter = context.server().getPlayerList().getPlayerByName(payload.name());
+                    StoryAdventureMod.LOGGER.info("[NetworkHandler] Invite acceptance: acceptingPlayer={}, originalInviter={}", 
+                        inviter.getName().getString(), payload.name());
+                    
                     if (originalInviter != null) {
                         var party = partyManager.getPlayerParty(originalInviter.getUUID());
+                        StoryAdventureMod.LOGGER.info("[NetworkHandler] Party lookup: originalInviter={}, party={}", 
+                            originalInviter.getName().getString(), party != null ? party.getPartyId() : "null");
+                        
                         if (party != null) {
-                            partyManager.joinParty(inviter.getUUID(), party.getPartyId());
-                            inviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已加入队伍！"));
-                            originalInviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a" + inviter.getName().getString() + " 已加入你的队伍"));
-                            broadcastLobbySync(party, context.server());
+                            boolean joined = partyManager.joinParty(inviter.getUUID(), party.getPartyId());
+                            StoryAdventureMod.LOGGER.info("[NetworkHandler] joinParty result: player={}, partyId={}, success={}", 
+                                inviter.getName().getString(), party.getPartyId(), joined);
+                            
+                            if (joined) {
+                                inviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已加入队伍！"));
+                                originalInviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a" + inviter.getName().getString() + " 已加入你的队伍"));
+                                
+                                // Open lobby screen for the joined player
+                                String storyId = party.getSelectedStoryId();
+                                String lobbyData = null;
+                                
+                                if (storyId != null) {
+                                    var story = StoryAdventureMod.getInstance().getStoryRegistry().getStory(storyId);
+                                    if (story != null) {
+                                        lobbyData = String.format("{\"id\":\"%s\",\"name\":\"%s\",\"desc\":\"%s\",\"min\":%d,\"max\":%d,\"time\":%d}",
+                                            story.getStoryId(), story.getName(), 
+                                            story.getDescription().replace("\"", "\\\"").replace("\n", "\\n"), 
+                                            story.getMinPlayers(), story.getMaxPlayers(), story.getEstimatedDurationMinutes());
+                                    } else {
+                                        StoryAdventureMod.LOGGER.warn("[NetworkHandler] Story not found in registry: {}", storyId);
+                                        // Fallback with basic data
+                                        lobbyData = String.format("{\"id\":\"%s\",\"name\":\"%s\",\"desc\":\"%s\",\"min\":%d,\"max\":%d,\"time\":%d}",
+                                            storyId, storyId, "加载中...", 1, party.getMaxSize(), 0);
+                                    }
+                                } else {
+                                    StoryAdventureMod.LOGGER.warn("[NetworkHandler] Party has no selected story: {}", party.getPartyId());
+                                    // Fallback with placeholder data
+                                    lobbyData = "{\"id\":\"unknown\",\"name\":\"队伍大厅\",\"desc\":\"等待队长选择故事...\",\"min\":1,\"max\":" + party.getMaxSize() + ",\"time\":0}";
+                                }
+                                
+                                // Always open lobby for invited player
+                                sendOpenUI(inviter, OpenUIPayload.SCREEN_LOBBY, lobbyData);
+                                StoryAdventureMod.LOGGER.info("[NetworkHandler] Sent lobby UI to invited player: {}", inviter.getName().getString());
+                                
+                                // Delay the sync slightly to ensure UI is open first
+                                context.server().execute(() -> {
+                                    broadcastLobbySync(party, context.server());
+                                });
+                            } else {
+                                inviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c无法加入队伍，队伍可能已满或你已在该队伍中"));
+                            }
+                        } else {
+                            inviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c队伍不存在或已解散"));
                         }
+                    } else {
+                        inviter.sendSystemMessage(net.minecraft.network.chat.Component.literal("§c邀请者已离线"));
                     }
                 } else {
                     ServerPlayer originalInviter = context.server().getPlayerList().getPlayerByName(payload.name());
@@ -322,6 +382,19 @@ public class NetworkHandler {
             context.server().execute(() -> handleVictoryConfirm(context.player(), context.server()));
         });
         
+        // UI Tutorial click handler
+        ServerPlayNetworking.registerGlobalReceiver(com.warmpixel.storyadventure.network.packet.UITutorialClickPayload.TYPE, (payload, context) -> {
+            ServerPlayer player = context.player();
+            var instance = StoryAdventureMod.getInstance().getInstanceManager().getPlayerInstance(player.getUUID());
+            if (instance != null) {
+                var currentNode = instance.getCurrentNode();
+                var handler = com.warmpixel.storyadventure.core.node.NodeHandlers.getHandler(currentNode.getType());
+                if (handler != null) {
+                    handler.onAction(instance, currentNode, player, "ui_click", payload.tutorialId());
+                }
+            }
+        });
+        
         StoryAdventureMod.LOGGER.debug("Registered server network receivers");
     }
 
@@ -388,9 +461,9 @@ public class NetworkHandler {
     public static void sendCutsceneStart(ServerPlayer player, com.google.gson.JsonObject cameraPath, 
                                           boolean skippable, boolean letterbox, 
                                           int fadeInTicks, int fadeOutTicks, String instanceId, String voiceover,
-                                          com.google.gson.JsonArray subtitles) {
+                                          com.google.gson.JsonArray subtitles, com.google.gson.JsonArray animations) {
         if (player != null && player.connection != null) {
-            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitles);
+            CutscenePayload payload = CutscenePayload.start(instanceId, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitles, animations);
             ServerPlayNetworking.send(player, payload);
             StoryAdventureMod.LOGGER.info("Sent cutscene START to {} (voiceover: {})", player.getName().getString(), voiceover);
         }
@@ -400,7 +473,7 @@ public class NetworkHandler {
     public static void sendCutsceneStart(ServerPlayer player, com.google.gson.JsonObject cameraPath, 
                                           boolean skippable, boolean letterbox, 
                                           int fadeInTicks, int fadeOutTicks, String instanceId, String voiceover) {
-        sendCutsceneStart(player, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, instanceId, voiceover, null);
+        sendCutsceneStart(player, cameraPath, skippable, letterbox, fadeInTicks, fadeOutTicks, instanceId, voiceover, null, null);
     }
     
     /**
@@ -447,6 +520,50 @@ public class NetworkHandler {
             }
         }
     }
+    
+    /**
+     * Send BGM update to a player.
+     */
+    public static void sendBGM(ServerPlayer player, String soundPath, float volume, boolean loop, int fadeTicks) {
+        if (player != null && player.connection != null) {
+            ServerPlayNetworking.send(player, BGMPayload.play(soundPath, volume, loop, fadeTicks));
+        }
+    }
+    
+    /**
+     * Send BGM stop command to a player.
+     */
+    public static void sendBGMStop(ServerPlayer player, int fadeTicks) {
+        if (player != null && player.connection != null) {
+            ServerPlayNetworking.send(player, BGMPayload.stop(fadeTicks));
+        }
+    }
+    
+    /**
+     * Send BGM update to all party members.
+     */
+    public static void sendBGMToParty(com.warmpixel.storyadventure.instance.Instance instance, String soundPath, float volume, boolean loop, int fadeTicks) {
+        if (instance == null) return;
+        for (java.util.UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                sendBGM(player, soundPath, volume, loop, fadeTicks);
+            }
+        }
+    }
+
+    /**
+     * Stop BGM for all party members.
+     */
+    public static void sendBGMStopToParty(com.warmpixel.storyadventure.instance.Instance instance, int fadeTicks) {
+        if (instance == null) return;
+        for (java.util.UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player != null) {
+                sendBGMStop(player, fadeTicks);
+            }
+        }
+    }
 
     
     /**
@@ -473,9 +590,13 @@ public class NetworkHandler {
     public static void syncStoryList(ServerPlayer player, StoryRegistry registry) {
         java.util.List<SyncStoriesPayload.StorySummary> summaries = new java.util.ArrayList<>();
         for (var story : registry.getAllStories()) {
+            // Skip tutorial stories that have gold coin rewards
+            if (story.getStoryId().toLowerCase().contains("tutorial") && story.hasCoinReward()) {
+                continue;
+            }
             summaries.add(new SyncStoriesPayload.StorySummary(
                 story.getStoryId(), story.getName(), story.getDescription(),
-                story.getMinPlayers(), story.getMaxPlayers(), story.getEstimatedDurationMinutes()
+                story.getMinPlayers(), story.getMaxPlayers(), story.getEstimatedDurationMinutes(), story.getCover()
             ));
         }
         ServerPlayNetworking.send(player, new SyncStoriesPayload(summaries));
@@ -584,6 +705,45 @@ public class NetworkHandler {
                 syncAdminStories(player, registry);
                 player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a故事已验证"));
             }
+            case SET_SPAWN -> {
+                var story = registry.getStory(payload.storyId());
+                if (story != null) {
+                    story.setSpecialLocation("spawn", new com.warmpixel.storyadventure.core.graph.StageGraph.StoryLocation(
+                        player.level().dimension().location().toString(),
+                        player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot()
+                    ));
+                    loader.saveStory(story);
+                    player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已设置故事 '" + payload.storyId() + "' 的出生点"));
+                }
+            }
+            case SET_RETURN -> {
+                var story = registry.getStory(payload.storyId());
+                if (story != null) {
+                    story.setSpecialLocation("return", new com.warmpixel.storyadventure.core.graph.StageGraph.StoryLocation(
+                        player.level().dimension().location().toString(),
+                        player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot()
+                    ));
+                    loader.saveStory(story);
+                    player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已设置故事 '" + payload.storyId() + "' 的返回点"));
+                }
+            }
+            case TP_TO_SCENE -> {
+                var story = registry.getStory(payload.storyId());
+                if (story != null) {
+                    var loc = story.getSpecialLocation("spawn");
+                    if (loc != null) {
+                        player.teleportTo(player.getServer().getLevel(net.minecraft.resources.ResourceKey.create(
+                            net.minecraft.core.registries.Registries.DIMENSION, 
+                            net.minecraft.resources.ResourceLocation.parse(loc.dimension()))),
+                            loc.x(), loc.y(), loc.z(), loc.yaw(), loc.pitch());
+                        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已传送至故事场景"));
+                    }
+                }
+            }
+            case CREATE_TEMPLATE -> {
+                // Placeholder for template creation logic
+                player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§e模板创建功能尚未完全实现，请手动复制 JSON。"));
+            }
         }
     }
 
@@ -618,6 +778,26 @@ public class NetworkHandler {
                         inst.resume();
                         syncInstances(player, manager);
                         player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a实例已恢复"));
+                    }
+                }
+            }
+            case SKIP_NODE -> {
+                if (payload.instanceId() != null && payload.data() != null) {
+                    var inst = manager.getInstance(payload.instanceId());
+                    if (inst != null) {
+                        inst.forceTransition(payload.data());
+                        syncInstances(player, manager);
+                        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a已跳过至节点: " + payload.data()));
+                    }
+                }
+            }
+            case COMPLETE -> {
+                if (payload.instanceId() != null) {
+                    var inst = manager.getInstance(payload.instanceId());
+                    if (inst != null) {
+                        inst.complete();
+                        syncInstances(player, manager);
+                        player.sendSystemMessage(net.minecraft.network.chat.Component.literal("§a实例已强制完成"));
                     }
                 }
             }

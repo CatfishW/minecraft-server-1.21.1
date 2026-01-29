@@ -17,10 +17,13 @@ public class StageGraph {
     private final String name;
     private final String description;
     private final String version;
+    private final String difficulty;
+    private final int timeLimitMinutes;
     private final int minPlayers;
     private final int maxPlayers;
     private final int estimatedDurationMinutes;
     private final int maxTeamDeaths;
+    private final String cover;
     private final JsonArray failureRewards;
     private final String entryNodeId;
     private final Map<String, StageNode> nodes;
@@ -36,10 +39,13 @@ public class StageGraph {
         this.name = builder.name;
         this.description = builder.description;
         this.version = builder.version;
+        this.difficulty = builder.difficulty;
+        this.timeLimitMinutes = builder.timeLimitMinutes;
         this.minPlayers = builder.minPlayers;
         this.maxPlayers = builder.maxPlayers;
         this.estimatedDurationMinutes = builder.estimatedDurationMinutes;
         this.maxTeamDeaths = builder.maxTeamDeaths;
+        this.cover = builder.cover;
         this.failureRewards = builder.failureRewards;
         this.entryNodeId = builder.entryNodeId;
         this.nodes = Collections.unmodifiableMap(new HashMap<>(builder.nodes));
@@ -54,10 +60,13 @@ public class StageGraph {
     public String getName() { return name; }
     public String getDescription() { return description; }
     public String getVersion() { return version; }
+    public String getDifficulty() { return difficulty; }
+    public int getTimeLimitMinutes() { return timeLimitMinutes; }
     public int getMinPlayers() { return minPlayers; }
     public int getMaxPlayers() { return maxPlayers; }
     public int getEstimatedDurationMinutes() { return estimatedDurationMinutes; }
     public int getMaxTeamDeaths() { return maxTeamDeaths; }
+    public String getCover() { return cover; }
     public JsonArray getFailureRewards() { return failureRewards; }
     public String getEntryNodeId() { return entryNodeId; }
     public net.minecraft.world.phys.AABB getInstanceArea() { return instanceArea; }
@@ -98,6 +107,31 @@ public class StageGraph {
         return nodes.containsKey(nodeId);
     }
     
+    /**
+     * Check if any node in this story has a COIN type reward.
+     */
+    public boolean hasCoinReward() {
+        for (StageNode node : nodes.values()) {
+            JsonObject data = node.getData();
+            if (data != null && data.has("rewards")) {
+                try {
+                    JsonArray rewards = data.getAsJsonArray("rewards");
+                    for (JsonElement rewardElement : rewards) {
+                        if (rewardElement.isJsonObject()) {
+                            JsonObject reward = rewardElement.getAsJsonObject();
+                            if (reward.has("type") && "COIN".equalsIgnoreCase(reward.get("type").getAsString())) {
+                                return true;
+                            }
+                        }
+                    }
+                } catch (Exception e) {
+                    // Ignore malformed rewards
+                }
+            }
+        }
+        return false;
+    }
+    
     public void setSpecialLocation(String id, StoryLocation location) {
         specialLocations.put(id, location);
     }
@@ -112,9 +146,11 @@ public class StageGraph {
         json.addProperty("name", name);
         json.addProperty("description", description);
         json.addProperty("version", version);
+        json.addProperty("difficulty", difficulty);
         json.addProperty("min_players", minPlayers);
         json.addProperty("max_players", maxPlayers);
         json.addProperty("estimated_duration_minutes", estimatedDurationMinutes);
+        if (cover != null && !cover.isEmpty()) json.addProperty("cover", cover);
         json.addProperty("entry_node", entryNodeId);
         
         // Instance Area
@@ -210,6 +246,10 @@ public class StageGraph {
      * Parse a StageGraph from a JSON object.
      */
     public static StageGraph fromJson(JsonObject json) {
+        if (!json.has("id") || !json.has("entry_node") || !json.has("nodes")) {
+            throw new IllegalArgumentException("Missing required story fields (id, entry_node, or nodes)");
+        }
+        
         Builder builder = new Builder(
             json.get("id").getAsString(),
             json.get("entry_node").getAsString()
@@ -218,10 +258,12 @@ public class StageGraph {
         builder.name(json.has("name") ? json.get("name").getAsString() : "Unnamed Story");
         builder.description(json.has("description") ? json.get("description").getAsString() : "");
         builder.version(json.has("version") ? json.get("version").getAsString() : "1.0.0");
+        builder.difficulty(json.has("difficulty") ? json.get("difficulty").getAsString() : "normal");
         builder.minPlayers(json.has("min_players") ? json.get("min_players").getAsInt() : 1);
         builder.maxPlayers(json.has("max_players") ? json.get("max_players").getAsInt() : 4);
         builder.estimatedDurationMinutes(json.has("estimated_duration_minutes") ? 
             json.get("estimated_duration_minutes").getAsInt() : 60);
+        builder.cover(json.has("cover") ? json.get("cover").getAsString() : "");
         builder.maxTeamDeaths(json.has("max_team_deaths") ? json.get("max_team_deaths").getAsInt() : 15);
         builder.failureRewards(json.has("failure_rewards") ? json.getAsJsonArray("failure_rewards") : new JsonArray());
         
@@ -252,7 +294,10 @@ public class StageGraph {
             if (nodeJson.has("edges")) {
                 JsonArray edgesJson = nodeJson.getAsJsonArray("edges");
                 for (JsonElement edgeElement : edgesJson) {
+                    if (!edgeElement.isJsonObject()) continue;
                     JsonObject edgeJson = edgeElement.getAsJsonObject();
+                    if (!edgeJson.has("target")) continue;
+                    
                     String targetId = edgeJson.get("target").getAsString();
                     int priority = edgeJson.has("priority") ? edgeJson.get("priority").getAsInt() : 0;
                     
@@ -260,6 +305,7 @@ public class StageGraph {
                     if (edgeJson.has("conditions")) {
                         JsonArray conditionsJson = edgeJson.getAsJsonArray("conditions");
                         for (JsonElement condElement : conditionsJson) {
+                            if (!condElement.isJsonObject()) continue;
                             EdgeCondition condition = ConditionFactory.fromJson(condElement.getAsJsonObject());
                             if (condition != null) {
                                 conditions.add(condition);
@@ -308,6 +354,10 @@ public class StageGraph {
             JsonObject locationsJson = json.getAsJsonObject("locations");
             for (Map.Entry<String, JsonElement> entry : locationsJson.entrySet()) {
                 JsonObject locJson = entry.getValue().getAsJsonObject();
+                if (!locJson.has("dimension") || !locJson.has("x") || !locJson.has("y") || !locJson.has("z")) {
+                    continue;
+                }
+                
                 StoryLocation location = new StoryLocation(
                     locJson.get("dimension").getAsString(),
                     locJson.get("x").getAsDouble(),
@@ -338,9 +388,12 @@ public class StageGraph {
         private String name = "Unnamed Story";
         private String description = "";
         private String version = "1.0.0";
+        private String difficulty = "normal";
+        private int timeLimitMinutes = 20;
         private int minPlayers = 1;
         private int maxPlayers = 4;
         private int estimatedDurationMinutes = 60;
+        private String cover = "";
         private int maxTeamDeaths = 15;
         private JsonArray failureRewards = new JsonArray();
         private final Map<String, StageNode> nodes = new HashMap<>();
@@ -357,9 +410,21 @@ public class StageGraph {
         public Builder name(String name) { this.name = name; return this; }
         public Builder description(String description) { this.description = description; return this; }
         public Builder version(String version) { this.version = version; return this; }
+        public Builder difficulty(String difficulty) {
+            this.difficulty = difficulty;
+            // Auto-set time limit based on difficulty
+            switch (difficulty.toLowerCase()) {
+                case "easy" -> this.timeLimitMinutes = 15;
+                case "hard" -> this.timeLimitMinutes = 30;
+                default -> this.timeLimitMinutes = 20; // normal
+            }
+            return this;
+        }
+        public Builder timeLimitMinutes(int minutes) { this.timeLimitMinutes = minutes; return this; }
         public Builder minPlayers(int minPlayers) { this.minPlayers = minPlayers; return this; }
         public Builder maxPlayers(int maxPlayers) { this.maxPlayers = maxPlayers; return this; }
         public Builder estimatedDurationMinutes(int minutes) { this.estimatedDurationMinutes = minutes; return this; }
+        public Builder cover(String cover) { this.cover = cover; return this; }
         public Builder maxTeamDeaths(int deaths) { this.maxTeamDeaths = deaths; return this; }
         public Builder failureRewards(JsonArray rewards) { this.failureRewards = rewards; return this; }
         public Builder instanceArea(net.minecraft.world.phys.AABB area) { this.instanceArea = area; return this; }

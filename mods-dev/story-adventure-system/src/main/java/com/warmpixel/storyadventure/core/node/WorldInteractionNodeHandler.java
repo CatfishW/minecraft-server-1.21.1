@@ -1,5 +1,6 @@
 package com.warmpixel.storyadventure.core.node;
 
+import com.google.gson.JsonObject;
 import com.warmpixel.storyadventure.StoryAdventureMod;
 import com.warmpixel.storyadventure.core.graph.StageNode;
 import com.warmpixel.storyadventure.instance.Instance;
@@ -37,6 +38,9 @@ public class WorldInteractionNodeHandler implements NodeHandler {
             
         // Reset progress flags
         resetProgress(instance, node);
+
+        // Create waypoint if configured
+        createWaypointFromNodeData(instance, node);
         
         // Notify players
         for (UUID memberId : instance.getParty().getMembers()) {
@@ -328,6 +332,9 @@ public class WorldInteractionNodeHandler implements NodeHandler {
         for (int i = 0; i < interactions.size(); i++) {
             metadata.remove(INTERACTION_PROGRESS_PREFIX + i);
         }
+
+        // Remove waypoint for this interaction node
+        removeWaypointFromNodeData(instance, node);
     }
 
     @Override
@@ -394,5 +401,50 @@ public class WorldInteractionNodeHandler implements NodeHandler {
     private String escapeJson(String str) {
         if (str == null) return "";
         return str.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n");
+    }
+
+    private void createWaypointFromNodeData(Instance instance, StageNode node) {
+        JsonObject data = node.getData();
+        if (!data.has("waypoint")) {
+            return;
+        }
+
+        JsonObject wpData = data.getAsJsonObject("waypoint");
+        String wpId = wpData.has("id") ? wpData.get("id").getAsString() : "interaction_waypoint";
+        double x = wpData.has("x") ? wpData.get("x").getAsDouble() : 0;
+        double y = wpData.has("y") ? wpData.get("y").getAsDouble() : 64;
+        double z = wpData.has("z") ? wpData.get("z").getAsDouble() : 0;
+        String label = wpData.has("label") ? wpData.get("label").getAsString() : "目标";
+        String icon = wpData.has("icon") ? wpData.get("icon").getAsString() : "objective";
+        int color = 0xFFFFCC00;
+
+        if (wpData.has("color")) {
+            String colorStr = wpData.get("color").getAsString();
+            try {
+                color = (int) Long.parseLong(colorStr.replace("0x", ""), 16);
+            } catch (Exception e) {
+                StoryAdventureMod.LOGGER.warn("[WorldInteractionNodeHandler] Failed to parse waypoint color: {}", colorStr);
+            }
+        }
+
+        var waypoint = new com.warmpixel.storyadventure.core.waypoint.Waypoint(wpId, new Vec3(x, y, z));
+        waypoint.setLabel(label);
+        waypoint.setIcon(com.warmpixel.storyadventure.core.waypoint.Waypoint.WaypointIcon.fromId(icon));
+        waypoint.setColor(color);
+        waypoint.setShowDistance(true);
+
+        instance.addWaypoint(waypoint);
+        StoryAdventureMod.LOGGER.info("[WorldInteractionNodeHandler] Created waypoint '{}' at ({}, {}, {})", wpId, x, y, z);
+    }
+
+    private void removeWaypointFromNodeData(Instance instance, StageNode node) {
+        JsonObject data = node.getData();
+        if (!data.has("waypoint")) {
+            return;
+        }
+
+        JsonObject wpData = data.getAsJsonObject("waypoint");
+        String wpId = wpData.has("id") ? wpData.get("id").getAsString() : "interaction_waypoint";
+        instance.removeWaypoint(wpId);
     }
 }

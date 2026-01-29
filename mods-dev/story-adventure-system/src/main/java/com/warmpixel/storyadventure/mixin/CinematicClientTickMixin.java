@@ -23,5 +23,7 @@ public class CinematicClientTickMixin {
         if (controller.isActive()) {
             controller.gameTick();
         }
+        
+        com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance().tick();
     }
 }

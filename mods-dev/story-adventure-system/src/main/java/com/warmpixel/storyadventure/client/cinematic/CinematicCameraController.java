@@ -39,6 +39,10 @@ public class CinematicCameraController {
     private int fadeInTicks = 0;
     private int fadeOutTicks = 0;
     private boolean fadeEnabled = false;
+
+    // NPC Animations
+    private java.util.List<NPCAnimation> animations = new java.util.ArrayList<>();
+    private java.util.Set<Integer> triggeredAnimations = new java.util.HashSet<>();
     private float totalDurationTicks = 0f;
     
     // Subtitles
@@ -53,14 +57,20 @@ public class CinematicCameraController {
     private static final long SUBTITLE_CHAR_DELAY_MS = 30;
     private boolean subtitleComplete = false;
     
-    public record Subtitle(String text, int startTick, int durationTick, String voiceover) {}
+    public record Subtitle(String text, int startTick, int durationTick, String voiceover, String focusTarget) {}
+    public record NPCAnimation(int tick, String npc, String pose) {}
     
     // Letterbox animation
     private static final float LETTERBOX_ANIM_DURATION = 10f;
     
     // Look-at target (resolved entity position)
     private Vec3 lookAtPosition = null;
+    private CameraPath.LookAtTarget activePathTarget = null; // Store original path look-at target
+    private Vec3 baseLookAtPosition = null; // Store last resolved base look-at position
     private Vec3 lookAtVelocity = Vec3.ZERO;
+    private float lookAtWeight = 0f; // 0.0 = keyframe rotation, 1.0 = look-at rotation
+    private float focusFovWeight = 0f; // 0.0 = normal, 1.0 = zoomed
+    private static final float FOCUS_FOV_ZOOM = 0.65f; // Zoom to 65% FOV (stronger zoom)
     
     // Smoothing parameters for extra smoothness
     private float smoothingFactor = 0.15f; // Lower = smoother but more latency
@@ -88,7 +98,89 @@ public class CinematicCameraController {
     public static void register() {
         net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents.END_CLIENT_TICK.register(client -> {
             getInstance().gameTick();
+            // Always tick animation manager for standalone animations
+            com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance().tick();
         });
+    }
+    
+    // ==================== Private Helpers ====================
+    
+    private void applyPose(String npcName, String poseId) {
+        try {
+            net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+            if (mc.level == null) return;
+            
+            net.minecraft.resources.ResourceLocation poseLoc = net.minecraft.resources.ResourceLocation.parse(poseId);
+            de.markusbordihn.easynpc.data.animation.AnimationData.Animation animation = 
+                de.markusbordihn.easynpc.client.pose.PoseManager.getPoseData(poseLoc);
+            
+            if (animation == null) {
+                StoryAdventureMod.LOGGER.warn("[CinematicCamera] Pose data not found for {}", poseId);
+                return;
+            }
+            
+            // Find NPC in client world
+            for (net.minecraft.world.entity.Entity entity : mc.level.entitiesForRendering()) {
+                if (entity instanceof de.markusbordihn.easynpc.entity.easynpc.EasyNPC<?> easyNPC) {
+                    // Try to match by various means
+                    if (entity.getScoreboardName().equalsIgnoreCase(npcName) || 
+                        entity.getTags().contains(npcName) ||
+                        (entity.getCustomName() != null && entity.getCustomName().getString().equals(npcName)) ||
+                        (entity.getCustomName() != null && entity.getCustomName().getString().toLowerCase().contains(npcName.toLowerCase()))) {
+                        
+                        // We must run this on the main thread
+                        mc.execute(() -> {
+                            de.markusbordihn.easynpc.client.pose.PoseManager.setModelPose(easyNPC, animation);
+                        });
+                        StoryAdventureMod.LOGGER.info("[CinematicCamera] Applied pose {} to {}", poseId, npcName);
+                        // We found one match, but there could be more? We usually assume unique Names in range.
+                        // Break to avoid double application or apply to all? Let's apply to all matches.
+                    }
+                }
+            }
+        } catch (Exception e) {
+            StoryAdventureMod.LOGGER.error("Failed to apply pose {} to {}", poseId, npcName, e);
+        }
+    }
+
+    private void startAnimation(String npcName, String animationId) {
+        net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+        if (mc.level == null) return;
+
+        // Find NPC in client world
+        for (net.minecraft.world.entity.Entity entity : mc.level.entitiesForRendering()) {
+            if (entity instanceof net.minecraft.world.entity.LivingEntity living) {
+               // Try to match by various means
+                if (entity.getScoreboardName().equalsIgnoreCase(npcName) || 
+                    entity.getTags().contains(npcName) ||
+                    (entity.getCustomName() != null && entity.getCustomName().getString().equals(npcName)) ||
+                    (entity.getCustomName() != null && entity.getCustomName().getString().toLowerCase().contains(npcName.toLowerCase()))) {
+                    
+                    com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance().startAnimation(living, animationId);
+                    StoryAdventureMod.LOGGER.info("[CinematicCamera] Started animation {} on {}", animationId, npcName);
+                }
+            }
+        }
+    }
+
+    private void stopAnimation(String npcName) {
+        net.minecraft.client.Minecraft mc = net.minecraft.client.Minecraft.getInstance();
+        if (mc.level == null) return;
+
+        // Find NPC in client world
+        for (net.minecraft.world.entity.Entity entity : mc.level.entitiesForRendering()) {
+            if (entity instanceof net.minecraft.world.entity.LivingEntity living) {
+               // Try to match by various means
+                if (entity.getScoreboardName().equalsIgnoreCase(npcName) || 
+                    entity.getTags().contains(npcName) ||
+                    (entity.getCustomName() != null && entity.getCustomName().getString().equals(npcName)) ||
+                    (entity.getCustomName() != null && entity.getCustomName().getString().toLowerCase().contains(npcName.toLowerCase()))) {
+                    
+                    com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance().stopAnimation(living);
+                    StoryAdventureMod.LOGGER.info("[CinematicCamera] Stopped animation on {}", npcName);
+                }
+            }
+        }
     }
     
     // ==================== Cutscene Control ====================
@@ -109,10 +201,7 @@ public class CinematicCameraController {
         this.paused = false;
         this.skippable = config.isSkippable();
         
-        this.subtitles.clear();
-        if (config.getSubtitles() != null) {
-            this.subtitles.addAll(config.getSubtitles());
-        }
+        this.subtitles = config.subtitles != null ? config.subtitles : new java.util.ArrayList<>();
         this.currentSubtitle = null;
         this.currentSubtitleVoiceover = null;
         this.lastSubtitleIndex = -1;
@@ -135,11 +224,19 @@ public class CinematicCameraController {
         this.onComplete = config.getOnComplete();
         this.onSkip = config.getOnSkip();
         
+        this.animations = config.animations != null ? config.animations : new java.util.ArrayList<>();
+        this.triggeredAnimations.clear();
+        
         // Initialize look-at target
-        if (path.hasLookAtTarget()) {
-            resolveLookAtTarget(path.getLookAtTarget());
+        this.activePathTarget = path.getLookAtTarget();
+        if (activePathTarget != null) {
+            resolveLookAtInitialPosition(activePathTarget);
+            baseLookAtPosition = lookAtPosition;
+            lookAtWeight = 1.0f;
         } else {
             lookAtPosition = null;
+            baseLookAtPosition = null;
+            lookAtWeight = 0f;
         }
         
         // Initialize camera state to first keyframe
@@ -174,6 +271,12 @@ public class CinematicCameraController {
             callback.run();
         }
         onSkip = null;
+        
+        // Stop all animations on entities
+        // We can't easy stop specific ones without tracking, but AnimationManager handles cleanup naturally or we can force stop if needed.
+        // For now, let them finish or loop until natural end or overwritten.
+        // Actually, better to clear active animations if we want instant stop?
+        // com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance().stopAll(); // Not implemented yet
     }
     
     /**
@@ -244,6 +347,62 @@ public class CinematicCameraController {
         // Update subtitles
         updateSubtitles(currentExactTick);
         updateSubtitleTypewriter();
+
+
+
+        // Update animations
+        for (int i = 0; i < animations.size(); i++) {
+            NPCAnimation anim = animations.get(i);
+            if (currentExactTick >= anim.tick() && !triggeredAnimations.contains(i)) {
+                triggeredAnimations.add(i);
+
+                String poseId = anim.pose();
+                String npcName = anim.npc();
+
+                if (poseId.startsWith("storyadventure:")) {
+                     startAnimation(npcName, poseId);
+                } else {
+                     // Try to see if this is an EasyNPC animation with keyframes
+                     try {
+                         net.minecraft.resources.ResourceLocation poseLoc = net.minecraft.resources.ResourceLocation.parse(poseId);
+                         de.markusbordihn.easynpc.data.animation.AnimationData.Animation easyAnim = 
+                             de.markusbordihn.easynpc.client.pose.PoseManager.getPoseData(poseLoc);
+                             
+                         boolean isAnimated = false;
+                         if (easyAnim != null) {
+                             // Check for keyframes in any bone
+                             if (easyAnim.getBones() != null) {
+                                  isAnimated = easyAnim.getBones().values().stream()
+                                      .anyMatch(b -> b.getKeyframeRotation() != null && !b.getKeyframeRotation().isEmpty());
+                             }
+                         }
+                         
+                         if (isAnimated) {
+                             // Register in our manager if not present
+                             com.warmpixel.storyadventure.client.animation.AnimationManager animMgr = 
+                                 com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance();
+                                 
+                             if (!animMgr.hasAnimation(poseLoc)) {
+                                 animMgr.registerAnimation(poseLoc, 
+                                     new com.warmpixel.storyadventure.client.animation.AnimationDefinition(easyAnim));
+                                 StoryAdventureMod.LOGGER.info("[CinematicCamera] Registered EasyNPC animation: {}", poseId);
+                             }
+                             
+                             // Start it using our system
+                             startAnimation(npcName, poseId);
+                         } else {
+                             // Static pose
+                             stopAnimation(npcName);
+                             applyPose(npcName, poseId);
+                         }
+                     } catch (Exception e) {
+                         StoryAdventureMod.LOGGER.error("Failed to check EasyNPC animation {}", poseId, e);
+                         // Fallback
+                         applyPose(npcName, poseId);
+                     }
+                }
+            }
+        }
         
         // Check for cutscene completion
         if (currentExactTick >= totalDurationTicks) {
@@ -283,8 +442,35 @@ public class CinematicCameraController {
         CameraPath.CameraState targetState = currentPath.getStateAt(exactTime);
         
         // Apply look-at override if needed
-        if (lookAtPosition != null) {
-            targetState = applyLookAt(targetState);
+        if (lookAtWeight > 0.001f && lookAtPosition != null) {
+            CameraPath.CameraState lookAtState = applyLookAt(targetState);
+            targetState = CameraPath.CameraState.lerpRotationOnly(targetState, lookAtState, lookAtWeight);
+            
+            // Apply FOV Zoom
+            // Apply FOV Zoom & Dynamic Close-Up Position
+            if (focusFovWeight > 0.001f) {
+                float zoomedFov = targetState.getFov() * (1.0f - focusFovWeight * (1.0f - FOCUS_FOV_ZOOM));
+                
+                // Calculate Dynamic Close-Up Position
+                // Instead of being far away, we blend towards a position closer to the NPC
+                Vec3 currentPos = targetState.getPosition();
+                Vec3 toCam = currentPos.subtract(lookAtPosition);
+                double currentDist = toCam.length();
+                double targetDist = 3.5; // Ideal distance for talking (3.5 blocks)
+                
+                Vec3 newPos = currentPos;
+                if (currentDist > targetDist) {
+                    // Position along the vector from NPC to Camera, but at targetDist
+                    Vec3 idealPos = lookAtPosition.add(toCam.normalize().scale(targetDist));
+                    
+                    // Smoothly blend to this position based on focus weight
+                    // We use a stronger curve for position to ensure we really get there when focused
+                    float posWeight = focusFovWeight * focusFovWeight; // Quadratic for smoother entry
+                    newPos = currentPos.lerp(idealPos, posWeight);
+                }
+                
+                targetState = new CameraPath.CameraState(newPos, targetState.getYaw(), targetState.getPitch(), targetState.getRoll(), zoomedFov);
+            }
         }
         
         // Apply extra temporal smoothing if enabled
@@ -312,8 +498,30 @@ public class CinematicCameraController {
         currentState = currentPath.getStateAt(exactTime);
         
         // Apply look-at override
-        if (lookAtPosition != null) {
-            currentState = applyLookAt(currentState);
+        if (lookAtWeight > 0.001f && lookAtPosition != null) {
+            CameraPath.CameraState lookAtState = applyLookAt(currentState);
+            currentState = CameraPath.CameraState.lerpRotationOnly(currentState, lookAtState, lookAtWeight);
+            
+            // Apply FOV Zoom
+            // Apply FOV Zoom & Dynamic Close-Up Position
+            if (focusFovWeight > 0.001f) {
+                float zoomedFov = currentState.getFov() * (1.0f - focusFovWeight * (1.0f - FOCUS_FOV_ZOOM));
+                
+                // Calculate Dynamic Close-Up Position
+                Vec3 currentPos = currentState.getPosition();
+                Vec3 toCam = currentPos.subtract(lookAtPosition);
+                double currentDist = toCam.length();
+                double targetDist = 3.5;
+                
+                Vec3 newPos = currentPos;
+                if (currentDist > targetDist) {
+                    Vec3 idealPos = lookAtPosition.add(toCam.normalize().scale(targetDist));
+                    float posWeight = focusFovWeight * focusFovWeight;
+                    newPos = currentPos.lerp(idealPos, posWeight);
+                }
+
+                currentState = new CameraPath.CameraState(newPos, currentState.getYaw(), currentState.getPitch(), currentState.getRoll(), zoomedFov);
+            }
         }
     }
     
@@ -374,28 +582,96 @@ public class CinematicCameraController {
         fadeProgress = Math.max(0f, Math.min(1f, fadeProgress));
     }
     
-    private void resolveLookAtTarget(CameraPath.LookAtTarget target) {
+    /**
+     * Resolve the initial position for a look-at target.
+     */
+    private void resolveLookAtInitialPosition(CameraPath.LookAtTarget target) {
         if (target.getType() == CameraPath.LookAtTarget.Type.POSITION) {
             lookAtPosition = target.getPosition();
         } else {
-            Minecraft mc = Minecraft.getInstance();
-            if (mc.level != null && mc.player != null) {
-                lookAtPosition = mc.player.position().add(0, mc.player.getEyeHeight(), 0);
+            // Use the new resolution method for both entity paths and focus targets
+            Vec3 targetPos = resolveFocusTarget(target.getEntitySelector());
+            if (targetPos != null) {
+                lookAtPosition = targetPos;
+            } else {
+                // Fallback to player eye level if not found yet
+                Minecraft mc = Minecraft.getInstance();
+                if (mc.level != null && mc.player != null) {
+                    lookAtPosition = mc.player.position().add(0, mc.player.getEyeHeight(), 0);
+                }
             }
         }
+    }
+    
+    // Expanded to support "block:x,y,z" and "x,y,z"
+    private Vec3 resolveFocusTarget(String selector) {
+        if (selector == null || selector.isEmpty()) return null;
+        
+        // Handle coordinates (block:x,y,z or just x,y,z)
+        if (selector.startsWith("block:") || selector.contains(",")) {
+            try {
+                String clean = selector.startsWith("block:") ? selector.substring(6) : selector;
+                String[] parts = clean.split(",");
+                if (parts.length == 3) {
+                    double x = Double.parseDouble(parts[0].trim());
+                    double y = Double.parseDouble(parts[1].trim());
+                    double z = Double.parseDouble(parts[2].trim());
+                    // Focus on the center of the block
+                    return new Vec3(x + 0.5, y + 0.5, z + 0.5);
+                }
+            } catch (NumberFormatException e) {
+                StoryAdventureMod.LOGGER.debug("[CinematicCamera] Invalid coordinate format: {}", selector);
+            }
+        }
+
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.level == null) return null;
+        
+        // Handle special selectors
+        if (selector.equals("@p") || selector.equals("@s")) {
+            if (mc.player != null) return mc.player.position().add(0, mc.player.getEyeHeight(), 0);
+        }
+        
+        // Search for entity by name, scoreboard name, or tag
+        String selectorLower = selector.toLowerCase();
+        for (net.minecraft.world.entity.Entity entity : mc.level.entitiesForRendering()) {
+            // Exact matches
+            if (selector.equals(entity.getScoreboardName()) || 
+                entity.getTags().contains(selector) ||
+                (entity.getCustomName() != null && selector.equals(entity.getCustomName().getString())) ||
+                selector.equalsIgnoreCase(entity.getUUID().toString())) {
+                return entity.position().add(0, entity.getEyeHeight(), 0);
+            }
+            
+            // Fuzzy matches (contains)
+            if ((entity.getCustomName() != null && entity.getCustomName().getString().toLowerCase().contains(selectorLower)) ||
+                entity.getScoreboardName().toLowerCase().contains(selectorLower) ||
+                entity.getTags().stream().anyMatch(t -> t.toLowerCase().contains(selectorLower))) {
+                return entity.position().add(0, entity.getEyeHeight(), 0);
+            }
+        }
+        
+        return null;
     }
     
     /**
      * Update look-at target for entity tracking (call each tick).
      */
-    public void updateLookAtTarget(Vec3 newPosition) {
+    public void updateLookAtTarget(Vec3 newPosition, boolean highPriority) {
         if (lookAtPosition != null && newPosition != null) {
             // Smooth look-at target movement
             Vec3 diff = newPosition.subtract(lookAtPosition);
-            lookAtPosition = lookAtPosition.add(diff.scale(0.1));
+            // Higher speed for high priority (subtitles) vs low speed for base path
+            float speed = highPriority ? 0.25f : 0.12f;
+            lookAtPosition = lookAtPosition.add(diff.scale(speed));
         } else {
             lookAtPosition = newPosition;
         }
+    }
+    
+    @Deprecated
+    public void updateLookAtTarget(Vec3 newPosition) {
+        updateLookAtTarget(newPosition, false);
     }
     
     // ==================== Getters for Mixin Use ====================
@@ -499,20 +775,47 @@ public class CinematicCameraController {
         currentSubtitleVoiceover = null;
         int newSubtitleIndex = -1;
         
+        Vec3 targetFocus = baseLookAtPosition;
+        
         for (int i = 0; i < subtitles.size(); i++) {
             Subtitle sub = subtitles.get(i);
             if (tick >= sub.startTick() && tick < sub.startTick() + sub.durationTick()) {
                 currentSubtitle = sub.text();
                 currentSubtitleVoiceover = sub.voiceover();
                 newSubtitleIndex = i;
+                
+                // Handle focus target (NPC, Block, Entity)
+                if (sub.focusTarget() != null && !sub.focusTarget().isEmpty()) {
+                    Vec3 focusPos = resolveFocusTarget(sub.focusTarget());
+                    if (focusPos != null) {
+                        targetFocus = focusPos;
+                    }
+                }
                 break;
             }
         }
         
-        if (newSubtitleIndex != -1 && newSubtitleIndex != lastSubtitleIndex) {
-            StoryAdventureMod.LOGGER.info("[CinematicCamera] Subtitle active: '{}' (index: {}, voiceover: {})", 
-                currentSubtitle, newSubtitleIndex, currentSubtitleVoiceover);
+        // If no subtitle focus, update base focus from path if it's dynamic
+        if (targetFocus == baseLookAtPosition && activePathTarget != null && activePathTarget.getType() == CameraPath.LookAtTarget.Type.ENTITY) {
+            Vec3 currentPathTargetPos = resolveFocusTarget(activePathTarget.getEntitySelector());
+            if (currentPathTargetPos != null) {
+                baseLookAtPosition = currentPathTargetPos;
+                targetFocus = baseLookAtPosition;
+            }
         }
+        
+        // Update look-at weight for smooth transitions
+        float targetWeight = (targetFocus != null) ? 1.0f : 0.0f;
+        lookAtWeight += (targetWeight - lookAtWeight) * 0.15f;
+        
+        // Update FOV focus weight
+        boolean isNpcFocus = targetFocus != baseLookAtPosition && targetFocus != null;
+        float targetFovWeight = isNpcFocus ? 1.0f : 0.0f;
+        focusFovWeight += (targetFovWeight - focusFovWeight) * 0.1f;
+        
+        // Apply the resolved focus (smoothed target movement)
+        updateLookAtTarget(targetFocus, isNpcFocus);
+        
         
         // Trigger voiceover when a new subtitle becomes active
         if (newSubtitleIndex != -1 && newSubtitleIndex != lastSubtitleIndex) {
@@ -561,7 +864,8 @@ public class CinematicCameraController {
         private float smoothingFactor = 0.15f;
         private Runnable onComplete;
         private Runnable onSkip;
-        private java.util.List<Subtitle> subtitles;
+        private java.util.List<Subtitle> subtitles = new java.util.ArrayList<>();
+        private java.util.List<NPCAnimation> animations = new java.util.ArrayList<>();
         
         public CutsceneConfig() {}
         
@@ -613,6 +917,11 @@ public class CinematicCameraController {
         
         public CutsceneConfig setSubtitles(java.util.List<Subtitle> subtitles) {
             this.subtitles = subtitles;
+            return this;
+        }
+
+        public CutsceneConfig setAnimations(java.util.List<NPCAnimation> animations) {
+            this.animations = animations;
             return this;
         }
         

@@ -11,7 +11,7 @@ import java.util.UUID;
 /**
  * Payload for administrative instance management actions.
  */
-public record AdminInstanceActionPayload(Action action, UUID instanceId) implements CustomPacketPayload {
+public record AdminInstanceActionPayload(Action action, UUID instanceId, String data) implements CustomPacketPayload {
     
     public static final CustomPacketPayload.Type<AdminInstanceActionPayload> TYPE = 
         new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(StoryAdventureMod.MOD_ID, "admin_instance_action"));
@@ -20,7 +20,7 @@ public record AdminInstanceActionPayload(Action action, UUID instanceId) impleme
         StreamCodec.of(AdminInstanceActionPayload::write, AdminInstanceActionPayload::read);
 
     public enum Action {
-        SYNC, TERMINATE, PAUSE, RESUME
+        SYNC, TERMINATE, PAUSE, RESUME, SKIP_NODE, COMPLETE
     }
 
     private static void write(FriendlyByteBuf buf, AdminInstanceActionPayload payload) {
@@ -29,12 +29,14 @@ public record AdminInstanceActionPayload(Action action, UUID instanceId) impleme
         if (payload.instanceId != null) {
             buf.writeUUID(payload.instanceId);
         }
+        buf.writeUtf(payload.data != null ? payload.data : "");
     }
     
     private static AdminInstanceActionPayload read(FriendlyByteBuf buf) {
         Action action = buf.readEnum(Action.class);
         UUID instanceId = buf.readBoolean() ? buf.readUUID() : null;
-        return new AdminInstanceActionPayload(action, instanceId);
+        String data = buf.readUtf();
+        return new AdminInstanceActionPayload(action, instanceId, data);
     }
 
     @Override

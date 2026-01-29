@@ -130,14 +130,46 @@ public class XaeroWaypointIntegration {
                 storySet.getList().clear();
             }
 
-            // Restore original set
+            String targetSet = null;
+
+            // 1. Try to restore original set
             if (originalSetName != null && world.getSets().containsKey(originalSetName)) {
-                world.setCurrent(originalSetName);
-                StoryAdventureMod.LOGGER.info("Restored Xaero waypoint set: {}", originalSetName);
-            } else {
-                // Fallback to "gui.xaero_default" if original is unknown
-                world.setCurrent("gui.xaero_default");
-                StoryAdventureMod.LOGGER.info("Restored Xaero waypoint set to default");
+                targetSet = originalSetName;
+            } 
+            
+            // 2. Fallback: Try "gui.xaero_default" explicitly
+            if (targetSet == null) {
+                if (world.getSets().containsKey("gui.xaero_default")) {
+                    targetSet = "gui.xaero_default";
+                }
+            }
+            
+            // 3. Fallback: Find ANY set that isn't the story set
+            if (targetSet == null) {
+                for (String setName : world.getSets().keySet()) {
+                    if (!setName.equals(STORY_SET_NAME)) {
+                        targetSet = setName;
+                        break;
+                    }
+                }
+            }
+
+            // 4. Last Resort: Create the default set if nothing else exists
+            if (targetSet == null) {
+                targetSet = "gui.xaero_default";
+                if (!world.getSets().containsKey(targetSet)) {
+                    world.addSet(targetSet);
+                }
+            }
+
+            // Always ensure we switch to a valid set BEFORE removing anything
+            world.setCurrent(targetSet);
+            StoryAdventureMod.LOGGER.info("Restored Xaero waypoint set to: {}", targetSet);
+
+            // Clean up the story set only if we're not currently using it
+            if (!targetSet.equals(STORY_SET_NAME) && world.getSets().containsKey(STORY_SET_NAME)) {
+                 world.getSets().remove(STORY_SET_NAME);
+                 StoryAdventureMod.LOGGER.info("Removed Xaero story waypoint set");
             }
             
             originalSetName = null;

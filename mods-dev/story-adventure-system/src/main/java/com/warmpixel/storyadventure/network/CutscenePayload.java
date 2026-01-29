@@ -20,7 +20,8 @@ public record CutscenePayload(
     int fadeInTicks,         // Fade in duration
     int fadeOutTicks,        // Fade out duration
     String voiceover,        // Optional voiceover path
-    String subtitlesJson     // JSON data for subtitles
+    String subtitlesJson,    // JSON data for subtitles
+    String animationsJson    // JSON data for npc animations
 ) implements CustomPacketPayload {
     
     public static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath("storyadventure", "cutscene");
@@ -42,6 +43,7 @@ public record CutscenePayload(
         buf.writeVarInt(payload.fadeOutTicks());
         buf.writeUtf(payload.voiceover() != null ? payload.voiceover() : "");
         buf.writeUtf(payload.subtitlesJson() != null ? payload.subtitlesJson() : "[]");
+        buf.writeUtf(payload.animationsJson() != null ? payload.animationsJson() : "[]");
     }
     
     public static CutscenePayload read(FriendlyByteBuf buf) {
@@ -54,7 +56,8 @@ public record CutscenePayload(
         int fadeOutTicks = buf.readVarInt();
         String voiceover = buf.readUtf();
         String subtitlesJson = buf.readUtf();
-        return new CutscenePayload(action, instanceId, cameraPathJson, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitlesJson);
+        String animationsJson = buf.readUtf();
+        return new CutscenePayload(action, instanceId, cameraPathJson, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitlesJson, animationsJson);
     }
     
     @Override
@@ -70,24 +73,25 @@ public record CutscenePayload(
     public static CutscenePayload start(String instanceId, JsonObject cameraPath, 
                                          boolean skippable, boolean letterbox,
                                          int fadeInTicks, int fadeOutTicks, String voiceover,
-                                         com.google.gson.JsonArray subtitles) {
+                                         com.google.gson.JsonArray subtitles, com.google.gson.JsonArray animations) {
         String pathJson = cameraPath != null ? GSON.toJson(cameraPath) : "{}";
         String subtitlesJson = subtitles != null ? GSON.toJson(subtitles) : "[]";
-        return new CutscenePayload("START", instanceId, pathJson, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitlesJson);
+        String animationsJson = animations != null ? GSON.toJson(animations) : "[]";
+        return new CutscenePayload("START", instanceId, pathJson, skippable, letterbox, fadeInTicks, fadeOutTicks, voiceover, subtitlesJson, animationsJson);
     }
     
     /**
      * Create a STOP cutscene payload.
      */
     public static CutscenePayload stop(String instanceId) {
-        return new CutscenePayload("STOP", instanceId, "", true, false, 0, 0, "", "[]");
+        return new CutscenePayload("STOP", instanceId, "", true, false, 0, 0, "", "[]", "[]");
     }
     
     /**
      * Create a SKIP cutscene payload.
      */
     public static CutscenePayload skip(String instanceId) {
-        return new CutscenePayload("SKIP", instanceId, "", true, false, 0, 0, "", "[]");
+        return new CutscenePayload("SKIP", instanceId, "", true, false, 0, 0, "", "[]", "[]");
     }
     
     /**
@@ -113,6 +117,21 @@ public record CutscenePayload(
         }
         try {
             return GSON.fromJson(subtitlesJson, com.google.gson.JsonArray.class);
+        } catch (Exception e) {
+            return new com.google.gson.JsonArray();
+        }
+    }
+
+    /**
+     * Parse animations JSON.
+     */
+    public com.google.gson.JsonArray getAnimationsAsJson() {
+        if (animationsJson == null || animationsJson.isEmpty()) {
+            return new com.google.gson.JsonArray();
+        }
+        try {
+            var elem = GSON.fromJson(animationsJson, com.google.gson.JsonElement.class);
+            return elem.isJsonArray() ? elem.getAsJsonArray() : new com.google.gson.JsonArray();
         } catch (Exception e) {
             return new com.google.gson.JsonArray();
         }

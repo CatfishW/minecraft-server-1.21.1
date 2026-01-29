@@ -52,6 +52,14 @@ public class NodePropertyPanel {
         // Called when screen initializes
     }
     
+    public void setBounds(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        rebuildEditBoxes();
+    }
+    
     public void setNode(GraphNode node, JsonObject nodeData) {
         this.currentNode = node;
         this.currentNodeData = nodeData;

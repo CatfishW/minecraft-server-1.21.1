@@ -78,7 +78,31 @@ public class ServerUICommands {
                         return 0;
                     }
                     
-                    NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_PUZZLE);
+                    String extraData = "";
+                    try {
+                        var node = instance.getCurrentNode();
+                        if (node != null && node.getType() == com.warmpixel.storyadventure.core.graph.NodeType.PUZZLE) {
+                            var data = node.getData();
+                            var json = new com.google.gson.JsonObject();
+                            json.addProperty("puzzle_type", node.getString("puzzle_type", "CODE_LOCK"));
+                            json.addProperty("title", node.getString("title", "解谜"));
+                            json.addProperty("subtitle", node.getString("description", ""));
+                            json.addProperty("max_attempts", node.getInt("max_attempts", 3));
+                            String solution = node.getString("solution", "");
+                            json.addProperty("code_length", solution.isEmpty() ? 4 : solution.length());
+                            if (data.has("hint")) {
+                                json.add("hint", data.get("hint"));
+                            }
+                            if (data.has("hints") && data.get("hints").isJsonArray()) {
+                                json.add("hints", data.getAsJsonArray("hints"));
+                            }
+                            extraData = json.toString();
+                        }
+                    } catch (Exception e) {
+                        // Keep defaults on failure
+                    }
+
+                    NetworkHandler.sendOpenUI(player, OpenUIPayload.SCREEN_PUZZLE, extraData);
                     ctx.getSource().sendSuccess(() -> Component.translatable("command.storyadventure.ui.puzzle.opening"), false);
                     return 1;
                 }))

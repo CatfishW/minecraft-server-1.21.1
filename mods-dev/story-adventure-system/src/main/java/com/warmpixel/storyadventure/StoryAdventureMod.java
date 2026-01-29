@@ -4,6 +4,7 @@ import com.warmpixel.storyadventure.command.DebugCommands;
 import com.warmpixel.storyadventure.command.InstanceCommands;
 import com.warmpixel.storyadventure.command.ServerUICommands;
 import com.warmpixel.storyadventure.command.StoryAdminCommand;
+import com.warmpixel.storyadventure.command.IndicatorCommands;
 import com.warmpixel.storyadventure.command.StoryCommands;
 import com.warmpixel.storyadventure.instance.InstanceManager;
 import com.warmpixel.storyadventure.instance.PartyManager;
@@ -67,6 +68,7 @@ public class StoryAdventureMod implements ModInitializer {
             InstanceCommands.register(dispatcher, instanceManager, partyManager, storyRegistry);
             DebugCommands.register(dispatcher, instanceManager, storyRegistry);
             StoryAdminCommand.register(dispatcher);
+            IndicatorCommands.register(dispatcher);
         });
 
         // Server tick event
@@ -132,6 +134,7 @@ public class StoryAdventureMod implements ModInitializer {
             LOGGER.info("Cleaning up instance entities before shutdown...");
             for (var instance : instanceManager.getAllInstances()) {
                 try {
+                    instance.cleanupBossBars();
                     instance.cleanupEntities();
                 } catch (Exception e) {
                     LOGGER.error("[Shutdown] Failed to cleanup entities for instance {}", instance.getInstanceId(), e);

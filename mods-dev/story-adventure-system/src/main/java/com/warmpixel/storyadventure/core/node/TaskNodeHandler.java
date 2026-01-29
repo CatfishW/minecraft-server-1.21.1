@@ -149,16 +149,24 @@ public class TaskNodeHandler implements NodeHandler {
         
         for (int i = 0; i < objectives.size(); i++) {
             if (i > 0) hudJson.append(",");
-            String objDesc = objectives.get(i).data().has("description") ? 
-                objectives.get(i).data().get("description").getAsString() : taskDescription;
+            TaskObjective obj = objectives.get(i);
+            String objDesc = obj.data().has("description") ? 
+                obj.data().get("description").getAsString() : taskDescription;
             
             // Add progress if it's a kill objective
-            if ("KILL_ENTITY".equals(objectives.get(i).type())) {
+            if ("KILL_ENTITY".equals(obj.type())) {
                 int currentKills = instance.getState().getMetadata().has("objective_" + i + "_kills") ? 
                     instance.getState().getMetadata().get("objective_" + i + "_kills").getAsInt() : 0;
-                int required = objectives.get(i).data().has("count") ? objectives.get(i).data().get("count").getAsInt() : 1;
+                int required = obj.data().has("count") ? obj.data().get("count").getAsInt() : 1;
                 if (!isObjectiveComplete(instance, "objective_" + i + "_complete")) {
                     objDesc += String.format(" (%d/%d)", currentKills, required);
+                }
+            } else if ("COLLECT_ITEM".equals(obj.type())) {
+                // If we want to show count progress for items too
+                if (obj.data().has("count") && obj.data().get("count").getAsInt() > 1) {
+                    int required = obj.data().get("count").getAsInt();
+                    // We don't currently track partial collection in metadata for items in onAction, 
+                    // but we could if needed. For now, just show completion status.
                 }
             }
             
@@ -166,7 +174,7 @@ public class TaskNodeHandler implements NodeHandler {
             boolean isCurrent = (i == currentObjIndex) || (currentObjIndex == -1 && i == objectives.size() - 1);
             
             hudJson.append("{");
-            hudJson.append("\"text\":\"").append(escapeJson(objDesc)).append("\",");
+            hudJson.append("\"text\":\"").append(escapeJson((isComplete ? "§a" : (isCurrent ? "§e" : "§7")) + objDesc)).append("\",");
             hudJson.append("\"complete\":").append(isComplete).append(",");
             hudJson.append("\"current\":").append(isCurrent);
             hudJson.append("}");
@@ -308,6 +316,7 @@ public class TaskNodeHandler implements NodeHandler {
                 case "COLLECT_ITEM" -> objectiveCompleted = checkCollectItemObjective(instance, node, obj, i);
                 case "KILL_ENTITY" -> objectiveCompleted = checkKillEntityObjective(instance, node, obj, i);
                 case "INTERACT" -> objectiveCompleted = checkInteractObjective(instance, node, obj, i);
+                case "UI_CLICK" -> objectiveCompleted = false; // Event driven
                 default -> StoryAdventureMod.LOGGER.warn("[TaskNodeHandler] Unknown objective type: {}", obj.type());
             }
             
@@ -455,14 +464,32 @@ public class TaskNodeHandler implements NodeHandler {
      * Checks COLLECT_ITEM objective (placeholder - implement based on your inventory system)
      */
     private boolean checkCollectItemObjective(Instance instance, StageNode node, TaskObjective obj, int objectiveIndex) {
-        // This would check player inventory for specific items
-        // Implement based on your item tracking system
         String itemId = obj.data().has("item_id") ? obj.data().get("item_id").getAsString() : "";
         int requiredCount = obj.data().has("count") ? obj.data().get("count").getAsInt() : 1;
         
-        StoryAdventureMod.LOGGER.debug("[TaskNodeHandler] COLLECT_ITEM check: item={}, count={}", itemId, requiredCount);
+        if (itemId.isEmpty()) return false;
         
-        // TODO: Implement item collection check
+        for (UUID memberId : instance.getParty().getMembers()) {
+            ServerPlayer player = instance.getServer().getPlayerList().getPlayer(memberId);
+            if (player == null) continue;
+            
+            int count = 0;
+            for (int j = 0; j < player.getInventory().getContainerSize(); j++) {
+                net.minecraft.world.item.ItemStack stack = player.getInventory().getItem(j);
+                if (!stack.isEmpty() && net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals(itemId)) {
+                    // Check NBT if specified (simple check for now)
+                    if (obj.data().has("tag")) {
+                         // Simple tag check placeholder
+                    }
+                    count += stack.getCount();
+                }
+            }
+            
+            if (count >= requiredCount) {
+                return true;
+            }
+        }
+        
         return false;
     }
     
@@ -470,15 +497,13 @@ public class TaskNodeHandler implements NodeHandler {
      * Checks KILL_ENTITY objective (placeholder - implement based on your combat tracking)
      */
     private boolean checkKillEntityObjective(Instance instance, StageNode node, TaskObjective obj, int objectiveIndex) {
-        // This would check if required entities have been killed
-        // Implement based on your combat/entity tracking system
-        String entityType = obj.data().has("entity_type") ? obj.data().get("entity_type").getAsString() : "";
-        int requiredKills = obj.data().has("count") ? obj.data().get("count").getAsInt() : 1;
-        
-        StoryAdventureMod.LOGGER.debug("[TaskNodeHandler] KILL_ENTITY check: entity={}, count={}", entityType, requiredKills);
-        
-        // TODO: Implement kill tracking check
-        return false;
+        // Kills are primarily tracked via onAction/enemy_killed events.
+        // We only check metadata here to see if the count was reached.
+        int required = obj.data().has("count") ? obj.data().get("count").getAsInt() : 1;
+        int current = instance.getState().getMetadata().has("objective_" + objectiveIndex + "_kills") ? 
+            instance.getState().getMetadata().get("objective_" + objectiveIndex + "_kills").getAsInt() : 0;
+            
+        return current >= required;
     }
     
     /**
@@ -662,17 +687,92 @@ public class TaskNodeHandler implements NodeHandler {
             
             case "item_collected" -> {
                 StoryAdventureMod.LOGGER.debug("[TaskNodeHandler] Item collected action received");
-                onAction(instance, node, player, "objective_complete", data);
+                if (data instanceof net.minecraft.world.item.ItemStack stack) {
+                    java.util.List<TaskObjective> objectives = parseObjectives(node);
+                    boolean anyUpdate = false;
+                    for (int i = 0; i < objectives.size(); i++) {
+                        TaskObjective obj = objectives.get(i);
+                        if ("COLLECT_ITEM".equals(obj.type()) && !isObjectiveComplete(instance, "objective_" + i + "_complete")) {
+                            String targetId = obj.data().has("item_id") ? obj.data().get("item_id").getAsString() : "";
+                            if (net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(stack.getItem()).toString().equals(targetId)) {
+                                // If it's a TACZ gun, check GunId if specified
+                                if (obj.data().has("gun_id") || obj.data().has("ammo_id")) {
+                                    // Complex check... simplified for now as tutorial only has one
+                                }
+                                
+                                instance.getState().getMetadata().addProperty("objective_" + i + "_complete", true);
+                                completed++;
+                                instance.getState().getMetadata().addProperty("completed_objectives", completed);
+                                anyUpdate = true;
+                                StoryAdventureMod.LOGGER.info("[TaskNodeHandler] Item collected: obj={}, item={}", i, targetId);
+                                break;
+                            }
+                        }
+                    }
+                    if (anyUpdate) {
+                        notifyPartyProgress(instance, node, completed, total);
+                        if (completed >= total) markTaskComplete(instance, node);
+                    }
+                }
             }
             
             case "location_reached" -> {
                 StoryAdventureMod.LOGGER.debug("[TaskNodeHandler] Location reached action received");
+                if (data instanceof String locationId) {
+                    java.util.List<TaskObjective> objectives = parseObjectives(node);
+                    boolean anyUpdate = false;
+                    for (int i = 0; i < objectives.size(); i++) {
+                        TaskObjective obj = objectives.get(i);
+                        if ("REACH_LOCATION".equals(obj.type()) && !isObjectiveComplete(instance, "objective_" + i + "_complete")) {
+                            String targetId = obj.data().has("id") ? obj.data().get("id").getAsString() : "";
+                            if (locationId.equals(targetId)) {
+                                instance.getState().getMetadata().addProperty("objective_" + i + "_complete", true);
+                                completed++;
+                                instance.getState().getMetadata().addProperty("completed_objectives", completed);
+                                anyUpdate = true;
+                                StoryAdventureMod.LOGGER.info("[TaskNodeHandler] Location reached: obj={}, id={}", i, locationId);
+                                break;
+                            }
+                        }
+                    }
+                    if (anyUpdate) {
+                        notifyPartyProgress(instance, node, completed, total);
+                        if (completed >= total) markTaskComplete(instance, node);
+                        return;
+                    }
+                }
                 onAction(instance, node, player, "objective_complete", data);
+            }
+            
+            case "ui_click" -> {
+                StoryAdventureMod.LOGGER.info("[TaskNodeHandler] UI element clicked: {}", data);
+                if (data instanceof String tutorialId) {
+                    java.util.List<TaskObjective> objectives = parseObjectives(node);
+                    boolean anyUpdate = false;
+                    for (int i = 0; i < objectives.size(); i++) {
+                        TaskObjective obj = objectives.get(i);
+                        if ("UI_CLICK".equals(obj.type()) && !isObjectiveComplete(instance, "objective_" + i + "_complete")) {
+                            String targetId = obj.data().has("id") ? obj.data().get("id").getAsString() : "default";
+                            if (tutorialId.equals(targetId)) {
+                                instance.getState().getMetadata().addProperty("objective_" + i + "_complete", true);
+                                completed++;
+                                instance.getState().getMetadata().addProperty("completed_objectives", completed);
+                                anyUpdate = true;
+                                StoryAdventureMod.LOGGER.info("[TaskNodeHandler] UI click objective {} complete: {}", i, tutorialId);
+                                break;
+                            }
+                        }
+                    }
+                    if (anyUpdate) {
+                        notifyPartyProgress(instance, node, completed, total);
+                        if (completed >= total) markTaskComplete(instance, node);
+                    }
+                }
             }
             
             case "entity_killed" -> {
                 StoryAdventureMod.LOGGER.debug("[TaskNodeHandler] Entity killed action received");
-                onAction(instance, node, player, "objective_complete", data);
+                onAction(instance, node, player, "enemy_killed", data);
             }
             
             case "force_complete" -> {

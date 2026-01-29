@@ -25,6 +25,10 @@ public class ActionFactory {
         register("GIVE_ITEM", GiveItemAction::fromJson);
         register("SPAWN_NPC", SpawnNPCAction::fromJson);
         register("DESPAWN_ENTITIES", DespawnEntitiesAction::fromJson);
+        register("BGM", BGMAction::fromJson);
+        register("INDICATOR", IndicatorAction::fromJson);
+        register("SPAWN_PLACED_ITEM", SpawnPlacedItemAction::fromJson);
+        register("UI_TUTORIAL", UITutorialAction::fromJson);
     }
     
     public static void register(String type, Function<JsonObject, NodeAction> parser) {
@@ -71,6 +75,9 @@ public class ActionFactory {
             case "SPAWN_NPC" -> "生成NPC";
             case "GIVE_ITEM" -> "给予物品";
             case "DESPAWN_ENTITIES" -> "清理实体";
+            case "BGM" -> "背景音乐";
+            case "INDICATOR" -> "显示指示器";
+            case "UI_TUTORIAL" -> "UI教程高亮";
             case "EFFECT" -> "添加效果";
             case "PARTICLE" -> "播放粒子";
             default -> type;
@@ -120,6 +127,36 @@ public class ActionFactory {
                 var tags = new com.google.gson.JsonArray();
                 tags.add("story_entity");
                 obj.add("tags", tags);
+            }
+            case "BGM" -> {
+                obj.addProperty("sound", "story_id/music_track");
+                obj.addProperty("volume", 0.8);
+                obj.addProperty("loop", true);
+                obj.addProperty("fade", 20);
+            }
+            case "INDICATOR" -> {
+                obj.addProperty("action", "show");
+                obj.addProperty("id", "objective_marker");
+                obj.addProperty("x", 0.0);
+                obj.addProperty("y", 64.0);
+                obj.addProperty("z", 0.0);
+                obj.addProperty("label", "目标");
+                obj.addProperty("color", "#00FFFF");
+                obj.addProperty("radius", 1.0);
+                obj.addProperty("show_arrow", true);
+                obj.addProperty("show_circle", true);
+            }
+            case "UI_TUTORIAL" -> {
+                obj.addProperty("action", "show");
+                obj.addProperty("id", "tutorial_hotbar");
+                obj.addProperty("element_type", "hotbar");
+                obj.addProperty("element_index", 0);
+                obj.addProperty("message", "这是你的武器槽位");
+                obj.addProperty("key_hint", "1");
+                obj.addProperty("color", "#00FFFF");
+                obj.addProperty("show_arrow", true);
+                obj.addProperty("show_pulse", true);
+                obj.addProperty("duration_ticks", 100);
             }
         }
         

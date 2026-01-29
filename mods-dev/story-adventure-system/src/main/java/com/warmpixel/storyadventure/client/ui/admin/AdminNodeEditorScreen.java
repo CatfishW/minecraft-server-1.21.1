@@ -39,23 +39,31 @@ public class AdminNodeEditorScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 750);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 480);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
-        int fieldX = 60;
-        int fieldWidth = width - 250;
-        int y = 70;
-        
-        // Node type badge is rendered in renderContent
+        int fieldX = guiLeft + 60;
+        int fieldWidth = guiWidth - 250;
+        int y = guiTop + 70;
         
         // Initialize type-specific fields
         initTypeFields(fieldX, y, fieldWidth);
         
         // Action buttons on right side
         int buttonWidth = 140;
-        int buttonHeight = 26;
-        int rightX = width - 170;
-        int buttonY = 80;
+        int buttonHeight = 24;
+        int rightX = guiLeft + guiWidth - 170;
+        int buttonY = guiTop + 80;
         
         // Save button
         addStrangerButton(rightX, buttonY, buttonWidth, buttonHeight,
@@ -77,10 +85,10 @@ public class AdminNodeEditorScreen extends StrangerScreen {
             Component.translatable("gui.storyadventure.admin.nodes.view_json"), this::viewJson);
         
         // Navigation buttons
-        addStrangerButton(30, height - 45, 100, 28,
+        addStrangerButton(guiLeft + 30, guiTop + guiHeight - 40, 100, 24,
             Component.translatable("gui.storyadventure.admin.nodes.back"), this::goBack);
         
-        addStrangerButton(width / 2 - 60, height - 45, 120, 28,
+        addStrangerButton(guiLeft + (guiWidth - 120) / 2, guiTop + guiHeight - 40, 120, 24,
             Component.translatable("gui.storyadventure.admin.nodes.cancel"), this::onClose);
     }
     
@@ -172,30 +180,25 @@ public class AdminNodeEditorScreen extends StrangerScreen {
         dataFields.add(field);
         dataFieldLabels.add(label);
     }
-    
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        // Node info header
-        int headerY = 48;
+        int headerY = guiTop + 35;
         
         // Type badge
         int typeColor = getTypeColor(nodeType);
         String typeDisplay = getTypeDisplayName(nodeType);
         int badgeWidth = font.width(typeDisplay) + 12;
         
-        graphics.fill(30, headerY, 30 + badgeWidth, headerY + 18, typeColor & 0x60FFFFFF);
-        graphics.fill(30, headerY, 32, headerY + 18, typeColor);
-        graphics.drawString(font, typeDisplay, 36, headerY + 5, typeColor);
+        graphics.fill(guiLeft + 30, headerY, guiLeft + 30 + badgeWidth, headerY + 18, typeColor & 0x60FFFFFF);
+        graphics.fill(guiLeft + 30, headerY, guiLeft + 32, headerY + 18, typeColor);
+        graphics.drawString(font, typeDisplay, guiLeft + 36, headerY + 5, typeColor);
         
         // Node ID
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.node_label", nodeId), 40 + badgeWidth, headerY + 5, COLOR_TEXT_BODY);
-        
-        // Story ID
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.story_label", storyId), 40 + badgeWidth + font.width("Node: " + nodeId) + 20, headerY + 5, COLOR_TEXT_DIM);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.node_label", nodeId), guiLeft + 40 + badgeWidth, headerY + 5, COLOR_TEXT_BODY);
         
         // Field labels
-        int labelX = 30;
-        int fieldY = 70;
+        int labelX = guiLeft + 30;
+        int fieldY = guiTop + 70;
         int gap = 30;
         
         for (int i = 0; i < dataFieldLabels.size(); i++) {
@@ -204,8 +207,8 @@ public class AdminNodeEditorScreen extends StrangerScreen {
         }
         
         // Sidebar info panel
-        int sidebarX = width - 170;
-        int sidebarY = 230;
+        int sidebarX = guiLeft + guiWidth - 170;
+        int sidebarY = guiTop + 230;
         int sidebarWidth = 150;
         int sidebarHeight = 120;
         
@@ -216,12 +219,6 @@ public class AdminNodeEditorScreen extends StrangerScreen {
         graphics.fill(sidebarX + 5, sidebarY + 20, sidebarX + sidebarWidth - 5, sidebarY + 21, COLOR_BORDER);
         
         graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.info_type", typeDisplay), sidebarX + 10, sidebarY + 28, COLOR_TEXT_BODY);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.info_fields", dataFields.size()), sidebarX + 10, sidebarY + 44, COLOR_TEXT_DIM);
-        
-        // Help text
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.info_hint"), sidebarX + 10, sidebarY + 65, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.info_hint1"), sidebarX + 10, sidebarY + 80, COLOR_TEXT_DIM);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.info_hint2"), sidebarX + 10, sidebarY + 92, COLOR_TEXT_DIM);
     }
     
     private int getTypeColor(String type) {

@@ -42,13 +42,23 @@ public class AdminNodeListScreen extends StrangerScreen {
     }
     
     @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 750);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 480);
+    }
+
+    @Override
     protected void init() {
         super.init();
         
         int buttonWidth = 140;
         int buttonHeight = 24;
-        int rightX = width - 170;
-        int y = 80;
+        int rightX = guiLeft + guiWidth - 170;
+        int y = guiTop + 50;
         
         // Edit node button
         addStrangerButton(rightX, y, buttonWidth, buttonHeight,
@@ -85,11 +95,11 @@ public class AdminNodeListScreen extends StrangerScreen {
             Component.translatable("gui.storyadventure.node.type.checkpoint"), () -> setFilter("CHECKPOINT"));
         
         // Back button
-        addStrangerButton(30, height - 45, 100, 28,
+        addStrangerButton(guiLeft + 30, guiTop + guiHeight - 40, 100, 24,
             Component.translatable("gui.storyadventure.admin.nodes.back"), this::goBack);
         
         // Close button
-        addStrangerButton(width / 2 - 60, height - 45, 120, 28,
+        addStrangerButton(guiLeft + (guiWidth - 120) / 2, guiTop + guiHeight - 40, 120, 24,
             Component.translatable("gui.storyadventure.admin.nodes.close"), this::onClose);
         
         // Load nodes
@@ -99,19 +109,19 @@ public class AdminNodeListScreen extends StrangerScreen {
     @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
         // Node list panel
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - 230;
-        int listHeight = height - 110;
+        int listX = guiLeft + 30;
+        int listY = guiTop + 35;
+        int listWidth = guiWidth - 230;
+        int listHeight = guiHeight - 85;
         
         graphics.fill(listX, listY, listX + listWidth, listY + listHeight, 0xE0080808);
         drawPanelBorder(graphics, listX, listY, listWidth, listHeight);
         
         // Headers
         graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.id"), listX + 10, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.type"), listX + 200, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.edges"), listX + 300, listY + 8, COLOR_NEON_RED);
-        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.desc"), listX + 360, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.type"), listX + 180, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.edges"), listX + 270, listY + 8, COLOR_NEON_RED);
+        graphics.drawString(font, Component.translatable("gui.storyadventure.admin.nodes.col.desc"), listX + 320, listY + 8, COLOR_NEON_RED);
         
         graphics.fill(listX + 5, listY + 22, listX + listWidth - 5, listY + 23, COLOR_BORDER);
         
@@ -137,10 +147,10 @@ public class AdminNodeListScreen extends StrangerScreen {
         }
         
         // Stats bar
-        graphics.fill(30, height - 70, width - 30, height - 50, 0xC0080808);
+        graphics.fill(guiLeft + 30, guiTop + guiHeight - 65, guiLeft + guiWidth - 30, guiTop + guiHeight - 50, 0xC0080808);
         Component stats = Component.translatable("gui.storyadventure.admin.nodes.stats",
             storyId, nodes.size(), filteredNodes.size(), getTypeDisplayName(filterType));
-        graphics.drawString(font, stats, 40, height - 64, COLOR_TEXT_DIM);
+        graphics.drawString(font, stats, guiLeft + 40, guiTop + guiHeight - 62, COLOR_TEXT_DIM);
     }
     
     private void renderNodeEntry(GuiGraphics graphics, NodeInfo info, 
@@ -159,14 +169,14 @@ public class AdminNodeListScreen extends StrangerScreen {
         
         // Type badge
         String typeDisplay = getTypeDisplayName(info.type);
-        graphics.fill(x + 195, y + 6, x + 195 + font.width(typeDisplay) + 10, y + 20, typeColor & 0x40FFFFFF);
-        graphics.drawString(font, typeDisplay, x + 200, y + 10, typeColor);
+        graphics.fill(x + 175, y + 6, x + 175 + font.width(typeDisplay) + 10, y + 20, typeColor & 0x40FFFFFF);
+        graphics.drawString(font, typeDisplay, x + 180, y + 10, typeColor);
         
         // Edge count
-        graphics.drawString(font, String.valueOf(info.edgeCount), x + 310, y + 10, COLOR_TEXT_DIM);
+        graphics.drawString(font, String.valueOf(info.edgeCount), x + 280, y + 10, COLOR_TEXT_DIM);
         
         // Description
-        graphics.drawString(font, truncate(info.description, 30), x + 360, y + 10, COLOR_TEXT_DIM);
+        graphics.drawString(font, truncate(info.description, 30), x + 320, y + 10, COLOR_TEXT_DIM);
     }
     
     private List<NodeInfo> getFilteredNodes() {
@@ -228,10 +238,10 @@ public class AdminNodeListScreen extends StrangerScreen {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        int listX = 30;
-        int listY = 50;
-        int listWidth = width - 230;
-        int listHeight = height - 110;
+        int listX = guiLeft + 30;
+        int listY = guiTop + 35;
+        int listWidth = guiWidth - 230;
+        int listHeight = guiHeight - 85;
         
         if (mouseX >= listX && mouseX < listX + listWidth && 
             mouseY >= listY + 28 && mouseY < listY + listHeight) {
@@ -250,7 +260,7 @@ public class AdminNodeListScreen extends StrangerScreen {
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
         List<NodeInfo> filtered = getFilteredNodes();
-        int visibleCount = (height - 110 - 30) / NODE_ENTRY_HEIGHT;
+        int visibleCount = (guiHeight - 85 - 30) / NODE_ENTRY_HEIGHT;
         if (vAmount > 0 && scrollOffset > 0) {
             scrollOffset--;
             return true;

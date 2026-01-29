@@ -19,7 +19,7 @@ public record AdminStoryActionPayload(Action action, String storyId) implements 
         StreamCodec.of(AdminStoryActionPayload::write, AdminStoryActionPayload::read);
 
     public enum Action {
-        SYNC, RELOAD, VALIDATE
+        SYNC, RELOAD, VALIDATE, SET_SPAWN, SET_RETURN, TP_TO_SCENE, CREATE_TEMPLATE
     }
 
     private static void write(FriendlyByteBuf buf, AdminStoryActionPayload payload) {

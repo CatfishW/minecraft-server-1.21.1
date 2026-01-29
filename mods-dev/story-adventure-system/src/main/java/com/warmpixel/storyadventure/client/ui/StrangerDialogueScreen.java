@@ -61,10 +61,10 @@ public class StrangerDialogueScreen extends StrangerScreen {
         super.init();
         
         // Initialize choice buttons (hidden until text complete)
-        int boxWidth = Math.min(width - PANEL_MARGIN * 2, 400);
+        int boxWidth = guiWidth - 40;
         int boxHeight = DIALOGUE_BOX_HEIGHT;
         // Move box up if there are multiple choices to prevent bottom cutoff
-        int boxY = height - PANEL_MARGIN - boxHeight - (choices.size() * 30);
+        int boxY = guiTop + guiHeight - 20 - boxHeight - (choices.size() * 30);
         int choiceY = boxY + boxHeight + 8;
         int choiceWidth = Math.min(boxWidth - 40, 280); // Dynamic width based on box size
         
@@ -73,7 +73,7 @@ public class StrangerDialogueScreen extends StrangerScreen {
             int y = choiceY + i * (CHOICE_BUTTON_HEIGHT + CHOICE_BUTTON_MARGIN);
             
             StrangerButton button = addStrangerButton(
-                width / 2 - choiceWidth / 2,
+                guiLeft + guiWidth / 2 - choiceWidth / 2,
                 y,
                 choiceWidth,
                 CHOICE_BUTTON_HEIGHT,
@@ -91,10 +91,10 @@ public class StrangerDialogueScreen extends StrangerScreen {
         updateTypewriter();
         
         // Render dialogue box
-        int boxWidth = Math.min(width - PANEL_MARGIN * 2, 400);
+        int boxWidth = guiWidth - 40;
         int boxHeight = DIALOGUE_BOX_HEIGHT;
-        int boxX = (width - boxWidth) / 2;
-        int boxY = height - PANEL_MARGIN - boxHeight - (choices.size() * 30); // Move up to make room for buttons
+        int boxX = guiLeft + (guiWidth - boxWidth) / 2;
+        int boxY = guiTop + guiHeight - 20 - boxHeight - (choices.size() * 30); // Move up to make room for buttons
         
         // Draw dialogue box background
         graphics.fill(boxX, boxY, boxX + boxWidth, boxY + boxHeight, 0xE0080808);

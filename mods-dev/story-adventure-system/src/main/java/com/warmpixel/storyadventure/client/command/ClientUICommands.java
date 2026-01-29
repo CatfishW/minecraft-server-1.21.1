@@ -26,9 +26,9 @@ public class ClientUICommands {
                     Minecraft.getInstance().execute(() -> {
                         StrangerStoryListScreen screen = new StrangerStoryListScreen();
                         screen.addStory("stranger_things_hawkins", "怪奇物语：霍金斯事件", 
-                            "1983年，印第安纳州霍金斯镇。揭开神秘失踪案的真相...", 1, 4, 45);
+                            "1983年，印第安纳州霍金斯镇。揭开神秘失踪案的真相...", 1, 4, 45, "");
                         screen.addStory("example_story", "示例故事", 
-                            "这是一个示例故事，展示系统基本用法。", 1, 4, 15);
+                            "这是一个示例故事，展示系统基本用法。", 1, 4, 15, "");
                         Minecraft.getInstance().setScreen(screen);
                     });
                     return 1;
@@ -77,7 +77,12 @@ public class ClientUICommands {
                 .executes(ctx -> {
                     Minecraft.getInstance().execute(() -> {
                         StrangerPuzzleScreen screen = new StrangerPuzzleScreen(
-                            "CODE_LOCK", "威尔失踪的年份", 5);
+                            "CODE_LOCK",
+                            "终端破解",
+                            "测试界面",
+                            java.util.List.of("样例提示 1", "样例提示 2"),
+                            5,
+                            4);
                         Minecraft.getInstance().setScreen(screen);
                     });
                     return 1;

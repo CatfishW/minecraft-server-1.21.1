@@ -384,6 +384,16 @@ public class CameraPath {
                 a.fov + (b.fov - a.fov) * t
             );
         }
+
+        public static CameraState lerpRotationOnly(CameraState a, CameraState b, float t) {
+            return new CameraState(
+                a.position,
+                lerpAngle(a.yaw, b.yaw, t),
+                lerpAngle(a.pitch, b.pitch, t),
+                a.roll + (b.roll - a.roll) * t,
+                a.fov // Keep FOV from original
+            );
+        }
         
         private static float lerpAngle(float a, float b, float t) {
             float diff = b - a;

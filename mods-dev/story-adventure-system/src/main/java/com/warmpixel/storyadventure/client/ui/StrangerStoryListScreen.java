@@ -17,19 +17,42 @@ public class StrangerStoryListScreen extends StrangerScreen {
     private final List<StoryEntry> stories = new ArrayList<>();
     private int selectedIndex = -1;
     private int scrollOffset = 0;
-    private static final int ENTRY_HEIGHT = 44; // Slightly tighter list
     private boolean storyListRequested = false;
     
-    // Layout Constants
-    private static final int HEADER_HEIGHT = 50;
-    private static final int FOOTER_HEIGHT = 60;
+    @Override
+    protected int getWindowWidth() {
+        return Math.min(width - 20, 720);
+    }
+
+    @Override
+    protected int getWindowHeight() {
+        return Math.min(height - 20, 460);
+    }
+    
+    // Dynamic layout methods - these calculate based on current window dimensions
+    private int getEntryHeight() {
+        int baseHeight = (int)(guiHeight * 0.08);
+        return Math.max(30, Math.min(48, baseHeight));
+    }
+    
+    private int getHeaderHeight() {
+        return Math.max(30, Math.min(50, (int)(guiHeight * 0.07)));
+    }
+    
+    private int getFooterHeight() {
+        return Math.max(40, Math.min(65, (int)(guiHeight * 0.09)));
+    }
+    
+    private int getMargin() {
+        return Math.max(10, Math.min(20, (int)(guiWidth * 0.02)));
+    }
     
     public StrangerStoryListScreen() {
         super(Component.translatable("gui.storyadventure.title.select_story"));
     }
     
-    public void addStory(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes) {
-        stories.add(new StoryEntry(id, name, description, minPlayers, maxPlayers, estimatedMinutes));
+    public void addStory(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes, String cover) {
+        stories.add(new StoryEntry(id, name, description, minPlayers, maxPlayers, estimatedMinutes, cover));
     }
 
     public void clearStories() {
@@ -46,24 +69,28 @@ public class StrangerStoryListScreen extends StrangerScreen {
             requestStoryListRefresh();
         }
         
-        int buttonWidth = 160;
-        int buttonHeight = 32;
-        int bottomY = height - 44;
+        int footerHeight = getFooterHeight();
+        int margin = getMargin();
         
-        // Right-aligned buttons in the footer area
-        int rightPanelStart = (int)(width * 0.35) + 20;
-        int rightPanelWidth = width - rightPanelStart - 20;
+        int buttonWidth = Math.max(80, Math.min(130, (int)(guiWidth * 0.18)));
+        int buttonHeight = Math.max(24, Math.min(32, (int)(guiHeight * 0.06)));
         
-        // Center the buttons within the right panel area
-        int buttonsTotalWidth = buttonWidth * 2 + 20;
+        int buttonsY = guiTop + guiHeight - footerHeight / 2 - buttonHeight / 2 + 5;
+        
+        int leftPanelWidth = (int)(guiWidth * 0.38);
+        int rightPanelStart = guiLeft + leftPanelWidth + margin;
+        int rightPanelWidth = guiWidth - leftPanelWidth - margin * 2;
+        
+        int buttonGap = Math.max(6, (int)(guiWidth * 0.012));
+        int buttonsTotalWidth = buttonWidth * 2 + buttonGap;
         int buttonsStartX = rightPanelStart + (rightPanelWidth - buttonsTotalWidth) / 2;
         
-        // Back button (left)
-        addStrangerButton(buttonsStartX, bottomY, buttonWidth, buttonHeight,
+        // Back button
+        addStrangerButton(buttonsStartX, buttonsY, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.button.back"), this::onClose);
 
-        // Start button (right) - Only enabled if selected, but we render it always and check in callback
-        StrangerButton startBtn = addStrangerButton(buttonsStartX + buttonWidth + 20, bottomY, buttonWidth, buttonHeight,
+        // Start button
+        StrangerButton startBtn = addStrangerButton(buttonsStartX + buttonWidth + buttonGap, buttonsY, buttonWidth, buttonHeight,
             Component.translatable("gui.storyadventure.button.start_story"), this::startSelectedStory);
         startBtn.setGlowPulse(true);
     }
@@ -81,20 +108,37 @@ public class StrangerStoryListScreen extends StrangerScreen {
     private static final ResourceLocation COVER_IMAGE = ResourceLocation.fromNamespaceAndPath("storyadventure", "textures/gui/story_cover_placeholder.png");
 
     @Override
+    protected void renderTitle(GuiGraphics graphics, int mouseX, int mouseY) {
+        // Don't render default title - we draw our own in the panel header
+    }
+
+    @Override
     protected void renderContent(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-        int leftPanelWidth = (int)(width * 0.35);
-        int listX = 20;
-        int listY = HEADER_HEIGHT + 10;
-        int listWidth = leftPanelWidth - 20;
-        int listHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT - 20;
+        int ENTRY_HEIGHT = getEntryHeight();
+        int HEADER_HEIGHT = getHeaderHeight();
+        int FOOTER_HEIGHT = getFooterHeight();
+        int margin = getMargin();
+        
+        // === Header area with title ===
+        graphics.fill(guiLeft, guiTop, guiLeft + guiWidth, guiTop + HEADER_HEIGHT, 0xFF0C0E12);
+        graphics.fill(guiLeft, guiTop + HEADER_HEIGHT - 1, guiLeft + guiWidth, guiTop + HEADER_HEIGHT, COLOR_BORDER);
+        
+        // Title in header
+        String titleText = Component.translatable("gui.storyadventure.title.select_story").getString();
+        graphics.drawCenteredString(font, titleText, guiLeft + guiWidth / 2, guiTop + (HEADER_HEIGHT - 8) / 2, COLOR_TEXT_TITLE);
+        
+        // === Left Panel: Story List ===
+        int leftPanelWidth = (int)(guiWidth * 0.38);
+        int listX = guiLeft + margin;
+        int listY = guiTop + HEADER_HEIGHT + 8;
+        int listWidth = leftPanelWidth - margin;
+        int listHeight = guiHeight - HEADER_HEIGHT - FOOTER_HEIGHT - 16;
         
         int visibleEntries = listHeight / ENTRY_HEIGHT;
         
-        // --- Left Panel: Story List ---
-        
         // Background for List Area
-        graphics.fill(listX - 10, listY - 10, listX + listWidth + 10, listY + listHeight + 10, 0x40000000);
-        renderRectOutline(graphics, listX - 10, listY - 10, listWidth + 20, listHeight + 20, COLOR_BORDER);
+        graphics.fill(listX - 4, listY - 4, listX + listWidth + 4, listY + listHeight + 4, 0x30000000);
+        renderRectOutline(graphics, listX - 4, listY - 4, listWidth + 8, listHeight + 8, COLOR_BORDER);
 
         if (stories.isEmpty()) {
              graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.loading"), listX + listWidth / 2, listY + listHeight / 2, COLOR_TEXT_DIM);
@@ -114,90 +158,100 @@ public class StrangerStoryListScreen extends StrangerScreen {
             }
         }
         
-        // --- Right Panel: Details ---
-        
-        int rightPanelStart = leftPanelWidth + 20;
-        int rightPanelWidth = width - rightPanelStart - 40;
-        int contentY = HEADER_HEIGHT + 10;
+        // === Right Panel: Details ===
+        int rightPanelStart = guiLeft + leftPanelWidth + margin;
+        int rightPanelWidth = guiWidth - leftPanelWidth - margin * 2;
+        int contentY = guiTop + HEADER_HEIGHT + 8;
+        int contentBottom = guiTop + guiHeight - FOOTER_HEIGHT - 8;
         
         if (selectedIndex >= 0 && selectedIndex < stories.size()) {
             StoryEntry story = stories.get(selectedIndex);
             
             // 1. Thumbnail / Preview Image (16:9 Aspect Ratio)
             int thumbHeight = (int)(rightPanelWidth * 0.5625);
-            // Limit height if screen is short
-            int maxThumbH = (int)(height * 0.45);
+            // Limit height to fit within panel
+            int maxThumbH = (int)((contentBottom - contentY) * 0.55);
             if (thumbHeight > maxThumbH) thumbHeight = maxThumbH;
             
             // Draw Thumbnail
             renderThumbnail(graphics, story, rightPanelStart, contentY, rightPanelWidth, thumbHeight);
             
-            int textY = contentY + thumbHeight + 15;
+            int textY = contentY + thumbHeight + 10;
             
             // 2. Title
             graphics.pose().pushPose();
             graphics.pose().translate(rightPanelStart, textY, 0);
-            graphics.pose().scale(1.3f, 1.3f, 1.0f);
+            graphics.pose().scale(1.2f, 1.2f, 1.0f);
             graphics.drawString(font, story.name, 0, 0, COLOR_NEON_RED);
             graphics.pose().popPose();
-            textY += 20;
+            textY += 18;
             
             // 3. Stats Row
-            String stats = String.format("👥 %d-%d Players   ⏱ ~%d Mins", story.minPlayers, story.maxPlayers, story.estimatedMinutes);
-            graphics.drawString(font, stats, rightPanelStart, textY, COLOR_NEON_PINK);
-            textY += 15;
+            String statsLabel = String.format("👥 %d-%d %s   ⏱ ~%d %s", 
+                story.minPlayers, story.maxPlayers, Component.translatable("gui.storyadventure.label.people").getString(),
+                story.estimatedMinutes, Component.translatable("gui.storyadventure.admin.stats.time.minutes").getString());
+            graphics.drawString(font, statsLabel, rightPanelStart, textY, COLOR_NEON_PINK);
+            textY += 12;
             
             // Divider
             graphics.fill(rightPanelStart, textY, rightPanelStart + rightPanelWidth, textY + 1, COLOR_BORDER);
-            textY += 10;
+            textY += 8;
             
-            // 4. Description (Scrollable-ish, or just clamp)
+            // 4. Description (clamp to content bottom)
             String desc = story.description;
             List<net.minecraft.util.FormattedCharSequence> wrappedDesc = font.split(Component.literal(desc), rightPanelWidth);
             for (net.minecraft.util.FormattedCharSequence line : wrappedDesc) {
-                // Stop if getting too close to buttons
-                if (textY > height - FOOTER_HEIGHT - 10) break; 
+                // Stop if getting too close to footer
+                if (textY > contentBottom - 10) break; 
                 graphics.drawString(font, line, rightPanelStart, textY, COLOR_TEXT_BODY);
-                textY += 11;
+                textY += 10;
             }
             
         } else {
             // Empty State
-            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.select_prompt"), rightPanelStart + rightPanelWidth / 2, height / 2, COLOR_TEXT_DIM);
+            int centerY = contentY + (contentBottom - contentY) / 2;
+            graphics.drawCenteredString(font, Component.translatable("gui.storyadventure.select_prompt"), rightPanelStart + rightPanelWidth / 2, centerY, COLOR_TEXT_DIM);
         }
     }
     
-    private void renderStoryEntry(GuiGraphics graphics, StoryEntry story, int x, int y, int width, boolean selected, int mouseX, int mouseY) {
-        boolean hovered = mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + ENTRY_HEIGHT;
+    private void renderStoryEntry(GuiGraphics graphics, StoryEntry story, int x, int y, int entryWidth, boolean selected, int mouseX, int mouseY) {
+        int entryHeight = getEntryHeight();
+        boolean hovered = mouseX >= x && mouseX < x + entryWidth && mouseY >= y && mouseY < y + entryHeight;
         
         // Background
         int bgColor = selected ? 0xFF1B232C : (hovered ? 0xFF151B22 : 0x00000000); // Transparent if not interacting
-        graphics.fill(x, y, x + width, y + ENTRY_HEIGHT - 4, bgColor);
+        graphics.fill(x, y, x + entryWidth, y + entryHeight - 4, bgColor);
         
         // Active Indicator (Left Bar)
         if (selected) {
-            graphics.fill(x, y, x + 3, y + ENTRY_HEIGHT - 4, COLOR_NEON_RED);
+            graphics.fill(x, y, x + 3, y + entryHeight - 4, COLOR_NEON_RED);
              // Glow effect gradient
-             graphics.fillGradient(x + 3, y, x + width, y + ENTRY_HEIGHT - 4, 0x203BB6A6, 0x003BB6A6);
+             graphics.fillGradient(x + 3, y, x + entryWidth, y + entryHeight - 4, 0x203BB6A6, 0x003BB6A6);
         } else if (hovered) {
-             graphics.fill(x, y, x + 2, y + ENTRY_HEIGHT - 4, COLOR_BORDER);
+             graphics.fill(x, y, x + 2, y + entryHeight - 4, COLOR_BORDER);
         }
         
-        // Title
+        // Title & Mini Info - adjust vertical positions based on entry height
+        int titleY = y + Math.max(4, (entryHeight - 28) / 2);
+        int metaY = titleY + 14;
+        
         int textColor = selected ? COLOR_NEON_RED : (hovered ? 0xFFFFFFFF : COLOR_TEXT_BODY);
-        graphics.drawString(font, story.name, x + 10, y + 8, textColor);
+        graphics.drawString(font, story.name, x + 10, titleY, textColor);
         
         // Mini Info
         String meta = String.format("%d-%d %s", story.minPlayers, story.maxPlayers, Component.translatable("gui.storyadventure.label.people").getString());
-        graphics.drawString(font, meta, x + 10, y + 22, COLOR_TEXT_DIM);
+        graphics.drawString(font, meta, x + 10, metaY, COLOR_TEXT_DIM);
     }
     
-    // ... existing helpers ...
-
     private void renderThumbnail(GuiGraphics graphics, StoryEntry story, int x, int y, int w, int h) {
         // Draw the static image
-        com.mojang.blaze3d.systems.RenderSystem.setShaderTexture(0, COVER_IMAGE);
-        graphics.blit(COVER_IMAGE, x, y, w, h, 0, 0, w, h, w, h);
+        ResourceLocation tex = COVER_IMAGE;
+        if (story.cover != null && !story.cover.isEmpty()) {
+            tex = ResourceLocation.fromNamespaceAndPath("storyadventure", "covers/" + story.cover);
+        }
+        
+        com.mojang.blaze3d.systems.RenderSystem.setShaderTexture(0, tex);
+        graphics.blit(tex, x, y, w, h, 0, 0, w, h, w, h);
         
         // Inner border
         renderRectOutline(graphics, x, y, w, h, COLOR_BORDER);
@@ -210,18 +264,23 @@ public class StrangerStoryListScreen extends StrangerScreen {
     
     @Override
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        int leftPanelWidth = (int)(width * 0.35);
-        int listX = 20;
-        int listY = HEADER_HEIGHT + 10;
-        int listWidth = leftPanelWidth - 20;
-        int listHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT - 20;
+        int ENTRY_HEIGHT = getEntryHeight();
+        int HEADER_HEIGHT = getHeaderHeight();
+        int FOOTER_HEIGHT = getFooterHeight();
+        int margin = getMargin();
+        
+        int leftPanelWidth = (int)(guiWidth * 0.38);
+        int listX = guiLeft + margin;
+        int listY = guiTop + HEADER_HEIGHT + 8;
+        int listWidth = leftPanelWidth - margin;
+        int listHeight = guiHeight - HEADER_HEIGHT - FOOTER_HEIGHT - 16;
 
         if (mouseX >= listX && mouseX < listX + listWidth && mouseY >= listY && mouseY < listY + listHeight) {
              int relY = (int)mouseY - listY;
              int clickedIndex = scrollOffset + relY / ENTRY_HEIGHT;
              if (clickedIndex >= 0 && clickedIndex < stories.size()) {
-                 selectedIndex = clickedIndex;
-                 return true;
+                  selectedIndex = clickedIndex;
+                  return true;
              }
         }
         
@@ -230,7 +289,11 @@ public class StrangerStoryListScreen extends StrangerScreen {
     
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double hAmount, double vAmount) {
-        int listHeight = height - HEADER_HEIGHT - FOOTER_HEIGHT - 20;
+        int ENTRY_HEIGHT = getEntryHeight();
+        int HEADER_HEIGHT = getHeaderHeight();
+        int FOOTER_HEIGHT = getFooterHeight();
+        
+        int listHeight = guiHeight - HEADER_HEIGHT - FOOTER_HEIGHT - 16;
         int visibleEntries = listHeight / ENTRY_HEIGHT;
         
         if (vAmount > 0 && scrollOffset > 0) {
@@ -255,5 +318,5 @@ public class StrangerStoryListScreen extends StrangerScreen {
         }
     }
     
-    public record StoryEntry(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes) {}
+    public record StoryEntry(String id, String name, String description, int minPlayers, int maxPlayers, int estimatedMinutes, String cover) {}
 }

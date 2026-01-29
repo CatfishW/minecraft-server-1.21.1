@@ -29,11 +29,13 @@ public class StoryAdventureClient implements ClientModInitializer {
         StrangerHudRenderer.register();
         EdgeIndicatorRenderer.register();
         WaypointIndicatorRenderer.register();
+        com.warmpixel.storyadventure.client.ui.hud.UITutorialRenderer.register();
         com.warmpixel.storyadventure.client.render.WorldDestinationRenderer.register();
         
         // Register world-space renderers
         TriggerBoxGizmoRenderer.register();
         EnemyIndicatorRenderer.register();
+        com.warmpixel.storyadventure.client.render.ItemBlockIndicatorRenderer.register();
         
         // Register cinematic overlay for cutscenes
         com.warmpixel.storyadventure.client.cinematic.CinematicCameraController.register();
@@ -46,5 +48,19 @@ public class StoryAdventureClient implements ClientModInitializer {
 
         // Register custom resource pack for external voiceovers
         // NOTE: Reverted to using built-in assets for voiceovers.
+
+        // Register animation manager reload listener
+        net.fabricmc.fabric.api.resource.ResourceManagerHelper.get(net.minecraft.server.packs.PackType.CLIENT_RESOURCES)
+            .registerReloadListener(new net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener() {
+                @Override
+                public net.minecraft.resources.ResourceLocation getFabricId() {
+                    return net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("storyadventure", "animations");
+                }
+
+                @Override
+                public void onResourceManagerReload(net.minecraft.server.packs.resources.ResourceManager manager) {
+                    com.warmpixel.storyadventure.client.animation.AnimationManager.getInstance().load(manager);
+                }
+            });
     }
 }
