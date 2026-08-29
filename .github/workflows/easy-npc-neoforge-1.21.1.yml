@@ -1,0 +1,75 @@
+name: Easy NPC NeoForge 1.21.1
+
+on:
+  push:
+    branches:
+      - codex/easy-npc-neoforge-1.21.1
+    paths:
+      - 'mods-dev/BOs-Easy-NPC-1.21.1/**'
+      - '.github/workflows/easy-npc-neoforge-1.21.1.yml'
+  pull_request:
+    paths:
+      - 'mods-dev/BOs-Easy-NPC-1.21.1/**'
+      - '.github/workflows/easy-npc-neoforge-1.21.1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: easy-npc-neoforge-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  MOD_DIR: mods-dev/BOs-Easy-NPC-1.21.1
+  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=false
+
+jobs:
+  core-build:
+    name: Core / NeoForge build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout Easy NPC sources only
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            mods-dev/BOs-Easy-NPC-1.21.1
+          sparse-checkout-cone-mode: true
+
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+          cache-dependency-path: |
+            mods-dev/BOs-Easy-NPC-1.21.1/**/gradle-wrapper.properties
+            mods-dev/BOs-Easy-NPC-1.21.1/**/*.gradle
+            mods-dev/BOs-Easy-NPC-1.21.1/**/gradle.properties
+
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+
+      - name: Make Gradle wrappers executable
+        working-directory: ${{ env.MOD_DIR }}
+        run: chmod +x gradlew core/gradlew config-ui/gradlew bundle/gradlew
+
+      - name: Compile NeoForge core
+        working-directory: ${{ env.MOD_DIR }}
+        run: ./gradlew -p core :NeoForge:compileJava --stacktrace --warning-mode all
+
+      - name: Build NeoForge core
+        working-directory: ${{ env.MOD_DIR }}
+        run: ./gradlew -p core :NeoForge:build --stacktrace --warning-mode all
+
+      - name: Upload NeoForge core jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: easy-npc-core-neoforge-1.21.1
+          path: ${{ env.MOD_DIR }}/core/NeoForge/build/libs/*.jar
+          if-no-files-found: error
+          retention-days: 7
