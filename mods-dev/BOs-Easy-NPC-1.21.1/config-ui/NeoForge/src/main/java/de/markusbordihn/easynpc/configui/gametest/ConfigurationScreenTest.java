@@ -296,6 +296,15 @@ public class ConfigurationScreenTest {
   }
 
   @GameTest(template = "gametest.3x3x3")
+  public void testOpenLLMConfigurationScreen(GameTestHelper helper) {
+    ConfigurationScreenTestHelper.testConfigurationScreen(
+        helper,
+        ModEntityType.getEntityType(ModNPCEntityType.HUMANOID),
+        ConfigurationType.LLM,
+        ModMenuTypes.LLM_CONFIGURATION_MENU.get());
+  }
+
+  @GameTest(template = "gametest.3x3x3")
   public void testOpenMainConfigurationScreen(GameTestHelper helper) {
     ConfigurationScreenTestHelper.testConfigurationScreen(
         helper,
