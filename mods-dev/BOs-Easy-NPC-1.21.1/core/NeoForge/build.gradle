@@ -45,11 +45,14 @@ runs {
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
+def commonProject = project(":Common")
+def sharedClientSources = fileTree(dir: "../Client/src/main/java", include: "**/*.java")
+
 dependencies {
   implementation "net.neoforged:neoforge:${project.neoforge_version}"
 
-  // Include Common code
-  implementation project(":Common")
+  // Loader-neutral domain code is compiled into the NeoForge artifact.
+  implementation commonProject
 
   // Test dependencies
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
@@ -68,19 +71,57 @@ dependencies {
   // runtimeOnly "curse.maven:epic-fight-mod-405076:7185834"
 }
 
-// NeoGradle compiles the game, but we don't want to add our common code to the game's code
+// NeoGradle compiles the game, but common and shared-client code belong to this mod's compilation.
 Spec<Task> notNeoTask = { Task it -> !it.name.startsWith("neo") } as Spec<Task>
 
 tasks.withType(JavaCompile).matching(notNeoTask).configureEach {
-  source(project(":Common").sourceSets.main.allSource)
+  source(commonProject.sourceSets.main.allSource)
+  source(sharedClientSources)
 }
 
 tasks.withType(Javadoc).matching(notNeoTask).configureEach {
-  source(project(":Common").sourceSets.main.allJava)
+  source(commonProject.sourceSets.main.allJava)
+  source(sharedClientSources)
+}
+
+tasks.named('sourcesJar', Jar).configure {
+  from commonProject.sourceSets.main.allSource
+  from sharedClientSources
+  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.withType(ProcessResources).matching(notNeoTask).configureEach {
-  from project(":Common").sourceSets.main.resources
+  from commonProject.sourceSets.main.resources
+}
+
+def requiredSharedClientClasses = [
+    'de/markusbordihn/easynpc/client/SpawnTimerData.class',
+    'de/markusbordihn/easynpc/client/screen/QuestDialogScreen.class',
+    'de/markusbordihn/easynpc/client/screen/SpawnTimerScreen.class'
+]
+
+def jarTask = tasks.named('jar', Jar)
+def verifySharedClientPackaging = tasks.register('verifySharedClientPackaging') {
+  group = 'verification'
+  description = 'Verifies that shared client screens are packaged in the NeoForge core jar.'
+  dependsOn jarTask
+
+  doLast {
+    def archiveFile = jarTask.get().archiveFile.get().asFile
+    def archiveTree = zipTree(archiveFile)
+    def missingEntries = requiredSharedClientClasses.findAll { entry ->
+      archiveTree.matching { include entry }.isEmpty()
+    }
+
+    if (!missingEntries.isEmpty()) {
+      throw new GradleException(
+          "NeoForge jar is missing shared client classes: ${missingEntries.join(', ')}")
+    }
+  }
+}
+
+tasks.named('check') {
+  dependsOn verifySharedClientPackaging
 }
 
 publishing {

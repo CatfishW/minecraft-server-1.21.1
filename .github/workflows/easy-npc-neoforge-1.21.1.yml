@@ -25,10 +25,10 @@ env:
   GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=false
 
 jobs:
-  core-build:
-    name: Core / NeoForge build
+  verify:
+    name: NeoForge build and dedicated-server GameTests
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
 
     steps:
       - name: Checkout Easy NPC sources only
@@ -57,18 +57,51 @@ jobs:
           java -version
           gradle --version
 
-      - name: Compile NeoForge core
+      - name: Build all NeoForge modules and run server GameTests
         working-directory: ${{ env.MOD_DIR }}
-        run: gradle -p core :NeoForge:compileJava --stacktrace --warning-mode all
+        run: gradle verifyNeoForge --no-daemon --stacktrace --warning-mode all
 
-      - name: Build NeoForge core
-        working-directory: ${{ env.MOD_DIR }}
-        run: gradle -p core :NeoForge:build --stacktrace --warning-mode all
-
-      - name: Upload NeoForge core jar
+      - name: Upload playable Core jar
         uses: actions/upload-artifact@v4
         with:
           name: easy-npc-core-neoforge-1.21.1
-          path: ${{ env.MOD_DIR }}/core/NeoForge/build/libs/*.jar
+          path: |
+            ${{ env.MOD_DIR }}/core/NeoForge/build/libs/*.jar
+            !${{ env.MOD_DIR }}/core/NeoForge/build/libs/*-sources.jar
+            !${{ env.MOD_DIR }}/core/NeoForge/build/libs/*-javadoc.jar
           if-no-files-found: error
-          retention-days: 7
+          retention-days: 14
+
+      - name: Upload playable Config UI jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: easy-npc-config-ui-neoforge-1.21.1
+          path: |
+            ${{ env.MOD_DIR }}/config-ui/NeoForge/build/libs/*.jar
+            !${{ env.MOD_DIR }}/config-ui/NeoForge/build/libs/*-sources.jar
+            !${{ env.MOD_DIR }}/config-ui/NeoForge/build/libs/*-javadoc.jar
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload playable Bundle jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: easy-npc-bundle-neoforge-1.21.1
+          path: |
+            ${{ env.MOD_DIR }}/bundle/NeoForge/build/libs/*.jar
+            !${{ env.MOD_DIR }}/bundle/NeoForge/build/libs/*-sources.jar
+            !${{ env.MOD_DIR }}/bundle/NeoForge/build/libs/*-javadoc.jar
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: easy-npc-neoforge-diagnostics
+          path: |
+            ${{ env.MOD_DIR }}/**/build/reports/**
+            ${{ env.MOD_DIR }}/**/runs/**/logs/**
+            ${{ env.MOD_DIR }}/**/run/**/logs/**
+          if-no-files-found: ignore
+          retention-days: 14
