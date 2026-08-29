@@ -1,78 +1,83 @@
 plugins {
   id 'maven-publish'
-  id 'net.neoforged.gradle.userdev' version '7.0.190'
-  id 'com.matthewprenger.cursegradle' version '1.4.0'
-  id 'nu.studer.credentials' version '3.0'
-  id "com.modrinth.minotaur" version "2.+"
+  id 'net.neoforged.moddev'
+  id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
+  id 'nu.studer.credentials' version '3.0' apply false
+  id 'com.modrinth.minotaur' version '2.+' apply false
 }
 
 base {
   archivesName = "${project.mod_id}-neoforge-${project.minecraft_version}"
 }
 
+def distributionPublishingEnabled = providers.gradleProperty('enable_distribution_publishing')
+    .map { it.toBoolean() }
+    .orElse(false)
+    .get()
+
 repositories {
   mavenLocal()
   mavenCentral()
-  maven {
-    name = 'NeoForge'
-    url = 'https://maven.neoforged.net/releases/'
-  }
-  maven {
-    name = 'Sponge / Mixin'
-    url = 'https://repo.spongepowered.org/repository/maven-public/'
-  }
 }
 
 sourceSets {
   main {
     resources {
-      srcDirs += [
-          '../Common/src/main/resources'
-      ]
+      srcDir '../Common/src/main/resources'
     }
   }
 }
 
-runs {
-  configureEach {
-    systemProperty 'forge.logging.markers', 'REGISTRIES'
-    systemProperty 'forge.logging.console.level', 'debug'
-    modSource project.sourceSets.main
+neoForge {
+  version = project.neoforge_version
+
+  runs {
+    configureEach {
+      systemProperty 'forge.logging.markers', 'REGISTRIES'
+      systemProperty 'forge.logging.console.level', 'debug'
+      logLevel = org.slf4j.event.Level.DEBUG
+    }
+
+    client {
+      client()
+    }
+
+    server {
+      server()
+      programArgument '--nogui'
+    }
   }
 
-  client {
-    systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-  }
-
-  server {
-    systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-    arguments.add '--nogui'
+  mods {
+    "${project.mod_id}" {
+      sourceSet sourceSets.main
+    }
   }
 }
 
 dependencies {
-  implementation "net.neoforged:neoforge:${project.neoforge_version}"
-
-  // Regular dependencies for development mode (runClient/runServer)
-  runtimeOnly(group: 'de.markusbordihn.easynpc', name: "easy_npc-neoforge-${project.minecraft_version}", version: "${project.version}")
-  runtimeOnly(group: 'de.markusbordihn.easynpc.configui', name: "easy_npc_config_ui-neoforge-${project.minecraft_version}", version: "${project.version}")
+  // The bundle contains dependency metadata only; modules remain separate playable jars.
+  runtimeOnly group: 'de.markusbordihn.easynpc',
+      name: "easy_npc-neoforge-${project.minecraft_version}",
+      version: "${project.version}"
+  runtimeOnly group: 'de.markusbordihn.easynpc.configui',
+      name: "easy_npc_config_ui-neoforge-${project.minecraft_version}",
+      version: "${project.version}"
 }
 
 def getNextMajorVersion(String currentVersion) {
   def versionParts = currentVersion.tokenize('.')
-  if (versionParts.size() > 0) {
-    def majorVersion = versionParts[0].toInteger()
-    return "${majorVersion + 1}.0.0"
+  if (!versionParts.isEmpty()) {
+    return "${versionParts[0].toInteger() + 1}.0.0"
   }
-  return "1.0.0"
+  return '1.0.0'
 }
 
-processResources {
+tasks.named('processResources', ProcessResources).configure {
   duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 
-  inputs.property 'version', project.version
-
   def nextMajor = getNextMajorVersion(project.version.toString())
+  inputs.property 'version', project.version
   inputs.property 'nextMajorVersion', nextMajor
 
   filesMatching(['META-INF/neoforge.mods.toml']) {
@@ -87,58 +92,60 @@ tasks.named('compileTestJava', JavaCompile).configure {
   enabled = !sourceSets.test.allSource.isEmpty()
 }
 
-jar {
+tasks.named('jar', Jar).configure {
   manifest {
     attributes([
-        "Specification-Title"     : "${project.mod_name}",
-        "Specification-Vendor"    : "${project.mod_author}",
-        "Specification-Version"   : "${project.version}",
-        "Implementation-Title"    : "${project.mod_name}",
-        "Implementation-Version"  : "${project.version}",
-        "Implementation-Vendor"   : "${project.mod_author}",
-        "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        'Specification-Title'      : project.mod_name,
+        'Specification-Vendor'     : project.mod_author,
+        'Specification-Version'    : project.version,
+        'Implementation-Title'     : project.mod_name,
+        'Implementation-Version'   : project.version,
+        'Implementation-Vendor'    : project.mod_author,
+        'Implementation-Timestamp' : new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
     ])
   }
 }
 
-build.dependsOn tasks.named('jar')
+if (distributionPublishingEnabled) {
+  apply plugin: 'com.matthewprenger.cursegradle'
+  apply plugin: 'nu.studer.credentials'
+  apply plugin: 'com.modrinth.minotaur'
 
-// CurseForge Publishing
-if (project.hasProperty('curseforge_project_id') && project.curseforge_project_id) {
-  curseforge {
-    apiKey = "${credentials.forKey('curseforge_api_token')}"
-    project {
-      id = "${project.curseforge_project_id}"
-      changelog = rootProject.file('../CHANGELOG.md')
-      changelogType = 'markdown'
-      releaseType = "${project.curseforge_release_type}"
-      addGameVersion("${project.minecraft_version}")
-      addGameVersion("NeoForge")
-      mainArtifact(jar) {
-        relations {
-          requiredDependency 'easy-npc-core'
-          requiredDependency 'easy-npc-config-ui'
+  if (project.hasProperty('curseforge_project_id') && project.curseforge_project_id) {
+    curseforge {
+      apiKey = "${credentials.forKey('curseforge_api_token')}"
+      project {
+        id = "${project.curseforge_project_id}"
+        changelog = rootProject.file('../CHANGELOG.md')
+        changelogType = 'markdown'
+        releaseType = "${project.curseforge_release_type}"
+        addGameVersion("${project.minecraft_version}")
+        addGameVersion('NeoForge')
+        mainArtifact(jar) {
+          relations {
+            requiredDependency 'easy-npc-core'
+            requiredDependency 'easy-npc-config-ui'
+          }
         }
       }
     }
   }
-}
 
-// Modrinth Publishing
-if (project.hasProperty('modrinth_project_id') && project.modrinth_project_id) {
-  modrinth {
-    token = "${credentials.forKey('modrinth_api_token')}"
-    projectId = "${project.modrinth_project_id}"
-    versionNumber = "${project.version}"
-    versionType = "${project.modrinth_release_type}"
-    versionName = "${project.mod_name} ${project.version}"
-    changelog = rootProject.file('../CHANGELOG.md').text
-    uploadFile = tasks.jar
-    gameVersions = ["${project.minecraft_version}"]
-    loaders = ["neoforge"]
-    dependencies {
-      required.project "easy-npc-core"
-      required.project "easy-npc-config-ui"
+  if (project.hasProperty('modrinth_project_id') && project.modrinth_project_id) {
+    modrinth {
+      token = "${credentials.forKey('modrinth_api_token')}"
+      projectId = "${project.modrinth_project_id}"
+      versionNumber = "${project.version}"
+      versionType = "${project.modrinth_release_type}"
+      versionName = "${project.mod_name} ${project.version}"
+      changelog = rootProject.file('../CHANGELOG.md').text
+      uploadFile = tasks.jar
+      gameVersions = ["${project.minecraft_version}"]
+      loaders = ['neoforge']
+      dependencies {
+        required.project 'easy-npc-core'
+        required.project 'easy-npc-config-ui'
+      }
     }
   }
 }

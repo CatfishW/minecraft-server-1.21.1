@@ -1,97 +1,102 @@
 plugins {
   id 'maven-publish'
-  id 'net.neoforged.gradle.userdev' version '7.0.190'
-  id 'com.matthewprenger.cursegradle' version '1.4.0'
-  id 'nu.studer.credentials' version '3.0'
-  id "com.modrinth.minotaur" version "2.+"
+  id 'net.neoforged.moddev'
+  id 'com.matthewprenger.cursegradle' version '1.4.0' apply false
+  id 'nu.studer.credentials' version '3.0' apply false
+  id 'com.modrinth.minotaur' version '2.+' apply false
 }
 
 base {
   archivesName = "${project.mod_id}-neoforge-${project.minecraft_version}"
 }
 
-minecraft.accessTransformers.file file('src/main/resources/META-INF/accesstransformer.cfg')
+def commonProject = project(':Common')
 
-runs {
-  configureEach {
-    systemProperty 'forge.logging.markers', 'REGISTRIES'
-    systemProperty 'forge.logging.console.level', 'debug'
-    modSource project.sourceSets.main
-  }
+def distributionPublishingEnabled = providers.gradleProperty('enable_distribution_publishing')
+    .map { it.toBoolean() }
+    .orElse(false)
+    .get()
 
-  client {
-    systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-  }
-
-  client2 {
-    runType('client')
-    workingDirectory project.file('runs/client2')
-    arguments.addAll '--username', 'guest_player'
-  }
-
-  server {
-    systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-    arguments.add '--nogui'
-  }
-
-  gameTestServer {
-    systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
-  }
-
-  data {
-    arguments.addAll '--mod', project.mod_id, '--all', '--output', file('src/generated/resources/').getAbsolutePath(), '--existing', file('src/main/resources/').getAbsolutePath()
+sourceSets {
+  main {
+    java {
+      srcDir commonProject.file('src/main/java')
+      srcDir file('../Client/src/main/java')
+    }
+    resources {
+      srcDir commonProject.file('src/main/resources')
+      srcDir 'src/generated/resources'
+    }
   }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+neoForge {
+  version = project.neoforge_version
+  validateAccessTransformers = true
 
-def commonProject = project(":Common")
-def sharedClientSources = fileTree(dir: "../Client/src/main/java", include: "**/*.java")
+  runs {
+    configureEach {
+      systemProperty 'forge.logging.markers', 'REGISTRIES'
+      systemProperty 'forge.logging.console.level', 'debug'
+      logLevel = org.slf4j.event.Level.DEBUG
+    }
+
+    client {
+      client()
+      systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+    }
+
+    client2 {
+      client()
+      gameDirectory = project.file('runs/client2')
+      programArguments.addAll '--username', 'guest_player'
+    }
+
+    server {
+      server()
+      systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+      programArgument '--nogui'
+    }
+
+    gameTestServer {
+      type = 'gameTestServer'
+      systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+    }
+
+    data {
+      data()
+      programArguments.addAll '--mod', project.mod_id, '--all', '--output',
+          file('src/generated/resources/').getAbsolutePath(), '--existing',
+          file('src/main/resources/').getAbsolutePath()
+    }
+  }
+
+  mods {
+    "${project.mod_id}" {
+      sourceSet sourceSets.main
+    }
+  }
+}
 
 dependencies {
-  implementation "net.neoforged:neoforge:${project.neoforge_version}"
-
-  // Loader-neutral domain code is compiled into the NeoForge artifact.
-  implementation commonProject
-
-  // Test dependencies
+  // JUnit 5 for unit testing.
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.1'
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.10.1'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
   testImplementation 'org.junit.jupiter:junit-jupiter-params:5.10.1'
 
-  // Additional helpful Mods for development (runtime dependency)
+  // Optional development-only mods.
   if (project.hasProperty('neoforge_jei_mod') && project.neoforge_jei_mod) {
     runtimeOnly "curse.maven:jei-238222:${project.neoforge_jei_mod}"
   }
   if (project.hasProperty('neoforge_xaeros_minimap_mod') && project.neoforge_xaeros_minimap_mod) {
     runtimeOnly "curse.maven:xaeros_minimap-263420:${project.neoforge_xaeros_minimap_mod}"
   }
-
-  // Test dependencies
-  // runtimeOnly "curse.maven:epic-fight-mod-405076:7185834"
 }
 
-// NeoGradle compiles the game, but common and shared-client code belong to this mod's compilation.
-Spec<Task> notNeoTask = { Task it -> !it.name.startsWith("neo") } as Spec<Task>
-
-tasks.withType(JavaCompile).matching(notNeoTask).configureEach {
-  source(commonProject.sourceSets.main.allSource)
-  source(sharedClientSources)
-}
-
-tasks.withType(Javadoc).matching(notNeoTask).configureEach {
-  source(commonProject.sourceSets.main.allJava)
-  source(sharedClientSources)
-}
-
-tasks.named('sourcesJar', Jar).configure {
-  from commonProject.sourceSets.main.allSource
-  from sharedClientSources
-  duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-tasks.withType(ProcessResources).matching(notNeoTask).configureEach {
-  from commonProject.sourceSets.main.resources
+// The common generator owns files compiled by this source set.
+tasks.named('compileJava') {
+  dependsOn commonProject.tasks.named('generateRawNPCs')
 }
 
 def requiredSharedClientClasses = [
@@ -128,55 +133,60 @@ publishing {
   publications {
     mavenJava(MavenPublication) {
       groupId project.group
-      artifactId project.archivesBaseName
+      artifactId base.archivesName.get()
       version project.version
-      artifact jar
+      from components.java
     }
   }
 }
 
 tasks.named('build') {
-  finalizedBy 'publishToMavenLocal'
+  finalizedBy tasks.named('publishToMavenLocal')
 }
 
 test {
+  useJUnitPlatform()
   exclude '**/mixin/**'
 }
 
-// CurseForge Publishing
-if (project.hasProperty('curseforge_project_id') && project.curseforge_project_id) {
-  curseforge {
-    apiKey = "${credentials.forKey('curseforge_api_token')}"
-    project {
-      id = "${project.curseforge_project_id}"
-      changelog = rootProject.file("../CHANGELOG.md")
-      changelogType = 'markdown'
-      releaseType = "${project.curseforge_release_type}"
-      addGameVersion("${project.minecraft_version}")
-      addGameVersion("NeoForge")
-      mainArtifact(jar) {
-        relations {
-          optionalDependency 'armourers-workshop'
+if (distributionPublishingEnabled) {
+  apply plugin: 'com.matthewprenger.cursegradle'
+  apply plugin: 'nu.studer.credentials'
+  apply plugin: 'com.modrinth.minotaur'
+
+  if (project.hasProperty('curseforge_project_id') && project.curseforge_project_id) {
+    curseforge {
+      apiKey = "${credentials.forKey('curseforge_api_token')}"
+      project {
+        id = "${project.curseforge_project_id}"
+        changelog = rootProject.file("../CHANGELOG.md")
+        changelogType = 'markdown'
+        releaseType = "${project.curseforge_release_type}"
+        addGameVersion("${project.minecraft_version}")
+        addGameVersion('NeoForge')
+        mainArtifact(jar) {
+          relations {
+            optionalDependency 'armourers-workshop'
+          }
         }
       }
     }
   }
-}
 
-// Modrinth Publishing
-if (project.hasProperty('modrinth_project_id') && project.modrinth_project_id) {
-  modrinth {
-    token = "${credentials.forKey('modrinth_api_token')}"
-    projectId = "${project.modrinth_project_id}"
-    versionNumber = "${project.version}"
-    versionType = "${project.modrinth_release_type}"
-    versionName = "${project.mod_name} ${project.version}"
-    changelog = rootProject.file("../CHANGELOG.md").text
-    uploadFile = jar
-    gameVersions = ["${project.minecraft_version}"]
-    loaders = ["neoforge"]
-    dependencies {
-      optional.project "armourers-workshop"
+  if (project.hasProperty('modrinth_project_id') && project.modrinth_project_id) {
+    modrinth {
+      token = "${credentials.forKey('modrinth_api_token')}"
+      projectId = "${project.modrinth_project_id}"
+      versionNumber = "${project.version}"
+      versionType = "${project.modrinth_release_type}"
+      versionName = "${project.mod_name} ${project.version}"
+      changelog = rootProject.file("../CHANGELOG.md").text
+      uploadFile = jar
+      gameVersions = ["${project.minecraft_version}"]
+      loaders = ['neoforge']
+      dependencies {
+        optional.project 'armourers-workshop'
+      }
     }
   }
 }
