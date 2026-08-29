@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - codex/easy-npc-neoforge-1.21.1
+      - codex/easy-npc-neoforge-1.21.1-complete
     paths:
       - 'mods-dev/BOs-Easy-NPC-1.21.1/**'
       - '.github/workflows/easy-npc-neoforge-1.21.1.yml'
