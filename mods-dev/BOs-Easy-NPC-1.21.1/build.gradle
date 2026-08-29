@@ -22,22 +22,34 @@ def registerNestedBuild = {
     }
 }
 
-def cleanCore = registerNestedBuild(
+// Cleaning is intentionally a direct file deletion instead of another GradleBuild invocation.
+// Running `gradle clean verifyNeoForge` otherwise puts two nested builds for the same included
+// project (`core`, `config-ui`, or `bundle`) in one task graph, which Gradle rejects as a duplicate
+// included-build path before verification can start.
+def registerModuleClean = {
+  String taskName,
+  String moduleDirectory,
+  String taskDescription ->
+    tasks.register(taskName, Delete) {
+      group = 'NeoForge'
+      description = taskDescription
+      delete file("${moduleDirectory}/NeoForge/build")
+    }
+}
+
+def cleanCore = registerModuleClean(
     'cleanNeoForgeCore',
     'core',
-    [':NeoForge:clean'],
     'Cleans the Easy NPC Core NeoForge project.')
 
-def cleanConfigUi = registerNestedBuild(
+def cleanConfigUi = registerModuleClean(
     'cleanNeoForgeConfigUi',
     'config-ui',
-    [':NeoForge:clean'],
     'Cleans the Easy NPC Config UI NeoForge project.')
 
-def cleanBundle = registerNestedBuild(
+def cleanBundle = registerModuleClean(
     'cleanNeoForgeBundle',
     'bundle',
-    [':NeoForge:clean'],
     'Cleans the Easy NPC Bundle NeoForge project.')
 
 // Build-only pipeline: one nested invocation per independent build.
