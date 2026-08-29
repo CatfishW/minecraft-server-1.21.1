@@ -33,6 +33,7 @@ import de.markusbordihn.easynpc.configui.menu.configuration.dialog.BasicDialogCo
 import de.markusbordihn.easynpc.configui.menu.configuration.dialog.NoneDialogConfigurationMenuWrapper;
 import de.markusbordihn.easynpc.configui.menu.configuration.dialog.YesNoDialogConfigurationMenuWrapper;
 import de.markusbordihn.easynpc.configui.menu.configuration.equipment.EquipmentConfigurationMenuWrapper;
+import de.markusbordihn.easynpc.configui.menu.configuration.llm.LLMConfigurationMenuWrapper;
 import de.markusbordihn.easynpc.configui.menu.configuration.main.MainConfigurationMenuWrapper;
 import de.markusbordihn.easynpc.configui.menu.configuration.model.CustomModelConfigurationMenuWrapper;
 import de.markusbordihn.easynpc.configui.menu.configuration.model.DefaultModelConfigurationMenuWrapper;
@@ -279,6 +280,11 @@ public class ModMenuTypes {
           MENU_TYPES.register(
               ConfigurationType.LOOK_OBJECTIVE.getName(),
               () -> IMenuTypeExtension.create(LookObjectiveConfigurationMenuWrapper::new));
+  public static final DeferredHolder<MenuType<?>, MenuType<LLMConfigurationMenuWrapper>>
+      LLM_CONFIGURATION_MENU =
+          MENU_TYPES.register(
+              ConfigurationType.LLM.getName(),
+              () -> IMenuTypeExtension.create(LLMConfigurationMenuWrapper::new));
   public static final DeferredHolder<MenuType<?>, MenuType<MainConfigurationMenuWrapper>>
       MAIN_CONFIGURATION_MENU =
           MENU_TYPES.register(

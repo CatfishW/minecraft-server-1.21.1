@@ -32,6 +32,7 @@ import de.markusbordihn.easynpc.configui.client.screen.configuration.dialog.Basi
 import de.markusbordihn.easynpc.configui.client.screen.configuration.dialog.NoneDialogConfigurationScreenWrapper;
 import de.markusbordihn.easynpc.configui.client.screen.configuration.dialog.YesNoDialogConfigurationScreenWrapper;
 import de.markusbordihn.easynpc.configui.client.screen.configuration.equipment.EquipmentConfigurationScreenWrapper;
+import de.markusbordihn.easynpc.configui.client.screen.configuration.llm.LLMConfigurationScreenWrapper;
 import de.markusbordihn.easynpc.configui.client.screen.configuration.main.MainConfigurationScreenWrapper;
 import de.markusbordihn.easynpc.configui.client.screen.configuration.model.CustomModelConfigurationScreenWrapper;
 import de.markusbordihn.easynpc.configui.client.screen.configuration.model.DefaultModelConfigurationScreenWrapper;
@@ -185,6 +186,7 @@ public class ClientScreens {
     event.register(
         ModMenuTypes.LOOK_OBJECTIVE_CONFIGURATION_MENU.get(),
         LookObjectiveConfigurationScreenWrapper::new);
+    event.register(ModMenuTypes.LLM_CONFIGURATION_MENU.get(), LLMConfigurationScreenWrapper::new);
     event.register(ModMenuTypes.MAIN_CONFIGURATION_MENU.get(), MainConfigurationScreenWrapper::new);
     event.register(
         ModMenuTypes.NONE_DIALOG_CONFIGURATION_MENU.get(),
