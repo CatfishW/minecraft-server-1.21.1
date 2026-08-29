@@ -17,27 +17,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package de.markusbordihn.easynpc;
+package de.markusbordihn.easynpc.bootstrap;
 
-import de.markusbordihn.easynpc.bootstrap.EnvironmentBootstrap;
-import de.markusbordihn.easynpc.bootstrap.NetworkBootstrap;
-import de.markusbordihn.easynpc.bootstrap.RegistryBootstrap;
+import de.markusbordihn.easynpc.Constants;
+import de.markusbordihn.easynpc.network.ClientNetworkMessageHandler;
+import de.markusbordihn.easynpc.network.NetworkHandler;
+import de.markusbordihn.easynpc.network.NetworkHandlerManager;
+import de.markusbordihn.easynpc.network.NetworkHandlerManagerType;
+import de.markusbordihn.easynpc.network.NetworkMessageHandlerManager;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/** NeoForge composition root. Loader-specific wiring belongs in the bootstrap package. */
-@Mod(Constants.MOD_ID)
-public class EasyNPCMain {
+/** Connects the common network abstractions to NeoForge payload registration. */
+public final class NetworkBootstrap {
 
   private static final Logger log = LogManager.getLogger(Constants.LOG_NAME);
 
-  public EasyNPCMain(IEventBus modEventBus, ModContainer modContainer) {
-    log.info("Initializing {} (NeoForge) ...", Constants.MOD_NAME);
-    EnvironmentBootstrap.initialize();
-    RegistryBootstrap.register(modEventBus);
-    NetworkBootstrap.register(modEventBus);
+  private NetworkBootstrap() {}
+
+  public static void register(IEventBus modEventBus) {
+    log.info("{} Network Handler ...", Constants.LOG_REGISTER_PREFIX);
+    modEventBus.addListener(
+        (final RegisterPayloadHandlersEvent event) -> registerPayloadHandlers(event));
+    NetworkMessageHandlerManager.registerClientHandler(new ClientNetworkMessageHandler());
+  }
+
+  private static void registerPayloadHandlers(RegisterPayloadHandlersEvent event) {
+    NetworkHandlerManager.registerHandler(new NetworkHandler());
+    NetworkHandler.registerNetworkHandler(event);
+    NetworkHandlerManager.registerNetworkMessages(NetworkHandlerManagerType.BOTH);
   }
 }
