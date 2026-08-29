@@ -27,4 +27,15 @@ pluginManagement {
 
 rootProject.name = 'config-ui'
 
-include("Common", "Fabric", "Forge", "NeoForge")
+// Configure only the requested loader project when a loader-qualified task is used. This keeps
+// independent loader toolchains and unpublished artifacts from blocking one another.
+def loaderProjects = ['Fabric', 'Forge', 'NeoForge']
+def requestedLoaderProjects = loaderProjects.findAll { loader ->
+  gradle.startParameter.taskNames.any { taskName ->
+    def normalizedTaskName = taskName.startsWith(':') ? taskName.substring(1) : taskName
+    normalizedTaskName == loader || normalizedTaskName.startsWith("${loader}:")
+  }
+}
+
+include('Common')
+(requestedLoaderProjects ?: loaderProjects).each { include(it) }
