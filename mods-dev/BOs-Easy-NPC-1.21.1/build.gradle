@@ -5,6 +5,9 @@ plugins {
 /*
  * This repository contains three independent Gradle builds. Keep orchestration here and keep
  * loader-specific implementation inside each module's NeoForge project.
+ *
+ * A GradleBuild directory may only be included once in a single task graph. Build-only and
+ * verification pipelines therefore use separate, self-contained nested invocations per module.
  */
 def registerNestedBuild = {
   String taskName,
@@ -37,17 +40,12 @@ def cleanBundle = registerNestedBuild(
     [':NeoForge:clean'],
     'Cleans the Easy NPC Bundle NeoForge project.')
 
+// Build-only pipeline: one nested invocation per independent build.
 def buildCore = registerNestedBuild(
     'buildNeoForgeCore',
     'core',
     [':NeoForge:build'],
     'Builds and publishes Easy NPC Core for NeoForge to Maven Local.')
-
-def gameTestCore = registerNestedBuild(
-    'gameTestNeoForgeCore',
-    'core',
-    [':NeoForge:runGameTestServer'],
-    'Runs the Easy NPC Core NeoForge server GameTests.')
 
 def buildConfigUi = registerNestedBuild(
     'buildNeoForgeConfigUi',
@@ -55,35 +53,46 @@ def buildConfigUi = registerNestedBuild(
     [':NeoForge:build'],
     'Builds and publishes Easy NPC Config UI for NeoForge to Maven Local.')
 
-def gameTestConfigUi = registerNestedBuild(
-    'gameTestNeoForgeConfigUi',
-    'config-ui',
-    [':NeoForge:runGameTestServer'],
-    'Runs the Easy NPC Config UI NeoForge server GameTests.')
-
 def buildBundle = registerNestedBuild(
     'buildNeoForgeBundle',
     'bundle',
     [':NeoForge:build'],
     'Builds the Easy NPC dependency bundle for NeoForge.')
 
-// Maven Local is the intentionally narrow hand-off between the independent module builds.
-gameTestCore.configure {
-  dependsOn buildCore
-}
-
 buildConfigUi.configure {
   dependsOn buildCore
-  mustRunAfter gameTestCore
-}
-
-gameTestConfigUi.configure {
-  dependsOn gameTestCore, buildConfigUi
 }
 
 buildBundle.configure {
   dependsOn buildConfigUi
-  mustRunAfter gameTestConfigUi
+}
+
+// Verification pipeline: build and GameTest each module inside one nested invocation. This avoids
+// Gradle's duplicate included-build path error while retaining Maven Local as the narrow hand-off.
+def verifyCore = registerNestedBuild(
+    'verifyNeoForgeCore',
+    'core',
+    [':NeoForge:build', ':NeoForge:runGameTestServer'],
+    'Builds Easy NPC Core and runs its NeoForge dedicated-server GameTests.')
+
+def verifyConfigUi = registerNestedBuild(
+    'verifyNeoForgeConfigUi',
+    'config-ui',
+    [':NeoForge:build', ':NeoForge:runGameTestServer'],
+    'Builds Easy NPC Config UI and runs its NeoForge dedicated-server GameTests.')
+
+def verifyBundle = registerNestedBuild(
+    'verifyNeoForgeBundle',
+    'bundle',
+    [':NeoForge:build'],
+    'Builds the Easy NPC dependency bundle after all NeoForge GameTests pass.')
+
+verifyConfigUi.configure {
+  dependsOn verifyCore
+}
+
+verifyBundle.configure {
+  dependsOn verifyConfigUi
 }
 
 tasks.register('cleanNeoForge') {
@@ -100,14 +109,14 @@ tasks.register('buildNeoForge') {
 
 tasks.register('gameTestNeoForge') {
   group = 'verification'
-  description = 'Runs the Core and Config UI NeoForge dedicated-server GameTests.'
-  dependsOn gameTestConfigUi
+  description = 'Builds Core and Config UI and runs their NeoForge dedicated-server GameTests.'
+  dependsOn verifyConfigUi
 }
 
 tasks.register('verifyNeoForge') {
   group = 'verification'
   description = 'Builds all NeoForge jars and runs dedicated-server GameTests.'
-  dependsOn gameTestConfigUi, buildBundle
+  dependsOn verifyBundle
 }
 
 tasks.named('clean') {
