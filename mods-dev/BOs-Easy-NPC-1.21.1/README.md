@@ -52,6 +52,14 @@ present:
 Tip: When sharing or copying a modpack, copy the full `mods/` folder to ensure all required jars are
 included.
 
+### NeoForge client/server compatibility
+
+NeoForge requires the client and server to use the same NeoForge build (for example, both must use
+`21.1.233`). Install **Easy NPC Core** and **Easy NPC Config UI** in the client instance as well as
+on the server; the Bundle is metadata-only and does not replace either module. If the server uses
+AutoModpack with an explicit mod allowlist, include every `easy_npc*.jar` file in that allowlist so
+the client receives the payload handlers used by quests, objectives, and configuration screens.
+
 ## ✨ Features
 
 - Easy NPCs with dialogs, trading, and interactions
