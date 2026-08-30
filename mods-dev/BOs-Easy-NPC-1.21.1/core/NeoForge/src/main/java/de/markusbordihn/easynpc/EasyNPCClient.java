@@ -30,6 +30,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -44,7 +45,7 @@ public class EasyNPCClient {
     modEventBus.addListener(ModModelLayer::registerEntityLayerDefinitions);
     modEventBus.addListener(BlockEntityRenderer::register);
     modEventBus.addListener(EntityRenderer::register);
-    modEventBus.addListener(event -> tryRegisterWantedOverlay());
+    modEventBus.addListener((FMLClientSetupEvent event) -> tryRegisterWantedOverlay());
     modEventBus.addListener(ClientScreens::registerScreens);
 
     NetworkMessageHandlerManager.registerServerHandler(new ServerNetworkMessageHandler());
