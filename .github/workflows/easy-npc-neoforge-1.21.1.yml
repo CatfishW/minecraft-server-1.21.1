@@ -50,7 +50,9 @@ jobs:
             config/easy_npc/skin
             tools/ai_npc_skins.py
             tools/test_ai_npc_skins.py
-          sparse-checkout-cone-mode: true
+          # The list contains individual files as well as directories.
+          # Non-cone patterns are required for Git's sparse-checkout parser.
+          sparse-checkout-cone-mode: false
 
       - name: Set up Python
         uses: actions/setup-python@v5
