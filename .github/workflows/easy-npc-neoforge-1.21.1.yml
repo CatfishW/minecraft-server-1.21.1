@@ -7,10 +7,20 @@ on:
       - codex/easy-npc-neoforge-1.21.1-complete
     paths:
       - 'mods-dev/BOs-Easy-NPC-1.21.1/**'
+      - 'config/easy_npc/npc_templates/**'
+      - 'config/easy_npc/skin/**'
+      - 'tools/ai_npc_skins.py'
+      - 'tools/test_ai_npc_skins.py'
+      - 'SKILLS/AI_NPC_Skins.md'
       - '.github/workflows/easy-npc-neoforge-1.21.1.yml'
   pull_request:
     paths:
       - 'mods-dev/BOs-Easy-NPC-1.21.1/**'
+      - 'config/easy_npc/npc_templates/**'
+      - 'config/easy_npc/skin/**'
+      - 'tools/ai_npc_skins.py'
+      - 'tools/test_ai_npc_skins.py'
+      - 'SKILLS/AI_NPC_Skins.md'
       - '.github/workflows/easy-npc-neoforge-1.21.1.yml'
   workflow_dispatch:
 
@@ -26,6 +36,35 @@ env:
   GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=false
 
 jobs:
+  skin-assets:
+    name: Validate Easy NPC skin atlases and manifest
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout skin pipeline inputs
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            config/easy_npc/npc_templates
+            config/easy_npc/skin
+            tools/ai_npc_skins.py
+            tools/test_ai_npc_skins.py
+          sparse-checkout-cone-mode: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install image validator dependency
+        run: python -m pip install --disable-pip-version-check Pillow
+
+      - name: Run offline skin tests and hash check
+        run: |
+          python tools/test_ai_npc_skins.py
+          python tools/ai_npc_skins.py check --manifest config/easy_npc/skin/ai-skin-manifest.json
+
   verify:
     name: NeoForge build and dedicated-server GameTests
     runs-on: ubuntu-latest

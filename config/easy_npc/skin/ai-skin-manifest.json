@@ -1,0 +1,1761 @@
+{
+  "schema": 1,
+  "generator": "CatfishW/ai_npc_skins",
+  "author": "CatfishW",
+  "canvas": [
+    64,
+    64
+  ],
+  "model": "classic",
+  "workflow": "imagegen-3d-concept-to-uv",
+  "custom_templates_scanned": 159,
+  "unique_texture_ids": 112,
+  "api": {
+    "enabled": false,
+    "base_url": null,
+    "model": null,
+    "output": null
+  },
+  "draft": {
+    "path": "artifacts/npc-skin-ai-3d-concept-reference.png",
+    "kind": "concept",
+    "dimensions": [
+      1402,
+      1122
+    ]
+  },
+  "skins": [
+    {
+      "texture_id": "Adrian_Mellon_3390e9c4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Adrian Mellon",
+      "templates": [
+        "npc_32_adrian_mellon.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Adrian_Mellon_3390e9c4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Adrian_Mellon_3390e9c4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "5755cf33b02db4e669c26207888429227e57f423",
+      "sha256": "da828c79c00b2f74d304f3f20c9d16681fe73590875fd80b4ea3638ea575aa8a"
+    },
+    {
+      "texture_id": "Alyssa_Jenkins_0d0c52f4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Alyssa Jenkins",
+      "templates": [
+        "npc_351_alyssa_jenkins.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Alyssa_Jenkins_0d0c52f4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Alyssa_Jenkins_0d0c52f4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "d8c81c3af14561b4814078c325dd8c8e5506ff6e",
+      "sha256": "805b28e684433cc6d2d280582957ed89309c21f37910aa57d154712dc88818f0"
+    },
+    {
+      "texture_id": "Armed_Police_ac34813e",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "武警",
+      "templates": [
+        "town_guard.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Armed_Police_ac34813e.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Armed_Police_ac34813e.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "57726b46d63938fe19b851c824e4e622ab397578",
+      "sha256": "77a0d612de030cd53ae9024374451a590ababb0f220b6048fb872211079e7038"
+    },
+    {
+      "texture_id": "Badger_53764bbb",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Badger",
+      "templates": [
+        "npc_215_badger.json",
+        "npc_313_badger.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Badger_53764bbb.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Badger_53764bbb.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "4239735116df2350958f5ef65d0797c35355c8a5",
+      "sha256": "e120edb83a8eafd7311da64fd9bc05e8dc8c1c5f364c246689e44e4bfd707ab6"
+    },
+    {
+      "texture_id": "Bandit_1c6ebf9d",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "土匪",
+      "templates": [
+        "bandit.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Bandit_1c6ebf9d.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Bandit_1c6ebf9d.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "e1090267a77b60c8c3994f93c884b2a40e775ff7",
+      "sha256": "8cc0f14171ccafd25e77689f17acbb71171c1a7ee1a81ab90125734064f3228e"
+    },
+    {
+      "texture_id": "Bandit_Boss_b856691c",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "土匪头子",
+      "templates": [
+        "temp/bandit_boss.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Bandit_Boss_b856691c.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Bandit_Boss_b856691c.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "c98e9cef78c4861814096324ac773eb215442ef3",
+      "sha256": "ed41997ea1c8776e864f2093aedddcfe83f3c7466dfd7414430a373a31cccf8b"
+    },
+    {
+      "texture_id": "Belch_Huggins_de451409",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Belch Huggins",
+      "templates": [
+        "npc_30_belch_huggins.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Belch_Huggins_de451409.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Belch_Huggins_de451409.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "bc37d2c43c08cbfb1e46115c9436d5f3584f55fa",
+      "sha256": "2bbd7b5001bb7b50eb32470fb2c9bcbfc661f128faac345cf0486cd2d7132000"
+    },
+    {
+      "texture_id": "Ben_Hanscom_95d4a498",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Ben Hanscom",
+      "templates": [
+        "npc_23_ben_hanscom.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Ben_Hanscom_95d4a498.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Ben_Hanscom_95d4a498.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "f0c7ca327cd135d04ff091c7e60458dc2320c677",
+      "sha256": "7f66142ee88abbbb25c32beca9e1786e07c345b9e20fd22b962f5a552b8e4667"
+    },
+    {
+      "texture_id": "Betsy_Kettleman_220a6d05",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Betsy Kettleman",
+      "templates": [
+        "npc_329_betsy_kettleman.json",
+        "npc_35_vault_dweller.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Betsy_Kettleman_220a6d05.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Betsy_Kettleman_220a6d05.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6388802bcb32f82ff3157859be6acf1050dc7e2e",
+      "sha256": "b608c1b7726dde28316db65bfeeb056c2f470aeea3c9706d3e96f82f1b132b89"
+    },
+    {
+      "texture_id": "Beverly_Marsh_48221ecd",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Beverly Marsh",
+      "templates": [
+        "npc_20_beverly_marsh.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Beverly_Marsh_48221ecd.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Beverly_Marsh_48221ecd.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "7659d3335bcb70c40b4cd5fcce18c20c42fb0a65",
+      "sha256": "0fd9be938f16417bc85f43709e1ae12d793ba3adef79ba18d73a33acfa3bf1b6"
+    },
+    {
+      "texture_id": "Bill_Denbrough_7e00e06c",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Bill Denbrough",
+      "templates": [
+        "npc_19_bill_denbrough.json",
+        "npc_328_bill_oakley.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Bill_Denbrough_7e00e06c.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Bill_Denbrough_7e00e06c.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "f19c7cc0daa8460a1f32d06c43a07ed7ef9b3db9",
+      "sha256": "029e063756415c660c06b73bb033d8f195fba1c340b51109f081335c44a93877"
+    },
+    {
+      "texture_id": "Billy_Hargrove_2ed3f775",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Billy Hargrove",
+      "templates": [
+        "npc_12_billy_hargrove.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Billy_Hargrove_2ed3f775.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Billy_Hargrove_2ed3f775.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "7f5a5f761a70c11d1e5c86e9af9a2caa1816d79c",
+      "sha256": "2c5df5eb96e4121bf0d54e565c999241ef99eb05caa85dbc7ea9317a2e0e61a0"
+    },
+    {
+      "texture_id": "Bus_Driver_70eea669",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "公交车司机",
+      "templates": [
+        "npc_100_bus_driver.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Bus_Driver_70eea669.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Bus_Driver_70eea669.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "68529975bc6b48c49536a98602f695bf8f0a7d82",
+      "sha256": "566315154f2c1b200adc11548b234f6dc182b74931d54fa4b4c98b0d0410e490"
+    },
+    {
+      "texture_id": "Cait_1ff697b4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Cait",
+      "templates": [
+        "npc_48_cait.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Cait_1ff697b4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Cait_1ff697b4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "cd5d9761042912b151b421aa811e141afdfd8db6",
+      "sha256": "58c29279c258da808e33cadc8af69da998f11a26d475ba33c7c5af0c44a54875"
+    },
+    {
+      "texture_id": "Captain_Ironclaw_1308dc9a",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Captain Ironclaw",
+      "templates": [
+        "npc_415_captain_ironclaw.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Captain_Ironclaw_1308dc9a.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Captain_Ironclaw_1308dc9a.png",
+      "source": "imagegen-3d-concept",
+      "error": null,
+      "sha1": "44ab9c754e20c18d1e3556f226885f9c5f67d34a",
+      "sha256": "74c380dd6d6be9517371c04ffb2af9a1ced6a23fe85178196f4d7c9e713d09cf"
+    },
+    {
+      "texture_id": "Chloe_Price_a57d0e00",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Chloe Price",
+      "templates": [
+        "npc_337_chloe_price.json",
+        "npc_409_chloe_price.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Chloe_Price_a57d0e00.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Chloe_Price_a57d0e00.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "519288486d9a95cfb198fbf6c383a3c8c5709ada",
+      "sha256": "b520518a1ef05d6f4e6706deb5eaf707568407ec6421533906cffa5c2825e680"
+    },
+    {
+      "texture_id": "Chuck_McGill_1498679b",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Chuck McGill",
+      "templates": [
+        "npc_222_chuck_mcgill.json",
+        "npc_322_chuck_mcgill.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Chuck_McGill_1498679b.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Chuck_McGill_1498679b.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6c4c75076889534bab483ad305afa84bb08228a9",
+      "sha256": "1f27c9e320e874db58bdd8a6ae27c3a689674098cea26306a3b39082d4e65a15"
+    },
+    {
+      "texture_id": "Clifford_Main_f0ac4f17",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Clifford Main",
+      "templates": [
+        "npc_326_clifford_main.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Clifford_Main_f0ac4f17.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Clifford_Main_f0ac4f17.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "9247d1247470af9610f780388e98f3ad7a05222f",
+      "sha256": "dfb488cdad546d64b64c1a703f553878c9abc3bbd2ecf07c1c6f1ffa2a55fb32"
+    },
+    {
+      "texture_id": "Codsworth_f5e57f34",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Codsworth",
+      "templates": [
+        "npc_41_codsworth.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Codsworth_f5e57f34.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Codsworth_f5e57f34.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "837d2f12a9e30ccac38c2d2f8ed7fc8ec2b609ac",
+      "sha256": "14f6ce761a438b0d9fcd36f23553380260874df4790de7f748cacf230cb85225"
+    },
+    {
+      "texture_id": "Craig_Kettleman_1e9b8dfb",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Craig Kettleman",
+      "templates": [
+        "npc_330_craig_kettleman.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Craig_Kettleman_1e9b8dfb.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Craig_Kettleman_1e9b8dfb.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "31a75c9c40c4cf0c67277bd583aa5cbbb50790e5",
+      "sha256": "6ecf3953e30c40c51a7562cf6787a778707a994fc198771e9efc33bf9e6fa374"
+    },
+    {
+      "texture_id": "David_Madsen_269d62fd",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "David Madsen",
+      "templates": [
+        "npc_343_david_madsen.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/David_Madsen_269d62fd.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/David_Madsen_269d62fd.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "26694a7255331101418a1c96984524c1eceb298a",
+      "sha256": "1854403a8dc8327a6a45108a3c43cfc702efca0276b4d92fca3b3493d0054ac6"
+    },
+    {
+      "texture_id": "Dogmeat_c2c46330",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Dogmeat",
+      "templates": [
+        "npc_40_dogmeat.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Dogmeat_c2c46330.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Dogmeat_c2c46330.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "d56de42d19aa9cbfaf908462a979fc280d240395",
+      "sha256": "9158a74c3475fd607f67593e1659d6b3c6b28c6f961a7ef62bbe4299d042b9d4"
+    },
+    {
+      "texture_id": "Don_Hagarty_1a583a97",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Don Hagarty",
+      "templates": [
+        "npc_33_don_hagarty.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Don_Hagarty_1a583a97.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Don_Hagarty_1a583a97.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "c29449ff896073a9c3d0ea82402c0cbf64af2325",
+      "sha256": "e9da6cb4c9b857b1f509712c5455bc3832b330b7e7ea8897b2a12aea2ac0ec0c"
+    },
+    {
+      "texture_id": "Dustin_Henderson_a14b589d",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Dustin Henderson",
+      "templates": [
+        "npc_03_dustin_henderson.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Dustin_Henderson_a14b589d.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Dustin_Henderson_a14b589d.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "5a721f9b0aee672628d4d8e3f395a1b82542e262",
+      "sha256": "42a4a30ba74b0c399154681e23ed6d6f0b07648e8f0c4d966d4b271ce0eca53f"
+    },
+    {
+      "texture_id": "Eddie_Munson_b6d74424",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Eddie Munson",
+      "templates": [
+        "npc_17_eddie_munson.json",
+        "npc_22_eddie_kaspbrak.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Eddie_Munson_b6d74424.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Eddie_Munson_b6d74424.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "3f1e54ccb28806dc08e84d32e88b4357b5a85073",
+      "sha256": "dc2322da8c006167f20ed45cacea8aa83aab11a5129e6293b08b33f0816e63b0"
+    },
+    {
+      "texture_id": "Elder_Maxson_ecbd4dc1",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Elder Maxson",
+      "templates": [
+        "npc_46_elder_maxson.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Elder_Maxson_ecbd4dc1.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Elder_Maxson_ecbd4dc1.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "4e54b576949f69b2c928ef9e929e8e11eaca540b",
+      "sha256": "1af70e4e4bee8cf7a35d8aa51006c697faa81cd9ffe19a71c5673595a551da0b"
+    },
+    {
+      "texture_id": "Elder_Stoneheart_4e55bc5a",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Elder Stoneheart",
+      "templates": [
+        "npc_412_elder_stoneheart.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Elder_Stoneheart_4e55bc5a.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Elder_Stoneheart_4e55bc5a.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "965a1377b456ff4183e56c1d87025b58275fd209",
+      "sha256": "6f7b160ffb96ee5a80bff7309813f58a48e89da880025746935ae0fbc8553f85"
+    },
+    {
+      "texture_id": "Eleven_1846a3f3",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Eleven",
+      "templates": [
+        "npc_01_eleven.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Eleven_1846a3f3.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Eleven_1846a3f3.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "2577075db95123fbc3b2199cbdad52dfb985ddc8",
+      "sha256": "6281f576ee4f35ab855e885eb54906fc61f31d8cc460aebfe071dcde324c055b"
+    },
+    {
+      "texture_id": "Elite_Armed_Police_38273aaf",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "精锐武警",
+      "templates": [
+        "elite_town_guard.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Elite_Armed_Police_38273aaf.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Elite_Armed_Police_38273aaf.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "2d6d3627c3c347ee19a7340308dcaa3e4f3ffaa8",
+      "sha256": "9ffe6a79626d1650aae8cb8d0fd2b3489d863674477e0648a7c1a01401710e94"
+    },
+    {
+      "texture_id": "Erica_Sinclair_12f7b9e1",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Erica Sinclair",
+      "templates": [
+        "npc_14_erica_sinclair.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Erica_Sinclair_12f7b9e1.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Erica_Sinclair_12f7b9e1.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "4a2b557ac0520ef66827f56db5ad74c3341465ae",
+      "sha256": "de73f18baf81274b81d98bb01756d738f6e24a278f726b2e918ff0bf929628da"
+    },
+    {
+      "texture_id": "Farmer_Chen_144014d4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Farmer Chen",
+      "templates": [
+        "npc_417_farmer_chen.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Farmer_Chen_144014d4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Farmer_Chen_144014d4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6e38f831db9d31967481c494f1285fe123a5f351",
+      "sha256": "1b50a296056c81aea90b3f35baacf1a317a7e6db26b2f557fe7bdc4f008f5ebc"
+    },
+    {
+      "texture_id": "Forge_Master_Ember_1371dced",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Forge Master Ember",
+      "templates": [
+        "npc_413_forge_master_ember.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Forge_Master_Ember_1371dced.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Forge_Master_Ember_1371dced.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "965a1377b456ff4183e56c1d87025b58275fd209",
+      "sha256": "6f7b160ffb96ee5a80bff7309813f58a48e89da880025746935ae0fbc8553f85"
+    },
+    {
+      "texture_id": "Francesca_Liddy_fa65b3d3",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Francesca Liddy",
+      "templates": [
+        "npc_327_francesca_liddy.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Francesca_Liddy_fa65b3d3.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Francesca_Liddy_fa65b3d3.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "eb0f208e4171187ef2b073fe31939f693ebc3fc1",
+      "sha256": "3c700d5f672d9623fd077f9b78ed37c111ae4eeeee823db0d2ff31a784bcbc7c"
+    },
+    {
+      "texture_id": "Frank_Bowers_024879d0",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Frank Bowers",
+      "templates": [
+        "npc_345_frank_bowers.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Frank_Bowers_024879d0.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Frank_Bowers_024879d0.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "97bc53179b4ea855951b383afb5273607b5eca61",
+      "sha256": "1da1c34f1b1e09f97212a4b60cedf1ae6be4fdd017359da57d34606eb5f56253"
+    },
+    {
+      "texture_id": "Gale_Boetticher_ad42ea3b",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Gale Boetticher",
+      "templates": [
+        "npc_217_gale_boetticher.json",
+        "npc_315_gale_boetticher.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Gale_Boetticher_ad42ea3b.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Gale_Boetticher_ad42ea3b.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "4853d93b48f9ba5f9a3ba18116842322a569ce44",
+      "sha256": "5f97626cea10baa8d4f3a1f2924fcd2d70dcc4ab7bc7f7dbeeadcd46d4c379fe"
+    },
+    {
+      "texture_id": "Georgie_Denbrough_00bf582a",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Georgie Denbrough",
+      "templates": [
+        "npc_26_georgie_denbrough.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Georgie_Denbrough_00bf582a.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Georgie_Denbrough_00bf582a.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6cc4abf20dcbfa55a3e095243c0691fb2fe5100f",
+      "sha256": "f079d73369dcafd25346df05370a01287fc3182d7e54a86da13f9561db9c932c"
+    },
+    {
+      "texture_id": "Gustavo_Fring_c51e0ae4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Gustavo Fring",
+      "templates": [
+        "npc_208_gustavo_fring.json",
+        "npc_306_gustavo_fring.json",
+        "npc_402_gustavo_fring.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Gustavo_Fring_c51e0ae4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Gustavo_Fring_c51e0ae4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "940a5c14bc5c2988461d2b2bff86384a1726c05d",
+      "sha256": "80cfda6b34c739789b47eb64799a88bf5852e75d121151db879860509b0665a5"
+    },
+    {
+      "texture_id": "Hancock_86e9f0fa",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Hancock",
+      "templates": [
+        "npc_47_hancock.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Hancock_86e9f0fa.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Hancock_86e9f0fa.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "62992bd1c29a42351ae37c9a3ac7b063e02495c3",
+      "sha256": "4dfc5c2086dd2f396770f7fab71114643f95c4fefbde2811fe9057c46227510e"
+    },
+    {
+      "texture_id": "Hank_Schrader_e3b88358",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Hank Schrader",
+      "templates": [
+        "npc_203_hank_schrader.json",
+        "npc_303_hank_schrader.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Hank_Schrader_e3b88358.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Hank_Schrader_e3b88358.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "789c2e99713c4371ba3fad7ee29d485cfcdf8621",
+      "sha256": "fd366dba28997d5d0703de821be113fc942506287f26af714a5c321498bf8a7f"
+    },
+    {
+      "texture_id": "Hayden_Jones_94efe616",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Hayden Jones",
+      "templates": [
+        "npc_350_hayden_jones.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Hayden_Jones_94efe616.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Hayden_Jones_94efe616.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "2985fe35a1c522666e1f1fd11e6dd8fb19e71459",
+      "sha256": "3c553ce8a9a0c7060f209b09f0a9b2ce2695ed3b0dc10b0721f0b05ddf2a7876"
+    },
+    {
+      "texture_id": "Hector_Salamanca_c11f1c0d",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Hector Salamanca",
+      "templates": [
+        "npc_209_hector_salamanca.json",
+        "npc_307_hector_salamanca.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Hector_Salamanca_c11f1c0d.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Hector_Salamanca_c11f1c0d.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "ccd51696125a0256e77af0cac83486b703becd6f",
+      "sha256": "0ae9c1dc1852de840689b36e4d5bae396a4153997ae523bd7c3790af9566c59c"
+    },
+    {
+      "texture_id": "Henry_357c46ac",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "亨利 (Henry)",
+      "templates": [
+        "temp/henry_guide.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Henry_357c46ac.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Henry_357c46ac.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "1400fac469ec055a70f863215bbea434b070ba00",
+      "sha256": "d1bb33e2700ed443ebe2415a026f7912c61a7fd842beff5402461bb94c7cedea"
+    },
+    {
+      "texture_id": "Henry_Bowers_e34297e4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Henry Bowers",
+      "templates": [
+        "npc_27_henry_bowers.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Henry_Bowers_e34297e4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Henry_Bowers_e34297e4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "a50f8c69682c0f207791ac06eda023fcc199df5b",
+      "sha256": "a063ef8658388b9e44c24a36b7523c7128f1f51319ad434b60b16f2f9495d7b0"
+    },
+    {
+      "texture_id": "Howard_Hamlin_83325c3e",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Howard Hamlin",
+      "templates": [
+        "npc_223_howard_hamlin.json",
+        "npc_323_howard_hamlin.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Howard_Hamlin_83325c3e.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Howard_Hamlin_83325c3e.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "d1595ed68c059508119b99fb12ef18de31b0c42d",
+      "sha256": "d63feceea8a3cc281715d61e3334bce719e2e2ddd63b89799c70e5db0e79a661"
+    },
+    {
+      "texture_id": "Huell_Babineaux_a11bc599",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Huell Babineaux",
+      "templates": [
+        "npc_318_huell_babineaux.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Huell_Babineaux_a11bc599.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Huell_Babineaux_a11bc599.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "9ae7121352e2ced96a5027365177d5d9bd3a0e99",
+      "sha256": "516be87281437b42e5c8328b32c3840e62483d2a61b5776507a03ab849ad8bef"
+    },
+    {
+      "texture_id": "Irene_Landry_4f2fc496",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Irene Landry",
+      "templates": [
+        "npc_331_irene_landry.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Irene_Landry_4f2fc496.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Irene_Landry_4f2fc496.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "386ad4efbf90b449fe4e53b1081ccf2ad245f91b",
+      "sha256": "a828f2322b1416948eeb8e86675cfddee02a5ea32ba0c6e3200ec49f929fc726"
+    },
+    {
+      "texture_id": "Jane_Margolis_0f7a2155",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Jane Margolis",
+      "templates": [
+        "npc_216_jane_margolis.json",
+        "npc_314_jane_margolis.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Jane_Margolis_0f7a2155.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Jane_Margolis_0f7a2155.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "da2908780c3a1829c5931c8ad35aab786dd349ac",
+      "sha256": "daaf02ac1f1a1c2a54920a12ed8ea06cb9176f92706df1c274ac6e1f36077a4c"
+    },
+    {
+      "texture_id": "Jesse_Pinkman_b5e10a33",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Jesse Pinkman",
+      "templates": [
+        "npc_201_jesse_pinkman.json",
+        "npc_301_jesse_pinkman.json",
+        "npc_401_jesse_pinkman.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Jesse_Pinkman_b5e10a33.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Jesse_Pinkman_b5e10a33.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "c2d1018b03c3c82b1b3149b0e0873a207b9a7a1f",
+      "sha256": "aebeb6213081d2f73e8ee20100add8f45eeee499f637f1c2b1131ce665638f18"
+    },
+    {
+      "texture_id": "Jim_Hopper_420d1d50",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Jim Hopper",
+      "templates": [
+        "npc_06_jim_hopper.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Jim_Hopper_420d1d50.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Jim_Hopper_420d1d50.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "9f76685f32433405cce33ef45ab997da23462db8",
+      "sha256": "d361f0eec9628d055331f20a8378a318d8e6c3e954df085fd2099a451c83e5f0"
+    },
+    {
+      "texture_id": "Jimmy_McGill_f998e992",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Jimmy McGill",
+      "templates": [
+        "npc_220_jimmy_mcgill.json",
+        "npc_320_jimmy_mcgill.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Jimmy_McGill_f998e992.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Jimmy_McGill_f998e992.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "922bf09410e642d3ff0ecddbd11e9e0372509d98",
+      "sha256": "0cab86d8bf7aee1fb0d05e32bf49360b2f31caecc3a9bdf24b2d37450b9265bd"
+    },
+    {
+      "texture_id": "Jonathan_Byers_94493ba3",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Jonathan Byers",
+      "templates": [
+        "npc_10_jonathan_byers.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Jonathan_Byers_94493ba3.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Jonathan_Byers_94493ba3.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "e87f91bd3a6a5c0c986c345822d586d2de463fc6",
+      "sha256": "562893674f5b83d4b36eb1565027ab75d9672b5e9ebefe5f851da3c63b18d6e7"
+    },
+    {
+      "texture_id": "Joyce_Byers_03fb962b",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Joyce Byers",
+      "templates": [
+        "npc_07_joyce_byers.json",
+        "npc_344_joyce_price.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Joyce_Byers_03fb962b.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Joyce_Byers_03fb962b.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "cd9178fbbfd540da3c3339624a5090699279c226",
+      "sha256": "6eeac3ae935d14059a6f271c9f18cd30cf0220dd50d9b2628b59463bd4595505"
+    },
+    {
+      "texture_id": "Juliet_Watson_689ebdea",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Juliet Watson",
+      "templates": [
+        "npc_349_juliet_watson.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Juliet_Watson_689ebdea.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Juliet_Watson_689ebdea.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "5df891f1b8826c04a331482c18f0ac4e4a0d1ae4",
+      "sha256": "d2241f7e7e1507848d5b8646eec043dcdcb0e8ee67ec2f069aaa07ab26f7eb38"
+    },
+    {
+      "texture_id": "Kate_Marsh_ef402ba5",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Kate Marsh",
+      "templates": [
+        "npc_341_kate_marsh.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Kate_Marsh_ef402ba5.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Kate_Marsh_ef402ba5.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "8a69a716f934016243c8cd1f44d62650245bae90",
+      "sha256": "244122fab303bf076b85fca146ec3b23989cc49e0b61cd42761840d9929b5a5e"
+    },
+    {
+      "texture_id": "Kim_Wexler_32e54163",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Kim Wexler",
+      "templates": [
+        "npc_221_kim_wexler.json",
+        "npc_321_kim_wexler.json",
+        "npc_405_kim_wexler.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Kim_Wexler_32e54163.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Kim_Wexler_32e54163.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "44203360f0825c312e6a48aed6874cf790e3ddb3",
+      "sha256": "1b3b9c9b6ec59a46f51a4e953996b7d301afae7afad5acd83b2c39a35c939cb4"
+    },
+    {
+      "texture_id": "Lalo_Salamanca_faf8fdff",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Lalo Salamanca",
+      "templates": [
+        "npc_325_lalo_salamanca.json",
+        "npc_407_lalo_salamanca.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Lalo_Salamanca_faf8fdff.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Lalo_Salamanca_faf8fdff.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "4dbdec30c396188ee26a002f7af4fc4fbdd530e6",
+      "sha256": "25d36a1c59067d51790041682935557cdaec498c484c38cc60fc4418e770d856"
+    },
+    {
+      "texture_id": "Leonel_Salamanca_35d134f7",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Leonel Salamanca",
+      "templates": [
+        "npc_211_leonel_salamanca.json",
+        "npc_309_leonel_salamanca.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Leonel_Salamanca_35d134f7.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Leonel_Salamanca_35d134f7.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "c730b3a126a0b4383994e7d345eb341be5afd14f",
+      "sha256": "2ee8656ef1a35f319960877113f6a5fd56f09da05f4bb8194897c2bb5928b496"
+    },
+    {
+      "texture_id": "Librarian_Quill_8a487422",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Librarian Quill",
+      "templates": [
+        "npc_419_librarian_quill.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Librarian_Quill_8a487422.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Librarian_Quill_8a487422.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "965a1377b456ff4183e56c1d87025b58275fd209",
+      "sha256": "6f7b160ffb96ee5a80bff7309813f58a48e89da880025746935ae0fbc8553f85"
+    },
+    {
+      "texture_id": "Lucas_Sinclair_eb0ffea3",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Lucas Sinclair",
+      "templates": [
+        "npc_04_lucas_sinclair.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Lucas_Sinclair_eb0ffea3.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Lucas_Sinclair_eb0ffea3.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "871b08b0cb2fad095c5b250b8a358c89836aefac",
+      "sha256": "35f49f7a717553ba7b80095bd5ee94a6c036edadc28a4cf253b10a8e5db238f7"
+    },
+    {
+      "texture_id": "Lucy_MacLean_ed2fe3b8",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Lucy MacLean",
+      "templates": [
+        "npc_37_lucy_maclean.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Lucy_MacLean_ed2fe3b8.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Lucy_MacLean_ed2fe3b8.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "83da17953c7635b9ac307a5dcc3443a7bfddb81e",
+      "sha256": "aa9f8030b2884a99224a0ba12a2355c66c0b214cc0c5244bd1a20720c40be457"
+    },
+    {
+      "texture_id": "Lydia_RodarteQuayle_e02cd3fa",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Lydia Rodarte-Quayle",
+      "templates": [
+        "npc_219_lydia_rodarte-quayle.json",
+        "npc_317_lydia_rodarte-quayle.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Lydia_RodarteQuayle_e02cd3fa.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Lydia_RodarteQuayle_e02cd3fa.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "56bed141eb7c8e34a48929b3a2c1e1ab80902f67",
+      "sha256": "3c53fd1e35de6da52368c427f386fb2bc233ad857def9d841a6bacec92b3e409"
+    },
+    {
+      "texture_id": "MacCready_5b099247",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "MacCready",
+      "templates": [
+        "npc_49_maccready.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/MacCready_5b099247.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/MacCready_5b099247.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "ea6a138fb713d124f2e06c3be3f9ab4e3e9575fe",
+      "sha256": "62961ef5dc086a113e38381e569a20ce2ee2b5a0fae00be915375d2f2ff52165"
+    },
+    {
+      "texture_id": "Marco_Salamanca_201ee4b2",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Marco Salamanca",
+      "templates": [
+        "npc_212_marco_salamanca.json",
+        "npc_310_marco_salamanca.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Marco_Salamanca_201ee4b2.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Marco_Salamanca_201ee4b2.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "68fc68a21f2875d206c7fa9b7ed45e7d58616446",
+      "sha256": "2e8092da236a40ae0b155fd6fabd59c8ad1e166c130e6e71c3e1709666a2f609"
+    },
+    {
+      "texture_id": "Marie_Schrader_c2bab051",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Marie Schrader",
+      "templates": [
+        "npc_204_marie_schrader.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Marie_Schrader_c2bab051.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Marie_Schrader_c2bab051.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "340f309a5c029131816d04f9f3272a4ac6a5cb1b",
+      "sha256": "a45d9e13378aa63c51d2045d9da6a445d4831c54042317027c26dbd4a1aedbdb"
+    },
+    {
+      "texture_id": "Mark_Jefferson_4dbb75d0",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Mark Jefferson",
+      "templates": [
+        "npc_342_mark_jefferson.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Mark_Jefferson_4dbb75d0.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Mark_Jefferson_4dbb75d0.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6bbdea1f1e26c4990e8452d4cc70dfacb4727add",
+      "sha256": "90ac6402baa362a5e964bfcd5b578edc8f034cee79a6130ef6acea6d0db20f34"
+    },
+    {
+      "texture_id": "Martin_Brenner_b8320e51",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Martin Brenner",
+      "templates": [
+        "npc_16_martin_brenner.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Martin_Brenner_b8320e51.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Martin_Brenner_b8320e51.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "9f2bd26f60cd67682a943f51e477b6101db4673b",
+      "sha256": "192a8be5346c5037255404eb0fc03fcb6e94b92eec5d8531f794076f564520a8"
+    },
+    {
+      "texture_id": "Max_Mayfield_08b5eae4",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Max Mayfield",
+      "templates": [
+        "npc_11_max_mayfield.json",
+        "npc_336_max_caulfield.json",
+        "npc_408_max_caulfield.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Max_Mayfield_08b5eae4.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Max_Mayfield_08b5eae4.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "92d0ef4691912a4a05781d8917d4a40508ad7643",
+      "sha256": "e131f08ec954d99eff3df6d84eacdced20d8e65c23f08e81222f75022eb150b7"
+    },
+    {
+      "texture_id": "Maximus_766eedf8",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Maximus",
+      "templates": [
+        "npc_38_maximus.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Maximus_766eedf8.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Maximus_766eedf8.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "da98d824c65a2af850646be3ca83b2f0b62c6eb5",
+      "sha256": "e63354d68c25e5e39f5a7fcb051b65ed9b4ddfff65183faaef3cc71f93295b93"
+    },
+    {
+      "texture_id": "Merchant_a9e19d90",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "商人",
+      "templates": [
+        "merchant.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Merchant_a9e19d90.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Merchant_a9e19d90.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "0acf53d570c8c02041d1a4579b9f3c30ab39d948",
+      "sha256": "4b89da0455846a6759292a48142dd0783881343553ab070c86b0c280c3fa6911"
+    },
+    {
+      "texture_id": "Mike_Ehrmantraut_53c2c1d5",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Mike Ehrmantraut",
+      "templates": [
+        "npc_207_mike_ehrmantraut.json",
+        "npc_305_mike_ehrmantraut.json",
+        "npc_403_mike_ehrmantraut.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Mike_Ehrmantraut_53c2c1d5.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Mike_Ehrmantraut_53c2c1d5.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "b46939aae5717d2372807df1d8b58dc0fba31914",
+      "sha256": "2c36621dd62f73604e7413a8764fd05b0cc4c2c8e35e02dc3c5dacf38d5cea25"
+    },
+    {
+      "texture_id": "Mike_Wheeler_0b7979ec",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Mike Wheeler",
+      "templates": [
+        "npc_02_mike_wheeler.json",
+        "npc_24_mike_hanlon.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Mike_Wheeler_0b7979ec.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Mike_Wheeler_0b7979ec.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "b3cdf22711c2377ff285f41b40dd32459dd112f6",
+      "sha256": "deb6a4e80cc25399452833857833e516b2dc01b484f4f38303b591592ca3e1dd"
+    },
+    {
+      "texture_id": "Mrs_Kersh_3975c12f",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Mrs Kersh",
+      "templates": [
+        "npc_31_mrs_kersh.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Mrs_Kersh_3975c12f.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Mrs_Kersh_3975c12f.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "a434891b7b023feb139e36db283ffa3165218ebe",
+      "sha256": "60c31e7e303df0253d70af535a38b43423086f88b3e88e52cf62c154cbe0e5bd"
+    },
+    {
+      "texture_id": "Murray_Bauman_87daed88",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Murray Bauman",
+      "templates": [
+        "npc_15_murray_bauman.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Murray_Bauman_87daed88.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Murray_Bauman_87daed88.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "87aec0fe38df68739872d7f9a6c079d408f2ec53",
+      "sha256": "fc43710a738db01c0298b02e359be242757686ed1f4f204bf72fc52aaf3edc84"
+    },
+    {
+      "texture_id": "Nacho_Varga_68995da5",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Nacho Varga",
+      "templates": [
+        "npc_224_nacho_varga.json",
+        "npc_324_nacho_varga.json",
+        "npc_406_nacho_varga.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Nacho_Varga_68995da5.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Nacho_Varga_68995da5.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "f491de353bffff565f9840a43701449f56b9bacb",
+      "sha256": "a161e9030bbbf9375f14b43a4d9ff2f06dc85fd1803f79333829a6828b7df54d"
+    },
+    {
+      "texture_id": "Nancy_Wheeler_3d23e74b",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Nancy Wheeler",
+      "templates": [
+        "npc_09_nancy_wheeler.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Nancy_Wheeler_3d23e74b.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Nancy_Wheeler_3d23e74b.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6c4ea99035c16709117e0d6edffbcbed0faa026a",
+      "sha256": "af8dd3620995ab30a138e850028ed7fa6f029490cdb3e1385cf714a111e6c8a2"
+    },
+    {
+      "texture_id": "Nathan_Prescott_5e04acf5",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Nathan Prescott",
+      "templates": [
+        "npc_339_nathan_prescott.json",
+        "npc_411_nathan_prescott.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Nathan_Prescott_5e04acf5.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Nathan_Prescott_5e04acf5.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "5d936d4771c0015bc557b7d86e0fc8fe02e2b560",
+      "sha256": "23f2d22139ec738b9e2207ae7da8431f7059957b0b40baf62f28b7503da06f1b"
+    },
+    {
+      "texture_id": "Nether_Scout_Blaze_a9be6ed9",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Nether Scout Blaze",
+      "templates": [
+        "npc_418_nether_scout_blaze.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Nether_Scout_Blaze_a9be6ed9.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Nether_Scout_Blaze_a9be6ed9.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "965a1377b456ff4183e56c1d87025b58275fd209",
+      "sha256": "6f7b160ffb96ee5a80bff7309813f58a48e89da880025746935ae0fbc8553f85"
+    },
+    {
+      "texture_id": "Nick_Valentine_33a8e0e8",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Nick Valentine",
+      "templates": [
+        "npc_44_nick_valentine.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Nick_Valentine_33a8e0e8.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Nick_Valentine_33a8e0e8.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "9d7b2bc445b70faa1b2e4e96b2afeed4e95fe97e",
+      "sha256": "564bb9952540f40409aa67df833f5fded2d8ce13c816c311a9c6f952edf7cab1"
+    },
+    {
+      "texture_id": "Overseer_Hank_a73f65f5",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Overseer Hank",
+      "templates": [
+        "npc_39_overseer_hank.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Overseer_Hank_a73f65f5.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Overseer_Hank_a73f65f5.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "54d30333362b766a976704f1be2e32901921a771",
+      "sha256": "409360c3c8bc10f4158c690e1ae01d6d8b35e2aad5e50beafe00ac0d5e311f0e"
+    },
+    {
+      "texture_id": "Paladin_Danse_60d700d1",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Paladin Danse",
+      "templates": [
+        "npc_45_paladin_danse.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Paladin_Danse_60d700d1.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Paladin_Danse_60d700d1.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "211a12a53d298a01b1cb1f77ddee5939be9f3bf1",
+      "sha256": "976628c8db0dfcc96cb78f8330c009ca513496094c9cbe4a8065092b0e9b33c4"
+    },
+    {
+      "texture_id": "Patrick_Hockstetter_22ffdabf",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Patrick Hockstetter",
+      "templates": [
+        "npc_28_patrick_hockstetter.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Patrick_Hockstetter_22ffdabf.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Patrick_Hockstetter_22ffdabf.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "478a5a4a325e1bebd8c8ea2d7a14e15a7879ab7f",
+      "sha256": "a67b5958bef333bbf24382caaa061263cef79aa1a43d3fd24395ed1fc1205680"
+    },
+    {
+      "texture_id": "Pennywise_876d04fd",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Pennywise",
+      "templates": [
+        "npc_18_pennywise.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Pennywise_876d04fd.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Pennywise_876d04fd.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "81a97341ee6d3e8ee31b0debf5454069e52ae8f2",
+      "sha256": "e589fe37674e9ca1726709018afc5efefc139cf2fe43ca027ed3dbc3d991be08"
+    },
+    {
+      "texture_id": "Piper_Wright_80b00b31",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Piper Wright",
+      "templates": [
+        "npc_43_piper_wright.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Piper_Wright_80b00b31.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Piper_Wright_80b00b31.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "22c2b0cd56fbc8cb7ea73128592878c220530275",
+      "sha256": "cd9ab2f02895ff893b0f5902477024b593f429a7c2f6278f3c135493b79f30c4"
+    },
+    {
+      "texture_id": "Preston_Garvey_7c934b1c",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Preston Garvey",
+      "templates": [
+        "npc_42_preston_garvey.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Preston_Garvey_7c934b1c.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Preston_Garvey_7c934b1c.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "fe34252ed2aff122e304aef72230787e2410558b",
+      "sha256": "d7c625b2fdbbba7af7b60b3946673ae0e39370d7ca561760e1a16eee6fc1b754"
+    },
+    {
+      "texture_id": "Rachel_Amber_adf7764a",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Rachel Amber",
+      "templates": [
+        "npc_338_rachel_amber.json",
+        "npc_348_dana_ward.json",
+        "npc_410_rachel_amber.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Rachel_Amber_adf7764a.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Rachel_Amber_adf7764a.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "5ff33589f80d8f6b20861baa7a579e3055236285",
+      "sha256": "44c45a062f7ba0ae742601b2d42671cbdf70d4f203c270cac02e836a2b67cb42"
+    },
+    {
+      "texture_id": "Richie_Tozier_c795c7d0",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Richie Tozier",
+      "templates": [
+        "npc_21_richie_tozier.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Richie_Tozier_c795c7d0.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Richie_Tozier_c795c7d0.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "386ad4efbf90b449fe4e53b1081ccf2ad245f91b",
+      "sha256": "a828f2322b1416948eeb8e86675cfddee02a5ea32ba0c6e3200ec49f929fc726"
+    },
+    {
+      "texture_id": "Robin_Buckley_48230e8d",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Robin Buckley",
+      "templates": [
+        "npc_13_robin_buckley.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Robin_Buckley_48230e8d.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Robin_Buckley_48230e8d.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "8e22e9e8a861718ee83f5990e1755484298e7e56",
+      "sha256": "7fc737345bf37427ac490127bebad50e8dcbe3602391bd8ab6ceb7a535c3073e"
+    },
+    {
+      "texture_id": "Samuel_Raymond_2157cfea",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Samuel Raymond",
+      "templates": [
+        "npc_347_samuel_raymond.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Samuel_Raymond_2157cfea.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Samuel_Raymond_2157cfea.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "491a38732e13910a29ed2ad68a2cc4904d838945",
+      "sha256": "7fb416ba6337e513692968a4407c7948f578592a093947c8e7a3cc07c7fc3ec1"
+    },
+    {
+      "texture_id": "Saul_Goodman_e6e8fc55",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Saul Goodman",
+      "templates": [
+        "npc_206_saul_goodman.json",
+        "npc_304_saul_goodman.json",
+        "npc_404_saul_goodman.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Saul_Goodman_e6e8fc55.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Saul_Goodman_e6e8fc55.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "1d2b57185ea133aca6209534f58641d2750d0a26",
+      "sha256": "6ec5def1f034ad7862ab2cfb388c7af893eb3323f9d48c1438dc28449388ab26"
+    },
+    {
+      "texture_id": "Skinny_Pete_ad8b918a",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Skinny Pete",
+      "templates": [
+        "npc_214_skinny_pete.json",
+        "npc_312_skinny_pete.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Skinny_Pete_ad8b918a.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Skinny_Pete_ad8b918a.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "c02e8932d0b225882287a8fc70eda6df150b0bb5",
+      "sha256": "4e8392c2979640125306f6b7e618353a38f729aa917fe1b68e651045d5f82dcf"
+    },
+    {
+      "texture_id": "Skyler_White_4ad73caf",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Skyler White",
+      "templates": [
+        "npc_202_skyler_white.json",
+        "npc_302_skyler_white.json",
+        "npc_332_mrs_nguyen.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Skyler_White_4ad73caf.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Skyler_White_4ad73caf.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "6ae41709e56331fe497502b0a7b496ec235d4d19",
+      "sha256": "83ddbc92120b68ced2faa98f91d897113bd88ad0ab9e1fe5e1911be99071de32"
+    },
+    {
+      "texture_id": "Space_Walker_15299f2b",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "空间行者",
+      "templates": [
+        "temp/teleport_guide.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Space_Walker_15299f2b.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Space_Walker_15299f2b.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "a2d50b35f6d653d7f10bb282fde5b3a8c4812e56",
+      "sha256": "e02a471fc39c58862f95159ace3e74915f2c7cc705d0db6e1263977ce6c56972"
+    },
+    {
+      "texture_id": "Stacey_Ehrmantraut_e6a51676",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Stacey Ehrmantraut",
+      "templates": [
+        "npc_335_stacey_ehrmantraut.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Stacey_Ehrmantraut_e6a51676.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Stacey_Ehrmantraut_e6a51676.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "18d29f508e000d1c590712c0ba50a127e8aff0eb",
+      "sha256": "4a5f3d6cb911eb3e87d42367be55e71a1386f66b7b409c644682934b630a7b80"
+    },
+    {
+      "texture_id": "Stanley_Uris_30b12fdc",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Stanley Uris",
+      "templates": [
+        "npc_25_stanley_uris.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Stanley_Uris_30b12fdc.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Stanley_Uris_30b12fdc.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "aa7c6f660b9655f3dd38f9f9351f81f62543717c",
+      "sha256": "caf093fec61c87334830d9c919b70987da8fd0d6d527f29379f0e0b5c5bfb736"
+    },
+    {
+      "texture_id": "Starter_Helper_a0f64e13",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "新手助手 (Starter Helper)",
+      "templates": [
+        "npc_99_newbie_helper.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Starter_Helper_a0f64e13.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Starter_Helper_a0f64e13.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "e0b83a8bc8ad0ab7dae90eec9668f017f1f8bc54",
+      "sha256": "c401ee6a5c22b57dae6b7c86d6d454dc45fe930bf31d92dac1c4c825306f7a92"
+    },
+    {
+      "texture_id": "Steve_Harrington_85451418",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Steve Harrington",
+      "templates": [
+        "npc_08_steve_harrington.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Steve_Harrington_85451418.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Steve_Harrington_85451418.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "3679e99bcc79f84752e3f4c206b2eff0d370ded2",
+      "sha256": "f6efb5bdfdbf7a823a4a10564974ea39abbe24b54db60da3a395baa010b4373a"
+    },
+    {
+      "texture_id": "Steven_Gomez_11f60b8e",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Steven Gomez",
+      "templates": [
+        "npc_213_steven_gomez.json",
+        "npc_311_steven_gomez.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Steven_Gomez_11f60b8e.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Steven_Gomez_11f60b8e.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "1946f2135f26beff9d2678c1a107ee477dbf31d6",
+      "sha256": "2ed39e418c54a531fef0cb9ca373957b79c59953beabccb91c53b697cfa5af3f"
+    },
+    {
+      "texture_id": "Story_Guide_1891d28b",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "故事向导",
+      "templates": [
+        "story_guide_npc.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Story_Guide_1891d28b.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Story_Guide_1891d28b.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "f27380db670230c81a0c7a6d6a184012a00431b6",
+      "sha256": "9b543e4d1813cf893d98a67be95924fe77f59cf6e32eea1fbd8af50b2bafab3b"
+    },
+    {
+      "texture_id": "Strong_7fa6bbc5",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Strong",
+      "templates": [
+        "npc_50_strong.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Strong_7fa6bbc5.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Strong_7fa6bbc5.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "0d8c6cf1064b28594a17634fb77f02308e9d1e46",
+      "sha256": "ef050689fd30264fee55aa14c21119b69511d4feec2984bd29bd5897f2e51940"
+    },
+    {
+      "texture_id": "The_Cousins_4d2432fe",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "The Cousins",
+      "templates": [
+        "npc_319_the_cousins.json",
+        "npc_34_the_leper.json",
+        "npc_36_the_ghoul.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/The_Cousins_4d2432fe.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/The_Cousins_4d2432fe.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "fae0d6a651c8da534f950fea7a63a87eef8a1987",
+      "sha256": "e7f53340739cd79d14f18aa05a58578709b995108ff14ba797957ffc7c7130f0"
+    },
+    {
+      "texture_id": "The_Ender_Watcher_2044b5a3",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "The Ender Watcher",
+      "templates": [
+        "npc_416_the_ender_watcher.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/The_Ender_Watcher_2044b5a3.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/The_Ender_Watcher_2044b5a3.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "965a1377b456ff4183e56c1d87025b58275fd209",
+      "sha256": "6f7b160ffb96ee5a80bff7309813f58a48e89da880025746935ae0fbc8553f85"
+    },
+    {
+      "texture_id": "The_Wandering_Enchanter_fc0301bd",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "The Wandering Enchanter",
+      "templates": [
+        "npc_414_the_wandering_enchanter.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/The_Wandering_Enchanter_fc0301bd.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/The_Wandering_Enchanter_fc0301bd.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "965a1377b456ff4183e56c1d87025b58275fd209",
+      "sha256": "6f7b160ffb96ee5a80bff7309813f58a48e89da880025746935ae0fbc8553f85"
+    },
+    {
+      "texture_id": "Todd_Alquist_174057a9",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Todd Alquist",
+      "templates": [
+        "npc_218_todd_alquist.json",
+        "npc_316_todd_alquist.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Todd_Alquist_174057a9.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Todd_Alquist_174057a9.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "ed74f3a16e3bbfe0847fda4428bfe9995b28aec4",
+      "sha256": "7f92accc230fdc635ae4de9c3541fbe8adf93a651796b65efdbf042effd8f60b"
+    },
+    {
+      "texture_id": "Tuco_Salamanca_39fb1585",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Tuco Salamanca",
+      "templates": [
+        "npc_210_tuco_salamanca.json",
+        "npc_308_tuco_salamanca.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Tuco_Salamanca_39fb1585.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Tuco_Salamanca_39fb1585.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "266e8fec603f02c9f9898fa59fd65af950cd5282",
+      "sha256": "d53e82dbbd4373829bd85ecef9298209c030e57386f3d9e0d84008758da57c7a"
+    },
+    {
+      "texture_id": "Tyrus_Kitt_d2e3b0d1",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Tyrus Kitt",
+      "templates": [
+        "npc_333_tyrus_kitt.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Tyrus_Kitt_d2e3b0d1.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Tyrus_Kitt_d2e3b0d1.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "daa497e3c0e425d710cefbb702f470ab424fa08f",
+      "sha256": "615ae47a8076db0950c852e386552ca5404d6ce14653f1fe8ff0bb6542f99bee"
+    },
+    {
+      "texture_id": "Victor_Criss_30b5d5ad",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Victor Criss",
+      "templates": [
+        "npc_29_victor_criss.json",
+        "npc_334_victor.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Victor_Criss_30b5d5ad.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Victor_Criss_30b5d5ad.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "c50e13e758b176929a78be3be40d583973fad587",
+      "sha256": "d860235eae73813cbb575dac97773d9b3bf98ed3d26686979c68fcb70ee336b9"
+    },
+    {
+      "texture_id": "Victoria_Chase_2343fd54",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Victoria Chase",
+      "templates": [
+        "npc_340_victoria_chase.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Victoria_Chase_2343fd54.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Victoria_Chase_2343fd54.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "b427e7bc6b69cf61264dd87d3dbabb74dcd9b14c",
+      "sha256": "8804bec805bc471384d22a8448de335a443f7155ce2981f17edc8506be64d404"
+    },
+    {
+      "texture_id": "Walter_White_Jr_c069889d",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Walter White Jr.",
+      "templates": [
+        "npc_205_walter_white_jr.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Walter_White_Jr_c069889d.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Walter_White_Jr_c069889d.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "fe5046acef9460a064ae57c2e77252194eae4814",
+      "sha256": "c411810f09b7cbb47302e0a6d411291a236f98badd3d34cb9cc43797f7219088"
+    },
+    {
+      "texture_id": "Walter_White_d487ea88",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Walter White",
+      "templates": [
+        "npc_200_walter_white.json",
+        "npc_300_walter_white.json",
+        "npc_400_walter_white.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Walter_White_d487ea88.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Walter_White_d487ea88.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "f531976646e16adbb868ad6d60bd13032c1b4a2b",
+      "sha256": "b5b14f889d9d557539bb2f4d2bddec8499b71c370e439338d652ce3d9862c7f8"
+    },
+    {
+      "texture_id": "Warren_Graham_0b85195a",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Warren Graham",
+      "templates": [
+        "npc_346_warren_graham.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Warren_Graham_0b85195a.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Warren_Graham_0b85195a.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "21d468fd8aa6be00ee9b5e059ead4534615c27f5",
+      "sha256": "5a3d9a050390f428e7a37a6df4152c4af1aa1a9e8b3d3bf51bf137a7ced288c7"
+    },
+    {
+      "texture_id": "Will_Byers_1fbd73dd",
+      "model_dir": "humanoid",
+      "entity_type": "easy_npc:humanoid",
+      "name": "Will Byers",
+      "templates": [
+        "npc_05_will_byers.json"
+      ],
+      "file": "config/easy_npc/skin/humanoid/Will_Byers_1fbd73dd.png",
+      "preview3d": "artifacts/npc-skin-previews3d/humanoid/Will_Byers_1fbd73dd.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "13597a0b8f57f7c74985523959565cee2d7275a2",
+      "sha256": "54985e345d456f7d4822061d58f698128b85292d8b4c82d072afd40b969644a9"
+    },
+    {
+      "texture_id": "demogorgon",
+      "model_dir": "zombie",
+      "entity_type": "easy_npc:zombie",
+      "name": "魔怪",
+      "templates": [
+        "demogorgon.json",
+        "demogorgon_boss.json"
+      ],
+      "file": "config/easy_npc/skin/zombie/demogorgon.png",
+      "preview3d": "artifacts/npc-skin-previews3d/zombie/demogorgon.png",
+      "source": "existing-normalized",
+      "error": null,
+      "sha1": "3b5a818927cea366dfe848891412546ed0fee7c7",
+      "sha256": "708bd7cd31ae543edf1d1140c2675f01fd16aecfcb6f12d344de91b3918efe2a"
+    }
+  ],
+  "source_counts": {
+    "existing-normalized": 111,
+    "imagegen-3d-concept": 1
+  },
+  "generated_at_utc": "2026-08-31T04:03:47Z"
+}
